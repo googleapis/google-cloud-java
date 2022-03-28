@@ -126,27 +126,27 @@ public interface ImportMetadataOrBuilder
    *
    *
    * <pre>
-   * Id of the request / operation. This is parroting back the requestId
-   * that was passed in the request.
+   * Deprecated. This field is never set.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @return The requestId.
    */
+  @java.lang.Deprecated
   java.lang.String getRequestId();
   /**
    *
    *
    * <pre>
-   * Id of the request / operation. This is parroting back the requestId
-   * that was passed in the request.
+   * Deprecated. This field is never set.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**

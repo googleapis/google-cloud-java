@@ -41,7 +41,7 @@ public interface ProductOrBuilder
    * than [available_time][google.cloud.retail.v2.Product.available_time] and
    * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
    * INVALID_ARGUMENT error is thrown.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface ProductOrBuilder
    * than [available_time][google.cloud.retail.v2.Product.available_time] and
    * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
    * INVALID_ARGUMENT error is thrown.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface ProductOrBuilder
    * than [available_time][google.cloud.retail.v2.Product.available_time] and
    * [publish_time][google.cloud.retail.v2.Product.publish_time], otherwise an
    * INVALID_ARGUMENT error is thrown.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [expiration_date](https://support.google.com/merchants/answer/6324499).
    * </pre>
    *
@@ -215,9 +215,9 @@ public interface ProductOrBuilder
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [id](https://support.google.com/merchants/answer/6324405). Schema.org
-   * Property [Product.sku](https://schema.org/sku).
+   * property [Product.sku](https://schema.org/sku).
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -236,9 +236,9 @@ public interface ProductOrBuilder
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [id](https://support.google.com/merchants/answer/6324405). Schema.org
-   * Property [Product.sku](https://schema.org/sku).
+   * property [Product.sku](https://schema.org/sku).
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -293,12 +293,10 @@ public interface ProductOrBuilder
    * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2.Product]. Otherwise, an INVALID_ARGUMENT
    * error is returned.
-   * Google Merchant Center Property
+   * Corresponding properties: Google Merchant Center property
    * [item_group_id](https://support.google.com/merchants/answer/6324507).
-   * Schema.org Property
+   * Schema.org property
    * [Product.inProductGroupWithID](https://schema.org/inProductGroupWithID).
-   * This field must be enabled before it can be used. [Learn
-   * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
    *
    * <code>string primary_product_id = 4;</code>
@@ -321,12 +319,10 @@ public interface ProductOrBuilder
    * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
    * [Product][google.cloud.retail.v2.Product]. Otherwise, an INVALID_ARGUMENT
    * error is returned.
-   * Google Merchant Center Property
+   * Corresponding properties: Google Merchant Center property
    * [item_group_id](https://support.google.com/merchants/answer/6324507).
-   * Schema.org Property
+   * Schema.org property
    * [Product.inProductGroupWithID](https://schema.org/inProductGroupWithID).
-   * This field must be enabled before it can be used. [Learn
-   * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
    *
    * <code>string primary_product_id = 4;</code>
@@ -342,8 +338,13 @@ public interface ProductOrBuilder
    * The [id][google.cloud.retail.v2.Product.id] of the collection members when
    * [type][google.cloud.retail.v2.Product.type] is
    * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
-   * Should not set it for other types. A maximum of 1000 values are allowed.
-   * Otherwise, an INVALID_ARGUMENT error is return.
+   * Non-existent product ids are allowed.
+   * The [type][google.cloud.retail.v2.Product.type] of the members must be
+   * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
+   * return.
    * </pre>
    *
    * <code>repeated string collection_member_ids = 5;</code>
@@ -358,8 +359,13 @@ public interface ProductOrBuilder
    * The [id][google.cloud.retail.v2.Product.id] of the collection members when
    * [type][google.cloud.retail.v2.Product.type] is
    * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
-   * Should not set it for other types. A maximum of 1000 values are allowed.
-   * Otherwise, an INVALID_ARGUMENT error is return.
+   * Non-existent product ids are allowed.
+   * The [type][google.cloud.retail.v2.Product.type] of the members must be
+   * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
+   * return.
    * </pre>
    *
    * <code>repeated string collection_member_ids = 5;</code>
@@ -374,8 +380,13 @@ public interface ProductOrBuilder
    * The [id][google.cloud.retail.v2.Product.id] of the collection members when
    * [type][google.cloud.retail.v2.Product.type] is
    * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
-   * Should not set it for other types. A maximum of 1000 values are allowed.
-   * Otherwise, an INVALID_ARGUMENT error is return.
+   * Non-existent product ids are allowed.
+   * The [type][google.cloud.retail.v2.Product.type] of the members must be
+   * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
+   * return.
    * </pre>
    *
    * <code>repeated string collection_member_ids = 5;</code>
@@ -391,8 +402,13 @@ public interface ProductOrBuilder
    * The [id][google.cloud.retail.v2.Product.id] of the collection members when
    * [type][google.cloud.retail.v2.Product.type] is
    * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION].
-   * Should not set it for other types. A maximum of 1000 values are allowed.
-   * Otherwise, an INVALID_ARGUMENT error is return.
+   * Non-existent product ids are allowed.
+   * The [type][google.cloud.retail.v2.Product.type] of the members must be
+   * either [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] or
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT] otherwise and
+   * INVALID_ARGUMENT error is thrown. Should not set it for other types. A
+   * maximum of 1000 values are allowed. Otherwise, an INVALID_ARGUMENT error is
+   * return.
    * </pre>
    *
    * <code>repeated string collection_member_ids = 5;</code>
@@ -411,13 +427,13 @@ public interface ProductOrBuilder
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * This field must be a Unigram. Otherwise, an INVALID_ARGUMENT error is
    * returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [gtin](https://support.google.com/merchants/answer/6324461).
    * Schema.org property
-   * [Product.isbn](https://schema.org/isbn) or
-   * [Product.gtin8](https://schema.org/gtin8) or
-   * [Product.gtin12](https://schema.org/gtin12) or
-   * [Product.gtin13](https://schema.org/gtin13) or
+   * [Product.isbn](https://schema.org/isbn),
+   * [Product.gtin8](https://schema.org/gtin8),
+   * [Product.gtin12](https://schema.org/gtin12),
+   * [Product.gtin13](https://schema.org/gtin13), or
    * [Product.gtin14](https://schema.org/gtin14).
    * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -436,13 +452,13 @@ public interface ProductOrBuilder
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * This field must be a Unigram. Otherwise, an INVALID_ARGUMENT error is
    * returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [gtin](https://support.google.com/merchants/answer/6324461).
    * Schema.org property
-   * [Product.isbn](https://schema.org/isbn) or
-   * [Product.gtin8](https://schema.org/gtin8) or
-   * [Product.gtin12](https://schema.org/gtin12) or
-   * [Product.gtin13](https://schema.org/gtin13) or
+   * [Product.isbn](https://schema.org/isbn),
+   * [Product.gtin8](https://schema.org/gtin8),
+   * [Product.gtin12](https://schema.org/gtin12),
+   * [Product.gtin13](https://schema.org/gtin13), or
    * [Product.gtin14](https://schema.org/gtin14).
    * If the value is not a valid GTIN, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -478,7 +494,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Empty values are not allowed.
    * Each value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
    * [Product.category] (https://schema.org/category).
    * [mc_google_product_category]:
@@ -515,7 +531,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Empty values are not allowed.
    * Each value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
    * [Product.category] (https://schema.org/category).
    * [mc_google_product_category]:
@@ -552,7 +568,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Empty values are not allowed.
    * Each value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
    * [Product.category] (https://schema.org/category).
    * [mc_google_product_category]:
@@ -590,7 +606,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Empty values are not allowed.
    * Each value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [google_product_category][mc_google_product_category]. Schema.org property
    * [Product.category] (https://schema.org/category).
    * [mc_google_product_category]:
@@ -611,7 +627,7 @@ public interface ProductOrBuilder
    * Required. Product title.
    * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [title](https://support.google.com/merchants/answer/6324415). Schema.org
    * property [Product.name](https://schema.org/name).
    * </pre>
@@ -628,7 +644,7 @@ public interface ProductOrBuilder
    * Required. Product title.
    * This field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [title](https://support.google.com/merchants/answer/6324415). Schema.org
    * property [Product.name](https://schema.org/name).
    * </pre>
@@ -647,7 +663,7 @@ public interface ProductOrBuilder
    * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
    * string with a length limit of 1,000 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
    * property [Product.brand](https://schema.org/brand).
    * </pre>
@@ -665,7 +681,7 @@ public interface ProductOrBuilder
    * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
    * string with a length limit of 1,000 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
    * property [Product.brand](https://schema.org/brand).
    * </pre>
@@ -683,7 +699,7 @@ public interface ProductOrBuilder
    * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
    * string with a length limit of 1,000 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
    * property [Product.brand](https://schema.org/brand).
    * </pre>
@@ -702,7 +718,7 @@ public interface ProductOrBuilder
    * A maximum of 30 brands are allowed. Each brand must be a UTF-8 encoded
    * string with a length limit of 1,000 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [brand](https://support.google.com/merchants/answer/6324351). Schema.org
    * property [Product.brand](https://schema.org/brand).
    * </pre>
@@ -721,9 +737,9 @@ public interface ProductOrBuilder
    * Product description.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [description](https://support.google.com/merchants/answer/6324468).
-   * schema.org property [Product.description](https://schema.org/description).
+   * Schema.org property [Product.description](https://schema.org/description).
    * </pre>
    *
    * <code>string description = 10;</code>
@@ -738,9 +754,9 @@ public interface ProductOrBuilder
    * Product description.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [description](https://support.google.com/merchants/answer/6324468).
-   * schema.org property [Product.description](https://schema.org/description).
+   * Schema.org property [Product.description](https://schema.org/description).
    * </pre>
    *
    * <code>string description = 10;</code>
@@ -754,7 +770,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Language of the title/description and other string attributes. Use language
-   * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+   * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * For product prediction, this field is ignored and the model automatically
    * detects the text language. The [Product][google.cloud.retail.v2.Product]
    * can include text in different languages, but duplicating
@@ -773,7 +789,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Language of the title/description and other string attributes. Use language
-   * tags defined by [BCP 47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+   * tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
    * For product prediction, this field is ignored and the model automatically
    * detects the text language. The [Product][google.cloud.retail.v2.Product]
    * can include text in different languages, but duplicating
@@ -810,7 +826,12 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, `key0LikeThis` or
+   *   `KEY_1_LIKE_THIS`.
+   * * For text attributes, at most 400 values are allowed. Empty values are not
+   *   allowed. Each value must be a non-empty UTF-8 encoded string with a
+   *   length limit of 256 characters.
+   * * For number attributes, at most 400 values are allowed.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -838,7 +859,12 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, `key0LikeThis` or
+   *   `KEY_1_LIKE_THIS`.
+   * * For text attributes, at most 400 values are allowed. Empty values are not
+   *   allowed. Each value must be a non-empty UTF-8 encoded string with a
+   *   length limit of 256 characters.
+   * * For number attributes, at most 400 values are allowed.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -869,7 +895,12 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, `key0LikeThis` or
+   *   `KEY_1_LIKE_THIS`.
+   * * For text attributes, at most 400 values are allowed. Empty values are not
+   *   allowed. Each value must be a non-empty UTF-8 encoded string with a
+   *   length limit of 256 characters.
+   * * For number attributes, at most 400 values are allowed.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -897,7 +928,12 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, `key0LikeThis` or
+   *   `KEY_1_LIKE_THIS`.
+   * * For text attributes, at most 400 values are allowed. Empty values are not
+   *   allowed. Each value must be a non-empty UTF-8 encoded string with a
+   *   length limit of 256 characters.
+   * * For number attributes, at most 400 values are allowed.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -926,7 +962,12 @@ public interface ProductOrBuilder
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
    * * For indexable attribute, the key must match the pattern:
-   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, key0LikeThis or KEY_1_LIKE_THIS.
+   *   `[a-zA-Z0-9][a-zA-Z0-9_]*`. For example, `key0LikeThis` or
+   *   `KEY_1_LIKE_THIS`.
+   * * For text attributes, at most 400 values are allowed. Empty values are not
+   *   allowed. Each value must be a non-empty UTF-8 encoded string with a
+   *   length limit of 256 characters.
+   * * For number attributes, at most 400 values are allowed.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 12;</code>
@@ -945,7 +986,7 @@ public interface ProductOrBuilder
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the
    * [PredictRequest.filter][google.cloud.retail.v2.PredictRequest.filter].
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [custom_label_0–4](https://support.google.com/merchants/answer/6324473).
    * </pre>
    *
@@ -966,7 +1007,7 @@ public interface ProductOrBuilder
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the
    * [PredictRequest.filter][google.cloud.retail.v2.PredictRequest.filter].
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [custom_label_0–4](https://support.google.com/merchants/answer/6324473).
    * </pre>
    *
@@ -987,7 +1028,7 @@ public interface ProductOrBuilder
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the
    * [PredictRequest.filter][google.cloud.retail.v2.PredictRequest.filter].
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [custom_label_0–4](https://support.google.com/merchants/answer/6324473).
    * </pre>
    *
@@ -1009,7 +1050,7 @@ public interface ProductOrBuilder
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the
    * [PredictRequest.filter][google.cloud.retail.v2.PredictRequest.filter].
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [custom_label_0–4](https://support.google.com/merchants/answer/6324473).
    * </pre>
    *
@@ -1025,7 +1066,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Product price and cost information.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
@@ -1039,7 +1080,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Product price and cost information.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
@@ -1053,7 +1094,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * Product price and cost information.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
@@ -1144,9 +1185,9 @@ public interface ProductOrBuilder
    * The online availability of the [Product][google.cloud.retail.v2.Product].
    * Default to
    * [Availability.IN_STOCK][google.cloud.retail.v2.Product.Availability.IN_STOCK].
-   * Google Merchant Center Property
+   * Corresponding properties: Google Merchant Center property
    * [availability](https://support.google.com/merchants/answer/6324448).
-   * Schema.org Property [Offer.availability](https://schema.org/availability).
+   * Schema.org property [Offer.availability](https://schema.org/availability).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product.Availability availability = 19;</code>
@@ -1161,9 +1202,9 @@ public interface ProductOrBuilder
    * The online availability of the [Product][google.cloud.retail.v2.Product].
    * Default to
    * [Availability.IN_STOCK][google.cloud.retail.v2.Product.Availability.IN_STOCK].
-   * Google Merchant Center Property
+   * Corresponding properties: Google Merchant Center property
    * [availability](https://support.google.com/merchants/answer/6324448).
-   * Schema.org Property [Offer.availability](https://schema.org/availability).
+   * Schema.org property [Offer.availability](https://schema.org/availability).
    * </pre>
    *
    * <code>.google.cloud.retail.v2.Product.Availability availability = 19;</code>
@@ -1288,7 +1329,7 @@ public interface ProductOrBuilder
    * otherwise the service performance could be significantly degraded.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [link](https://support.google.com/merchants/answer/6324416). Schema.org
    * property [Offer.url](https://schema.org/url).
    * </pre>
@@ -1307,7 +1348,7 @@ public interface ProductOrBuilder
    * otherwise the service performance could be significantly degraded.
    * This field must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [link](https://support.google.com/merchants/answer/6324416). Schema.org
    * property [Offer.url](https://schema.org/url).
    * </pre>
@@ -1322,10 +1363,10 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * Product images for the product.Highly recommended to put the main image
-   * to the first.
+   * Product images for the product. We highly recommend putting the main
+   * image first.
    * A maximum of 300 images are allowed.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
    * </pre>
@@ -1337,10 +1378,10 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * Product images for the product.Highly recommended to put the main image
-   * to the first.
+   * Product images for the product. We highly recommend putting the main
+   * image first.
    * A maximum of 300 images are allowed.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
    * </pre>
@@ -1352,10 +1393,10 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * Product images for the product.Highly recommended to put the main image
-   * to the first.
+   * Product images for the product. We highly recommend putting the main
+   * image first.
    * A maximum of 300 images are allowed.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
    * </pre>
@@ -1367,10 +1408,10 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * Product images for the product.Highly recommended to put the main image
-   * to the first.
+   * Product images for the product. We highly recommend putting the main
+   * image first.
    * A maximum of 300 images are allowed.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
    * </pre>
@@ -1382,10 +1423,10 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
-   * Product images for the product.Highly recommended to put the main image
-   * to the first.
+   * Product images for the product. We highly recommend putting the main
+   * image first.
    * A maximum of 300 images are allowed.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
    * </pre>
@@ -1437,7 +1478,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The color of the product.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
    * </pre>
@@ -1452,7 +1493,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The color of the product.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
    * </pre>
@@ -1467,7 +1508,7 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The color of the product.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
    * </pre>
@@ -1490,9 +1531,9 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [size](https://support.google.com/merchants/answer/6324492),
-   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_type](https://support.google.com/merchants/answer/6324497), and
    * [size_system](https://support.google.com/merchants/answer/6324502).
    * Schema.org property [Product.size](https://schema.org/size).
    * </pre>
@@ -1516,9 +1557,9 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [size](https://support.google.com/merchants/answer/6324492),
-   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_type](https://support.google.com/merchants/answer/6324497), and
    * [size_system](https://support.google.com/merchants/answer/6324502).
    * Schema.org property [Product.size](https://schema.org/size).
    * </pre>
@@ -1542,9 +1583,9 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [size](https://support.google.com/merchants/answer/6324492),
-   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_type](https://support.google.com/merchants/answer/6324497), and
    * [size_system](https://support.google.com/merchants/answer/6324502).
    * Schema.org property [Product.size](https://schema.org/size).
    * </pre>
@@ -1569,9 +1610,9 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [size](https://support.google.com/merchants/answer/6324492),
-   * [size_type](https://support.google.com/merchants/answer/6324497) and
+   * [size_type](https://support.google.com/merchants/answer/6324497), and
    * [size_system](https://support.google.com/merchants/answer/6324502).
    * Schema.org property [Product.size](https://schema.org/size).
    * </pre>
@@ -1589,9 +1630,9 @@ public interface ProductOrBuilder
    * <pre>
    * The material of the product. For example, "leather", "wooden".
    * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
+   * string with a length limit of 200 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [material](https://support.google.com/merchants/answer/6324410). Schema.org
    * property [Product.material](https://schema.org/material).
    * </pre>
@@ -1607,9 +1648,9 @@ public interface ProductOrBuilder
    * <pre>
    * The material of the product. For example, "leather", "wooden".
    * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
+   * string with a length limit of 200 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [material](https://support.google.com/merchants/answer/6324410). Schema.org
    * property [Product.material](https://schema.org/material).
    * </pre>
@@ -1625,9 +1666,9 @@ public interface ProductOrBuilder
    * <pre>
    * The material of the product. For example, "leather", "wooden".
    * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
+   * string with a length limit of 200 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [material](https://support.google.com/merchants/answer/6324410). Schema.org
    * property [Product.material](https://schema.org/material).
    * </pre>
@@ -1644,9 +1685,9 @@ public interface ProductOrBuilder
    * <pre>
    * The material of the product. For example, "leather", "wooden".
    * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
+   * string with a length limit of 200 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [material](https://support.google.com/merchants/answer/6324410). Schema.org
    * property [Product.material](https://schema.org/material).
    * </pre>
@@ -1668,7 +1709,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
    * property [Product.pattern](https://schema.org/pattern).
    * </pre>
@@ -1688,7 +1729,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
    * property [Product.pattern](https://schema.org/pattern).
    * </pre>
@@ -1708,7 +1749,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
    * property [Product.pattern](https://schema.org/pattern).
    * </pre>
@@ -1729,7 +1770,7 @@ public interface ProductOrBuilder
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [pattern](https://support.google.com/merchants/answer/6324483). Schema.org
    * property [Product.pattern](https://schema.org/pattern).
    * </pre>
@@ -1747,11 +1788,11 @@ public interface ProductOrBuilder
    * <pre>
    * The condition of the product. Strongly encouraged to use the standard
    * values: "new", "refurbished", "used".
-   * A maximum of 5 values are allowed per
+   * A maximum of 1 value is allowed per
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [condition](https://support.google.com/merchants/answer/6324469).
    * Schema.org property
    * [Offer.itemCondition](https://schema.org/itemCondition).
@@ -1768,11 +1809,11 @@ public interface ProductOrBuilder
    * <pre>
    * The condition of the product. Strongly encouraged to use the standard
    * values: "new", "refurbished", "used".
-   * A maximum of 5 values are allowed per
+   * A maximum of 1 value is allowed per
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [condition](https://support.google.com/merchants/answer/6324469).
    * Schema.org property
    * [Offer.itemCondition](https://schema.org/itemCondition).
@@ -1789,11 +1830,11 @@ public interface ProductOrBuilder
    * <pre>
    * The condition of the product. Strongly encouraged to use the standard
    * values: "new", "refurbished", "used".
-   * A maximum of 5 values are allowed per
+   * A maximum of 1 value is allowed per
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [condition](https://support.google.com/merchants/answer/6324469).
    * Schema.org property
    * [Offer.itemCondition](https://schema.org/itemCondition).
@@ -1811,11 +1852,11 @@ public interface ProductOrBuilder
    * <pre>
    * The condition of the product. Strongly encouraged to use the standard
    * values: "new", "refurbished", "used".
-   * A maximum of 5 values are allowed per
+   * A maximum of 1 value is allowed per
    * [Product][google.cloud.retail.v2.Product]. Each value must be a UTF-8
    * encoded string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * Google Merchant Center property
+   * Corresponding properties: Google Merchant Center property
    * [condition](https://support.google.com/merchants/answer/6324469).
    * Schema.org property
    * [Offer.itemCondition](https://schema.org/itemCondition).
@@ -1833,7 +1874,9 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The promotions applied to the product. A maximum of 10 values are allowed
-   * per [Product][google.cloud.retail.v2.Product].
+   * per [Product][google.cloud.retail.v2.Product]. Only
+   * [Promotion.promotion_id][google.cloud.retail.v2.Promotion.promotion_id]
+   * will be used, other fields will be ignored if set.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
@@ -1844,7 +1887,9 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The promotions applied to the product. A maximum of 10 values are allowed
-   * per [Product][google.cloud.retail.v2.Product].
+   * per [Product][google.cloud.retail.v2.Product]. Only
+   * [Promotion.promotion_id][google.cloud.retail.v2.Promotion.promotion_id]
+   * will be used, other fields will be ignored if set.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
@@ -1855,7 +1900,9 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The promotions applied to the product. A maximum of 10 values are allowed
-   * per [Product][google.cloud.retail.v2.Product].
+   * per [Product][google.cloud.retail.v2.Product]. Only
+   * [Promotion.promotion_id][google.cloud.retail.v2.Promotion.promotion_id]
+   * will be used, other fields will be ignored if set.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
@@ -1866,7 +1913,9 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The promotions applied to the product. A maximum of 10 values are allowed
-   * per [Product][google.cloud.retail.v2.Product].
+   * per [Product][google.cloud.retail.v2.Product]. Only
+   * [Promotion.promotion_id][google.cloud.retail.v2.Promotion.promotion_id]
+   * will be used, other fields will be ignored if set.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>
@@ -1878,7 +1927,9 @@ public interface ProductOrBuilder
    *
    * <pre>
    * The promotions applied to the product. A maximum of 10 values are allowed
-   * per [Product][google.cloud.retail.v2.Product].
+   * per [Product][google.cloud.retail.v2.Product]. Only
+   * [Promotion.promotion_id][google.cloud.retail.v2.Promotion.promotion_id]
+   * will be used, other fields will be ignored if set.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2.Promotion promotions = 34;</code>

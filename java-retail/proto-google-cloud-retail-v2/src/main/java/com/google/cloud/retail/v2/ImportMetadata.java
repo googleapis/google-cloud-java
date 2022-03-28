@@ -297,15 +297,15 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Id of the request / operation. This is parroting back the requestId
-   * that was passed in the request.
+   * Deprecated. This field is never set.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @return The requestId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -321,15 +321,15 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Id of the request / operation. This is parroting back the requestId
-   * that was passed in the request.
+   * Deprecated. This field is never set.
    * </pre>
    *
-   * <code>string request_id = 5;</code>
+   * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @return The bytes for requestId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -1302,14 +1302,14 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the request / operation. This is parroting back the requestId
-     * that was passed in the request.
+     * Deprecated. This field is never set.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @return The requestId.
      */
+    @java.lang.Deprecated
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
       if (!(ref instanceof java.lang.String)) {
@@ -1325,14 +1325,14 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the request / operation. This is parroting back the requestId
-     * that was passed in the request.
+     * Deprecated. This field is never set.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @return The bytes for requestId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
       if (ref instanceof String) {
@@ -1348,15 +1348,15 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the request / operation. This is parroting back the requestId
-     * that was passed in the request.
+     * Deprecated. This field is never set.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1370,14 +1370,14 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the request / operation. This is parroting back the requestId
-     * that was passed in the request.
+     * Deprecated. This field is never set.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRequestId() {
 
       requestId_ = getDefaultInstance().getRequestId();
@@ -1388,15 +1388,15 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the request / operation. This is parroting back the requestId
-     * that was passed in the request.
+     * Deprecated. This field is never set.
      * </pre>
      *
-     * <code>string request_id = 5;</code>
+     * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

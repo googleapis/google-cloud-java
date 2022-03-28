@@ -300,4 +300,135 @@ public interface SearchResponseOrBuilder
    * @return The bytes for redirectUri.
    */
   com.google.protobuf.ByteString getRedirectUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @return A list containing the appliedControls.
+   */
+  java.util.List<java.lang.String> getAppliedControlsList();
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @return The count of appliedControls.
+   */
+  int getAppliedControlsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The appliedControls at the given index.
+   */
+  java.lang.String getAppliedControls(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the appliedControls at the given index.
+   */
+  com.google.protobuf.ByteString getAppliedControlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+      getInvalidConditionBoostSpecsList();
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+      getInvalidConditionBoostSpecs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  int getInvalidConditionBoostSpecsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
+      getInvalidConditionBoostSpecsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+      getInvalidConditionBoostSpecsOrBuilder(int index);
 }

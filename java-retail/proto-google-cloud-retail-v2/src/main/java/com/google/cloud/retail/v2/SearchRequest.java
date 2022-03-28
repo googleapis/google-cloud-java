@@ -256,6 +256,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               searchMode_ = rawValue;
               break;
             }
+          case 258:
+            {
+              com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder subBuilder =
+                  null;
+              if (personalizationSpec_ != null) {
+                subBuilder = personalizationSpec_.toBuilder();
+              }
+              personalizationSpec_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(personalizationSpec_);
+                personalizationSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -858,6 +876,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,original_price)"
        *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
@@ -906,6 +925,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,original_price)"
        *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
@@ -1538,6 +1558,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,original_price)"
        *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
@@ -1597,6 +1618,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,original_price)"
        *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
@@ -2683,6 +2705,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,original_price)"
          *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
@@ -2741,6 +2764,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,original_price)"
          *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
@@ -2799,6 +2823,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,original_price)"
          *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
@@ -2856,6 +2881,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,original_price)"
          *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
@@ -2909,6 +2935,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,original_price)"
          *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
@@ -6689,6 +6716,41 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
         getConditionBoostSpecsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to skip boostspec validation. If this field is set to true,
+     * invalid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will be ignored and valid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will still be applied.
+     * </pre>
+     *
+     * <code>optional bool skip_boost_spec_validation = 2;</code>
+     *
+     * @return Whether the skipBoostSpecValidation field is set.
+     */
+    boolean hasSkipBoostSpecValidation();
+    /**
+     *
+     *
+     * <pre>
+     * Whether to skip boostspec validation. If this field is set to true,
+     * invalid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will be ignored and valid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will still be applied.
+     * </pre>
+     *
+     * <code>optional bool skip_boost_spec_validation = 2;</code>
+     *
+     * @return The skipBoostSpecValidation.
+     */
+    boolean getSkipBoostSpecValidation();
   }
   /**
    *
@@ -6756,6 +6818,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
                             .parser(),
                         extensionRegistry));
+                break;
+              }
+            case 16:
+              {
+                bitField0_ |= 0x00000001;
+                skipBoostSpecValidation_ = input.readBool();
                 break;
               }
             default:
@@ -7719,6 +7787,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    private int bitField0_;
     public static final int CONDITION_BOOST_SPECS_FIELD_NUMBER = 1;
     private java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
         conditionBoostSpecs_;
@@ -7819,6 +7888,49 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return conditionBoostSpecs_.get(index);
     }
 
+    public static final int SKIP_BOOST_SPEC_VALIDATION_FIELD_NUMBER = 2;
+    private boolean skipBoostSpecValidation_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to skip boostspec validation. If this field is set to true,
+     * invalid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will be ignored and valid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will still be applied.
+     * </pre>
+     *
+     * <code>optional bool skip_boost_spec_validation = 2;</code>
+     *
+     * @return Whether the skipBoostSpecValidation field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkipBoostSpecValidation() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to skip boostspec validation. If this field is set to true,
+     * invalid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will be ignored and valid
+     * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * will still be applied.
+     * </pre>
+     *
+     * <code>optional bool skip_boost_spec_validation = 2;</code>
+     *
+     * @return The skipBoostSpecValidation.
+     */
+    @java.lang.Override
+    public boolean getSkipBoostSpecValidation() {
+      return skipBoostSpecValidation_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7836,6 +7948,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < conditionBoostSpecs_.size(); i++) {
         output.writeMessage(1, conditionBoostSpecs_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(2, skipBoostSpecValidation_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7849,6 +7964,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, conditionBoostSpecs_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, skipBoostSpecValidation_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7867,6 +7985,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.retail.v2.SearchRequest.BoostSpec) obj;
 
       if (!getConditionBoostSpecsList().equals(other.getConditionBoostSpecsList())) return false;
+      if (hasSkipBoostSpecValidation() != other.hasSkipBoostSpecValidation()) return false;
+      if (hasSkipBoostSpecValidation()) {
+        if (getSkipBoostSpecValidation() != other.getSkipBoostSpecValidation()) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7881,6 +8003,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (getConditionBoostSpecsCount() > 0) {
         hash = (37 * hash) + CONDITION_BOOST_SPECS_FIELD_NUMBER;
         hash = (53 * hash) + getConditionBoostSpecsList().hashCode();
+      }
+      if (hasSkipBoostSpecValidation()) {
+        hash = (37 * hash) + SKIP_BOOST_SPEC_VALIDATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipBoostSpecValidation());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8037,6 +8163,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         } else {
           conditionBoostSpecsBuilder_.clear();
         }
+        skipBoostSpecValidation_ = false;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -8065,6 +8193,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2.SearchRequest.BoostSpec result =
             new com.google.cloud.retail.v2.SearchRequest.BoostSpec(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (conditionBoostSpecsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             conditionBoostSpecs_ = java.util.Collections.unmodifiableList(conditionBoostSpecs_);
@@ -8074,6 +8203,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.conditionBoostSpecs_ = conditionBoostSpecsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skipBoostSpecValidation_ = skipBoostSpecValidation_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -8152,6 +8286,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               conditionBoostSpecsBuilder_.addAllMessages(other.conditionBoostSpecs_);
             }
           }
+        }
+        if (other.hasSkipBoostSpecValidation()) {
+          setSkipBoostSpecValidation(other.getSkipBoostSpecValidation());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8653,6 +8790,93 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           conditionBoostSpecs_ = null;
         }
         return conditionBoostSpecsBuilder_;
+      }
+
+      private boolean skipBoostSpecValidation_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to skip boostspec validation. If this field is set to true,
+       * invalid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will be ignored and valid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will still be applied.
+       * </pre>
+       *
+       * <code>optional bool skip_boost_spec_validation = 2;</code>
+       *
+       * @return Whether the skipBoostSpecValidation field is set.
+       */
+      @java.lang.Override
+      public boolean hasSkipBoostSpecValidation() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to skip boostspec validation. If this field is set to true,
+       * invalid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will be ignored and valid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will still be applied.
+       * </pre>
+       *
+       * <code>optional bool skip_boost_spec_validation = 2;</code>
+       *
+       * @return The skipBoostSpecValidation.
+       */
+      @java.lang.Override
+      public boolean getSkipBoostSpecValidation() {
+        return skipBoostSpecValidation_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to skip boostspec validation. If this field is set to true,
+       * invalid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will be ignored and valid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will still be applied.
+       * </pre>
+       *
+       * <code>optional bool skip_boost_spec_validation = 2;</code>
+       *
+       * @param value The skipBoostSpecValidation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkipBoostSpecValidation(boolean value) {
+        bitField0_ |= 0x00000002;
+        skipBoostSpecValidation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to skip boostspec validation. If this field is set to true,
+       * invalid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will be ignored and valid
+       * [BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+       * will still be applied.
+       * </pre>
+       *
+       * <code>optional bool skip_boost_spec_validation = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkipBoostSpecValidation() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        skipBoostSpecValidation_ = false;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -9645,6 +9869,815 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PersonalizationSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to
+     * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to
+     * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode getMode();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2.SearchRequest.PersonalizationSpec}
+   */
+  public static final class PersonalizationSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+      PersonalizationSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PersonalizationSpec.newBuilder() to construct.
+    private PersonalizationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PersonalizationSpec() {
+      mode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PersonalizationSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private PersonalizationSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                mode_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2.SearchServiceProto
+          .internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2.SearchServiceProto
+          .internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.class,
+              com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The personalization mode of each search request.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode}
+     */
+    public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Let CRS decide whether to use personalization.
+       * </pre>
+       *
+       * <code>AUTO = 1;</code>
+       */
+      AUTO(1),
+      /**
+       *
+       *
+       * <pre>
+       * Disable personalization.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      DISABLED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Let CRS decide whether to use personalization.
+       * </pre>
+       *
+       * <code>AUTO = 1;</code>
+       */
+      public static final int AUTO_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Disable personalization.
+       * </pre>
+       *
+       * <code>DISABLED = 2;</code>
+       */
+      public static final int DISABLED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MODE_UNSPECIFIED;
+          case 1:
+            return AUTO;
+          case 2:
+            return DISABLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+            public Mode findValueByNumber(int number) {
+              return Mode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode)
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private int mode_;
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to
+     * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to
+     * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode getMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode result =
+          com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.valueOf(mode_);
+      return result == null
+          ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (mode_
+          != com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, mode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mode_
+          != com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec other =
+          (com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec) obj;
+
+      if (mode_ != other.mode_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2.SearchRequest.PersonalizationSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2.SearchServiceProto
+            .internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2.SearchServiceProto
+            .internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.class,
+                com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mode_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2.SearchServiceProto
+            .internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec build() {
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec buildPartial() {
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec result =
+            new com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec(this);
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec) {
+          return mergeFrom((com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec other) {
+        if (other
+            == com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance())
+          return this;
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int mode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+       *
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override
+      public int getModeValue() {
+        return mode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+       *
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode getMode() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode result =
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.valueOf(mode_);
+        return result == null
+            ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+       *
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to
+       * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode mode = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
+    private static final com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec();
+    }
+
+    public static com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PersonalizationSpec> PARSER =
+        new com.google.protobuf.AbstractParser<PersonalizationSpec>() {
+          @java.lang.Override
+          public PersonalizationSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PersonalizationSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<PersonalizationSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PersonalizationSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int PLACEMENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object placement_;
   /**
@@ -9652,7 +10685,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -9678,7 +10711,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -9814,6 +10847,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * could be implemented with an HTTP cookie, which should be able to uniquely
    * identify a visitor on a single device. This unique identifier should not
    * change if the visitor logs in or out of the website.
+   * This should be the same identifier as
+   * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -9842,6 +10877,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * could be implemented with an HTTP cookie, which should be able to uniquely
    * identify a visitor on a single device. This unique identifier should not
    * change if the visitor logs in or out of the website.
+   * This should be the same identifier as
+   * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -10081,6 +11118,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
    * The filter applied to every search request when quality improvement such as
    * query expansion is needed. For example, if a query does not have enough
    * results, an expanded query with
@@ -10111,6 +11150,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
    * The filter applied to every search request when quality improvement such as
    * query expansion is needed. For example, if a query does not have enough
    * results, an expanded query with
@@ -10283,17 +11324,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    *
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDynamicFacetSpec() {
     return dynamicFacetSpec_ != null;
   }
@@ -10301,17 +11345,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    *
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec getDynamicFacetSpec() {
     return dynamicFacetSpec_ == null
         ? com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.getDefaultInstance()
@@ -10321,15 +11368,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpecOrBuilder
       getDynamicFacetSpecOrBuilder() {
     return getDynamicFacetSpec();
@@ -10467,12 +11517,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -10484,6 +11537,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -10541,12 +11595,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -10558,6 +11615,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -10615,12 +11673,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -10632,6 +11693,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -10690,12 +11752,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -10707,6 +11772,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -10897,6 +11963,58 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 32;
+  private com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalizationSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersonalizationSpec() {
+    return personalizationSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec getPersonalizationSpec() {
+    return personalizationSpec_ == null
+        ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance()
+        : personalizationSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder() {
+    return getPersonalizationSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10966,6 +12084,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.retail.v2.SearchRequest.SearchMode.SEARCH_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(31, searchMode_);
+    }
+    if (personalizationSpec_ != null) {
+      output.writeMessage(32, getPersonalizationSpec());
     }
     unknownFields.writeTo(output);
   }
@@ -11042,6 +12163,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, searchMode_);
     }
+    if (personalizationSpec_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getPersonalizationSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -11087,6 +12212,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (!getVariantRollupKeysList().equals(other.getVariantRollupKeysList())) return false;
     if (!getPageCategoriesList().equals(other.getPageCategoriesList())) return false;
     if (searchMode_ != other.searchMode_) return false;
+    if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
+    if (hasPersonalizationSpec()) {
+      if (!getPersonalizationSpec().equals(other.getPersonalizationSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -11148,6 +12277,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SEARCH_MODE_FIELD_NUMBER;
     hash = (53 * hash) + searchMode_;
+    if (hasPersonalizationSpec()) {
+      hash = (37 * hash) + PERSONALIZATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonalizationSpec().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -11352,6 +12485,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000004);
       searchMode_ = 0;
 
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpec_ = null;
+      } else {
+        personalizationSpec_ = null;
+        personalizationSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -11430,6 +12569,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       result.pageCategories_ = pageCategories_;
       result.searchMode_ = searchMode_;
+      if (personalizationSpecBuilder_ == null) {
+        result.personalizationSpec_ = personalizationSpec_;
+      } else {
+        result.personalizationSpec_ = personalizationSpecBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -11579,6 +12723,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.searchMode_ != 0) {
         setSearchModeValue(other.getSearchModeValue());
       }
+      if (other.hasPersonalizationSpec()) {
+        mergePersonalizationSpec(other.getPersonalizationSpec());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -11616,7 +12763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -11641,7 +12788,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -11666,7 +12813,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -11690,7 +12837,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -11710,7 +12857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -11967,6 +13114,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * could be implemented with an HTTP cookie, which should be able to uniquely
      * identify a visitor on a single device. This unique identifier should not
      * change if the visitor logs in or out of the website.
+     * This should be the same identifier as
+     * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -11994,6 +13143,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * could be implemented with an HTTP cookie, which should be able to uniquely
      * identify a visitor on a single device. This unique identifier should not
      * change if the visitor logs in or out of the website.
+     * This should be the same identifier as
+     * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -12021,6 +13172,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * could be implemented with an HTTP cookie, which should be able to uniquely
      * identify a visitor on a single device. This unique identifier should not
      * change if the visitor logs in or out of the website.
+     * This should be the same identifier as
+     * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -12047,6 +13200,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * could be implemented with an HTTP cookie, which should be able to uniquely
      * identify a visitor on a single device. This unique identifier should not
      * change if the visitor logs in or out of the website.
+     * This should be the same identifier as
+     * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -12069,6 +13224,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * could be implemented with an HTTP cookie, which should be able to uniquely
      * identify a visitor on a single device. This unique identifier should not
      * change if the visitor logs in or out of the website.
+     * This should be the same identifier as
+     * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -12679,6 +13836,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
      * The filter applied to every search request when quality improvement such as
      * query expansion is needed. For example, if a query does not have enough
      * results, an expanded query with
@@ -12708,6 +13867,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
      * The filter applied to every search request when quality improvement such as
      * query expansion is needed. For example, if a query does not have enough
      * results, an expanded query with
@@ -12737,6 +13898,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
      * The filter applied to every search request when quality improvement such as
      * query expansion is needed. For example, if a query does not have enough
      * results, an expanded query with
@@ -12765,6 +13928,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
      * The filter applied to every search request when quality improvement such as
      * query expansion is needed. For example, if a query does not have enough
      * results, an expanded query with
@@ -12789,6 +13954,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The default filter that is applied when a user performs a search without
+     * checking any filters on the search page.
      * The filter applied to every search request when quality improvement such as
      * query expansion is needed. For example, if a query does not have enough
      * results, an expanded query with
@@ -13350,16 +14517,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      *
      * @return Whether the dynamicFacetSpec field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDynamicFacetSpec() {
       return dynamicFacetSpecBuilder_ != null || dynamicFacetSpec_ != null;
     }
@@ -13367,16 +14537,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      *
      * @return The dynamicFacetSpec.
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec getDynamicFacetSpec() {
       if (dynamicFacetSpecBuilder_ == null) {
         return dynamicFacetSpec_ == null
@@ -13390,14 +14563,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDynamicFacetSpec(
         com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec value) {
       if (dynamicFacetSpecBuilder_ == null) {
@@ -13416,14 +14592,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDynamicFacetSpec(
         com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Builder builderForValue) {
       if (dynamicFacetSpecBuilder_ == null) {
@@ -13439,14 +14618,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDynamicFacetSpec(
         com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec value) {
       if (dynamicFacetSpecBuilder_ == null) {
@@ -13470,14 +14652,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDynamicFacetSpec() {
       if (dynamicFacetSpecBuilder_ == null) {
         dynamicFacetSpec_ = null;
@@ -13493,14 +14678,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Builder
         getDynamicFacetSpecBuilder() {
 
@@ -13511,14 +14699,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpecOrBuilder
         getDynamicFacetSpecOrBuilder() {
       if (dynamicFacetSpecBuilder_ != null) {
@@ -13533,13 +14724,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+     * to enable dynamic facets. Do not set this field.
      * The specification for dynamically generated facets. Notice that only
      * textual facets can be dynamically generated.
-     * This feature requires additional allowlisting. Contact Retail Search
-     * support team if you are interested in using dynamic facet feature.
      * </pre>
      *
-     * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+     * <code>
+     * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec,
@@ -14031,12 +15224,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14048,6 +15244,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14105,12 +15302,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14122,6 +15322,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14179,12 +15380,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14196,6 +15400,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14254,12 +15459,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14271,6 +15479,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14329,12 +15538,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14346,6 +15558,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14411,12 +15624,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14428,6 +15644,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14492,12 +15709,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14509,6 +15729,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14570,12 +15791,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14587,6 +15811,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -14647,12 +15872,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The keys to fetch and rollup the matching
      * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-     * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-     * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-     * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-     * query latency. Maximum number of keys is 10.
+     * [Product][google.cloud.retail.v2.Product]s attributes,
+     * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+     * attributes from all the matching
+     * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2.Product]s or
+     * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+     * de-duplicated. Notice that rollup attributes will lead to extra query
+     * latency. Maximum number of keys is 30.
      * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
      * fulfillment type and a fulfillment ID must be provided in the format of
      * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -14664,6 +15892,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * discount
      * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
      *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
@@ -15069,6 +16298,206 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       searchMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalizationSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec,
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder,
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder>
+        personalizationSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     *
+     * @return Whether the personalizationSpec field is set.
+     */
+    public boolean hasPersonalizationSpec() {
+      return personalizationSpecBuilder_ != null || personalizationSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     *
+     * @return The personalizationSpec.
+     */
+    public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec getPersonalizationSpec() {
+      if (personalizationSpecBuilder_ == null) {
+        return personalizationSpec_ == null
+            ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance()
+            : personalizationSpec_;
+      } else {
+        return personalizationSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public Builder setPersonalizationSpec(
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec value) {
+      if (personalizationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        personalizationSpec_ = value;
+        onChanged();
+      } else {
+        personalizationSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public Builder setPersonalizationSpec(
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder builderForValue) {
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        personalizationSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public Builder mergePersonalizationSpec(
+        com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec value) {
+      if (personalizationSpecBuilder_ == null) {
+        if (personalizationSpec_ != null) {
+          personalizationSpec_ =
+              com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.newBuilder(
+                      personalizationSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          personalizationSpec_ = value;
+        }
+        onChanged();
+      } else {
+        personalizationSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public Builder clearPersonalizationSpec() {
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpec_ = null;
+        onChanged();
+      } else {
+        personalizationSpec_ = null;
+        personalizationSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder
+        getPersonalizationSpecBuilder() {
+
+      onChanged();
+      return getPersonalizationSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder
+        getPersonalizationSpecOrBuilder() {
+      if (personalizationSpecBuilder_ != null) {
+        return personalizationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return personalizationSpec_ == null
+            ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance()
+            : personalizationSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for personalization.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec,
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder,
+            com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder>
+        getPersonalizationSpecFieldBuilder() {
+      if (personalizationSpecBuilder_ == null) {
+        personalizationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec,
+                com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder,
+                com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder>(
+                getPersonalizationSpec(), getParentForChildren(), isClean());
+        personalizationSpec_ = null;
+      }
+      return personalizationSpecBuilder_;
     }
 
     @java.lang.Override

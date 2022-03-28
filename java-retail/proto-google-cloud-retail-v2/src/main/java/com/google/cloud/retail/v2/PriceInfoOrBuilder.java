@@ -73,7 +73,7 @@ public interface PriceInfoOrBuilder
    * Price of the product.
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371). Schema.org
-   * property [Offer.priceSpecification](https://schema.org/priceSpecification).
+   * property [Offer.price](https://schema.org/price).
    * </pre>
    *
    * <code>float price = 2;</code>

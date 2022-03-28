@@ -28,7 +28,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -43,7 +43,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -118,6 +118,8 @@ public interface SearchRequestOrBuilder
    * could be implemented with an HTTP cookie, which should be able to uniquely
    * identify a visitor on a single device. This unique identifier should not
    * change if the visitor logs in or out of the website.
+   * This should be the same identifier as
+   * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -135,6 +137,8 @@ public interface SearchRequestOrBuilder
    * could be implemented with an HTTP cookie, which should be able to uniquely
    * identify a visitor on a single device. This unique identifier should not
    * change if the visitor logs in or out of the website.
+   * This should be the same identifier as
+   * [UserEvent.visitor_id][google.cloud.retail.v2.UserEvent.visitor_id].
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -292,6 +296,8 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
    * The filter applied to every search request when quality improvement such as
    * query expansion is needed. For example, if a query does not have enough
    * results, an expanded query with
@@ -311,6 +317,8 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The default filter that is applied when a user performs a search without
+   * checking any filters on the search page.
    * The filter applied to every search request when quality improvement such as
    * query expansion is needed. For example, if a query does not have enough
    * results, an expanded query with
@@ -428,44 +436,53 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    *
    * @return Whether the dynamicFacetSpec field is set.
    */
+  @java.lang.Deprecated
   boolean hasDynamicFacetSpec();
   /**
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    *
    * @return The dynamicFacetSpec.
    */
+  @java.lang.Deprecated
   com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec getDynamicFacetSpec();
   /**
    *
    *
    * <pre>
+   * Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic
+   * to enable dynamic facets. Do not set this field.
    * The specification for dynamically generated facets. Notice that only
    * textual facets can be dynamically generated.
-   * This feature requires additional allowlisting. Contact Retail Search
-   * support team if you are interested in using dynamic facet feature.
    * </pre>
    *
-   * <code>.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21;</code>
+   * <code>
+   * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpecOrBuilder getDynamicFacetSpecOrBuilder();
 
   /**
@@ -572,12 +589,15 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -589,6 +609,7 @@ public interface SearchRequestOrBuilder
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -644,12 +665,15 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -661,6 +685,7 @@ public interface SearchRequestOrBuilder
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -716,12 +741,15 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -733,6 +761,7 @@ public interface SearchRequestOrBuilder
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -789,12 +818,15 @@ public interface SearchRequestOrBuilder
    * <pre>
    * The keys to fetch and rollup the matching
    * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes. The attributes from
-   * all the matching [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s are merged and de-duplicated.
-   * Notice that rollup [variant][google.cloud.retail.v2.Product.Type.VARIANT]
-   * [Product][google.cloud.retail.v2.Product]s attributes will lead to extra
-   * query latency. Maximum number of keys is 10.
+   * [Product][google.cloud.retail.v2.Product]s attributes,
+   * [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo] or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s attributes. The
+   * attributes from all the matching
+   * [variant][google.cloud.retail.v2.Product.Type.VARIANT]
+   * [Product][google.cloud.retail.v2.Product]s or
+   * [LocalInventory][google.cloud.retail.v2.LocalInventory]s are merged and
+   * de-duplicated. Notice that rollup attributes will lead to extra query
+   * latency. Maximum number of keys is 30.
    * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], a
    * fulfillment type and a fulfillment ID must be provided in the format of
    * "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
@@ -806,6 +838,7 @@ public interface SearchRequestOrBuilder
    * * discount
    * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
    *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
@@ -970,4 +1003,43 @@ public interface SearchRequestOrBuilder
    * @return The searchMode.
    */
   com.google.cloud.retail.v2.SearchRequest.SearchMode getSearchMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  boolean hasPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec getPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalization_spec = 32;
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder();
 }

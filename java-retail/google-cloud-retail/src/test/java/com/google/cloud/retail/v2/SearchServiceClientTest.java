@@ -108,6 +108,7 @@ public class SearchServiceClientTest {
             .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
             .addAllVariantRollupKeys(new ArrayList<String>())
             .addAllPageCategories(new ArrayList<String>())
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -141,6 +142,7 @@ public class SearchServiceClientTest {
         request.getVariantRollupKeysList(), actualRequest.getVariantRollupKeysList());
     Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
+    Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -173,6 +175,7 @@ public class SearchServiceClientTest {
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .addAllVariantRollupKeys(new ArrayList<String>())
               .addAllPageCategories(new ArrayList<String>())
+              .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

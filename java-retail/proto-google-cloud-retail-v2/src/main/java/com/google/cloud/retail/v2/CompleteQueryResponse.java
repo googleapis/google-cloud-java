@@ -182,7 +182,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -192,7 +196,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -205,7 +213,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -215,7 +227,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -226,7 +242,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -441,7 +461,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -464,7 +488,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -478,7 +506,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -497,7 +529,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Additional custom attributes ingested through BigQuery.
+     * Custom attributes for the suggestion term.
+     * * For "user-data", the attributes are additional custom attributes
+     * ingested through BigQuery.
+     * * For "cloud-retail", the attributes are product attributes generated
+     * by Cloud Retail.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1033,7 +1069,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1056,7 +1096,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1070,7 +1114,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1089,7 +1137,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1115,7 +1167,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1137,7 +1193,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1157,7 +1217,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Additional custom attributes ingested through BigQuery.
+       * Custom attributes for the suggestion term.
+       * * For "user-data", the attributes are additional custom attributes
+       * ingested through BigQuery.
+       * * For "cloud-retail", the attributes are product attributes generated
+       * by Cloud Retail.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1983,9 +2047,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A unique complete token. This should be included in the
-   * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-   * completion, which enables accurate attribution of complete model
-   * performance.
+   * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+   * for search events resulting from this completion, which enables accurate
+   * attribution of complete model performance.
    * </pre>
    *
    * <code>string attribution_token = 2;</code>
@@ -2009,9 +2073,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A unique complete token. This should be included in the
-   * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-   * completion, which enables accurate attribution of complete model
-   * performance.
+   * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+   * for search events resulting from this completion, which enables accurate
+   * attribution of complete model performance.
    * </pre>
    *
    * <code>string attribution_token = 2;</code>
@@ -3051,9 +3115,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A unique complete token. This should be included in the
-     * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-     * completion, which enables accurate attribution of complete model
-     * performance.
+     * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+     * for search events resulting from this completion, which enables accurate
+     * attribution of complete model performance.
      * </pre>
      *
      * <code>string attribution_token = 2;</code>
@@ -3076,9 +3140,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A unique complete token. This should be included in the
-     * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-     * completion, which enables accurate attribution of complete model
-     * performance.
+     * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+     * for search events resulting from this completion, which enables accurate
+     * attribution of complete model performance.
      * </pre>
      *
      * <code>string attribution_token = 2;</code>
@@ -3101,9 +3165,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A unique complete token. This should be included in the
-     * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-     * completion, which enables accurate attribution of complete model
-     * performance.
+     * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+     * for search events resulting from this completion, which enables accurate
+     * attribution of complete model performance.
      * </pre>
      *
      * <code>string attribution_token = 2;</code>
@@ -3125,9 +3189,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A unique complete token. This should be included in the
-     * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-     * completion, which enables accurate attribution of complete model
-     * performance.
+     * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+     * for search events resulting from this completion, which enables accurate
+     * attribution of complete model performance.
      * </pre>
      *
      * <code>string attribution_token = 2;</code>
@@ -3145,9 +3209,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A unique complete token. This should be included in the
-     * [SearchRequest][google.cloud.retail.v2.SearchRequest] resulting from this
-     * completion, which enables accurate attribution of complete model
-     * performance.
+     * [UserEvent.completion_detail][google.cloud.retail.v2.UserEvent.completion_detail]
+     * for search events resulting from this completion, which enables accurate
+     * attribution of complete model performance.
      * </pre>
      *
      * <code>string attribution_token = 2;</code>

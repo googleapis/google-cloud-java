@@ -219,14 +219,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Calculates diff and replaces the entire product dataset. Existing
      * products may be deleted if they are not present in the source location.
-     * Can only be while using
-     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
+     * Can only be set while using
+     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource]. And the BigQuery
+     * dataset must be created in the data location "us (multiple regions in
+     * United States)", otherwise a PERMISSION_DENIED error is thrown.
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -261,14 +260,13 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Calculates diff and replaces the entire product dataset. Existing
      * products may be deleted if they are not present in the source location.
-     * Can only be while using
-     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource].
+     * Can only be set while using
+     * [BigQuerySource][google.cloud.retail.v2.BigQuerySource]. And the BigQuery
+     * dataset must be created in the data location "us (multiple regions in
+     * United States)", otherwise a PERMISSION_DENIED error is thrown.
      * Add the IAM permission "BigQuery Data Viewer" for
      * cloud-retail-customer-data-access&#64;system.gserviceaccount.com before
      * using this feature otherwise an error is thrown.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -426,21 +424,15 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unique identifier provided by client, within the ancestor
-   * dataset scope. Ensures idempotency and used for request deduplication.
-   * Server-generated if unspecified. Up to 128 characters long and must match
-   * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>string request_id = 6;</code>
+   * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @return The requestId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -456,21 +448,15 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Unique identifier provided by client, within the ancestor
-   * dataset scope. Ensures idempotency and used for request deduplication.
-   * Server-generated if unspecified. Up to 128 characters long and must match
-   * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>string request_id = 6;</code>
+   * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @return The bytes for requestId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -1333,20 +1319,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unique identifier provided by client, within the ancestor
-     * dataset scope. Ensures idempotency and used for request deduplication.
-     * Server-generated if unspecified. Up to 128 characters long and must match
-     * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-     * Only supported when
-     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-     * is set to `FULL`.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>string request_id = 6;</code>
+     * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @return The requestId.
      */
+    @java.lang.Deprecated
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
       if (!(ref instanceof java.lang.String)) {
@@ -1362,20 +1342,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unique identifier provided by client, within the ancestor
-     * dataset scope. Ensures idempotency and used for request deduplication.
-     * Server-generated if unspecified. Up to 128 characters long and must match
-     * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-     * Only supported when
-     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-     * is set to `FULL`.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>string request_id = 6;</code>
+     * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @return The bytes for requestId.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
       if (ref instanceof String) {
@@ -1391,21 +1365,15 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unique identifier provided by client, within the ancestor
-     * dataset scope. Ensures idempotency and used for request deduplication.
-     * Server-generated if unspecified. Up to 128 characters long and must match
-     * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-     * Only supported when
-     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-     * is set to `FULL`.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>string request_id = 6;</code>
+     * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRequestId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1419,20 +1387,14 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unique identifier provided by client, within the ancestor
-     * dataset scope. Ensures idempotency and used for request deduplication.
-     * Server-generated if unspecified. Up to 128 characters long and must match
-     * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-     * Only supported when
-     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-     * is set to `FULL`.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>string request_id = 6;</code>
+     * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRequestId() {
 
       requestId_ = getDefaultInstance().getRequestId();
@@ -1443,21 +1405,15 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Unique identifier provided by client, within the ancestor
-     * dataset scope. Ensures idempotency and used for request deduplication.
-     * Server-generated if unspecified. Up to 128 characters long and must match
-     * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-     * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-     * Only supported when
-     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-     * is set to `FULL`.
+     * Deprecated. This field has no effect.
      * </pre>
      *
-     * <code>string request_id = 6;</code>
+     * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

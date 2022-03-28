@@ -61,6 +61,9 @@
             "AddFulfillmentPlaces": {
               "methods": ["addFulfillmentPlacesAsync", "addFulfillmentPlacesAsync", "addFulfillmentPlacesAsync", "addFulfillmentPlacesOperationCallable", "addFulfillmentPlacesCallable"]
             },
+            "AddLocalInventories": {
+              "methods": ["addLocalInventoriesAsync", "addLocalInventoriesAsync", "addLocalInventoriesAsync", "addLocalInventoriesOperationCallable", "addLocalInventoriesCallable"]
+            },
             "CreateProduct": {
               "methods": ["createProduct", "createProduct", "createProduct", "createProductCallable"]
             },
@@ -78,6 +81,9 @@
             },
             "RemoveFulfillmentPlaces": {
               "methods": ["removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesOperationCallable", "removeFulfillmentPlacesCallable"]
+            },
+            "RemoveLocalInventories": {
+              "methods": ["removeLocalInventoriesAsync", "removeLocalInventoriesAsync", "removeLocalInventoriesAsync", "removeLocalInventoriesOperationCallable", "removeLocalInventoriesCallable"]
             },
             "SetInventory": {
               "methods": ["setInventoryAsync", "setInventoryAsync", "setInventoryOperationCallable", "setInventoryCallable"]

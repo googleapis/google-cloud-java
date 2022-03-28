@@ -28,6 +28,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2.AddLocalInventoriesMetadata;
+import com.google.cloud.retail.v2.AddLocalInventoriesRequest;
+import com.google.cloud.retail.v2.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.GetProductRequest;
@@ -40,6 +43,9 @@ import com.google.cloud.retail.v2.Product;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesMetadata;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesRequest;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesResponse;
 import com.google.cloud.retail.v2.SetInventoryMetadata;
 import com.google.cloud.retail.v2.SetInventoryRequest;
 import com.google.cloud.retail.v2.SetInventoryResponse;
@@ -147,6 +153,26 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AddLocalInventoriesRequest, Operation>
+      addLocalInventoriesMethodDescriptor =
+          MethodDescriptor.<AddLocalInventoriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.ProductService/AddLocalInventories")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddLocalInventoriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesMethodDescriptor =
+          MethodDescriptor.<RemoveLocalInventoriesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2.ProductService/RemoveLocalInventories")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveLocalInventoriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateProductRequest, Product> createProductCallable;
   private final UnaryCallable<GetProductRequest, Product> getProductCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
@@ -171,6 +197,17 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           RemoveFulfillmentPlacesResponse,
           RemoveFulfillmentPlacesMetadata>
       removeFulfillmentPlacesOperationCallable;
+  private final UnaryCallable<AddLocalInventoriesRequest, Operation> addLocalInventoriesCallable;
+  private final OperationCallable<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationCallable;
+  private final UnaryCallable<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesCallable;
+  private final OperationCallable<
+          RemoveLocalInventoriesRequest,
+          RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -307,6 +344,27 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesTransportSettings =
+        GrpcCallSettings.<AddLocalInventoriesRequest, Operation>newBuilder()
+            .setMethodDescriptor(addLocalInventoriesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("product", String.valueOf(request.getProduct()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<RemoveLocalInventoriesRequest, Operation>
+        removeLocalInventoriesTransportSettings =
+            GrpcCallSettings.<RemoveLocalInventoriesRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeLocalInventoriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("product", String.valueOf(request.getProduct()));
+                      return params.build();
+                    })
+                .build();
 
     this.createProductCallable =
         callableFactory.createUnaryCallable(
@@ -364,6 +422,28 @@ public class GrpcProductServiceStub extends ProductServiceStub {
         callableFactory.createOperationCallable(
             removeFulfillmentPlacesTransportSettings,
             settings.removeFulfillmentPlacesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.addLocalInventoriesCallable =
+        callableFactory.createUnaryCallable(
+            addLocalInventoriesTransportSettings,
+            settings.addLocalInventoriesSettings(),
+            clientContext);
+    this.addLocalInventoriesOperationCallable =
+        callableFactory.createOperationCallable(
+            addLocalInventoriesTransportSettings,
+            settings.addLocalInventoriesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.removeLocalInventoriesCallable =
+        callableFactory.createUnaryCallable(
+            removeLocalInventoriesTransportSettings,
+            settings.removeLocalInventoriesSettings(),
+            clientContext);
+    this.removeLocalInventoriesOperationCallable =
+        callableFactory.createOperationCallable(
+            removeLocalInventoriesTransportSettings,
+            settings.removeLocalInventoriesOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -452,6 +532,32 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           RemoveFulfillmentPlacesMetadata>
       removeFulfillmentPlacesOperationCallable() {
     return removeFulfillmentPlacesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddLocalInventoriesRequest, Operation> addLocalInventoriesCallable() {
+    return addLocalInventoriesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationCallable() {
+    return addLocalInventoriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveLocalInventoriesRequest, Operation> removeLocalInventoriesCallable() {
+    return removeLocalInventoriesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RemoveLocalInventoriesRequest,
+          RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationCallable() {
+    return removeLocalInventoriesOperationCallable;
   }
 
   @Override

@@ -24,6 +24,9 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.AddFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2.AddLocalInventoriesMetadata;
+import com.google.cloud.retail.v2.AddLocalInventoriesRequest;
+import com.google.cloud.retail.v2.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.GetProductRequest;
@@ -36,6 +39,9 @@ import com.google.cloud.retail.v2.Product;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesMetadata;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesRequest;
+import com.google.cloud.retail.v2.RemoveLocalInventoriesResponse;
 import com.google.cloud.retail.v2.SetInventoryMetadata;
 import com.google.cloud.retail.v2.SetInventoryRequest;
 import com.google.cloud.retail.v2.SetInventoryResponse;
@@ -123,6 +129,30 @@ public abstract class ProductServiceStub implements BackgroundResource {
   public UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
       removeFulfillmentPlacesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeFulfillmentPlacesCallable()");
+  }
+
+  public OperationCallable<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addLocalInventoriesOperationCallable()");
+  }
+
+  public UnaryCallable<AddLocalInventoriesRequest, Operation> addLocalInventoriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: addLocalInventoriesCallable()");
+  }
+
+  public OperationCallable<
+          RemoveLocalInventoriesRequest,
+          RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeLocalInventoriesOperationCallable()");
+  }
+
+  public UnaryCallable<RemoveLocalInventoriesRequest, Operation> removeLocalInventoriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeLocalInventoriesCallable()");
   }
 
   @Override

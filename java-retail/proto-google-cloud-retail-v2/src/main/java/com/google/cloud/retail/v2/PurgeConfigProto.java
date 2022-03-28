@@ -50,22 +50,24 @@ public final class PurgeConfigProto {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/retail/v2/purge_config.pr"
           + "oto\022\026google.cloud.retail.v2\032\037google/api/"
-          + "field_behavior.proto\"\017\n\rPurgeMetadata\"Q\n"
-          + "\026PurgeUserEventsRequest\022\023\n\006parent\030\001 \001(\tB"
-          + "\003\340A\002\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010"
-          + "\"6\n\027PurgeUserEventsResponse\022\033\n\023purged_ev"
-          + "ents_count\030\001 \001(\003B\305\001\n\032com.google.cloud.re"
-          + "tail.v2B\020PurgeConfigProtoP\001Z<google.gola"
-          + "ng.org/genproto/googleapis/cloud/retail/"
-          + "v2;retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail"
-          + ".V2\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::C"
-          + "loud::Retail::V2b\006proto3"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\"\017\n\rPurgeMetadata\"Q\n\026PurgeUserEve"
+          + "ntsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\023\n\006filte"
+          + "r\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUser"
+          + "EventsResponse\022\033\n\023purged_events_count\030\001 "
+          + "\001(\003B\305\001\n\032com.google.cloud.retail.v2B\020Purg"
+          + "eConfigProtoP\001Z<google.golang.org/genpro"
+          + "to/googleapis/cloud/retail/v2;retail\242\002\006R"
+          + "ETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\"
+          + "Cloud\\Retail\\V2\352\002\031Google::Cloud::Retail:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_retail_v2_PurgeMetadata_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -95,6 +97,7 @@ public final class PurgeConfigProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

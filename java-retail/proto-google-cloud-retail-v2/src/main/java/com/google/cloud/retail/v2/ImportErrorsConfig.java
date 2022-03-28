@@ -158,9 +158,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Google Cloud Storage path for import errors. This must be an empty,
-   * existing Cloud Storage bucket. Import errors will be written to a file in
-   * this bucket, one per line, as a JSON-encoded
+   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * existing Cloud Storage directory. Import errors will be written to
+   * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.
    * </pre>
    *
@@ -175,9 +175,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Google Cloud Storage path for import errors. This must be an empty,
-   * existing Cloud Storage bucket. Import errors will be written to a file in
-   * this bucket, one per line, as a JSON-encoded
+   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * existing Cloud Storage directory. Import errors will be written to
+   * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.
    * </pre>
    *
@@ -205,9 +205,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Google Cloud Storage path for import errors. This must be an empty,
-   * existing Cloud Storage bucket. Import errors will be written to a file in
-   * this bucket, one per line, as a JSON-encoded
+   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * existing Cloud Storage directory. Import errors will be written to
+   * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.
    * </pre>
    *
@@ -591,9 +591,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *
@@ -609,9 +609,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *
@@ -640,9 +640,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *
@@ -671,9 +671,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *
@@ -695,9 +695,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *
@@ -717,9 +717,9 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Google Cloud Storage path for import errors. This must be an empty,
-     * existing Cloud Storage bucket. Import errors will be written to a file in
-     * this bucket, one per line, as a JSON-encoded
+     * Google Cloud Storage prefix for import errors. This must be an empty,
+     * existing Cloud Storage directory. Import errors will be written to
+     * sharded files in this directory, one per line, as a JSON-encoded
      * `google.rpc.Status` message.
      * </pre>
      *

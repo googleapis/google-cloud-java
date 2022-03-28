@@ -57,6 +57,9 @@ public interface SetDefaultBranchRequestOrBuilder
    * The final component of the resource name of a branch.
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   * If there are no sufficient active products in the targeted branch and
+   * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+   * FAILED_PRECONDITION error is returned.
    * </pre>
    *
    * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -71,6 +74,9 @@ public interface SetDefaultBranchRequestOrBuilder
    * The final component of the resource name of a branch.
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   * If there are no sufficient active products in the targeted branch and
+   * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+   * FAILED_PRECONDITION error is returned.
    * </pre>
    *
    * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -111,4 +117,19 @@ public interface SetDefaultBranchRequestOrBuilder
    * @return The bytes for note.
    */
   com.google.protobuf.ByteString getNoteBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, it permits switching to a branch with
+   * [branch_id][google.cloud.retail.v2.SetDefaultBranchRequest.branch_id] even
+   * if it has no sufficient active products.
+   * </pre>
+   *
+   * <code>bool force = 4;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

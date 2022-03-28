@@ -22,7 +22,10 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * [Product][google.cloud.retail.v2.Product] thumbnail/detail image.
+ * [Product][google.cloud.retail.v2.Product] image. Recommendations AI and
+ * Retail Search do not use product images to improve prediction and search
+ * results. However, product images can be returned in results, and are shown in
+ * prediction or search previews in the console.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.Image}
@@ -398,7 +401,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Product][google.cloud.retail.v2.Product] thumbnail/detail image.
+   * [Product][google.cloud.retail.v2.Product] image. Recommendations AI and
+   * Retail Search do not use product images to improve prediction and search
+   * results. However, product images can be returned in results, and are shown in
+   * prediction or search previews in the console.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.Image}

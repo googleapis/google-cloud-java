@@ -68,9 +68,13 @@ public final class CommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_UserInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_retail_v2_Promotion_descriptor;
+      internal_static_google_cloud_retail_v2_LocalInventory_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_retail_v2_Promotion_fieldAccessorTable;
+      internal_static_google_cloud_retail_v2_LocalInventory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_LocalInventory_AttributesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_LocalInventory_AttributesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -109,13 +113,19 @@ public final class CommonProto {
           + "\002\022\030\n\020rating_histogram\030\003 \003(\005\"`\n\010UserInfo\022"
           + "\017\n\007user_id\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\022\n\n"
           + "user_agent\030\003 \001(\t\022\033\n\023direct_user_request\030"
-          + "\004 \001(\010\"!\n\tPromotion\022\024\n\014promotion_id\030\001 \001(\t"
-          + "B\300\001\n\032com.google.cloud.retail.v2B\013CommonP"
-          + "rotoP\001Z<google.golang.org/genproto/googl"
-          + "eapis/cloud/retail/v2;retail\242\002\006RETAIL\252\002\026"
-          + "Google.Cloud.Retail.V2\312\002\026Google\\Cloud\\Re"
-          + "tail\\V2\352\002\031Google::Cloud::Retail::V2b\006pro"
-          + "to3"
+          + "\004 \001(\010\"\241\002\n\016LocalInventory\022\020\n\010place_id\030\001 \001"
+          + "(\t\0225\n\nprice_info\030\002 \001(\0132!.google.cloud.re"
+          + "tail.v2.PriceInfo\022J\n\nattributes\030\003 \003(\01326."
+          + "google.cloud.retail.v2.LocalInventory.At"
+          + "tributesEntry\022\036\n\021fulfillment_types\030\004 \003(\t"
+          + "B\003\340A\004\032Z\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\0226\n"
+          + "\005value\030\002 \001(\0132\'.google.cloud.retail.v2.Cu"
+          + "stomAttribute:\0028\001B\300\001\n\032com.google.cloud.r"
+          + "etail.v2B\013CommonProtoP\001Z<google.golang.o"
+          + "rg/genproto/googleapis/cloud/retail/v2;r"
+          + "etail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312"
+          + "\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud"
+          + "::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -210,13 +220,21 @@ public final class CommonProto {
             new java.lang.String[] {
               "UserId", "IpAddress", "UserAgent", "DirectUserRequest",
             });
-    internal_static_google_cloud_retail_v2_Promotion_descriptor =
+    internal_static_google_cloud_retail_v2_LocalInventory_descriptor =
         getDescriptor().getMessageTypes().get(9);
-    internal_static_google_cloud_retail_v2_Promotion_fieldAccessorTable =
+    internal_static_google_cloud_retail_v2_LocalInventory_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_retail_v2_Promotion_descriptor,
+            internal_static_google_cloud_retail_v2_LocalInventory_descriptor,
             new java.lang.String[] {
-              "PromotionId",
+              "PlaceId", "PriceInfo", "Attributes", "FulfillmentTypes",
+            });
+    internal_static_google_cloud_retail_v2_LocalInventory_AttributesEntry_descriptor =
+        internal_static_google_cloud_retail_v2_LocalInventory_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_retail_v2_LocalInventory_AttributesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_LocalInventory_AttributesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -29,6 +29,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Highly recommended for logged-in users. Unique identifier for logged-in
    * user, such as a user name.
+   * Always use a hashed value for this ID.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -44,6 +45,7 @@ public interface UserInfoOrBuilder
    * <pre>
    * Highly recommended for logged-in users. Unique identifier for logged-in
    * user, such as a user name.
+   * Always use a hashed value for this ID.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -58,13 +60,15 @@ public interface UserInfoOrBuilder
    *
    *
    * <pre>
-   * The end user's IP address. Required for getting
-   * [SearchResponse.sponsored_results][google.cloud.retail.v2.SearchResponse.sponsored_results].
-   * This field is used to extract location information for personalization.
+   * The end user's IP address. This field is used to extract location
+   * information for personalization.
    * This field must be either an IPv4 address (e.g. "104.133.9.80") or an IPv6
    * address (e.g. "2001:0db8:85a3:0000:0000:8a2e:0370:7334"). Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * This should not be set when using the JavaScript tag in
+   * This should not be set when:
+   * * setting
+   * [SearchRequest.user_info][google.cloud.retail.v2.SearchRequest.user_info].
+   * * using the JavaScript tag in
    * [UserEventService.CollectUserEvent][google.cloud.retail.v2.UserEventService.CollectUserEvent]
    * or if
    * [direct_user_request][google.cloud.retail.v2.UserInfo.direct_user_request]
@@ -80,13 +84,15 @@ public interface UserInfoOrBuilder
    *
    *
    * <pre>
-   * The end user's IP address. Required for getting
-   * [SearchResponse.sponsored_results][google.cloud.retail.v2.SearchResponse.sponsored_results].
-   * This field is used to extract location information for personalization.
+   * The end user's IP address. This field is used to extract location
+   * information for personalization.
    * This field must be either an IPv4 address (e.g. "104.133.9.80") or an IPv6
    * address (e.g. "2001:0db8:85a3:0000:0000:8a2e:0370:7334"). Otherwise, an
    * INVALID_ARGUMENT error is returned.
-   * This should not be set when using the JavaScript tag in
+   * This should not be set when:
+   * * setting
+   * [SearchRequest.user_info][google.cloud.retail.v2.SearchRequest.user_info].
+   * * using the JavaScript tag in
    * [UserEventService.CollectUserEvent][google.cloud.retail.v2.UserEventService.CollectUserEvent]
    * or if
    * [direct_user_request][google.cloud.retail.v2.UserInfo.direct_user_request]

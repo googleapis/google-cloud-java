@@ -118,6 +118,10 @@ public interface GcsSourceOrBuilder
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   * Supported values for control imports:
+   * * 'control' (default): One JSON [Control][] per line.
+   * Supported values for catalog attribute imports:
+   * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>
@@ -141,6 +145,10 @@ public interface GcsSourceOrBuilder
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   * Supported values for control imports:
+   * * 'control' (default): One JSON [Control][] per line.
+   * Supported values for catalog attribute imports:
+   * * 'catalog_attribute' (default): One CSV [CatalogAttribute][] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>

@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Retail API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= CatalogServiceClient =======================
  *
@@ -35,9 +37,8 @@
  *
  * <p>Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please submit a form
- * [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in using
- * Retail Search.
+ * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
+ * Search on Cloud Console before using this feature.
  *
  * <p>Sample for CompletionServiceClient:
  *
@@ -100,9 +101,8 @@
  *
  * <p>Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please submit a form
- * [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in using
- * Retail Search.
+ * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
+ * Search on Cloud Console before using this feature.
  *
  * <p>Sample for SearchServiceClient:
  *
@@ -128,6 +128,7 @@
  *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
  *           .addAllVariantRollupKeys(new ArrayList<String>())
  *           .addAllPageCategories(new ArrayList<String>())
+ *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

@@ -1439,7 +1439,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    * Price of the product.
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371). Schema.org
-   * property [Offer.priceSpecification](https://schema.org/priceSpecification).
+   * property [Offer.price](https://schema.org/price).
    * </pre>
    *
    * <code>float price = 2;</code>
@@ -2337,7 +2337,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * Price of the product.
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
-     * property [Offer.priceSpecification](https://schema.org/priceSpecification).
+     * property [Offer.price](https://schema.org/price).
      * </pre>
      *
      * <code>float price = 2;</code>
@@ -2355,7 +2355,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * Price of the product.
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
-     * property [Offer.priceSpecification](https://schema.org/priceSpecification).
+     * property [Offer.price](https://schema.org/price).
      * </pre>
      *
      * <code>float price = 2;</code>
@@ -2376,7 +2376,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      * Price of the product.
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371). Schema.org
-     * property [Offer.priceSpecification](https://schema.org/priceSpecification).
+     * property [Offer.price](https://schema.org/price).
      * </pre>
      *
      * <code>float price = 2;</code>

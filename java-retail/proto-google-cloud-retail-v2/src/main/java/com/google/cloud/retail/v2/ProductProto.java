@@ -48,6 +48,7 @@ public final class ProductProto {
           + "google.cloud.retail.v2\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032#google/cloud/retail/v2/common.proto\032"
+          + "&google/cloud/retail/v2/promotion.proto\032"
           + "\036google/protobuf/duration.proto\032 google/"
           + "protobuf/field_mask.proto\032\037google/protob"
           + "uf/timestamp.proto\032\036google/protobuf/wrap"
@@ -110,6 +111,7 @@ public final class ProductProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.retail.v2.CommonProto.getDescriptor(),
+              com.google.cloud.retail.v2.PromotionProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -174,6 +176,7 @@ public final class ProductProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2.CommonProto.getDescriptor();
+    com.google.cloud.retail.v2.PromotionProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

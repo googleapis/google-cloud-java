@@ -148,6 +148,34 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
         .removeFulfillmentPlacesOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to addLocalInventories. */
+  public UnaryCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).addLocalInventoriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addLocalInventories. */
+  public OperationCallSettings<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).addLocalInventoriesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeLocalInventories. */
+  public UnaryCallSettings<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).removeLocalInventoriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeLocalInventories. */
+  public OperationCallSettings<
+          RemoveLocalInventoriesRequest,
+          RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings())
+        .removeLocalInventoriesOperationSettings();
+  }
+
   public static final ProductServiceSettings create(ProductServiceStubSettings stub)
       throws IOException {
     return new ProductServiceSettings.Builder(stub.toBuilder()).build();
@@ -322,6 +350,34 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
             RemoveFulfillmentPlacesMetadata>
         removeFulfillmentPlacesOperationSettings() {
       return getStubSettingsBuilder().removeFulfillmentPlacesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addLocalInventories. */
+    public UnaryCallSettings.Builder<AddLocalInventoriesRequest, Operation>
+        addLocalInventoriesSettings() {
+      return getStubSettingsBuilder().addLocalInventoriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addLocalInventories. */
+    public OperationCallSettings.Builder<
+            AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+        addLocalInventoriesOperationSettings() {
+      return getStubSettingsBuilder().addLocalInventoriesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeLocalInventories. */
+    public UnaryCallSettings.Builder<RemoveLocalInventoriesRequest, Operation>
+        removeLocalInventoriesSettings() {
+      return getStubSettingsBuilder().removeLocalInventoriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeLocalInventories. */
+    public OperationCallSettings.Builder<
+            RemoveLocalInventoriesRequest,
+            RemoveLocalInventoriesResponse,
+            RemoveLocalInventoriesMetadata>
+        removeLocalInventoriesOperationSettings() {
+      return getStubSettingsBuilder().removeLocalInventoriesOperationSettings();
     }
 
     @Override

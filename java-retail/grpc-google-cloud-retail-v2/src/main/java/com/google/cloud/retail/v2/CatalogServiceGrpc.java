@@ -324,9 +324,6 @@ public final class CatalogServiceGrpc {
      *   (if branch is not explicitly set).
      * * UserEventService will only join events with products from branch
      *   {newBranch}.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void setDefaultBranch(
@@ -343,9 +340,6 @@ public final class CatalogServiceGrpc {
      * Get which branch is currently default branch set by
      * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
      * method under a specified parent catalog.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void getDefaultBranch(
@@ -473,9 +467,6 @@ public final class CatalogServiceGrpc {
      *   (if branch is not explicitly set).
      * * UserEventService will only join events with products from branch
      *   {newBranch}.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void setDefaultBranch(
@@ -494,9 +485,6 @@ public final class CatalogServiceGrpc {
      * Get which branch is currently default branch set by
      * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
      * method under a specified parent catalog.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void getDefaultBranch(
@@ -588,9 +576,6 @@ public final class CatalogServiceGrpc {
      *   (if branch is not explicitly set).
      * * UserEventService will only join events with products from branch
      *   {newBranch}.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.protobuf.Empty setDefaultBranch(
@@ -606,9 +591,6 @@ public final class CatalogServiceGrpc {
      * Get which branch is currently default branch set by
      * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
      * method under a specified parent catalog.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.cloud.retail.v2.GetDefaultBranchResponse getDefaultBranch(
@@ -697,9 +679,6 @@ public final class CatalogServiceGrpc {
      *   (if branch is not explicitly set).
      * * UserEventService will only join events with products from branch
      *   {newBranch}.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -715,9 +694,6 @@ public final class CatalogServiceGrpc {
      * Get which branch is currently default branch set by
      * [CatalogService.SetDefaultBranch][google.cloud.retail.v2.CatalogService.SetDefaultBranch]
      * method under a specified parent catalog.
-     * This feature is only available for users who have Retail Search enabled.
-     * Please submit a form [here](https://cloud.google.com/contact) to contact
-     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

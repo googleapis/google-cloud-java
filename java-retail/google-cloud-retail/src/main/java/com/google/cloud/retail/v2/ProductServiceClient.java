@@ -903,17 +903,17 @@ public class ProductServiceClient implements BackgroundResource {
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
    * pre-existing inventory information for this product will be used.
    *
-   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
-   * inventory information will be preserved.
+   * <p>If no inventory fields are set in
+   * [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any
+   * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -948,6 +948,24 @@ public class ProductServiceClient implements BackgroundResource {
    *     information, the provided inventory information will be merged while respecting the last
    *     update time for each inventory field, using the provided or default value for
    *     [SetInventoryRequest.set_time][google.cloud.retail.v2.SetInventoryRequest.set_time].
+   *     <p>The caller can replace place IDs for a subset of fulfillment types in the following
+   *     ways:
+   *     <ul>
+   *       <li>Adds "fulfillment_info" in
+   *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask]
+   *       <li>Specifies only the desired fulfillment types and corresponding place IDs to update in
+   *           [SetInventoryRequest.inventory.fulfillment_info][]
+   *     </ul>
+   *     <p>The caller can clear all place IDs from a subset of fulfillment types in the following
+   *     ways:
+   *     <ul>
+   *       <li>Adds "fulfillment_info" in
+   *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask]
+   *       <li>Specifies only the desired fulfillment types to clear in
+   *           [SetInventoryRequest.inventory.fulfillment_info][]
+   *       <li>Checks that only the desired fulfillment info types have empty
+   *           [SetInventoryRequest.inventory.fulfillment_info.place_ids][]
+   *     </ul>
    *     <p>The last update time is recorded for the following inventory fields:
    *     <ul>
    *       <li>[Product.price_info][google.cloud.retail.v2.Product.price_info]
@@ -958,8 +976,8 @@ public class ProductServiceClient implements BackgroundResource {
    *     <p>If a full overwrite of inventory information while ignoring timestamps is needed,
    *     [UpdateProduct][] should be invoked instead.
    * @param setMask Indicates which inventory fields in the provided
-   *     [Product][google.cloud.retail.v2.Product] to update. If not set or set with empty paths,
-   *     all inventory fields will be updated.
+   *     [Product][google.cloud.retail.v2.Product] to update.
+   *     <p>At least one field must be provided.
    *     <p>If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned
    *     and the entire update will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -997,17 +1015,17 @@ public class ProductServiceClient implements BackgroundResource {
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
    * pre-existing inventory information for this product will be used.
    *
-   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
-   * inventory information will be preserved.
+   * <p>If no inventory fields are set in
+   * [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any
+   * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1058,17 +1076,17 @@ public class ProductServiceClient implements BackgroundResource {
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
    * pre-existing inventory information for this product will be used.
    *
-   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
-   * inventory information will be preserved.
+   * <p>If no inventory fields are set in
+   * [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any
+   * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1119,17 +1137,17 @@ public class ProductServiceClient implements BackgroundResource {
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
    * pre-existing inventory information for this product will be used.
    *
-   * <p>If no inventory fields are set in [UpdateProductRequest.set_mask][], then any existing
-   * inventory information will be preserved.
+   * <p>If no inventory fields are set in
+   * [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any
+   * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1165,9 +1183,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1210,9 +1227,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1254,9 +1270,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1298,9 +1313,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1342,9 +1356,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1385,9 +1398,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1430,9 +1442,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1474,9 +1485,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1518,9 +1528,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1564,9 +1573,8 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1592,6 +1600,474 @@ public class ProductServiceClient implements BackgroundResource {
   public final UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
       removeFulfillmentPlacesCallable() {
     return stub.removeFulfillmentPlacesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list
+   * of places, while respecting the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be modified using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   AddLocalInventoriesResponse response =
+   *       productServiceClient.addLocalInventoriesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesAsync(ProductName product) {
+    AddLocalInventoriesRequest request =
+        AddLocalInventoriesRequest.newBuilder()
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    return addLocalInventoriesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list
+   * of places, while respecting the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be modified using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   AddLocalInventoriesResponse response =
+   *       productServiceClient.addLocalInventoriesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesAsync(String product) {
+    AddLocalInventoriesRequest request =
+        AddLocalInventoriesRequest.newBuilder().setProduct(product).build();
+    return addLocalInventoriesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list
+   * of places, while respecting the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be modified using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddLocalInventoriesRequest request =
+   *       AddLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllLocalInventories(new ArrayList<LocalInventory>())
+   *           .setAddMask(FieldMask.newBuilder().build())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   AddLocalInventoriesResponse response =
+   *       productServiceClient.addLocalInventoriesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesAsync(AddLocalInventoriesRequest request) {
+    return addLocalInventoriesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list
+   * of places, while respecting the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be modified using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddLocalInventoriesRequest request =
+   *       AddLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllLocalInventories(new ArrayList<LocalInventory>())
+   *           .setAddMask(FieldMask.newBuilder().build())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<AddLocalInventoriesResponse, AddLocalInventoriesMetadata> future =
+   *       productServiceClient.addLocalInventoriesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AddLocalInventoriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
+      addLocalInventoriesOperationCallable() {
+    return stub.addLocalInventoriesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list
+   * of places, while respecting the last update timestamps of each inventory field.
+   *
+   * <p>This process is asynchronous and does not require the
+   * [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If
+   * the request is valid, the update will be enqueued and processed downstream. As a consequence,
+   * when a response is returned, updates are not immediately manifested in the
+   * [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be modified using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   AddLocalInventoriesRequest request =
+   *       AddLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllLocalInventories(new ArrayList<LocalInventory>())
+   *           .setAddMask(FieldMask.newBuilder().build())
+   *           .setAddTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.addLocalInventoriesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddLocalInventoriesRequest, Operation> addLocalInventoriesCallable() {
+    return stub.addLocalInventoriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of
+   * places at a removal timestamp.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed downstream. As a consequence, when a response is returned, removals are not
+   * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be removed using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   RemoveLocalInventoriesResponse response =
+   *       productServiceClient.removeLocalInventoriesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesAsync(ProductName product) {
+    RemoveLocalInventoriesRequest request =
+        RemoveLocalInventoriesRequest.newBuilder()
+            .setProduct(product == null ? null : product.toString())
+            .build();
+    return removeLocalInventoriesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of
+   * places at a removal timestamp.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed downstream. As a consequence, when a response is returned, removals are not
+   * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be removed using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String product =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   RemoveLocalInventoriesResponse response =
+   *       productServiceClient.removeLocalInventoriesAsync(product).get();
+   * }
+   * }</pre>
+   *
+   * @param product Required. Full resource name of [Product][google.cloud.retail.v2.Product], such
+   *     as
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *     <p>If the caller does not have permission to access the
+   *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
+   *     PERMISSION_DENIED error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesAsync(String product) {
+    RemoveLocalInventoriesRequest request =
+        RemoveLocalInventoriesRequest.newBuilder().setProduct(product).build();
+    return removeLocalInventoriesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of
+   * places at a removal timestamp.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed downstream. As a consequence, when a response is returned, removals are not
+   * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be removed using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveLocalInventoriesRequest request =
+   *       RemoveLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   RemoveLocalInventoriesResponse response =
+   *       productServiceClient.removeLocalInventoriesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesAsync(RemoveLocalInventoriesRequest request) {
+    return removeLocalInventoriesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of
+   * places at a removal timestamp.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed downstream. As a consequence, when a response is returned, removals are not
+   * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be removed using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveLocalInventoriesRequest request =
+   *       RemoveLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<RemoveLocalInventoriesResponse, RemoveLocalInventoriesMetadata> future =
+   *       productServiceClient.removeLocalInventoriesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveLocalInventoriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RemoveLocalInventoriesRequest,
+          RemoveLocalInventoriesResponse,
+          RemoveLocalInventoriesMetadata>
+      removeLocalInventoriesOperationCallable() {
+    return stub.removeLocalInventoriesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of
+   * places at a removal timestamp.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed downstream. As a consequence, when a response is returned, removals are not
+   * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
+   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Local inventory information can only be removed using this method.
+   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
+   * inventories.
+   *
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   RemoveLocalInventoriesRequest request =
+   *       RemoveLocalInventoriesRequest.newBuilder()
+   *           .setProduct(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .addAllPlaceIds(new ArrayList<String>())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.removeLocalInventoriesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveLocalInventoriesRequest, Operation>
+      removeLocalInventoriesCallable() {
+    return stub.removeLocalInventoriesCallable();
   }
 
   @Override

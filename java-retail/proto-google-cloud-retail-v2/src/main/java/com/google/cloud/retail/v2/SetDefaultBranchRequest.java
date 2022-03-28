@@ -93,6 +93,11 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
               note_ = s;
               break;
             }
+          case 32:
+            {
+              force_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -187,6 +192,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    * The final component of the resource name of a branch.
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   * If there are no sufficient active products in the targeted branch and
+   * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+   * FAILED_PRECONDITION error is returned.
    * </pre>
    *
    * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -212,6 +220,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
    * The final component of the resource name of a branch.
    * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
    * error is returned.
+   * If there are no sufficient active products in the targeted branch and
+   * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+   * FAILED_PRECONDITION error is returned.
    * </pre>
    *
    * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -288,6 +299,26 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 4;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, it permits switching to a branch with
+   * [branch_id][google.cloud.retail.v2.SetDefaultBranchRequest.branch_id] even
+   * if it has no sufficient active products.
+   * </pre>
+   *
+   * <code>bool force = 4;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -311,6 +342,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, note_);
     }
+    if (force_ != false) {
+      output.writeBool(4, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -328,6 +362,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, note_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -348,6 +385,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     if (!getCatalog().equals(other.getCatalog())) return false;
     if (!getBranchId().equals(other.getBranchId())) return false;
     if (!getNote().equals(other.getNote())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -365,6 +403,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getBranchId().hashCode();
     hash = (37 * hash) + NOTE_FIELD_NUMBER;
     hash = (53 * hash) + getNote().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -516,6 +556,8 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
 
       note_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -546,6 +588,7 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       result.catalog_ = catalog_;
       result.branchId_ = branchId_;
       result.note_ = note_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -607,6 +650,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       if (!other.getNote().isEmpty()) {
         note_ = other.note_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -757,6 +803,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * The final component of the resource name of a branch.
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     * If there are no sufficient active products in the targeted branch and
+     * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+     * FAILED_PRECONDITION error is returned.
      * </pre>
      *
      * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -781,6 +830,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * The final component of the resource name of a branch.
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     * If there are no sufficient active products in the targeted branch and
+     * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+     * FAILED_PRECONDITION error is returned.
      * </pre>
      *
      * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -805,6 +857,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * The final component of the resource name of a branch.
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     * If there are no sufficient active products in the targeted branch and
+     * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+     * FAILED_PRECONDITION error is returned.
      * </pre>
      *
      * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -828,6 +883,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * The final component of the resource name of a branch.
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     * If there are no sufficient active products in the targeted branch and
+     * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+     * FAILED_PRECONDITION error is returned.
      * </pre>
      *
      * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -847,6 +905,9 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
      * The final component of the resource name of a branch.
      * This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
      * error is returned.
+     * If there are no sufficient active products in the targeted branch and
+     * [force][google.cloud.retail.v2.SetDefaultBranchRequest.force] is not set, a
+     * FAILED_PRECONDITION error is returned.
      * </pre>
      *
      * <code>string branch_id = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -987,6 +1048,64 @@ public final class SetDefaultBranchRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       note_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it permits switching to a branch with
+     * [branch_id][google.cloud.retail.v2.SetDefaultBranchRequest.branch_id] even
+     * if it has no sufficient active products.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it permits switching to a branch with
+     * [branch_id][google.cloud.retail.v2.SetDefaultBranchRequest.branch_id] even
+     * if it has no sufficient active products.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, it permits switching to a branch with
+     * [branch_id][google.cloud.retail.v2.SetDefaultBranchRequest.branch_id] even
+     * if it has no sufficient active products.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

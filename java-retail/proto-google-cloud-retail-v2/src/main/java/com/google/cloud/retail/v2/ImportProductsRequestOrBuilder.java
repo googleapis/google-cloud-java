@@ -62,39 +62,27 @@ public interface ImportProductsRequestOrBuilder
    *
    *
    * <pre>
-   * Unique identifier provided by client, within the ancestor
-   * dataset scope. Ensures idempotency and used for request deduplication.
-   * Server-generated if unspecified. Up to 128 characters long and must match
-   * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>string request_id = 6;</code>
+   * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @return The requestId.
    */
+  @java.lang.Deprecated
   java.lang.String getRequestId();
   /**
    *
    *
    * <pre>
-   * Unique identifier provided by client, within the ancestor
-   * dataset scope. Ensures idempotency and used for request deduplication.
-   * Server-generated if unspecified. Up to 128 characters long and must match
-   * the pattern: `[a-zA-Z0-9_]+`. This is returned as [Operation.name][] in
-   * [ImportMetadata][google.cloud.retail.v2.ImportMetadata].
-   * Only supported when
-   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2.ImportProductsRequest.reconciliation_mode]
-   * is set to `FULL`.
+   * Deprecated. This field has no effect.
    * </pre>
    *
-   * <code>string request_id = 6;</code>
+   * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**

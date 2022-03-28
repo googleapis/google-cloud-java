@@ -45,6 +45,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     attributionToken_ = "";
     nextPageToken_ = "";
     redirectUri_ = "";
+    appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -154,6 +156,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               redirectUri_ = s;
               break;
             }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                appliedControls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              appliedControls_.add(s);
+              break;
+            }
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                invalidConditionBoostSpecs_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              invalidConditionBoostSpecs_.add(
+                  input.readMessage(
+                      com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+                          .parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -173,6 +200,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         facets_ = java.util.Collections.unmodifiableList(facets_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        appliedControls_ = appliedControls_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        invalidConditionBoostSpecs_ =
+            java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -6494,6 +6528,165 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int APPLIED_CONTROLS_FIELD_NUMBER = 12;
+  private com.google.protobuf.LazyStringList appliedControls_;
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @return A list containing the appliedControls.
+   */
+  public com.google.protobuf.ProtocolStringList getAppliedControlsList() {
+    return appliedControls_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @return The count of appliedControls.
+   */
+  public int getAppliedControlsCount() {
+    return appliedControls_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The appliedControls at the given index.
+   */
+  public java.lang.String getAppliedControls(int index) {
+    return appliedControls_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The fully qualified resource name of applied
+   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+   * </pre>
+   *
+   * <code>repeated string applied_controls = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the appliedControls at the given index.
+   */
+  public com.google.protobuf.ByteString getAppliedControlsBytes(int index) {
+    return appliedControls_.getByteString(index);
+  }
+
+  public static final int INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER = 14;
+  private java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+      invalidConditionBoostSpecs_;
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+      getInvalidConditionBoostSpecsList() {
+    return invalidConditionBoostSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
+      getInvalidConditionBoostSpecsOrBuilderList() {
+    return invalidConditionBoostSpecs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public int getInvalidConditionBoostSpecsCount() {
+    return invalidConditionBoostSpecs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+      getInvalidConditionBoostSpecs(int index) {
+    return invalidConditionBoostSpecs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The invalid
+   * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+   * that are not applied during serving.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+      getInvalidConditionBoostSpecsOrBuilder(int index) {
+    return invalidConditionBoostSpecs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6532,6 +6725,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, redirectUri_);
     }
+    for (int i = 0; i < appliedControls_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, appliedControls_.getRaw(i));
+    }
+    for (int i = 0; i < invalidConditionBoostSpecs_.size(); i++) {
+      output.writeMessage(14, invalidConditionBoostSpecs_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -6565,6 +6764,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, redirectUri_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < appliedControls_.size(); i++) {
+        dataSize += computeStringSizeNoTag(appliedControls_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAppliedControlsList().size();
+    }
+    for (int i = 0; i < invalidConditionBoostSpecs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, invalidConditionBoostSpecs_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6592,6 +6804,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!getQueryExpansionInfo().equals(other.getQueryExpansionInfo())) return false;
     }
     if (!getRedirectUri().equals(other.getRedirectUri())) return false;
+    if (!getAppliedControlsList().equals(other.getAppliedControlsList())) return false;
+    if (!getInvalidConditionBoostSpecsList().equals(other.getInvalidConditionBoostSpecsList()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -6625,6 +6840,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + REDIRECT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getRedirectUri().hashCode();
+    if (getAppliedControlsCount() > 0) {
+      hash = (37 * hash) + APPLIED_CONTROLS_FIELD_NUMBER;
+      hash = (53 * hash) + getAppliedControlsList().hashCode();
+    }
+    if (getInvalidConditionBoostSpecsCount() > 0) {
+      hash = (37 * hash) + INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getInvalidConditionBoostSpecsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6768,6 +6991,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResultsFieldBuilder();
         getFacetsFieldBuilder();
+        getInvalidConditionBoostSpecsFieldBuilder();
       }
     }
 
@@ -6802,6 +7026,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       redirectUri_ = "";
 
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        invalidConditionBoostSpecsBuilder_.clear();
+      }
       return this;
     }
 
@@ -6858,6 +7090,21 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.queryExpansionInfo_ = queryExpansionInfoBuilder_.build();
       }
       result.redirectUri_ = redirectUri_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        appliedControls_ = appliedControls_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.appliedControls_ = appliedControls_;
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          invalidConditionBoostSpecs_ =
+              java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecs_;
+      } else {
+        result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -6982,6 +7229,43 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!other.getRedirectUri().isEmpty()) {
         redirectUri_ = other.redirectUri_;
         onChanged();
+      }
+      if (!other.appliedControls_.isEmpty()) {
+        if (appliedControls_.isEmpty()) {
+          appliedControls_ = other.appliedControls_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureAppliedControlsIsMutable();
+          appliedControls_.addAll(other.appliedControls_);
+        }
+        onChanged();
+      }
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        if (!other.invalidConditionBoostSpecs_.isEmpty()) {
+          if (invalidConditionBoostSpecs_.isEmpty()) {
+            invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureInvalidConditionBoostSpecsIsMutable();
+            invalidConditionBoostSpecs_.addAll(other.invalidConditionBoostSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.invalidConditionBoostSpecs_.isEmpty()) {
+          if (invalidConditionBoostSpecsBuilder_.isEmpty()) {
+            invalidConditionBoostSpecsBuilder_.dispose();
+            invalidConditionBoostSpecsBuilder_ = null;
+            invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            invalidConditionBoostSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInvalidConditionBoostSpecsFieldBuilder()
+                    : null;
+          } else {
+            invalidConditionBoostSpecsBuilder_.addAllMessages(other.invalidConditionBoostSpecs_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8454,6 +8738,635 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       redirectUri_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.LazyStringList appliedControls_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAppliedControlsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @return A list containing the appliedControls.
+     */
+    public com.google.protobuf.ProtocolStringList getAppliedControlsList() {
+      return appliedControls_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @return The count of appliedControls.
+     */
+    public int getAppliedControlsCount() {
+      return appliedControls_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The appliedControls at the given index.
+     */
+    public java.lang.String getAppliedControls(int index) {
+      return appliedControls_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the appliedControls at the given index.
+     */
+    public com.google.protobuf.ByteString getAppliedControlsBytes(int index) {
+      return appliedControls_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The appliedControls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppliedControls(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppliedControlsIsMutable();
+      appliedControls_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param value The appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppliedControls(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppliedControlsIsMutable();
+      appliedControls_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param values The appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAppliedControls(java.lang.Iterable<java.lang.String> values) {
+      ensureAppliedControlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedControls_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppliedControls() {
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully qualified resource name of applied
+     * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
+     * </pre>
+     *
+     * <code>repeated string applied_controls = 12;</code>
+     *
+     * @param value The bytes of the appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppliedControlsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAppliedControlsIsMutable();
+      appliedControls_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+        invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
+
+    private void ensureInvalidConditionBoostSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        invalidConditionBoostSpecs_ =
+            new java.util.ArrayList<
+                com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>(
+                invalidConditionBoostSpecs_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec,
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder,
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
+        invalidConditionBoostSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+        getInvalidConditionBoostSpecsList() {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
+      } else {
+        return invalidConditionBoostSpecsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public int getInvalidConditionBoostSpecsCount() {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        return invalidConditionBoostSpecs_.size();
+      } else {
+        return invalidConditionBoostSpecsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+        getInvalidConditionBoostSpecs(int index) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        return invalidConditionBoostSpecs_.get(index);
+      } else {
+        return invalidConditionBoostSpecsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder setInvalidConditionBoostSpecs(
+        int index, com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.set(index, value);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder setInvalidConditionBoostSpecs(
+        int index,
+        com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+            builderForValue) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder addInvalidConditionBoostSpecs(
+        com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.add(value);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder addInvalidConditionBoostSpecs(
+        int index, com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec value) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.add(index, value);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder addInvalidConditionBoostSpecs(
+        com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+            builderForValue) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder addInvalidConditionBoostSpecs(
+        int index,
+        com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+            builderForValue) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder addAllInvalidConditionBoostSpecs(
+        java.lang.Iterable<
+                ? extends com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
+            values) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        ensureInvalidConditionBoostSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invalidConditionBoostSpecs_);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder clearInvalidConditionBoostSpecs() {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public Builder removeInvalidConditionBoostSpecs(int index) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        ensureInvalidConditionBoostSpecsIsMutable();
+        invalidConditionBoostSpecs_.remove(index);
+        onChanged();
+      } else {
+        invalidConditionBoostSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+        getInvalidConditionBoostSpecsBuilder(int index) {
+      return getInvalidConditionBoostSpecsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
+        getInvalidConditionBoostSpecsOrBuilder(int index) {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        return invalidConditionBoostSpecs_.get(index);
+      } else {
+        return invalidConditionBoostSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
+        getInvalidConditionBoostSpecsOrBuilderList() {
+      if (invalidConditionBoostSpecsBuilder_ != null) {
+        return invalidConditionBoostSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+        addInvalidConditionBoostSpecsBuilder() {
+      return getInvalidConditionBoostSpecsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder
+        addInvalidConditionBoostSpecsBuilder(int index) {
+      return getInvalidConditionBoostSpecsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The invalid
+     * [SearchRequest.BoostSpec.condition_boost_specs][google.cloud.retail.v2.SearchRequest.BoostSpec.condition_boost_specs]
+     * that are not applied during serving.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec invalid_condition_boost_specs = 14;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder>
+        getInvalidConditionBoostSpecsBuilderList() {
+      return getInvalidConditionBoostSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec,
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder,
+            com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
+        getInvalidConditionBoostSpecsFieldBuilder() {
+      if (invalidConditionBoostSpecsBuilder_ == null) {
+        invalidConditionBoostSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec,
+                com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec.Builder,
+                com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>(
+                invalidConditionBoostSpecs_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        invalidConditionBoostSpecs_ = null;
+      }
+      return invalidConditionBoostSpecsBuilder_;
     }
 
     @java.lang.Override

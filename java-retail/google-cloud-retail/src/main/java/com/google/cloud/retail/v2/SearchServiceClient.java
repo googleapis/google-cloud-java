@@ -37,9 +37,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please submit a form
- * [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in using
- * Retail Search.
+ * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
+ * Search on Cloud Console before using this feature.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -66,6 +65,7 @@ import javax.annotation.Generated;
  *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
  *           .addAllVariantRollupKeys(new ArrayList<String>())
  *           .addAllPageCategories(new ArrayList<String>())
+ *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -176,9 +176,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -204,6 +203,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
    *           .addAllVariantRollupKeys(new ArrayList<String>())
    *           .addAllPageCategories(new ArrayList<String>())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -222,9 +222,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -250,6 +249,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
    *           .addAllVariantRollupKeys(new ArrayList<String>())
    *           .addAllPageCategories(new ArrayList<String>())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -268,9 +268,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
-   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
-   * using Retail Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please enable
+   * Retail Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -296,6 +295,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
    *           .addAllVariantRollupKeys(new ArrayList<String>())
    *           .addAllPageCategories(new ArrayList<String>())
+   *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
