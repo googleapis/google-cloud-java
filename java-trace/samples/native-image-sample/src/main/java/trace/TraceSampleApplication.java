@@ -44,7 +44,7 @@ public class TraceSampleApplication {
 
     // Wait for the trace to be populated in Cloud Trace.
     System.out.println("Wait some time for the Trace to be populated.");
-    Thread.sleep(3000);
+    Thread.sleep(15000);
 
     try {
       // This checks Cloud trace for the new trace that was just created.
