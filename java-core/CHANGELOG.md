@@ -1,5 +1,25 @@
 # Changelog
 
+### [2.5.11](https://github.com/googleapis/java-core/compare/v2.5.10...v2.5.11) (2022-03-28)
+
+
+### Bug Fixes
+
+* **java:** Register Spanner classes for reflection to fix Native Image tests ([#760](https://github.com/googleapis/java-core/issues/760)) ([257de0f](https://github.com/googleapis/java-core/commit/257de0f71963550ce11aca608fdf9a99672ff19a))
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.33.4 ([#776](https://github.com/googleapis/java-core/issues/776)) ([1b6fb2a](https://github.com/googleapis/java-core/commit/1b6fb2a5b9602f5ff8375deb15f5121851b09bd1))
+* update dependency com.google.api:api-common to v2.1.5 ([#768](https://github.com/googleapis/java-core/issues/768)) ([c76c332](https://github.com/googleapis/java-core/commit/c76c332b5676bffad2a1e75b094790c9b0488447))
+* update dependency com.google.api:gax-bom to v2.13.0 ([#774](https://github.com/googleapis/java-core/issues/774)) ([8075c54](https://github.com/googleapis/java-core/commit/8075c54a127496a5330671652678b03f5abdd5c9))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.8.0 ([#770](https://github.com/googleapis/java-core/issues/770)) ([6809477](https://github.com/googleapis/java-core/commit/680947779ac9bc58f60c6c18750aac6b756e73b2))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.2.10 ([#763](https://github.com/googleapis/java-core/issues/763)) ([9f2eb5f](https://github.com/googleapis/java-core/commit/9f2eb5fed5d9dc91ee01068a2c4eec9acef38c86))
+* update dependency com.google.auth:google-auth-library-bom to v1.6.0 ([#765](https://github.com/googleapis/java-core/issues/765)) ([2eb1924](https://github.com/googleapis/java-core/commit/2eb19241f119f39de7d07ee863c9c78a3e7f11a4))
+* update dependency com.google.guava:guava to 31.1-jre ([#772](https://github.com/googleapis/java-core/issues/772)) ([060adf3](https://github.com/googleapis/java-core/commit/060adf35bf6afdd4b31d790e5484f63eac777a11))
+* update dependency com.google.http-client:google-http-client-bom to v1.41.5 ([#769](https://github.com/googleapis/java-core/issues/769)) ([999be7a](https://github.com/googleapis/java-core/commit/999be7ab10459b33ab001b5bd84d650aeb13313f))
+* update dependency org.threeten:threetenbp to v1.6.0 ([#767](https://github.com/googleapis/java-core/issues/767)) ([9a4a438](https://github.com/googleapis/java-core/commit/9a4a438e04acfd0ec15cdfac5da3610223fe0071))
+
 ### [2.5.10](https://github.com/googleapis/java-core/compare/v2.5.9...v2.5.10) (2022-03-10)
 
 
