@@ -94,7 +94,7 @@ to add `google-cloud-datalabeling` as a dependency in your code.
 ## About Data Labeling
 
 
-[Data Labeling][product-docs] 
+[Data Labeling][product-docs] is a service that lets you work with human labelers to generate highly accurate labels for a collection of data that you can use to train your machine learning models.
 
 See the [Data Labeling client library docs][javadocs] to learn how to
 use this Data Labeling Client Library.
