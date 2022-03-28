@@ -1,5 +1,21 @@
 # Changelog
 
+### [3.7.2](https://github.com/googleapis/java-logging/compare/v3.7.1...v3.7.2) (2022-03-24)
+
+
+### Documentation
+
+* **sample:** Add sample for Native Image support in Logging  ([#880](https://github.com/googleapis/java-logging/issues/880)) ([7e59bf3](https://github.com/googleapis/java-logging/commit/7e59bf3c3676ebc6bfcdf6e951d3d8f0b6c1589f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#903](https://github.com/googleapis/java-logging/issues/903)) ([b692e02](https://github.com/googleapis/java-logging/commit/b692e0247ea61b290aad0f0245184fd3c026629b))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#904](https://github.com/googleapis/java-logging/issues/904)) ([d834a0a](https://github.com/googleapis/java-logging/commit/d834a0a5f10cda8a1327714f8a93c0c6e41143df))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#912](https://github.com/googleapis/java-logging/issues/912)) ([c1d6559](https://github.com/googleapis/java-logging/commit/c1d65597ee8ce95dc6276c4f19d13a922c819f0d))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#905](https://github.com/googleapis/java-logging/issues/905)) ([3c44e3e](https://github.com/googleapis/java-logging/commit/3c44e3ed51c52a84b5a5a517a8b8a105f083532c))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#911](https://github.com/googleapis/java-logging/issues/911)) ([3721ef5](https://github.com/googleapis/java-logging/commit/3721ef53305e27afb5bad685a10eb8901988c7b9))
+
 ### [3.7.1](https://github.com/googleapis/java-logging/compare/v3.7.0...v3.7.1) (2022-03-03)
 
 
