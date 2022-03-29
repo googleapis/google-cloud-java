@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.1](https://github.com/googleapis/java-datacatalog/compare/v1.7.0...v1.7.1) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#770](https://github.com/googleapis/java-datacatalog/issues/770)) ([d8e67ad](https://github.com/googleapis/java-datacatalog/commit/d8e67ad8a694041cf1cb7ab97a74eb4ceb19b447))
+
 ## [1.7.0](https://github.com/googleapis/java-datacatalog/compare/v1.6.3...v1.7.0) (2022-03-03)
 
 
