@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.10](https://github.com/googleapis/java-network-management/compare/v1.1.9...v1.1.10) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#152](https://github.com/googleapis/java-network-management/issues/152)) ([7551635](https://github.com/googleapis/java-network-management/commit/7551635ad47b286dd94d15271be878a83b6aaae6))
+
 ### [1.1.9](https://github.com/googleapis/java-network-management/compare/v1.1.8...v1.1.9) (2022-03-02)
 
 
