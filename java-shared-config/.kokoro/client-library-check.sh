@@ -21,12 +21,15 @@ set -eo pipefail
 # Display commands being run.
 set -x
 
-if [[ $# -lt 1 ]];
+if [[ $# -ne 2 ]];
 then
-  echo "Usage: $0 <repo-name>"
+  echo "Usage: $0 <repo-name> <job-type>"
+  echo "where repo-name is java-XXX and check-type is dependencies, lint, or clirr"
   exit 1
 fi
 REPO=$1
+# build.sh uses this environment variable
+export JOB_TYPE=$2
 
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
@@ -61,5 +64,17 @@ set ${VERSION}
 save pom.xml
 EOF
 
-# run dependencies script
-.kokoro/dependencies.sh
+case ${JOB_TYPE} in
+dependencies)
+    .kokoro/dependencies.sh
+    RETURN_CODE=$?
+    ;;
+*)
+    # This reads the JOB_TYPE environmental variable
+    .kokoro/build.sh
+    RETURN_CODE=$?
+    ;;
+esac
+
+echo "exiting with ${RETURN_CODE}"
+exit ${RETURN_CODE}

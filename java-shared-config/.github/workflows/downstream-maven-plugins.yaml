@@ -1,0 +1,67 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+# Keeping this file separate as the dependencies check would use more
+# repositories than needed this downstream check for GraalVM native image and
+# other Maven plugins.
+name: downstream
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [8, 11]
+        repo:
+        # GAPIC library
+        - java-trace
+        # Handwritten library
+        - java-bigquery
+        job-type:
+        - test  # maven-surefire-plugin
+        - lint  # fmt-maven-plugin and google-java-format
+        - clirr # clirr-maven-plugin
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
+
+  # GraalVM job ensures the compatibility of GraaVM version above and the
+  # native-maven-plugin version.
+  graalvm:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11]
+        repo:
+        # GAPIC library that doesn't use a real GCP project in integration tests
+        - java-orgpolicy
+    steps:
+    - uses: actions/checkout@v2
+    - uses: stCarolas/setup-maven@v4
+      with:
+        maven-version: 3.8.1
+    - uses: ayltai/setup-graalvm@v1
+      with:
+        java-version: ${{matrix.java}}
+        # When a new version of native-maven-plugin fails to run in a downstream
+        # library, it's likely to be an incompatibility with the GraalVM version.
+        # In that case, you need to upgrade the Docker container used in the
+        # tests in the downstream repositories (not just this value below).
+        # Example: https://github.com/googleapis/testing-infra-docker/pull/195
+        graalvm-version: 22.0.0.2
+        native-image: true
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} graalvm
