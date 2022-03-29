@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.7](https://github.com/googleapis/java-resourcemanager/compare/v1.2.6...v1.2.7) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#743](https://github.com/googleapis/java-resourcemanager/issues/743)) ([52f6310](https://github.com/googleapis/java-resourcemanager/commit/52f6310f7861dac485e6a8527e4c607b80a8ea64))
+
 ### [1.2.6](https://github.com/googleapis/java-resourcemanager/compare/v1.2.5...v1.2.6) (2022-03-24)
 
 
