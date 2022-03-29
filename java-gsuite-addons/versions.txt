@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-gsuite-addons:2.1.9:2.1.10-SNAPSHOT
-grpc-google-cloud-gsuite-addons-v1:2.1.9:2.1.10-SNAPSHOT
-proto-google-cloud-gsuite-addons-v1:2.1.9:2.1.10-SNAPSHOT
-proto-google-apps-script-type-protos:2.1.9:2.1.10-SNAPSHOT
+google-cloud-gsuite-addons:2.1.10:2.1.10
+grpc-google-cloud-gsuite-addons-v1:2.1.10:2.1.10
+proto-google-cloud-gsuite-addons-v1:2.1.10:2.1.10
+proto-google-apps-script-type-protos:2.1.10:2.1.10

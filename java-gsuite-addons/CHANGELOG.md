@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.10](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.9...v2.1.10) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#204](https://github.com/googleapis/java-gsuite-addons/issues/204)) ([6c2da6e](https://github.com/googleapis/java-gsuite-addons/commit/6c2da6eb8b1dd7e654f8fb13e8e61aeca9e2f6a0))
+
 ### [2.1.9](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.8...v2.1.9) (2022-03-02)
 
 
