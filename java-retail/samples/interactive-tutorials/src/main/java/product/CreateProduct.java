@@ -24,6 +24,7 @@ package product;
 
 import static setup.SetupCleanup.deleteProduct;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.PriceInfo;
 import com.google.cloud.retail.v2.Product;
@@ -37,32 +38,31 @@ public class CreateProduct {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
-    String defaultBranchName =
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-            projectId);
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
     String generatedProductId = UUID.randomUUID().toString();
 
-    Product createdProduct = createProduct(generatedProductId, defaultBranchName);
+    Product createdProduct = createProduct(generatedProductId, branchName);
     deleteProduct(createdProduct.getName());
   }
 
   // call the Retail API to create product
-  public static Product createProduct(String productId, String defaultBranchName)
-      throws IOException {
+  public static Product createProduct(String productId, String branchName) throws IOException {
     CreateProductRequest createProductRequest =
         CreateProductRequest.newBuilder()
             .setProduct(generateProduct())
             .setProductId(productId)
-            .setParent(defaultBranchName)
+            .setParent(branchName)
             .build();
     System.out.printf("Create product request: %s%n", createProductRequest);
 
-    Product createdProduct = ProductServiceClient.create().createProduct(createProductRequest);
-    System.out.printf("Created product: %s%n", createdProduct);
-
-    return createdProduct;
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      Product createdProduct = serviceClient.createProduct(createProductRequest);
+      System.out.printf("Created product: %s%n", createdProduct);
+      return createdProduct;
+    }
   }
 
   // generate product for create

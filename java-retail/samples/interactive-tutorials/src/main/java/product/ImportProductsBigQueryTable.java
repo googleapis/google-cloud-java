@@ -22,6 +22,7 @@
 
 package product;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.BigQuerySource;
 import com.google.cloud.retail.v2.ImportMetadata;
 import com.google.cloud.retail.v2.ImportProductsRequest;
@@ -35,32 +36,39 @@ import java.io.IOException;
 
 public class ImportProductsBigQueryTable {
 
-  private static final String PROJECT_ID = System.getenv("PROJECT_ID");
-  private static final String DEFAULT_CATALOG =
-      String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
-  private static final String DATASET_ID = "products";
-  private static final String TABLE_ID = "products";
-  // TO CHECK ERROR HANDLING USE THE TABLE WITH INVALID PRODUCTS:
-  // TABLE_ID = "products_some_invalid"
-  private static final String DATA_SCHEMA = "product";
-
   public static void main(String[] args) throws IOException, InterruptedException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    String datasetId = "products";
+    String tableId = "products";
+    // TO CHECK ERROR HANDLING USE THE TABLE WITH INVALID PRODUCTS:
+    // TABLE_ID = "products_some_invalid"
+    String dataSchema = "product";
     // TRY THE FULL RECONCILIATION MODE HERE:
     ReconciliationMode reconciliationMode = ReconciliationMode.INCREMENTAL;
+
     ImportProductsRequest importBigQueryRequest =
-        getImportProductsBigQueryRequest(reconciliationMode);
+        getImportProductsBigQueryRequest(
+            reconciliationMode, projectId, datasetId, tableId, dataSchema, branchName);
     waitForOperationCompletion(importBigQueryRequest);
   }
 
   public static ImportProductsRequest getImportProductsBigQueryRequest(
-      ReconciliationMode reconciliationMode) {
+      ReconciliationMode reconciliationMode,
+      String projectId,
+      String datasetId,
+      String tableId,
+      String dataSchema,
+      String branchName) {
     BigQuerySource bigQuerySource =
         BigQuerySource.newBuilder()
-            .setProjectId(PROJECT_ID)
-            .setDatasetId(DATASET_ID)
-            .setTableId(TABLE_ID)
-            .setDataSchema(DATA_SCHEMA)
+            .setProjectId(projectId)
+            .setDatasetId(datasetId)
+            .setTableId(tableId)
+            .setDataSchema(dataSchema)
             .build();
 
     ProductInputConfig inputConfig =
@@ -68,7 +76,7 @@ public class ImportProductsBigQueryTable {
 
     ImportProductsRequest importRequest =
         ImportProductsRequest.newBuilder()
-            .setParent(DEFAULT_CATALOG)
+            .setParent(branchName)
             .setReconciliationMode(reconciliationMode)
             .setInputConfig(inputConfig)
             .build();
@@ -77,7 +85,7 @@ public class ImportProductsBigQueryTable {
     return importRequest;
   }
 
-  private static void waitForOperationCompletion(ImportProductsRequest importRequest)
+  public static void waitForOperationCompletion(ImportProductsRequest importRequest)
       throws IOException, InterruptedException {
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
@@ -88,8 +96,7 @@ public class ImportProductsBigQueryTable {
 
       while (!operation.getDone()) {
         // Keep polling the operation periodically until the import task is done.
-        int awaitDuration = 30000;
-        Thread.sleep(awaitDuration);
+        Thread.sleep(30_000);
         operation = operationsClient.getOperation(operationName);
       }
 

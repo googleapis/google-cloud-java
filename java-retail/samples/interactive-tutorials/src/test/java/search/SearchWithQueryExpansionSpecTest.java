@@ -16,53 +16,48 @@
 
 package search;
 
-import com.google.cloud.retail.v2.SearchResponse;
+import static com.google.common.truth.Truth.assertThat;
+import static search.SearchSimpleQuery.getSearchResponse;
+
+import com.google.cloud.ServiceOptions;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class SearchWithQueryExpansionSpecTest {
 
-  private String output;
-  private String defaultSearchPlacementName;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalogName =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    defaultSearchPlacementName = defaultCatalogName + "/placements/default_search";
+    String defaultSearchPlacementName = defaultCatalogName + "/placements/default_search";
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    Process exec =
-        Runtime.getRuntime()
-            .exec("mvn compile exec:java -Dexec.mainClass=search.SearchWithQueryExpansionSpec");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
-
-    output = stringFuture.get();
+    getSearchResponse(defaultSearchPlacementName);
   }
 
   @Test
   public void testOutput() {
-    Assert.assertTrue(output.matches("(?s)^(.*Search request.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Search response.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*results.*id.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Search request");
+    assertThat(outputResult).contains("Search response");
   }
 
-  @Test
-  public void testSearchWithQueryExpansionSpec() throws IOException {
-    SearchResponse response =
-        SearchWithQueryExpansionSpec.getSearchResponse(defaultSearchPlacementName);
-    Assert.assertEquals(10, response.getResultsCount());
-    Assert.assertTrue(
-        response.getResults(0).getProduct().getTitle().contains("Google Youth Hero Tee Grey"));
-    Assert.assertFalse(
-        response.getResults(2).getProduct().getTitle().contains("Google Youth Hero Tee Grey"));
-    Assert.assertTrue(response.getQueryExpansionInfo().getExpandedQuery());
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

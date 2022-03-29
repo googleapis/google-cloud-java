@@ -19,22 +19,40 @@ package events.setup;
 import static setup.SetupCleanup.createBucket;
 import static setup.SetupCleanup.uploadObject;
 
+import com.google.cloud.ServiceOptions;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.time.Instant;
 
 public class EventsCreateGcsBucket {
 
-  private static final String BUCKET_NAME = System.getenv("BUCKET_NAME");
+  private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
 
-  public static String getBucketName() {
-    return BUCKET_NAME;
-  }
+  private static final Timestamp CURRENT_DATE =
+      Timestamp.newBuilder()
+          .setSeconds(Instant.now().getEpochSecond())
+          .setNanos(Instant.now().getNano())
+          .build();
 
-  public static void eventsCreateGcsBucketAndUploadJsonFiles() throws IOException {
+  private static final String BUCKET_NAME =
+      String.format("%s_events_%s", PROJECT_ID, CURRENT_DATE.getSeconds());
+
+  public static void main(String... args) throws IOException {
     createBucket(BUCKET_NAME);
+    System.out.printf("Events gcs bucket %s was created.", BUCKET_NAME);
+
     uploadObject(BUCKET_NAME, "user_events.json", "src/main/resources/user_events.json");
+    System.out.printf("File 'user_events.json' was uploaded into bucket '%s'.", BUCKET_NAME);
+
     uploadObject(
         BUCKET_NAME,
         "user_events_some_invalid.json",
         "src/main/resources/user_events_some_invalid.json");
+    System.out.printf(
+        "File 'user_events_some_invalid.json' was uploaded into bucket '%s'.", BUCKET_NAME);
+  }
+
+  public static String getBucketName() {
+    return BUCKET_NAME;
   }
 }

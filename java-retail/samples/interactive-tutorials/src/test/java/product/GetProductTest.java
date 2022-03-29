@@ -16,37 +16,51 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.CrudProduct.getProduct;
+import static setup.SetupCleanup.createProduct;
+import static setup.SetupCleanup.deleteProduct;
+
+import com.google.cloud.retail.v2.Product;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class GetProductTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime().exec("mvn compile exec:java -Dexec.mainClass=product.GetProduct");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String generatedProductId = UUID.randomUUID().toString();
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    Product createdProduct = createProduct(generatedProductId);
+    Product product = getProduct(createdProduct.getName());
+    deleteProduct(product.getName());
   }
 
   @Test
   public void testGetProduct() {
-    Assert.assertTrue(output.matches("(?s)^(.*Create product request.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Get product.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*Get product response.*?name.*?projects/.*/locations/global/catalogs/default_catalog/branches/.*/products/.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Get product response.*?title.*?Nest Mini.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Product.*was deleted.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Create product request");
+    assertThat(outputResult).contains("Created product");
+    assertThat(outputResult).contains("Get product response");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

@@ -24,6 +24,7 @@ import static setup.SetupCleanup.createProduct;
 import static setup.SetupCleanup.deleteProduct;
 import static setup.SetupCleanup.getProduct;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.ProductServiceClient;
 import com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest;
 import com.google.protobuf.Timestamp;
@@ -36,11 +37,11 @@ public class RemoveFulfillmentPlaces {
 
   public static void main(String[] args) throws IOException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String generatedProductId = UUID.randomUUID().toString();
     String productName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/branches/" + "0/products/%s",
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0/products/%s",
             projectId, generatedProductId);
     Timestamp currentDate =
         Timestamp.newBuilder()
@@ -73,13 +74,16 @@ public class RemoveFulfillmentPlaces {
       throws IOException, InterruptedException {
     RemoveFulfillmentPlacesRequest removeFulfillmentRequest =
         getRemoveFulfillmentRequest(productName, timestamp, storeId);
-    ProductServiceClient.create().removeFulfillmentPlacesAsync(removeFulfillmentRequest);
-    /*
-    This is a long-running operation and its result is not immediately
-    present with get operations,thus we simulate wait with sleep method.
-    */
-    System.out.println("Remove fulfillment places, wait 30 seconds.");
-    Thread.sleep(30_000);
+
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      serviceClient.removeFulfillmentPlacesAsync(removeFulfillmentRequest);
+      /*
+      This is a long-running operation and its result is not immediately
+      present with get operations,thus we simulate wait with sleep method.
+      */
+      System.out.println("Remove fulfillment places, wait 30 seconds.");
+      Thread.sleep(30_000);
+    }
   }
 
   // remove fulfillment request

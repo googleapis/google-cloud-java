@@ -22,6 +22,7 @@
 
 package product;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.GcsSource;
 import com.google.cloud.retail.v2.ImportErrorsConfig;
 import com.google.cloud.retail.v2.ImportMetadata;
@@ -37,26 +38,29 @@ import java.util.Collections;
 
 public class ImportProductsGcs {
 
-  private static final String PROJECT_ID = System.getenv("PROJECT_ID");
-  private static final String DEFAULT_CATALOG =
-      String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
-  private static final String GCS_BUCKET = String.format("gs://%s", System.getenv("BUCKET_NAME"));
-  private static final String GCS_ERROR_BUCKET = String.format("%s/errors", GCS_BUCKET);
-  private static final String GCS_PRODUCTS_OBJECT = "products.json";
-  // TO CHECK ERROR HANDLING USE THE JSON WITH INVALID PRODUCT
-  // GCS_PRODUCTS_OBJECT = "products_some_invalid.json"
-
   public static void main(String[] args) throws IOException, InterruptedException {
-    ImportProductsRequest importGcsRequest = getImportProductsGcsRequest(GCS_PRODUCTS_OBJECT);
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    String gcsBucket = String.format("gs://%s", System.getenv("BUCKET_NAME"));
+    String gcsErrorBucket = String.format("%s/errors", gcsBucket);
+    String gscProductsObject = "products.json";
+    // TO CHECK ERROR HANDLING USE THE JSON WITH INVALID PRODUCT
+    // GCS_PRODUCTS_OBJECT = "products_some_invalid.json"
+
+    ImportProductsRequest importGcsRequest =
+        getImportProductsGcsRequest(gscProductsObject, gcsBucket, gcsErrorBucket, branchName);
     waitForOperationCompletion(importGcsRequest);
   }
 
-  public static ImportProductsRequest getImportProductsGcsRequest(String gcsObjectName) {
+  public static ImportProductsRequest getImportProductsGcsRequest(
+      String gcsObjectName, String gcsBucket, String gcsErrorBucket, String branchName) {
     GcsSource gcsSource =
         GcsSource.newBuilder()
             .addAllInputUris(
-                Collections.singleton(String.format("%s/%s", GCS_BUCKET, gcsObjectName)))
+                Collections.singleton(String.format("%s/%s", gcsBucket, gcsObjectName)))
             .build();
 
     ProductInputConfig inputConfig =
@@ -65,11 +69,11 @@ public class ImportProductsGcs {
     System.out.println("GRS source: " + gcsSource.getInputUrisList());
 
     ImportErrorsConfig errorsConfig =
-        ImportErrorsConfig.newBuilder().setGcsPrefix(GCS_ERROR_BUCKET).build();
+        ImportErrorsConfig.newBuilder().setGcsPrefix(gcsErrorBucket).build();
 
     ImportProductsRequest importRequest =
         ImportProductsRequest.newBuilder()
-            .setParent(DEFAULT_CATALOG)
+            .setParent(branchName)
             .setReconciliationMode(ReconciliationMode.INCREMENTAL)
             .setInputConfig(inputConfig)
             .setErrorsConfig(errorsConfig)
@@ -80,7 +84,7 @@ public class ImportProductsGcs {
     return importRequest;
   }
 
-  private static void waitForOperationCompletion(ImportProductsRequest importRequest)
+  public static void waitForOperationCompletion(ImportProductsRequest importRequest)
       throws IOException, InterruptedException {
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
@@ -91,8 +95,7 @@ public class ImportProductsGcs {
 
       while (!operation.getDone()) {
         // Keep polling the operation periodically until the import task is done.
-        int awaitDuration = 30000;
-        Thread.sleep(awaitDuration);
+        Thread.sleep(30_000);
         operation = operationsClient.getOperation(operationName);
       }
 

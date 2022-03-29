@@ -20,6 +20,7 @@ import static setup.SetupCleanup.deleteBucket;
 import static setup.SetupCleanup.deleteDataset;
 
 import com.google.api.gax.rpc.PermissionDeniedException;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.ListProductsRequest;
 import com.google.cloud.retail.v2.Product;
@@ -29,25 +30,26 @@ import java.io.IOException;
 
 public class RemoveTestResources {
 
-  private static final String PROJECT_ID = System.getenv("PROJECT_ID");
-  private static final String BUCKET_NAME = System.getenv("BUCKET_NAME");
-  private static final String DEFAULT_CATALOG =
-      String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
+  public static void main(String... args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String bucketName = System.getenv("BUCKET_NAME");
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
 
-  public static void main(String[] args) throws IOException {
-    deleteBucket(BUCKET_NAME);
-    deleteAllProducts();
-    deleteDataset(PROJECT_ID, "products");
-    deleteDataset(PROJECT_ID, "user_events");
+    deleteBucket(bucketName);
+    deleteAllProducts(branchName);
+    deleteDataset(projectId, "products");
+    deleteDataset(projectId, "user_events");
   }
 
-  public static void deleteAllProducts() throws IOException {
+  public static void deleteAllProducts(String branchName) throws IOException {
     System.out.println("Deleting products in process, please wait...");
 
     try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
       ListProductsRequest listRequest =
-          ListProductsRequest.newBuilder().setParent(DEFAULT_CATALOG).build();
+          ListProductsRequest.newBuilder().setParent(branchName).build();
       ListProductsPagedResponse products = productServiceClient.listProducts(listRequest);
 
       int deleteCount = 0;
@@ -66,7 +68,7 @@ public class RemoveTestResources {
         }
       }
 
-      System.out.printf("%s products were deleted from %s%n", deleteCount, DEFAULT_CATALOG);
+      System.out.printf("%s products were deleted from %s%n", deleteCount, branchName);
     }
   }
 }

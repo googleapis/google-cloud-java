@@ -16,7 +16,6 @@
 
 package product.setup;
 
-import static product.setup.ProductsCreateGcsBucket.productsCreateGcsBucketAndUploadJsonFiles;
 import static setup.SetupCleanup.createBqDataset;
 import static setup.SetupCleanup.createBqTable;
 import static setup.SetupCleanup.getGson;
@@ -31,9 +30,7 @@ import java.util.stream.Collectors;
 
 public class ProductsCreateBigqueryTable {
 
-  public static void createBqTableWithProducts() throws IOException {
-    productsCreateGcsBucketAndUploadJsonFiles();
-
+  public static void main(String... args) throws IOException {
     String dataset = "products";
     String validProductsTable = "products";
     String invalidProductsTable = "products_some_invalid";

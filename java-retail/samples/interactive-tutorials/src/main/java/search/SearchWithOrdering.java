@@ -23,6 +23,7 @@
 
 package search;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.SearchRequest;
 import com.google.cloud.retail.v2.SearchResponse;
 import com.google.cloud.retail.v2.SearchServiceClient;
@@ -33,7 +34,7 @@ public class SearchWithOrdering {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalogName =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     String defaultSearchPlacementName = defaultCatalogName + "/placements/default_search";

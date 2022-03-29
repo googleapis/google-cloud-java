@@ -16,42 +16,57 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.SetInventory.setInventory;
+import static setup.SetupCleanup.createProduct;
+import static setup.SetupCleanup.deleteProduct;
+import static setup.SetupCleanup.getProduct;
+
+import com.google.cloud.ServiceOptions;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class SetInventoryTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime().exec("mvn compile exec:java -Dexec.mainClass=product.SetInventory");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String generatedProductId = UUID.randomUUID().toString();
+    String productName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0/products/%s",
+            projectId, generatedProductId);
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    createProduct(generatedProductId);
+    setInventory(productName);
+    getProduct(productName);
+    deleteProduct(productName);
   }
 
   @Test
   public void testSetInventoryTest() {
-    Assert.assertTrue(output.matches("(?s)^(.*Created product.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*name: \"projects/.*/locations/global/catalogs/default_catalog/branches/.*/products/.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Set inventory request.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*?fulfillment_info.*type: \"pickup-in-store\".*?place_ids: \"store1\".*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*?fulfillment_info.*type: \"pickup-in-store\".*?place_ids: \"store2\".*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Product.*was deleted.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Set inventory request");
+    assertThat(outputResult).contains("Set inventory, wait 30 seconds");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

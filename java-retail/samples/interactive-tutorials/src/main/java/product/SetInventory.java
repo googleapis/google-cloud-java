@@ -24,6 +24,7 @@ import static setup.SetupCleanup.createProduct;
 import static setup.SetupCleanup.deleteProduct;
 import static setup.SetupCleanup.getProduct;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.FulfillmentInfo;
 import com.google.cloud.retail.v2.PriceInfo;
 import com.google.cloud.retail.v2.Product;
@@ -42,11 +43,11 @@ public class SetInventory {
 
   public static void main(String[] args) throws IOException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String generatedProductId = UUID.randomUUID().toString();
     String productName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0/products/%s",
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0/products/%s",
             projectId, generatedProductId);
 
     createProduct(generatedProductId);
@@ -57,7 +58,11 @@ public class SetInventory {
 
   public static void setInventory(String productName) throws IOException, InterruptedException {
     SetInventoryRequest setInventoryRequest = getSetInventoryRequest(productName);
-    ProductServiceClient.create().setInventoryAsync(setInventoryRequest);
+
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      serviceClient.setInventoryAsync(setInventoryRequest);
+    }
+
     /*
     This is a long-running operation and its result is not immediately
     present with get operations,thus we simulate wait with sleep method.

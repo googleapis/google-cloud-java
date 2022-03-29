@@ -16,35 +16,55 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.UpdateProduct.updateProduct;
+import static setup.SetupCleanup.createProduct;
+import static setup.SetupCleanup.deleteProduct;
+
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.retail.v2.Product;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class UpdateProductTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime().exec("mvn compile exec:java -Dexec.mainClass=product.UpdateProduct");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    String generatedProductId = UUID.randomUUID().toString();
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    Product createdProduct = createProduct(generatedProductId);
+    updateProduct(createdProduct, branchName);
+    deleteProduct(createdProduct.getName());
   }
 
   @Test
   public void testUpdateProduct() {
-    Assert.assertTrue(output.matches("(?s)^(.*Update product request.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Updated product.*?title.*?Updated Nest Mini.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Updated product.*?brands.*?Updated Google.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Updated product.*?price.*?20.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Product.*was deleted.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Update product request");
+    assertThat(outputResult).contains("Updated product");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

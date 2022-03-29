@@ -17,8 +17,8 @@
 package events;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.ServiceOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -26,50 +26,33 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class WriteUserEventTest {
 
   private ByteArrayOutputStream bout;
   private PrintStream originalPrintStream;
-  private PrintStream out;
-
-  private String projectId;
-  private String defaultCatalog;
-  private String visitorId;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("PROJECT_ID");
-  }
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    projectId = System.getenv("PROJECT_ID");
-    defaultCatalog =
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    visitorId = UUID.randomUUID().toString();
-
+    String visitorId = UUID.randomUUID().toString();
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
+    PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
+    WriteUserEvent.writeUserEvent(defaultCatalog, visitorId);
   }
 
   @Test
-  public void testPurgeUserEvent() throws IOException {
-    WriteUserEvent.writeUserEvent(defaultCatalog, visitorId);
-    String got = bout.toString();
+  public void testPurgeUserEvent() {
+    String outputResult = bout.toString();
 
-    assertThat(got).contains("Write user event request");
-    assertThat(got).contains("Written user event");
+    assertThat(outputResult).contains("Write user event request");
+    assertThat(outputResult).contains("Written user event");
   }
 
   @After

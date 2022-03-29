@@ -25,6 +25,7 @@ package product;
 import static setup.SetupCleanup.createProduct;
 import static setup.SetupCleanup.deleteProduct;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.PriceInfo;
 import com.google.cloud.retail.v2.Product;
 import com.google.cloud.retail.v2.Product.Availability;
@@ -38,20 +39,19 @@ public class UpdateProduct {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
-    String defaultBranchName =
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-            projectId);
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
     String generatedProductId = UUID.randomUUID().toString();
 
     Product createdProduct = createProduct(generatedProductId);
-    updateProduct(createdProduct, defaultBranchName);
+    updateProduct(createdProduct, branchName);
     deleteProduct(createdProduct.getName());
   }
 
   // generate product for update
-  public static Product generateProductForUpdate(String productId, String defaultBranchName) {
+  public static Product generateProductForUpdate(String productId, String branchName) {
     final float price = 20.0f;
     final float originalPrice = 25.5f;
 
@@ -64,7 +64,7 @@ public class UpdateProduct {
 
     return Product.newBuilder()
         .setId(productId)
-        .setName(defaultBranchName + "/products/" + productId)
+        .setName(branchName + "/products/" + productId)
         .setTitle("Updated Nest Mini")
         .setType(Type.PRIMARY)
         .addCategories("Updated Speakers and displays")
@@ -86,12 +86,13 @@ public class UpdateProduct {
   // call the Retail API to update product
   public static void updateProduct(Product originalProduct, String defaultBranchName)
       throws IOException {
-    Product updatedProduct =
-        ProductServiceClient.create()
-            .updateProduct(
-                getUpdateProductRequest(
-                    generateProductForUpdate(originalProduct.getId(), defaultBranchName)));
-    System.out.printf("Updated product: %s%n", updatedProduct);
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      Product updatedProduct =
+          serviceClient.updateProduct(
+              getUpdateProductRequest(
+                  generateProductForUpdate(originalProduct.getId(), defaultBranchName)));
+      System.out.printf("Updated product: %s%n", updatedProduct);
+    }
   }
 }
 

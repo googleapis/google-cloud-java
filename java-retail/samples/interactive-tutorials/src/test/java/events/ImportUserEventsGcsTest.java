@@ -17,59 +17,44 @@
 package events;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.ServiceOptions;
+import events.setup.EventsCreateGcsBucket;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ImportUserEventsGcsTest {
 
-  private String projectId;
-  private String defaultCatalog;
-  private String gcsEventsObject;
-
   private ByteArrayOutputStream bout;
   private PrintStream originalPrintStream;
-  private PrintStream out;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("PROJECT_ID");
-  }
 
   @Before
-  public void setUp() {
-    projectId = System.getenv("PROJECT_ID");
-    defaultCatalog =
-        String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    gcsEventsObject = "user_events.json";
+  public void setUp() throws IOException, InterruptedException {
+    EventsCreateGcsBucket.main();
 
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String defaultCatalog =
+        String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
+    String gcsEventsObject = "user_events.json";
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
+    PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
+    ImportUserEventsGcs.importUserEventsFromGcs(gcsEventsObject, defaultCatalog);
   }
 
   @Test
-  public void testImportUserEventsGcs() throws IOException, InterruptedException {
-    ImportUserEventsGcs.importUserEventsFromGcs(gcsEventsObject, defaultCatalog);
-    String got = bout.toString();
+  public void testImportUserEventsGcs() {
+    String outputResult = bout.toString();
 
-    assertThat(got).contains("Import user events from google cloud source request");
-    assertThat(got).contains("Number of successfully imported events");
-    assertThat(got).contains("Number of failures during the importing");
-    assertThat(got).contains("Operation result");
+    assertThat(outputResult).contains("Import user events from google cloud source request");
+    assertThat(outputResult).contains("Number of successfully imported events");
+    assertThat(outputResult).contains("Number of failures during the importing");
   }
 
   @After

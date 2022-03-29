@@ -44,8 +44,10 @@ public class DeleteProduct {
         DeleteProductRequest.newBuilder().setName(productName).build();
     System.out.printf("Delete product request %s%n", deleteProductRequest);
 
-    ProductServiceClient.create().deleteProduct(deleteProductRequest);
-    System.out.printf("Product %s was deleted.%n", productName);
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      serviceClient.deleteProduct(deleteProductRequest);
+      System.out.printf("Product %s was deleted.%n", productName);
+    }
   }
 }
 

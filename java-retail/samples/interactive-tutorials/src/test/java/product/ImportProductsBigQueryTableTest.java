@@ -16,36 +16,61 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.ImportProductsBigQueryTable.getImportProductsBigQueryRequest;
+import static product.ImportProductsBigQueryTable.waitForOperationCompletion;
+
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.retail.v2.ImportProductsRequest;
+import com.google.cloud.retail.v2.ImportProductsRequest.ReconciliationMode;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
+import product.setup.ProductsCreateBigqueryTable;
 
 public class ImportProductsBigQueryTableTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime()
-            .exec("mvn compile exec:java -Dexec.mainClass=product.ImportProductsBigQueryTable");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    String datasetId = "products";
+    String tableId = "products";
+    String dataSchema = "product";
+    ReconciliationMode reconciliationMode = ReconciliationMode.INCREMENTAL;
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    ProductsCreateBigqueryTable.main();
+    ImportProductsRequest importBigQueryRequest =
+        getImportProductsBigQueryRequest(
+            reconciliationMode, projectId, datasetId, tableId, dataSchema, branchName);
+    waitForOperationCompletion(importBigQueryRequest);
   }
 
   @Test
   public void testImportProductsBigQueryTable() {
-    Assert.assertTrue(output.matches("(?s)^(.*Import products from big query table request.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*projects/.*/locations/global/catalogs/default_catalog/branches/0/operations/import-products.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Operation result.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Import products from big query table request");
+    assertThat(outputResult).contains("Number of successfully imported products");
+    assertThat(outputResult).contains("Number of failures during the importing");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

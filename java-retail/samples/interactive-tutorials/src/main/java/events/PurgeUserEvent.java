@@ -25,6 +25,7 @@ package events;
 import static setup.SetupCleanup.writeUserEvent;
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.PurgeMetadata;
 import com.google.cloud.retail.v2.PurgeUserEventsRequest;
 import com.google.cloud.retail.v2.PurgeUserEventsResponse;
@@ -38,7 +39,7 @@ public class PurgeUserEvent {
   public static void main(String[] args)
       throws IOException, ExecutionException, InterruptedException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     // visitorId generated randomly.

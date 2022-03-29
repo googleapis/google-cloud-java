@@ -16,35 +16,47 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.DeleteProduct.deleteProduct;
+import static setup.SetupCleanup.createProduct;
+
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class DeleteProductTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime().exec("mvn compile exec:java -Dexec.mainClass=product.DeleteProduct");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String generatedProductId = UUID.randomUUID().toString();
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    String createdProductName = createProduct(generatedProductId).getName();
+    deleteProduct(createdProductName);
   }
 
   @Test
   public void testDeleteProduct() {
-    Assert.assertTrue(output.matches("(?s)^(.*Delete product request.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*name: \"projects/.+/locations/global/catalogs/default_catalog/branches/.*/products/.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Product .* was deleted.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Delete product request");
+    assertThat(outputResult).contains("was deleted");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

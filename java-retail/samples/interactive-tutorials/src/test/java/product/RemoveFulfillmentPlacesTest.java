@@ -16,38 +16,76 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.RemoveFulfillmentPlaces.removeFulfillmentPlaces;
+import static setup.SetupCleanup.createProduct;
+import static setup.SetupCleanup.deleteProduct;
+import static setup.SetupCleanup.getProduct;
+
+import com.google.cloud.ServiceOptions;
+import com.google.protobuf.Timestamp;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class RemoveFulfillmentPlacesTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime()
-            .exec("mvn compile exec:java -Dexec.mainClass=product.RemoveFulfillmentPlaces");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String generatedProductId = UUID.randomUUID().toString();
+    String productName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0/products/%s",
+            projectId, generatedProductId);
+    Timestamp currentDate =
+        Timestamp.newBuilder()
+            .setSeconds(Instant.now().getEpochSecond())
+            .setNanos(Instant.now().getNano())
+            .build();
+    Timestamp outdatedDate =
+        Timestamp.newBuilder()
+            .setSeconds(Instant.now().minus(1, ChronoUnit.DAYS).getEpochSecond())
+            .setNanos(Instant.now().getNano())
+            .build();
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    createProduct(generatedProductId);
+    System.out.printf("Remove fulfilment places with current date: %s", currentDate);
+    removeFulfillmentPlaces(productName, currentDate, "store0");
+    getProduct(productName);
+    System.out.printf("Remove outdated fulfilment places: %s", outdatedDate);
+    removeFulfillmentPlaces(productName, outdatedDate, "store1");
+    getProduct(productName);
+    deleteProduct(productName);
   }
 
   @Test
   public void testRemoveFulfillmentPlaces() {
-    Assert.assertTrue(output.matches("(?s)^(.*Created product.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Remove fulfillment request product.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Remove fulfillment places.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*Get product response: name: \"projects/.*/locations/global/catalogs/default_catalog/branches/.*/products/.*)$"));
-    Assert.assertTrue(output.matches("(?s)^(.*Product.*was deleted.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Remove fulfilment places with current date");
+    assertThat(outputResult).contains("Remove fulfillment places, wait 30 seconds");
+    assertThat(outputResult).contains("Delete product request name");
+    assertThat(outputResult).contains("was deleted");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

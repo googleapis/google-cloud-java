@@ -16,35 +16,53 @@
 
 package product;
 
+import static com.google.common.truth.Truth.assertThat;
+import static product.ImportProductsInlineSource.getImportProductsInlineRequest;
+import static product.ImportProductsInlineSource.getProducts;
+import static product.ImportProductsInlineSource.waitForOperationCompletion;
+
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.retail.v2.ImportProductsRequest;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import util.StreamGobbler;
 
 public class ImportProductsInlineSourceTest {
 
-  private String output;
+  private ByteArrayOutputStream bout;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() throws IOException, InterruptedException, ExecutionException {
-    Process exec =
-        Runtime.getRuntime()
-            .exec("mvn compile exec:java -Dexec.mainClass=product.ImportProductsInlineSource");
-    StreamGobbler streamGobbler = new StreamGobbler(exec.getInputStream());
-    Future<String> stringFuture = Executors.newSingleThreadExecutor().submit(streamGobbler);
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    bout = new ByteArrayOutputStream();
+    PrintStream out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
 
-    output = stringFuture.get();
+    ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts(), branchName);
+    waitForOperationCompletion(importRequest);
   }
 
   @Test
   public void testImportProductsInlineSource() {
-    Assert.assertTrue(output.matches("(?s)^(.*Import products from inline source request.*)$"));
-    Assert.assertTrue(
-        output.matches(
-            "(?s)^(.*projects/.*/locations/global/catalogs/default_catalog/branches/0/operations/import-products.*)$"));
+    String outputResult = bout.toString();
+
+    assertThat(outputResult).contains("Import products from inline source request");
+    assertThat(outputResult).contains("Number of successfully imported products");
+    assertThat(outputResult).contains("Number of failures during the importing");
+  }
+
+  @After
+  public void tearDown() {
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 }

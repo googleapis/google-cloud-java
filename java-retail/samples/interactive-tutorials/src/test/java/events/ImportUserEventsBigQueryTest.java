@@ -17,62 +17,46 @@
 package events;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.ServiceOptions;
+import events.setup.EventsCreateBigQueryTable;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ImportUserEventsBigQueryTest {
 
-  private String projectId;
-  private String defaultCatalog;
-  private String datasetId;
-  private String tableId;
-
   private ByteArrayOutputStream bout;
   private PrintStream originalPrintStream;
-  private PrintStream out;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("PROJECT_ID");
-  }
 
   @Before
-  public void setUp() {
-    projectId = System.getenv("PROJECT_ID");
-    defaultCatalog =
+  public void setUp() throws IOException, InterruptedException, ExecutionException {
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String defaultCatalog =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
-    datasetId = "user_events";
-    tableId = "events";
-
+    String datasetId = "user_events";
+    String tableId = "events";
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
+    PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
+
+    EventsCreateBigQueryTable.main();
+    ImportUserEventsBigQuery.importUserEventsFromBigQuery(
+        projectId, defaultCatalog, datasetId, tableId);
   }
 
   @Test
-  public void testImportUserEventsBigQuery() throws IOException, InterruptedException {
-    ImportUserEventsBigQuery.importUserEventsFromBigQuery(
-        projectId, defaultCatalog, datasetId, tableId);
-    String got = bout.toString();
+  public void testImportUserEventsBigQuery() {
+    String outputResult = bout.toString();
 
-    assertThat(got).contains("Import user events from BigQuery source request");
-    assertThat(got).contains("Number of successfully imported events");
-    assertThat(got).contains("Number of failures during the importing");
-    assertThat(got).contains("Operation result");
+    assertThat(outputResult).contains("Import user events from BigQuery source request");
+    assertThat(outputResult).contains("Number of successfully imported events");
+    assertThat(outputResult).contains("Number of failures during the importing");
   }
 
   @After

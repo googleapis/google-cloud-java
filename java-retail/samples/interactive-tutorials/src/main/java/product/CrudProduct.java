@@ -23,6 +23,7 @@
 package product;
 
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.CreateProductRequest;
 import com.google.cloud.retail.v2.DeleteProductRequest;
 import com.google.cloud.retail.v2.GetProductRequest;
@@ -39,15 +40,14 @@ public class CrudProduct {
 
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = System.getenv("PROJECT_ID");
+    String projectId = ServiceOptions.getDefaultProjectId();
     String generatedProductId = UUID.randomUUID().toString();
-    String defaultBranchName =
+    String branchName =
         String.format(
-            "projects/%s/locations/global/catalogs/default_catalog/" + "branches/default_branch",
-            projectId);
-    String productName = String.format("%s/products/%s", defaultBranchName, generatedProductId);
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+    String productName = String.format("%s/products/%s", branchName, generatedProductId);
 
-    Product createdProduct = createProduct(generatedProductId, defaultBranchName);
+    Product createdProduct = createProduct(generatedProductId, branchName);
     getProduct(productName);
     updateProduct(createdProduct, productName);
     deleteProduct(productName);
@@ -100,13 +100,12 @@ public class CrudProduct {
   }
 
   // call the Retail API to create product
-  public static Product createProduct(String productId, String defaultBranchName)
-      throws IOException {
+  public static Product createProduct(String productId, String branchName) throws IOException {
     CreateProductRequest createProductRequest =
         CreateProductRequest.newBuilder()
             .setProduct(generateProduct())
             .setProductId(productId)
-            .setParent(defaultBranchName)
+            .setParent(branchName)
             .build();
     System.out.printf("Create product request: %s%n", createProductRequest);
 
@@ -123,8 +122,8 @@ public class CrudProduct {
     GetProductRequest getProductRequest =
         GetProductRequest.newBuilder().setName(productName).build();
 
-    try {
-      product = ProductServiceClient.create().getProduct(getProductRequest);
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      product = serviceClient.getProduct(getProductRequest);
       System.out.println("Get product response: " + product);
       return product;
     } catch (NotFoundException e) {
@@ -142,8 +141,10 @@ public class CrudProduct {
             .build();
     System.out.printf("Update product request: %s%n", updateProductRequest);
 
-    Product updatedProduct = ProductServiceClient.create().updateProduct(updateProductRequest);
-    System.out.printf("Updated product: %s%n", updatedProduct);
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      Product updatedProduct = serviceClient.updateProduct(updateProductRequest);
+      System.out.printf("Updated product: %s%n", updatedProduct);
+    }
   }
 
   // delete product
@@ -152,8 +153,10 @@ public class CrudProduct {
         DeleteProductRequest.newBuilder().setName(productName).build();
     System.out.printf("Delete product request %s%n", deleteProductRequest);
 
-    ProductServiceClient.create().deleteProduct(deleteProductRequest);
-    System.out.printf("Product %s was deleted.%n", productName);
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      serviceClient.deleteProduct(deleteProductRequest);
+      System.out.printf("Product %s was deleted.%n", productName);
+    }
   }
 }
 

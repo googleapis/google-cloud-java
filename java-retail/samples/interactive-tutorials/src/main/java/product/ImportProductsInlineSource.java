@@ -22,6 +22,7 @@
 
 package product;
 
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.retail.v2.ColorInfo;
 import com.google.cloud.retail.v2.FulfillmentInfo;
 import com.google.cloud.retail.v2.ImportMetadata;
@@ -44,18 +45,19 @@ import java.util.UUID;
 
 public class ImportProductsInlineSource {
 
-  private static final String PROJECT_ID = System.getenv("PROJECT_ID");
-  private static final String DEFAULT_CATALOG =
-      String.format(
-          "projects/%s/locations/global/catalogs/default_catalog/" + "branches/0", PROJECT_ID);
-
   public static void main(String[] args) throws IOException, InterruptedException {
-    ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts());
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = ServiceOptions.getDefaultProjectId();
+    String branchName =
+        String.format(
+            "projects/%s/locations/global/catalogs/default_catalog/branches/0", projectId);
+
+    ImportProductsRequest importRequest = getImportProductsInlineRequest(getProducts(), branchName);
     waitForOperationCompletion(importRequest);
   }
 
   public static ImportProductsRequest getImportProductsInlineRequest(
-      List<Product> productsToImport) {
+      List<Product> productsToImport, String branchName) {
     ProductInlineSource inlineSource =
         ProductInlineSource.newBuilder().addAllProducts(productsToImport).build();
 
@@ -64,7 +66,7 @@ public class ImportProductsInlineSource {
 
     ImportProductsRequest importRequest =
         ImportProductsRequest.newBuilder()
-            .setParent(DEFAULT_CATALOG)
+            .setParent(branchName)
             .setInputConfig(inputConfig)
             .build();
 
@@ -174,7 +176,7 @@ public class ImportProductsInlineSource {
     return products;
   }
 
-  private static void waitForOperationCompletion(ImportProductsRequest importRequest)
+  public static void waitForOperationCompletion(ImportProductsRequest importRequest)
       throws IOException, InterruptedException {
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       String operationName = serviceClient.importProductsCallable().call(importRequest).getName();
@@ -185,8 +187,7 @@ public class ImportProductsInlineSource {
 
       while (!operation.getDone()) {
         // Keep polling the operation periodically until the import task is done.
-        int awaitDuration = 30000;
-        Thread.sleep(awaitDuration);
+        Thread.sleep(30_000);
         operation = operationsClient.getOperation(operationName);
       }
 
