@@ -5,3 +5,6 @@ Thank you for opening a Pull Request! Before submitting your PR, there are a few
 - [ ] Appropriate docs were updated (if necessary)
 
 Fixes #<issue_number_goes_here> ☕️
+
+If you write sample code, please follow the [samples format](
+https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/SAMPLE_FORMAT.md).
