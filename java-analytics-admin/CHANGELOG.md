@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.9.0](https://github.com/googleapis/java-analytics-admin/compare/v0.8.4...v0.9.0) (2022-03-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove `WebDataStream`, `IosAppDataStream`, `AndroidAppDataStream` resources (#377)
+
+### Features
+
+* remove `WebDataStream`, `IosAppDataStream`, `AndroidAppDataStream` resources ([#377](https://github.com/googleapis/java-analytics-admin/issues/377)) ([b93fa94](https://github.com/googleapis/java-analytics-admin/commit/b93fa9430278a6761bb12f355e7aac7e72c57c7d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#385](https://github.com/googleapis/java-analytics-admin/issues/385)) ([8644c7f](https://github.com/googleapis/java-analytics-admin/commit/8644c7f51c89e635473b9e779fcd0123a55d9551))
+
 ### [0.8.4](https://github.com/googleapis/java-analytics-admin/compare/v0.8.3...v0.8.4) (2022-03-08)
 
 
