@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.20](https://github.com/googleapis/java-scheduler/compare/v2.1.19...v2.1.20) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#729](https://github.com/googleapis/java-scheduler/issues/729)) ([e8dede1](https://github.com/googleapis/java-scheduler/commit/e8dede10e6f2c4118bdb498b630abb7148e1e2a8))
+
 ### [2.1.19](https://github.com/googleapis/java-scheduler/compare/v2.1.18...v2.1.19) (2022-03-25)
 
 
