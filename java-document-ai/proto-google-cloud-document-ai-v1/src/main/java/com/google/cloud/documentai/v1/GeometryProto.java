@@ -49,26 +49,22 @@ public final class GeometryProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/documentai/v1/geometry.pr"
-          + "oto\022\032google.cloud.documentai.v1\032\034google/"
-          + "api/annotations.proto\"\036\n\006Vertex\022\t\n\001x\030\001 \001"
-          + "(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVertex\022\t\n\001x\030\001"
-          + " \001(\002\022\t\n\001y\030\002 \001(\002\"\217\001\n\014BoundingPoly\0224\n\010vert"
-          + "ices\030\001 \003(\0132\".google.cloud.documentai.v1."
-          + "Vertex\022I\n\023normalized_vertices\030\002 \003(\0132,.go"
-          + "ogle.cloud.documentai.v1.NormalizedVerte"
-          + "xB\321\001\n\036com.google.cloud.documentai.v1B\rGe"
-          + "ometryProtoP\001ZDgoogle.golang.org/genprot"
-          + "o/googleapis/cloud/documentai/v1;documen"
-          + "tai\252\002\032Google.Cloud.DocumentAI.V1\312\002\032Googl"
-          + "e\\Cloud\\DocumentAI\\V1\352\002\035Google::Cloud::D"
-          + "ocumentAI::V1b\006proto3"
+          + "oto\022\032google.cloud.documentai.v1\"\036\n\006Verte"
+          + "x\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVer"
+          + "tex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\217\001\n\014BoundingPo"
+          + "ly\0224\n\010vertices\030\001 \003(\0132\".google.cloud.docu"
+          + "mentai.v1.Vertex\022I\n\023normalized_vertices\030"
+          + "\002 \003(\0132,.google.cloud.documentai.v1.Norma"
+          + "lizedVertexB\321\001\n\036com.google.cloud.documen"
+          + "tai.v1B\rGeometryProtoP\001ZDgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/documentai/"
+          + "v1;documentai\252\002\032Google.Cloud.DocumentAI."
+          + "V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035Google"
+          + "::Cloud::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_documentai_v1_Vertex_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_documentai_v1_Vertex_fieldAccessorTable =
@@ -93,7 +89,6 @@ public final class GeometryProto {
             new java.lang.String[] {
               "Vertices", "NormalizedVertices",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
