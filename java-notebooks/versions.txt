@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-notebooks:1.0.4:1.0.5-SNAPSHOT
-grpc-google-cloud-notebooks-v1beta1:0.7.4:0.7.5-SNAPSHOT
-grpc-google-cloud-notebooks-v1:1.0.4:1.0.5-SNAPSHOT
-proto-google-cloud-notebooks-v1beta1:0.7.4:0.7.5-SNAPSHOT
-proto-google-cloud-notebooks-v1:1.0.4:1.0.5-SNAPSHOT
+google-cloud-notebooks:1.0.5:1.0.5
+grpc-google-cloud-notebooks-v1beta1:0.7.5:0.7.5
+grpc-google-cloud-notebooks-v1:1.0.5:1.0.5
+proto-google-cloud-notebooks-v1beta1:0.7.5:0.7.5
+proto-google-cloud-notebooks-v1:1.0.5:1.0.5
