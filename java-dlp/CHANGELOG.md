@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/java-dlp/compare/v3.1.4...v3.2.0) (2022-03-29)
+
+
+### Features
+
+* new Bytes and File types: POWERPOINT and EXCEL ([#848](https://github.com/googleapis/java-dlp/issues/848)) ([ffb764d](https://github.com/googleapis/java-dlp/commit/ffb764ddd766987f92805cfadb1a7c7bacdef9ae))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.116.0 ([#841](https://github.com/googleapis/java-dlp/issues/841)) ([e12a43f](https://github.com/googleapis/java-dlp/commit/e12a43f967cd8428ee5e724d84448c8254b43aac))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#849](https://github.com/googleapis/java-dlp/issues/849)) ([7106010](https://github.com/googleapis/java-dlp/commit/7106010c7e9ce6523ee62f06fd31c98a6e75dd5a))
+
 ### [3.1.4](https://github.com/googleapis/java-dlp/compare/v3.1.3...v3.1.4) (2022-03-03)
 
 
