@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.12](https://github.com/googleapis/java-iam/compare/v1.2.11...v1.2.12) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#318](https://github.com/googleapis/java-iam/issues/318)) ([9c856cb](https://github.com/googleapis/java-iam/commit/9c856cb07e8bea3fb50d627afb6dc054cc8859b2))
+
 ### [1.2.11](https://github.com/googleapis/java-iam/compare/v1.2.10...v1.2.11) (2022-03-25)
 
 
