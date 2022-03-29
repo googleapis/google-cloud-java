@@ -103,17 +103,25 @@ message RepeatedObject {
   repeated ComplexLvl2 test_repeated = 1;
 }
 
+message TestBool {
+  optional bool bool = 1;
+  optional bool lowercase = 2;
+  optional bool uppercase = 3;
+}
+
 message TestInt64 {
   optional int64 byte = 1;
   optional int64 short = 2;
   optional int64 int = 3;
   optional int64 long = 4;
+  optional int64 string = 5;
 }
 
 message TestInt32 {
   optional int32 byte = 1;
   optional int32 short = 2;
   optional int32 int = 3;
+  optional int32 string = 4;
 }
 
 message TestDouble {
@@ -123,6 +131,7 @@ message TestDouble {
   optional double short = 4;
   optional double int = 5;
   optional double long = 6;
+  optional double string = 7;
 }
 
 message TestDate {

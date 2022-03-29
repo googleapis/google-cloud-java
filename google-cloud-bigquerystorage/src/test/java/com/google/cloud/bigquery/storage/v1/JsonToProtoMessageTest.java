@@ -474,14 +474,28 @@ public class JsonToProtoMessageTest {
   }
 
   @Test
+  public void testBool() throws Exception {
+    TestBool expectedProto =
+        TestBool.newBuilder().setBool(true).setUppercase(true).setLowercase(false).build();
+    JSONObject json = new JSONObject();
+    json.put("bool", true);
+    json.put("uppercase", "TRUE");
+    json.put("lowercase", "false");
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(TestBool.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
   public void testInt64() throws Exception {
     TestInt64 expectedProto =
-        TestInt64.newBuilder().setByte(1).setShort(1).setInt(1).setLong(1).build();
+        TestInt64.newBuilder().setByte(1).setShort(1).setInt(1).setLong(1).setString(1).build();
     JSONObject json = new JSONObject();
     json.put("byte", (byte) 1);
     json.put("short", (short) 1);
     json.put("int", 1);
     json.put("long", 1L);
+    json.put("string", "1");
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
@@ -489,11 +503,13 @@ public class JsonToProtoMessageTest {
 
   @Test
   public void testInt32() throws Exception {
-    TestInt32 expectedProto = TestInt32.newBuilder().setByte(1).setShort(1).setInt(1).build();
+    TestInt32 expectedProto =
+        TestInt32.newBuilder().setByte(1).setShort(1).setInt(1).setString(1).build();
     JSONObject json = new JSONObject();
     json.put("byte", (byte) 1);
     json.put("short", (short) 1);
     json.put("int", 1);
+    json.put("string", 1);
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(TestInt32.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
@@ -625,6 +641,7 @@ public class JsonToProtoMessageTest {
             .setShort(6)
             .setInt(7)
             .setLong(8)
+            .setString(9.1)
             .build();
     JSONObject json = new JSONObject();
     json.put("double", 1.2);
@@ -633,6 +650,7 @@ public class JsonToProtoMessageTest {
     json.put("short", new Short((short) 6));
     json.put("int", 7);
     json.put("long", 8L);
+    json.put("string", "9.1");
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(TestDouble.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);

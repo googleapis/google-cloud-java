@@ -18,6 +18,9 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.primitives.Doubles;
+import com.google.common.primitives.Ints;
+import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
@@ -226,6 +229,12 @@ public class JsonToProtoMessage {
           protoMsg.setField(fieldDescriptor, (Boolean) val);
           return;
         }
+        if (val instanceof String
+            && ("true".equals(((String) val).toLowerCase())
+                || "false".equals(((String) val).toLowerCase()))) {
+          protoMsg.setField(fieldDescriptor, Boolean.parseBoolean((String) val));
+          return;
+        }
         break;
       case BYTES:
         if (fieldSchema != null) {
@@ -312,6 +321,13 @@ public class JsonToProtoMessage {
           protoMsg.setField(fieldDescriptor, (Long) val);
           return;
         }
+        if (val instanceof String) {
+          Long parsed = Longs.tryParse((String) val);
+          if (parsed != null) {
+            protoMsg.setField(fieldDescriptor, parsed);
+            return;
+          }
+        }
         break;
       case INT32:
         if (fieldSchema != null && fieldSchema.getType() == TableFieldSchema.Type.DATE) {
@@ -327,6 +343,13 @@ public class JsonToProtoMessage {
           protoMsg.setField(fieldDescriptor, (Integer) val);
           return;
         }
+        if (val instanceof String) {
+          Integer parsed = Ints.tryParse((String) val);
+          if (parsed != null) {
+            protoMsg.setField(fieldDescriptor, parsed);
+            return;
+          }
+        }
         break;
       case STRING:
         if (val instanceof String) {
@@ -338,6 +361,13 @@ public class JsonToProtoMessage {
         if (val instanceof Number) {
           protoMsg.setField(fieldDescriptor, ((Number) val).doubleValue());
           return;
+        }
+        if (val instanceof String) {
+          Double parsed = Doubles.tryParse((String) val);
+          if (parsed != null) {
+            protoMsg.setField(fieldDescriptor, parsed);
+            return;
+          }
         }
         break;
       case MESSAGE:
@@ -400,6 +430,10 @@ public class JsonToProtoMessage {
         case BOOL:
           if (val instanceof Boolean) {
             protoMsg.addRepeatedField(fieldDescriptor, (Boolean) val);
+          } else if (val instanceof String
+              && ("true".equals(((String) val).toLowerCase())
+                  || "false".equals(((String) val).toLowerCase()))) {
+            protoMsg.addRepeatedField(fieldDescriptor, Boolean.parseBoolean((String) val));
           } else {
             fail = true;
           }
@@ -491,6 +525,13 @@ public class JsonToProtoMessage {
             protoMsg.addRepeatedField(fieldDescriptor, new Long((Integer) val));
           } else if (val instanceof Long) {
             protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
+          } else if (val instanceof String) {
+            Long parsed = Longs.tryParse((String) val);
+            if (parsed != null) {
+              protoMsg.addRepeatedField(fieldDescriptor, parsed);
+            } else {
+              fail = true;
+            }
           } else {
             fail = true;
           }
@@ -507,6 +548,13 @@ public class JsonToProtoMessage {
             }
           } else if (val instanceof Integer) {
             protoMsg.addRepeatedField(fieldDescriptor, (Integer) val);
+          } else if (val instanceof String) {
+            Integer parsed = Ints.tryParse((String) val);
+            if (parsed != null) {
+              protoMsg.addRepeatedField(fieldDescriptor, parsed);
+            } else {
+              fail = true;
+            }
           } else {
             fail = true;
           }
@@ -521,6 +569,13 @@ public class JsonToProtoMessage {
         case DOUBLE:
           if (val instanceof Number) {
             protoMsg.addRepeatedField(fieldDescriptor, ((Number) val).doubleValue());
+          } else if (val instanceof String) {
+            Double parsed = Doubles.tryParse((String) val);
+            if (parsed != null) {
+              protoMsg.addRepeatedField(fieldDescriptor, parsed);
+            } else {
+              fail = true;
+            }
           } else {
             fail = true;
           }
