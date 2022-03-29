@@ -229,8 +229,7 @@ public class MuteFindingIT {
     // Get all findings in the source to check if they are muted.
     ListFindingsPagedResponse response =
         getAllFindings(
-            String.format("projects/%s/sources/%s",
-                PROJECT_ID, SOURCE.getName().split("/")[3]));
+            String.format("projects/%s/sources/%s", PROJECT_ID, SOURCE.getName().split("/")[3]));
     for (ListFindingsResult finding : response.iterateAll()) {
       Assert.assertEquals(finding.getFinding().getMute(), Mute.MUTED);
     }
