@@ -81,46 +81,45 @@ public final class Realms {
           + "behavior.proto\032\031google/api/resource.prot"
           + "o\032#google/cloud/gaming/v1/common.proto\032 "
           + "google/protobuf/field_mask.proto\032\037google"
-          + "/protobuf/timestamp.proto\032\034google/api/an"
-          + "notations.proto\"\253\001\n\021ListRealmsRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\022!gameservices.goog"
-          + "leapis.com/Realm\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001"
-          + "\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001("
-          + "\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"q\n\022ListRea"
-          + "lmsResponse\022-\n\006realms\030\001 \003(\0132\035.google.clo"
-          + "ud.gaming.v1.Realm\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"J\n\017GetRealmRequ"
-          + "est\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!gameservices."
-          + "googleapis.com/Realm\"\231\001\n\022CreateRealmRequ"
-          + "est\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!gameservice"
-          + "s.googleapis.com/Realm\022\025\n\010realm_id\030\002 \001(\t"
-          + "B\003\340A\002\0221\n\005realm\030\003 \001(\0132\035.google.cloud.gami"
-          + "ng.v1.RealmB\003\340A\002\"M\n\022DeleteRealmRequest\0227"
-          + "\n\004name\030\001 \001(\tB)\340A\002\372A#\n!gameservices.googl"
-          + "eapis.com/Realm\"}\n\022UpdateRealmRequest\0221\n"
-          + "\005realm\030\001 \001(\0132\035.google.cloud.gaming.v1.Re"
-          + "almB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.p"
-          + "rotobuf.FieldMaskB\003\340A\002\"\273\001\n\031PreviewRealmU"
-          + "pdateRequest\0221\n\005realm\030\001 \001(\0132\035.google.clo"
-          + "ud.gaming.v1.RealmB\003\340A\002\0224\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0225\n"
-          + "\014preview_time\030\003 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\001\"e\n\032PreviewRealmUpdateRespon"
-          + "se\022\014\n\004etag\030\002 \001(\t\0229\n\014target_state\030\003 \001(\0132#"
-          + ".google.cloud.gaming.v1.TargetState\"\206\003\n\005"
-          + "Realm\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030\002 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
-          + "ate_time\030\003 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\0229\n\006labels\030\004 \003(\0132).google.cloud.g"
-          + "aming.v1.Realm.LabelsEntry\022\026\n\ttime_zone\030"
-          + "\006 \001(\tB\003\340A\002\022\014\n\004etag\030\007 \001(\t\022\023\n\013description\030"
-          + "\010 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001:^\352A[\n!gameservices.googleap"
-          + "is.com/Realm\0226projects/{project}/locatio"
-          + "ns/{location}/realms/{realm}B\\\n\032com.goog"
-          + "le.cloud.gaming.v1P\001Z<google.golang.org/"
-          + "genproto/googleapis/cloud/gaming/v1;gami"
-          + "ngb\006proto3"
+          + "/protobuf/timestamp.proto\"\253\001\n\021ListRealms"
+          + "Request\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!gameser"
+          + "vices.googleapis.com/Realm\022\026\n\tpage_size\030"
+          + "\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006f"
+          + "ilter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\""
+          + "q\n\022ListRealmsResponse\022-\n\006realms\030\001 \003(\0132\035."
+          + "google.cloud.gaming.v1.Realm\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"J\n\017Ge"
+          + "tRealmRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!gam"
+          + "eservices.googleapis.com/Realm\"\231\001\n\022Creat"
+          + "eRealmRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!g"
+          + "ameservices.googleapis.com/Realm\022\025\n\010real"
+          + "m_id\030\002 \001(\tB\003\340A\002\0221\n\005realm\030\003 \001(\0132\035.google."
+          + "cloud.gaming.v1.RealmB\003\340A\002\"M\n\022DeleteReal"
+          + "mRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!gameserv"
+          + "ices.googleapis.com/Realm\"}\n\022UpdateRealm"
+          + "Request\0221\n\005realm\030\001 \001(\0132\035.google.cloud.ga"
+          + "ming.v1.RealmB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMaskB\003\340A\002\"\273\001\n\031Pre"
+          + "viewRealmUpdateRequest\0221\n\005realm\030\001 \001(\0132\035."
+          + "google.cloud.gaming.v1.RealmB\003\340A\002\0224\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\003\340A\002\0225\n\014preview_time\030\003 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\001\"e\n\032PreviewRealmUp"
+          + "dateResponse\022\014\n\004etag\030\002 \001(\t\0229\n\014target_sta"
+          + "te\030\003 \001(\0132#.google.cloud.gaming.v1.Target"
+          + "State\"\206\003\n\005Realm\022\014\n\004name\030\001 \001(\t\0224\n\013create_"
+          + "time\030\002 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0229\n\006labels\030\004 \003(\0132).goog"
+          + "le.cloud.gaming.v1.Realm.LabelsEntry\022\026\n\t"
+          + "time_zone\030\006 \001(\tB\003\340A\002\022\014\n\004etag\030\007 \001(\t\022\023\n\013de"
+          + "scription\030\010 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:^\352A[\n!gameservice"
+          + "s.googleapis.com/Realm\0226projects/{projec"
+          + "t}/locations/{location}/realms/{realm}B\\"
+          + "\n\032com.google.cloud.gaming.v1P\001Z<google.g"
+          + "olang.org/genproto/googleapis/cloud/gami"
+          + "ng/v1;gamingb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -131,7 +130,6 @@ public final class Realms {
               com.google.cloud.gaming.v1.Common.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_gaming_v1_ListRealmsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -225,7 +223,6 @@ public final class Realms {
     com.google.cloud.gaming.v1.Common.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
