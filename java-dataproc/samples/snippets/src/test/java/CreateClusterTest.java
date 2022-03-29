@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,8 @@ public class CreateClusterTest {
   private static final String CLUSTER_NAME =
       String.format("java-cc-test-%s", UUID.randomUUID().toString());
   private static final String REGION = "us-central1";
-  // private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String PROJECT_ID = "gcloud-devel";
+  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  // private static final String PROJECT_ID = "gcloud-devel";
   private ByteArrayOutputStream bout;
 
   private static void requireEnv(String varName) {

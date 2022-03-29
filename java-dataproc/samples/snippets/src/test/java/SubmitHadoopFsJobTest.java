@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.Cluster;
+import com.google.cloud.dataproc.v1.ClusterConfig;
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
 import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import com.google.cloud.dataproc.v1.ClusterOperationMetadata;
+import com.google.cloud.dataproc.v1.InstanceGroupConfig;
 import com.google.protobuf.Empty;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -70,8 +72,25 @@ public class SubmitHadoopFsJobTest {
 
     try (ClusterControllerClient clusterControllerClient =
         ClusterControllerClient.create(clusterControllerSettings)) {
+      // Configure the settings for our cluster.
+      InstanceGroupConfig masterConfig =
+          InstanceGroupConfig.newBuilder()
+              .setMachineTypeUri("n1-standard-2")
+              .setNumInstances(1)
+              .build();
+      InstanceGroupConfig workerConfig =
+          InstanceGroupConfig.newBuilder()
+              .setMachineTypeUri("n1-standard-2")
+              .setNumInstances(2)
+              .build();
+      ClusterConfig clusterConfig =
+          ClusterConfig.newBuilder()
+              .setMasterConfig(masterConfig)
+              .setWorkerConfig(workerConfig)
+              .build();
       // Create the Dataproc cluster.
-      Cluster cluster = Cluster.newBuilder().setClusterName(CLUSTER_NAME).build();
+      Cluster cluster =
+          Cluster.newBuilder().setClusterName(CLUSTER_NAME).setConfig(clusterConfig).build();
       OperationFuture<Cluster, ClusterOperationMetadata> createClusterAsyncRequest =
           clusterControllerClient.createClusterAsync(PROJECT_ID, REGION, cluster);
       createClusterAsyncRequest.get();
