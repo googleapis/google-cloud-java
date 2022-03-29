@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.10](https://github.com/googleapis/java-datalabeling/compare/v0.122.9...v0.122.10) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#720](https://github.com/googleapis/java-datalabeling/issues/720)) ([78e924a](https://github.com/googleapis/java-datalabeling/commit/78e924ae702d35fbefac22e9003046def5f0a02b))
+
 ### [0.122.9](https://github.com/googleapis/java-datalabeling/compare/v0.122.8...v0.122.9) (2022-03-02)
 
 
