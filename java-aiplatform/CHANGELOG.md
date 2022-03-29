@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-aiplatform/compare/v2.7.4...v2.8.0) (2022-03-29)
+
+
+### Features
+
+* add `service_account` to `BatchPredictionJob` in aiplatform `v1beta1` `batch_prediction_job.proto` ([#831](https://github.com/googleapis/java-aiplatform/issues/831)) ([cd12452](https://github.com/googleapis/java-aiplatform/commit/cd1245213594655ed434f72901fa576da75a8f79))
+* add ImportModelEvaluation in aiplatform v1 model_service.proto ([#832](https://github.com/googleapis/java-aiplatform/issues/832)) ([e720ecc](https://github.com/googleapis/java-aiplatform/commit/e720eccdae90bbe7d6841d3f858ddc25b45907a6))
+* add monitoring_config to EntityType in aiplatform v1 entity_type.proto ([#830](https://github.com/googleapis/java-aiplatform/issues/830)) ([139a839](https://github.com/googleapis/java-aiplatform/commit/139a83950f7a846b6216539b7cad2242384166a9))
+* add PredictRequestResponseLoggingConfig to Endpoint in aiplatform v1 endpoint.proto ([#824](https://github.com/googleapis/java-aiplatform/issues/824)) ([2ac62d6](https://github.com/googleapis/java-aiplatform/commit/2ac62d6574845824f09e6b2af30c2e750b334f9b))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.13.4 ([#829](https://github.com/googleapis/java-aiplatform/issues/829)) ([f31367a](https://github.com/googleapis/java-aiplatform/commit/f31367ab045811832e2f008a753921366f6b3529))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#836](https://github.com/googleapis/java-aiplatform/issues/836)) ([320e320](https://github.com/googleapis/java-aiplatform/commit/320e320dac6cc3fd5a2a93f3077134d73060cb70))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.0 ([#834](https://github.com/googleapis/java-aiplatform/issues/834)) ([9dd2b5d](https://github.com/googleapis/java-aiplatform/commit/9dd2b5d796efe0a491dc11c1186414e767e52621))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.1 ([#835](https://github.com/googleapis/java-aiplatform/issues/835)) ([8857925](https://github.com/googleapis/java-aiplatform/commit/8857925ae6f07a15228de1a2cb3b724670ea1041))
+
 ### [2.7.4](https://github.com/googleapis/java-aiplatform/compare/v2.7.3...v2.7.4) (2022-03-10)
 
 
