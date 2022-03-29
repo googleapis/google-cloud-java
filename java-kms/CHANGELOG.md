@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.4.2](https://github.com/googleapis/java-kms/compare/v2.4.1...v2.4.2) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#745](https://github.com/googleapis/java-kms/issues/745)) ([2961822](https://github.com/googleapis/java-kms/commit/2961822ce81397e63a5c7c54d15e23da33133b57))
+
 ### [2.4.1](https://github.com/googleapis/java-kms/compare/v2.4.0...v2.4.1) (2022-03-03)
 
 
