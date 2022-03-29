@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.10](https://github.com/googleapis/java-profiler/compare/v2.1.9...v2.1.10) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#247](https://github.com/googleapis/java-profiler/issues/247)) ([b779d92](https://github.com/googleapis/java-profiler/commit/b779d92774709c9ff3b90376356c5d79595e867a))
+
 ### [2.1.9](https://github.com/googleapis/java-profiler/compare/v2.1.8...v2.1.9) (2022-03-02)
 
 
