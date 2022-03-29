@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.1.21](https://github.com/googleapis/java-automl/compare/v2.1.20...v2.1.21) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.9.1 ([#1084](https://github.com/googleapis/java-automl/issues/1084)) ([afbf52a](https://github.com/googleapis/java-automl/commit/afbf52a0c5bc90f0b5d52a0742ad69b32aa63749))
+* update dependency com.google.cloud:google-cloud-core to v2.5.10 ([#1092](https://github.com/googleapis/java-automl/issues/1092)) ([c29bb1d](https://github.com/googleapis/java-automl/commit/c29bb1dbcb39686f82eb987e74f938c00a1658c1))
+* update dependency com.google.cloud:google-cloud-core to v2.5.11 ([#1096](https://github.com/googleapis/java-automl/issues/1096)) ([34f57b9](https://github.com/googleapis/java-automl/commit/34f57b9032e8af3ddad27afbca411966529496aa))
+* update dependency com.google.cloud:google-cloud-core to v2.5.8 ([#1087](https://github.com/googleapis/java-automl/issues/1087)) ([7e70a61](https://github.com/googleapis/java-automl/commit/7e70a617a4b4ca63655c9168502daba00d3fd4ac))
+* update dependency com.google.cloud:google-cloud-core to v2.5.9 ([#1091](https://github.com/googleapis/java-automl/issues/1091)) ([30035cc](https://github.com/googleapis/java-automl/commit/30035cc3190063e39fbfaf9943998ef4dac605c4))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#1097](https://github.com/googleapis/java-automl/issues/1097)) ([159f6eb](https://github.com/googleapis/java-automl/commit/159f6ebb2d11b0632da72ca5fb3c888cb444b59f))
+* update dependency com.google.cloud:google-cloud-storage to v2.4.5 ([#1088](https://github.com/googleapis/java-automl/issues/1088)) ([2ce847c](https://github.com/googleapis/java-automl/commit/2ce847c71a580f1085bd7aedb0bd880caf8e3e7a))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.0 ([#1095](https://github.com/googleapis/java-automl/issues/1095)) ([3a23f3d](https://github.com/googleapis/java-automl/commit/3a23f3db4d703f9ffda939ad9cd2334d3b4ccdb0))
+
 ### [2.1.20](https://github.com/googleapis/java-automl/compare/v2.1.19...v2.1.20) (2022-03-02)
 
 
