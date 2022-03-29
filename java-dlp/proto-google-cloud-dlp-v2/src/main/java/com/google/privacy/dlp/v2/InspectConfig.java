@@ -322,8 +322,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration to control the number of findings returned. Cannot be set if
-   * de-identification is requested.
+   * Configuration to control the number of findings returned for inspection.
+   * This is not used for de-identification or data profiling.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
@@ -1674,8 +1674,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration to control the number of findings returned. Cannot be set if
-     * de-identification is requested.
+     * Configuration to control the number of findings returned for inspection.
+     * This is not used for de-identification or data profiling.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
@@ -2629,6 +2629,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2644,6 +2645,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2661,6 +2663,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2678,6 +2681,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
    * included in the response; see Finding.quote.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>bool include_quote = 4;</code>
@@ -2696,6 +2700,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * When true, excludes type information of the findings.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>bool exclude_info_types = 5;</code>
@@ -2799,8 +2804,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -2817,8 +2821,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -2833,8 +2836,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -2850,8 +2852,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -2866,8 +2867,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4148,6 +4148,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4162,6 +4163,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4182,6 +4184,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4204,6 +4207,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4224,6 +4228,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4250,6 +4255,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4270,6 +4276,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4284,6 +4291,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4302,6 +4310,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Configuration to control the number of findings returned.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4330,6 +4339,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
      * included in the response; see Finding.quote.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4346,6 +4356,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
      * included in the response; see Finding.quote.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4365,6 +4376,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
      * included in the response; see Finding.quote.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4384,6 +4396,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, excludes type information of the findings.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
@@ -4399,6 +4412,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, excludes type information of the findings.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
@@ -4417,6 +4431,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, excludes type information of the findings.
+     * This is not used for data profiling.
      * </pre>
      *
      * <code>bool exclude_info_types = 5;</code>
@@ -4815,8 +4830,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4832,8 +4846,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4847,8 +4860,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4863,8 +4875,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4886,8 +4897,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4908,8 +4918,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4930,8 +4939,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4948,8 +4956,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4963,8 +4970,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4979,8 +4985,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -4999,8 +5004,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -5018,8 +5022,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of options defining data content to scan.
-     * If empty, text, images, and other content will be included.
+     * Deprecated and unused.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>

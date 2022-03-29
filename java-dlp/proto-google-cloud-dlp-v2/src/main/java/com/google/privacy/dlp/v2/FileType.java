@@ -139,6 +139,30 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TSV = 9;</code>
    */
   TSV(9),
+  /**
+   *
+   *
+   * <pre>
+   * Powerpoint files &gt;30 MB will be scanned as binary files.
+   * Included file extensions:
+   *   pptx, pptm, potx, potm, pot
+   * </pre>
+   *
+   * <code>POWERPOINT = 11;</code>
+   */
+  POWERPOINT(11),
+  /**
+   *
+   *
+   * <pre>
+   * Excel files &gt;30 MB will be scanned as binary files.
+   * Included file extensions:
+   *   xlsx, xlsm, xltx, xltm
+   * </pre>
+   *
+   * <code>EXCEL = 12;</code>
+   */
+  EXCEL(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -252,6 +276,30 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TSV = 9;</code>
    */
   public static final int TSV_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Powerpoint files &gt;30 MB will be scanned as binary files.
+   * Included file extensions:
+   *   pptx, pptm, potx, potm, pot
+   * </pre>
+   *
+   * <code>POWERPOINT = 11;</code>
+   */
+  public static final int POWERPOINT_VALUE = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Excel files &gt;30 MB will be scanned as binary files.
+   * Included file extensions:
+   *   xlsx, xlsm, xltx, xltm
+   * </pre>
+   *
+   * <code>EXCEL = 12;</code>
+   */
+  public static final int EXCEL_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -295,6 +343,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
         return CSV;
       case 9:
         return TSV;
+      case 11:
+        return POWERPOINT;
+      case 12:
+        return EXCEL;
       default:
         return null;
     }

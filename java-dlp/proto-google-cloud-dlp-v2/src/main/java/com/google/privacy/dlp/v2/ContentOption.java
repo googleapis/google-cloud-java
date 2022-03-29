@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Options describing which parts of the provided content should be scanned.
+ * Deprecated and unused.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.ContentOption}

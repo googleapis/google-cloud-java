@@ -223,6 +223,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * pptx, pptm, potx, potm, pot
+     * </pre>
+     *
+     * <code>POWERPOINT_DOCUMENT = 9;</code>
+     */
+    POWERPOINT_DOCUMENT(9),
+    /**
+     *
+     *
+     * <pre>
+     * xlsx, xlsm, xltx, xltm
+     * </pre>
+     *
+     * <code>EXCEL_DOCUMENT = 10;</code>
+     */
+    EXCEL_DOCUMENT(10),
+    /**
+     *
+     *
+     * <pre>
      * avro
      * </pre>
      *
@@ -346,6 +366,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * pptx, pptm, potx, potm, pot
+     * </pre>
+     *
+     * <code>POWERPOINT_DOCUMENT = 9;</code>
+     */
+    public static final int POWERPOINT_DOCUMENT_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * xlsx, xlsm, xltx, xltm
+     * </pre>
+     *
+     * <code>EXCEL_DOCUMENT = 10;</code>
+     */
+    public static final int EXCEL_DOCUMENT_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
      * avro
      * </pre>
      *
@@ -415,6 +455,10 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return WORD_DOCUMENT;
         case 8:
           return PDF;
+        case 9:
+          return POWERPOINT_DOCUMENT;
+        case 10:
+          return EXCEL_DOCUMENT;
         case 11:
           return AVRO;
         case 12:

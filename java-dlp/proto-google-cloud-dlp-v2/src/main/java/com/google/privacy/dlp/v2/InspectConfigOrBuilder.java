@@ -148,6 +148,7 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -160,6 +161,7 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -172,6 +174,7 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * Configuration to control the number of findings returned.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -184,6 +187,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
    * included in the response; see Finding.quote.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>bool include_quote = 4;</code>
@@ -197,6 +201,7 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * When true, excludes type information of the findings.
+   * This is not used for data profiling.
    * </pre>
    *
    * <code>bool exclude_info_types = 5;</code>
@@ -266,8 +271,7 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -279,8 +283,7 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -292,8 +295,7 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -306,8 +308,7 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
@@ -319,8 +320,7 @@ public interface InspectConfigOrBuilder
    *
    *
    * <pre>
-   * List of options defining data content to scan.
-   * If empty, text, images, and other content will be included.
+   * Deprecated and unused.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
