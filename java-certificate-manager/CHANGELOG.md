@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://github.com/googleapis/java-certificate-manager/compare/v0.1.0...v0.1.1) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#20](https://github.com/googleapis/java-certificate-manager/issues/20)) ([7ecf994](https://github.com/googleapis/java-certificate-manager/commit/7ecf99424648eebfe66304e15665e73d273814c3))
+
 ## 0.1.0 (2022-03-07)
 
 
