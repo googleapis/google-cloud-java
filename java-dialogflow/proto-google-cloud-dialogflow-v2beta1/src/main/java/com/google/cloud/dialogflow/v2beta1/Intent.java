@@ -862,10 +862,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Templates are not annotated with entity types, but they can contain
        * &#64;-prefixed entity type names as substrings.
-       * Template mode has been deprecated. Example mode is the only supported
-       * way to create new training phrases. If you have existing training
-       * phrases that you've created in template mode, those will continue to
-       * work.
+       * Note: Template mode has been deprecated. Example mode is the only
+       * supported way to create new training phrases. If you have existing
+       * training phrases in template mode, they will be removed during training
+       * and it can cause a drop in agent performance.
        * </pre>
        *
        * <code>TEMPLATE = 2 [deprecated = true];</code>
@@ -902,10 +902,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Templates are not annotated with entity types, but they can contain
        * &#64;-prefixed entity type names as substrings.
-       * Template mode has been deprecated. Example mode is the only supported
-       * way to create new training phrases. If you have existing training
-       * phrases that you've created in template mode, those will continue to
-       * work.
+       * Note: Template mode has been deprecated. Example mode is the only
+       * supported way to create new training phrases. If you have existing
+       * training phrases in template mode, they will be removed during training
+       * and it can cause a drop in agent performance.
        * </pre>
        *
        * <code>TEMPLATE = 2 [deprecated = true];</code>
