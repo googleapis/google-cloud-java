@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-workflows:2.1.8:2.1.9-SNAPSHOT
-grpc-google-cloud-workflows-v1beta:0.7.8:0.7.9-SNAPSHOT
-grpc-google-cloud-workflows-v1:2.1.8:2.1.9-SNAPSHOT
-proto-google-cloud-workflows-v1beta:0.7.8:0.7.9-SNAPSHOT
-proto-google-cloud-workflows-v1:2.1.8:2.1.9-SNAPSHOT
+google-cloud-workflows:2.1.9:2.1.9
+grpc-google-cloud-workflows-v1beta:0.7.9:0.7.9
+grpc-google-cloud-workflows-v1:2.1.9:2.1.9
+proto-google-cloud-workflows-v1beta:0.7.9:0.7.9
+proto-google-cloud-workflows-v1:2.1.9:2.1.9
