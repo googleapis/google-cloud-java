@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recaptchaenterprise</artifactId>
-  <version>2.4.6</version>
+  <version>2.4.7</version>
 </dependency>
 
 ```
