@@ -191,6 +191,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -243,6 +244,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -295,6 +297,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -350,6 +353,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -405,6 +409,7 @@ public class AgentsClientTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
@@ -539,6 +544,7 @@ public class AgentsClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getAgentUri(), actualRequest.getAgentUri());
+    Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
     Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
     Assert.assertTrue(
         channelProvider.isHeaderSent(

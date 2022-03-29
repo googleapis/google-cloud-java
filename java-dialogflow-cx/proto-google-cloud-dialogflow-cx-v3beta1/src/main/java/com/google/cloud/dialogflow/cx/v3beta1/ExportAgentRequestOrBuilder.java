@@ -99,6 +99,35 @@ public interface ExportAgentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataFormat.
+   */
+  int getDataFormatValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataFormat.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat getDataFormat();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Environment name. If not set, draft environment is assumed.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.

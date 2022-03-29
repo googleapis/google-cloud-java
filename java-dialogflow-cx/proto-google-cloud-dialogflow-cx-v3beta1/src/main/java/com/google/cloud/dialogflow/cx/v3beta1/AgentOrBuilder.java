@@ -397,6 +397,20 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
+   * Indiciates whether the agent is locked for changes. If the agent is locked,
+   * modifications to the agent will be rejected except for [RestoreAgent][].
+   * </pre>
+   *
+   * <code>bool locked = 27;</code>
+   *
+   * @return The locked.
+   */
+  boolean getLocked();
+
+  /**
+   *
+   *
+   * <pre>
    * Hierarchical advanced settings for this agent. The settings exposed at the
    * lower level overrides the settings exposed at the higher level.
    * </pre>

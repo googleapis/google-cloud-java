@@ -195,6 +195,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 216:
+            {
+              locked_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -827,6 +832,25 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     return enableSpellCorrection_;
   }
 
+  public static final int LOCKED_FIELD_NUMBER = 27;
+  private boolean locked_;
+  /**
+   *
+   *
+   * <pre>
+   * Indiciates whether the agent is locked for changes. If the agent is locked,
+   * modifications to the agent will be rejected except for [RestoreAgent][].
+   * </pre>
+   *
+   * <code>bool locked = 27;</code>
+   *
+   * @return The locked.
+   */
+  @java.lang.Override
+  public boolean getLocked() {
+    return locked_;
+  }
+
   public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 22;
   private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advancedSettings_;
   /**
@@ -933,6 +957,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (advancedSettings_ != null) {
       output.writeMessage(22, getAdvancedSettings());
     }
+    if (locked_ != false) {
+      output.writeBool(27, locked_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -987,6 +1014,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (advancedSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getAdvancedSettings());
     }
+    if (locked_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, locked_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1019,6 +1049,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
     if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
+    if (getLocked() != other.getLocked()) return false;
     if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
     if (hasAdvancedSettings()) {
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
@@ -1062,6 +1093,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStackdriverLogging());
     hash = (37 * hash) + ENABLE_SPELL_CORRECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSpellCorrection());
+    hash = (37 * hash) + LOCKED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
     if (hasAdvancedSettings()) {
       hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAdvancedSettings().hashCode();
@@ -1245,6 +1278,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
       enableSpellCorrection_ = false;
 
+      locked_ = false;
+
       if (advancedSettingsBuilder_ == null) {
         advancedSettings_ = null;
       } else {
@@ -1299,6 +1334,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       result.securitySettings_ = securitySettings_;
       result.enableStackdriverLogging_ = enableStackdriverLogging_;
       result.enableSpellCorrection_ = enableSpellCorrection_;
+      result.locked_ = locked_;
       if (advancedSettingsBuilder_ == null) {
         result.advancedSettings_ = advancedSettings_;
       } else {
@@ -1403,6 +1439,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableSpellCorrection() != false) {
         setEnableSpellCorrection(other.getEnableSpellCorrection());
+      }
+      if (other.getLocked() != false) {
+        setLocked(other.getLocked());
       }
       if (other.hasAdvancedSettings()) {
         mergeAdvancedSettings(other.getAdvancedSettings());
@@ -2891,6 +2930,61 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableSpellCorrection() {
 
       enableSpellCorrection_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean locked_;
+    /**
+     *
+     *
+     * <pre>
+     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * modifications to the agent will be rejected except for [RestoreAgent][].
+     * </pre>
+     *
+     * <code>bool locked = 27;</code>
+     *
+     * @return The locked.
+     */
+    @java.lang.Override
+    public boolean getLocked() {
+      return locked_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * modifications to the agent will be rejected except for [RestoreAgent][].
+     * </pre>
+     *
+     * <code>bool locked = 27;</code>
+     *
+     * @param value The locked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocked(boolean value) {
+
+      locked_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * modifications to the agent will be rejected except for [RestoreAgent][].
+     * </pre>
+     *
+     * <code>bool locked = 27;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocked() {
+
+      locked_ = false;
       onChanged();
       return this;
     }

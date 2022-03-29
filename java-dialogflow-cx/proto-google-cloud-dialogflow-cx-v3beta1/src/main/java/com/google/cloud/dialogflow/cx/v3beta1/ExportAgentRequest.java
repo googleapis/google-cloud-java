@@ -40,6 +40,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
   private ExportAgentRequest() {
     name_ = "";
     agentUri_ = "";
+    dataFormat_ = 0;
     environment_ = "";
   }
 
@@ -86,6 +87,13 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
               agentUri_ = s;
               break;
             }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              dataFormat_ = rawValue;
+              break;
+            }
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -125,6 +133,143 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.class,
             com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Data format of the exported agent.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat}
+   */
+  public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified format.
+     * </pre>
+     *
+     * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    DATA_FORMAT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Agent content will be exported as raw bytes.
+     * </pre>
+     *
+     * <code>BLOB = 1;</code>
+     */
+    BLOB(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified format.
+     * </pre>
+     *
+     * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Agent content will be exported as raw bytes.
+     * </pre>
+     *
+     * <code>BLOB = 1;</code>
+     */
+    public static final int BLOB_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataFormat valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataFormat forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATA_FORMAT_UNSPECIFIED;
+        case 1:
+          return BLOB;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataFormat> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataFormat> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DataFormat>() {
+          public DataFormat findValueByNumber(int number) {
+            return DataFormat.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final DataFormat[] VALUES = values();
+
+    public static DataFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataFormat(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -247,6 +392,48 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int DATA_FORMAT_FIELD_NUMBER = 3;
+  private int dataFormat_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataFormat.
+   */
+  @java.lang.Override
+  public int getDataFormatValue() {
+    return dataFormat_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataFormat.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat getDataFormat() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat result =
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat.valueOf(dataFormat_);
+    return result == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat.UNRECOGNIZED
+        : result;
+  }
+
   public static final int ENVIRONMENT_FIELD_NUMBER = 5;
   private volatile java.lang.Object environment_;
   /**
@@ -324,6 +511,12 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentUri_);
     }
+    if (dataFormat_
+        != com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat
+            .DATA_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, dataFormat_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, environment_);
     }
@@ -341,6 +534,12 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentUri_);
+    }
+    if (dataFormat_
+        != com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat
+            .DATA_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, dataFormat_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, environment_);
@@ -363,6 +562,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
 
     if (!getName().equals(other.getName())) return false;
     if (!getAgentUri().equals(other.getAgentUri())) return false;
+    if (dataFormat_ != other.dataFormat_) return false;
     if (!getEnvironment().equals(other.getEnvironment())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -379,6 +579,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + AGENT_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAgentUri().hashCode();
+    hash = (37 * hash) + DATA_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + dataFormat_;
     hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
     hash = (53 * hash) + getEnvironment().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -531,6 +733,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
 
       agentUri_ = "";
 
+      dataFormat_ = 0;
+
       environment_ = "";
 
       return this;
@@ -562,6 +766,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
           new com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest(this);
       result.name_ = name_;
       result.agentUri_ = agentUri_;
+      result.dataFormat_ = dataFormat_;
       result.environment_ = environment_;
       onBuilt();
       return result;
@@ -620,6 +825,9 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       if (!other.getAgentUri().isEmpty()) {
         agentUri_ = other.agentUri_;
         onChanged();
+      }
+      if (other.dataFormat_ != 0) {
+        setDataFormatValue(other.getDataFormatValue());
       }
       if (!other.getEnvironment().isEmpty()) {
         environment_ = other.environment_;
@@ -918,6 +1126,110 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       agentUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int dataFormat_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataFormat.
+     */
+    @java.lang.Override
+    public int getDataFormatValue() {
+      return dataFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dataFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataFormatValue(int value) {
+
+      dataFormat_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat getDataFormat() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat result =
+          com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat.valueOf(dataFormat_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The dataFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataFormat(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      dataFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.DataFormat data_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataFormat() {
+
+      dataFormat_ = 0;
       onChanged();
       return this;
     }
