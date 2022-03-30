@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.1](https://github.com/googleapis/java-artifact-registry/compare/v1.1.0...v1.1.1) (2022-03-29)
+
+
+### Documentation
+
+* more details for ListFilesRequest parent field ([#240](https://github.com/googleapis/java-artifact-registry/issues/240)) ([3f1ec04](https://github.com/googleapis/java-artifact-registry/commit/3f1ec04f4ff58da0e01f683a0f4ede59645a49b8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#249](https://github.com/googleapis/java-artifact-registry/issues/249)) ([5b402ec](https://github.com/googleapis/java-artifact-registry/commit/5b402eca1c0ce79bcc5324a8afa792c62805d47f))
+
 ## [1.1.0](https://github.com/googleapis/java-artifact-registry/compare/v1.0.0...v1.1.0) (2022-03-08)
 
 
