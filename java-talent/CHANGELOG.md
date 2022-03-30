@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.2.9](https://github.com/googleapis/java-talent/compare/v2.2.8...v2.2.9) (2022-03-29)
+
+
+### Documentation
+
+* Added functionality in the companyDisplayNames filter to support fuzzy matching ([#760](https://github.com/googleapis/java-talent/issues/760)) ([3002a5e](https://github.com/googleapis/java-talent/commit/3002a5e7b24f9965462b9bd4d23a320713de541f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#764](https://github.com/googleapis/java-talent/issues/764)) ([fa1cc3c](https://github.com/googleapis/java-talent/commit/fa1cc3c9c9198bc66ef7b124f8ab361bb83de88c))
+
 ### [2.2.8](https://github.com/googleapis/java-talent/compare/v2.2.7...v2.2.8) (2022-03-02)
 
 
