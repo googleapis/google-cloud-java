@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-dataproc-metastore/compare/v2.1.9...v2.2.0) (2022-03-29)
+
+
+### Features
+
+* Added DatabaseType field for the type of backing store used ([#221](https://github.com/googleapis/java-dataproc-metastore/issues/221)) ([e1384f8](https://github.com/googleapis/java-dataproc-metastore/commit/e1384f8f1f3d0e8439f1015d3926849d7a4206e8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#224](https://github.com/googleapis/java-dataproc-metastore/issues/224)) ([82dce0a](https://github.com/googleapis/java-dataproc-metastore/commit/82dce0a16ac2e550f0916fec5606be9cfae2c96f))
+
 ### [2.1.9](https://github.com/googleapis/java-dataproc-metastore/compare/v2.1.8...v2.1.9) (2022-03-03)
 
 
