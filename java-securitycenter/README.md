@@ -62,13 +62,13 @@ implementation 'com.google.cloud:google-cloud-securitycenter'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-securitycenter:2.5.2'
+implementation 'com.google.cloud:google-cloud-securitycenter:2.5.3'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.5.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.5.3"
 ```
 
 ## Authentication
@@ -123,7 +123,8 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-securitycente
 | Delete Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/DeleteMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/DeleteMuteRule.java) |
 | Get Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/GetMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/GetMuteRule.java) |
 | List Mute Rules | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/ListMuteRules.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/ListMuteRules.java) |
-| Set Mute Unmute Finding | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteUnmuteFinding.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteUnmuteFinding.java) |
+| Set Mute Finding | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteFinding.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetMuteFinding.java) |
+| Set Unmute Finding | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetUnmuteFinding.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/SetUnmuteFinding.java) |
 | Update Mute Rule | [source code](https://github.com/googleapis/java-securitycenter/blob/main/samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/UpdateMuteRule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-securitycenter&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/examples/securitycenter/snippets/muteconfig/UpdateMuteRule.java) |
 
 

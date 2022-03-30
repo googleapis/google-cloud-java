@@ -24,7 +24,8 @@ import com.google.cloud.examples.securitycenter.snippets.muteconfig.CreateMuteRu
 import com.google.cloud.examples.securitycenter.snippets.muteconfig.DeleteMuteRule;
 import com.google.cloud.examples.securitycenter.snippets.muteconfig.GetMuteRule;
 import com.google.cloud.examples.securitycenter.snippets.muteconfig.ListMuteRules;
-import com.google.cloud.examples.securitycenter.snippets.muteconfig.SetMuteUnmuteFinding;
+import com.google.cloud.examples.securitycenter.snippets.muteconfig.SetMuteFinding;
+import com.google.cloud.examples.securitycenter.snippets.muteconfig.SetUnmuteFinding;
 import com.google.cloud.examples.securitycenter.snippets.muteconfig.UpdateMuteRule;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.Finding;
@@ -215,8 +216,12 @@ public class MuteFindingIT {
 
   @Test
   public void testSetMuteFinding() {
-    SetMuteUnmuteFinding.setMute(FINDING_1.getName());
-    assertThat(stdOut.toString()).contains("Mute value for the finding: MUTED");
+    SetMuteFinding.setMute(FINDING_1.getName());
+    assertThat(stdOut.toString()).contains(
+        "Mute value for the finding " + FINDING_1.getName() + " is: " + "MUTED");
+    SetUnmuteFinding.setUnmute(FINDING_1.getName());
+    assertThat(stdOut.toString()).contains(
+        "Mute value for the finding " + FINDING_1.getName() + " is: " + "UNMUTED");
   }
 
   @Test

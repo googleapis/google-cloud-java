@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.google.cloud.examples.securitycenter.snippets.muteconfig;
 
-// [START securitycenter_set_mute_unmute]
+// [START securitycenter_set_unmute]
 
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.Finding.Mute;
@@ -24,7 +24,7 @@ import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import java.io.IOException;
 
-public class SetMuteUnmuteFinding {
+public class SetUnmuteFinding {
 
   public static void main(String[] args) {
     // TODO: Replace the variables within {}
@@ -36,27 +36,27 @@ public class SetMuteUnmuteFinding {
     //  - folders/{folder_id}/sources/{source_id}/finding/{finding_id}
     //  - projects/{project_id}/sources/{source_id}/finding/{finding_id}
     String findingPath = "{path-to-the-finding}";
-    setMute(findingPath);
+    setUnmute(findingPath);
   }
 
-  // Mute/unmute an individual finding.
-  // If a finding is already muted, muting it again has no effect.
-  // Similarly, unmuting a finding that isn't muted has no effect.
+  // Unmute an individual finding.
+  // Unmuting a finding that isn't muted has no effect.
   // Various mute states are: MUTE_UNSPECIFIED/MUTE/UNMUTE.
-  public static void setMute(String findingPath) {
+  public static void setUnmute(String findingPath) {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
 
       SetMuteRequest setMuteRequest =
-          SetMuteRequest.newBuilder().setName(findingPath).setMute(Mute.MUTED).build();
+          SetMuteRequest.newBuilder().setName(findingPath).setMute(Mute.UNMUTED).build();
 
       Finding finding = client.setMute(setMuteRequest);
-      System.out.println("Mute value for the finding: " + finding.getMute());
+      System.out.println(
+          "Mute value for the finding " + finding.getName() + " is: " + finding.getMute());
     } catch (IOException e) {
       System.out.println("Failed to set the specified mute value. \n Exception: " + e);
     }
   }
 }
-// [END securitycenter_set_mute_unmute]
+// [END securitycenter_set_unmute]
