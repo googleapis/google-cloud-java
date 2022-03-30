@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-texttospeech/compare/v2.1.5...v2.2.0) (2022-03-29)
+
+
+### Features
+
+* promote CustomVoiceParams to v1 ([#669](https://github.com/googleapis/java-texttospeech/issues/669)) ([ceb2132](https://github.com/googleapis/java-texttospeech/commit/ceb21326badbe975c178c58c587bed4111d428b9))
+
+
+### Dependencies
+
+* update actions/checkout action to v3 ([#659](https://github.com/googleapis/java-texttospeech/issues/659)) ([14569c4](https://github.com/googleapis/java-texttospeech/commit/14569c47722a3831855f9952cc8dbad6e1598176))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#673](https://github.com/googleapis/java-texttospeech/issues/673)) ([f7abb3e](https://github.com/googleapis/java-texttospeech/commit/f7abb3e2786127ac8b17efaae86dbe5aa93f84e7))
+
 ### [2.1.5](https://github.com/googleapis/java-texttospeech/compare/v2.1.4...v2.1.5) (2022-03-02)
 
 
