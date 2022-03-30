@@ -1,5 +1,19 @@
 # Changelog
 
+### [4.5.10](https://github.com/googleapis/java-dialogflow/compare/v4.5.9...v4.5.10) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.11 ([#902](https://github.com/googleapis/java-dialogflow/issues/902)) ([e39b277](https://github.com/googleapis/java-dialogflow/commit/e39b27799a430dca95e782234daee0072e3578dd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#903](https://github.com/googleapis/java-dialogflow/issues/903)) ([b725eaa](https://github.com/googleapis/java-dialogflow/commit/b725eaa05823f6b2416bd4161599bdb8223b36b1))
+
+
+### Documentation
+
+* added explanation for SuggestionResult ([#861](https://github.com/googleapis/java-dialogflow/issues/861)) ([e443fcd](https://github.com/googleapis/java-dialogflow/commit/e443fcd6893203c7c8d5f44cb885fa6a21b67ff6))
+* clarified the deprecation of TEMPLATE in intent training phrase type ([#900](https://github.com/googleapis/java-dialogflow/issues/900)) ([c0f5fe2](https://github.com/googleapis/java-dialogflow/commit/c0f5fe28cb3e81ae74a3ed58a5ec99e147228b02))
+
 ### [4.5.9](https://github.com/googleapis/java-dialogflow/compare/v4.5.8...v4.5.9) (2022-03-14)
 
 
