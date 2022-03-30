@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.7.10](https://github.com/googleapis/java-mediatranslation/compare/v0.7.9...v0.7.10) (2022-03-29)
+
+
+### Documentation
+
+* **samples:** remove unsupported field RecognitionResult ([#631](https://github.com/googleapis/java-mediatranslation/issues/631)) ([36b8519](https://github.com/googleapis/java-mediatranslation/commit/36b85197c9a4bebdd1355fdfeb3ab5a51076c300))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#632](https://github.com/googleapis/java-mediatranslation/issues/632)) ([5d19d45](https://github.com/googleapis/java-mediatranslation/commit/5d19d45843eac6870da103bd326c6f7be0029a54))
+
 ### [0.7.9](https://github.com/googleapis/java-mediatranslation/compare/v0.7.8...v0.7.9) (2022-03-02)
 
 
