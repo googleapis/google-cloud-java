@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-security-private-ca/compare/v2.2.5...v2.3.0) (2022-03-29)
+
+
+### Features
+
+* Add `skip_grace_period` flag to DeleteCertificateAuthority API ([#388](https://github.com/googleapis/java-security-private-ca/issues/388)) ([c69ce38](https://github.com/googleapis/java-security-private-ca/commit/c69ce3803c315689ffe4491625aae17cf0f3f92d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#395](https://github.com/googleapis/java-security-private-ca/issues/395)) ([b96a457](https://github.com/googleapis/java-security-private-ca/commit/b96a4577bc1a84ab39afb8dcf68fd8d050158eca))
+
 ### [2.2.5](https://github.com/googleapis/java-security-private-ca/compare/v2.2.4...v2.2.5) (2022-03-09)
 
 
