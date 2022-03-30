@@ -1,5 +1,27 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-secretmanager/compare/v2.1.3...v2.1.4) (2022-03-29)
+
+
+### Documentation
+
+* **sample:** Add sample for Native Image Support ([#711](https://github.com/googleapis/java-secretmanager/issues/711)) ([1afd3aa](https://github.com/googleapis/java-secretmanager/commit/1afd3aa9a4bc7b4223716c966b7791bbcd096725))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#739](https://github.com/googleapis/java-secretmanager/issues/739)) ([6a58447](https://github.com/googleapis/java-secretmanager/commit/6a58447eb25ddc6e9b5a2df45d86dab0e02cedc5))
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#731](https://github.com/googleapis/java-secretmanager/issues/731)) ([3e9211a](https://github.com/googleapis/java-secretmanager/commit/3e9211ac7904a4699e4d7a07ce34c0155e277e6f))
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#738](https://github.com/googleapis/java-secretmanager/issues/738)) ([afe2969](https://github.com/googleapis/java-secretmanager/commit/afe2969f5d496492dbaf75d1c171363bb68624b6))
+* update dependency com.google.cloud:native-image-support to v0.12.6 ([#723](https://github.com/googleapis/java-secretmanager/issues/723)) ([a2803ca](https://github.com/googleapis/java-secretmanager/commit/a2803caa7228e9ce057aa1a12ff9ab031dbfea59))
+* update dependency com.google.cloud:native-image-support to v0.12.7 ([#727](https://github.com/googleapis/java-secretmanager/issues/727)) ([fa8e4ed](https://github.com/googleapis/java-secretmanager/commit/fa8e4ed94a0944c277a10b4520cfce233d422a4a))
+* update dependency com.google.cloud:native-image-support to v0.12.8 ([#729](https://github.com/googleapis/java-secretmanager/issues/729)) ([1a9d2b8](https://github.com/googleapis/java-secretmanager/commit/1a9d2b87d340d8009615bfcfae527287eeedf38d))
+* update dependency com.google.cloud:native-image-support to v0.12.9 ([#730](https://github.com/googleapis/java-secretmanager/issues/730)) ([60e8336](https://github.com/googleapis/java-secretmanager/commit/60e8336aaeec4c792ec97f5c64681ef70ef9b085))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.10 ([#724](https://github.com/googleapis/java-secretmanager/issues/724)) ([604a9bc](https://github.com/googleapis/java-secretmanager/commit/604a9bc50dbe6971faabcfe8af1c4fe18a5667e1))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#735](https://github.com/googleapis/java-secretmanager/issues/735)) ([6123ddc](https://github.com/googleapis/java-secretmanager/commit/6123ddc964d7fbe9f33d603c06a730a0fd09ea46))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.10 ([#725](https://github.com/googleapis/java-secretmanager/issues/725)) ([6a71213](https://github.com/googleapis/java-secretmanager/commit/6a71213fd203075e7752dfbde51ec7fdea4d4646))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#736](https://github.com/googleapis/java-secretmanager/issues/736)) ([d54de52](https://github.com/googleapis/java-secretmanager/commit/d54de52a459ae593f604bed99ba139e373105d17))
+
 ### [2.1.3](https://github.com/googleapis/java-secretmanager/compare/v2.1.2...v2.1.3) (2022-03-02)
 
 
