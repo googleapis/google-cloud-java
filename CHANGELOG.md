@@ -1,5 +1,22 @@
 # Changelog
 
+### [2.11.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.11.0...v2.11.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* Numerics cast from strings ([#1588](https://github.com/googleapis/java-bigquerystorage/issues/1588)) ([085768b](https://github.com/googleapis/java-bigquerystorage/commit/085768b41943237f50d5e47fa4ba5f22abff9fc6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.0 ([#1578](https://github.com/googleapis/java-bigquerystorage/issues/1578)) ([adca54e](https://github.com/googleapis/java-bigquerystorage/commit/adca54eb0348d2ba02d3c272e180beebd9feb6c6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.1 ([#1583](https://github.com/googleapis/java-bigquerystorage/issues/1583)) ([cc33d0e](https://github.com/googleapis/java-bigquerystorage/commit/cc33d0e539cc2ed53bf0ab265c5ebe55a0ac6c6e))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.2 ([#1587](https://github.com/googleapis/java-bigquerystorage/issues/1587)) ([d4ab7f6](https://github.com/googleapis/java-bigquerystorage/commit/d4ab7f64e32e4be8d1047d93b34cdadeccd98d90))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.3 ([#1591](https://github.com/googleapis/java-bigquerystorage/issues/1591)) ([0c62c85](https://github.com/googleapis/java-bigquerystorage/commit/0c62c85cf5fead39c04512c49db79d8e95fd44e6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.4 ([#1594](https://github.com/googleapis/java-bigquerystorage/issues/1594)) ([05e9062](https://github.com/googleapis/java-bigquerystorage/commit/05e90620192747096854e60047cbca1fa6d81ea5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#1593](https://github.com/googleapis/java-bigquerystorage/issues/1593)) ([5234809](https://github.com/googleapis/java-bigquerystorage/commit/5234809e0482b05e40cbb6cecbb1154699255a59))
+
 ## [2.11.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.10.1...v2.11.0) (2022-03-14)
 
 
