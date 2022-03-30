@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.0.17](https://github.com/googleapis/java-retail/compare/v2.0.16...v2.0.17) (2022-03-29)
+
+
+### Documentation
+
+* users can self enroll retail search feature on cloud console ([#377](https://github.com/googleapis/java-retail/issues/377)) ([783cb9e](https://github.com/googleapis/java-retail/commit/783cb9e32d617bf6cd2ce3aacc66b3d6eb920ce1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.4 ([#382](https://github.com/googleapis/java-retail/issues/382)) ([c1de86a](https://github.com/googleapis/java-retail/commit/c1de86a6104582b93934a93419aae14f1a140417))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#384](https://github.com/googleapis/java-retail/issues/384)) ([9854a34](https://github.com/googleapis/java-retail/commit/9854a342dd88a3d5f84126773dadaf429af8e4f0))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.0 ([#378](https://github.com/googleapis/java-retail/issues/378)) ([ab0d3a8](https://github.com/googleapis/java-retail/commit/ab0d3a8e916fc8651ac4bba3f5593b832c042567))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.1 ([#385](https://github.com/googleapis/java-retail/issues/385)) ([764f23f](https://github.com/googleapis/java-retail/commit/764f23f4b83e756eefe0a30dd6294f676efeccff))
+
 ### [2.0.16](https://github.com/googleapis/java-retail/compare/v2.0.15...v2.0.16) (2022-03-25)
 
 
