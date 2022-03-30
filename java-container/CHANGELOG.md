@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.3.6](https://github.com/googleapis/java-container/compare/v2.3.5...v2.3.6) (2022-03-29)
+
+
+### Bug Fixes
+
+* change the default node image to cos_containerd ([#706](https://github.com/googleapis/java-container/issues/706)) ([9ffa70d](https://github.com/googleapis/java-container/commit/9ffa70d62acafd7c875b87e22cb212bd1d6e9a42))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#709](https://github.com/googleapis/java-container/issues/709)) ([bb64318](https://github.com/googleapis/java-container/commit/bb64318396ca41ce95c428f918a6443f41580f2a))
+
 ### [2.3.5](https://github.com/googleapis/java-container/compare/v2.3.4...v2.3.5) (2022-03-04)
 
 
