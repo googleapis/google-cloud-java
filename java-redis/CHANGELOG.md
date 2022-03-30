@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-redis/compare/v2.3.0...v2.4.0) (2022-03-29)
+
+
+### Features
+
+* [Cloud Memorystore for Redis] Support Maintenance Window ([#618](https://github.com/googleapis/java-redis/issues/618)) ([ccde9b5](https://github.com/googleapis/java-redis/commit/ccde9b5820016a0569df88c3a85f688be4d08c79))
+* add secondary_ip_range field ([ccde9b5](https://github.com/googleapis/java-redis/commit/ccde9b5820016a0569df88c3a85f688be4d08c79))
+* add support for AUTH functionality ([ccde9b5](https://github.com/googleapis/java-redis/commit/ccde9b5820016a0569df88c3a85f688be4d08c79))
+* add support for TLS functionality ([ccde9b5](https://github.com/googleapis/java-redis/commit/ccde9b5820016a0569df88c3a85f688be4d08c79))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#620](https://github.com/googleapis/java-redis/issues/620)) ([d610035](https://github.com/googleapis/java-redis/commit/d6100350270f4b55e82772c9abf285ae7fb4bfeb))
+
 ## [2.3.0](https://github.com/googleapis/java-redis/compare/v2.2.0...v2.3.0) (2022-03-08)
 
 
