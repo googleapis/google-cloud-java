@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-tasks:2.1.10:2.1.10
-grpc-google-cloud-tasks-v2beta3:0.91.10:0.91.10
-grpc-google-cloud-tasks-v2beta2:0.91.10:0.91.10
-grpc-google-cloud-tasks-v2:2.1.10:2.1.10
-proto-google-cloud-tasks-v2beta3:0.91.10:0.91.10
-proto-google-cloud-tasks-v2beta2:0.91.10:0.91.10
-proto-google-cloud-tasks-v2:2.1.10:2.1.10
+google-cloud-tasks:2.1.10:2.1.11-SNAPSHOT
+grpc-google-cloud-tasks-v2beta3:0.91.10:0.91.11-SNAPSHOT
+grpc-google-cloud-tasks-v2beta2:0.91.10:0.91.11-SNAPSHOT
+grpc-google-cloud-tasks-v2:2.1.10:2.1.11-SNAPSHOT
+proto-google-cloud-tasks-v2beta3:0.91.10:0.91.11-SNAPSHOT
+proto-google-cloud-tasks-v2beta2:0.91.10:0.91.11-SNAPSHOT
+proto-google-cloud-tasks-v2:2.1.10:2.1.11-SNAPSHOT
