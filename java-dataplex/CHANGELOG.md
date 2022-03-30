@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://github.com/googleapis/java-dataplex/compare/v0.2.0...v0.2.1) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#41](https://github.com/googleapis/java-dataplex/issues/41)) ([d6b7c8f](https://github.com/googleapis/java-dataplex/commit/d6b7c8f4c2dda317d266146d2055e0a5bcbf8d6d))
+
 ## [0.2.0](https://github.com/googleapis/java-dataplex/compare/v0.1.1...v0.2.0) (2022-03-02)
 
 
