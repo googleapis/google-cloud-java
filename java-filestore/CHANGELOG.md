@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-filestore/compare/v1.1.9...v1.2.0) (2022-03-29)
+
+
+### Features
+
+* set longer polling timeouts for filestore CreateInstance ([#162](https://github.com/googleapis/java-filestore/issues/162)) ([64f20e6](https://github.com/googleapis/java-filestore/commit/64f20e6dd19dd0c713aa7af5da390f8beb8de13c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#166](https://github.com/googleapis/java-filestore/issues/166)) ([0fae8e2](https://github.com/googleapis/java-filestore/commit/0fae8e2ceeb322964ca2a614c0fe0c6a13fdd0d8))
+
 ### [1.1.9](https://github.com/googleapis/java-filestore/compare/v1.1.8...v1.1.9) (2022-03-02)
 
 
