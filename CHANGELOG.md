@@ -1,5 +1,13 @@
 # Changelog
 
+### [3.7.3](https://github.com/googleapis/java-logging/compare/v3.7.2...v3.7.3) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#917](https://github.com/googleapis/java-logging/issues/917)) ([b42717e](https://github.com/googleapis/java-logging/commit/b42717e8e2d825cee9918c48ae4b7628f225f6be))
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#916](https://github.com/googleapis/java-logging/issues/916)) ([6d6bbef](https://github.com/googleapis/java-logging/commit/6d6bbef4bfb0802677e2773ffd95047c71814613))
+
 ### [3.7.2](https://github.com/googleapis/java-logging/compare/v3.7.1...v3.7.2) (2022-03-24)
 
 
