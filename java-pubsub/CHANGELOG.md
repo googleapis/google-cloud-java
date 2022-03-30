@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.116.3](https://github.com/googleapis/java-pubsub/compare/v1.116.2...v1.116.3) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.5.11 ([#1070](https://github.com/googleapis/java-pubsub/issues/1070)) ([662e2ec](https://github.com/googleapis/java-pubsub/commit/662e2ec8c4130c237bcfc61efe2e42a9912c8df0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#1072](https://github.com/googleapis/java-pubsub/issues/1072)) ([56f9e91](https://github.com/googleapis/java-pubsub/commit/56f9e91b3accdf59b077771141fd42d09ebecdf1))
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#1071](https://github.com/googleapis/java-pubsub/issues/1071)) ([82f4501](https://github.com/googleapis/java-pubsub/commit/82f4501b84ea97b2903f51d8cae2011c1b96abf4))
+
 ### [1.116.2](https://github.com/googleapis/java-pubsub/compare/v1.116.1...v1.116.2) (2022-03-24)
 
 
