@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.6.1](https://github.com/googleapis/java-bigtable/compare/v2.6.0...v2.6.1) (2022-03-29)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#1212](https://github.com/googleapis/java-bigtable/issues/1212)) ([e38841c](https://github.com/googleapis/java-bigtable/commit/e38841c17c2a03e3b4dee73bd452c46c622736c1))
+* update dependency com.google.cloud:native-image-support to v0.12.10 ([#1203](https://github.com/googleapis/java-bigtable/issues/1203)) ([a62a104](https://github.com/googleapis/java-bigtable/commit/a62a1048f0f2e9090405fc6311ca706762d1534e))
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#1210](https://github.com/googleapis/java-bigtable/issues/1210)) ([2c5090c](https://github.com/googleapis/java-bigtable/commit/2c5090cf1ad19b966dc2819be2e724dc991149b9))
+* update dependency com.google.cloud:native-image-support to v0.12.7 ([#1196](https://github.com/googleapis/java-bigtable/issues/1196)) ([476da07](https://github.com/googleapis/java-bigtable/commit/476da07ecead27c3f260b4e312bbb4eb035b4d3e))
+* update dependency com.google.cloud:native-image-support to v0.12.8 ([#1201](https://github.com/googleapis/java-bigtable/issues/1201)) ([d9fd936](https://github.com/googleapis/java-bigtable/commit/d9fd936e97ca362c5868b6aeca2617c2688bc009))
+* update dependency com.google.cloud:native-image-support to v0.12.9 ([#1202](https://github.com/googleapis/java-bigtable/issues/1202)) ([29c6005](https://github.com/googleapis/java-bigtable/commit/29c60059b7e231b014f0f8862d48dd0b071fbf8a))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#1207](https://github.com/googleapis/java-bigtable/issues/1207)) ([f2a01dc](https://github.com/googleapis/java-bigtable/commit/f2a01dc30c67ae6ae41e7f9733281ed182b6e836))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#1208](https://github.com/googleapis/java-bigtable/issues/1208)) ([9f93af3](https://github.com/googleapis/java-bigtable/commit/9f93af3eb1463427dc4cc57a860bf7a76ab3f2de))
+
 ## [2.6.0](https://github.com/googleapis/java-bigtable/compare/v2.5.3...v2.6.0) (2022-03-03)
 
 
