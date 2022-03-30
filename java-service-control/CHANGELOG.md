@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.1.10](https://github.com/googleapis/java-service-control/compare/v1.1.9...v1.1.10) (2022-03-29)
+
+
+### Documentation
+
+* fix docstring formatting ([#146](https://github.com/googleapis/java-service-control/issues/146)) ([93110a0](https://github.com/googleapis/java-service-control/commit/93110a0e9f03d2a8903213cd2b5e60e493b9c2de))
+* fix relative and broken links ([#159](https://github.com/googleapis/java-service-control/issues/159)) ([093919c](https://github.com/googleapis/java-service-control/commit/093919cefd4550f1df3d520487efae9152b7d9a9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#161](https://github.com/googleapis/java-service-control/issues/161)) ([0b94416](https://github.com/googleapis/java-service-control/commit/0b9441638bf6e0c6cf1ca3fe10afddd9db107fd2))
+
 ### [1.1.9](https://github.com/googleapis/java-service-control/compare/v1.1.8...v1.1.9) (2022-03-02)
 
 
