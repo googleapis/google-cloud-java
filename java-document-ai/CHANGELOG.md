@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-document-ai/compare/v2.3.1...v2.4.0) (2022-03-29)
+
+
+### Features
+
+* add `content` field in TextAnchor ([#787](https://github.com/googleapis/java-document-ai/issues/787)) ([a0b46b5](https://github.com/googleapis/java-document-ai/commit/a0b46b5b81e45fe7908e3f8487582e85fddb3dab))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#794](https://github.com/googleapis/java-document-ai/issues/794)) ([7388098](https://github.com/googleapis/java-document-ai/commit/7388098207f7be76fff2bc9c2900e57eb65e7dfb))
+* update dependency com.google.cloud:google-cloud-storage to v2.5.1 ([#792](https://github.com/googleapis/java-document-ai/issues/792)) ([8b1c13a](https://github.com/googleapis/java-document-ai/commit/8b1c13a091276a8e095006de66697c1532a9f4c5))
+
 ### [2.3.1](https://github.com/googleapis/java-document-ai/compare/v2.3.0...v2.3.1) (2022-03-09)
 
 
