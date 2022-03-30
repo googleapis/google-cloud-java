@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-securitycenter:2.5.2:2.5.3-SNAPSHOT
-grpc-google-cloud-securitycenter-v1:2.5.2:2.5.3-SNAPSHOT
-grpc-google-cloud-securitycenter-v1beta1:0.100.2:0.100.3-SNAPSHOT
-grpc-google-cloud-securitycenter-v1p1beta1:0.100.2:0.100.3-SNAPSHOT
-proto-google-cloud-securitycenter-v1:2.5.2:2.5.3-SNAPSHOT
-proto-google-cloud-securitycenter-v1beta1:0.100.2:0.100.3-SNAPSHOT
-proto-google-cloud-securitycenter-v1p1beta1:0.100.2:0.100.3-SNAPSHOT
+google-cloud-securitycenter:2.5.3:2.5.3
+grpc-google-cloud-securitycenter-v1:2.5.3:2.5.3
+grpc-google-cloud-securitycenter-v1beta1:0.100.3:0.100.3
+grpc-google-cloud-securitycenter-v1p1beta1:0.100.3:0.100.3
+proto-google-cloud-securitycenter-v1:2.5.3:2.5.3
+proto-google-cloud-securitycenter-v1beta1:0.100.3:0.100.3
+proto-google-cloud-securitycenter-v1p1beta1:0.100.3:0.100.3

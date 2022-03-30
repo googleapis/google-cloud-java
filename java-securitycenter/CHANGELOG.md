@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.5.3](https://github.com/googleapis/java-securitycenter/compare/v2.5.2...v2.5.3) (2022-03-29)
+
+
+### Documentation
+
+* **samples:** added samples for Mute config ([#719](https://github.com/googleapis/java-securitycenter/issues/719)) ([05018a5](https://github.com/googleapis/java-securitycenter/commit/05018a50e2f05ed093aa8a738bb8b78862774998))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#791](https://github.com/googleapis/java-securitycenter/issues/791)) ([2d75136](https://github.com/googleapis/java-securitycenter/commit/2d7513657e0f46c7bb2b2127ea767ecdbe72cddf))
+
 ### [2.5.2](https://github.com/googleapis/java-securitycenter/compare/v2.5.1...v2.5.2) (2022-03-25)
 
 
