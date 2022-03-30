@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-dataflow/compare/v0.4.2...v0.5.0) (2022-03-29)
+
+
+### Features
+
+* Add the ability to plumb environment capabilities through v1beta3 protos. ([#153](https://github.com/googleapis/java-dataflow/issues/153)) ([7dc5018](https://github.com/googleapis/java-dataflow/commit/7dc50180a6eaba28ae4c9cc52d72df9c9ba4a7db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#156](https://github.com/googleapis/java-dataflow/issues/156)) ([a7ece5d](https://github.com/googleapis/java-dataflow/commit/a7ece5d992f3a9af2fa2d019454d9932d6440250))
+
 ### [0.4.2](https://github.com/googleapis/java-dataflow/compare/v0.4.1...v0.4.2) (2022-03-08)
 
 
