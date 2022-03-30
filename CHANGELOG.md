@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-datastore/compare/v2.2.9...v2.3.0) (2022-03-29)
+
+
+### Features
+
+* fix next release version ([#689](https://github.com/googleapis/java-datastore/issues/689)) ([3ccbc75](https://github.com/googleapis/java-datastore/commit/3ccbc7557476dedd531b82035251d2a98354c718))
+
+
+### Documentation
+
+* update doc link ([#685](https://github.com/googleapis/java-datastore/issues/685)) ([91807b9](https://github.com/googleapis/java-datastore/commit/91807b92fa1f410cec6184f2b2dd1c300666878c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#695](https://github.com/googleapis/java-datastore/issues/695)) ([875b661](https://github.com/googleapis/java-datastore/commit/875b6615dc7c09a8e0db83d9ccf18b881a39bad2))
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#694](https://github.com/googleapis/java-datastore/issues/694)) ([5e98681](https://github.com/googleapis/java-datastore/commit/5e986815471cb3350673f7a5e669d3cd09bf1a8a))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.11 ([#691](https://github.com/googleapis/java-datastore/issues/691)) ([17d9bcb](https://github.com/googleapis/java-datastore/commit/17d9bcb4ba4df865aef45153ec29de1de40875ab))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.11 ([#692](https://github.com/googleapis/java-datastore/issues/692)) ([4c49614](https://github.com/googleapis/java-datastore/commit/4c4961404aabba6cc183e6a133f112449db2bb77))
+
 ### [2.2.9](https://github.com/googleapis/java-datastore/compare/v2.2.8...v2.2.9) (2022-03-14)
 
 
