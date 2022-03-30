@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.12.0](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.5...v0.12.0) (2022-03-29)
+
+
+### Features
+
+* added page in TestConfig ([d19cb06](https://github.com/googleapis/java-dialogflow-cx/commit/d19cb06a4d2d7665e766d0c1d37b481802ed5f0d))
+* added page in TestConfig ([#447](https://github.com/googleapis/java-dialogflow-cx/issues/447)) ([d19cb06](https://github.com/googleapis/java-dialogflow-cx/commit/d19cb06a4d2d7665e766d0c1d37b481802ed5f0d))
+* added support for locking an agent for changes ([#453](https://github.com/googleapis/java-dialogflow-cx/issues/453)) ([8a903ff](https://github.com/googleapis/java-dialogflow-cx/commit/8a903ff6a6126f05c5401306674f4215bd84c464))
+
+
+### Documentation
+
+* added explanation for uri fields in resources ([#451](https://github.com/googleapis/java-dialogflow-cx/issues/451)) ([0c506ce](https://github.com/googleapis/java-dialogflow-cx/commit/0c506ceef415d32a418427c0b24c2e7c3332a325))
+* clarified wording around Cloud Storage usage ([d19cb06](https://github.com/googleapis/java-dialogflow-cx/commit/d19cb06a4d2d7665e766d0c1d37b481802ed5f0d))
+* improved docs format ([0c506ce](https://github.com/googleapis/java-dialogflow-cx/commit/0c506ceef415d32a418427c0b24c2e7c3332a325))
+* improved docs format ([#452](https://github.com/googleapis/java-dialogflow-cx/issues/452)) ([6edb0d6](https://github.com/googleapis/java-dialogflow-cx/commit/6edb0d6056e9652e3a47ce0a3bf34976eaece81b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#455](https://github.com/googleapis/java-dialogflow-cx/issues/455)) ([2ce68e2](https://github.com/googleapis/java-dialogflow-cx/commit/2ce68e237d9afcfb721a1271b59531bb2d333539))
+
 ### [0.11.5](https://github.com/googleapis/java-dialogflow-cx/compare/v0.11.4...v0.11.5) (2022-03-02)
 
 
