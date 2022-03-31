@@ -1,5 +1,13 @@
 # Changelog
 
+### [3.7.4](https://github.com/googleapis/java-logging/compare/v3.7.3...v3.7.4) (2022-03-31)
+
+
+### Bug Fixes
+
+* Async logging should not rethrow error in onFailure callback ([#923](https://github.com/googleapis/java-logging/issues/923)) ([1adf867](https://github.com/googleapis/java-logging/commit/1adf86722361ce946c733de87cb217fa2f65bfd5))
+* Async logging should not rethrow error in onFailure callback correction ([#925](https://github.com/googleapis/java-logging/issues/925)) ([da92518](https://github.com/googleapis/java-logging/commit/da925189d808833f1b7cc7a1934bcf66f51663be))
+
 ### [3.7.3](https://github.com/googleapis/java-logging/compare/v3.7.2...v3.7.3) (2022-03-29)
 
 
