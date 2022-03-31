@@ -882,7 +882,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     try {
       ApiFutures.allAsList(writesToFlush).get(FLUSH_WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("ERROR: flush failure: " + e);
+      throw new RuntimeException(e);
     }
   }
 
@@ -940,7 +940,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
               public void onFailure(Throwable t) {
                 try {
                   Exception ex = t instanceof Exception ? (Exception) t : new Exception(t);
-                  throw new RuntimeException(ex);
+                  System.err.println("ERROR: onFailure exception: " + ex);
                 } finally {
                   removeFromPending();
                 }
