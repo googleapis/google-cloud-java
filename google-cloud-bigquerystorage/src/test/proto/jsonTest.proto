@@ -134,6 +134,12 @@ message TestDouble {
   optional double string = 7;
 }
 
+message TestTimestamp {
+  optional int64 test_string = 1;
+  optional int64 test_string_t_z = 2;
+  optional int64 test_long = 3;
+}
+
 message TestDate {
   optional int32 test_string = 1;
   optional int32 test_long = 2;

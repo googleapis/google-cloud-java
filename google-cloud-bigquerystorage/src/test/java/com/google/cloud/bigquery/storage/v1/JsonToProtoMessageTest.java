@@ -657,6 +657,31 @@ public class JsonToProtoMessageTest {
   }
 
   @Test
+  public void testTimestamp() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_string").build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_string_T_Z").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_long").build())
+            .build();
+    TestTimestamp expectedProto =
+        TestTimestamp.newBuilder()
+            .setTestString(10L)
+            .setTestStringTZ(1648493279000000L)
+            .setTestLong(0L)
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_string", "1970-01-01 00:00:00.000010");
+    json.put("test_string_T_Z", "2022-03-28T18:47:59.00Z");
+    json.put("test_long", 0L);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(
+            TestTimestamp.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
   public void testDate() throws Exception {
     TableSchema tableSchema =
         TableSchema.newBuilder()

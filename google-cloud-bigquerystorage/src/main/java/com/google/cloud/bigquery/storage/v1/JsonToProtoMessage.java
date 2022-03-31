@@ -28,7 +28,6 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
@@ -37,6 +36,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.LocalTime;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.temporal.ChronoField;
+import org.threeten.bp.temporal.TemporalAccessor;
 
 /**
  * Converts Json data to protocol buffer messages given the protocol buffer descriptor. The protobuf
@@ -54,6 +58,32 @@ public class JsonToProtoMessage {
           .put(FieldDescriptor.Type.STRING, "string")
           .put(FieldDescriptor.Type.MESSAGE, "object")
           .build();
+  private static final DateTimeFormatter timestampFormatter =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .optionalStart()
+          .appendLiteral('T')
+          .optionalEnd()
+          .optionalStart()
+          .appendLiteral(' ')
+          .optionalEnd()
+          .appendValue(ChronoField.HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(ChronoField.MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendLiteral(':')
+          .appendValue(ChronoField.SECOND_OF_MINUTE, 2)
+          .optionalStart()
+          .appendFraction(ChronoField.NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
+          .optionalEnd()
+          .optionalStart()
+          .appendLiteral('Z')
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
 
   /**
    * Converts Json data to protocol buffer messages given the protocol buffer descriptor.
@@ -306,7 +336,11 @@ public class JsonToProtoMessage {
             }
           } else if (fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
             if (val instanceof String) {
-              protoMsg.setField(fieldDescriptor, Timestamp.valueOf((String) val).getTime());
+              TemporalAccessor parsedTime = timestampFormatter.parse((String) val);
+              protoMsg.setField(
+                  fieldDescriptor,
+                  parsedTime.getLong(ChronoField.INSTANT_SECONDS) * 1000000
+                      + parsedTime.getLong(ChronoField.MICRO_OF_SECOND));
               return;
             } else if (val instanceof Long) {
               protoMsg.setField(fieldDescriptor, (Long) val);
@@ -515,7 +549,11 @@ public class JsonToProtoMessage {
           } else if (fieldSchema != null
               && fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
             if (val instanceof String) {
-              protoMsg.addRepeatedField(fieldDescriptor, Timestamp.valueOf((String) val).getTime());
+              TemporalAccessor parsedTime = timestampFormatter.parse((String) val);
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  parsedTime.getLong(ChronoField.INSTANT_SECONDS) * 1000000
+                      + parsedTime.getLong(ChronoField.MICRO_OF_SECOND));
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
             } else {
