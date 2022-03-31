@@ -138,14 +138,16 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The count of rows in `serialized_record_batch`.
+   * [Deprecated] The count of rows in `serialized_record_batch`.
+   * Please use the format-independent ReadRowsResponse.row_count instead.
    * </pre>
    *
-   * <code>int64 row_count = 2;</code>
+   * <code>int64 row_count = 2 [deprecated = true];</code>
    *
    * @return The rowCount.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getRowCount() {
     return rowCount_;
   }
@@ -544,14 +546,16 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The count of rows in `serialized_record_batch`.
+     * [Deprecated] The count of rows in `serialized_record_batch`.
+     * Please use the format-independent ReadRowsResponse.row_count instead.
      * </pre>
      *
-     * <code>int64 row_count = 2;</code>
+     * <code>int64 row_count = 2 [deprecated = true];</code>
      *
      * @return The rowCount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getRowCount() {
       return rowCount_;
     }
@@ -559,14 +563,16 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The count of rows in `serialized_record_batch`.
+     * [Deprecated] The count of rows in `serialized_record_batch`.
+     * Please use the format-independent ReadRowsResponse.row_count instead.
      * </pre>
      *
-     * <code>int64 row_count = 2;</code>
+     * <code>int64 row_count = 2 [deprecated = true];</code>
      *
      * @param value The rowCount to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
@@ -577,13 +583,15 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The count of rows in `serialized_record_batch`.
+     * [Deprecated] The count of rows in `serialized_record_batch`.
+     * Please use the format-independent ReadRowsResponse.row_count instead.
      * </pre>
      *
-     * <code>int64 row_count = 2;</code>
+     * <code>int64 row_count = 2 [deprecated = true];</code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRowCount() {
 
       rowCount_ = 0L;

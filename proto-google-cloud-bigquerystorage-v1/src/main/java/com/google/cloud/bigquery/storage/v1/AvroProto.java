@@ -46,14 +46,14 @@ public final class AvroProto {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/bigquery/storage/v1/avro."
           + "proto\022 google.cloud.bigquery.storage.v1\""
-          + "\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\"=\n\010AvroRow"
-          + "s\022\036\n\026serialized_binary_rows\030\001 \001(\014\022\021\n\trow"
-          + "_count\030\002 \001(\003B\302\001\n$com.google.cloud.bigque"
-          + "ry.storage.v1B\tAvroProtoP\001ZGgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/bigquery"
-          + "/storage/v1;storage\252\002 Google.Cloud.BigQu"
-          + "ery.Storage.V1\312\002 Google\\Cloud\\BigQuery\\S"
-          + "torage\\V1b\006proto3"
+          + "\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\"A\n\010AvroRow"
+          + "s\022\036\n\026serialized_binary_rows\030\001 \001(\014\022\025\n\trow"
+          + "_count\030\002 \001(\003B\002\030\001B\302\001\n$com.google.cloud.bi"
+          + "gquery.storage.v1B\tAvroProtoP\001ZGgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/bigq"
+          + "uery/storage/v1;storage\252\002 Google.Cloud.B"
+          + "igQuery.Storage.V1\312\002 Google\\Cloud\\BigQue"
+          + "ry\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

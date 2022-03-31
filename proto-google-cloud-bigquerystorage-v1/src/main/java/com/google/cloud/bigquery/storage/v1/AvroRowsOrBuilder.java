@@ -40,12 +40,14 @@ public interface AvroRowsOrBuilder
    *
    *
    * <pre>
-   * The count of rows in the returning block.
+   * [Deprecated] The count of rows in the returning block.
+   * Please use the format-independent ReadRowsResponse.row_count instead.
    * </pre>
    *
-   * <code>int64 row_count = 2;</code>
+   * <code>int64 row_count = 2 [deprecated = true];</code>
    *
    * @return The rowCount.
    */
+  @java.lang.Deprecated
   long getRowCount();
 }
