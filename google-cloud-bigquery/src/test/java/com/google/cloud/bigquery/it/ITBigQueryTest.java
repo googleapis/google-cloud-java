@@ -3065,9 +3065,10 @@ public class ITBigQueryTest {
             .build();
     Job createdRestoreJob = bigquery.create(JobInfo.of(restoreConfiguration));
     CopyJobConfiguration createdRestoreConfiguration = createdRestoreJob.getConfiguration();
-    assertEquals(
-        restoreConfiguration.getSourceTables().get(0).getTable(),
-        createdRestoreConfiguration.getSourceTables().get(0).getTable());
+    // TODO: uncomment/modify below when b/227623980 is resolved
+    // assertEquals(
+    //     restoreConfiguration.getSourceTables().get(0).getTable(),
+    //     createdRestoreConfiguration.getSourceTables().get(0).getTable());
     assertEquals(
         restoreConfiguration.getOperationType(), createdRestoreConfiguration.getOperationType());
     assertEquals(
