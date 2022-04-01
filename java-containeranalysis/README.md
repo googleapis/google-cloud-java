@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis</artifactId>
-  <version>2.2.13</version>
+  <version>2.2.14</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-containeranalysis'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-containeranalysis:2.2.13'
+implementation 'com.google.cloud:google-cloud-containeranalysis:2.2.14'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "2.2.13"
+libraryDependencies += "com.google.cloud" % "google-cloud-containeranalysis" % "2.2.14"
 ```
 
 ## Authentication
