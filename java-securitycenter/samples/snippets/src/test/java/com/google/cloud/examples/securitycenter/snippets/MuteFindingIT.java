@@ -217,11 +217,11 @@ public class MuteFindingIT {
   @Test
   public void testSetMuteFinding() {
     SetMuteFinding.setMute(FINDING_1.getName());
-    assertThat(stdOut.toString()).contains(
-        "Mute value for the finding " + FINDING_1.getName() + " is: " + "MUTED");
+    assertThat(stdOut.toString())
+        .contains("Mute value for the finding " + FINDING_1.getName() + " is: " + "MUTED");
     SetUnmuteFinding.setUnmute(FINDING_1.getName());
-    assertThat(stdOut.toString()).contains(
-        "Mute value for the finding " + FINDING_1.getName() + " is: " + "UNMUTED");
+    assertThat(stdOut.toString())
+        .contains("Mute value for the finding " + FINDING_1.getName() + " is: " + "UNMUTED");
   }
 
   @Test
