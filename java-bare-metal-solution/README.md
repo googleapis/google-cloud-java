@@ -1,6 +1,6 @@
-# Google Bare Metal SOlution Client for Java
+# Google Bare Metal Solution Client for Java
 
-Java idiomatic client for [Bare Metal SOlution][product-docs].
+Java idiomatic client for [Bare Metal Solution][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -44,14 +44,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Bare Metal SOlution APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Bare Metal SOlution API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Bare Metal Solution APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Bare Metal Solution API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Bare Metal SOlution [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Bare Metal SOlution.
+You will need a [Google Cloud Platform Console][developer-console] project with the Bare Metal Solution [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Bare Metal Solution.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -61,13 +61,13 @@ You will need to [enable billing][enable-billing] to use Google Bare Metal SOlut
 You'll need to obtain the `google-cloud-bare-metal-solution` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-bare-metal-solution` as a dependency in your code.
 
-## About Bare Metal SOlution
+## About Bare Metal Solution
 
 
-[Bare Metal SOlution][product-docs] Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.
+[Bare Metal Solution][product-docs] Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.
 
-See the [Bare Metal SOlution client library docs][javadocs] to learn how to
-use this Bare Metal SOlution Client Library.
+See the [Bare Metal Solution client library docs][javadocs] to learn how to
+use this Bare Metal Solution Client Library.
 
 
 
@@ -80,7 +80,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Bare Metal SOlution uses gRPC for the transport layer.
+Bare Metal Solution uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -190,7 +190,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/java-bare-metal-solution/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-bare-metal-solution/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=bare-metal-solution.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=baremetalsolution.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 
