@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-metastore</artifactId>
-  <version>2.1.9</version>
+  <version>2.2.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dataproc-metastore:2.1.9'
+implementation 'com.google.cloud:google-cloud-dataproc-metastore:2.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc-metastore" % "2.1.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc-metastore" % "2.2.0"
 ```
 
 ## Authentication
