@@ -10,31 +10,69 @@ It will then submit a new task to this queue.
 
 ## Setup Instructions
 
-1. Follow the [GCP Project and Native Image Setup Instructions](../../README.md).
+You will need to follow these prerequisite steps in order to run these samples:
 
-2. [Enable the Cloud Tasks APIs](https://console.cloud.google.com/apis/api/cloudtasks.googleapis.com).
+1. If you have not already, [create a Google Cloud Platform Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project). 
+
+2. Install the [Google Cloud SDK](https://cloud.google.com/sdk/) which will allow you to run the sample with your project's credentials.
+
+    Once installed, log in with Application Default Credentials using the following command:
+    
+    ```
+    gcloud auth application-default login
+    ```
+   
+    **Note:** Authenticating with Application Default Credentials is convenient to use during development, but we recommend [alternate methods of authentication](https://cloud.google.com/docs/authentication/production) during production use.
+    
+3. Install the GraalVM compiler.
+    
+    You can follow the [official installation instructions](https://www.graalvm.org/docs/getting-started/#install-graalvm) from the GraalVM website.
+    After following the instructions, ensure that you install the Native Image extension installed by running:
+    
+    ```
+    gu install native-image
+    ```
+   
+    Once you finish following the instructions, verify that the default version of Java is set to the GraalVM version by running `java -version` in a terminal.
+    
+    You will see something similar to the below output:
+    
+    ```
+    $ java -version
+   
+    openjdk 11.0.14 2022-01-18
+    OpenJDK Runtime Environment GraalVM CE 22.0.0.2 (build 11.0.14+9-jvmci-22.0-b05)
+    OpenJDK 64-Bit Server VM GraalVM CE 22.0.0.2 (build 11.0.14+9-jvmci-22.0-b05, mixed mode, sharing)
+
+    ```
+
+4. [Enable the Cloud Tasks APIs](https://console.cloud.google.com/apis/api/cloudtasks.googleapis.com).
 
 ### Run with Native Image Compilation
 
 Navigate to this directory in a new terminal.
 
-1. Compile the application using the Native Image Compiler. This step may take a few minutes.
+1. The project uses an environment variable `LOCATION_ID` to run the test. Set the environment variable by calling:
+
+   ```
+   export LOCATION_ID=us-east1
+   ```
+ 
+2. Compile the application using the Native Image Compiler. This step may take a few minutes.
 
    ```
    $ mvn package -P native
    ```
 
-   The project uses an environment variable `LOCATION_ID` to run the test.
+   
     
-2. Run the application:
+3. Run the application:
 
    ```
-   $ LOCATION_ID=us-east1 ./target/tasks-sample
+   $ ./target/native-image-sample
    ```
 
-   The sample application uses an environment variable `LOCATION_ID`.
-
-3. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
+4. The application runs through some basic Cloud Tasks operations (create queue, create task) and then prints some results of the operations.
 
    ```
    Test queue ready: name: "projects/xxxxxxxxxx/locations/us-central1/queues/graal-test-queue-4009"
@@ -80,10 +118,10 @@ Navigate to this directory in a new terminal.
    Queue deleted
    ```
 
-4. Run the test in the project in the native-image mode
+5. Run the test in the project in the native-image mode
 
    ```
-   $ LOCATION_ID=us-east1 mvn test -P native
+   $ export LOCATION_ID=us-east1 && mvn test -P native
    ...
    [INFO] -------------------------------------------------------
    [INFO]  T E S T S
