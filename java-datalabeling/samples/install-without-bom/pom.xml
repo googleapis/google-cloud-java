@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datalabeling</artifactId>
-      <version>0.122.9</version>
+      <version>0.122.10</version>
     </dependency>
     <!-- [END datalabeling_install_without_bom] -->
 
