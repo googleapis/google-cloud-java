@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.13](https://github.com/googleapis/java-speech/compare/v2.2.12...v2.2.13) (2022-04-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.6.0 ([#848](https://github.com/googleapis/java-speech/issues/848)) ([183b463](https://github.com/googleapis/java-speech/commit/183b463d46c197a119692f7292a6cf898452c5f3))
+
 ### [2.2.12](https://github.com/googleapis/java-speech/compare/v2.2.11...v2.2.12) (2022-03-30)
 
 
