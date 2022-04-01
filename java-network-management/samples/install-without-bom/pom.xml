@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-network-management</artifactId>
-      <version>1.1.9</version>
+      <version>1.1.10</version>
     </dependency>
     <!-- [END network-management_install_without_bom] -->
 
