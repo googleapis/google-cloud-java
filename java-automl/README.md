@@ -50,7 +50,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>2.1.20</version>
+  <version>2.1.21</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -75,13 +75,13 @@ implementation 'com.google.cloud:google-cloud-automl'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.1.20'
+implementation 'com.google.cloud:google-cloud-automl:2.1.21'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.20"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.21"
 ```
 
 ## Authentication
