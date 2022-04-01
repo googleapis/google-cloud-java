@@ -29,6 +29,7 @@ final class SpannerFeature implements Feature {
 
   private static final String SPANNER_CLASS = "com.google.spanner.v1.SpannerGrpc";
   private static final String SPANNER_TEST_CLASS = "com.google.cloud.spanner.GceTestEnvConfig";
+  private static final String MOCK_CLASS = "com.google.cloud.spanner.MockDatabaseAdminServiceImpl";
   private static final String CLIENT_SIDE_IMPL_CLASS =
       "com.google.cloud.spanner.connection.ClientSideStatementImpl";
   private static final String CLIENT_SIDE_VALUE_CONVERTER =
@@ -50,10 +51,7 @@ final class SpannerFeature implements Feature {
 
   @Override
   public void beforeAnalysis(BeforeAnalysisAccess access) {
-    Class<?> spannerTestClass = access.findClassByName(SPANNER_TEST_CLASS);
-    if (spannerTestClass != null) {
-      NativeImageUtils.registerConstructorsForReflection(access, SPANNER_TEST_CLASS);
-    }
+    registerSpannerTestClasses(access);
     if (access.findClassByName(CLIENT_SIDE_IMPL_CLASS) != null) {
       NativeImageUtils.registerClassHierarchyForReflection(access, CLIENT_SIDE_IMPL_CLASS);
     }
@@ -101,6 +99,18 @@ final class SpannerFeature implements Feature {
       resourcesRegistry.addResources(
           ConfigurationCondition.alwaysTrue(),
           "\\Qcom/google/cloud/spanner/connection/ITSqlScriptTest_TestQueryOptions.sql\\E");
+    }
+  }
+
+  private void registerSpannerTestClasses(BeforeAnalysisAccess access) {
+    Class<?> spannerTestClass = access.findClassByName(SPANNER_TEST_CLASS);
+    if (spannerTestClass != null) {
+      NativeImageUtils.registerConstructorsForReflection(access, SPANNER_TEST_CLASS);
+    }
+    Class<?> mockClass = access.findClassByName(MOCK_CLASS);
+    if (mockClass != null) {
+      NativeImageUtils.registerClassForReflection(
+          access, "com.google.cloud.spanner.MockDatabaseAdminServiceImpl$MockBackup");
     }
   }
 }
