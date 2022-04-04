@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.12.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.11.1...v2.12.0) (2022-04-01)
+
+
+### Features
+
+* Deprecate format specific `row_count` field in Read API ([#1599](https://github.com/googleapis/java-bigquerystorage/issues/1599)) ([6f415f6](https://github.com/googleapis/java-bigquerystorage/commit/6f415f62685549f50f7382bc7d896e5f60c5285e))
+
+
+### Bug Fixes
+
+* better ISO8601 compliance ([#1589](https://github.com/googleapis/java-bigquerystorage/issues/1589)) ([29fa8b7](https://github.com/googleapis/java-bigquerystorage/commit/29fa8b73bc092a7ebe8e3951daf2026057d1d040))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.5 ([#1602](https://github.com/googleapis/java-bigquerystorage/issues/1602)) ([8787b5d](https://github.com/googleapis/java-bigquerystorage/commit/8787b5d36849981f9497ac2b0ddf8c5291b07fc8))
+
 ### [2.11.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.11.0...v2.11.1) (2022-03-29)
 
 
