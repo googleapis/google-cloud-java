@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,12 +52,6 @@ public class QuickstartSample {
   // This is an example snippet that calls the Google Analytics Data API and runs a simple report
   // on the provided GA4 property id.
   static void sampleRunReport(String propertyId) throws Exception {
-    /**
-     * TODO(developer): Uncomment this variable and replace with your Google Analytics 4 property ID
-     * before running the sample.
-     */
-    // propertyId = "YOUR-GA4-PROPERTY-ID";
-
     // [START analyticsdata_initialize]
     // Using a default constructor instructs the client to use the credentials
     // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
