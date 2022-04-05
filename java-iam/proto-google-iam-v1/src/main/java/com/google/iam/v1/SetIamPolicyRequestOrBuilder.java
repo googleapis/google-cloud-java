@@ -97,4 +97,48 @@ public interface SetIamPolicyRequestOrBuilder
    * <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

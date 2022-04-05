@@ -41,19 +41,16 @@ public final class OptionsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033google/iam/v1/options.proto\022\rgoogle.ia"
-          + "m.v1\032\034google/api/annotations.proto\"4\n\020Ge"
-          + "tPolicyOptions\022 \n\030requested_policy_versi"
-          + "on\030\001 \001(\005B\204\001\n\021com.google.iam.v1B\014OptionsP"
-          + "rotoP\001Z0google.golang.org/genproto/googl"
-          + "eapis/iam/v1;iam\370\001\001\252\002\023Google.Cloud.Iam.V"
-          + "1\312\002\023Google\\Cloud\\Iam\\V1b\006proto3"
+          + "m.v1\"4\n\020GetPolicyOptions\022 \n\030requested_po"
+          + "licy_version\030\001 \001(\005B\204\001\n\021com.google.iam.v1"
+          + "B\014OptionsProtoP\001Z0google.golang.org/genp"
+          + "roto/googleapis/iam/v1;iam\370\001\001\252\002\023Google.C"
+          + "loud.Iam.V1\312\002\023Google\\Cloud\\Iam\\V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_iam_v1_GetPolicyOptions_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_iam_v1_GetPolicyOptions_fieldAccessorTable =
@@ -62,7 +59,6 @@ public final class OptionsProto {
             new java.lang.String[] {
               "RequestedPolicyVersion",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

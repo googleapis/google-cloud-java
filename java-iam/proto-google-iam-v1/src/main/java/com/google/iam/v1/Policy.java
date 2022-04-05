@@ -22,16 +22,20 @@ package com.google.iam.v1;
  *
  *
  * <pre>
- * Defines an Identity and Access Management (IAM) policy. It is used to
- * specify access control policies for Cloud Platform resources.
+ * An Identity and Access Management (IAM) policy, which specifies access
+ * controls for Google Cloud resources.
  * A `Policy` is a collection of `bindings`. A `binding` binds one or more
- * `members` to a single `role`. Members can be user accounts, service accounts,
- * Google groups, and domains (such as G Suite). A `role` is a named list of
- * permissions (defined by IAM or configured by users). A `binding` can
- * optionally specify a `condition`, which is a logic expression that further
- * constrains the role binding based on attributes about the request and/or
- * target resource.
- * **JSON Example**
+ * `members`, or principals, to a single `role`. Principals can be user
+ * accounts, service accounts, Google groups, and domains (such as G Suite). A
+ * `role` is a named list of permissions; each `role` can be an IAM predefined
+ * role or a user-created custom role.
+ * For some types of Google Cloud resources, a `binding` can also specify a
+ * `condition`, which is a logical expression that allows access to a resource
+ * only if the expression evaluates to `true`. A condition can add constraints
+ * based on attributes of the request, the resource, or both. To learn which
+ * resources support conditions in their IAM policies, see the
+ * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+ * **JSON example:**
  *     {
  *       "bindings": [
  *         {
@@ -45,17 +49,20 @@ package com.google.iam.v1;
  *         },
  *         {
  *           "role": "roles/resourcemanager.organizationViewer",
- *           "members": ["user:eve&#64;example.com"],
+ *           "members": [
+ *             "user:eve&#64;example.com"
+ *           ],
  *           "condition": {
  *             "title": "expirable access",
  *             "description": "Does not grant access after Sep 2020",
- *             "expression": "request.time &lt;
- *             timestamp('2020-10-01T00:00:00.000Z')",
+ *             "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')",
  *           }
  *         }
- *       ]
+ *       ],
+ *       "etag": "BwWWja0YfJA=",
+ *       "version": 3
  *     }
- * **YAML Example**
+ * **YAML example:**
  *     bindings:
  *     - members:
  *       - user:mike&#64;example.com
@@ -70,8 +77,10 @@ package com.google.iam.v1;
  *         title: expirable access
  *         description: Does not grant access after Sep 2020
  *         expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z')
+ *     etag: BwWWja0YfJA=
+ *     version: 3
  * For a description of IAM and its features, see the
- * [IAM developer's guide](https://cloud.google.com/iam/docs).
+ * [IAM documentation](https://cloud.google.com/iam/docs/).
  * </pre>
  *
  * Protobuf type {@code google.iam.v1.Policy}
@@ -88,6 +97,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
   private Policy() {
     bindings_ = java.util.Collections.emptyList();
+    auditConfigs_ = java.util.Collections.emptyList();
     etag_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -141,6 +151,16 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(com.google.iam.v1.Binding.parser(), extensionRegistry));
               break;
             }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                auditConfigs_ = new java.util.ArrayList<com.google.iam.v1.AuditConfig>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              auditConfigs_.add(
+                  input.readMessage(com.google.iam.v1.AuditConfig.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,6 +177,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         bindings_ = java.util.Collections.unmodifiableList(bindings_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        auditConfigs_ = java.util.Collections.unmodifiableList(auditConfigs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -182,16 +205,23 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies the format of the policy.
-   * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-   * rejected.
-   * Operations affecting conditional bindings must specify version 3. This can
-   * be either setting a conditional policy, modifying a conditional binding,
-   * or removing a binding (conditional or unconditional) from the stored
-   * conditional policy.
-   * Operations on non-conditional policies may specify any valid value or
-   * leave the field unset.
-   * If no etag is provided in the call to `setIamPolicy`, version compliance
-   * checks against the stored policy is skipped.
+   * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+   * are rejected.
+   * Any operation that affects conditional role bindings must specify version
+   * `3`. This requirement applies to the following operations:
+   * * Getting a policy that includes a conditional role binding
+   * * Adding a conditional role binding to a policy
+   * * Changing a conditional role binding in a policy
+   * * Removing any role binding, with or without a condition, from a policy
+   *   that includes conditions
+   * **Important:** If you use IAM Conditions, you must include the `etag` field
+   * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+   * you to overwrite a version `3` policy with a version `1` policy, and all of
+   * the conditions in the version `3` policy are lost.
+   * If a policy does not include any conditions, operations on that policy may
+   * specify any valid version or leave the field unset.
+   * To learn which resources support conditions in their IAM policies, see the
+   * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    * </pre>
    *
    * <code>int32 version = 1;</code>
@@ -209,9 +239,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Associates a list of `members` to a `role`. Optionally may specify a
-   * `condition` that determines when binding is in effect.
-   * `bindings` with no members will result in an error.
+   * Associates a list of `members`, or principals, with a `role`. Optionally,
+   * may specify a `condition` that determines how and when the `bindings` are
+   * applied. Each of the `bindings` must contain at least one principal.
+   * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+   * of these principals can be Google groups. Each occurrence of a principal
+   * counts towards these limits. For example, if the `bindings` grant 50
+   * different roles to `user:alice&#64;example.com`, and not to any other
+   * principal, then you can add another 1,450 principals to the `bindings` in
+   * the `Policy`.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -224,9 +260,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Associates a list of `members` to a `role`. Optionally may specify a
-   * `condition` that determines when binding is in effect.
-   * `bindings` with no members will result in an error.
+   * Associates a list of `members`, or principals, with a `role`. Optionally,
+   * may specify a `condition` that determines how and when the `bindings` are
+   * applied. Each of the `bindings` must contain at least one principal.
+   * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+   * of these principals can be Google groups. Each occurrence of a principal
+   * counts towards these limits. For example, if the `bindings` grant 50
+   * different roles to `user:alice&#64;example.com`, and not to any other
+   * principal, then you can add another 1,450 principals to the `bindings` in
+   * the `Policy`.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -239,9 +281,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Associates a list of `members` to a `role`. Optionally may specify a
-   * `condition` that determines when binding is in effect.
-   * `bindings` with no members will result in an error.
+   * Associates a list of `members`, or principals, with a `role`. Optionally,
+   * may specify a `condition` that determines how and when the `bindings` are
+   * applied. Each of the `bindings` must contain at least one principal.
+   * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+   * of these principals can be Google groups. Each occurrence of a principal
+   * counts towards these limits. For example, if the `bindings` grant 50
+   * different roles to `user:alice&#64;example.com`, and not to any other
+   * principal, then you can add another 1,450 principals to the `bindings` in
+   * the `Policy`.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -254,9 +302,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Associates a list of `members` to a `role`. Optionally may specify a
-   * `condition` that determines when binding is in effect.
-   * `bindings` with no members will result in an error.
+   * Associates a list of `members`, or principals, with a `role`. Optionally,
+   * may specify a `condition` that determines how and when the `bindings` are
+   * applied. Each of the `bindings` must contain at least one principal.
+   * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+   * of these principals can be Google groups. Each occurrence of a principal
+   * counts towards these limits. For example, if the `bindings` grant 50
+   * different roles to `user:alice&#64;example.com`, and not to any other
+   * principal, then you can add another 1,450 principals to the `bindings` in
+   * the `Policy`.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -269,9 +323,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Associates a list of `members` to a `role`. Optionally may specify a
-   * `condition` that determines when binding is in effect.
-   * `bindings` with no members will result in an error.
+   * Associates a list of `members`, or principals, with a `role`. Optionally,
+   * may specify a `condition` that determines how and when the `bindings` are
+   * applied. Each of the `bindings` must contain at least one principal.
+   * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+   * of these principals can be Google groups. Each occurrence of a principal
+   * counts towards these limits. For example, if the `bindings` grant 50
+   * different roles to `user:alice&#64;example.com`, and not to any other
+   * principal, then you can add another 1,450 principals to the `bindings` in
+   * the `Policy`.
    * </pre>
    *
    * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -279,6 +339,75 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.iam.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
     return bindings_.get(index);
+  }
+
+  public static final int AUDIT_CONFIGS_FIELD_NUMBER = 6;
+  private java.util.List<com.google.iam.v1.AuditConfig> auditConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies cloud audit logging configuration for this policy.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.iam.v1.AuditConfig> getAuditConfigsList() {
+    return auditConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies cloud audit logging configuration for this policy.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.iam.v1.AuditConfigOrBuilder>
+      getAuditConfigsOrBuilderList() {
+    return auditConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies cloud audit logging configuration for this policy.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+   */
+  @java.lang.Override
+  public int getAuditConfigsCount() {
+    return auditConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies cloud audit logging configuration for this policy.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.iam.v1.AuditConfig getAuditConfigs(int index) {
+    return auditConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies cloud audit logging configuration for this policy.
+   * </pre>
+   *
+   * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.iam.v1.AuditConfigOrBuilder getAuditConfigsOrBuilder(int index) {
+    return auditConfigs_.get(index);
   }
 
   public static final int ETAG_FIELD_NUMBER = 3;
@@ -294,10 +423,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * conditions: An `etag` is returned in the response to `getIamPolicy`, and
    * systems are expected to put that etag in the request to `setIamPolicy` to
    * ensure that their change will be applied to the same version of the policy.
-   * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-   * policy is overwritten. Due to blind-set semantics of an etag-less policy,
-   * 'setIamPolicy' will not fail even if the incoming policy version does not
-   * meet the requirements for modifying the stored policy.
+   * **Important:** If you use IAM Conditions, you must include the `etag` field
+   * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+   * you to overwrite a version `3` policy with a version `1` policy, and all of
+   * the conditions in the version `3` policy are lost.
    * </pre>
    *
    * <code>bytes etag = 3;</code>
@@ -332,6 +461,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bindings_.size(); i++) {
       output.writeMessage(4, bindings_.get(i));
     }
+    for (int i = 0; i < auditConfigs_.size(); i++) {
+      output.writeMessage(6, auditConfigs_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -350,6 +482,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bindings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, bindings_.get(i));
     }
+    for (int i = 0; i < auditConfigs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, auditConfigs_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -367,6 +502,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
     if (getVersion() != other.getVersion()) return false;
     if (!getBindingsList().equals(other.getBindingsList())) return false;
+    if (!getAuditConfigsList().equals(other.getAuditConfigsList())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -384,6 +520,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     if (getBindingsCount() > 0) {
       hash = (37 * hash) + BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getBindingsList().hashCode();
+    }
+    if (getAuditConfigsCount() > 0) {
+      hash = (37 * hash) + AUDIT_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuditConfigsList().hashCode();
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
@@ -490,16 +630,20 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines an Identity and Access Management (IAM) policy. It is used to
-   * specify access control policies for Cloud Platform resources.
+   * An Identity and Access Management (IAM) policy, which specifies access
+   * controls for Google Cloud resources.
    * A `Policy` is a collection of `bindings`. A `binding` binds one or more
-   * `members` to a single `role`. Members can be user accounts, service accounts,
-   * Google groups, and domains (such as G Suite). A `role` is a named list of
-   * permissions (defined by IAM or configured by users). A `binding` can
-   * optionally specify a `condition`, which is a logic expression that further
-   * constrains the role binding based on attributes about the request and/or
-   * target resource.
-   * **JSON Example**
+   * `members`, or principals, to a single `role`. Principals can be user
+   * accounts, service accounts, Google groups, and domains (such as G Suite). A
+   * `role` is a named list of permissions; each `role` can be an IAM predefined
+   * role or a user-created custom role.
+   * For some types of Google Cloud resources, a `binding` can also specify a
+   * `condition`, which is a logical expression that allows access to a resource
+   * only if the expression evaluates to `true`. A condition can add constraints
+   * based on attributes of the request, the resource, or both. To learn which
+   * resources support conditions in their IAM policies, see the
+   * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+   * **JSON example:**
    *     {
    *       "bindings": [
    *         {
@@ -513,17 +657,20 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *         },
    *         {
    *           "role": "roles/resourcemanager.organizationViewer",
-   *           "members": ["user:eve&#64;example.com"],
+   *           "members": [
+   *             "user:eve&#64;example.com"
+   *           ],
    *           "condition": {
    *             "title": "expirable access",
    *             "description": "Does not grant access after Sep 2020",
-   *             "expression": "request.time &lt;
-   *             timestamp('2020-10-01T00:00:00.000Z')",
+   *             "expression": "request.time &lt; timestamp('2020-10-01T00:00:00.000Z')",
    *           }
    *         }
-   *       ]
+   *       ],
+   *       "etag": "BwWWja0YfJA=",
+   *       "version": 3
    *     }
-   * **YAML Example**
+   * **YAML example:**
    *     bindings:
    *     - members:
    *       - user:mike&#64;example.com
@@ -538,8 +685,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *         title: expirable access
    *         description: Does not grant access after Sep 2020
    *         expression: request.time &lt; timestamp('2020-10-01T00:00:00.000Z')
+   *     etag: BwWWja0YfJA=
+   *     version: 3
    * For a description of IAM and its features, see the
-   * [IAM developer's guide](https://cloud.google.com/iam/docs).
+   * [IAM documentation](https://cloud.google.com/iam/docs/).
    * </pre>
    *
    * Protobuf type {@code google.iam.v1.Policy}
@@ -573,6 +722,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBindingsFieldBuilder();
+        getAuditConfigsFieldBuilder();
       }
     }
 
@@ -586,6 +736,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         bindingsBuilder_.clear();
+      }
+      if (auditConfigsBuilder_ == null) {
+        auditConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        auditConfigsBuilder_.clear();
       }
       etag_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -624,6 +780,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         result.bindings_ = bindings_;
       } else {
         result.bindings_ = bindingsBuilder_.build();
+      }
+      if (auditConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          auditConfigs_ = java.util.Collections.unmodifiableList(auditConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.auditConfigs_ = auditConfigs_;
+      } else {
+        result.auditConfigs_ = auditConfigsBuilder_.build();
       }
       result.etag_ = etag_;
       onBuilt();
@@ -705,6 +870,33 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (auditConfigsBuilder_ == null) {
+        if (!other.auditConfigs_.isEmpty()) {
+          if (auditConfigs_.isEmpty()) {
+            auditConfigs_ = other.auditConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAuditConfigsIsMutable();
+            auditConfigs_.addAll(other.auditConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.auditConfigs_.isEmpty()) {
+          if (auditConfigsBuilder_.isEmpty()) {
+            auditConfigsBuilder_.dispose();
+            auditConfigsBuilder_ = null;
+            auditConfigs_ = other.auditConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            auditConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAuditConfigsFieldBuilder()
+                    : null;
+          } else {
+            auditConfigsBuilder_.addAllMessages(other.auditConfigs_);
+          }
+        }
+      }
       if (other.getEtag() != com.google.protobuf.ByteString.EMPTY) {
         setEtag(other.getEtag());
       }
@@ -745,16 +937,23 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the format of the policy.
-     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-     * rejected.
-     * Operations affecting conditional bindings must specify version 3. This can
-     * be either setting a conditional policy, modifying a conditional binding,
-     * or removing a binding (conditional or unconditional) from the stored
-     * conditional policy.
-     * Operations on non-conditional policies may specify any valid value or
-     * leave the field unset.
-     * If no etag is provided in the call to `setIamPolicy`, version compliance
-     * checks against the stored policy is skipped.
+     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+     * are rejected.
+     * Any operation that affects conditional role bindings must specify version
+     * `3`. This requirement applies to the following operations:
+     * * Getting a policy that includes a conditional role binding
+     * * Adding a conditional role binding to a policy
+     * * Changing a conditional role binding in a policy
+     * * Removing any role binding, with or without a condition, from a policy
+     *   that includes conditions
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
+     * If a policy does not include any conditions, operations on that policy may
+     * specify any valid version or leave the field unset.
+     * To learn which resources support conditions in their IAM policies, see the
+     * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
      * <code>int32 version = 1;</code>
@@ -770,16 +969,23 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the format of the policy.
-     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-     * rejected.
-     * Operations affecting conditional bindings must specify version 3. This can
-     * be either setting a conditional policy, modifying a conditional binding,
-     * or removing a binding (conditional or unconditional) from the stored
-     * conditional policy.
-     * Operations on non-conditional policies may specify any valid value or
-     * leave the field unset.
-     * If no etag is provided in the call to `setIamPolicy`, version compliance
-     * checks against the stored policy is skipped.
+     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+     * are rejected.
+     * Any operation that affects conditional role bindings must specify version
+     * `3`. This requirement applies to the following operations:
+     * * Getting a policy that includes a conditional role binding
+     * * Adding a conditional role binding to a policy
+     * * Changing a conditional role binding in a policy
+     * * Removing any role binding, with or without a condition, from a policy
+     *   that includes conditions
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
+     * If a policy does not include any conditions, operations on that policy may
+     * specify any valid version or leave the field unset.
+     * To learn which resources support conditions in their IAM policies, see the
+     * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
      * <code>int32 version = 1;</code>
@@ -798,16 +1004,23 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies the format of the policy.
-     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
-     * rejected.
-     * Operations affecting conditional bindings must specify version 3. This can
-     * be either setting a conditional policy, modifying a conditional binding,
-     * or removing a binding (conditional or unconditional) from the stored
-     * conditional policy.
-     * Operations on non-conditional policies may specify any valid value or
-     * leave the field unset.
-     * If no etag is provided in the call to `setIamPolicy`, version compliance
-     * checks against the stored policy is skipped.
+     * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+     * are rejected.
+     * Any operation that affects conditional role bindings must specify version
+     * `3`. This requirement applies to the following operations:
+     * * Getting a policy that includes a conditional role binding
+     * * Adding a conditional role binding to a policy
+     * * Changing a conditional role binding in a policy
+     * * Removing any role binding, with or without a condition, from a policy
+     *   that includes conditions
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
+     * If a policy does not include any conditions, operations on that policy may
+     * specify any valid version or leave the field unset.
+     * To learn which resources support conditions in their IAM policies, see the
+     * [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
      * </pre>
      *
      * <code>int32 version = 1;</code>
@@ -840,9 +1053,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -858,9 +1077,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -876,9 +1101,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -894,9 +1125,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -918,9 +1155,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -939,9 +1182,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -963,9 +1212,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -987,9 +1242,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1008,9 +1269,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1029,9 +1296,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1050,9 +1323,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1071,9 +1350,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1092,9 +1377,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1106,9 +1397,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1124,9 +1421,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1142,9 +1445,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1156,9 +1465,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1171,9 +1486,15 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Associates a list of `members` to a `role`. Optionally may specify a
-     * `condition` that determines when binding is in effect.
-     * `bindings` with no members will result in an error.
+     * Associates a list of `members`, or principals, with a `role`. Optionally,
+     * may specify a `condition` that determines how and when the `bindings` are
+     * applied. Each of the `bindings` must contain at least one principal.
+     * The `bindings` in a `Policy` can refer to up to 1,500 principals; up to 250
+     * of these principals can be Google groups. Each occurrence of a principal
+     * counts towards these limits. For example, if the `bindings` grant 50
+     * different roles to `user:alice&#64;example.com`, and not to any other
+     * principal, then you can add another 1,450 principals to the `bindings` in
+     * the `Policy`.
      * </pre>
      *
      * <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -1199,6 +1520,354 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return bindingsBuilder_;
     }
 
+    private java.util.List<com.google.iam.v1.AuditConfig> auditConfigs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAuditConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        auditConfigs_ = new java.util.ArrayList<com.google.iam.v1.AuditConfig>(auditConfigs_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.iam.v1.AuditConfig,
+            com.google.iam.v1.AuditConfig.Builder,
+            com.google.iam.v1.AuditConfigOrBuilder>
+        auditConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public java.util.List<com.google.iam.v1.AuditConfig> getAuditConfigsList() {
+      if (auditConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(auditConfigs_);
+      } else {
+        return auditConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public int getAuditConfigsCount() {
+      if (auditConfigsBuilder_ == null) {
+        return auditConfigs_.size();
+      } else {
+        return auditConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public com.google.iam.v1.AuditConfig getAuditConfigs(int index) {
+      if (auditConfigsBuilder_ == null) {
+        return auditConfigs_.get(index);
+      } else {
+        return auditConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder setAuditConfigs(int index, com.google.iam.v1.AuditConfig value) {
+      if (auditConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.set(index, value);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder setAuditConfigs(
+        int index, com.google.iam.v1.AuditConfig.Builder builderForValue) {
+      if (auditConfigsBuilder_ == null) {
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder addAuditConfigs(com.google.iam.v1.AuditConfig value) {
+      if (auditConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.add(value);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder addAuditConfigs(int index, com.google.iam.v1.AuditConfig value) {
+      if (auditConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.add(index, value);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder addAuditConfigs(com.google.iam.v1.AuditConfig.Builder builderForValue) {
+      if (auditConfigsBuilder_ == null) {
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder addAuditConfigs(
+        int index, com.google.iam.v1.AuditConfig.Builder builderForValue) {
+      if (auditConfigsBuilder_ == null) {
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        auditConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder addAllAuditConfigs(
+        java.lang.Iterable<? extends com.google.iam.v1.AuditConfig> values) {
+      if (auditConfigsBuilder_ == null) {
+        ensureAuditConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, auditConfigs_);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder clearAuditConfigs() {
+      if (auditConfigsBuilder_ == null) {
+        auditConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public Builder removeAuditConfigs(int index) {
+      if (auditConfigsBuilder_ == null) {
+        ensureAuditConfigsIsMutable();
+        auditConfigs_.remove(index);
+        onChanged();
+      } else {
+        auditConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public com.google.iam.v1.AuditConfig.Builder getAuditConfigsBuilder(int index) {
+      return getAuditConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public com.google.iam.v1.AuditConfigOrBuilder getAuditConfigsOrBuilder(int index) {
+      if (auditConfigsBuilder_ == null) {
+        return auditConfigs_.get(index);
+      } else {
+        return auditConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public java.util.List<? extends com.google.iam.v1.AuditConfigOrBuilder>
+        getAuditConfigsOrBuilderList() {
+      if (auditConfigsBuilder_ != null) {
+        return auditConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(auditConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public com.google.iam.v1.AuditConfig.Builder addAuditConfigsBuilder() {
+      return getAuditConfigsFieldBuilder()
+          .addBuilder(com.google.iam.v1.AuditConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public com.google.iam.v1.AuditConfig.Builder addAuditConfigsBuilder(int index) {
+      return getAuditConfigsFieldBuilder()
+          .addBuilder(index, com.google.iam.v1.AuditConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies cloud audit logging configuration for this policy.
+     * </pre>
+     *
+     * <code>repeated .google.iam.v1.AuditConfig audit_configs = 6;</code>
+     */
+    public java.util.List<com.google.iam.v1.AuditConfig.Builder> getAuditConfigsBuilderList() {
+      return getAuditConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.iam.v1.AuditConfig,
+            com.google.iam.v1.AuditConfig.Builder,
+            com.google.iam.v1.AuditConfigOrBuilder>
+        getAuditConfigsFieldBuilder() {
+      if (auditConfigsBuilder_ == null) {
+        auditConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.iam.v1.AuditConfig,
+                com.google.iam.v1.AuditConfig.Builder,
+                com.google.iam.v1.AuditConfigOrBuilder>(
+                auditConfigs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        auditConfigs_ = null;
+      }
+      return auditConfigsBuilder_;
+    }
+
     private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
@@ -1211,10 +1880,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * conditions: An `etag` is returned in the response to `getIamPolicy`, and
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
-     * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
-     * 'setIamPolicy' will not fail even if the incoming policy version does not
-     * meet the requirements for modifying the stored policy.
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
      * </pre>
      *
      * <code>bytes etag = 3;</code>
@@ -1236,10 +1905,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * conditions: An `etag` is returned in the response to `getIamPolicy`, and
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
-     * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
-     * 'setIamPolicy' will not fail even if the incoming policy version does not
-     * meet the requirements for modifying the stored policy.
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
      * </pre>
      *
      * <code>bytes etag = 3;</code>
@@ -1267,10 +1936,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * conditions: An `etag` is returned in the response to `getIamPolicy`, and
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
-     * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
-     * 'setIamPolicy' will not fail even if the incoming policy version does not
-     * meet the requirements for modifying the stored policy.
+     * **Important:** If you use IAM Conditions, you must include the `etag` field
+     * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+     * you to overwrite a version `3` policy with a version `1` policy, and all of
+     * the conditions in the version `3` policy are lost.
      * </pre>
      *
      * <code>bytes etag = 3;</code>

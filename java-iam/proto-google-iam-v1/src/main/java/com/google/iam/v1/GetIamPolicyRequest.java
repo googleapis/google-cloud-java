@@ -188,7 +188,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * `GetIamPolicy`.
    * </pre>
    *
    * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -204,7 +204,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * `GetIamPolicy`.
    * </pre>
    *
    * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -220,7 +220,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-   * `GetIamPolicy`. This field is only used by Cloud IAM.
+   * `GetIamPolicy`.
    * </pre>
    *
    * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -704,7 +704,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -719,7 +719,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -740,7 +740,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -763,7 +763,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -783,7 +783,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -810,7 +810,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -831,7 +831,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -846,7 +846,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
@@ -865,7 +865,7 @@ public final class GetIamPolicyRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      * </pre>
      *
      * <code>.google.iam.v1.GetPolicyOptions options = 2;</code>

@@ -91,6 +91,21 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 26:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -235,6 +250,61 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
     return getPolicy();
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 3;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+   * the fields in the mask will be modified. If no mask is provided, the
+   * following default mask is used:
+   * `paths: "bindings, etag"`
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -255,6 +325,9 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
     if (policy_ != null) {
       output.writeMessage(2, getPolicy());
     }
+    if (updateMask_ != null) {
+      output.writeMessage(3, getUpdateMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -269,6 +342,9 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
     }
     if (policy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPolicy());
+    }
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +366,10 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
     }
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -306,6 +386,10 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
+    }
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -459,6 +543,12 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
         policy_ = null;
         policyBuilder_ = null;
       }
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -491,6 +581,11 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
         result.policy_ = policy_;
       } else {
         result.policy_ = policyBuilder_.build();
+      }
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
       }
       onBuilt();
       return result;
@@ -547,6 +642,9 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasPolicy()) {
         mergePolicy(other.getPolicy());
+      }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -900,6 +998,216 @@ public final class SetIamPolicyRequest extends com.google.protobuf.GeneratedMess
         policy_ = null;
       }
       return policyBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+     * the fields in the mask will be modified. If no mask is provided, the
+     * following default mask is used:
+     * `paths: "bindings, etag"`
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     @java.lang.Override
