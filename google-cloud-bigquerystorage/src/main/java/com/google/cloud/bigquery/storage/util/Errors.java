@@ -23,7 +23,7 @@ import org.threeten.bp.Duration;
 
 /** Static utility methods for working with Errors returned from the service. */
 public class Errors {
-  private Errors() {};
+  private Errors() {}
 
   public static class IsRetryableStatusResult {
     public boolean isRetryable = false;
