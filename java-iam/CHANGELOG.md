@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-iam/compare/v1.2.12...v1.3.0) (2022-04-05)
+
+
+### Features
+
+* AuditConfig for IAM v1 ([#325](https://github.com/googleapis/java-iam/issues/325)) ([6798520](https://github.com/googleapis/java-iam/commit/6798520ca2b4b98f16492d4bb16be38e9eef3e36))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java to v3.20.0 ([#324](https://github.com/googleapis/java-iam/issues/324)) ([c6209ac](https://github.com/googleapis/java-iam/commit/c6209ac7e33059d5169c65e86145bc25731e40e4))
+* update dependency io.grpc:grpc-protobuf to v1.45.1 ([#321](https://github.com/googleapis/java-iam/issues/321)) ([9dc32a4](https://github.com/googleapis/java-iam/commit/9dc32a4ba44803bdd8aed85d44ee4aebddc3f972))
+* update dependency io.grpc:grpc-stub to v1.45.1 ([#322](https://github.com/googleapis/java-iam/issues/322)) ([b114670](https://github.com/googleapis/java-iam/commit/b11467055d678e7474bb4ed4bb6d74184029ed5d))
+
 ### [1.2.12](https://github.com/googleapis/java-iam/compare/v1.2.11...v1.2.12) (2022-03-29)
 
 
