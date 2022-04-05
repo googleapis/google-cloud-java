@@ -75,13 +75,13 @@ implementation 'com.google.cloud:google-cloud-automl'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.1.21'
+implementation 'com.google.cloud:google-cloud-automl:2.1.22'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.21"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.1.22"
 ```
 
 ## Authentication
@@ -109,11 +109,22 @@ to add `google-cloud-automl` as a dependency in your code.
 
 ## About Cloud Auto ML
 
+AutoML API Java Client is now available in the new Vertex AI.
+Migrate your AutoML resources to Vertex AI to get the latest features
+like data labeling, AutoML-powered training, and endpoint management. 
 
-[Cloud Auto ML][product-docs] makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites.
+[Migrate to Vertex AI documentation](https://cloud.google.com/vertex-ai/docs/start/migrating-to-vertex-ai)
 
-See the [Cloud Auto ML client library docs][javadocs] to learn how to
-use this Cloud Auto ML Client Library.
+[Cloud Auto ML](https://cloud.google.com/automl/docs/) makes the power 
+of machine learning available to you even if you have limited knowledge 
+of machine learning. You can use AutoML to build on Google's machine 
+learning capabilities to create your own custom machine learning models 
+that are tailored to your business needs, and then integrate those 
+models into your applications and web sites.
+
+See the [Cloud Auto ML client library docs](https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/history)
+to learn how to use this Cloud Auto ML Client Library.
+
 
 
 
