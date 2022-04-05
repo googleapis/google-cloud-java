@@ -943,7 +943,8 @@ public class ITBigQueryTest {
               .setParent(String.format("projects/%s/locations/%s", PROJECT_ID, "us"))
               .setTaxonomy(
                   Taxonomy.newBuilder()
-                      .setDisplayName("testing taxonomy")
+                      // DisplayName must be unique across org
+                      .setDisplayName(String.format("testing taxonomy %s", Instant.now().getNano()))
                       .setDescription("taxonomy created for integration tests")
                       .addActivatedPolicyTypes(PolicyType.FINE_GRAINED_ACCESS_CONTROL)
                       .build())
