@@ -58,37 +58,34 @@ public final class SpeechResourceProto {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/speech/v1/resource.proto\022"
           + "\026google.cloud.speech.v1\032\031google/api/reso"
-          + "urce.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\034google/api/annotations.proto\"\374\001\n\013Cu"
-          + "stomClass\022\014\n\004name\030\001 \001(\t\022\027\n\017custom_class_"
-          + "id\030\002 \001(\t\022<\n\005items\030\003 \003(\0132-.google.cloud.s"
-          + "peech.v1.CustomClass.ClassItem\032\032\n\tClassI"
-          + "tem\022\r\n\005value\030\001 \001(\t:l\352Ai\n!speech.googleap"
-          + "is.com/CustomClass\022Dprojects/{project}/l"
-          + "ocations/{location}/customClasses/{custo"
-          + "m_class}\"\362\001\n\tPhraseSet\022\014\n\004name\030\001 \001(\t\0229\n\007"
-          + "phrases\030\002 \003(\0132(.google.cloud.speech.v1.P"
-          + "hraseSet.Phrase\022\r\n\005boost\030\004 \001(\002\032&\n\006Phrase"
-          + "\022\r\n\005value\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab\n\037spe"
-          + "ech.googleapis.com/PhraseSet\022?projects/{"
-          + "project}/locations/{location}/phraseSets"
-          + "/{phrase_set}\"\314\001\n\020SpeechAdaptation\0226\n\013ph"
-          + "rase_sets\030\001 \003(\0132!.google.cloud.speech.v1"
-          + ".PhraseSet\022C\n\025phrase_set_references\030\002 \003("
-          + "\tB$\372A!\n\037speech.googleapis.com/PhraseSet\022"
-          + ";\n\016custom_classes\030\003 \003(\0132#.google.cloud.s"
-          + "peech.v1.CustomClassBz\n\032com.google.cloud"
-          + ".speech.v1B\023SpeechResourceProtoP\001Z<googl"
-          + "e.golang.org/genproto/googleapis/cloud/s"
-          + "peech/v1;speech\370\001\001\242\002\003GCSb\006proto3"
+          + "urce.proto\"\374\001\n\013CustomClass\022\014\n\004name\030\001 \001(\t"
+          + "\022\027\n\017custom_class_id\030\002 \001(\t\022<\n\005items\030\003 \003(\013"
+          + "2-.google.cloud.speech.v1.CustomClass.Cl"
+          + "assItem\032\032\n\tClassItem\022\r\n\005value\030\001 \001(\t:l\352Ai"
+          + "\n!speech.googleapis.com/CustomClass\022Dpro"
+          + "jects/{project}/locations/{location}/cus"
+          + "tomClasses/{custom_class}\"\362\001\n\tPhraseSet\022"
+          + "\014\n\004name\030\001 \001(\t\0229\n\007phrases\030\002 \003(\0132(.google."
+          + "cloud.speech.v1.PhraseSet.Phrase\022\r\n\005boos"
+          + "t\030\004 \001(\002\032&\n\006Phrase\022\r\n\005value\030\001 \001(\t\022\r\n\005boos"
+          + "t\030\002 \001(\002:e\352Ab\n\037speech.googleapis.com/Phra"
+          + "seSet\022?projects/{project}/locations/{loc"
+          + "ation}/phraseSets/{phrase_set}\"\314\001\n\020Speec"
+          + "hAdaptation\0226\n\013phrase_sets\030\001 \003(\0132!.googl"
+          + "e.cloud.speech.v1.PhraseSet\022C\n\025phrase_se"
+          + "t_references\030\002 \003(\tB$\372A!\n\037speech.googleap"
+          + "is.com/PhraseSet\022;\n\016custom_classes\030\003 \003(\013"
+          + "2#.google.cloud.speech.v1.CustomClassBz\n"
+          + "\032com.google.cloud.speech.v1B\023SpeechResou"
+          + "rceProtoP\001Z<google.golang.org/genproto/g"
+          + "oogleapis/cloud/speech/v1;speech\370\001\001\242\002\003GC"
+          + "Sb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_speech_v1_CustomClass_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -137,8 +134,6 @@ public final class SpeechResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
