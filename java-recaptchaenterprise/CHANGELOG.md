@@ -1,5 +1,16 @@
 # Changelog
 
+### [2.4.9](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.8...v2.4.9) (2022-04-06)
+
+
+### Dependencies
+
+* update dependency org.seleniumhq.selenium:selenium-chrome-driver to v4.1.3 ([#750](https://github.com/googleapis/java-recaptchaenterprise/issues/750)) ([b3bb59a](https://github.com/googleapis/java-recaptchaenterprise/commit/b3bb59a55cf73ebf09699ebfaa35428a32b990d5))
+* update dependency org.seleniumhq.selenium:selenium-java to v4.1.3 ([#751](https://github.com/googleapis/java-recaptchaenterprise/issues/751)) ([ea6305d](https://github.com/googleapis/java-recaptchaenterprise/commit/ea6305d41672144ae2b119366e3dab125c73db8b))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.6 ([#756](https://github.com/googleapis/java-recaptchaenterprise/issues/756)) ([57a753c](https://github.com/googleapis/java-recaptchaenterprise/commit/57a753cf4860121057261632e2708b8b95b5d8ac))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.6.6 ([#757](https://github.com/googleapis/java-recaptchaenterprise/issues/757)) ([476a9f7](https://github.com/googleapis/java-recaptchaenterprise/commit/476a9f7b286e09dca43d590b9e4dd49522c6dc9e))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.6 ([#758](https://github.com/googleapis/java-recaptchaenterprise/issues/758)) ([8101110](https://github.com/googleapis/java-recaptchaenterprise/commit/8101110c5f6ee9893be07cdb9055634bfca1a946))
+
 ### [2.4.8](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.7...v2.4.8) (2022-03-29)
 
 
