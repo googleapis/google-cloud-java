@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.2](https://github.com/googleapis/java-datacatalog/compare/v1.7.1...v1.7.2) (2022-04-07)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.0 ([#777](https://github.com/googleapis/java-datacatalog/issues/777)) ([b808d28](https://github.com/googleapis/java-datacatalog/commit/b808d28f476471cfc7d54a11458dc1bf54562f9b))
+
 ### [1.7.1](https://github.com/googleapis/java-datacatalog/compare/v1.7.0...v1.7.1) (2022-03-29)
 
 
