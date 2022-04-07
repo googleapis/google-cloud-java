@@ -1,6 +1,6 @@
-#Retail Search Interactive Tutorials
+# Retail Search Interactive Tutorials
 
-##Run tutorials in Cloud Shell
+## Run tutorials in Cloud Shell
 
 To advance with the interactive tutorials, use Retail Search step-by-step manuals on the right side of the Cloud Shell IDE: 
 ![Interactive tutorials](images/tutorial1.png)
@@ -36,55 +36,61 @@ The Retail API provides you with the following possibilities to:
 
 You can find the information about the Retail services in the [documentation](https://cloud.google.com/retail/docs)
 
-<!--TODO(tkarasova) update the link to the tutorials when will be published-->
 If you would like to have a closer look at the Retail API features and try them yourself,
-the best option is to use the [Interactive Tutorials](https://cloud.google.com/retail/docs/overview). The tutorials will be launched in the CloudShell environment, and you will be able to request the Retail services and check the response with minimum time and effort.
+the best option is to use the [Interactive Tutorials](https://cloud.google.com/retail/docs/overview). In the documentation chapters find the "Guide me" button, the tutorials will be launched in the CloudShell environment, and you will be able to request the Retail services and check the response with minimum time and effort.
 
-The code samples in the directory **python-retail/samples/interactive-tutorials** are explicitly created for use with the Retail Interactive Tutorials.
+The code samples in the directory **java-retail/samples/interactive-tutorials** are explicitly created for use with the Retail Interactive Tutorials.
 
 If, for some reason, you have decided to proceed with these code samples without the tutorial, please go through the following steps and set up the required preconditions.
 
-### Select your project and enable the Retail API
+## Prepare your work environment
 
-Google Cloud organizes resources into projects. This lets you
-collect all the related resources for a single application in one place.
+To prepare the work environment you should perform the following steps:
+- Create a service account.
+- Create a service account key and set it to authorize your calls to the Retail API.
+- Install Google Cloud Retail library.
 
-If you don't have a Google Cloud project yet or you're not the owner of an existing one, you can
-[create a new project](https://console.cloud.google.com/projectcreate).
+### There are two ways to set up your work environment:
 
-After the project is created, set your PROJECT_ID to a ```project``` variable.
-1. Run the following command in Terminal:
+- If you want to **speed up the process** of setting up the working environment, run the script java-retail/samples/interactive-tutorials/samples/interactive-tutorials/src/main/java/user_environment_setup.sh and skip the next **set up the work environment step-by-step** tutorial step:
+
     ```bash
-    gcloud config set project <YOUR_PROJECT_ID>
+    bash java-retail/samples/interactive-tutorials/user_environment_setup.sh
     ```
 
-1. To check that the Retail API is enabled for your Project, go to the [Admin Console](https://console.cloud.google.com/ai/retail/).
+- If you want to perform the environment set up step by step along with getting the explanation you should proceed with the next tutorial step.
+
+## Set up the work environment step-by-step
 
 ### Create service account
 
-To access the Retail API, you must create a service account.
+To access the Retail API, you must create a service account. Check that you are an owner of your Google Cloud project on the [IAM page](https://console.cloud.google.com/iam-admin/iam).
 
-1. To create a service account, follow this [instruction](https://cloud.google.com/retail/docs/setting-up#service-account)
+1. To create a service account, perform the following command:
 
-1. Find your service account on the [IAM page](https://console.cloud.google.com/iam-admin/iam),
-   click `Edit` icon, add the 'Storage Admin' and 'BigQuery Admin' roles. It may take some time for changes to apply.
-
-1. Copy the service account email in the Principal field.
-
-### Set up authentication
-
-To run a code sample from the Cloud Shell, you need to be authenticated using the service account credentials.
-
-1. Login with your user credentials.
     ```bash
-    gcloud auth login
+    gcloud iam service-accounts create <YOUR_SERVICE_ACCOUNT_ID>
     ```
 
-1. Type `Y` and press **Enter**. Click the link in a Terminal. A browser window should appear asking you to log in using your Gmail account.
+1. Assign the needed roles to your service account:
 
-1. Provide the Google Auth Library with access to your credentials and paste the code from the browser to the Terminal.
+    ```bash
+    for role in {retail.admin,editor,bigquery.admin}
+    do gcloud projects add-iam-policy-binding <YOUR_PROJECT_ID> --member="serviceAccount:<YOUR_SERVICE_ACCOUNT_ID>@<YOUR_PROJECT_ID>.iam.gserviceaccount.com" --role="roles/${role}"
+    done
+    ```
 
-1. Upload your service account key JSON file and use it to activate the service account:
+1. Use the following command to show the service account email:
+
+    ```bash
+    gcloud iam service-accounts list|grep <YOUR_SERVICE_ACCOUNT_ID>
+    ```
+
+    Copy the service account email.
+
+
+1.  Upload your service account key JSON file and use it to activate the service
+    account:
 
     ```bash
     gcloud iam service-accounts keys create ~/key.json --iam-account <YOUR_SERVICE_ACCOUNT_EMAIL>
@@ -94,45 +100,79 @@ To run a code sample from the Cloud Shell, you need to be authenticated using th
     gcloud auth activate-service-account --key-file ~/key.json
     ```
 
-1. To request the Retail API, set your service account key JSON file as the GOOGLE_APPLICATION_CREDENTIALS environment variable :
+1.  Set the key as the GOOGLE_APPLICATION_CREDENTIALS environment variable to
+    use it for sending requests to the Retail API.
+
     ```bash
     export GOOGLE_APPLICATION_CREDENTIALS=~/key.json
     ```
 
-### Set the GOOGLE_CLOUD_PROJECT environment variable
+### Google Cloud Retail libraries
 
-You will run the code samples in your own Google Cloud project. To use the **project_id** in every request to the Retail API, you should first specify them as environment variables.
+Learn more about the [Java Google Cloud Retail library](https://googleapis.dev/java/google-cloud-retail/latest/index.html).
 
-1. Find the project ID in the Project Info card displayed on **Home/Dashboard**.
+## Congrats!  You have configured your work environment
 
-1. Set the **project_id** with the following command:
+1. Check that you are in the directory with code samples.
+
+    The code samples for each of the Retail services are stored in different directories.
+
+    Go to the code samples directory, your starting point to run more commands.
+
     ```bash
-    export GOOGLE_CLOUD_PROJECT=<YOUR_PROJECT_ID>
+    cd java-retail/samples/interactive-tutorials/
+    ```
 
-## Import Catalog Data
+## Import catalog data
 
-This step is required if this is the first Retail API Tutorial you run.
-Otherwise, you can skip it.
+<i>This step is required if this is the first Retail API tutorial that you run.
+Otherwise, you can skip it.</i>
+
+There is a java-retail/samples/interactive-tutorials/src/main/resources/products.json file with valid products prepared in the `resources` directory.
+
+The other file, java-retail/samples/interactive-tutorials/src/main/resources/products_some_invalid.json, contains both valid and invalid products. You will use it to check the error handling.
+
+- If you want to **speed up the process**, run the following script in the Terminal directory to import all products to catalog and skip the next **Prepare the catalog data step-by-step** tutorial step:
+
+    ```bash
+    bash java-retail/samples/interactive-tutorials/user_import_data_to_catalog.sh
+    ```
+
+- If you want to upload products to the catalog step by step along with getting the explanation, you should proceed with the next tutorial step.
+
+## Prepare the catalog data step-by-step
 
 ### Upload catalog data to Cloud Storage
 
-There is a JSON file with valid products prepared in the `product` directory:
-`product/resources/products.json`.
-
-Another file, `product/resources/products_some_invalid.json`, contains both valid and invalid products, and you will use it to check the error handling.
-
-In your own project, create a Cloud Storage bucket and put the JSON file there.
+In your own project you need to create a Cloud Storage bucket and put the JSON file there.
 The bucket name must be unique. For convenience, you can name it `<YOUR_PROJECT_ID>_<TIMESTAMP>`.
 
-1. To create the bucket and upload the JSON file, run the following command in the Terminal:
-<!--TODO update with the correct file path when will be merged-->
+1. The code samples for each of the Retail services are stored in different directories.
+
+    Go to the code samples directory, your starting point to run more commands.
+
     ```bash
-    pmvn compile exec:java -Dexec.mainClass=CreateGcsBucket
+    cd java-retail/samples/interactive-tutorials
+    ```
+
+1. To create the bucket and upload the JSON file, open java-retail/samples/interactive-tutorials/src/main/java/product/setup/ProductsCreateGcsBucket.java file
+
+1. Go to the **product** directory and run the following command in the Terminal:
+
+    ```bash
+    mvn compile exec:java
+    -Dexec.mainClass=product.setup.ProductsCreateGcsBucket
     ```
 
     Now you can see the bucket is created in the [Cloud Storage](https://console.cloud.google.com/storage/browser), and the files are uploaded.
 
-1. The name of the created Retail Search bucket is printed in the Terminal. Copy the name and set it as the environment variable `BUCKET_NAME`:
+1. The name of the created Cloud Storage bucket is shown in the Terminal.
+
+    ```
+    The gcs bucket <YOUR_PROJECT_ID>_<TIMESTAMP> was created
+    ```
+
+    Copy the name and set it as the environment variable `BUCKET_NAME`:
 
     ```bash
     export BUCKET_NAME=<YOUR_BUCKET_NAME>
@@ -140,11 +180,13 @@ The bucket name must be unique. For convenience, you can name it `<YOUR_PROJECT_
 
 ### Import products to the Retail Catalog
 
-To import the prepared products to a catalog, run the following command in the Terminal:
-<!--TODO update with the correct file path when will be merged-->
-    ```bash
-    pmvn compile exec:java -Dexec.mainClass=ImportProductsGcs
-    ```
+To import the prepared products to a catalog, open java-retail/samples/interactive-tutorials/src/main/java/product/ImportProductsGcs.java file and run the following command in the Terminal:
+
+```bash
+mvn compile exec:java -Dexec.mainClass=product.ImportProductsGcs
+```
+
+## Your Retail catalog is ready to use!
  
 ### Running code samples
 
