@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.14](https://github.com/googleapis/java-speech/compare/v2.2.13...v2.2.14) (2022-04-07)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.12.1 ([#855](https://github.com/googleapis/java-speech/issues/855)) ([3cd4c3f](https://github.com/googleapis/java-speech/commit/3cd4c3f4209e2cb3967ce217dd61fd7f1e3a5803))
+
 ### [2.2.13](https://github.com/googleapis/java-speech/compare/v2.2.12...v2.2.13) (2022-04-01)
 
 
