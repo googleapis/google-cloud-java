@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.122.25](https://github.com/googleapis/java-notification/compare/v0.122.24...v0.122.25) (2022-04-07)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20220401-1.32.1 ([#568](https://github.com/googleapis/java-notification/issues/568)) ([d01ce56](https://github.com/googleapis/java-notification/commit/d01ce56ad449de524e92cd84be570f71c59cc4da))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.116.3 ([#565](https://github.com/googleapis/java-notification/issues/565)) ([111ce17](https://github.com/googleapis/java-notification/commit/111ce177263c3bbac838e047837e9e498ed58143))
+* update dependency com.google.cloud:google-cloud-storage to v2.6.0 ([#566](https://github.com/googleapis/java-notification/issues/566)) ([ef61aad](https://github.com/googleapis/java-notification/commit/ef61aad9d657e3bccde2dec8a4860b609dd83416))
+
 ### [0.122.24](https://github.com/googleapis/java-notification/compare/v0.122.23...v0.122.24) (2022-03-29)
 
 
