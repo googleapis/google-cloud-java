@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.2.8](https://github.com/googleapis/java-resourcemanager/compare/v1.2.7...v1.2.8) (2022-04-07)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20220403-1.32.1 ([#750](https://github.com/googleapis/java-resourcemanager/issues/750)) ([b53901b](https://github.com/googleapis/java-resourcemanager/commit/b53901bdbed6da0066ec20bd8aac826648d4c6f7))
+* update dependency com.google.errorprone:error_prone_annotations to v2.12.1 ([#748](https://github.com/googleapis/java-resourcemanager/issues/748)) ([afaf17a](https://github.com/googleapis/java-resourcemanager/commit/afaf17aca379505bae87ec6c78b8c700956731b6))
+
 ### [1.2.7](https://github.com/googleapis/java-resourcemanager/compare/v1.2.6...v1.2.7) (2022-03-29)
 
 
