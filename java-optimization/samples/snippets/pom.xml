@@ -2,10 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>-snippets</artifactId>
-  <packaging>jar</packaging>
-  <name>Google Cloud Fleet Routing Snippets</name>
+  <artifactId>optimization-ai-snippets</artifactId>
+  <packaging>pom</packaging>
+  <name>Google Cloud Fleet Routing Samples Parent</name>
   <url>https://github.com/googleapis/java-optimization</url>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -23,14 +26,30 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <!-- [START optimizationai_install_with_bom] -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>25.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-    <!-- TODO: switch to libraries-bom after this artifact is included -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-optimization</artifactId>
       <version>0.1.1</version>
     </dependency>
-
+    <!-- [END optimizationai_install_with_bom] -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -44,4 +63,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-</project>
+</project> 
