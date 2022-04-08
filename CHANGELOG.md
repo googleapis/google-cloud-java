@@ -1,5 +1,17 @@
 # Changelog
 
+### [2.12.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.0...v2.12.1) (2022-04-08)
+
+
+### Bug Fixes
+
+* even better ISO compilance ([#1607](https://github.com/googleapis/java-bigquerystorage/issues/1607)) ([5701597](https://github.com/googleapis/java-bigquerystorage/commit/570159799d8d464fbdb5bd617cc2a51f4f276f98))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.6 ([#1610](https://github.com/googleapis/java-bigquerystorage/issues/1610)) ([20e4225](https://github.com/googleapis/java-bigquerystorage/commit/20e4225734358bfce7c872e19c823ac6958d7905))
+
 ## [2.12.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.11.1...v2.12.0) (2022-04-01)
 
 
