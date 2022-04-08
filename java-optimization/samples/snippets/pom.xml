@@ -26,7 +26,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- [START optimizationai_install_with_bom] -->
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -45,7 +45,6 @@
       <artifactId>google-cloud-optimization</artifactId>
       <version>0.1.1</version>
     </dependency>
-    <!-- [END optimizationai_install_with_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
