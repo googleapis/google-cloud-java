@@ -30,6 +30,10 @@ source ${scriptDir}/common.sh
 
 # Setup required env variables
 source ${KOKORO_GFILE_DIR}/secret_manager/java-bigquery-samples-secrets
+# if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
+if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
+fi
 echo "********** Successfully Set All Environment Variables **********"
 
 # Move into the samples directory
