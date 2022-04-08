@@ -664,17 +664,32 @@ public class JsonToProtoMessageTest {
             .addFields(
                 TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_string_T_Z").build())
             .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_long").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_int").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_float").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_offset").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_timezone").build())
+            .addFields(TableFieldSchema.newBuilder(TEST_TIMESTAMP).setName("test_saformat").build())
             .build();
     TestTimestamp expectedProto =
         TestTimestamp.newBuilder()
             .setTestString(10L)
-            .setTestStringTZ(1648493279000000L)
+            .setTestStringTZ(1648493279010000L)
             .setTestLong(0L)
+            .setTestInt(1534806950000000L)
+            .setTestFloat(1534680695000000000L)
+            .setTestOffset(1649135171000000L)
+            .setTestTimezone(1649174771000000L)
+            .setTestSaformat(1534680660000000L)
             .build();
     JSONObject json = new JSONObject();
     json.put("test_string", "1970-01-01 00:00:00.000010");
-    json.put("test_string_T_Z", "2022-03-28T18:47:59.00Z");
+    json.put("test_string_T_Z", "2022-03-28T18:47:59.01Z");
     json.put("test_long", 0L);
+    json.put("test_int", 153480695);
+    json.put("test_float", "1.534680695e11");
+    json.put("test_offset", "2022-04-05T09:06:11+04:00");
+    json.put("test_timezone", "2022-04-05 09:06:11 PST");
+    json.put("test_saformat", "2018/08/19 12:11");
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(
             TestTimestamp.getDescriptor(), tableSchema, json);
@@ -860,7 +875,7 @@ public class JsonToProtoMessageTest {
             .setTestNumeric(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.23456")))
             .setTestGeo("POINT(1,1)")
-            .setTestTimestamp(12345678)
+            .setTestTimestamp(123456780000000L)
             .setTestTime(CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)))
             .setTestTimeStr(89332507144L)
             .addTestNumericRepeated(

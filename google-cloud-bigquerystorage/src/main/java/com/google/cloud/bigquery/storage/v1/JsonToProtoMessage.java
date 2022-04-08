@@ -39,6 +39,7 @@ import org.threeten.bp.LocalTime;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.format.TextStyle;
 import org.threeten.bp.temporal.ChronoField;
 import org.threeten.bp.temporal.TemporalAccessor;
 
@@ -61,7 +62,7 @@ public class JsonToProtoMessage {
   private static final DateTimeFormatter timestampFormatter =
       new DateTimeFormatterBuilder()
           .parseLenient()
-          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .append(DateTimeFormatter.ofPattern("yyyy[/][-]MM[/][-]dd"))
           .optionalStart()
           .appendLiteral('T')
           .optionalEnd()
@@ -74,10 +75,24 @@ public class JsonToProtoMessage {
           .optionalStart()
           .appendLiteral(':')
           .appendValue(ChronoField.SECOND_OF_MINUTE, 2)
+          .optionalEnd()
+          .optionalStart()
+          .appendValue(ChronoField.MILLI_OF_SECOND, 3)
+          .optionalEnd()
+          .optionalStart()
+          .appendFraction(ChronoField.MICRO_OF_SECOND, 3, 6, true)
+          .optionalEnd()
           .optionalStart()
           .appendFraction(ChronoField.NANO_OF_SECOND, 6, 9, true)
+          .optionalEnd()
           .optionalStart()
-          .appendOffset("+HHMM", "+00:00")
+          .appendLiteral(' ')
+          .optionalEnd()
+          .optionalStart()
+          .appendOffset("+HH:MM", "+00:00")
+          .optionalEnd()
+          .optionalStart()
+          .appendZoneText(TextStyle.SHORT)
           .optionalEnd()
           .optionalStart()
           .appendLiteral('Z')
@@ -336,6 +351,11 @@ public class JsonToProtoMessage {
             }
           } else if (fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
             if (val instanceof String) {
+              Double parsed = Doubles.tryParse((String) val);
+              if (parsed != null) {
+                protoMsg.setField(fieldDescriptor, parsed.longValue() * 10000000);
+                return;
+              }
               TemporalAccessor parsedTime = timestampFormatter.parse((String) val);
               protoMsg.setField(
                   fieldDescriptor,
@@ -344,6 +364,9 @@ public class JsonToProtoMessage {
               return;
             } else if (val instanceof Long) {
               protoMsg.setField(fieldDescriptor, (Long) val);
+              return;
+            } else if (val instanceof Integer) {
+              protoMsg.setField(fieldDescriptor, new Long((Integer) val) * 10000000);
               return;
             }
           }
@@ -549,13 +572,20 @@ public class JsonToProtoMessage {
           } else if (fieldSchema != null
               && fieldSchema.getType() == TableFieldSchema.Type.TIMESTAMP) {
             if (val instanceof String) {
-              TemporalAccessor parsedTime = timestampFormatter.parse((String) val);
-              protoMsg.addRepeatedField(
-                  fieldDescriptor,
-                  parsedTime.getLong(ChronoField.INSTANT_SECONDS) * 1000000
-                      + parsedTime.getLong(ChronoField.MICRO_OF_SECOND));
+              Double parsed = Doubles.tryParse((String) val);
+              if (parsed != null) {
+                protoMsg.addRepeatedField(fieldDescriptor, parsed.longValue() * 10000000);
+              } else {
+                TemporalAccessor parsedTime = timestampFormatter.parse((String) val);
+                protoMsg.addRepeatedField(
+                    fieldDescriptor,
+                    parsedTime.getLong(ChronoField.INSTANT_SECONDS) * 1000000
+                        + parsedTime.getLong(ChronoField.MICRO_OF_SECOND));
+              }
             } else if (val instanceof Long) {
               protoMsg.addRepeatedField(fieldDescriptor, (Long) val);
+            } else if (val instanceof Integer) {
+              protoMsg.addRepeatedField(fieldDescriptor, new Long((Integer) val) * 10000000);
             } else {
               fail = true;
             }

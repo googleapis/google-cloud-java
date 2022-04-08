@@ -138,6 +138,11 @@ message TestTimestamp {
   optional int64 test_string = 1;
   optional int64 test_string_t_z = 2;
   optional int64 test_long = 3;
+  optional int64 test_int = 4;
+  optional int64 test_float = 5;
+  optional int64 test_offset = 6;
+  optional int64 test_timezone = 7;
+  optional int64 test_saformat = 8;
 }
 
 message TestDate {
