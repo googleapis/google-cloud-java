@@ -135,8 +135,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
-   * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-   * `eu` location value.
+   * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+   * with matching `us` or `eu` location value.
    * </pre>
    *
    * <code>
@@ -166,8 +166,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
-   * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-   * `eu` location value.
+   * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+   * with matching `us` or `eu` location value.
    * </pre>
    *
    * <code>
@@ -625,8 +625,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
-     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-     * `eu` location value.
+     * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+     * with matching `us` or `eu` location value.
      * </pre>
      *
      * <code>
@@ -655,8 +655,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
-     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-     * `eu` location value.
+     * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+     * with matching `us` or `eu` location value.
      * </pre>
      *
      * <code>
@@ -685,8 +685,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
-     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-     * `eu` location value.
+     * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+     * with matching `us` or `eu` location value.
      * </pre>
      *
      * <code>
@@ -714,8 +714,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
-     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-     * `eu` location value.
+     * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+     * with matching `us` or `eu` location value.
      * </pre>
      *
      * <code>
@@ -739,8 +739,8 @@ public final class ListCustomClassesRequest extends com.google.protobuf.Generate
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
-     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
-     * `eu` location value.
+     * [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints)
+     * with matching `us` or `eu` location value.
      * </pre>
      *
      * <code>

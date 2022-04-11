@@ -170,8 +170,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param phraseSet Required. The phrase set to create.
    * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
    *     component of the phrase set's resource name.
@@ -210,8 +211,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param phraseSet Required. The phrase set to create.
    * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
    *     component of the phrase set's resource name.
@@ -298,8 +300,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhraseSet getPhraseSet(PhraseSetName name) {
@@ -325,8 +328,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhraseSet getPhraseSet(String name) {
@@ -398,8 +402,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPhraseSetPagedResponse listPhraseSet(LocationName parent) {
@@ -429,8 +434,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPhraseSetPagedResponse listPhraseSet(String parent) {
@@ -545,8 +551,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param updateMask The list of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -715,8 +722,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param customClass Required. The custom class to create.
    * @param customClassId Required. The ID to use for the custom class, which will become the final
    *     component of the custom class' resource name.
@@ -753,8 +761,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param customClass Required. The custom class to create.
    * @param customClassId Required. The ID to use for the custom class, which will become the final
    *     component of the custom class' resource name.
@@ -931,8 +940,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomClassesPagedResponse listCustomClasses(LocationName parent) {
@@ -962,8 +972,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomClassesPagedResponse listCustomClasses(String parent) {
@@ -1082,8 +1093,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses/{custom_class}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @param updateMask The list of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1161,8 +1173,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses/{custom_class}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCustomClass(CustomClassName name) {
@@ -1190,8 +1203,9 @@ public class AdaptationClient implements BackgroundResource {
    *     <p>`projects/{project}/locations/{location}/customClasses/{custom_class}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
-   *     location. To specify a region, use a [regional endpoint](/speech-to-text/docs/endpoints)
-   *     with matching `us` or `eu` location value.
+   *     location. To specify a region, use a [regional
+   *     endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or
+   *     `eu` location value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCustomClass(String name) {
