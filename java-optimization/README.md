@@ -81,6 +81,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-optimization/
 | --------------------------- | --------------------------------- | ------ |
 | Async Api | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/AsyncApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/AsyncApi.java) |
 | Sync Api | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/SyncApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/SyncApi.java) |
+| Sync Api With Long Timeout | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/SyncApiWithLongTimeout.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/SyncApiWithLongTimeout.java) |
 
 
 
