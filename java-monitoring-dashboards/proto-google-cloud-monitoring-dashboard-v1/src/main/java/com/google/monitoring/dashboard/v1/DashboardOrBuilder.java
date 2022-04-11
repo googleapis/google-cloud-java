@@ -262,5 +262,112 @@ public interface DashboardOrBuilder
    */
   com.google.monitoring.dashboard.v1.ColumnLayoutOrBuilder getColumnLayoutOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter> getDashboardFiltersList();
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  com.google.monitoring.dashboard.v1.DashboardFilter getDashboardFilters(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  int getDashboardFiltersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  java.util.List<? extends com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
+      getDashboardFiltersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder getDashboardFiltersOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
   public com.google.monitoring.dashboard.v1.Dashboard.LayoutCase getLayoutCase();
 }

@@ -42,6 +42,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     etag_ = "";
+    dashboardFilters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -63,6 +64,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -160,6 +162,32 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
               layoutCase_ = 9;
               break;
             }
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dashboardFilters_ =
+                    new java.util.ArrayList<com.google.monitoring.dashboard.v1.DashboardFilter>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dashboardFilters_.add(
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.DashboardFilter.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +202,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        dashboardFilters_ = java.util.Collections.unmodifiableList(dashboardFilters_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -182,6 +213,17 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsProto
         .internal_static_google_monitoring_dashboard_v1_Dashboard_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 12:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -622,6 +664,175 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     return com.google.monitoring.dashboard.v1.ColumnLayout.getDefaultInstance();
   }
 
+  public static final int DASHBOARD_FILTERS_FIELD_NUMBER = 11;
+  private java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter> dashboardFilters_;
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter>
+      getDashboardFiltersList() {
+    return dashboardFilters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
+      getDashboardFiltersOrBuilderList() {
+    return dashboardFilters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  @java.lang.Override
+  public int getDashboardFiltersCount() {
+    return dashboardFilters_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.DashboardFilter getDashboardFilters(int index) {
+    return dashboardFilters_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filters to reduce the amount of data charted based on the filter criteria.
+   * </pre>
+   *
+   * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder getDashboardFiltersOrBuilder(
+      int index) {
+    return dashboardFilters_.get(index);
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 12;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.monitoring.dashboard.v1.DashboardsProto
+                .internal_static_google_monitoring_dashboard_v1_Dashboard_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels applied to the dashboard
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -657,6 +868,11 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     if (layoutCase_ == 9) {
       output.writeMessage(9, (com.google.monitoring.dashboard.v1.ColumnLayout) layout_);
     }
+    for (int i = 0; i < dashboardFilters_.size(); i++) {
+      output.writeMessage(11, dashboardFilters_.get(i));
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 12);
     unknownFields.writeTo(output);
   }
 
@@ -695,6 +911,20 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.monitoring.dashboard.v1.ColumnLayout) layout_);
     }
+    for (int i = 0; i < dashboardFilters_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, dashboardFilters_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, labels__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -714,6 +944,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getDashboardFiltersList().equals(other.getDashboardFiltersList())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getLayoutCase().equals(other.getLayoutCase())) return false;
     switch (layoutCase_) {
       case 5:
@@ -748,6 +980,14 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (getDashboardFiltersCount() > 0) {
+      hash = (37 * hash) + DASHBOARD_FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getDashboardFiltersList().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     switch (layoutCase_) {
       case 5:
         hash = (37 * hash) + GRID_LAYOUT_FIELD_NUMBER;
@@ -887,6 +1127,26 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_monitoring_dashboard_v1_Dashboard_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -908,7 +1168,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDashboardFiltersFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -920,6 +1182,13 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
 
       etag_ = "";
 
+      if (dashboardFiltersBuilder_ == null) {
+        dashboardFilters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        dashboardFiltersBuilder_.clear();
+      }
+      internalGetMutableLabels().clear();
       layoutCase_ = 0;
       layout_ = null;
       return this;
@@ -949,6 +1218,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Dashboard buildPartial() {
       com.google.monitoring.dashboard.v1.Dashboard result =
           new com.google.monitoring.dashboard.v1.Dashboard(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
       result.etag_ = etag_;
@@ -980,6 +1250,17 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
           result.layout_ = columnLayoutBuilder_.build();
         }
       }
+      if (dashboardFiltersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          dashboardFilters_ = java.util.Collections.unmodifiableList(dashboardFilters_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.dashboardFilters_ = dashboardFilters_;
+      } else {
+        result.dashboardFilters_ = dashboardFiltersBuilder_.build();
+      }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       result.layoutCase_ = layoutCase_;
       onBuilt();
       return result;
@@ -1042,6 +1323,34 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         onChanged();
       }
+      if (dashboardFiltersBuilder_ == null) {
+        if (!other.dashboardFilters_.isEmpty()) {
+          if (dashboardFilters_.isEmpty()) {
+            dashboardFilters_ = other.dashboardFilters_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDashboardFiltersIsMutable();
+            dashboardFilters_.addAll(other.dashboardFilters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dashboardFilters_.isEmpty()) {
+          if (dashboardFiltersBuilder_.isEmpty()) {
+            dashboardFiltersBuilder_.dispose();
+            dashboardFiltersBuilder_ = null;
+            dashboardFilters_ = other.dashboardFilters_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            dashboardFiltersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDashboardFiltersFieldBuilder()
+                    : null;
+          } else {
+            dashboardFiltersBuilder_.addAllMessages(other.dashboardFilters_);
+          }
+        }
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       switch (other.getLayoutCase()) {
         case GRID_LAYOUT:
           {
@@ -1110,6 +1419,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2329,6 +2640,525 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return columnLayoutBuilder_;
+    }
+
+    private java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter> dashboardFilters_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDashboardFiltersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        dashboardFilters_ =
+            new java.util.ArrayList<com.google.monitoring.dashboard.v1.DashboardFilter>(
+                dashboardFilters_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.DashboardFilter,
+            com.google.monitoring.dashboard.v1.DashboardFilter.Builder,
+            com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
+        dashboardFiltersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter>
+        getDashboardFiltersList() {
+      if (dashboardFiltersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dashboardFilters_);
+      } else {
+        return dashboardFiltersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public int getDashboardFiltersCount() {
+      if (dashboardFiltersBuilder_ == null) {
+        return dashboardFilters_.size();
+      } else {
+        return dashboardFiltersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public com.google.monitoring.dashboard.v1.DashboardFilter getDashboardFilters(int index) {
+      if (dashboardFiltersBuilder_ == null) {
+        return dashboardFilters_.get(index);
+      } else {
+        return dashboardFiltersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder setDashboardFilters(
+        int index, com.google.monitoring.dashboard.v1.DashboardFilter value) {
+      if (dashboardFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.set(index, value);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder setDashboardFilters(
+        int index, com.google.monitoring.dashboard.v1.DashboardFilter.Builder builderForValue) {
+      if (dashboardFiltersBuilder_ == null) {
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder addDashboardFilters(com.google.monitoring.dashboard.v1.DashboardFilter value) {
+      if (dashboardFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.add(value);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder addDashboardFilters(
+        int index, com.google.monitoring.dashboard.v1.DashboardFilter value) {
+      if (dashboardFiltersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.add(index, value);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder addDashboardFilters(
+        com.google.monitoring.dashboard.v1.DashboardFilter.Builder builderForValue) {
+      if (dashboardFiltersBuilder_ == null) {
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder addDashboardFilters(
+        int index, com.google.monitoring.dashboard.v1.DashboardFilter.Builder builderForValue) {
+      if (dashboardFiltersBuilder_ == null) {
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder addAllDashboardFilters(
+        java.lang.Iterable<? extends com.google.monitoring.dashboard.v1.DashboardFilter> values) {
+      if (dashboardFiltersBuilder_ == null) {
+        ensureDashboardFiltersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dashboardFilters_);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder clearDashboardFilters() {
+      if (dashboardFiltersBuilder_ == null) {
+        dashboardFilters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public Builder removeDashboardFilters(int index) {
+      if (dashboardFiltersBuilder_ == null) {
+        ensureDashboardFiltersIsMutable();
+        dashboardFilters_.remove(index);
+        onChanged();
+      } else {
+        dashboardFiltersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public com.google.monitoring.dashboard.v1.DashboardFilter.Builder getDashboardFiltersBuilder(
+        int index) {
+      return getDashboardFiltersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder getDashboardFiltersOrBuilder(
+        int index) {
+      if (dashboardFiltersBuilder_ == null) {
+        return dashboardFilters_.get(index);
+      } else {
+        return dashboardFiltersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public java.util.List<? extends com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
+        getDashboardFiltersOrBuilderList() {
+      if (dashboardFiltersBuilder_ != null) {
+        return dashboardFiltersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dashboardFilters_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public com.google.monitoring.dashboard.v1.DashboardFilter.Builder addDashboardFiltersBuilder() {
+      return getDashboardFiltersFieldBuilder()
+          .addBuilder(com.google.monitoring.dashboard.v1.DashboardFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public com.google.monitoring.dashboard.v1.DashboardFilter.Builder addDashboardFiltersBuilder(
+        int index) {
+      return getDashboardFiltersFieldBuilder()
+          .addBuilder(
+              index, com.google.monitoring.dashboard.v1.DashboardFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filters to reduce the amount of data charted based on the filter criteria.
+     * </pre>
+     *
+     * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
+     */
+    public java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter.Builder>
+        getDashboardFiltersBuilderList() {
+      return getDashboardFiltersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.DashboardFilter,
+            com.google.monitoring.dashboard.v1.DashboardFilter.Builder,
+            com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
+        getDashboardFiltersFieldBuilder() {
+      if (dashboardFiltersBuilder_ == null) {
+        dashboardFiltersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.DashboardFilter,
+                com.google.monitoring.dashboard.v1.DashboardFilter.Builder,
+                com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>(
+                dashboardFilters_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        dashboardFilters_ = null;
+      }
+      return dashboardFiltersBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels applied to the dashboard
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 12;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

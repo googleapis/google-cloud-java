@@ -156,6 +156,59 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
               contentCase_ = 7;
               break;
             }
+          case 66:
+            {
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder subBuilder = null;
+              if (contentCase_ == 8) {
+                subBuilder =
+                    ((com.google.monitoring.dashboard.v1.TimeSeriesTable) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.TimeSeriesTable.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.TimeSeriesTable) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 8;
+              break;
+            }
+          case 74:
+            {
+              com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder subBuilder = null;
+              if (contentCase_ == 9) {
+                subBuilder =
+                    ((com.google.monitoring.dashboard.v1.CollapsibleGroup) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.CollapsibleGroup.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 9;
+              break;
+            }
+          case 82:
+            {
+              com.google.monitoring.dashboard.v1.LogsPanel.Builder subBuilder = null;
+              if (contentCase_ == 10) {
+                subBuilder = ((com.google.monitoring.dashboard.v1.LogsPanel) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.LogsPanel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.LogsPanel) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 10;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -202,6 +255,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     TEXT(4),
     BLANK(5),
     ALERT_CHART(7),
+    TIME_SERIES_TABLE(8),
+    COLLAPSIBLE_GROUP(9),
+    LOGS_PANEL(10),
     CONTENT_NOT_SET(0);
     private final int value;
 
@@ -230,6 +286,12 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
           return BLANK;
         case 7:
           return ALERT_CHART;
+        case 8:
+          return TIME_SERIES_TABLE;
+        case 9:
+          return COLLAPSIBLE_GROUP;
+        case 10:
+          return LOGS_PANEL;
         case 0:
           return CONTENT_NOT_SET;
         default:
@@ -550,6 +612,163 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
   }
 
+  public static final int TIME_SERIES_TABLE_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   *
+   * @return Whether the timeSeriesTable field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeSeriesTable() {
+    return contentCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   *
+   * @return The timeSeriesTable.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.TimeSeriesTable getTimeSeriesTable() {
+    if (contentCase_ == 8) {
+      return (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_;
+    }
+    return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder getTimeSeriesTableOrBuilder() {
+    if (contentCase_ == 8) {
+      return (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_;
+    }
+    return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+  }
+
+  public static final int COLLAPSIBLE_GROUP_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   *
+   * @return Whether the collapsibleGroup field is set.
+   */
+  @java.lang.Override
+  public boolean hasCollapsibleGroup() {
+    return contentCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   *
+   * @return The collapsibleGroup.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.CollapsibleGroup getCollapsibleGroup() {
+    if (contentCase_ == 9) {
+      return (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_;
+    }
+    return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder
+      getCollapsibleGroupOrBuilder() {
+    if (contentCase_ == 9) {
+      return (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_;
+    }
+    return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+  }
+
+  public static final int LOGS_PANEL_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   *
+   * @return Whether the logsPanel field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogsPanel() {
+    return contentCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   *
+   * @return The logsPanel.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.LogsPanel getLogsPanel() {
+    if (contentCase_ == 10) {
+      return (com.google.monitoring.dashboard.v1.LogsPanel) content_;
+    }
+    return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.LogsPanelOrBuilder getLogsPanelOrBuilder() {
+    if (contentCase_ == 10) {
+      return (com.google.monitoring.dashboard.v1.LogsPanel) content_;
+    }
+    return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -581,6 +800,15 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     if (contentCase_ == 7) {
       output.writeMessage(7, (com.google.monitoring.dashboard.v1.AlertChart) content_);
+    }
+    if (contentCase_ == 8) {
+      output.writeMessage(8, (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_);
+    }
+    if (contentCase_ == 9) {
+      output.writeMessage(9, (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_);
+    }
+    if (contentCase_ == 10) {
+      output.writeMessage(10, (com.google.monitoring.dashboard.v1.LogsPanel) content_);
     }
     unknownFields.writeTo(output);
   }
@@ -619,6 +847,21 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.monitoring.dashboard.v1.AlertChart) content_);
     }
+    if (contentCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_);
+    }
+    if (contentCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_);
+    }
+    if (contentCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.monitoring.dashboard.v1.LogsPanel) content_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -652,6 +895,15 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         break;
       case 7:
         if (!getAlertChart().equals(other.getAlertChart())) return false;
+        break;
+      case 8:
+        if (!getTimeSeriesTable().equals(other.getTimeSeriesTable())) return false;
+        break;
+      case 9:
+        if (!getCollapsibleGroup().equals(other.getCollapsibleGroup())) return false;
+        break;
+      case 10:
+        if (!getLogsPanel().equals(other.getLogsPanel())) return false;
         break;
       case 0:
       default:
@@ -689,6 +941,18 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + ALERT_CHART_FIELD_NUMBER;
         hash = (53 * hash) + getAlertChart().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + TIME_SERIES_TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeSeriesTable().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + COLLAPSIBLE_GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getCollapsibleGroup().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + LOGS_PANEL_FIELD_NUMBER;
+        hash = (53 * hash) + getLogsPanel().hashCode();
         break;
       case 0:
       default:
@@ -906,6 +1170,27 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
           result.content_ = alertChartBuilder_.build();
         }
       }
+      if (contentCase_ == 8) {
+        if (timeSeriesTableBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = timeSeriesTableBuilder_.build();
+        }
+      }
+      if (contentCase_ == 9) {
+        if (collapsibleGroupBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = collapsibleGroupBuilder_.build();
+        }
+      }
+      if (contentCase_ == 10) {
+        if (logsPanelBuilder_ == null) {
+          result.content_ = content_;
+        } else {
+          result.content_ = logsPanelBuilder_.build();
+        }
+      }
       result.contentCase_ = contentCase_;
       onBuilt();
       return result;
@@ -984,6 +1269,21 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         case ALERT_CHART:
           {
             mergeAlertChart(other.getAlertChart());
+            break;
+          }
+        case TIME_SERIES_TABLE:
+          {
+            mergeTimeSeriesTable(other.getTimeSeriesTable());
+            break;
+          }
+        case COLLAPSIBLE_GROUP:
+          {
+            mergeCollapsibleGroup(other.getCollapsibleGroup());
+            break;
+          }
+        case LOGS_PANEL:
+          {
+            mergeLogsPanel(other.getLogsPanel());
             break;
           }
         case CONTENT_NOT_SET:
@@ -2176,6 +2476,648 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return alertChartBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.TimeSeriesTable,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder,
+            com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder>
+        timeSeriesTableBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     *
+     * @return Whether the timeSeriesTable field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeSeriesTable() {
+      return contentCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     *
+     * @return The timeSeriesTable.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable getTimeSeriesTable() {
+      if (timeSeriesTableBuilder_ == null) {
+        if (contentCase_ == 8) {
+          return (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_;
+        }
+        return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+      } else {
+        if (contentCase_ == 8) {
+          return timeSeriesTableBuilder_.getMessage();
+        }
+        return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    public Builder setTimeSeriesTable(com.google.monitoring.dashboard.v1.TimeSeriesTable value) {
+      if (timeSeriesTableBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        onChanged();
+      } else {
+        timeSeriesTableBuilder_.setMessage(value);
+      }
+      contentCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    public Builder setTimeSeriesTable(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder builderForValue) {
+      if (timeSeriesTableBuilder_ == null) {
+        content_ = builderForValue.build();
+        onChanged();
+      } else {
+        timeSeriesTableBuilder_.setMessage(builderForValue.build());
+      }
+      contentCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    public Builder mergeTimeSeriesTable(com.google.monitoring.dashboard.v1.TimeSeriesTable value) {
+      if (timeSeriesTableBuilder_ == null) {
+        if (contentCase_ == 8
+            && content_
+                != com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance()) {
+          content_ =
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.newBuilder(
+                      (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          content_ = value;
+        }
+        onChanged();
+      } else {
+        if (contentCase_ == 8) {
+          timeSeriesTableBuilder_.mergeFrom(value);
+        }
+        timeSeriesTableBuilder_.setMessage(value);
+      }
+      contentCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    public Builder clearTimeSeriesTable() {
+      if (timeSeriesTableBuilder_ == null) {
+        if (contentCase_ == 8) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+      } else {
+        if (contentCase_ == 8) {
+          contentCase_ = 0;
+          content_ = null;
+        }
+        timeSeriesTableBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder getTimeSeriesTableBuilder() {
+      return getTimeSeriesTableFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder
+        getTimeSeriesTableOrBuilder() {
+      if ((contentCase_ == 8) && (timeSeriesTableBuilder_ != null)) {
+        return timeSeriesTableBuilder_.getMessageOrBuilder();
+      } else {
+        if (contentCase_ == 8) {
+          return (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_;
+        }
+        return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that displays time series data in a tabular format.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.TimeSeriesTable,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder,
+            com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder>
+        getTimeSeriesTableFieldBuilder() {
+      if (timeSeriesTableBuilder_ == null) {
+        if (!(contentCase_ == 8)) {
+          content_ = com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
+        }
+        timeSeriesTableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.TimeSeriesTable,
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder,
+                com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder>(
+                (com.google.monitoring.dashboard.v1.TimeSeriesTable) content_,
+                getParentForChildren(),
+                isClean());
+        content_ = null;
+      }
+      contentCase_ = 8;
+      onChanged();
+      ;
+      return timeSeriesTableBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.CollapsibleGroup,
+            com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder,
+            com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder>
+        collapsibleGroupBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     *
+     * @return Whether the collapsibleGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasCollapsibleGroup() {
+      return contentCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     *
+     * @return The collapsibleGroup.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.CollapsibleGroup getCollapsibleGroup() {
+      if (collapsibleGroupBuilder_ == null) {
+        if (contentCase_ == 9) {
+          return (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_;
+        }
+        return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+      } else {
+        if (contentCase_ == 9) {
+          return collapsibleGroupBuilder_.getMessage();
+        }
+        return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    public Builder setCollapsibleGroup(com.google.monitoring.dashboard.v1.CollapsibleGroup value) {
+      if (collapsibleGroupBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        onChanged();
+      } else {
+        collapsibleGroupBuilder_.setMessage(value);
+      }
+      contentCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    public Builder setCollapsibleGroup(
+        com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder builderForValue) {
+      if (collapsibleGroupBuilder_ == null) {
+        content_ = builderForValue.build();
+        onChanged();
+      } else {
+        collapsibleGroupBuilder_.setMessage(builderForValue.build());
+      }
+      contentCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    public Builder mergeCollapsibleGroup(
+        com.google.monitoring.dashboard.v1.CollapsibleGroup value) {
+      if (collapsibleGroupBuilder_ == null) {
+        if (contentCase_ == 9
+            && content_
+                != com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance()) {
+          content_ =
+              com.google.monitoring.dashboard.v1.CollapsibleGroup.newBuilder(
+                      (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          content_ = value;
+        }
+        onChanged();
+      } else {
+        if (contentCase_ == 9) {
+          collapsibleGroupBuilder_.mergeFrom(value);
+        }
+        collapsibleGroupBuilder_.setMessage(value);
+      }
+      contentCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    public Builder clearCollapsibleGroup() {
+      if (collapsibleGroupBuilder_ == null) {
+        if (contentCase_ == 9) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+      } else {
+        if (contentCase_ == 9) {
+          contentCase_ = 0;
+          content_ = null;
+        }
+        collapsibleGroupBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    public com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder
+        getCollapsibleGroupBuilder() {
+      return getCollapsibleGroupFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder
+        getCollapsibleGroupOrBuilder() {
+      if ((contentCase_ == 9) && (collapsibleGroupBuilder_ != null)) {
+        return collapsibleGroupBuilder_.getMessageOrBuilder();
+      } else {
+        if (contentCase_ == 9) {
+          return (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_;
+        }
+        return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that groups the other widgets. All widgets that are within
+     * the area spanned by the grouping widget are considered member widgets.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.CollapsibleGroup,
+            com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder,
+            com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder>
+        getCollapsibleGroupFieldBuilder() {
+      if (collapsibleGroupBuilder_ == null) {
+        if (!(contentCase_ == 9)) {
+          content_ = com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
+        }
+        collapsibleGroupBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.CollapsibleGroup,
+                com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder,
+                com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder>(
+                (com.google.monitoring.dashboard.v1.CollapsibleGroup) content_,
+                getParentForChildren(),
+                isClean());
+        content_ = null;
+      }
+      contentCase_ = 9;
+      onChanged();
+      ;
+      return collapsibleGroupBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.LogsPanel,
+            com.google.monitoring.dashboard.v1.LogsPanel.Builder,
+            com.google.monitoring.dashboard.v1.LogsPanelOrBuilder>
+        logsPanelBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     *
+     * @return Whether the logsPanel field is set.
+     */
+    @java.lang.Override
+    public boolean hasLogsPanel() {
+      return contentCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     *
+     * @return The logsPanel.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.LogsPanel getLogsPanel() {
+      if (logsPanelBuilder_ == null) {
+        if (contentCase_ == 10) {
+          return (com.google.monitoring.dashboard.v1.LogsPanel) content_;
+        }
+        return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+      } else {
+        if (contentCase_ == 10) {
+          return logsPanelBuilder_.getMessage();
+        }
+        return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    public Builder setLogsPanel(com.google.monitoring.dashboard.v1.LogsPanel value) {
+      if (logsPanelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        onChanged();
+      } else {
+        logsPanelBuilder_.setMessage(value);
+      }
+      contentCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    public Builder setLogsPanel(
+        com.google.monitoring.dashboard.v1.LogsPanel.Builder builderForValue) {
+      if (logsPanelBuilder_ == null) {
+        content_ = builderForValue.build();
+        onChanged();
+      } else {
+        logsPanelBuilder_.setMessage(builderForValue.build());
+      }
+      contentCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    public Builder mergeLogsPanel(com.google.monitoring.dashboard.v1.LogsPanel value) {
+      if (logsPanelBuilder_ == null) {
+        if (contentCase_ == 10
+            && content_ != com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance()) {
+          content_ =
+              com.google.monitoring.dashboard.v1.LogsPanel.newBuilder(
+                      (com.google.monitoring.dashboard.v1.LogsPanel) content_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          content_ = value;
+        }
+        onChanged();
+      } else {
+        if (contentCase_ == 10) {
+          logsPanelBuilder_.mergeFrom(value);
+        }
+        logsPanelBuilder_.setMessage(value);
+      }
+      contentCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    public Builder clearLogsPanel() {
+      if (logsPanelBuilder_ == null) {
+        if (contentCase_ == 10) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+      } else {
+        if (contentCase_ == 10) {
+          contentCase_ = 0;
+          content_ = null;
+        }
+        logsPanelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    public com.google.monitoring.dashboard.v1.LogsPanel.Builder getLogsPanelBuilder() {
+      return getLogsPanelFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.LogsPanelOrBuilder getLogsPanelOrBuilder() {
+      if ((contentCase_ == 10) && (logsPanelBuilder_ != null)) {
+        return logsPanelBuilder_.getMessageOrBuilder();
+      } else {
+        if (contentCase_ == 10) {
+          return (com.google.monitoring.dashboard.v1.LogsPanel) content_;
+        }
+        return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A widget that shows a stream of logs.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.LogsPanel,
+            com.google.monitoring.dashboard.v1.LogsPanel.Builder,
+            com.google.monitoring.dashboard.v1.LogsPanelOrBuilder>
+        getLogsPanelFieldBuilder() {
+      if (logsPanelBuilder_ == null) {
+        if (!(contentCase_ == 10)) {
+          content_ = com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
+        }
+        logsPanelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.LogsPanel,
+                com.google.monitoring.dashboard.v1.LogsPanel.Builder,
+                com.google.monitoring.dashboard.v1.LogsPanelOrBuilder>(
+                (com.google.monitoring.dashboard.v1.LogsPanel) content_,
+                getParentForChildren(),
+                isClean());
+        content_ = null;
+      }
+      contentCase_ = 10;
+      onChanged();
+      ;
+      return logsPanelBuilder_;
     }
 
     @java.lang.Override

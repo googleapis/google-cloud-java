@@ -63,10 +63,10 @@ public final class DashboardsServiceProto {
       "\n7google/monitoring/dashboard/v1/dashboa"
           + "rds_service.proto\022\036google.monitoring.das"
           + "hboard.v1\032\034google/api/annotations.proto\032"
-          + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/resource.proto\032.google/monitoring/d"
-          + "ashboard/v1/dashboard.proto\032\033google/prot"
-          + "obuf/empty.proto\032\027google/api/client.prot"
+          + "\027google/api/client.proto\032\037google/api/fie"
+          + "ld_behavior.proto\032\031google/api/resource.p"
+          + "roto\032.google/monitoring/dashboard/v1/das"
+          + "hboard.proto\032\033google/protobuf/empty.prot"
           + "o\"\207\001\n\026CreateDashboardRequest\022\023\n\006parent\030\001"
           + " \001(\tB\003\340A\002\022A\n\tdashboard\030\002 \001(\0132).google.mo"
           + "nitoring.dashboard.v1.DashboardB\003\340A\002\022\025\n\r"
@@ -124,11 +124,11 @@ public final class DashboardsServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.DashboardsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_monitoring_dashboard_v1_CreateDashboardRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -188,11 +188,11 @@ public final class DashboardsServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.monitoring.dashboard.v1.DashboardsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

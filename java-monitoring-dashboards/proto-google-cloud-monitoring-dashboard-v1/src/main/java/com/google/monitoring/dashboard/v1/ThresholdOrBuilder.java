@@ -113,4 +113,31 @@ public interface ThresholdOrBuilder
    * @return The direction.
    */
   com.google.monitoring.dashboard.v1.Threshold.Direction getDirection();
+
+  /**
+   *
+   *
+   * <pre>
+   * The target axis to use for plotting the threshold. Target axis is not
+   * allowed in a Scorecard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+   *
+   * @return The enum numeric value on the wire for targetAxis.
+   */
+  int getTargetAxisValue();
+  /**
+   *
+   *
+   * <pre>
+   * The target axis to use for plotting the threshold. Target axis is not
+   * allowed in a Scorecard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+   *
+   * @return The targetAxis.
+   */
+  com.google.monitoring.dashboard.v1.Threshold.TargetAxis getTargetAxis();
 }

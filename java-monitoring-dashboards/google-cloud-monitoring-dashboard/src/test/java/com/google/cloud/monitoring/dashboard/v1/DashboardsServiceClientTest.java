@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
+import com.google.monitoring.dashboard.v1.DashboardFilter;
 import com.google.monitoring.dashboard.v1.DashboardName;
 import com.google.monitoring.dashboard.v1.DeleteDashboardRequest;
 import com.google.monitoring.dashboard.v1.GetDashboardRequest;
@@ -39,7 +40,9 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -95,6 +98,8 @@ public class DashboardsServiceClientTest {
             .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
             .setDisplayName("displayName1714148973")
             .setEtag("etag3123477")
+            .addAllDashboardFilters(new ArrayList<DashboardFilter>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
@@ -203,6 +208,8 @@ public class DashboardsServiceClientTest {
             .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
             .setDisplayName("displayName1714148973")
             .setEtag("etag3123477")
+            .addAllDashboardFilters(new ArrayList<DashboardFilter>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
@@ -289,6 +296,8 @@ public class DashboardsServiceClientTest {
             .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
             .setDisplayName("displayName1714148973")
             .setEtag("etag3123477")
+            .addAllDashboardFilters(new ArrayList<DashboardFilter>())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 

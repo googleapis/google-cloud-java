@@ -160,6 +160,22 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              com.google.monitoring.dashboard.v1.XyChart.Axis.Builder subBuilder = null;
+              if (y2Axis_ != null) {
+                subBuilder = y2Axis_.toBuilder();
+              }
+              y2Axis_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.XyChart.Axis.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(y2Axis_);
+                y2Axis_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -355,6 +371,35 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target axis to use for plotting the metric.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for targetAxis.
+     */
+    int getTargetAxisValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target axis to use for plotting the metric.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The targetAxis.
+     */
+    com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis getTargetAxis();
   }
   /**
    *
@@ -378,6 +423,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     private DataSet() {
       plotType_ = 0;
       legendTemplate_ = "";
+      targetAxis_ = 0;
     }
 
     @java.lang.Override
@@ -453,6 +499,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
                   minAlignmentPeriod_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 40:
+              {
+                int rawValue = input.readEnum();
+
+                targetAxis_ = rawValue;
                 break;
               }
             default:
@@ -710,6 +763,165 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.XyChart.DataSet.PlotType)
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * An axis identifier.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis}
+     */
+    public enum TargetAxis implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The target axis was not specified. Defaults to Y1.
+       * </pre>
+       *
+       * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
+       */
+      TARGET_AXIS_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The y_axis (the right axis of chart).
+       * </pre>
+       *
+       * <code>Y1 = 1;</code>
+       */
+      Y1(1),
+      /**
+       *
+       *
+       * <pre>
+       * The y2_axis (the left axis of chart).
+       * </pre>
+       *
+       * <code>Y2 = 2;</code>
+       */
+      Y2(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The target axis was not specified. Defaults to Y1.
+       * </pre>
+       *
+       * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
+       */
+      public static final int TARGET_AXIS_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The y_axis (the right axis of chart).
+       * </pre>
+       *
+       * <code>Y1 = 1;</code>
+       */
+      public static final int Y1_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The y2_axis (the left axis of chart).
+       * </pre>
+       *
+       * <code>Y2 = 2;</code>
+       */
+      public static final int Y2_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TargetAxis valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TargetAxis forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TARGET_AXIS_UNSPECIFIED;
+          case 1:
+            return Y1;
+          case 2:
+            return Y2;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TargetAxis> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TargetAxis> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TargetAxis>() {
+            public TargetAxis findValueByNumber(int number) {
+              return TargetAxis.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.dashboard.v1.XyChart.DataSet.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final TargetAxis[] VALUES = values();
+
+      public static TargetAxis valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TargetAxis(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis)
+    }
+
     public static final int TIME_SERIES_QUERY_FIELD_NUMBER = 1;
     private com.google.monitoring.dashboard.v1.TimeSeriesQuery timeSeriesQuery_;
     /**
@@ -925,6 +1137,48 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       return getMinAlignmentPeriod();
     }
 
+    public static final int TARGET_AXIS_FIELD_NUMBER = 5;
+    private int targetAxis_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target axis to use for plotting the metric.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for targetAxis.
+     */
+    @java.lang.Override
+    public int getTargetAxisValue() {
+      return targetAxis_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target axis to use for plotting the metric.
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The targetAxis.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis getTargetAxis() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis result =
+          com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.valueOf(targetAxis_);
+      return result == null
+          ? com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -953,6 +1207,11 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       if (minAlignmentPeriod_ != null) {
         output.writeMessage(4, getMinAlignmentPeriod());
       }
+      if (targetAxis_
+          != com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.TARGET_AXIS_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, targetAxis_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -976,6 +1235,11 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       if (minAlignmentPeriod_ != null) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMinAlignmentPeriod());
+      }
+      if (targetAxis_
+          != com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.TARGET_AXIS_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, targetAxis_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1003,6 +1267,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       if (hasMinAlignmentPeriod()) {
         if (!getMinAlignmentPeriod().equals(other.getMinAlignmentPeriod())) return false;
       }
+      if (targetAxis_ != other.targetAxis_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1026,6 +1291,8 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + MIN_ALIGNMENT_PERIOD_FIELD_NUMBER;
         hash = (53 * hash) + getMinAlignmentPeriod().hashCode();
       }
+      hash = (37 * hash) + TARGET_AXIS_FIELD_NUMBER;
+      hash = (53 * hash) + targetAxis_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1189,6 +1456,8 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           minAlignmentPeriod_ = null;
           minAlignmentPeriodBuilder_ = null;
         }
+        targetAxis_ = 0;
+
         return this;
       }
 
@@ -1228,6 +1497,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.minAlignmentPeriod_ = minAlignmentPeriodBuilder_.build();
         }
+        result.targetAxis_ = targetAxis_;
         onBuilt();
         return result;
       }
@@ -1292,6 +1562,9 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasMinAlignmentPeriod()) {
           mergeMinAlignmentPeriod(other.getMinAlignmentPeriod());
+        }
+        if (other.targetAxis_ != 0) {
+          setTargetAxisValue(other.getTargetAxisValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1986,6 +2259,110 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           minAlignmentPeriod_ = null;
         }
         return minAlignmentPeriodBuilder_;
+      }
+
+      private int targetAxis_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target axis to use for plotting the metric.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for targetAxis.
+       */
+      @java.lang.Override
+      public int getTargetAxisValue() {
+        return targetAxis_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target axis to use for plotting the metric.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for targetAxis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetAxisValue(int value) {
+
+        targetAxis_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target axis to use for plotting the metric.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The targetAxis.
+       */
+      @java.lang.Override
+      public com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis getTargetAxis() {
+        @SuppressWarnings("deprecation")
+        com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis result =
+            com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.valueOf(targetAxis_);
+        return result == null
+            ? com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target axis to use for plotting the metric.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The targetAxis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetAxis(
+          com.google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        targetAxis_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target axis to use for plotting the metric.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.dashboard.v1.XyChart.DataSet.TargetAxis target_axis = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetAxis() {
+
+        targetAxis_ = 0;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -3337,6 +3714,54 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     return getYAxis();
   }
 
+  public static final int Y2_AXIS_FIELD_NUMBER = 9;
+  private com.google.monitoring.dashboard.v1.XyChart.Axis y2Axis_;
+  /**
+   *
+   *
+   * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   *
+   * @return Whether the y2Axis field is set.
+   */
+  @java.lang.Override
+  public boolean hasY2Axis() {
+    return y2Axis_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   *
+   * @return The y2Axis.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.XyChart.Axis getY2Axis() {
+    return y2Axis_ == null
+        ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
+        : y2Axis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder getY2AxisOrBuilder() {
+    return getY2Axis();
+  }
+
   public static final int CHART_OPTIONS_FIELD_NUMBER = 8;
   private com.google.monitoring.dashboard.v1.ChartOptions chartOptions_;
   /**
@@ -3417,6 +3842,9 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (chartOptions_ != null) {
       output.writeMessage(8, getChartOptions());
     }
+    if (y2Axis_ != null) {
+      output.writeMessage(9, getY2Axis());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3443,6 +3871,9 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     }
     if (chartOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getChartOptions());
+    }
+    if (y2Axis_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getY2Axis());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3473,6 +3904,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (hasYAxis() != other.hasYAxis()) return false;
     if (hasYAxis()) {
       if (!getYAxis().equals(other.getYAxis())) return false;
+    }
+    if (hasY2Axis() != other.hasY2Axis()) return false;
+    if (hasY2Axis()) {
+      if (!getY2Axis().equals(other.getY2Axis())) return false;
     }
     if (hasChartOptions() != other.hasChartOptions()) return false;
     if (hasChartOptions()) {
@@ -3508,6 +3943,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (hasYAxis()) {
       hash = (37 * hash) + Y_AXIS_FIELD_NUMBER;
       hash = (53 * hash) + getYAxis().hashCode();
+    }
+    if (hasY2Axis()) {
+      hash = (37 * hash) + Y2_AXIS_FIELD_NUMBER;
+      hash = (53 * hash) + getY2Axis().hashCode();
     }
     if (hasChartOptions()) {
       hash = (37 * hash) + CHART_OPTIONS_FIELD_NUMBER;
@@ -3691,6 +4130,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         yAxis_ = null;
         yAxisBuilder_ = null;
       }
+      if (y2AxisBuilder_ == null) {
+        y2Axis_ = null;
+      } else {
+        y2Axis_ = null;
+        y2AxisBuilder_ = null;
+      }
       if (chartOptionsBuilder_ == null) {
         chartOptions_ = null;
       } else {
@@ -3757,6 +4202,11 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         result.yAxis_ = yAxis_;
       } else {
         result.yAxis_ = yAxisBuilder_.build();
+      }
+      if (y2AxisBuilder_ == null) {
+        result.y2Axis_ = y2Axis_;
+      } else {
+        result.y2Axis_ = y2AxisBuilder_.build();
       }
       if (chartOptionsBuilder_ == null) {
         result.chartOptions_ = chartOptions_;
@@ -3874,6 +4324,9 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasYAxis()) {
         mergeYAxis(other.getYAxis());
+      }
+      if (other.hasY2Axis()) {
+        mergeY2Axis(other.getY2Axis());
       }
       if (other.hasChartOptions()) {
         mergeChartOptions(other.getChartOptions());
@@ -5244,6 +5697,192 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         yAxis_ = null;
       }
       return yAxisBuilder_;
+    }
+
+    private com.google.monitoring.dashboard.v1.XyChart.Axis y2Axis_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.XyChart.Axis,
+            com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
+            com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>
+        y2AxisBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     *
+     * @return Whether the y2Axis field is set.
+     */
+    public boolean hasY2Axis() {
+      return y2AxisBuilder_ != null || y2Axis_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     *
+     * @return The y2Axis.
+     */
+    public com.google.monitoring.dashboard.v1.XyChart.Axis getY2Axis() {
+      if (y2AxisBuilder_ == null) {
+        return y2Axis_ == null
+            ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
+            : y2Axis_;
+      } else {
+        return y2AxisBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public Builder setY2Axis(com.google.monitoring.dashboard.v1.XyChart.Axis value) {
+      if (y2AxisBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        y2Axis_ = value;
+        onChanged();
+      } else {
+        y2AxisBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public Builder setY2Axis(
+        com.google.monitoring.dashboard.v1.XyChart.Axis.Builder builderForValue) {
+      if (y2AxisBuilder_ == null) {
+        y2Axis_ = builderForValue.build();
+        onChanged();
+      } else {
+        y2AxisBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public Builder mergeY2Axis(com.google.monitoring.dashboard.v1.XyChart.Axis value) {
+      if (y2AxisBuilder_ == null) {
+        if (y2Axis_ != null) {
+          y2Axis_ =
+              com.google.monitoring.dashboard.v1.XyChart.Axis.newBuilder(y2Axis_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          y2Axis_ = value;
+        }
+        onChanged();
+      } else {
+        y2AxisBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public Builder clearY2Axis() {
+      if (y2AxisBuilder_ == null) {
+        y2Axis_ = null;
+        onChanged();
+      } else {
+        y2Axis_ = null;
+        y2AxisBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public com.google.monitoring.dashboard.v1.XyChart.Axis.Builder getY2AxisBuilder() {
+
+      onChanged();
+      return getY2AxisFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    public com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder getY2AxisOrBuilder() {
+      if (y2AxisBuilder_ != null) {
+        return y2AxisBuilder_.getMessageOrBuilder();
+      } else {
+        return y2Axis_ == null
+            ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
+            : y2Axis_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The properties applied to the Y2 axis.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.XyChart.Axis,
+            com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
+            com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>
+        getY2AxisFieldBuilder() {
+      if (y2AxisBuilder_ == null) {
+        y2AxisBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.XyChart.Axis,
+                com.google.monitoring.dashboard.v1.XyChart.Axis.Builder,
+                com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder>(
+                getY2Axis(), getParentForChildren(), isClean());
+        y2Axis_ = null;
+      }
+      return y2AxisBuilder_;
     }
 
     private com.google.monitoring.dashboard.v1.ChartOptions chartOptions_;

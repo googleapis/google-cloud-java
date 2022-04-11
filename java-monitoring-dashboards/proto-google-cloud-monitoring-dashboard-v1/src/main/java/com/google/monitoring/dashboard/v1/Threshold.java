@@ -41,6 +41,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     label_ = "";
     color_ = 0;
     direction_ = 0;
+    targetAxis_ = 0;
   }
 
   @java.lang.Override
@@ -96,6 +97,13 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
 
               direction_ = rawValue;
+              break;
+            }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              targetAxis_ = rawValue;
               break;
             }
           default:
@@ -453,6 +461,163 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.Threshold.Direction)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * An axis identifier.
+   * </pre>
+   *
+   * Protobuf enum {@code google.monitoring.dashboard.v1.Threshold.TargetAxis}
+   */
+  public enum TargetAxis implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The target axis was not specified. Defaults to Y1.
+     * </pre>
+     *
+     * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
+     */
+    TARGET_AXIS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The y_axis (the right axis of chart).
+     * </pre>
+     *
+     * <code>Y1 = 1;</code>
+     */
+    Y1(1),
+    /**
+     *
+     *
+     * <pre>
+     * The y2_axis (the left axis of chart).
+     * </pre>
+     *
+     * <code>Y2 = 2;</code>
+     */
+    Y2(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The target axis was not specified. Defaults to Y1.
+     * </pre>
+     *
+     * <code>TARGET_AXIS_UNSPECIFIED = 0;</code>
+     */
+    public static final int TARGET_AXIS_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The y_axis (the right axis of chart).
+     * </pre>
+     *
+     * <code>Y1 = 1;</code>
+     */
+    public static final int Y1_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The y2_axis (the left axis of chart).
+     * </pre>
+     *
+     * <code>Y2 = 2;</code>
+     */
+    public static final int Y2_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetAxis valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetAxis forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TARGET_AXIS_UNSPECIFIED;
+        case 1:
+          return Y1;
+        case 2:
+          return Y2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetAxis> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetAxis> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetAxis>() {
+          public TargetAxis findValueByNumber(int number) {
+            return TargetAxis.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.monitoring.dashboard.v1.Threshold.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TargetAxis[] VALUES = values();
+
+    public static TargetAxis valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetAxis(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.Threshold.TargetAxis)
+  }
+
   public static final int LABEL_FIELD_NUMBER = 1;
   private volatile java.lang.Object label_;
   /**
@@ -599,6 +764,46 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int TARGET_AXIS_FIELD_NUMBER = 5;
+  private int targetAxis_;
+  /**
+   *
+   *
+   * <pre>
+   * The target axis to use for plotting the threshold. Target axis is not
+   * allowed in a Scorecard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+   *
+   * @return The enum numeric value on the wire for targetAxis.
+   */
+  @java.lang.Override
+  public int getTargetAxisValue() {
+    return targetAxis_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target axis to use for plotting the threshold. Target axis is not
+   * allowed in a Scorecard.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+   *
+   * @return The targetAxis.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.Threshold.TargetAxis getTargetAxis() {
+    @SuppressWarnings("deprecation")
+    com.google.monitoring.dashboard.v1.Threshold.TargetAxis result =
+        com.google.monitoring.dashboard.v1.Threshold.TargetAxis.valueOf(targetAxis_);
+    return result == null
+        ? com.google.monitoring.dashboard.v1.Threshold.TargetAxis.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -628,6 +833,11 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(4, direction_);
     }
+    if (targetAxis_
+        != com.google.monitoring.dashboard.v1.Threshold.TargetAxis.TARGET_AXIS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, targetAxis_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -652,6 +862,11 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, direction_);
     }
+    if (targetAxis_
+        != com.google.monitoring.dashboard.v1.Threshold.TargetAxis.TARGET_AXIS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, targetAxis_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -673,6 +888,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         != java.lang.Double.doubleToLongBits(other.getValue())) return false;
     if (color_ != other.color_) return false;
     if (direction_ != other.direction_) return false;
+    if (targetAxis_ != other.targetAxis_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -694,6 +910,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + color_;
     hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
     hash = (53 * hash) + direction_;
+    hash = (37 * hash) + TARGET_AXIS_FIELD_NUMBER;
+    hash = (53 * hash) + targetAxis_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -847,6 +1065,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
 
       direction_ = 0;
 
+      targetAxis_ = 0;
+
       return this;
     }
 
@@ -878,6 +1098,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       result.value_ = value_;
       result.color_ = color_;
       result.direction_ = direction_;
+      result.targetAxis_ = targetAxis_;
       onBuilt();
       return result;
     }
@@ -939,6 +1160,9 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.direction_ != 0) {
         setDirectionValue(other.getDirectionValue());
+      }
+      if (other.targetAxis_ != 0) {
+        setTargetAxisValue(other.getTargetAxisValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1317,6 +1541,104 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDirection() {
 
       direction_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int targetAxis_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The target axis to use for plotting the threshold. Target axis is not
+     * allowed in a Scorecard.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+     *
+     * @return The enum numeric value on the wire for targetAxis.
+     */
+    @java.lang.Override
+    public int getTargetAxisValue() {
+      return targetAxis_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target axis to use for plotting the threshold. Target axis is not
+     * allowed in a Scorecard.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for targetAxis to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetAxisValue(int value) {
+
+      targetAxis_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target axis to use for plotting the threshold. Target axis is not
+     * allowed in a Scorecard.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+     *
+     * @return The targetAxis.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.Threshold.TargetAxis getTargetAxis() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.dashboard.v1.Threshold.TargetAxis result =
+          com.google.monitoring.dashboard.v1.Threshold.TargetAxis.valueOf(targetAxis_);
+      return result == null
+          ? com.google.monitoring.dashboard.v1.Threshold.TargetAxis.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target axis to use for plotting the threshold. Target axis is not
+     * allowed in a Scorecard.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+     *
+     * @param value The targetAxis to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetAxis(com.google.monitoring.dashboard.v1.Threshold.TargetAxis value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      targetAxis_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target axis to use for plotting the threshold. Target axis is not
+     * allowed in a Scorecard.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Threshold.TargetAxis target_axis = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetAxis() {
+
+      targetAxis_ = 0;
       onChanged();
       return this;
     }

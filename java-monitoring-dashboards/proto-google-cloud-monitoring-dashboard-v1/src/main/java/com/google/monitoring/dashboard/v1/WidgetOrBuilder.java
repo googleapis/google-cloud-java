@@ -223,5 +223,113 @@ public interface WidgetOrBuilder
    */
   com.google.monitoring.dashboard.v1.AlertChartOrBuilder getAlertChartOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   *
+   * @return Whether the timeSeriesTable field is set.
+   */
+  boolean hasTimeSeriesTable();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   *
+   * @return The timeSeriesTable.
+   */
+  com.google.monitoring.dashboard.v1.TimeSeriesTable getTimeSeriesTable();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that displays time series data in a tabular format.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.TimeSeriesTable time_series_table = 8;</code>
+   */
+  com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder getTimeSeriesTableOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   *
+   * @return Whether the collapsibleGroup field is set.
+   */
+  boolean hasCollapsibleGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   *
+   * @return The collapsibleGroup.
+   */
+  com.google.monitoring.dashboard.v1.CollapsibleGroup getCollapsibleGroup();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that groups the other widgets. All widgets that are within
+   * the area spanned by the grouping widget are considered member widgets.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.CollapsibleGroup collapsible_group = 9;</code>
+   */
+  com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder getCollapsibleGroupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   *
+   * @return Whether the logsPanel field is set.
+   */
+  boolean hasLogsPanel();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   *
+   * @return The logsPanel.
+   */
+  com.google.monitoring.dashboard.v1.LogsPanel getLogsPanel();
+  /**
+   *
+   *
+   * <pre>
+   * A widget that shows a stream of logs.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.LogsPanel logs_panel = 10;</code>
+   */
+  com.google.monitoring.dashboard.v1.LogsPanelOrBuilder getLogsPanelOrBuilder();
+
   public com.google.monitoring.dashboard.v1.Widget.ContentCase getContentCase();
 }

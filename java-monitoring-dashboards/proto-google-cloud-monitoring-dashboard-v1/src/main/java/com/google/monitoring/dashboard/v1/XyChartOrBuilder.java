@@ -258,6 +258,41 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   *
+   * @return Whether the y2Axis field is set.
+   */
+  boolean hasY2Axis();
+  /**
+   *
+   *
+   * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   *
+   * @return The y2Axis.
+   */
+  com.google.monitoring.dashboard.v1.XyChart.Axis getY2Axis();
+  /**
+   *
+   *
+   * <pre>
+   * The properties applied to the Y2 axis.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.XyChart.Axis y2_axis = 9;</code>
+   */
+  com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder getY2AxisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display options for the chart.
    * </pre>
    *

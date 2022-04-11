@@ -91,22 +91,26 @@ public final class MetricsProto {
           + "\001H\000\032b\n\tRatioPart\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022@\n"
           + "\013aggregation\030\002 \001(\0132+.google.monitoring.d"
           + "ashboard.v1.AggregationB\017\n\routput_filter"
-          + "\"\244\002\n\tThreshold\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002"
+          + "\"\252\003\n\tThreshold\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002"
           + " \001(\001\022>\n\005color\030\003 \001(\0162/.google.monitoring."
           + "dashboard.v1.Threshold.Color\022F\n\tdirectio"
           + "n\030\004 \001(\01623.google.monitoring.dashboard.v1"
-          + ".Threshold.Direction\"3\n\005Color\022\025\n\021COLOR_U"
-          + "NSPECIFIED\020\000\022\n\n\006YELLOW\020\004\022\007\n\003RED\020\006\"<\n\tDir"
-          + "ection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABO"
-          + "VE\020\001\022\t\n\005BELOW\020\002*Q\n\016SparkChartType\022 \n\034SPA"
-          + "RK_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_LIN"
-          + "E\020\001\022\r\n\tSPARK_BAR\020\002B\366\001\n\"com.google.monito"
-          + "ring.dashboard.v1B\014MetricsProtoP\001ZGgoogl"
-          + "e.golang.org/genproto/googleapis/monitor"
-          + "ing/dashboard/v1;dashboard\252\002$Google.Clou"
-          + "d.Monitoring.Dashboard.V1\312\002$Google\\Cloud"
-          + "\\Monitoring\\Dashboard\\V1\352\002(Google::Cloud"
-          + "::Monitoring::Dashboard::V1b\006proto3"
+          + ".Threshold.Direction\022I\n\013target_axis\030\005 \001("
+          + "\01624.google.monitoring.dashboard.v1.Thres"
+          + "hold.TargetAxis\"3\n\005Color\022\025\n\021COLOR_UNSPEC"
+          + "IFIED\020\000\022\n\n\006YELLOW\020\004\022\007\n\003RED\020\006\"<\n\tDirectio"
+          + "n\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABOVE\020\001\022"
+          + "\t\n\005BELOW\020\002\"9\n\nTargetAxis\022\033\n\027TARGET_AXIS_"
+          + "UNSPECIFIED\020\000\022\006\n\002Y1\020\001\022\006\n\002Y2\020\002*Q\n\016SparkCh"
+          + "artType\022 \n\034SPARK_CHART_TYPE_UNSPECIFIED\020"
+          + "\000\022\016\n\nSPARK_LINE\020\001\022\r\n\tSPARK_BAR\020\002B\366\001\n\"com"
+          + ".google.monitoring.dashboard.v1B\014Metrics"
+          + "ProtoP\001ZGgoogle.golang.org/genproto/goog"
+          + "leapis/monitoring/dashboard/v1;dashboard"
+          + "\252\002$Google.Cloud.Monitoring.Dashboard.V1\312"
+          + "\002$Google\\Cloud\\Monitoring\\Dashboard\\V1\352\002"
+          + "(Google::Cloud::Monitoring::Dashboard::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -169,7 +173,7 @@ public final class MetricsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_Threshold_descriptor,
             new java.lang.String[] {
-              "Label", "Value", "Color", "Direction",
+              "Label", "Value", "Color", "Direction", "TargetAxis",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
