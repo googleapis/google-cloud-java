@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.22](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.21...v2.1.22) (2022-04-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.7 ([#1335](https://github.com/googleapis/java-bigquerydatatransfer/issues/1335)) ([6e21624](https://github.com/googleapis/java-bigquerydatatransfer/commit/6e2162470d7e41591dfa4d78738946f03de01580))
+
 ### [2.1.21](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.20...v2.1.21) (2022-04-04)
 
 
