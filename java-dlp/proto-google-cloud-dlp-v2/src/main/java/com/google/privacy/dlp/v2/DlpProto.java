@@ -604,6 +604,26 @@ public final class DlpProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_InspectJobConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileAction_Export_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileAction_Export_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileAction_PubSubNotification_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileAction_PubSubNotification_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileJobConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileJobConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileLocation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_privacy_dlp_v2_DlpJob_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_DlpJob_fieldAccessorTable;
@@ -727,6 +747,54 @@ public final class DlpProto {
       internal_static_google_privacy_dlp_v2_HybridInspectResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_HybridInspectResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_SensitivityScore_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_SensitivityScore_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataRiskLevel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataRiskLevel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfileConfigSnapshot_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfileConfigSnapshot_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_TableDataProfile_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_TableDataProfile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_TableDataProfile_ResourceLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_TableDataProfile_ResourceLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_ProfileStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_ProfileStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_InfoTypeSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_InfoTypeSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_OtherInfoTypeSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_OtherInfoTypeSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubExpressions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubExpressions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubMessage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_DataProfilePubSubMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -1419,415 +1487,523 @@ public final class DlpProto {
           + "onfig\030\002 \001(\0132$.google.privacy.dlp.v2.Insp"
           + "ectConfig\022\035\n\025inspect_template_name\030\003 \001(\t"
           + "\022.\n\007actions\030\004 \003(\0132\035.google.privacy.dlp.v"
-          + "2.Action\"\353\005\n\006DlpJob\022\014\n\004name\030\001 \001(\t\022/\n\004typ"
-          + "e\030\002 \001(\0162!.google.privacy.dlp.v2.DlpJobTy"
-          + "pe\0225\n\005state\030\003 \001(\0162&.google.privacy.dlp.v"
-          + "2.DlpJob.JobState\022K\n\014risk_details\030\004 \001(\0132"
-          + "3.google.privacy.dlp.v2.AnalyzeDataSourc"
-          + "eRiskDetailsH\000\022J\n\017inspect_details\030\005 \001(\0132"
-          + "/.google.privacy.dlp.v2.InspectDataSourc"
-          + "eDetailsH\000\022/\n\013create_time\030\006 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022.\n\nstart_time\030\007 \001(\0132"
-          + "\032.google.protobuf.Timestamp\022,\n\010end_time\030"
-          + "\010 \001(\0132\032.google.protobuf.Timestamp\022\030\n\020job"
-          + "_trigger_name\030\n \001(\t\022,\n\006errors\030\013 \003(\0132\034.go"
-          + "ogle.privacy.dlp.v2.Error\"o\n\010JobState\022\031\n"
-          + "\025JOB_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\013\n"
-          + "\007RUNNING\020\002\022\010\n\004DONE\020\003\022\014\n\010CANCELED\020\004\022\n\n\006FA"
-          + "ILED\020\005\022\n\n\006ACTIVE\020\006:\177\352A|\n\031dlp.googleapis."
-          + "com/DlpJob\022$projects/{project}/dlpJobs/{"
-          + "dlp_job}\0229projects/{project}/locations/{"
-          + "location}/dlpJobs/{dlp_job}B\t\n\007details\"C"
-          + "\n\020GetDlpJobRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033"
-          + "\n\031dlp.googleapis.com/DlpJob\"\326\001\n\022ListDlpJ"
-          + "obsRequest\0221\n\006parent\030\004 \001(\tB!\340A\002\372A\033\022\031dlp."
-          + "googleapis.com/DlpJob\022\016\n\006filter\030\001 \001(\t\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022/\n\004"
-          + "type\030\005 \001(\0162!.google.privacy.dlp.v2.DlpJo"
-          + "bType\022\020\n\010order_by\030\006 \001(\t\022\023\n\013location_id\030\007"
-          + " \001(\t\"[\n\023ListDlpJobsResponse\022+\n\004jobs\030\001 \003("
-          + "\0132\035.google.privacy.dlp.v2.DlpJob\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"F\n\023CancelDlpJobRequest"
-          + "\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031dlp.googleapis.c"
-          + "om/DlpJob\"F\n\023FinishDlpJobRequest\022/\n\004name"
-          + "\030\001 \001(\tB!\340A\002\372A\033\n\031dlp.googleapis.com/DlpJo"
-          + "b\"F\n\023DeleteDlpJobRequest\022/\n\004name\030\001 \001(\tB!"
-          + "\340A\002\372A\033\n\031dlp.googleapis.com/DlpJob\"\327\001\n\037Cr"
-          + "eateDeidentifyTemplateRequest\022=\n\006parent\030"
-          + "\001 \001(\tB-\340A\002\372A\'\022%dlp.googleapis.com/Deiden"
-          + "tifyTemplate\022K\n\023deidentify_template\030\002 \001("
-          + "\0132).google.privacy.dlp.v2.DeidentifyTemp"
-          + "lateB\003\340A\002\022\023\n\013template_id\030\003 \001(\t\022\023\n\013locati"
-          + "on_id\030\004 \001(\t\"\327\001\n\037UpdateDeidentifyTemplate"
-          + "Request\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%dlp.googl"
-          + "eapis.com/DeidentifyTemplate\022F\n\023deidenti"
-          + "fy_template\030\002 \001(\0132).google.privacy.dlp.v"
-          + "2.DeidentifyTemplate\022/\n\013update_mask\030\003 \001("
-          + "\0132\032.google.protobuf.FieldMask\"[\n\034GetDeid"
-          + "entifyTemplateRequest\022;\n\004name\030\001 \001(\tB-\340A\002"
-          + "\372A\'\n%dlp.googleapis.com/DeidentifyTempla"
-          + "te\"\255\001\n\036ListDeidentifyTemplatesRequest\022=\n"
-          + "\006parent\030\001 \001(\tB-\340A\002\372A\'\022%dlp.googleapis.co"
-          + "m/DeidentifyTemplate\022\022\n\npage_token\030\002 \001(\t"
-          + "\022\021\n\tpage_size\030\003 \001(\005\022\020\n\010order_by\030\004 \001(\t\022\023\n"
-          + "\013location_id\030\005 \001(\t\"\203\001\n\037ListDeidentifyTem"
-          + "platesResponse\022G\n\024deidentify_templates\030\001"
-          + " \003(\0132).google.privacy.dlp.v2.DeidentifyT"
-          + "emplate\022\027\n\017next_page_token\030\002 \001(\t\"^\n\037Dele"
-          + "teDeidentifyTemplateRequest\022;\n\004name\030\001 \001("
-          + "\tB-\340A\002\372A\'\n%dlp.googleapis.com/Deidentify"
-          + "Template\"\364\001\n\033LargeCustomDictionaryConfig"
-          + "\022<\n\013output_path\030\001 \001(\0132\'.google.privacy.d"
-          + "lp.v2.CloudStoragePath\022L\n\026cloud_storage_"
-          + "file_set\030\002 \001(\0132*.google.privacy.dlp.v2.C"
-          + "loudStorageFileSetH\000\022?\n\017big_query_field\030"
-          + "\003 \001(\0132$.google.privacy.dlp.v2.BigQueryFi"
-          + "eldH\000B\010\n\006source\"8\n\032LargeCustomDictionary"
-          + "Stats\022\032\n\022approx_num_phrases\030\001 \001(\003\"\246\002\n\024St"
-          + "oredInfoTypeConfig\022\024\n\014display_name\030\001 \001(\t"
-          + "\022\023\n\013description\030\002 \001(\t\022U\n\027large_custom_di"
-          + "ctionary\030\003 \001(\01322.google.privacy.dlp.v2.L"
-          + "argeCustomDictionaryConfigH\000\022F\n\ndictiona"
-          + "ry\030\004 \001(\01320.google.privacy.dlp.v2.CustomI"
-          + "nfoType.DictionaryH\000\022<\n\005regex\030\005 \001(\0132+.go"
-          + "ogle.privacy.dlp.v2.CustomInfoType.Regex"
-          + "H\000B\006\n\004type\"s\n\023StoredInfoTypeStats\022T\n\027lar"
-          + "ge_custom_dictionary\030\001 \001(\01321.google.priv"
-          + "acy.dlp.v2.LargeCustomDictionaryStatsH\000B"
-          + "\006\n\004type\"\251\002\n\025StoredInfoTypeVersion\022;\n\006con"
-          + "fig\030\001 \001(\0132+.google.privacy.dlp.v2.Stored"
-          + "InfoTypeConfig\022/\n\013create_time\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\0229\n\005state\030\003 \001(\0162*"
-          + ".google.privacy.dlp.v2.StoredInfoTypeSta"
-          + "te\022,\n\006errors\030\004 \003(\0132\034.google.privacy.dlp."
-          + "v2.Error\0229\n\005stats\030\005 \001(\0132*.google.privacy"
-          + ".dlp.v2.StoredInfoTypeStats\"\361\003\n\016StoredIn"
-          + "foType\022\014\n\004name\030\001 \001(\t\022E\n\017current_version\030"
-          + "\002 \001(\0132,.google.privacy.dlp.v2.StoredInfo"
-          + "TypeVersion\022F\n\020pending_versions\030\003 \003(\0132,."
-          + "google.privacy.dlp.v2.StoredInfoTypeVers"
-          + "ion:\301\002\352A\275\002\n!dlp.googleapis.com/StoredInf"
-          + "oType\022?organizations/{organization}/stor"
-          + "edInfoTypes/{stored_info_type}\0225projects"
-          + "/{project}/storedInfoTypes/{stored_info_"
-          + "type}\022Torganizations/{organization}/loca"
-          + "tions/{location}/storedInfoTypes/{stored"
-          + "_info_type}\022Jprojects/{project}/location"
-          + "s/{location}/storedInfoTypes/{stored_inf"
-          + "o_type}\"\314\001\n\033CreateStoredInfoTypeRequest\022"
-          + "9\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!dlp.googleapis."
-          + "com/StoredInfoType\022@\n\006config\030\002 \001(\0132+.goo"
-          + "gle.privacy.dlp.v2.StoredInfoTypeConfigB"
-          + "\003\340A\002\022\033\n\023stored_info_type_id\030\003 \001(\t\022\023\n\013loc"
-          + "ation_id\030\004 \001(\t\"\304\001\n\033UpdateStoredInfoTypeR"
-          + "equest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dlp.google"
-          + "apis.com/StoredInfoType\022;\n\006config\030\002 \001(\0132"
-          + "+.google.privacy.dlp.v2.StoredInfoTypeCo"
-          + "nfig\022/\n\013update_mask\030\003 \001(\0132\032.google.proto"
-          + "buf.FieldMask\"S\n\030GetStoredInfoTypeReques"
-          + "t\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dlp.googleapis."
-          + "com/StoredInfoType\"\245\001\n\032ListStoredInfoTyp"
-          + "esRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!dlp.g"
-          + "oogleapis.com/StoredInfoType\022\022\n\npage_tok"
-          + "en\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\020\n\010order_by\030"
-          + "\004 \001(\t\022\023\n\013location_id\030\005 \001(\t\"x\n\033ListStored"
-          + "InfoTypesResponse\022@\n\021stored_info_types\030\001"
-          + " \003(\0132%.google.privacy.dlp.v2.StoredInfoT"
-          + "ype\022\027\n\017next_page_token\030\002 \001(\t\"V\n\033DeleteSt"
-          + "oredInfoTypeRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A"
-          + "#\n!dlp.googleapis.com/StoredInfoType\"\224\001\n",
-      "\036HybridInspectJobTriggerRequest\0223\n\004name\030"
-          + "\001 \001(\tB%\340A\002\372A\037\n\035dlp.googleapis.com/JobTri"
-          + "gger\022=\n\013hybrid_item\030\003 \001(\0132(.google.priva"
-          + "cy.dlp.v2.HybridContentItem\"\214\001\n\032HybridIn"
-          + "spectDlpJobRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033"
-          + "\n\031dlp.googleapis.com/DlpJob\022=\n\013hybrid_it"
-          + "em\030\003 \001(\0132(.google.privacy.dlp.v2.HybridC"
-          + "ontentItem\"\213\001\n\021HybridContentItem\0220\n\004item"
-          + "\030\001 \001(\0132\".google.privacy.dlp.v2.ContentIt"
-          + "em\022D\n\017finding_details\030\002 \001(\0132+.google.pri"
-          + "vacy.dlp.v2.HybridFindingDetails\"\260\002\n\024Hyb"
-          + "ridFindingDetails\022;\n\021container_details\030\001"
-          + " \001(\0132 .google.privacy.dlp.v2.Container\022\023"
-          + "\n\013file_offset\030\002 \001(\003\022\022\n\nrow_offset\030\003 \001(\003\022"
-          + ":\n\rtable_options\030\004 \001(\0132#.google.privacy."
-          + "dlp.v2.TableOptions\022G\n\006labels\030\005 \003(\01327.go"
-          + "ogle.privacy.dlp.v2.HybridFindingDetails"
-          + ".LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"\027\n\025HybridInspectResp"
-          + "onse*\273\001\n\022RelationalOperator\022#\n\037RELATIONA"
-          + "L_OPERATOR_UNSPECIFIED\020\000\022\014\n\010EQUAL_TO\020\001\022\020"
-          + "\n\014NOT_EQUAL_TO\020\002\022\020\n\014GREATER_THAN\020\003\022\r\n\tLE"
-          + "SS_THAN\020\004\022\032\n\026GREATER_THAN_OR_EQUALS\020\005\022\027\n"
-          + "\023LESS_THAN_OR_EQUALS\020\006\022\n\n\006EXISTS\020\007*\215\001\n\014M"
-          + "atchingType\022\035\n\031MATCHING_TYPE_UNSPECIFIED"
-          + "\020\000\022\034\n\030MATCHING_TYPE_FULL_MATCH\020\001\022\037\n\033MATC"
-          + "HING_TYPE_PARTIAL_MATCH\020\002\022\037\n\033MATCHING_TY"
-          + "PE_INVERSE_MATCH\020\003*M\n\rContentOption\022\027\n\023C"
-          + "ONTENT_UNSPECIFIED\020\000\022\020\n\014CONTENT_TEXT\020\001\022\021"
-          + "\n\rCONTENT_IMAGE\020\002*B\n\014MetadataType\022\034\n\030MET"
-          + "ADATATYPE_UNSPECIFIED\020\000\022\024\n\020STORAGE_METAD"
-          + "ATA\020\002*P\n\023InfoTypeSupportedBy\022\031\n\025ENUM_TYP"
-          + "E_UNSPECIFIED\020\000\022\013\n\007INSPECT\020\001\022\021\n\rRISK_ANA"
-          + "LYSIS\020\002*R\n\nDlpJobType\022\034\n\030DLP_JOB_TYPE_UN"
-          + "SPECIFIED\020\000\022\017\n\013INSPECT_JOB\020\001\022\025\n\021RISK_ANA"
-          + "LYSIS_JOB\020\002*n\n\023StoredInfoTypeState\022&\n\"ST"
-          + "ORED_INFO_TYPE_STATE_UNSPECIFIED\020\000\022\013\n\007PE"
-          + "NDING\020\001\022\t\n\005READY\020\002\022\n\n\006FAILED\020\003\022\013\n\007INVALI"
-          + "D\020\0042\240L\n\nDlpService\022\333\001\n\016InspectContent\022,."
-          + "google.privacy.dlp.v2.InspectContentRequ"
-          + "est\032-.google.privacy.dlp.v2.InspectConte"
-          + "ntResponse\"l\202\323\344\223\002f\"\'/v2/{parent=projects"
-          + "/*}/content:inspect:\001*Z8\"3/v2/{parent=pr"
-          + "ojects/*/locations/*}/content:inspect:\001*"
-          + "\022\314\001\n\013RedactImage\022).google.privacy.dlp.v2"
-          + ".RedactImageRequest\032*.google.privacy.dlp"
-          + ".v2.RedactImageResponse\"f\202\323\344\223\002`\"$/v2/{pa"
-          + "rent=projects/*}/image:redact:\001*Z5\"0/v2/"
-          + "{parent=projects/*/locations/*}/image:re"
-          + "dact:\001*\022\352\001\n\021DeidentifyContent\022/.google.p"
-          + "rivacy.dlp.v2.DeidentifyContentRequest\0320"
-          + ".google.privacy.dlp.v2.DeidentifyContent"
-          + "Response\"r\202\323\344\223\002l\"*/v2/{parent=projects/*"
-          + "}/content:deidentify:\001*Z;\"6/v2/{parent=p"
-          + "rojects/*/locations/*}/content:deidentif"
-          + "y:\001*\022\352\001\n\021ReidentifyContent\022/.google.priv"
-          + "acy.dlp.v2.ReidentifyContentRequest\0320.go"
-          + "ogle.privacy.dlp.v2.ReidentifyContentRes"
-          + "ponse\"r\202\323\344\223\002l\"*/v2/{parent=projects/*}/c"
-          + "ontent:reidentify:\001*Z;\"6/v2/{parent=proj"
-          + "ects/*/locations/*}/content:reidentify:\001"
-          + "*\022\260\001\n\rListInfoTypes\022+.google.privacy.dlp"
-          + ".v2.ListInfoTypesRequest\032,.google.privac"
-          + "y.dlp.v2.ListInfoTypesResponse\"D\202\323\344\223\0025\022\r"
-          + "/v2/infoTypesZ$\022\"/v2/{parent=locations/*"
-          + "}/infoTypes\332A\006parent\022\364\002\n\025CreateInspectTe"
-          + "mplate\0223.google.privacy.dlp.v2.CreateIns"
-          + "pectTemplateRequest\032&.google.privacy.dlp"
-          + ".v2.InspectTemplate\"\375\001\202\323\344\223\002\334\001\"-/v2/{pare"
-          + "nt=organizations/*}/inspectTemplates:\001*Z"
-          + ">\"9/v2/{parent=organizations/*/locations"
-          + "/*}/inspectTemplates:\001*Z-\"(/v2/{parent=p"
-          + "rojects/*}/inspectTemplates:\001*Z9\"4/v2/{p"
-          + "arent=projects/*/locations/*}/inspectTem"
-          + "plates:\001*\332A\027parent,inspect_template\022\376\002\n\025"
-          + "UpdateInspectTemplate\0223.google.privacy.d"
-          + "lp.v2.UpdateInspectTemplateRequest\032&.goo"
-          + "gle.privacy.dlp.v2.InspectTemplate\"\207\002\202\323\344"
-          + "\223\002\334\0012-/v2/{name=organizations/*/inspectT"
-          + "emplates/*}:\001*Z>29/v2/{name=organization"
-          + "s/*/locations/*/inspectTemplates/*}:\001*Z-"
-          + "2(/v2/{name=projects/*/inspectTemplates/"
-          + "*}:\001*Z924/v2/{name=projects/*/locations/"
-          + "*/inspectTemplates/*}:\001*\332A!name,inspect_"
-          + "template,update_mask\022\317\002\n\022GetInspectTempl"
-          + "ate\0220.google.privacy.dlp.v2.GetInspectTe"
-          + "mplateRequest\032&.google.privacy.dlp.v2.In"
-          + "spectTemplate\"\336\001\202\323\344\223\002\320\001\022-/v2/{name=organ"
-          + "izations/*/inspectTemplates/*}Z;\0229/v2/{n"
-          + "ame=organizations/*/locations/*/inspectT"
-          + "emplates/*}Z*\022(/v2/{name=projects/*/insp"
-          + "ectTemplates/*}Z6\0224/v2/{name=projects/*/"
-          + "locations/*/inspectTemplates/*}\332A\004name\022\342"
-          + "\002\n\024ListInspectTemplates\0222.google.privacy"
-          + ".dlp.v2.ListInspectTemplatesRequest\0323.go"
-          + "ogle.privacy.dlp.v2.ListInspectTemplates"
-          + "Response\"\340\001\202\323\344\223\002\320\001\022-/v2/{parent=organiza"
-          + "tions/*}/inspectTemplatesZ;\0229/v2/{parent"
-          + "=organizations/*/locations/*}/inspectTem"
-          + "platesZ*\022(/v2/{parent=projects/*}/inspec"
-          + "tTemplatesZ6\0224/v2/{parent=projects/*/loc"
-          + "ations/*}/inspectTemplates\332A\006parent\022\305\002\n\025"
-          + "DeleteInspectTemplate\0223.google.privacy.d"
-          + "lp.v2.DeleteInspectTemplateRequest\032\026.goo"
-          + "gle.protobuf.Empty\"\336\001\202\323\344\223\002\320\001*-/v2/{name="
-          + "organizations/*/inspectTemplates/*}Z;*9/"
+          + "2.Action\"\355\005\n\021DataProfileAction\022F\n\013export"
+          + "_data\030\001 \001(\0132/.google.privacy.dlp.v2.Data"
+          + "ProfileAction.ExportH\000\022[\n\024pub_sub_notifi"
+          + "cation\030\002 \001(\0132;.google.privacy.dlp.v2.Dat"
+          + "aProfileAction.PubSubNotificationH\000\032E\n\006E"
+          + "xport\022;\n\rprofile_table\030\001 \001(\0132$.google.pr"
+          + "ivacy.dlp.v2.BigQueryTable\032\352\002\n\022PubSubNot"
+          + "ification\022\r\n\005topic\030\001 \001(\t\022A\n\005event\030\002 \001(\0162"
+          + "2.google.privacy.dlp.v2.DataProfileActio"
+          + "n.EventType\022K\n\020pubsub_condition\030\003 \001(\01321."
+          + "google.privacy.dlp.v2.DataProfilePubSubC"
+          + "ondition\022b\n\021detail_of_message\030\004 \001(\0162G.go"
+          + "ogle.privacy.dlp.v2.DataProfileAction.Pu"
+          + "bSubNotification.DetailLevel\"Q\n\013DetailLe"
+          + "vel\022\034\n\030DETAIL_LEVEL_UNSPECIFIED\020\000\022\021\n\rTAB"
+          + "LE_PROFILE\020\001\022\021\n\rRESOURCE_NAME\020\002\"u\n\tEvent"
+          + "Type\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\017\n\013NEW_"
+          + "PROFILE\020\001\022\023\n\017CHANGED_PROFILE\020\002\022\023\n\017SCORE_"
+          + "INCREASED\020\003\022\021\n\rERROR_CHANGED\020\004B\010\n\006action"
+          + "\"\313\001\n\024DataProfileJobConfig\022<\n\010location\030\001 "
+          + "\001(\0132*.google.privacy.dlp.v2.DataProfileL"
+          + "ocation\022\022\n\nproject_id\030\005 \001(\t\022\031\n\021inspect_t"
+          + "emplates\030\007 \003(\t\022F\n\024data_profile_actions\030\006"
+          + " \003(\0132(.google.privacy.dlp.v2.DataProfile"
+          + "Action\"Q\n\023DataProfileLocation\022\031\n\017organiz"
+          + "ation_id\030\001 \001(\003H\000\022\023\n\tfolder_id\030\002 \001(\003H\000B\n\n"
+          + "\010location\"\353\005\n\006DlpJob\022\014\n\004name\030\001 \001(\t\022/\n\004ty"
+          + "pe\030\002 \001(\0162!.google.privacy.dlp.v2.DlpJobT"
+          + "ype\0225\n\005state\030\003 \001(\0162&.google.privacy.dlp."
+          + "v2.DlpJob.JobState\022K\n\014risk_details\030\004 \001(\013"
+          + "23.google.privacy.dlp.v2.AnalyzeDataSour"
+          + "ceRiskDetailsH\000\022J\n\017inspect_details\030\005 \001(\013"
+          + "2/.google.privacy.dlp.v2.InspectDataSour"
+          + "ceDetailsH\000\022/\n\013create_time\030\006 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022.\n\nstart_time\030\007 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022,\n\010end_time"
+          + "\030\010 \001(\0132\032.google.protobuf.Timestamp\022\030\n\020jo"
+          + "b_trigger_name\030\n \001(\t\022,\n\006errors\030\013 \003(\0132\034.g"
+          + "oogle.privacy.dlp.v2.Error\"o\n\010JobState\022\031"
+          + "\n\025JOB_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\013"
+          + "\n\007RUNNING\020\002\022\010\n\004DONE\020\003\022\014\n\010CANCELED\020\004\022\n\n\006F"
+          + "AILED\020\005\022\n\n\006ACTIVE\020\006:\177\352A|\n\031dlp.googleapis"
+          + ".com/DlpJob\022$projects/{project}/dlpJobs/"
+          + "{dlp_job}\0229projects/{project}/locations/"
+          + "{location}/dlpJobs/{dlp_job}B\t\n\007details\""
+          + "C\n\020GetDlpJobRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A"
+          + "\033\n\031dlp.googleapis.com/DlpJob\"\326\001\n\022ListDlp"
+          + "JobsRequest\0221\n\006parent\030\004 \001(\tB!\340A\002\372A\033\022\031dlp"
+          + ".googleapis.com/DlpJob\022\016\n\006filter\030\001 \001(\t\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022/\n"
+          + "\004type\030\005 \001(\0162!.google.privacy.dlp.v2.DlpJ"
+          + "obType\022\020\n\010order_by\030\006 \001(\t\022\023\n\013location_id\030"
+          + "\007 \001(\t\"[\n\023ListDlpJobsResponse\022+\n\004jobs\030\001 \003"
+          + "(\0132\035.google.privacy.dlp.v2.DlpJob\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"F\n\023CancelDlpJobReques"
+          + "t\022/\n\004name\030\001 \001(\tB!\340A\002\372A\033\n\031dlp.googleapis."
+          + "com/DlpJob\"F\n\023FinishDlpJobRequest\022/\n\004nam"
+          + "e\030\001 \001(\tB!\340A\002\372A\033\n\031dlp.googleapis.com/DlpJ"
+          + "ob\"F\n\023DeleteDlpJobRequest\022/\n\004name\030\001 \001(\tB"
+          + "!\340A\002\372A\033\n\031dlp.googleapis.com/DlpJob\"\327\001\n\037C"
+          + "reateDeidentifyTemplateRequest\022=\n\006parent"
+          + "\030\001 \001(\tB-\340A\002\372A\'\022%dlp.googleapis.com/Deide"
+          + "ntifyTemplate\022K\n\023deidentify_template\030\002 \001"
+          + "(\0132).google.privacy.dlp.v2.DeidentifyTem"
+          + "plateB\003\340A\002\022\023\n\013template_id\030\003 \001(\t\022\023\n\013locat"
+          + "ion_id\030\004 \001(\t\"\327\001\n\037UpdateDeidentifyTemplat"
+          + "eRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%dlp.goog"
+          + "leapis.com/DeidentifyTemplate\022F\n\023deident"
+          + "ify_template\030\002 \001(\0132).google.privacy.dlp."
+          + "v2.DeidentifyTemplate\022/\n\013update_mask\030\003 \001"
+          + "(\0132\032.google.protobuf.FieldMask\"[\n\034GetDei"
+          + "dentifyTemplateRequest\022;\n\004name\030\001 \001(\tB-\340A"
+          + "\002\372A\'\n%dlp.googleapis.com/DeidentifyTempl"
+          + "ate\"\255\001\n\036ListDeidentifyTemplatesRequest\022="
+          + "\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%dlp.googleapis.c"
+          + "om/DeidentifyTemplate\022\022\n\npage_token\030\002 \001("
+          + "\t\022\021\n\tpage_size\030\003 \001(\005\022\020\n\010order_by\030\004 \001(\t\022\023"
+          + "\n\013location_id\030\005 \001(\t\"\203\001\n\037ListDeidentifyTe"
+          + "mplatesResponse\022G\n\024deidentify_templates\030"
+          + "\001 \003(\0132).google.privacy.dlp.v2.Deidentify"
+          + "Template\022\027\n\017next_page_token\030\002 \001(\t\"^\n\037Del"
+          + "eteDeidentifyTemplateRequest\022;\n\004name\030\001 \001"
+          + "(\tB-\340A\002\372A\'\n%dlp.googleapis.com/Deidentif"
+          + "yTemplate\"\364\001\n\033LargeCustomDictionaryConfi"
+          + "g\022<\n\013output_path\030\001 \001(\0132\'.google.privacy."
+          + "dlp.v2.CloudStoragePath\022L\n\026cloud_storage"
+          + "_file_set\030\002 \001(\0132*.google.privacy.dlp.v2."
+          + "CloudStorageFileSetH\000\022?\n\017big_query_field"
+          + "\030\003 \001(\0132$.google.privacy.dlp.v2.BigQueryF"
+          + "ieldH\000B\010\n\006source\"8\n\032LargeCustomDictionar"
+          + "yStats\022\032\n\022approx_num_phrases\030\001 \001(\003\"\246\002\n\024S"
+          + "toredInfoTypeConfig\022\024\n\014display_name\030\001 \001("
+          + "\t\022\023\n\013description\030\002 \001(\t\022U\n\027large_custom_d"
+          + "ictionary\030\003 \001(\01322.google.privacy.dlp.v2."
+          + "LargeCustomDictionaryConfigH\000\022F\n\ndiction"
+          + "ary\030\004 \001(\01320.google.privacy.dlp.v2.Custom"
+          + "InfoType.DictionaryH\000\022<\n\005regex\030\005 \001(\0132+.g"
+          + "oogle.privacy.dlp.v2.CustomInfoType.Rege"
+          + "xH\000B\006\n\004type\"s\n\023StoredInfoTypeStats\022T\n\027la"
+          + "rge_custom_dictionary\030\001 \001(\01321.google.pri"
+          + "vacy.dlp.v2.LargeCustomDictionaryStatsH\000"
+          + "B\006\n\004type\"\251\002\n\025StoredInfoTypeVersion\022;\n\006co"
+          + "nfig\030\001 \001(\0132+.google.privacy.dlp.v2.Store"
+          + "dInfoTypeConfig\022/\n\013create_time\030\002 \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\0229\n\005state\030\003 \001(\0162"
+          + "*.google.privacy.dlp.v2.StoredInfoTypeSt"
+          + "ate\022,\n\006errors\030\004 \003(\0132\034.google.privacy.dlp"
+          + ".v2.Error\0229\n\005stats\030\005 \001(\0132*.google.privac"
+          + "y.dlp.v2.StoredInfoTypeStats\"\361\003\n\016StoredI"
+          + "nfoType\022\014\n\004name\030\001 \001(\t\022E\n\017current_version"
+          + "\030\002 \001(\0132,.google.privacy.dlp.v2.StoredInf"
+          + "oTypeVersion\022F\n\020pending_versions\030\003 \003(\0132,"
+          + ".google.privacy.dlp.v2.StoredInfoTypeVer"
+          + "sion:\301\002\352A\275\002\n!dlp.googleapis.com/StoredIn"
+          + "foType\022?organizations/{organization}/sto"
+          + "redInfoTypes/{stored_info_type}\0225project"
+          + "s/{project}/storedInfoTypes/{stored_info",
+      "_type}\022Torganizations/{organization}/loc"
+          + "ations/{location}/storedInfoTypes/{store"
+          + "d_info_type}\022Jprojects/{project}/locatio"
+          + "ns/{location}/storedInfoTypes/{stored_in"
+          + "fo_type}\"\314\001\n\033CreateStoredInfoTypeRequest"
+          + "\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!dlp.googleapis"
+          + ".com/StoredInfoType\022@\n\006config\030\002 \001(\0132+.go"
+          + "ogle.privacy.dlp.v2.StoredInfoTypeConfig"
+          + "B\003\340A\002\022\033\n\023stored_info_type_id\030\003 \001(\t\022\023\n\013lo"
+          + "cation_id\030\004 \001(\t\"\304\001\n\033UpdateStoredInfoType"
+          + "Request\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dlp.googl"
+          + "eapis.com/StoredInfoType\022;\n\006config\030\002 \001(\013"
+          + "2+.google.privacy.dlp.v2.StoredInfoTypeC"
+          + "onfig\022/\n\013update_mask\030\003 \001(\0132\032.google.prot"
+          + "obuf.FieldMask\"S\n\030GetStoredInfoTypeReque"
+          + "st\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!dlp.googleapis"
+          + ".com/StoredInfoType\"\245\001\n\032ListStoredInfoTy"
+          + "pesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!dlp."
+          + "googleapis.com/StoredInfoType\022\022\n\npage_to"
+          + "ken\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\020\n\010order_by"
+          + "\030\004 \001(\t\022\023\n\013location_id\030\005 \001(\t\"x\n\033ListStore"
+          + "dInfoTypesResponse\022@\n\021stored_info_types\030"
+          + "\001 \003(\0132%.google.privacy.dlp.v2.StoredInfo"
+          + "Type\022\027\n\017next_page_token\030\002 \001(\t\"V\n\033DeleteS"
+          + "toredInfoTypeRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!dlp.googleapis.com/StoredInfoType\"\224\001"
+          + "\n\036HybridInspectJobTriggerRequest\0223\n\004name"
+          + "\030\001 \001(\tB%\340A\002\372A\037\n\035dlp.googleapis.com/JobTr"
+          + "igger\022=\n\013hybrid_item\030\003 \001(\0132(.google.priv"
+          + "acy.dlp.v2.HybridContentItem\"\214\001\n\032HybridI"
+          + "nspectDlpJobRequest\022/\n\004name\030\001 \001(\tB!\340A\002\372A"
+          + "\033\n\031dlp.googleapis.com/DlpJob\022=\n\013hybrid_i"
+          + "tem\030\003 \001(\0132(.google.privacy.dlp.v2.Hybrid"
+          + "ContentItem\"\213\001\n\021HybridContentItem\0220\n\004ite"
+          + "m\030\001 \001(\0132\".google.privacy.dlp.v2.ContentI"
+          + "tem\022D\n\017finding_details\030\002 \001(\0132+.google.pr"
+          + "ivacy.dlp.v2.HybridFindingDetails\"\260\002\n\024Hy"
+          + "bridFindingDetails\022;\n\021container_details\030"
+          + "\001 \001(\0132 .google.privacy.dlp.v2.Container\022"
+          + "\023\n\013file_offset\030\002 \001(\003\022\022\n\nrow_offset\030\003 \001(\003"
+          + "\022:\n\rtable_options\030\004 \001(\0132#.google.privacy"
+          + ".dlp.v2.TableOptions\022G\n\006labels\030\005 \003(\01327.g"
+          + "oogle.privacy.dlp.v2.HybridFindingDetail"
+          + "s.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\027\n\025HybridInspectRes"
+          + "ponse\"\341\001\n\020SensitivityScore\022L\n\005score\030\001 \001("
+          + "\0162=.google.privacy.dlp.v2.SensitivitySco"
+          + "re.SensitivityScoreLevel\"\177\n\025SensitivityS"
+          + "coreLevel\022!\n\035SENSITIVITY_SCORE_UNSPECIFI"
+          + "ED\020\000\022\023\n\017SENSITIVITY_LOW\020\n\022\030\n\024SENSITIVITY"
+          + "_MODERATE\020\024\022\024\n\020SENSITIVITY_HIGH\020\036\"\271\001\n\rDa"
+          + "taRiskLevel\022F\n\005score\030\001 \001(\01627.google.priv"
+          + "acy.dlp.v2.DataRiskLevel.DataRiskLevelSc"
+          + "ore\"`\n\022DataRiskLevelScore\022\032\n\026RISK_SCORE_"
+          + "UNSPECIFIED\020\000\022\014\n\010RISK_LOW\020\n\022\021\n\rRISK_MODE"
+          + "RATE\020\024\022\r\n\tRISK_HIGH\020\036\"\240\001\n\031DataProfileCon"
+          + "figSnapshot\022<\n\016inspect_config\030\002 \001(\0132$.go"
+          + "ogle.privacy.dlp.v2.InspectConfig\022E\n\020dat"
+          + "a_profile_job\030\003 \001(\0132+.google.privacy.dlp"
+          + ".v2.DataProfileJobConfig\"\232\n\n\020TableDataPr"
+          + "ofile\022\014\n\004name\030\001 \001(\t\022\034\n\024project_data_prof"
+          + "ile\030\002 \001(\t\022\032\n\022dataset_project_id\030\030 \001(\t\022\030\n"
+          + "\020dataset_location\030\035 \001(\t\022\022\n\ndataset_id\030\031 "
+          + "\001(\t\022\020\n\010table_id\030\032 \001(\t\022\025\n\rfull_resource\030\003"
+          + " \001(\t\022<\n\016profile_status\030\025 \001(\0132$.google.pr"
+          + "ivacy.dlp.v2.ProfileStatus\022<\n\005state\030\026 \001("
+          + "\0162-.google.privacy.dlp.v2.TableDataProfi"
+          + "le.State\022B\n\021sensitivity_score\030\005 \001(\0132\'.go"
+          + "ogle.privacy.dlp.v2.SensitivityScore\022=\n\017"
+          + "data_risk_level\030\006 \001(\0132$.google.privacy.d"
+          + "lp.v2.DataRiskLevel\022D\n\024predicted_info_ty"
+          + "pes\030\033 \003(\0132&.google.privacy.dlp.v2.InfoTy"
+          + "peSummary\022E\n\020other_info_types\030\034 \003(\0132+.go"
+          + "ogle.privacy.dlp.v2.OtherInfoTypeSummary"
+          + "\022I\n\017config_snapshot\030\007 \001(\01320.google.priva"
+          + "cy.dlp.v2.DataProfileConfigSnapshot\0226\n\022l"
+          + "ast_modified_time\030\010 \001(\0132\032.google.protobu"
+          + "f.Timestamp\0223\n\017expiration_time\030\t \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\022\034\n\024scanned_colu"
+          + "mn_count\030\n \001(\003\022\033\n\023failed_column_count\030\013 "
+          + "\001(\003\022\030\n\020table_size_bytes\030\014 \001(\003\022\021\n\trow_cou"
+          + "nt\030\r \001(\003\022B\n\021encryption_status\030\016 \001(\0162\'.go"
+          + "ogle.privacy.dlp.v2.EncryptionStatus\022F\n\023"
+          + "resource_visibility\030\017 \001(\0162).google.priva"
+          + "cy.dlp.v2.ResourceVisibility\022:\n\026profile_"
+          + "last_generated\030\020 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022T\n\017resource_labels\030\021 \003(\0132;.goog"
+          + "le.privacy.dlp.v2.TableDataProfile.Resou"
+          + "rceLabelsEntry\022/\n\013create_time\030\027 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\0325\n\023ResourceLabel"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5"
+          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNIN"
+          + "G\020\001\022\010\n\004DONE\020\002\"b\n\rProfileStatus\022\"\n\006status"
+          + "\030\001 \001(\0132\022.google.rpc.Status\022-\n\ttimestamp\030"
+          + "\003 \001(\0132\032.google.protobuf.Timestamp\"E\n\017Inf"
+          + "oTypeSummary\0222\n\tinfo_type\030\001 \001(\0132\037.google"
+          + ".privacy.dlp.v2.InfoType\"J\n\024OtherInfoTyp"
+          + "eSummary\0222\n\tinfo_type\030\001 \001(\0132\037.google.pri"
+          + "vacy.dlp.v2.InfoType\"\352\005\n\032DataProfilePubS"
+          + "ubCondition\022X\n\013expressions\030\001 \001(\0132C.googl"
+          + "e.privacy.dlp.v2.DataProfilePubSubCondit"
+          + "ion.PubSubExpressions\032\351\001\n\017PubSubConditio"
+          + "n\022b\n\022minimum_risk_score\030\001 \001(\0162D.google.p"
+          + "rivacy.dlp.v2.DataProfilePubSubCondition"
+          + ".ProfileScoreBucketH\000\022i\n\031minimum_sensiti"
+          + "vity_score\030\002 \001(\0162D.google.privacy.dlp.v2"
+          + ".DataProfilePubSubCondition.ProfileScore"
+          + "BucketH\000B\007\n\005value\032\253\002\n\021PubSubExpressions\022"
+          + "s\n\020logical_operator\030\001 \001(\0162Y.google.priva"
+          + "cy.dlp.v2.DataProfilePubSubCondition.Pub"
+          + "SubExpressions.PubSubLogicalOperator\022U\n\n"
+          + "conditions\030\002 \003(\0132A.google.privacy.dlp.v2"
+          + ".DataProfilePubSubCondition.PubSubCondit"
+          + "ion\"J\n\025PubSubLogicalOperator\022 \n\034LOGICAL_"
+          + "OPERATOR_UNSPECIFIED\020\000\022\006\n\002OR\020\001\022\007\n\003AND\020\002\""
+          + "X\n\022ProfileScoreBucket\022$\n PROFILE_SCORE_B"
+          + "UCKET_UNSPECIFIED\020\000\022\010\n\004HIGH\020\001\022\022\n\016MEDIUM_"
+          + "OR_HIGH\020\002\"\227\001\n\030DataProfilePubSubMessage\0228"
+          + "\n\007profile\030\001 \001(\0132\'.google.privacy.dlp.v2."
+          + "TableDataProfile\022A\n\005event\030\002 \001(\01622.google"
+          + ".privacy.dlp.v2.DataProfileAction.EventT"
+          + "ype*\273\001\n\022RelationalOperator\022#\n\037RELATIONAL"
+          + "_OPERATOR_UNSPECIFIED\020\000\022\014\n\010EQUAL_TO\020\001\022\020\n"
+          + "\014NOT_EQUAL_TO\020\002\022\020\n\014GREATER_THAN\020\003\022\r\n\tLES"
+          + "S_THAN\020\004\022\032\n\026GREATER_THAN_OR_EQUALS\020\005\022\027\n\023"
+          + "LESS_THAN_OR_EQUALS\020\006\022\n\n\006EXISTS\020\007*\215\001\n\014Ma"
+          + "tchingType\022\035\n\031MATCHING_TYPE_UNSPECIFIED\020"
+          + "\000\022\034\n\030MATCHING_TYPE_FULL_MATCH\020\001\022\037\n\033MATCH"
+          + "ING_TYPE_PARTIAL_MATCH\020\002\022\037\n\033MATCHING_TYP"
+          + "E_INVERSE_MATCH\020\003*M\n\rContentOption\022\027\n\023CO"
+          + "NTENT_UNSPECIFIED\020\000\022\020\n\014CONTENT_TEXT\020\001\022\021\n"
+          + "\rCONTENT_IMAGE\020\002*B\n\014MetadataType\022\034\n\030META"
+          + "DATATYPE_UNSPECIFIED\020\000\022\024\n\020STORAGE_METADA"
+          + "TA\020\002*P\n\023InfoTypeSupportedBy\022\031\n\025ENUM_TYPE"
+          + "_UNSPECIFIED\020\000\022\013\n\007INSPECT\020\001\022\021\n\rRISK_ANAL"
+          + "YSIS\020\002*R\n\nDlpJobType\022\034\n\030DLP_JOB_TYPE_UNS"
+          + "PECIFIED\020\000\022\017\n\013INSPECT_JOB\020\001\022\025\n\021RISK_ANAL"
+          + "YSIS_JOB\020\002*n\n\023StoredInfoTypeState\022&\n\"STO"
+          + "RED_INFO_TYPE_STATE_UNSPECIFIED\020\000\022\013\n\007PEN"
+          + "DING\020\001\022\t\n\005READY\020\002\022\n\n\006FAILED\020\003\022\013\n\007INVALID"
+          + "\020\004*}\n\022ResourceVisibility\022#\n\037RESOURCE_VIS"
+          + "IBILITY_UNSPECIFIED\020\000\022\036\n\032RESOURCE_VISIBI"
+          + "LITY_PUBLIC\020\n\022\"\n\036RESOURCE_VISIBILITY_RES"
+          + "TRICTED\020\024*u\n\020EncryptionStatus\022!\n\035ENCRYPT"
+          + "ION_STATUS_UNSPECIFIED\020\000\022\035\n\031ENCRYPTION_G"
+          + "OOGLE_MANAGED\020\001\022\037\n\033ENCRYPTION_CUSTOMER_M"
+          + "ANAGED\020\0022\240L\n\nDlpService\022\333\001\n\016InspectConte"
+          + "nt\022,.google.privacy.dlp.v2.InspectConten"
+          + "tRequest\032-.google.privacy.dlp.v2.Inspect"
+          + "ContentResponse\"l\202\323\344\223\002f\"\'/v2/{parent=pro"
+          + "jects/*}/content:inspect:\001*Z8\"3/v2/{pare"
+          + "nt=projects/*/locations/*}/content:inspe"
+          + "ct:\001*\022\314\001\n\013RedactImage\022).google.privacy.d"
+          + "lp.v2.RedactImageRequest\032*.google.privac"
+          + "y.dlp.v2.RedactImageResponse\"f\202\323\344\223\002`\"$/v"
+          + "2/{parent=projects/*}/image:redact:\001*Z5\""
+          + "0/v2/{parent=projects/*/locations/*}/ima"
+          + "ge:redact:\001*\022\352\001\n\021DeidentifyContent\022/.goo"
+          + "gle.privacy.dlp.v2.DeidentifyContentRequ"
+          + "est\0320.google.privacy.dlp.v2.DeidentifyCo"
+          + "ntentResponse\"r\202\323\344\223\002l\"*/v2/{parent=proje"
+          + "cts/*}/content:deidentify:\001*Z;\"6/v2/{par"
+          + "ent=projects/*/locations/*}/content:deid"
+          + "entify:\001*\022\352\001\n\021ReidentifyContent\022/.google"
+          + ".privacy.dlp.v2.ReidentifyContentRequest"
+          + "\0320.google.privacy.dlp.v2.ReidentifyConte"
+          + "ntResponse\"r\202\323\344\223\002l\"*/v2/{parent=projects"
+          + "/*}/content:reidentify:\001*Z;\"6/v2/{parent"
+          + "=projects/*/locations/*}/content:reident"
+          + "ify:\001*\022\260\001\n\rListInfoTypes\022+.google.privac"
+          + "y.dlp.v2.ListInfoTypesRequest\032,.google.p"
+          + "rivacy.dlp.v2.ListInfoTypesResponse\"D\202\323\344"
+          + "\223\0025\022\r/v2/infoTypesZ$\022\"/v2/{parent=locati"
+          + "ons/*}/infoTypes\332A\006parent\022\364\002\n\025CreateInsp"
+          + "ectTemplate\0223.google.privacy.dlp.v2.Crea"
+          + "teInspectTemplateRequest\032&.google.privac"
+          + "y.dlp.v2.InspectTemplate\"\375\001\202\323\344\223\002\334\001\"-/v2/"
+          + "{parent=organizations/*}/inspectTemplate"
+          + "s:\001*Z>\"9/v2/{parent=organizations/*/loca"
+          + "tions/*}/inspectTemplates:\001*Z-\"(/v2/{par"
+          + "ent=projects/*}/inspectTemplates:\001*Z9\"4/"
+          + "v2/{parent=projects/*/locations/*}/inspe"
+          + "ctTemplates:\001*\332A\027parent,inspect_template"
+          + "\022\376\002\n\025UpdateInspectTemplate\0223.google.priv"
+          + "acy.dlp.v2.UpdateInspectTemplateRequest\032"
+          + "&.google.privacy.dlp.v2.InspectTemplate\""
+          + "\207\002\202\323\344\223\002\334\0012-/v2/{name=organizations/*/ins"
+          + "pectTemplates/*}:\001*Z>29/v2/{name=organiz"
+          + "ations/*/locations/*/inspectTemplates/*}"
+          + ":\001*Z-2(/v2/{name=projects/*/inspectTempl"
+          + "ates/*}:\001*Z924/v2/{name=projects/*/locat"
+          + "ions/*/inspectTemplates/*}:\001*\332A!name,ins"
+          + "pect_template,update_mask\022\317\002\n\022GetInspect"
+          + "Template\0220.google.privacy.dlp.v2.GetInsp"
+          + "ectTemplateRequest\032&.google.privacy.dlp."
+          + "v2.InspectTemplate\"\336\001\202\323\344\223\002\320\001\022-/v2/{name="
+          + "organizations/*/inspectTemplates/*}Z;\0229/"
           + "v2/{name=organizations/*/locations/*/ins"
-          + "pectTemplates/*}Z**(/v2/{name=projects/*"
-          + "/inspectTemplates/*}Z6*4/v2/{name=projec"
+          + "pectTemplates/*}Z*\022(/v2/{name=projects/*"
+          + "/inspectTemplates/*}Z6\0224/v2/{name=projec"
           + "ts/*/locations/*/inspectTemplates/*}\332A\004n"
-          + "ame\022\214\003\n\030CreateDeidentifyTemplate\0226.googl"
-          + "e.privacy.dlp.v2.CreateDeidentifyTemplat"
-          + "eRequest\032).google.privacy.dlp.v2.Deident"
-          + "ifyTemplate\"\214\002\202\323\344\223\002\350\001\"0/v2/{parent=organ"
-          + "izations/*}/deidentifyTemplates:\001*ZA\"</v"
-          + "2/{parent=organizations/*/locations/*}/d"
-          + "eidentifyTemplates:\001*Z0\"+/v2/{parent=pro"
-          + "jects/*}/deidentifyTemplates:\001*Z<\"7/v2/{"
-          + "parent=projects/*/locations/*}/deidentif"
-          + "yTemplates:\001*\332A\032parent,deidentify_templa"
-          + "te\022\226\003\n\030UpdateDeidentifyTemplate\0226.google"
-          + ".privacy.dlp.v2.UpdateDeidentifyTemplate"
-          + "Request\032).google.privacy.dlp.v2.Deidenti"
-          + "fyTemplate\"\226\002\202\323\344\223\002\350\00120/v2/{name=organiza"
-          + "tions/*/deidentifyTemplates/*}:\001*ZA2</v2"
-          + "/{name=organizations/*/locations/*/deide"
-          + "ntifyTemplates/*}:\001*Z02+/v2/{name=projec"
-          + "ts/*/deidentifyTemplates/*}:\001*Z<27/v2/{n"
-          + "ame=projects/*/locations/*/deidentifyTem"
-          + "plates/*}:\001*\332A$name,deidentify_template,"
-          + "update_mask\022\344\002\n\025GetDeidentifyTemplate\0223."
-          + "google.privacy.dlp.v2.GetDeidentifyTempl"
-          + "ateRequest\032).google.privacy.dlp.v2.Deide"
-          + "ntifyTemplate\"\352\001\202\323\344\223\002\334\001\0220/v2/{name=organ"
-          + "izations/*/deidentifyTemplates/*}Z>\022</v2"
-          + "/{name=organizations/*/locations/*/deide"
-          + "ntifyTemplates/*}Z-\022+/v2/{name=projects/"
-          + "*/deidentifyTemplates/*}Z9\0227/v2/{name=pr"
-          + "ojects/*/locations/*/deidentifyTemplates"
-          + "/*}\332A\004name\022\367\002\n\027ListDeidentifyTemplates\0225"
-          + ".google.privacy.dlp.v2.ListDeidentifyTem"
-          + "platesRequest\0326.google.privacy.dlp.v2.Li"
-          + "stDeidentifyTemplatesResponse\"\354\001\202\323\344\223\002\334\001\022"
-          + "0/v2/{parent=organizations/*}/deidentify"
-          + "TemplatesZ>\022</v2/{parent=organizations/*"
-          + "/locations/*}/deidentifyTemplatesZ-\022+/v2"
-          + "/{parent=projects/*}/deidentifyTemplates"
-          + "Z9\0227/v2/{parent=projects/*/locations/*}/"
-          + "deidentifyTemplates\332A\006parent\022\327\002\n\030DeleteD"
-          + "eidentifyTemplate\0226.google.privacy.dlp.v"
-          + "2.DeleteDeidentifyTemplateRequest\032\026.goog"
-          + "le.protobuf.Empty\"\352\001\202\323\344\223\002\334\001*0/v2/{name=o"
-          + "rganizations/*/deidentifyTemplates/*}Z>*"
-          + "</v2/{name=organizations/*/locations/*/d"
-          + "eidentifyTemplates/*}Z-*+/v2/{name=proje"
-          + "cts/*/deidentifyTemplates/*}Z9*7/v2/{nam"
-          + "e=projects/*/locations/*/deidentifyTempl"
-          + "ates/*}\332A\004name\022\235\002\n\020CreateJobTrigger\022..go"
-          + "ogle.privacy.dlp.v2.CreateJobTriggerRequ"
-          + "est\032!.google.privacy.dlp.v2.JobTrigger\"\265"
-          + "\001\202\323\344\223\002\231\001\"#/v2/{parent=projects/*}/jobTri"
-          + "ggers:\001*Z4\"//v2/{parent=projects/*/locat"
-          + "ions/*}/jobTriggers:\001*Z9\"4/v2/{parent=or"
-          + "ganizations/*/locations/*}/jobTriggers:\001"
-          + "*\332A\022parent,job_trigger\022\247\002\n\020UpdateJobTrig"
-          + "ger\022..google.privacy.dlp.v2.UpdateJobTri"
-          + "ggerRequest\032!.google.privacy.dlp.v2.JobT"
-          + "rigger\"\277\001\202\323\344\223\002\231\0012#/v2/{name=projects/*/j"
-          + "obTriggers/*}:\001*Z42//v2/{name=projects/*"
-          + "/locations/*/jobTriggers/*}:\001*Z924/v2/{n"
-          + "ame=organizations/*/locations/*/jobTrigg"
-          + "ers/*}:\001*\332A\034name,job_trigger,update_mask"
-          + "\022\317\001\n\027HybridInspectJobTrigger\0225.google.pr"
-          + "ivacy.dlp.v2.HybridInspectJobTriggerRequ"
-          + "est\032,.google.privacy.dlp.v2.HybridInspec"
-          + "tResponse\"O\202\323\344\223\002B\"=/v2/{name=projects/*/"
-          + "locations/*/jobTriggers/*}:hybridInspect"
-          + ":\001*\332A\004name\022\200\002\n\rGetJobTrigger\022+.google.pr"
-          + "ivacy.dlp.v2.GetJobTriggerRequest\032!.goog"
-          + "le.privacy.dlp.v2.JobTrigger\"\236\001\202\323\344\223\002\220\001\022#"
-          + "/v2/{name=projects/*/jobTriggers/*}Z1\022//"
-          + "v2/{name=projects/*/locations/*/jobTrigg"
-          + "ers/*}Z6\0224/v2/{name=organizations/*/loca"
-          + "tions/*/jobTriggers/*}\332A\004name\022\223\002\n\017ListJo"
-          + "bTriggers\022-.google.privacy.dlp.v2.ListJo"
-          + "bTriggersRequest\032..google.privacy.dlp.v2"
-          + ".ListJobTriggersResponse\"\240\001\202\323\344\223\002\220\001\022#/v2/"
-          + "{parent=projects/*}/jobTriggersZ1\022//v2/{"
-          + "parent=projects/*/locations/*}/jobTrigge"
-          + "rsZ6\0224/v2/{parent=organizations/*/locati"
-          + "ons/*}/jobTriggers\332A\006parent\022\373\001\n\020DeleteJo"
-          + "bTrigger\022..google.privacy.dlp.v2.DeleteJ"
-          + "obTriggerRequest\032\026.google.protobuf.Empty"
-          + "\"\236\001\202\323\344\223\002\220\001*#/v2/{name=projects/*/jobTrig"
-          + "gers/*}Z1*//v2/{name=projects/*/location"
-          + "s/*/jobTriggers/*}Z6*4/v2/{name=organiza"
-          + "tions/*/locations/*/jobTriggers/*}\332A\004nam"
-          + "e\022\335\001\n\022ActivateJobTrigger\0220.google.privac"
-          + "y.dlp.v2.ActivateJobTriggerRequest\032\035.goo"
-          + "gle.privacy.dlp.v2.DlpJob\"v\202\323\344\223\002p\",/v2/{"
-          + "name=projects/*/jobTriggers/*}:activate:"
-          + "\001*Z=\"8/v2/{name=projects/*/locations/*/j"
-          + "obTriggers/*}:activate:\001*\022\337\001\n\014CreateDlpJ"
-          + "ob\022*.google.privacy.dlp.v2.CreateDlpJobR"
-          + "equest\032\035.google.privacy.dlp.v2.DlpJob\"\203\001"
-          + "\202\323\344\223\002V\"\037/v2/{parent=projects/*}/dlpJobs:"
-          + "\001*Z0\"+/v2/{parent=projects/*/locations/*"
-          + "}/dlpJobs:\001*\332A\022parent,inspect_job\332A\017pare"
-          + "nt,risk_job\022\373\001\n\013ListDlpJobs\022).google.pri"
-          + "vacy.dlp.v2.ListDlpJobsRequest\032*.google."
-          + "privacy.dlp.v2.ListDlpJobsResponse\"\224\001\202\323\344"
-          + "\223\002\204\001\022\037/v2/{parent=projects/*}/dlpJobsZ-\022"
-          + "+/v2/{parent=projects/*/locations/*}/dlp"
-          + "JobsZ2\0220/v2/{parent=organizations/*/loca"
-          + "tions/*}/dlpJobs\332A\006parent\022\262\001\n\tGetDlpJob\022"
-          + "\'.google.privacy.dlp.v2.GetDlpJobRequest"
-          + "\032\035.google.privacy.dlp.v2.DlpJob\"]\202\323\344\223\002P\022"
-          + "\037/v2/{name=projects/*/dlpJobs/*}Z-\022+/v2/"
-          + "{name=projects/*/locations/*/dlpJobs/*}\332"
-          + "A\004name\022\261\001\n\014DeleteDlpJob\022*.google.privacy"
-          + ".dlp.v2.DeleteDlpJobRequest\032\026.google.pro"
-          + "tobuf.Empty\"]\202\323\344\223\002P*\037/v2/{name=projects/"
-          + "*/dlpJobs/*}Z-*+/v2/{name=projects/*/loc"
-          + "ations/*/dlpJobs/*}\332A\004name\022\276\001\n\014CancelDlp"
-          + "Job\022*.google.privacy.dlp.v2.CancelDlpJob"
-          + "Request\032\026.google.protobuf.Empty\"j\202\323\344\223\002d\""
-          + "&/v2/{name=projects/*/dlpJobs/*}:cancel:"
-          + "\001*Z7\"2/v2/{name=projects/*/locations/*/d"
-          + "lpJobs/*}:cancel:\001*\022\343\002\n\024CreateStoredInfo"
-          + "Type\0222.google.privacy.dlp.v2.CreateStore"
-          + "dInfoTypeRequest\032%.google.privacy.dlp.v2"
-          + ".StoredInfoType\"\357\001\202\323\344\223\002\330\001\",/v2/{parent=o"
-          + "rganizations/*}/storedInfoTypes:\001*Z=\"8/v"
-          + "2/{parent=organizations/*/locations/*}/s"
-          + "toredInfoTypes:\001*Z,\"\'/v2/{parent=project"
-          + "s/*}/storedInfoTypes:\001*Z8\"3/v2/{parent=p"
-          + "rojects/*/locations/*}/storedInfoTypes:\001"
-          + "*\332A\rparent,config\022\355\002\n\024UpdateStoredInfoTy"
-          + "pe\0222.google.privacy.dlp.v2.UpdateStoredI"
-          + "nfoTypeRequest\032%.google.privacy.dlp.v2.S"
-          + "toredInfoType\"\371\001\202\323\344\223\002\330\0012,/v2/{name=organ"
-          + "izations/*/storedInfoTypes/*}:\001*Z=28/v2/"
-          + "{name=organizations/*/locations/*/stored"
-          + "InfoTypes/*}:\001*Z,2\'/v2/{name=projects/*/"
-          + "storedInfoTypes/*}:\001*Z823/v2/{name=proje"
-          + "cts/*/locations/*/storedInfoTypes/*}:\001*\332"
-          + "A\027name,config,update_mask\022\310\002\n\021GetStoredI"
-          + "nfoType\022/.google.privacy.dlp.v2.GetStore"
-          + "dInfoTypeRequest\032%.google.privacy.dlp.v2"
-          + ".StoredInfoType\"\332\001\202\323\344\223\002\314\001\022,/v2/{name=org"
-          + "anizations/*/storedInfoTypes/*}Z:\0228/v2/{"
-          + "name=organizations/*/locations/*/storedI"
-          + "nfoTypes/*}Z)\022\'/v2/{name=projects/*/stor"
-          + "edInfoTypes/*}Z5\0223/v2/{name=projects/*/l"
-          + "ocations/*/storedInfoTypes/*}\332A\004name\022\333\002\n"
-          + "\023ListStoredInfoTypes\0221.google.privacy.dl"
-          + "p.v2.ListStoredInfoTypesRequest\0322.google"
-          + ".privacy.dlp.v2.ListStoredInfoTypesRespo"
-          + "nse\"\334\001\202\323\344\223\002\314\001\022,/v2/{parent=organizations"
-          + "/*}/storedInfoTypesZ:\0228/v2/{parent=organ"
-          + "izations/*/locations/*}/storedInfoTypesZ"
-          + ")\022\'/v2/{parent=projects/*}/storedInfoTyp"
-          + "esZ5\0223/v2/{parent=projects/*/locations/*"
-          + "}/storedInfoTypes\332A\006parent\022\277\002\n\024DeleteSto"
-          + "redInfoType\0222.google.privacy.dlp.v2.Dele"
-          + "teStoredInfoTypeRequest\032\026.google.protobu"
-          + "f.Empty\"\332\001\202\323\344\223\002\314\001*,/v2/{name=organizatio"
-          + "ns/*/storedInfoTypes/*}Z:*8/v2/{name=org"
-          + "anizations/*/locations/*/storedInfoTypes"
-          + "/*}Z)*\'/v2/{name=projects/*/storedInfoTy"
-          + "pes/*}Z5*3/v2/{name=projects/*/locations"
-          + "/*/storedInfoTypes/*}\332A\004name\022\303\001\n\023HybridI"
-          + "nspectDlpJob\0221.google.privacy.dlp.v2.Hyb"
-          + "ridInspectDlpJobRequest\032,.google.privacy"
-          + ".dlp.v2.HybridInspectResponse\"K\202\323\344\223\002>\"9/"
-          + "v2/{name=projects/*/locations/*/dlpJobs/"
-          + "*}:hybridInspect:\001*\332A\004name\022\221\001\n\014FinishDlp"
-          + "Job\022*.google.privacy.dlp.v2.FinishDlpJob"
-          + "Request\032\026.google.protobuf.Empty\"=\202\323\344\223\0027\""
-          + "2/v2/{name=projects/*/locations/*/dlpJob"
-          + "s/*}:finish:\001*\032F\312A\022dlp.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\372\002\n\031com.google.privacy.dlp.v2B\010Dl"
-          + "pProtoP\001Z8google.golang.org/genproto/goo"
-          + "gleapis/privacy/dlp/v2;dlp\252\002\023Google.Clou"
-          + "d.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google:"
-          + ":Cloud::Dlp::V2\352Ar\n\035dlp.googleapis.com/D"
-          + "lpContent\022\035projects/{project}/dlpContent"
-          + "\0222projects/{project}/locations/{location"
-          + "}/dlpContent\352A\\\n\'dlp.googleapis.com/Orga"
-          + "nizationLocation\0221organizations/{organiz"
-          + "ation}/locations/{location}b\006proto3"
+          + "ame\022\342\002\n\024ListInspectTemplates\0222.google.pr"
+          + "ivacy.dlp.v2.ListInspectTemplatesRequest"
+          + "\0323.google.privacy.dlp.v2.ListInspectTemp"
+          + "latesResponse\"\340\001\202\323\344\223\002\320\001\022-/v2/{parent=org"
+          + "anizations/*}/inspectTemplatesZ;\0229/v2/{p"
+          + "arent=organizations/*/locations/*}/inspe"
+          + "ctTemplatesZ*\022(/v2/{parent=projects/*}/i"
+          + "nspectTemplatesZ6\0224/v2/{parent=projects/"
+          + "*/locations/*}/inspectTemplates\332A\006parent"
+          + "\022\305\002\n\025DeleteInspectTemplate\0223.google.priv"
+          + "acy.dlp.v2.DeleteInspectTemplateRequest\032"
+          + "\026.google.protobuf.Empty\"\336\001\202\323\344\223\002\320\001*-/v2/{"
+          + "name=organizations/*/inspectTemplates/*}"
+          + "Z;*9/v2/{name=organizations/*/locations/"
+          + "*/inspectTemplates/*}Z**(/v2/{name=proje"
+          + "cts/*/inspectTemplates/*}Z6*4/v2/{name=p"
+          + "rojects/*/locations/*/inspectTemplates/*"
+          + "}\332A\004name\022\214\003\n\030CreateDeidentifyTemplate\0226."
+          + "google.privacy.dlp.v2.CreateDeidentifyTe"
+          + "mplateRequest\032).google.privacy.dlp.v2.De"
+          + "identifyTemplate\"\214\002\202\323\344\223\002\350\001\"0/v2/{parent="
+          + "organizations/*}/deidentifyTemplates:\001*Z"
+          + "A\"</v2/{parent=organizations/*/locations"
+          + "/*}/deidentifyTemplates:\001*Z0\"+/v2/{paren"
+          + "t=projects/*}/deidentifyTemplates:\001*Z<\"7"
+          + "/v2/{parent=projects/*/locations/*}/deid"
+          + "entifyTemplates:\001*\332A\032parent,deidentify_t"
+          + "emplate\022\226\003\n\030UpdateDeidentifyTemplate\0226.g"
+          + "oogle.privacy.dlp.v2.UpdateDeidentifyTem"
+          + "plateRequest\032).google.privacy.dlp.v2.Dei"
+          + "dentifyTemplate\"\226\002\202\323\344\223\002\350\00120/v2/{name=org"
+          + "anizations/*/deidentifyTemplates/*}:\001*ZA"
+          + "2</v2/{name=organizations/*/locations/*/"
+          + "deidentifyTemplates/*}:\001*Z02+/v2/{name=p"
+          + "rojects/*/deidentifyTemplates/*}:\001*Z<27/"
+          + "v2/{name=projects/*/locations/*/deidenti"
+          + "fyTemplates/*}:\001*\332A$name,deidentify_temp"
+          + "late,update_mask\022\344\002\n\025GetDeidentifyTempla"
+          + "te\0223.google.privacy.dlp.v2.GetDeidentify"
+          + "TemplateRequest\032).google.privacy.dlp.v2."
+          + "DeidentifyTemplate\"\352\001\202\323\344\223\002\334\001\0220/v2/{name="
+          + "organizations/*/deidentifyTemplates/*}Z>"
+          + "\022</v2/{name=organizations/*/locations/*/"
+          + "deidentifyTemplates/*}Z-\022+/v2/{name=proj"
+          + "ects/*/deidentifyTemplates/*}Z9\0227/v2/{na"
+          + "me=projects/*/locations/*/deidentifyTemp"
+          + "lates/*}\332A\004name\022\367\002\n\027ListDeidentifyTempla"
+          + "tes\0225.google.privacy.dlp.v2.ListDeidenti"
+          + "fyTemplatesRequest\0326.google.privacy.dlp."
+          + "v2.ListDeidentifyTemplatesResponse\"\354\001\202\323\344"
+          + "\223\002\334\001\0220/v2/{parent=organizations/*}/deide"
+          + "ntifyTemplatesZ>\022</v2/{parent=organizati"
+          + "ons/*/locations/*}/deidentifyTemplatesZ-"
+          + "\022+/v2/{parent=projects/*}/deidentifyTemp"
+          + "latesZ9\0227/v2/{parent=projects/*/location"
+          + "s/*}/deidentifyTemplates\332A\006parent\022\327\002\n\030De"
+          + "leteDeidentifyTemplate\0226.google.privacy."
+          + "dlp.v2.DeleteDeidentifyTemplateRequest\032\026"
+          + ".google.protobuf.Empty\"\352\001\202\323\344\223\002\334\001*0/v2/{n"
+          + "ame=organizations/*/deidentifyTemplates/"
+          + "*}Z>*</v2/{name=organizations/*/location"
+          + "s/*/deidentifyTemplates/*}Z-*+/v2/{name="
+          + "projects/*/deidentifyTemplates/*}Z9*7/v2"
+          + "/{name=projects/*/locations/*/deidentify"
+          + "Templates/*}\332A\004name\022\235\002\n\020CreateJobTrigger"
+          + "\022..google.privacy.dlp.v2.CreateJobTrigge"
+          + "rRequest\032!.google.privacy.dlp.v2.JobTrig"
+          + "ger\"\265\001\202\323\344\223\002\231\001\"#/v2/{parent=projects/*}/j"
+          + "obTriggers:\001*Z4\"//v2/{parent=projects/*/"
+          + "locations/*}/jobTriggers:\001*Z9\"4/v2/{pare"
+          + "nt=organizations/*/locations/*}/jobTrigg"
+          + "ers:\001*\332A\022parent,job_trigger\022\247\002\n\020UpdateJo"
+          + "bTrigger\022..google.privacy.dlp.v2.UpdateJ"
+          + "obTriggerRequest\032!.google.privacy.dlp.v2"
+          + ".JobTrigger\"\277\001\202\323\344\223\002\231\0012#/v2/{name=project"
+          + "s/*/jobTriggers/*}:\001*Z42//v2/{name=proje"
+          + "cts/*/locations/*/jobTriggers/*}:\001*Z924/"
+          + "v2/{name=organizations/*/locations/*/job"
+          + "Triggers/*}:\001*\332A\034name,job_trigger,update"
+          + "_mask\022\317\001\n\027HybridInspectJobTrigger\0225.goog"
+          + "le.privacy.dlp.v2.HybridInspectJobTrigge"
+          + "rRequest\032,.google.privacy.dlp.v2.HybridI"
+          + "nspectResponse\"O\202\323\344\223\002B\"=/v2/{name=projec"
+          + "ts/*/locations/*/jobTriggers/*}:hybridIn"
+          + "spect:\001*\332A\004name\022\200\002\n\rGetJobTrigger\022+.goog"
+          + "le.privacy.dlp.v2.GetJobTriggerRequest\032!"
+          + ".google.privacy.dlp.v2.JobTrigger\"\236\001\202\323\344\223"
+          + "\002\220\001\022#/v2/{name=projects/*/jobTriggers/*}"
+          + "Z1\022//v2/{name=projects/*/locations/*/job"
+          + "Triggers/*}Z6\0224/v2/{name=organizations/*"
+          + "/locations/*/jobTriggers/*}\332A\004name\022\223\002\n\017L"
+          + "istJobTriggers\022-.google.privacy.dlp.v2.L"
+          + "istJobTriggersRequest\032..google.privacy.d"
+          + "lp.v2.ListJobTriggersResponse\"\240\001\202\323\344\223\002\220\001\022"
+          + "#/v2/{parent=projects/*}/jobTriggersZ1\022/"
+          + "/v2/{parent=projects/*/locations/*}/jobT"
+          + "riggersZ6\0224/v2/{parent=organizations/*/l"
+          + "ocations/*}/jobTriggers\332A\006parent\022\373\001\n\020Del"
+          + "eteJobTrigger\022..google.privacy.dlp.v2.De"
+          + "leteJobTriggerRequest\032\026.google.protobuf."
+          + "Empty\"\236\001\202\323\344\223\002\220\001*#/v2/{name=projects/*/jo"
+          + "bTriggers/*}Z1*//v2/{name=projects/*/loc"
+          + "ations/*/jobTriggers/*}Z6*4/v2/{name=org"
+          + "anizations/*/locations/*/jobTriggers/*}\332"
+          + "A\004name\022\335\001\n\022ActivateJobTrigger\0220.google.p"
+          + "rivacy.dlp.v2.ActivateJobTriggerRequest\032"
+          + "\035.google.privacy.dlp.v2.DlpJob\"v\202\323\344\223\002p\","
+          + "/v2/{name=projects/*/jobTriggers/*}:acti"
+          + "vate:\001*Z=\"8/v2/{name=projects/*/location"
+          + "s/*/jobTriggers/*}:activate:\001*\022\337\001\n\014Creat"
+          + "eDlpJob\022*.google.privacy.dlp.v2.CreateDl"
+          + "pJobRequest\032\035.google.privacy.dlp.v2.DlpJ"
+          + "ob\"\203\001\202\323\344\223\002V\"\037/v2/{parent=projects/*}/dlp"
+          + "Jobs:\001*Z0\"+/v2/{parent=projects/*/locati"
+          + "ons/*}/dlpJobs:\001*\332A\022parent,inspect_job\332A"
+          + "\017parent,risk_job\022\373\001\n\013ListDlpJobs\022).googl"
+          + "e.privacy.dlp.v2.ListDlpJobsRequest\032*.go"
+          + "ogle.privacy.dlp.v2.ListDlpJobsResponse\""
+          + "\224\001\202\323\344\223\002\204\001\022\037/v2/{parent=projects/*}/dlpJo"
+          + "bsZ-\022+/v2/{parent=projects/*/locations/*"
+          + "}/dlpJobsZ2\0220/v2/{parent=organizations/*"
+          + "/locations/*}/dlpJobs\332A\006parent\022\262\001\n\tGetDl"
+          + "pJob\022\'.google.privacy.dlp.v2.GetDlpJobRe"
+          + "quest\032\035.google.privacy.dlp.v2.DlpJob\"]\202\323"
+          + "\344\223\002P\022\037/v2/{name=projects/*/dlpJobs/*}Z-\022"
+          + "+/v2/{name=projects/*/locations/*/dlpJob"
+          + "s/*}\332A\004name\022\261\001\n\014DeleteDlpJob\022*.google.pr"
+          + "ivacy.dlp.v2.DeleteDlpJobRequest\032\026.googl"
+          + "e.protobuf.Empty\"]\202\323\344\223\002P*\037/v2/{name=proj"
+          + "ects/*/dlpJobs/*}Z-*+/v2/{name=projects/"
+          + "*/locations/*/dlpJobs/*}\332A\004name\022\276\001\n\014Canc"
+          + "elDlpJob\022*.google.privacy.dlp.v2.CancelD"
+          + "lpJobRequest\032\026.google.protobuf.Empty\"j\202\323"
+          + "\344\223\002d\"&/v2/{name=projects/*/dlpJobs/*}:ca"
+          + "ncel:\001*Z7\"2/v2/{name=projects/*/location"
+          + "s/*/dlpJobs/*}:cancel:\001*\022\343\002\n\024CreateStore"
+          + "dInfoType\0222.google.privacy.dlp.v2.Create"
+          + "StoredInfoTypeRequest\032%.google.privacy.d"
+          + "lp.v2.StoredInfoType\"\357\001\202\323\344\223\002\330\001\",/v2/{par"
+          + "ent=organizations/*}/storedInfoTypes:\001*Z"
+          + "=\"8/v2/{parent=organizations/*/locations"
+          + "/*}/storedInfoTypes:\001*Z,\"\'/v2/{parent=pr"
+          + "ojects/*}/storedInfoTypes:\001*Z8\"3/v2/{par"
+          + "ent=projects/*/locations/*}/storedInfoTy"
+          + "pes:\001*\332A\rparent,config\022\355\002\n\024UpdateStoredI"
+          + "nfoType\0222.google.privacy.dlp.v2.UpdateSt"
+          + "oredInfoTypeRequest\032%.google.privacy.dlp"
+          + ".v2.StoredInfoType\"\371\001\202\323\344\223\002\330\0012,/v2/{name="
+          + "organizations/*/storedInfoTypes/*}:\001*Z=2"
+          + "8/v2/{name=organizations/*/locations/*/s"
+          + "toredInfoTypes/*}:\001*Z,2\'/v2/{name=projec"
+          + "ts/*/storedInfoTypes/*}:\001*Z823/v2/{name="
+          + "projects/*/locations/*/storedInfoTypes/*"
+          + "}:\001*\332A\027name,config,update_mask\022\310\002\n\021GetSt"
+          + "oredInfoType\022/.google.privacy.dlp.v2.Get"
+          + "StoredInfoTypeRequest\032%.google.privacy.d"
+          + "lp.v2.StoredInfoType\"\332\001\202\323\344\223\002\314\001\022,/v2/{nam"
+          + "e=organizations/*/storedInfoTypes/*}Z:\0228"
+          + "/v2/{name=organizations/*/locations/*/st"
+          + "oredInfoTypes/*}Z)\022\'/v2/{name=projects/*"
+          + "/storedInfoTypes/*}Z5\0223/v2/{name=project"
+          + "s/*/locations/*/storedInfoTypes/*}\332A\004nam"
+          + "e\022\333\002\n\023ListStoredInfoTypes\0221.google.priva"
+          + "cy.dlp.v2.ListStoredInfoTypesRequest\0322.g"
+          + "oogle.privacy.dlp.v2.ListStoredInfoTypes"
+          + "Response\"\334\001\202\323\344\223\002\314\001\022,/v2/{parent=organiza"
+          + "tions/*}/storedInfoTypesZ:\0228/v2/{parent="
+          + "organizations/*/locations/*}/storedInfoT"
+          + "ypesZ)\022\'/v2/{parent=projects/*}/storedIn"
+          + "foTypesZ5\0223/v2/{parent=projects/*/locati"
+          + "ons/*}/storedInfoTypes\332A\006parent\022\277\002\n\024Dele"
+          + "teStoredInfoType\0222.google.privacy.dlp.v2"
+          + ".DeleteStoredInfoTypeRequest\032\026.google.pr"
+          + "otobuf.Empty\"\332\001\202\323\344\223\002\314\001*,/v2/{name=organi"
+          + "zations/*/storedInfoTypes/*}Z:*8/v2/{nam"
+          + "e=organizations/*/locations/*/storedInfo"
+          + "Types/*}Z)*\'/v2/{name=projects/*/storedI"
+          + "nfoTypes/*}Z5*3/v2/{name=projects/*/loca"
+          + "tions/*/storedInfoTypes/*}\332A\004name\022\303\001\n\023Hy"
+          + "bridInspectDlpJob\0221.google.privacy.dlp.v"
+          + "2.HybridInspectDlpJobRequest\032,.google.pr"
+          + "ivacy.dlp.v2.HybridInspectResponse\"K\202\323\344\223"
+          + "\002>\"9/v2/{name=projects/*/locations/*/dlp"
+          + "Jobs/*}:hybridInspect:\001*\332A\004name\022\221\001\n\014Fini"
+          + "shDlpJob\022*.google.privacy.dlp.v2.FinishD"
+          + "lpJobRequest\032\026.google.protobuf.Empty\"=\202\323"
+          + "\344\223\0027\"2/v2/{name=projects/*/locations/*/d"
+          + "lpJobs/*}:finish:\001*\032F\312A\022dlp.googleapis.c"
+          + "om\322A.https://www.googleapis.com/auth/clo"
+          + "ud-platformB\372\002\n\031com.google.privacy.dlp.v"
+          + "2B\010DlpProtoP\001Z8google.golang.org/genprot"
+          + "o/googleapis/privacy/dlp/v2;dlp\252\002\023Google"
+          + ".Cloud.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Go"
+          + "ogle::Cloud::Dlp::V2\352Ar\n\035dlp.googleapis."
+          + "com/DlpContent\022\035projects/{project}/dlpCo"
+          + "ntent\0222projects/{project}/locations/{loc"
+          + "ation}/dlpContent\352A\\\n\'dlp.googleapis.com"
+          + "/OrganizationLocation\0221organizations/{or"
+          + "ganization}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -3160,8 +3336,48 @@ public final class DlpProto {
             new java.lang.String[] {
               "StorageConfig", "InspectConfig", "InspectTemplateName", "Actions",
             });
-    internal_static_google_privacy_dlp_v2_DlpJob_descriptor =
+    internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor =
         getDescriptor().getMessageTypes().get(95);
+    internal_static_google_privacy_dlp_v2_DataProfileAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor,
+            new java.lang.String[] {
+              "ExportData", "PubSubNotification", "Action",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfileAction_Export_descriptor =
+        internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor.getNestedTypes().get(0);
+    internal_static_google_privacy_dlp_v2_DataProfileAction_Export_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileAction_Export_descriptor,
+            new java.lang.String[] {
+              "ProfileTable",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfileAction_PubSubNotification_descriptor =
+        internal_static_google_privacy_dlp_v2_DataProfileAction_descriptor.getNestedTypes().get(1);
+    internal_static_google_privacy_dlp_v2_DataProfileAction_PubSubNotification_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileAction_PubSubNotification_descriptor,
+            new java.lang.String[] {
+              "Topic", "Event", "PubsubCondition", "DetailOfMessage",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfileJobConfig_descriptor =
+        getDescriptor().getMessageTypes().get(96);
+    internal_static_google_privacy_dlp_v2_DataProfileJobConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileJobConfig_descriptor,
+            new java.lang.String[] {
+              "Location", "ProjectId", "InspectTemplates", "DataProfileActions",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfileLocation_descriptor =
+        getDescriptor().getMessageTypes().get(97);
+    internal_static_google_privacy_dlp_v2_DataProfileLocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileLocation_descriptor,
+            new java.lang.String[] {
+              "OrganizationId", "FolderId", "Location",
+            });
+    internal_static_google_privacy_dlp_v2_DlpJob_descriptor =
+        getDescriptor().getMessageTypes().get(98);
     internal_static_google_privacy_dlp_v2_DlpJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_DlpJob_descriptor,
@@ -3179,7 +3395,7 @@ public final class DlpProto {
               "Details",
             });
     internal_static_google_privacy_dlp_v2_GetDlpJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(96);
+        getDescriptor().getMessageTypes().get(99);
     internal_static_google_privacy_dlp_v2_GetDlpJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_GetDlpJobRequest_descriptor,
@@ -3187,7 +3403,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(97);
+        getDescriptor().getMessageTypes().get(100);
     internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor,
@@ -3195,7 +3411,7 @@ public final class DlpProto {
               "Parent", "Filter", "PageSize", "PageToken", "Type", "OrderBy", "LocationId",
             });
     internal_static_google_privacy_dlp_v2_ListDlpJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(98);
+        getDescriptor().getMessageTypes().get(101);
     internal_static_google_privacy_dlp_v2_ListDlpJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListDlpJobsResponse_descriptor,
@@ -3203,7 +3419,7 @@ public final class DlpProto {
               "Jobs", "NextPageToken",
             });
     internal_static_google_privacy_dlp_v2_CancelDlpJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(99);
+        getDescriptor().getMessageTypes().get(102);
     internal_static_google_privacy_dlp_v2_CancelDlpJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_CancelDlpJobRequest_descriptor,
@@ -3211,7 +3427,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_FinishDlpJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(100);
+        getDescriptor().getMessageTypes().get(103);
     internal_static_google_privacy_dlp_v2_FinishDlpJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_FinishDlpJobRequest_descriptor,
@@ -3219,7 +3435,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_DeleteDlpJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(101);
+        getDescriptor().getMessageTypes().get(104);
     internal_static_google_privacy_dlp_v2_DeleteDlpJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_DeleteDlpJobRequest_descriptor,
@@ -3227,7 +3443,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_CreateDeidentifyTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(102);
+        getDescriptor().getMessageTypes().get(105);
     internal_static_google_privacy_dlp_v2_CreateDeidentifyTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_CreateDeidentifyTemplateRequest_descriptor,
@@ -3235,7 +3451,7 @@ public final class DlpProto {
               "Parent", "DeidentifyTemplate", "TemplateId", "LocationId",
             });
     internal_static_google_privacy_dlp_v2_UpdateDeidentifyTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(103);
+        getDescriptor().getMessageTypes().get(106);
     internal_static_google_privacy_dlp_v2_UpdateDeidentifyTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_UpdateDeidentifyTemplateRequest_descriptor,
@@ -3243,7 +3459,7 @@ public final class DlpProto {
               "Name", "DeidentifyTemplate", "UpdateMask",
             });
     internal_static_google_privacy_dlp_v2_GetDeidentifyTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(104);
+        getDescriptor().getMessageTypes().get(107);
     internal_static_google_privacy_dlp_v2_GetDeidentifyTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_GetDeidentifyTemplateRequest_descriptor,
@@ -3251,7 +3467,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(105);
+        getDescriptor().getMessageTypes().get(108);
     internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesRequest_descriptor,
@@ -3259,7 +3475,7 @@ public final class DlpProto {
               "Parent", "PageToken", "PageSize", "OrderBy", "LocationId",
             });
     internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(106);
+        getDescriptor().getMessageTypes().get(109);
     internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListDeidentifyTemplatesResponse_descriptor,
@@ -3267,7 +3483,7 @@ public final class DlpProto {
               "DeidentifyTemplates", "NextPageToken",
             });
     internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(107);
+        getDescriptor().getMessageTypes().get(110);
     internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_descriptor,
@@ -3275,7 +3491,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor =
-        getDescriptor().getMessageTypes().get(108);
+        getDescriptor().getMessageTypes().get(111);
     internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor,
@@ -3283,7 +3499,7 @@ public final class DlpProto {
               "OutputPath", "CloudStorageFileSet", "BigQueryField", "Source",
             });
     internal_static_google_privacy_dlp_v2_LargeCustomDictionaryStats_descriptor =
-        getDescriptor().getMessageTypes().get(109);
+        getDescriptor().getMessageTypes().get(112);
     internal_static_google_privacy_dlp_v2_LargeCustomDictionaryStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_LargeCustomDictionaryStats_descriptor,
@@ -3291,7 +3507,7 @@ public final class DlpProto {
               "ApproxNumPhrases",
             });
     internal_static_google_privacy_dlp_v2_StoredInfoTypeConfig_descriptor =
-        getDescriptor().getMessageTypes().get(110);
+        getDescriptor().getMessageTypes().get(113);
     internal_static_google_privacy_dlp_v2_StoredInfoTypeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_StoredInfoTypeConfig_descriptor,
@@ -3299,7 +3515,7 @@ public final class DlpProto {
               "DisplayName", "Description", "LargeCustomDictionary", "Dictionary", "Regex", "Type",
             });
     internal_static_google_privacy_dlp_v2_StoredInfoTypeStats_descriptor =
-        getDescriptor().getMessageTypes().get(111);
+        getDescriptor().getMessageTypes().get(114);
     internal_static_google_privacy_dlp_v2_StoredInfoTypeStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_StoredInfoTypeStats_descriptor,
@@ -3307,7 +3523,7 @@ public final class DlpProto {
               "LargeCustomDictionary", "Type",
             });
     internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor =
-        getDescriptor().getMessageTypes().get(112);
+        getDescriptor().getMessageTypes().get(115);
     internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor,
@@ -3315,7 +3531,7 @@ public final class DlpProto {
               "Config", "CreateTime", "State", "Errors", "Stats",
             });
     internal_static_google_privacy_dlp_v2_StoredInfoType_descriptor =
-        getDescriptor().getMessageTypes().get(113);
+        getDescriptor().getMessageTypes().get(116);
     internal_static_google_privacy_dlp_v2_StoredInfoType_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_StoredInfoType_descriptor,
@@ -3323,7 +3539,7 @@ public final class DlpProto {
               "Name", "CurrentVersion", "PendingVersions",
             });
     internal_static_google_privacy_dlp_v2_CreateStoredInfoTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(114);
+        getDescriptor().getMessageTypes().get(117);
     internal_static_google_privacy_dlp_v2_CreateStoredInfoTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_CreateStoredInfoTypeRequest_descriptor,
@@ -3331,7 +3547,7 @@ public final class DlpProto {
               "Parent", "Config", "StoredInfoTypeId", "LocationId",
             });
     internal_static_google_privacy_dlp_v2_UpdateStoredInfoTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(115);
+        getDescriptor().getMessageTypes().get(118);
     internal_static_google_privacy_dlp_v2_UpdateStoredInfoTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_UpdateStoredInfoTypeRequest_descriptor,
@@ -3339,7 +3555,7 @@ public final class DlpProto {
               "Name", "Config", "UpdateMask",
             });
     internal_static_google_privacy_dlp_v2_GetStoredInfoTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(116);
+        getDescriptor().getMessageTypes().get(119);
     internal_static_google_privacy_dlp_v2_GetStoredInfoTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_GetStoredInfoTypeRequest_descriptor,
@@ -3347,7 +3563,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_ListStoredInfoTypesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(117);
+        getDescriptor().getMessageTypes().get(120);
     internal_static_google_privacy_dlp_v2_ListStoredInfoTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListStoredInfoTypesRequest_descriptor,
@@ -3355,7 +3571,7 @@ public final class DlpProto {
               "Parent", "PageToken", "PageSize", "OrderBy", "LocationId",
             });
     internal_static_google_privacy_dlp_v2_ListStoredInfoTypesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(118);
+        getDescriptor().getMessageTypes().get(121);
     internal_static_google_privacy_dlp_v2_ListStoredInfoTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_ListStoredInfoTypesResponse_descriptor,
@@ -3363,7 +3579,7 @@ public final class DlpProto {
               "StoredInfoTypes", "NextPageToken",
             });
     internal_static_google_privacy_dlp_v2_DeleteStoredInfoTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(119);
+        getDescriptor().getMessageTypes().get(122);
     internal_static_google_privacy_dlp_v2_DeleteStoredInfoTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_DeleteStoredInfoTypeRequest_descriptor,
@@ -3371,7 +3587,7 @@ public final class DlpProto {
               "Name",
             });
     internal_static_google_privacy_dlp_v2_HybridInspectJobTriggerRequest_descriptor =
-        getDescriptor().getMessageTypes().get(120);
+        getDescriptor().getMessageTypes().get(123);
     internal_static_google_privacy_dlp_v2_HybridInspectJobTriggerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_HybridInspectJobTriggerRequest_descriptor,
@@ -3379,7 +3595,7 @@ public final class DlpProto {
               "Name", "HybridItem",
             });
     internal_static_google_privacy_dlp_v2_HybridInspectDlpJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(121);
+        getDescriptor().getMessageTypes().get(124);
     internal_static_google_privacy_dlp_v2_HybridInspectDlpJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_HybridInspectDlpJobRequest_descriptor,
@@ -3387,7 +3603,7 @@ public final class DlpProto {
               "Name", "HybridItem",
             });
     internal_static_google_privacy_dlp_v2_HybridContentItem_descriptor =
-        getDescriptor().getMessageTypes().get(122);
+        getDescriptor().getMessageTypes().get(125);
     internal_static_google_privacy_dlp_v2_HybridContentItem_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_HybridContentItem_descriptor,
@@ -3395,7 +3611,7 @@ public final class DlpProto {
               "Item", "FindingDetails",
             });
     internal_static_google_privacy_dlp_v2_HybridFindingDetails_descriptor =
-        getDescriptor().getMessageTypes().get(123);
+        getDescriptor().getMessageTypes().get(126);
     internal_static_google_privacy_dlp_v2_HybridFindingDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_HybridFindingDetails_descriptor,
@@ -3413,11 +3629,135 @@ public final class DlpProto {
               "Key", "Value",
             });
     internal_static_google_privacy_dlp_v2_HybridInspectResponse_descriptor =
-        getDescriptor().getMessageTypes().get(124);
+        getDescriptor().getMessageTypes().get(127);
     internal_static_google_privacy_dlp_v2_HybridInspectResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_HybridInspectResponse_descriptor,
             new java.lang.String[] {});
+    internal_static_google_privacy_dlp_v2_SensitivityScore_descriptor =
+        getDescriptor().getMessageTypes().get(128);
+    internal_static_google_privacy_dlp_v2_SensitivityScore_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_SensitivityScore_descriptor,
+            new java.lang.String[] {
+              "Score",
+            });
+    internal_static_google_privacy_dlp_v2_DataRiskLevel_descriptor =
+        getDescriptor().getMessageTypes().get(129);
+    internal_static_google_privacy_dlp_v2_DataRiskLevel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataRiskLevel_descriptor,
+            new java.lang.String[] {
+              "Score",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfileConfigSnapshot_descriptor =
+        getDescriptor().getMessageTypes().get(130);
+    internal_static_google_privacy_dlp_v2_DataProfileConfigSnapshot_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfileConfigSnapshot_descriptor,
+            new java.lang.String[] {
+              "InspectConfig", "DataProfileJob",
+            });
+    internal_static_google_privacy_dlp_v2_TableDataProfile_descriptor =
+        getDescriptor().getMessageTypes().get(131);
+    internal_static_google_privacy_dlp_v2_TableDataProfile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_TableDataProfile_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "ProjectDataProfile",
+              "DatasetProjectId",
+              "DatasetLocation",
+              "DatasetId",
+              "TableId",
+              "FullResource",
+              "ProfileStatus",
+              "State",
+              "SensitivityScore",
+              "DataRiskLevel",
+              "PredictedInfoTypes",
+              "OtherInfoTypes",
+              "ConfigSnapshot",
+              "LastModifiedTime",
+              "ExpirationTime",
+              "ScannedColumnCount",
+              "FailedColumnCount",
+              "TableSizeBytes",
+              "RowCount",
+              "EncryptionStatus",
+              "ResourceVisibility",
+              "ProfileLastGenerated",
+              "ResourceLabels",
+              "CreateTime",
+            });
+    internal_static_google_privacy_dlp_v2_TableDataProfile_ResourceLabelsEntry_descriptor =
+        internal_static_google_privacy_dlp_v2_TableDataProfile_descriptor.getNestedTypes().get(0);
+    internal_static_google_privacy_dlp_v2_TableDataProfile_ResourceLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_TableDataProfile_ResourceLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_privacy_dlp_v2_ProfileStatus_descriptor =
+        getDescriptor().getMessageTypes().get(132);
+    internal_static_google_privacy_dlp_v2_ProfileStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_ProfileStatus_descriptor,
+            new java.lang.String[] {
+              "Status", "Timestamp",
+            });
+    internal_static_google_privacy_dlp_v2_InfoTypeSummary_descriptor =
+        getDescriptor().getMessageTypes().get(133);
+    internal_static_google_privacy_dlp_v2_InfoTypeSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_InfoTypeSummary_descriptor,
+            new java.lang.String[] {
+              "InfoType",
+            });
+    internal_static_google_privacy_dlp_v2_OtherInfoTypeSummary_descriptor =
+        getDescriptor().getMessageTypes().get(134);
+    internal_static_google_privacy_dlp_v2_OtherInfoTypeSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_OtherInfoTypeSummary_descriptor,
+            new java.lang.String[] {
+              "InfoType",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor =
+        getDescriptor().getMessageTypes().get(135);
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor,
+            new java.lang.String[] {
+              "Expressions",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_descriptor =
+        internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubCondition_descriptor,
+            new java.lang.String[] {
+              "MinimumRiskScore", "MinimumSensitivityScore", "Value",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubExpressions_descriptor =
+        internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubExpressions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfilePubSubCondition_PubSubExpressions_descriptor,
+            new java.lang.String[] {
+              "LogicalOperator", "Conditions",
+            });
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubMessage_descriptor =
+        getDescriptor().getMessageTypes().get(136);
+    internal_static_google_privacy_dlp_v2_DataProfilePubSubMessage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_DataProfilePubSubMessage_descriptor,
+            new java.lang.String[] {
+              "Profile", "Event",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
