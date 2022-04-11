@@ -106,6 +106,17 @@ public class RegionTargetHttpsProxiesSettings
     return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((RegionTargetHttpsProxiesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setSslCertificates. */
   public UnaryCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesSettings() {
@@ -265,6 +276,18 @@ public class RegionTargetHttpsProxiesSettings
             ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchRegionTargetHttpsProxyRequest, Operation>
+        patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setSslCertificates. */

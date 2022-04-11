@@ -476,6 +476,23 @@
  * }
  * }</pre>
  *
+ * <p>======================= NetworkEdgeSecurityServicesClient =======================
+ *
+ * <p>Service Description: The NetworkEdgeSecurityServices API.
+ *
+ * <p>Sample for NetworkEdgeSecurityServicesClient:
+ *
+ * <pre>{@code
+ * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
+ *     NetworkEdgeSecurityServicesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String networkEdgeSecurityService = "networkEdgeSecurityService-1390253366";
+ *   NetworkEdgeSecurityService response =
+ *       networkEdgeSecurityServicesClient.get(project, region, networkEdgeSecurityService);
+ * }
+ * }</pre>
+ *
  * <p>======================= NetworkEndpointGroupsClient =======================
  *
  * <p>Service Description: The NetworkEndpointGroups API.
@@ -490,6 +507,21 @@
  *   String networkEndpointGroup = "networkEndpointGroup-2120389028";
  *   NetworkEndpointGroup response =
  *       networkEndpointGroupsClient.get(project, zone, networkEndpointGroup);
+ * }
+ * }</pre>
+ *
+ * <p>======================= NetworkFirewallPoliciesClient =======================
+ *
+ * <p>Service Description: The NetworkFirewallPolicies API.
+ *
+ * <p>Sample for NetworkFirewallPoliciesClient:
+ *
+ * <pre>{@code
+ * try (NetworkFirewallPoliciesClient networkFirewallPoliciesClient =
+ *     NetworkFirewallPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String firewallPolicy = "firewallPolicy1819692626";
+ *   FirewallPolicy response = networkFirewallPoliciesClient.get(project, firewallPolicy);
  * }
  * }</pre>
  *
@@ -790,6 +822,23 @@
  * }
  * }</pre>
  *
+ * <p>======================= RegionNetworkFirewallPoliciesClient =======================
+ *
+ * <p>Service Description: The RegionNetworkFirewallPolicies API.
+ *
+ * <p>Sample for RegionNetworkFirewallPoliciesClient:
+ *
+ * <pre>{@code
+ * try (RegionNetworkFirewallPoliciesClient regionNetworkFirewallPoliciesClient =
+ *     RegionNetworkFirewallPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String firewallPolicy = "firewallPolicy1819692626";
+ *   FirewallPolicy response =
+ *       regionNetworkFirewallPoliciesClient.get(project, region, firewallPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegionNotificationEndpointsClient =======================
  *
  * <p>Service Description: The RegionNotificationEndpoints API.
@@ -820,6 +869,22 @@
  *   String operation = "operation1662702951";
  *   DeleteRegionOperationResponse response =
  *       regionOperationsClient.delete(project, region, operation);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionSecurityPoliciesClient =======================
+ *
+ * <p>Service Description: The RegionSecurityPolicies API.
+ *
+ * <p>Sample for RegionSecurityPoliciesClient:
+ *
+ * <pre>{@code
+ * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
+ *     RegionSecurityPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String securityPolicy = "securityPolicy-788621166";
+ *   SecurityPolicy response = regionSecurityPoliciesClient.get(project, region, securityPolicy);
  * }
  * }</pre>
  *

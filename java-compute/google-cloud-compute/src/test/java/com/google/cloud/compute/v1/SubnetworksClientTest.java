@@ -296,6 +296,7 @@ public class SubnetworksClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setGatewayAddress("gatewayAddress1860901136")
             .setId(3355)
+            .setInternalIpv6Prefix("internalIpv6Prefix-561062410")
             .setIpCidrRange("ipCidrRange-866375486")
             .setIpv6AccessType("ipv6AccessType606780421")
             .setIpv6CidrRange("ipv6CidrRange885760002")

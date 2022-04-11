@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SecurityPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -34,6 +35,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyRequest;
@@ -45,6 +47,7 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
@@ -120,6 +123,64 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
                         .build();
                   })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SecurityPolicies/AggregatedList")
+              .setHttpMethod(HttpMethods.GET)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregatedListSecurityPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/securityPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListSecurityPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListSecurityPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityPoliciesAggregatedList>newBuilder()
+                      .setDefaultInstance(SecurityPoliciesAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<DeleteSecurityPolicyRequest, Operation>
@@ -577,6 +638,10 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   private final UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable;
   private final OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationCallable;
+  private final UnaryCallable<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<AggregatedListSecurityPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteSecurityPolicyRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteSecurityPolicyRequest, Operation, Operation>
       deleteOperationCallable;
@@ -651,6 +716,13 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
             .setMethodDescriptor(addRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteSecurityPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -713,6 +785,12 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
             settings.addRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -784,6 +862,7 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addRuleMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getRuleMethodDescriptor);
@@ -805,6 +884,18 @@ public class HttpJsonSecurityPoliciesStub extends SecurityPoliciesStub {
   public OperationCallable<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationCallable() {
     return addRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListSecurityPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

@@ -27,6 +27,61 @@ public interface UrlMapsValidateRequestOrBuilder
    *
    *
    * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @return A list containing the loadBalancingSchemes.
+   */
+  java.util.List<java.lang.String> getLoadBalancingSchemesList();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @return The count of loadBalancingSchemes.
+   */
+  int getLoadBalancingSchemesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The loadBalancingSchemes at the given index.
+   */
+  java.lang.String getLoadBalancingSchemes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the loadBalancingSchemes at the given index.
+   */
+  com.google.protobuf.ByteString getLoadBalancingSchemesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Content of the UrlMap to be validated.
    * </pre>
    *

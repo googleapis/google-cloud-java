@@ -688,6 +688,7 @@ public class InstancesClientTest {
             .setName("name3373707")
             .addAllNetworkInterfaces(new ArrayList<NetworkInterface>())
             .setNetworkPerformanceConfig(NetworkPerformanceConfig.newBuilder().build())
+            .setParams(InstanceParams.newBuilder().build())
             .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
             .addAllResourcePolicies(new ArrayList<String>())

@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SecurityPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -79,6 +80,15 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
   public OperationCallSettings<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationSettings() {
     return ((SecurityPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListSecurityPoliciesRequest,
+          SecurityPoliciesAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((SecurityPoliciesStubSettings) getStubSettings()).aggregatedListSettings();
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -268,6 +278,15 @@ public class SecurityPoliciesSettings extends ClientSettings<SecurityPoliciesSet
     public OperationCallSettings.Builder<AddRuleSecurityPolicyRequest, Operation, Operation>
         addRuleOperationSettings() {
       return getStubSettingsBuilder().addRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListSecurityPoliciesRequest,
+            SecurityPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

@@ -86,21 +86,21 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               name_ = s;
               break;
             }
           case 478484618:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               nicType_ = s;
               break;
             }
@@ -128,17 +128,23 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                       com.google.cloud.compute.v1.AliasIpRange.parser(), extensionRegistry));
               break;
             }
+          case 1630670056:
+            {
+              bitField0_ |= 0x00000002;
+              internalIpv6PrefixLength_ = input.readInt32();
+              break;
+            }
           case 1657455690:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               networkIP_ = s;
               break;
             }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               network_ = s;
               break;
             }
@@ -152,30 +158,30 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           case -1832345742:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               subnetwork_ = s;
               break;
             }
           case -1562456862:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               ipv6Address_ = s;
               break;
             }
           case -887696246:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               stackType_ = s;
               break;
             }
           case -427190414:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 ipv6AccessConfigs_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.AccessConfig>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               ipv6AccessConfigs_.add(
                   input.readMessage(
@@ -184,14 +190,14 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             }
           case -265297144:
             {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               queueCount_ = input.readInt32();
               break;
             }
           case -257698070:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               ipv6AccessType_ = s;
               break;
             }
@@ -215,7 +221,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         aliasIpRanges_ = java.util.Collections.unmodifiableList(aliasIpRanges_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         ipv6AccessConfigs_ = java.util.Collections.unmodifiableList(ipv6AccessConfigs_);
       }
       this.unknownFields = unknownFields.build();
@@ -272,11 +278,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IPv6 access type not set. Means this network interface hasn't been turned on IPv6 yet.
+     * This network interface can have internal IPv6.
      * </pre>
      *
-     * <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code>
+     * <code>INTERNAL = 279295677;</code>
      */
+    INTERNAL(279295677),
+    /** <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code> */
     UNSPECIFIED_IPV6_ACCESS_TYPE(313080613),
     UNRECOGNIZED(-1),
     ;
@@ -305,11 +313,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IPv6 access type not set. Means this network interface hasn't been turned on IPv6 yet.
+     * This network interface can have internal IPv6.
      * </pre>
      *
-     * <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code>
+     * <code>INTERNAL = 279295677;</code>
      */
+    public static final int INTERNAL_VALUE = 279295677;
+    /** <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code> */
     public static final int UNSPECIFIED_IPV6_ACCESS_TYPE_VALUE = 313080613;
 
     public final int getNumber() {
@@ -340,6 +350,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_IPV6_ACCESS_TYPE;
         case 35607499:
           return EXTERNAL;
+        case 279295677:
+          return INTERNAL;
         case 313080613:
           return UNSPECIFIED_IPV6_ACCESS_TYPE;
         default:
@@ -940,6 +952,39 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int INTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER = 203833757;
+  private int internalIpv6PrefixLength_;
+  /**
+   *
+   *
+   * <pre>
+   * The prefix length of the primary internal IPv6 range.
+   * </pre>
+   *
+   * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+   *
+   * @return Whether the internalIpv6PrefixLength field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalIpv6PrefixLength() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The prefix length of the primary internal IPv6 range.
+   * </pre>
+   *
+   * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+   *
+   * @return The internalIpv6PrefixLength.
+   */
+  @java.lang.Override
+  public int getInternalIpv6PrefixLength() {
+    return internalIpv6PrefixLength_;
+  }
+
   public static final int IPV6_ACCESS_CONFIGS_FIELD_NUMBER = 483472110;
   private java.util.List<com.google.cloud.compute.v1.AccessConfig> ipv6AccessConfigs_;
   /**
@@ -1026,7 +1071,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpv6AccessType() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -1092,7 +1137,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpv6Address() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -1156,7 +1201,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1211,7 +1256,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1220,13 +1265,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1249,7 +1294,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1284,7 +1329,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1348,7 +1393,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkIP() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1413,7 +1458,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNicType() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1479,7 +1524,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasQueueCount() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1513,7 +1558,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1579,7 +1624,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1642,13 +1687,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
@@ -1657,31 +1702,34 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < aliasIpRanges_.size(); i++) {
       output.writeMessage(165085631, aliasIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(203833757, internalIpv6PrefixLength_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207181961, networkIP_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
       output.writeMessage(483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(503708769, queueCount_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
     unknownFields.writeTo(output);
@@ -1693,13 +1741,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
@@ -1712,22 +1760,27 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               165085631, aliasIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              203833757, internalIpv6PrefixLength_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207181961, networkIP_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
@@ -1735,10 +1788,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(503708769, queueCount_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
     size += unknownFields.getSerializedSize();
@@ -1762,6 +1815,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
       if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasInternalIpv6PrefixLength() != other.hasInternalIpv6PrefixLength()) return false;
+    if (hasInternalIpv6PrefixLength()) {
+      if (getInternalIpv6PrefixLength() != other.getInternalIpv6PrefixLength()) return false;
     }
     if (!getIpv6AccessConfigsList().equals(other.getIpv6AccessConfigsList())) return false;
     if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
@@ -1826,6 +1883,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasInternalIpv6PrefixLength()) {
+      hash = (37 * hash) + INTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalIpv6PrefixLength();
     }
     if (getIpv6AccessConfigsCount() > 0) {
       hash = (37 * hash) + IPV6_ACCESS_CONFIGS_FIELD_NUMBER;
@@ -2034,32 +2095,34 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
+      internalIpv6PrefixLength_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (ipv6AccessConfigsBuilder_ == null) {
         ipv6AccessConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         ipv6AccessConfigsBuilder_.clear();
       }
       ipv6AccessType_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
-      ipv6Address_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      kind_ = "";
+      ipv6Address_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      network_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      networkIP_ = "";
+      network_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      nicType_ = "";
+      networkIP_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      queueCount_ = 0;
+      nicType_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      stackType_ = "";
+      queueCount_ = 0;
       bitField0_ = (bitField0_ & ~0x00001000);
-      subnetwork_ = "";
+      stackType_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
+      subnetwork_ = "";
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -2111,53 +2174,57 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       result.fingerprint_ = fingerprint_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.internalIpv6PrefixLength_ = internalIpv6PrefixLength_;
+        to_bitField0_ |= 0x00000002;
+      }
       if (ipv6AccessConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           ipv6AccessConfigs_ = java.util.Collections.unmodifiableList(ipv6AccessConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.ipv6AccessConfigs_ = ipv6AccessConfigs_;
       } else {
         result.ipv6AccessConfigs_ = ipv6AccessConfigsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        to_bitField0_ |= 0x00000002;
-      }
-      result.ipv6AccessType_ = ipv6AccessType_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.ipv6Address_ = ipv6Address_;
+      result.ipv6AccessType_ = ipv6AccessType_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
-      result.kind_ = kind_;
+      result.ipv6Address_ = ipv6Address_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.name_ = name_;
+      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000020;
       }
-      result.network_ = network_;
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.networkIP_ = networkIP_;
+      result.network_ = network_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.nicType_ = nicType_;
+      result.networkIP_ = networkIP_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.queueCount_ = queueCount_;
         to_bitField0_ |= 0x00000100;
       }
+      result.nicType_ = nicType_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.queueCount_ = queueCount_;
         to_bitField0_ |= 0x00000200;
       }
-      result.stackType_ = stackType_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000400;
+      }
+      result.stackType_ = stackType_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        to_bitField0_ |= 0x00000800;
       }
       result.subnetwork_ = subnetwork_;
       result.bitField0_ = to_bitField0_;
@@ -2269,11 +2336,14 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
+      if (other.hasInternalIpv6PrefixLength()) {
+        setInternalIpv6PrefixLength(other.getInternalIpv6PrefixLength());
+      }
       if (ipv6AccessConfigsBuilder_ == null) {
         if (!other.ipv6AccessConfigs_.isEmpty()) {
           if (ipv6AccessConfigs_.isEmpty()) {
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureIpv6AccessConfigsIsMutable();
             ipv6AccessConfigs_.addAll(other.ipv6AccessConfigs_);
@@ -2286,7 +2356,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             ipv6AccessConfigsBuilder_.dispose();
             ipv6AccessConfigsBuilder_ = null;
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             ipv6AccessConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIpv6AccessConfigsFieldBuilder()
@@ -2297,37 +2367,37 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         }
       }
       if (other.hasIpv6AccessType()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         ipv6AccessType_ = other.ipv6AccessType_;
         onChanged();
       }
       if (other.hasIpv6Address()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         ipv6Address_ = other.ipv6Address_;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         network_ = other.network_;
         onChanged();
       }
       if (other.hasNetworkIP()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         networkIP_ = other.networkIP_;
         onChanged();
       }
       if (other.hasNicType()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         nicType_ = other.nicType_;
         onChanged();
       }
@@ -2335,12 +2405,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         setQueueCount(other.getQueueCount());
       }
       if (other.hasStackType()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         stackType_ = other.stackType_;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
@@ -3203,14 +3273,81 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int internalIpv6PrefixLength_;
+    /**
+     *
+     *
+     * <pre>
+     * The prefix length of the primary internal IPv6 range.
+     * </pre>
+     *
+     * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+     *
+     * @return Whether the internalIpv6PrefixLength field is set.
+     */
+    @java.lang.Override
+    public boolean hasInternalIpv6PrefixLength() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prefix length of the primary internal IPv6 range.
+     * </pre>
+     *
+     * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+     *
+     * @return The internalIpv6PrefixLength.
+     */
+    @java.lang.Override
+    public int getInternalIpv6PrefixLength() {
+      return internalIpv6PrefixLength_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prefix length of the primary internal IPv6 range.
+     * </pre>
+     *
+     * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+     *
+     * @param value The internalIpv6PrefixLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalIpv6PrefixLength(int value) {
+      bitField0_ |= 0x00000008;
+      internalIpv6PrefixLength_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prefix length of the primary internal IPv6 range.
+     * </pre>
+     *
+     * <code>optional int32 internal_ipv6_prefix_length = 203833757;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalIpv6PrefixLength() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalIpv6PrefixLength_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.AccessConfig> ipv6AccessConfigs_ =
         java.util.Collections.emptyList();
 
     private void ensureIpv6AccessConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         ipv6AccessConfigs_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AccessConfig>(ipv6AccessConfigs_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3426,7 +3563,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder clearIpv6AccessConfigs() {
       if (ipv6AccessConfigsBuilder_ == null) {
         ipv6AccessConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         ipv6AccessConfigsBuilder_.clear();
@@ -3550,7 +3687,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.AccessConfig.Builder,
                 com.google.cloud.compute.v1.AccessConfigOrBuilder>(
                 ipv6AccessConfigs_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         ipv6AccessConfigs_ = null;
@@ -3572,7 +3709,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6AccessType field is set.
      */
     public boolean hasIpv6AccessType() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3637,7 +3774,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       ipv6AccessType_ = value;
       onChanged();
       return this;
@@ -3655,7 +3792,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpv6AccessType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
       onChanged();
       return this;
@@ -3678,7 +3815,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       ipv6AccessType_ = value;
       onChanged();
       return this;
@@ -3697,7 +3834,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6Address field is set.
      */
     public boolean hasIpv6Address() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3759,7 +3896,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       ipv6Address_ = value;
       onChanged();
       return this;
@@ -3776,7 +3913,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpv6Address() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       ipv6Address_ = getDefaultInstance().getIpv6Address();
       onChanged();
       return this;
@@ -3798,7 +3935,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       ipv6Address_ = value;
       onChanged();
       return this;
@@ -3817,7 +3954,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3879,7 +4016,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -3896,7 +4033,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3918,7 +4055,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -3929,7 +4066,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3937,13 +4074,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3965,7 +4102,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3987,7 +4124,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3999,7 +4136,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -4008,7 +4145,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4016,7 +4153,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4025,7 +4162,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For network devices, these are eth0, eth1, etc.
+     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4038,7 +4175,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -4057,7 +4194,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4119,7 +4256,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       network_ = value;
       onChanged();
       return this;
@@ -4136,7 +4273,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -4158,7 +4295,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       network_ = value;
       onChanged();
       return this;
@@ -4177,7 +4314,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkIP field is set.
      */
     public boolean hasNetworkIP() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4239,7 +4376,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       networkIP_ = value;
       onChanged();
       return this;
@@ -4256,7 +4393,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNetworkIP() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       networkIP_ = getDefaultInstance().getNetworkIP();
       onChanged();
       return this;
@@ -4278,7 +4415,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       networkIP_ = value;
       onChanged();
       return this;
@@ -4298,7 +4435,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the nicType field is set.
      */
     public boolean hasNicType() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4363,7 +4500,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       nicType_ = value;
       onChanged();
       return this;
@@ -4381,7 +4518,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNicType() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       nicType_ = getDefaultInstance().getNicType();
       onChanged();
       return this;
@@ -4404,7 +4541,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       nicType_ = value;
       onChanged();
       return this;
@@ -4424,7 +4561,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasQueueCount() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4454,7 +4591,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setQueueCount(int value) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       queueCount_ = value;
       onChanged();
       return this;
@@ -4471,7 +4608,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQueueCount() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       queueCount_ = 0;
       onChanged();
       return this;
@@ -4491,7 +4628,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4556,7 +4693,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       stackType_ = value;
       onChanged();
       return this;
@@ -4574,7 +4711,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStackType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       stackType_ = getDefaultInstance().getStackType();
       onChanged();
       return this;
@@ -4597,7 +4734,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       stackType_ = value;
       onChanged();
       return this;
@@ -4616,7 +4753,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4678,7 +4815,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -4695,7 +4832,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -4717,7 +4854,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       subnetwork_ = value;
       onChanged();
       return this;

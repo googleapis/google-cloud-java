@@ -159,7 +159,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
    * </pre>
    *
    * Protobuf enum {@code
@@ -178,6 +178,10 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     UNDEFINED_TYPE(0),
     /** <code>HIERARCHY = 69902869;</code> */
     HIERARCHY(69902869),
+    /** <code>NETWORK = 413984270;</code> */
+    NETWORK(413984270),
+    /** <code>NETWORK_REGIONAL = 190804272;</code> */
+    NETWORK_REGIONAL(190804272),
     /** <code>UNSPECIFIED = 526786327;</code> */
     UNSPECIFIED(526786327),
     UNRECOGNIZED(-1),
@@ -195,6 +199,10 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
     public static final int UNDEFINED_TYPE_VALUE = 0;
     /** <code>HIERARCHY = 69902869;</code> */
     public static final int HIERARCHY_VALUE = 69902869;
+    /** <code>NETWORK = 413984270;</code> */
+    public static final int NETWORK_VALUE = 413984270;
+    /** <code>NETWORK_REGIONAL = 190804272;</code> */
+    public static final int NETWORK_REGIONAL_VALUE = 190804272;
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
 
@@ -226,6 +234,10 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
           return UNDEFINED_TYPE;
         case 69902869:
           return HIERARCHY;
+        case 413984270:
+          return NETWORK;
+        case 190804272:
+          return NETWORK_REGIONAL;
         case 526786327:
           return UNSPECIFIED;
         default:
@@ -552,7 +564,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -568,7 +580,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -592,7 +604,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1840,7 +1852,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1855,7 +1867,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1878,7 +1890,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1901,7 +1913,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1923,7 +1935,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1941,7 +1953,7 @@ public final class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

@@ -223,6 +223,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * STOPPING
+   * SUSPENDING
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ManagedInstance.CurrentAction}
@@ -318,6 +321,26 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>RESTARTING = 320534387;</code>
      */
     RESTARTING(320534387),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is resuming this instance.
+     * </pre>
+     *
+     * <code>RESUMING = 446856618;</code>
+     */
+    RESUMING(446856618),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is starting this instance.
+     * </pre>
+     *
+     * <code>STARTING = 488820800;</code>
+     */
+    STARTING(488820800),
     /**
      *
      *
@@ -425,6 +448,26 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * The managed instance group is resuming this instance.
+     * </pre>
+     *
+     * <code>RESUMING = 446856618;</code>
+     */
+    public static final int RESUMING_VALUE = 446856618;
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is starting this instance.
+     * </pre>
+     *
+     * <code>STARTING = 488820800;</code>
+     */
+    public static final int STARTING_VALUE = 488820800;
+    /**
+     *
+     *
+     * <pre>
      * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
      * </pre>
      *
@@ -474,6 +517,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           return REFRESHING;
         case 320534387:
           return RESTARTING;
+        case 446856618:
+          return RESUMING;
+        case 488820800:
+          return STARTING;
         case 16982185:
           return VERIFYING;
         default:
@@ -534,6 +581,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * STOPPING
+   * SUSPENDING
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ManagedInstance.InstanceStatus}
@@ -609,15 +659,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>STOPPED = 444276141;</code>
      */
     STOPPED(444276141),
-    /**
-     *
-     *
-     * <pre>
-     * The instance is currently stopping (either being deleted or killed).
-     * </pre>
-     *
-     * <code>STOPPING = 350791796;</code>
-     */
+    /** <code>STOPPING = 350791796;</code> */
     STOPPING(350791796),
     /**
      *
@@ -629,15 +671,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>SUSPENDED = 51223995;</code>
      */
     SUSPENDED(51223995),
-    /**
-     *
-     *
-     * <pre>
-     * The instance is suspending.
-     * </pre>
-     *
-     * <code>SUSPENDING = 514206246;</code>
-     */
+    /** <code>SUSPENDING = 514206246;</code> */
     SUSPENDING(514206246),
     /**
      *
@@ -722,15 +756,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>STOPPED = 444276141;</code>
      */
     public static final int STOPPED_VALUE = 444276141;
-    /**
-     *
-     *
-     * <pre>
-     * The instance is currently stopping (either being deleted or killed).
-     * </pre>
-     *
-     * <code>STOPPING = 350791796;</code>
-     */
+    /** <code>STOPPING = 350791796;</code> */
     public static final int STOPPING_VALUE = 350791796;
     /**
      *
@@ -742,15 +768,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>SUSPENDED = 51223995;</code>
      */
     public static final int SUSPENDED_VALUE = 51223995;
-    /**
-     *
-     *
-     * <pre>
-     * The instance is suspending.
-     * </pre>
-     *
-     * <code>SUSPENDING = 514206246;</code>
-     */
+    /** <code>SUSPENDING = 514206246;</code> */
     public static final int SUSPENDING_VALUE = 514206246;
     /**
      *
@@ -1116,6 +1134,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>
@@ -1131,6 +1150,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>
@@ -1154,6 +1174,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_status = 174577372;</code>
@@ -2701,6 +2722,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>
@@ -2715,6 +2737,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>
@@ -2737,6 +2760,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>
@@ -2759,6 +2783,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>
@@ -2780,6 +2805,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>
@@ -2797,6 +2823,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_status = 174577372;</code>

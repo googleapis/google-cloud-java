@@ -52,6 +52,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     nextHopNetwork_ = "";
     nextHopPeering_ = "";
     nextHopVpnTunnel_ = "";
+    routeStatus_ = "";
     routeType_ = "";
     selfLink_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -111,9 +112,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           case 28418250:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00040000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00040000;
+                mutable_bitField0_ |= 0x00080000;
               }
               tags_.add(s);
               break;
@@ -167,7 +168,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           case -1287857278:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00010000;
               routeType_ = s;
               break;
             }
@@ -199,6 +200,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
               nextHopPeering_ = s;
               break;
             }
+          case -949668542:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00008000;
+              routeStatus_ = s;
+              break;
+            }
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -215,15 +223,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00020000;
               selfLink_ = s;
               break;
             }
           case -310238534:
             {
-              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
                 warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
-                mutable_bitField0_ |= 0x00080000;
+                mutable_bitField0_ |= 0x00100000;
               }
               warnings_.add(
                   input.readMessage(
@@ -251,13 +259,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00040000) != 0)) {
+      if (((mutable_bitField0_ & 0x00080000) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         asPaths_ = java.util.Collections.unmodifiableList(asPaths_);
       }
-      if (((mutable_bitField0_ & 0x00080000) != 0)) {
+      if (((mutable_bitField0_ & 0x00100000) != 0)) {
         warnings_ = java.util.Collections.unmodifiableList(warnings_);
       }
       this.unknownFields = unknownFields.build();
@@ -278,6 +286,207 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.Route.class,
             com.google.cloud.compute.v1.Route.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Route.RouteStatus}
+   */
+  public enum RouteStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ROUTE_STATUS = 0;</code>
+     */
+    UNDEFINED_ROUTE_STATUS(0),
+    /**
+     *
+     *
+     * <pre>
+     * This route is processed and active.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
+    ACTIVE(314733318),
+    /**
+     *
+     *
+     * <pre>
+     * The route is dropped due to the VPC exceeding the dynamic route limit. For dynamic route limit, please refer to the Learned route example
+     * </pre>
+     *
+     * <code>DROPPED = 496235424;</code>
+     */
+    DROPPED(496235424),
+    /**
+     *
+     *
+     * <pre>
+     * This route is processed but inactive due to failure from the backend. The backend may have rejected the route
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
+    INACTIVE(270421099),
+    /**
+     *
+     *
+     * <pre>
+     * This route is being processed internally. The status will change once processed.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    PENDING(35394935),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ROUTE_STATUS = 0;</code>
+     */
+    public static final int UNDEFINED_ROUTE_STATUS_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This route is processed and active.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
+    public static final int ACTIVE_VALUE = 314733318;
+    /**
+     *
+     *
+     * <pre>
+     * The route is dropped due to the VPC exceeding the dynamic route limit. For dynamic route limit, please refer to the Learned route example
+     * </pre>
+     *
+     * <code>DROPPED = 496235424;</code>
+     */
+    public static final int DROPPED_VALUE = 496235424;
+    /**
+     *
+     *
+     * <pre>
+     * This route is processed but inactive due to failure from the backend. The backend may have rejected the route
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
+    public static final int INACTIVE_VALUE = 270421099;
+    /**
+     *
+     *
+     * <pre>
+     * This route is being processed internally. The status will change once processed.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    public static final int PENDING_VALUE = 35394935;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RouteStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RouteStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ROUTE_STATUS;
+        case 314733318:
+          return ACTIVE;
+        case 496235424:
+          return DROPPED;
+        case 270421099:
+          return INACTIVE;
+        case 35394935:
+          return PENDING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RouteStatus> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RouteStatus> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RouteStatus>() {
+          public RouteStatus findValueByNumber(int number) {
+            return RouteStatus.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RouteStatus[] VALUES = values();
+
+    public static RouteStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RouteStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Route.RouteStatus)
   }
 
   /**
@@ -393,7 +602,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final RouteType[] VALUES = values();
@@ -1385,6 +1594,73 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     return priority_;
   }
 
+  public static final int ROUTE_STATUS_FIELD_NUMBER = 418162344;
+  private volatile java.lang.Object routeStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return Whether the routeStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasRouteStatus() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return The routeStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getRouteStatus() {
+    java.lang.Object ref = routeStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return The bytes for routeStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRouteStatusBytes() {
+    java.lang.Object ref = routeStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      routeStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROUTE_TYPE_FIELD_NUMBER = 375888752;
   private volatile java.lang.Object routeType_;
   /**
@@ -1401,7 +1677,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouteType() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1467,7 +1743,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1690,7 +1966,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 262295788, nextHopNetwork_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1705,13 +1981,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 412682750, nextHopPeering_);
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 418162344, routeStatus_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeUInt32(445151652, priority_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < warnings_.size(); i++) {
@@ -1765,7 +2044,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(262295788, nextHopNetwork_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1780,13 +2059,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(412682750, nextHopPeering_);
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418162344, routeStatus_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(445151652, priority_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < warnings_.size(); i++) {
@@ -1872,6 +2154,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (hasPriority()) {
       if (getPriority() != other.getPriority()) return false;
     }
+    if (hasRouteStatus() != other.hasRouteStatus()) return false;
+    if (hasRouteStatus()) {
+      if (!getRouteStatus().equals(other.getRouteStatus())) return false;
+    }
     if (hasRouteType() != other.hasRouteType()) return false;
     if (hasRouteType()) {
       if (!getRouteType().equals(other.getRouteType())) return false;
@@ -1956,6 +2242,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (hasPriority()) {
       hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + getPriority();
+    }
+    if (hasRouteStatus()) {
+      hash = (37 * hash) + ROUTE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRouteStatus().hashCode();
     }
     if (hasRouteType()) {
       hash = (37 * hash) + ROUTE_TYPE_FIELD_NUMBER;
@@ -2156,15 +2446,17 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00004000);
       priority_ = 0;
       bitField0_ = (bitField0_ & ~0x00008000);
-      routeType_ = "";
+      routeStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
-      selfLink_ = "";
+      routeType_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00080000);
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
       } else {
         warningsBuilder_.clear();
       }
@@ -2268,20 +2560,24 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00010000) != 0)) {
         to_bitField0_ |= 0x00008000;
       }
-      result.routeType_ = routeType_;
+      result.routeStatus_ = routeStatus_;
       if (((from_bitField0_ & 0x00020000) != 0)) {
         to_bitField0_ |= 0x00010000;
       }
+      result.routeType_ = routeType_;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        to_bitField0_ |= 0x00020000;
+      }
       result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       }
       result.tags_ = tags_;
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.warnings_ = warnings_;
       } else {
@@ -2435,20 +2731,25 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
-      if (other.hasRouteType()) {
+      if (other.hasRouteStatus()) {
         bitField0_ |= 0x00010000;
+        routeStatus_ = other.routeStatus_;
+        onChanged();
+      }
+      if (other.hasRouteType()) {
+        bitField0_ |= 0x00020000;
         routeType_ = other.routeType_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2459,7 +2760,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -2472,7 +2773,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -4555,6 +4856,132 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object routeStatus_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @return Whether the routeStatus field is set.
+     */
+    public boolean hasRouteStatus() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @return The routeStatus.
+     */
+    public java.lang.String getRouteStatus() {
+      java.lang.Object ref = routeStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @return The bytes for routeStatus.
+     */
+    public com.google.protobuf.ByteString getRouteStatusBytes() {
+      java.lang.Object ref = routeStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        routeStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @param value The routeStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      routeStatus_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteStatus() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      routeStatus_ = getDefaultInstance().getRouteStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The status of the route.
+     * Check the RouteStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_status = 418162344;</code>
+     *
+     * @param value The bytes for routeStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      routeStatus_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object routeType_ = "";
     /**
      *
@@ -4569,7 +4996,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routeType field is set.
      */
     public boolean hasRouteType() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4634,7 +5061,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       routeType_ = value;
       onChanged();
       return this;
@@ -4652,7 +5079,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRouteType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       routeType_ = getDefaultInstance().getRouteType();
       onChanged();
       return this;
@@ -4675,7 +5102,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       routeType_ = value;
       onChanged();
       return this;
@@ -4694,7 +5121,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4756,7 +5183,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4773,7 +5200,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4795,7 +5222,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4805,9 +5232,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
       }
     }
     /**
@@ -4942,7 +5369,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -4973,9 +5400,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -5190,7 +5617,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -5311,7 +5738,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;

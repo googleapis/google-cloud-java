@@ -610,6 +610,46 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return Whether the routeStatus field is set.
+   */
+  boolean hasRouteStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return The routeStatus.
+   */
+  java.lang.String getRouteStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The status of the route.
+   * Check the RouteStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string route_status = 418162344;</code>
+   *
+   * @return The bytes for routeStatus.
+   */
+  com.google.protobuf.ByteString getRouteStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
    * Check the RouteType enum for the list of possible values.
    * </pre>

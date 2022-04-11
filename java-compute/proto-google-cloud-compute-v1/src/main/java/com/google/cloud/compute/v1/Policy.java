@@ -374,12 +374,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public static final int IAM_OWNED_FIELD_NUMBER = 450566203;
   private boolean iamOwned_;
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return Whether the iamOwned field is set.
@@ -389,12 +383,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return The iamOwned.
@@ -1864,12 +1852,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
 
     private boolean iamOwned_;
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return Whether the iamOwned field is set.
@@ -1879,12 +1861,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return The iamOwned.
@@ -1894,12 +1870,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return iamOwned_;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool iam_owned = 450566203;</code>
      *
      * @param value The iamOwned to set.
@@ -1912,12 +1882,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool iam_owned = 450566203;</code>
      *
      * @return This builder for chaining.

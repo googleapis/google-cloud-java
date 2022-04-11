@@ -168,6 +168,249 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.UpdateInstanceRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * INVALID
+   * NO_EFFECT
+   * REFRESH
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.UpdateInstanceRequest.MinimalAction}
+   */
+  public enum MinimalAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    UNDEFINED_MINIMAL_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MINIMAL_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MinimalAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MinimalAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MINIMAL_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MinimalAction>() {
+          public MinimalAction findValueByNumber(int number) {
+            return MinimalAction.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.UpdateInstanceRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final MinimalAction[] VALUES = values();
+
+    public static MinimalAction valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MinimalAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.UpdateInstanceRequest.MinimalAction)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * INVALID
+   * NO_EFFECT
+   * REFRESH
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.UpdateInstanceRequest.MostDisruptiveAllowedAction}
+   */
+  public enum MostDisruptiveAllowedAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MostDisruptiveAllowedAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MostDisruptiveAllowedAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>() {
+              public MostDisruptiveAllowedAction findValueByNumber(int number) {
+                return MostDisruptiveAllowedAction.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.UpdateInstanceRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final MostDisruptiveAllowedAction[] VALUES = values();
+
+    public static MostDisruptiveAllowedAction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MostDisruptiveAllowedAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.UpdateInstanceRequest.MostDisruptiveAllowedAction)
+  }
+
   private int bitField0_;
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
@@ -279,6 +522,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -294,6 +538,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -317,6 +562,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -343,6 +589,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -358,6 +605,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -381,6 +629,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1350,6 +1599,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1364,6 +1614,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1386,6 +1637,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1408,6 +1660,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1429,6 +1682,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1446,6 +1700,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1470,6 +1725,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1484,6 +1740,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1506,6 +1763,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1528,6 +1786,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1549,6 +1808,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1566,6 +1826,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>

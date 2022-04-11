@@ -142,6 +142,251 @@ public final class InstanceGroupManagersApplyUpdatesRequest
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NONE
+   * REFRESH
+   * REPLACE
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.MinimalAction}
+   */
+  public enum MinimalAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    UNDEFINED_MINIMAL_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MINIMAL_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MinimalAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MinimalAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MINIMAL_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MinimalAction>() {
+          public MinimalAction findValueByNumber(int number) {
+            return MinimalAction.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final MinimalAction[] VALUES = values();
+
+    public static MinimalAction valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MinimalAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.MinimalAction)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NONE
+   * REFRESH
+   * REPLACE
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.MostDisruptiveAllowedAction}
+   */
+  public enum MostDisruptiveAllowedAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MostDisruptiveAllowedAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MostDisruptiveAllowedAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>() {
+              public MostDisruptiveAllowedAction findValueByNumber(int number) {
+                return MostDisruptiveAllowedAction.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final MostDisruptiveAllowedAction[] VALUES = values();
+
+    public static MostDisruptiveAllowedAction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MostDisruptiveAllowedAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.MostDisruptiveAllowedAction)
+  }
+
   private int bitField0_;
   public static final int ALL_INSTANCES_FIELD_NUMBER = 403676512;
   private boolean allInstances_;
@@ -244,6 +489,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -259,6 +505,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -282,6 +529,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -308,6 +556,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -323,6 +572,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -346,6 +596,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    * <pre>
    * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1032,6 +1283,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1046,6 +1298,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1068,6 +1321,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1090,6 +1344,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1111,6 +1366,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1128,6 +1384,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The minimal action that you want to perform on each instance during the update: - REPLACE: At minimum, delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1152,6 +1409,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1166,6 +1424,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1188,6 +1447,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1210,6 +1470,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1231,6 +1492,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1248,6 +1510,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      * <pre>
      * The most disruptive action that you want to perform on each instance during the update: - REPLACE: Delete the instance and create it again. - RESTART: Stop the instance and start it again. - REFRESH: Do not stop the instance. - NONE: Do not disrupt the instance at all. By default, the most disruptive allowed action is REPLACE. If your update requires a more disruptive action than you set with this flag, the update request will fail.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>

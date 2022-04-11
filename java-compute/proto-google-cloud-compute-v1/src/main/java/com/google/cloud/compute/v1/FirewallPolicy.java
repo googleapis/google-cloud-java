@@ -46,6 +46,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     name_ = "";
     parent_ = "";
+    region_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
     selfLinkWithId_ = "";
@@ -119,7 +120,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
           case 356167698:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               selfLinkWithId_ = s;
               break;
             }
@@ -132,13 +133,20 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case 870991802:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               rules_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.FirewallPolicyRule.parser(), extensionRegistry));
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              region_ = s;
               break;
             }
           case 1877428002:
@@ -150,7 +158,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             }
           case -1188231000:
             {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               ruleTupleCount_ = input.readInt32();
               break;
             }
@@ -164,14 +172,14 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               selfLink_ = s;
               break;
             }
           case -358554766:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               shortName_ = s;
               break;
             }
@@ -203,7 +211,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -787,6 +795,70 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REGION_FIELD_NUMBER = 138946292;
+  private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RULE_TUPLE_COUNT_FIELD_NUMBER = 388342037;
   private int ruleTupleCount_;
   /**
@@ -802,7 +874,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRuleTupleCount() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -904,7 +976,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -968,7 +1040,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1032,7 +1104,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShortName() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1110,7 +1182,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1119,19 +1191,22 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1162,7 +1237,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1171,19 +1246,22 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1238,6 +1316,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasParent() != other.hasParent()) return false;
     if (hasParent()) {
       if (!getParent().equals(other.getParent())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
     }
     if (hasRuleTupleCount() != other.hasRuleTupleCount()) return false;
     if (hasRuleTupleCount()) {
@@ -1302,6 +1384,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasParent()) {
       hash = (37 * hash) + PARENT_FIELD_NUMBER;
       hash = (53 * hash) + getParent().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (hasRuleTupleCount()) {
       hash = (37 * hash) + RULE_TUPLE_COUNT_FIELD_NUMBER;
@@ -1493,20 +1579,22 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       parent_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      ruleTupleCount_ = 0;
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
+      ruleTupleCount_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         rulesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
-      selfLinkWithId_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      shortName_ = "";
+      selfLinkWithId_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
+      shortName_ = "";
+      bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
 
@@ -1578,28 +1666,32 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       result.parent_ = parent_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.ruleTupleCount_ = ruleTupleCount_;
         to_bitField0_ |= 0x00000100;
       }
+      result.region_ = region_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ruleTupleCount_ = ruleTupleCount_;
+        to_bitField0_ |= 0x00000200;
+      }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000200;
-      }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000400;
       }
-      result.selfLinkWithId_ = selfLinkWithId_;
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000800;
+      }
+      result.selfLinkWithId_ = selfLinkWithId_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        to_bitField0_ |= 0x00001000;
       }
       result.shortName_ = shortName_;
       result.bitField0_ = to_bitField0_;
@@ -1717,6 +1809,11 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         parent_ = other.parent_;
         onChanged();
       }
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000200;
+        region_ = other.region_;
+        onChanged();
+      }
       if (other.hasRuleTupleCount()) {
         setRuleTupleCount(other.getRuleTupleCount());
       }
@@ -1724,7 +1821,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1737,7 +1834,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1748,17 +1845,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         selfLinkWithId_ = other.selfLinkWithId_;
         onChanged();
       }
       if (other.hasShortName()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         shortName_ = other.shortName_;
         onChanged();
       }
@@ -3078,6 +3175,126 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+
     private int ruleTupleCount_;
     /**
      *
@@ -3092,7 +3309,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRuleTupleCount() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3122,7 +3339,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRuleTupleCount(int value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       ruleTupleCount_ = value;
       onChanged();
       return this;
@@ -3139,7 +3356,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRuleTupleCount() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ruleTupleCount_ = 0;
       onChanged();
       return this;
@@ -3149,9 +3366,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(rules_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3367,7 +3584,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -3489,7 +3706,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.FirewallPolicyRule,
                 com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -3508,7 +3725,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3570,7 +3787,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3587,7 +3804,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3609,7 +3826,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3628,7 +3845,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3690,7 +3907,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLinkWithId_ = value;
       onChanged();
       return this;
@@ -3707,7 +3924,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLinkWithId() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
       onChanged();
       return this;
@@ -3729,7 +3946,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLinkWithId_ = value;
       onChanged();
       return this;
@@ -3748,7 +3965,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3810,7 +4027,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       shortName_ = value;
       onChanged();
       return this;
@@ -3827,7 +4044,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShortName() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       shortName_ = getDefaultInstance().getShortName();
       onChanged();
       return this;
@@ -3849,7 +4066,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       shortName_ = value;
       onChanged();
       return this;

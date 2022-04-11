@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SecurityPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -45,6 +46,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyRequest;
@@ -55,7 +57,9 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
+import com.google.cloud.compute.v1.SecurityPoliciesScopedList;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
@@ -64,7 +68,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -112,6 +118,11 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
   private final UnaryCallSettings<AddRuleSecurityPolicyRequest, Operation> addRuleSettings;
   private final OperationCallSettings<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationSettings;
+  private final PagedCallSettings<
+          AggregatedListSecurityPoliciesRequest,
+          SecurityPoliciesAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteSecurityPolicyRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteSecurityPolicyRequest, Operation, Operation>
       deleteOperationSettings;
@@ -136,6 +147,55 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
   private final UnaryCallSettings<RemoveRuleSecurityPolicyRequest, Operation> removeRuleSettings;
   private final OperationCallSettings<RemoveRuleSecurityPolicyRequest, Operation, Operation>
       removeRuleOperationSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListSecurityPoliciesRequest,
+          SecurityPoliciesAggregatedList,
+          Map.Entry<String, SecurityPoliciesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListSecurityPoliciesRequest,
+              SecurityPoliciesAggregatedList,
+              Map.Entry<String, SecurityPoliciesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListSecurityPoliciesRequest injectToken(
+                AggregatedListSecurityPoliciesRequest payload, String token) {
+              return AggregatedListSecurityPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListSecurityPoliciesRequest injectPageSize(
+                AggregatedListSecurityPoliciesRequest payload, int pageSize) {
+              return AggregatedListSecurityPoliciesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListSecurityPoliciesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(SecurityPoliciesAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, SecurityPoliciesScopedList>> extractResources(
+                SecurityPoliciesAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, SecurityPoliciesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListSecurityPoliciesRequest, SecurityPolicyList, SecurityPolicy>
@@ -180,6 +240,32 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListSecurityPoliciesRequest,
+          SecurityPoliciesAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListSecurityPoliciesRequest,
+              SecurityPoliciesAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+                    callable,
+                AggregatedListSecurityPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<SecurityPoliciesAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListSecurityPoliciesRequest,
+                      SecurityPoliciesAggregatedList,
+                      Map.Entry<String, SecurityPoliciesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSecurityPoliciesRequest, SecurityPolicyList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -205,6 +291,15 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
   public OperationCallSettings<AddRuleSecurityPolicyRequest, Operation, Operation>
       addRuleOperationSettings() {
     return addRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListSecurityPoliciesRequest,
+          SecurityPoliciesAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -365,6 +460,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
 
     addRuleSettings = settingsBuilder.addRuleSettings().build();
     addRuleOperationSettings = settingsBuilder.addRuleOperationSettings().build();
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -389,6 +485,11 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
         addRuleSettings;
     private final OperationCallSettings.Builder<AddRuleSecurityPolicyRequest, Operation, Operation>
         addRuleOperationSettings;
+    private final PagedCallSettings.Builder<
+            AggregatedListSecurityPoliciesRequest,
+            SecurityPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteSecurityPolicyRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteSecurityPolicyRequest, Operation, Operation>
         deleteOperationSettings;
@@ -470,6 +571,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
 
       addRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addRuleOperationSettings = OperationCallSettings.newBuilder();
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -488,6 +590,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addRuleSettings,
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               getRuleSettings,
@@ -505,6 +608,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
 
       addRuleSettings = settings.addRuleSettings.toBuilder();
       addRuleOperationSettings = settings.addRuleOperationSettings.toBuilder();
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -524,6 +628,7 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addRuleSettings,
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               getRuleSettings,
@@ -553,6 +658,11 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
           .addRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteSettings()
@@ -772,6 +882,15 @@ public class SecurityPoliciesStubSettings extends StubSettings<SecurityPoliciesS
     public OperationCallSettings.Builder<AddRuleSecurityPolicyRequest, Operation, Operation>
         addRuleOperationSettings() {
       return addRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListSecurityPoliciesRequest,
+            SecurityPoliciesAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

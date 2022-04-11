@@ -288,6 +288,43 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return Whether the ruleName field is set.
+   */
+  boolean hasRuleName();
+  /**
+   *
+   *
+   * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return The ruleName.
+   */
+  java.lang.String getRuleName();
+  /**
+   *
+   *
+   * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return The bytes for ruleName.
+   */
+  com.google.protobuf.ByteString getRuleNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Calculation of the complexity of a single firewall policy rule.
    * </pre>
    *
@@ -359,6 +396,69 @@ public interface FirewallPolicyRuleOrBuilder
    * @return The bytes of the targetResources at the given index.
    */
   com.google.protobuf.ByteString getTargetResourcesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> getTargetSecureTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getTargetSecureTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  int getTargetSecureTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+      getTargetSecureTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder getTargetSecureTagsOrBuilder(
+      int index);
 
   /**
    *

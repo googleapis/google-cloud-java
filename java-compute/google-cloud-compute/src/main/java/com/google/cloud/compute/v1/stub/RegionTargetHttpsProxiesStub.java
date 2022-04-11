@@ -26,6 +26,7 @@ import com.google.cloud.compute.v1.GetRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListRegionTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetUrlMapRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
@@ -69,6 +70,15 @@ public abstract class RegionTargetHttpsProxiesStub implements BackgroundResource
 
   public UnaryCallable<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchOperationCallable()");
+  }
+
+  public UnaryCallable<PatchRegionTargetHttpsProxyRequest, Operation> patchCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchCallable()");
   }
 
   public OperationCallable<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation, Operation>

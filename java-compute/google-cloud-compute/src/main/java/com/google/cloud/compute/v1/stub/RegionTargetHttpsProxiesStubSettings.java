@@ -49,6 +49,7 @@ import com.google.cloud.compute.v1.GetRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListRegionTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetUrlMapRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
@@ -115,6 +116,9 @@ public class RegionTargetHttpsProxiesStubSettings
   private final PagedCallSettings<
           ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchSettings;
+  private final OperationCallSettings<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationSettings;
   private final UnaryCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesSettings;
   private final OperationCallSettings<
@@ -219,6 +223,17 @@ public class RegionTargetHttpsProxiesStubSettings
           ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchSettings() {
+    return patchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return patchOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to setSslCertificates. */
@@ -328,6 +343,8 @@ public class RegionTargetHttpsProxiesStubSettings
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    patchSettings = settingsBuilder.patchSettings().build();
+    patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setSslCertificatesSettings = settingsBuilder.setSslCertificatesSettings().build();
     setSslCertificatesOperationSettings =
         settingsBuilder.setSslCertificatesOperationSettings().build();
@@ -354,6 +371,11 @@ public class RegionTargetHttpsProxiesStubSettings
     private final PagedCallSettings.Builder<
             ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<PatchRegionTargetHttpsProxyRequest, Operation>
+        patchSettings;
+    private final OperationCallSettings.Builder<
+            PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+        patchOperationSettings;
     private final UnaryCallSettings.Builder<
             SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
         setSslCertificatesSettings;
@@ -421,6 +443,8 @@ public class RegionTargetHttpsProxiesStubSettings
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchOperationSettings = OperationCallSettings.newBuilder();
       setSslCertificatesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSslCertificatesOperationSettings = OperationCallSettings.newBuilder();
       setUrlMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -432,6 +456,7 @@ public class RegionTargetHttpsProxiesStubSettings
               getSettings,
               insertSettings,
               listSettings,
+              patchSettings,
               setSslCertificatesSettings,
               setUrlMapSettings);
       initDefaults(this);
@@ -446,6 +471,8 @@ public class RegionTargetHttpsProxiesStubSettings
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      patchSettings = settings.patchSettings.toBuilder();
+      patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setSslCertificatesSettings = settings.setSslCertificatesSettings.toBuilder();
       setSslCertificatesOperationSettings =
           settings.setSslCertificatesOperationSettings.toBuilder();
@@ -458,6 +485,7 @@ public class RegionTargetHttpsProxiesStubSettings
               getSettings,
               insertSettings,
               listSettings,
+              patchSettings,
               setSslCertificatesSettings,
               setUrlMapSettings);
     }
@@ -495,6 +523,11 @@ public class RegionTargetHttpsProxiesStubSettings
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .setSslCertificatesSettings()
@@ -536,6 +569,31 @@ public class RegionTargetHttpsProxiesStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertRegionTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchRegionTargetHttpsProxyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -663,6 +721,20 @@ public class RegionTargetHttpsProxiesStubSettings
             ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchRegionTargetHttpsProxyRequest, Operation>
+        patchSettings() {
+      return patchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return patchOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setSslCertificates. */

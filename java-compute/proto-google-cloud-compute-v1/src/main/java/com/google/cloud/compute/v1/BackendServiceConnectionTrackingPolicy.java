@@ -74,16 +74,22 @@ public final class BackendServiceConnectionTrackingPolicy
           case 0:
             done = true;
             break;
-          case 199820352:
+          case 196319392:
             {
               bitField0_ |= 0x00000002;
+              enableStrongAffinity_ = input.readBool();
+              break;
+            }
+          case 199820352:
+            {
+              bitField0_ |= 0x00000004;
               idleTimeoutSec_ = input.readInt32();
               break;
             }
           case 1022062938:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               trackingMode_ = s;
               break;
             }
@@ -470,6 +476,39 @@ public final class BackendServiceConnectionTrackingPolicy
     }
   }
 
+  public static final int ENABLE_STRONG_AFFINITY_FIELD_NUMBER = 24539924;
+  private boolean enableStrongAffinity_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+   * </pre>
+   *
+   * <code>optional bool enable_strong_affinity = 24539924;</code>
+   *
+   * @return Whether the enableStrongAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableStrongAffinity() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+   * </pre>
+   *
+   * <code>optional bool enable_strong_affinity = 24539924;</code>
+   *
+   * @return The enableStrongAffinity.
+   */
+  @java.lang.Override
+  public boolean getEnableStrongAffinity() {
+    return enableStrongAffinity_;
+  }
+
   public static final int IDLE_TIMEOUT_SEC_FIELD_NUMBER = 24977544;
   private int idleTimeoutSec_;
   /**
@@ -485,7 +524,7 @@ public final class BackendServiceConnectionTrackingPolicy
    */
   @java.lang.Override
   public boolean hasIdleTimeoutSec() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -519,7 +558,7 @@ public final class BackendServiceConnectionTrackingPolicy
    */
   @java.lang.Override
   public boolean hasTrackingMode() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -585,9 +624,12 @@ public final class BackendServiceConnectionTrackingPolicy
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeInt32(24977544, idleTimeoutSec_);
+      output.writeBool(24539924, enableStrongAffinity_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(24977544, idleTimeoutSec_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 127757867, trackingMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -604,9 +646,13 @@ public final class BackendServiceConnectionTrackingPolicy
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(24977544, idleTimeoutSec_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(24539924, enableStrongAffinity_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(24977544, idleTimeoutSec_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(127757867, trackingMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -636,6 +682,10 @@ public final class BackendServiceConnectionTrackingPolicy
       if (!getConnectionPersistenceOnUnhealthyBackends()
           .equals(other.getConnectionPersistenceOnUnhealthyBackends())) return false;
     }
+    if (hasEnableStrongAffinity() != other.hasEnableStrongAffinity()) return false;
+    if (hasEnableStrongAffinity()) {
+      if (getEnableStrongAffinity() != other.getEnableStrongAffinity()) return false;
+    }
     if (hasIdleTimeoutSec() != other.hasIdleTimeoutSec()) return false;
     if (hasIdleTimeoutSec()) {
       if (getIdleTimeoutSec() != other.getIdleTimeoutSec()) return false;
@@ -658,6 +708,10 @@ public final class BackendServiceConnectionTrackingPolicy
     if (hasConnectionPersistenceOnUnhealthyBackends()) {
       hash = (37 * hash) + CONNECTION_PERSISTENCE_ON_UNHEALTHY_BACKENDS_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionPersistenceOnUnhealthyBackends().hashCode();
+    }
+    if (hasEnableStrongAffinity()) {
+      hash = (37 * hash) + ENABLE_STRONG_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStrongAffinity());
     }
     if (hasIdleTimeoutSec()) {
       hash = (37 * hash) + IDLE_TIMEOUT_SEC_FIELD_NUMBER;
@@ -817,10 +871,12 @@ public final class BackendServiceConnectionTrackingPolicy
       super.clear();
       connectionPersistenceOnUnhealthyBackends_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      idleTimeoutSec_ = 0;
+      enableStrongAffinity_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
-      trackingMode_ = "";
+      idleTimeoutSec_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
+      trackingMode_ = "";
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -857,11 +913,15 @@ public final class BackendServiceConnectionTrackingPolicy
       }
       result.connectionPersistenceOnUnhealthyBackends_ = connectionPersistenceOnUnhealthyBackends_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.idleTimeoutSec_ = idleTimeoutSec_;
+        result.enableStrongAffinity_ = enableStrongAffinity_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.idleTimeoutSec_ = idleTimeoutSec_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_bitField0_ |= 0x00000008;
       }
       result.trackingMode_ = trackingMode_;
       result.bitField0_ = to_bitField0_;
@@ -923,11 +983,14 @@ public final class BackendServiceConnectionTrackingPolicy
         connectionPersistenceOnUnhealthyBackends_ = other.connectionPersistenceOnUnhealthyBackends_;
         onChanged();
       }
+      if (other.hasEnableStrongAffinity()) {
+        setEnableStrongAffinity(other.getEnableStrongAffinity());
+      }
       if (other.hasIdleTimeoutSec()) {
         setIdleTimeoutSec(other.getIdleTimeoutSec());
       }
       if (other.hasTrackingMode()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         trackingMode_ = other.trackingMode_;
         onChanged();
       }
@@ -1092,6 +1155,73 @@ public final class BackendServiceConnectionTrackingPolicy
       return this;
     }
 
+    private boolean enableStrongAffinity_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+     * </pre>
+     *
+     * <code>optional bool enable_strong_affinity = 24539924;</code>
+     *
+     * @return Whether the enableStrongAffinity field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableStrongAffinity() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+     * </pre>
+     *
+     * <code>optional bool enable_strong_affinity = 24539924;</code>
+     *
+     * @return The enableStrongAffinity.
+     */
+    @java.lang.Override
+    public boolean getEnableStrongAffinity() {
+      return enableStrongAffinity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+     * </pre>
+     *
+     * <code>optional bool enable_strong_affinity = 24539924;</code>
+     *
+     * @param value The enableStrongAffinity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableStrongAffinity(boolean value) {
+      bitField0_ |= 0x00000002;
+      enableStrongAffinity_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable Strong Session Affinity for Network Load Balancing. This option is not available publicly.
+     * </pre>
+     *
+     * <code>optional bool enable_strong_affinity = 24539924;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableStrongAffinity() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      enableStrongAffinity_ = false;
+      onChanged();
+      return this;
+    }
+
     private int idleTimeoutSec_;
     /**
      *
@@ -1106,7 +1236,7 @@ public final class BackendServiceConnectionTrackingPolicy
      */
     @java.lang.Override
     public boolean hasIdleTimeoutSec() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1136,7 +1266,7 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder setIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       idleTimeoutSec_ = value;
       onChanged();
       return this;
@@ -1153,7 +1283,7 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder clearIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       idleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -1173,7 +1303,7 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return Whether the trackingMode field is set.
      */
     public boolean hasTrackingMode() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1238,7 +1368,7 @@ public final class BackendServiceConnectionTrackingPolicy
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       trackingMode_ = value;
       onChanged();
       return this;
@@ -1256,7 +1386,7 @@ public final class BackendServiceConnectionTrackingPolicy
      * @return This builder for chaining.
      */
     public Builder clearTrackingMode() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       trackingMode_ = getDefaultInstance().getTrackingMode();
       onChanged();
       return this;
@@ -1279,7 +1409,7 @@ public final class BackendServiceConnectionTrackingPolicy
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       trackingMode_ = value;
       onChanged();
       return this;

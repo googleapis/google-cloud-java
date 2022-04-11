@@ -48,6 +48,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     kind_ = "";
     loadBalancingScheme_ = "";
+    localityLbPolicies_ = java.util.Collections.emptyList();
     localityLbPolicy_ = "";
     name_ = "";
     network_ = "";
@@ -239,6 +240,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x02000000;
               region_ = s;
+              break;
+            }
+          case 1127860458:
+            {
+              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
+                localityLbPolicies_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1
+                            .BackendServiceLocalityLoadBalancingPolicyConfig>();
+                mutable_bitField0_ |= 0x00100000;
+              }
+              localityLbPolicies_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig
+                          .parser(),
+                      extensionRegistry));
               break;
             }
           case 1151959754:
@@ -481,6 +498,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000100) != 0)) {
         customRequestHeaders_ = customRequestHeaders_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00100000) != 0)) {
+        localityLbPolicies_ = java.util.Collections.unmodifiableList(localityLbPolicies_);
       }
       if (((mutable_bitField0_ & 0x00000200) != 0)) {
         customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
@@ -2619,6 +2639,92 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LOCALITY_LB_POLICIES_FIELD_NUMBER = 140982557;
+  private java.util.List<
+          com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
+      localityLbPolicies_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
+      getLocalityLbPoliciesList() {
+    return localityLbPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>
+      getLocalityLbPoliciesOrBuilderList() {
+    return localityLbPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+   * </code>
+   */
+  @java.lang.Override
+  public int getLocalityLbPoliciesCount() {
+    return localityLbPolicies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig
+      getLocalityLbPolicies(int index) {
+    return localityLbPolicies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
+      getLocalityLbPoliciesOrBuilder(int index) {
+    return localityLbPolicies_.get(index);
+  }
+
   public static final int LOCALITY_LB_POLICY_FIELD_NUMBER = 131431487;
   private volatile java.lang.Object localityLbPolicy_;
   /**
@@ -3473,7 +3579,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
    * </pre>
    *
    * <code>optional int32 timeout_sec = 79994995;</code>
@@ -3488,7 +3594,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+   * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
    * </pre>
    *
    * <code>optional int32 timeout_sec = 79994995;</code>
@@ -3562,6 +3668,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    for (int i = 0; i < localityLbPolicies_.size(); i++) {
+      output.writeMessage(140982557, localityLbPolicies_.get(i));
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(143994969, getConnectionTrackingPolicy());
@@ -3692,6 +3801,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    for (int i = 0; i < localityLbPolicies_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              140982557, localityLbPolicies_.get(i));
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
@@ -3858,6 +3972,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasLoadBalancingScheme()) {
       if (!getLoadBalancingScheme().equals(other.getLoadBalancingScheme())) return false;
     }
+    if (!getLocalityLbPoliciesList().equals(other.getLocalityLbPoliciesList())) return false;
     if (hasLocalityLbPolicy() != other.hasLocalityLbPolicy()) return false;
     if (hasLocalityLbPolicy()) {
       if (!getLocalityLbPolicy().equals(other.getLocalityLbPolicy())) return false;
@@ -4012,6 +4127,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasLoadBalancingScheme()) {
       hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
       hash = (53 * hash) + getLoadBalancingScheme().hashCode();
+    }
+    if (getLocalityLbPoliciesCount() > 0) {
+      hash = (37 * hash) + LOCALITY_LB_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalityLbPoliciesList().hashCode();
     }
     if (hasLocalityLbPolicy()) {
       hash = (37 * hash) + LOCALITY_LB_POLICY_FIELD_NUMBER;
@@ -4225,6 +4344,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         getConsistentHashFieldBuilder();
         getFailoverPolicyFieldBuilder();
         getIapFieldBuilder();
+        getLocalityLbPoliciesFieldBuilder();
         getLogConfigFieldBuilder();
         getMaxStreamDurationFieldBuilder();
         getOutlierDetectionFieldBuilder();
@@ -4308,58 +4428,64 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00040000);
       loadBalancingScheme_ = "";
       bitField0_ = (bitField0_ & ~0x00080000);
+      if (localityLbPoliciesBuilder_ == null) {
+        localityLbPolicies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+      } else {
+        localityLbPoliciesBuilder_.clear();
+      }
       localityLbPolicy_ = "";
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       if (maxStreamDurationBuilder_ == null) {
         maxStreamDuration_ = null;
       } else {
         maxStreamDurationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
-      name_ = "";
       bitField0_ = (bitField0_ & ~0x00800000);
-      network_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x01000000);
+      network_ = "";
+      bitField0_ = (bitField0_ & ~0x02000000);
       if (outlierDetectionBuilder_ == null) {
         outlierDetection_ = null;
       } else {
         outlierDetectionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x02000000);
-      port_ = 0;
       bitField0_ = (bitField0_ & ~0x04000000);
-      portName_ = "";
+      port_ = 0;
       bitField0_ = (bitField0_ & ~0x08000000);
-      protocol_ = "";
+      portName_ = "";
       bitField0_ = (bitField0_ & ~0x10000000);
-      region_ = "";
+      protocol_ = "";
       bitField0_ = (bitField0_ & ~0x20000000);
-      securityPolicy_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x40000000);
+      securityPolicy_ = "";
+      bitField0_ = (bitField0_ & ~0x80000000);
       if (securitySettingsBuilder_ == null) {
         securitySettings_ = null;
       } else {
         securitySettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
-      selfLink_ = "";
       bitField1_ = (bitField1_ & ~0x00000001);
-      sessionAffinity_ = "";
+      selfLink_ = "";
       bitField1_ = (bitField1_ & ~0x00000002);
+      sessionAffinity_ = "";
+      bitField1_ = (bitField1_ & ~0x00000004);
       if (subsettingBuilder_ == null) {
         subsetting_ = null;
       } else {
         subsettingBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000004);
-      timeoutSec_ = 0;
       bitField1_ = (bitField1_ & ~0x00000008);
+      timeoutSec_ = 0;
+      bitField1_ = (bitField1_ & ~0x00000010);
       return this;
     }
 
@@ -4506,11 +4632,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00008000;
       }
       result.loadBalancingScheme_ = loadBalancingScheme_;
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (localityLbPoliciesBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)) {
+          localityLbPolicies_ = java.util.Collections.unmodifiableList(localityLbPolicies_);
+          bitField0_ = (bitField0_ & ~0x00100000);
+        }
+        result.localityLbPolicies_ = localityLbPolicies_;
+      } else {
+        result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         to_bitField0_ |= 0x00010000;
       }
       result.localityLbPolicy_ = localityLbPolicy_;
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         if (logConfigBuilder_ == null) {
           result.logConfig_ = logConfig_;
         } else {
@@ -4518,7 +4653,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         if (maxStreamDurationBuilder_ == null) {
           result.maxStreamDuration_ = maxStreamDuration_;
         } else {
@@ -4526,15 +4661,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         to_bitField0_ |= 0x00080000;
       }
       result.name_ = name_;
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         to_bitField0_ |= 0x00100000;
       }
       result.network_ = network_;
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         if (outlierDetectionBuilder_ == null) {
           result.outlierDetection_ = outlierDetection_;
         } else {
@@ -4542,27 +4677,27 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00200000;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.port_ = port_;
         to_bitField0_ |= 0x00400000;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         to_bitField0_ |= 0x00800000;
       }
       result.portName_ = portName_;
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         to_bitField0_ |= 0x01000000;
       }
       result.protocol_ = protocol_;
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         to_bitField0_ |= 0x02000000;
       }
       result.region_ = region_;
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         to_bitField0_ |= 0x04000000;
       }
       result.securityPolicy_ = securityPolicy_;
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField1_ & 0x00000001) != 0)) {
         if (securitySettingsBuilder_ == null) {
           result.securitySettings_ = securitySettings_;
         } else {
@@ -4570,15 +4705,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x08000000;
       }
-      if (((from_bitField1_ & 0x00000001) != 0)) {
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x10000000;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x20000000;
       }
       result.sessionAffinity_ = sessionAffinity_;
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         if (subsettingBuilder_ == null) {
           result.subsetting_ = subsetting_;
         } else {
@@ -4586,7 +4721,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x40000000;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.timeoutSec_ = timeoutSec_;
         to_bitField0_ |= 0x80000000;
       }
@@ -4757,8 +4892,35 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         loadBalancingScheme_ = other.loadBalancingScheme_;
         onChanged();
       }
+      if (localityLbPoliciesBuilder_ == null) {
+        if (!other.localityLbPolicies_.isEmpty()) {
+          if (localityLbPolicies_.isEmpty()) {
+            localityLbPolicies_ = other.localityLbPolicies_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+          } else {
+            ensureLocalityLbPoliciesIsMutable();
+            localityLbPolicies_.addAll(other.localityLbPolicies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.localityLbPolicies_.isEmpty()) {
+          if (localityLbPoliciesBuilder_.isEmpty()) {
+            localityLbPoliciesBuilder_.dispose();
+            localityLbPoliciesBuilder_ = null;
+            localityLbPolicies_ = other.localityLbPolicies_;
+            bitField0_ = (bitField0_ & ~0x00100000);
+            localityLbPoliciesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLocalityLbPoliciesFieldBuilder()
+                    : null;
+          } else {
+            localityLbPoliciesBuilder_.addAllMessages(other.localityLbPolicies_);
+          }
+        }
+      }
       if (other.hasLocalityLbPolicy()) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         localityLbPolicy_ = other.localityLbPolicy_;
         onChanged();
       }
@@ -4769,12 +4931,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         mergeMaxStreamDuration(other.getMaxStreamDuration());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         network_ = other.network_;
         onChanged();
       }
@@ -4785,22 +4947,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         setPort(other.getPort());
       }
       if (other.hasPortName()) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         portName_ = other.portName_;
         onChanged();
       }
       if (other.hasProtocol()) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         protocol_ = other.protocol_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSecurityPolicy()) {
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         securityPolicy_ = other.securityPolicy_;
         onChanged();
       }
@@ -4808,12 +4970,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         mergeSecuritySettings(other.getSecuritySettings());
       }
       if (other.hasSelfLink()) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasSessionAffinity()) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         sessionAffinity_ = other.sessionAffinity_;
         onChanged();
       }
@@ -7935,6 +8097,429 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
+        localityLbPolicies_ = java.util.Collections.emptyList();
+
+    private void ensureLocalityLbPoliciesIsMutable() {
+      if (!((bitField0_ & 0x00100000) != 0)) {
+        localityLbPolicies_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>(
+                localityLbPolicies_);
+        bitField0_ |= 0x00100000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig,
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder,
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>
+        localityLbPoliciesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
+        getLocalityLbPoliciesList() {
+      if (localityLbPoliciesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(localityLbPolicies_);
+      } else {
+        return localityLbPoliciesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public int getLocalityLbPoliciesCount() {
+      if (localityLbPoliciesBuilder_ == null) {
+        return localityLbPolicies_.size();
+      } else {
+        return localityLbPoliciesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig
+        getLocalityLbPolicies(int index) {
+      if (localityLbPoliciesBuilder_ == null) {
+        return localityLbPolicies_.get(index);
+      } else {
+        return localityLbPoliciesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder setLocalityLbPolicies(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig value) {
+      if (localityLbPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.set(index, value);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder setLocalityLbPolicies(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+            builderForValue) {
+      if (localityLbPoliciesBuilder_ == null) {
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder addLocalityLbPolicies(
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig value) {
+      if (localityLbPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.add(value);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder addLocalityLbPolicies(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig value) {
+      if (localityLbPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.add(index, value);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder addLocalityLbPolicies(
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+            builderForValue) {
+      if (localityLbPoliciesBuilder_ == null) {
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder addLocalityLbPolicies(
+        int index,
+        com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+            builderForValue) {
+      if (localityLbPoliciesBuilder_ == null) {
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder addAllLocalityLbPolicies(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>
+            values) {
+      if (localityLbPoliciesBuilder_ == null) {
+        ensureLocalityLbPoliciesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, localityLbPolicies_);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder clearLocalityLbPolicies() {
+      if (localityLbPoliciesBuilder_ == null) {
+        localityLbPolicies_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00100000);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public Builder removeLocalityLbPolicies(int index) {
+      if (localityLbPoliciesBuilder_ == null) {
+        ensureLocalityLbPoliciesIsMutable();
+        localityLbPolicies_.remove(index);
+        onChanged();
+      } else {
+        localityLbPoliciesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+        getLocalityLbPoliciesBuilder(int index) {
+      return getLocalityLbPoliciesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder
+        getLocalityLbPoliciesOrBuilder(int index) {
+      if (localityLbPoliciesBuilder_ == null) {
+        return localityLbPolicies_.get(index);
+      } else {
+        return localityLbPoliciesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>
+        getLocalityLbPoliciesOrBuilderList() {
+      if (localityLbPoliciesBuilder_ != null) {
+        return localityLbPoliciesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(localityLbPolicies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+        addLocalityLbPoliciesBuilder() {
+      return getLocalityLbPoliciesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder
+        addLocalityLbPoliciesBuilder(int index) {
+      return getLocalityLbPoliciesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder>
+        getLocalityLbPoliciesBuilderList() {
+      return getLocalityLbPoliciesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig,
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder,
+            com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>
+        getLocalityLbPoliciesFieldBuilder() {
+      if (localityLbPoliciesBuilder_ == null) {
+        localityLbPoliciesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig,
+                com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig.Builder,
+                com.google.cloud.compute.v1
+                    .BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>(
+                localityLbPolicies_,
+                ((bitField0_ & 0x00100000) != 0),
+                getParentForChildren(),
+                isClean());
+        localityLbPolicies_ = null;
+      }
+      return localityLbPoliciesBuilder_;
+    }
+
     private java.lang.Object localityLbPolicy_ = "";
     /**
      *
@@ -7949,7 +8534,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the localityLbPolicy field is set.
      */
     public boolean hasLocalityLbPolicy() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -8014,7 +8599,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       localityLbPolicy_ = value;
       onChanged();
       return this;
@@ -8032,7 +8617,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalityLbPolicy() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       localityLbPolicy_ = getDefaultInstance().getLocalityLbPolicy();
       onChanged();
       return this;
@@ -8055,7 +8640,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       localityLbPolicy_ = value;
       onChanged();
       return this;
@@ -8080,7 +8665,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -8123,7 +8708,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -8144,7 +8729,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -8159,7 +8744,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && logConfig_ != null
             && logConfig_
                 != com.google.cloud.compute.v1.BackendServiceLogConfig.getDefaultInstance()) {
@@ -8174,7 +8759,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       return this;
     }
     /**
@@ -8194,7 +8779,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
     /**
@@ -8208,7 +8793,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -8276,7 +8861,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxStreamDuration field is set.
      */
     public boolean hasMaxStreamDuration() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -8317,7 +8902,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -8337,7 +8922,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -8351,7 +8936,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && maxStreamDuration_ != null
             && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           maxStreamDuration_ =
@@ -8365,7 +8950,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       return this;
     }
     /**
@@ -8384,7 +8969,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       return this;
     }
     /**
@@ -8397,7 +8982,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getMaxStreamDurationFieldBuilder().getBuilder();
     }
@@ -8458,7 +9043,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -8520,7 +9105,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       name_ = value;
       onChanged();
       return this;
@@ -8537,7 +9122,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -8559,7 +9144,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       name_ = value;
       onChanged();
       return this;
@@ -8578,7 +9163,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -8640,7 +9225,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       network_ = value;
       onChanged();
       return this;
@@ -8657,7 +9242,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -8679,7 +9264,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       network_ = value;
       onChanged();
       return this;
@@ -8704,7 +9289,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outlierDetection field is set.
      */
     public boolean hasOutlierDetection() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -8747,7 +9332,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       return this;
     }
     /**
@@ -8768,7 +9353,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       return this;
     }
     /**
@@ -8783,7 +9368,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && outlierDetection_ != null
             && outlierDetection_
                 != com.google.cloud.compute.v1.OutlierDetection.getDefaultInstance()) {
@@ -8798,7 +9383,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       return this;
     }
     /**
@@ -8818,7 +9403,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       return this;
     }
     /**
@@ -8832,7 +9417,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.OutlierDetection.Builder getOutlierDetectionBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getOutlierDetectionFieldBuilder().getBuilder();
     }
@@ -8896,7 +9481,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPort() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -8926,7 +9511,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPort(int value) {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       port_ = value;
       onChanged();
       return this;
@@ -8943,7 +9528,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       port_ = 0;
       onChanged();
       return this;
@@ -8962,7 +9547,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the portName field is set.
      */
     public boolean hasPortName() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -9024,7 +9609,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       portName_ = value;
       onChanged();
       return this;
@@ -9041,7 +9626,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortName() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       portName_ = getDefaultInstance().getPortName();
       onChanged();
       return this;
@@ -9063,7 +9648,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       portName_ = value;
       onChanged();
       return this;
@@ -9083,7 +9668,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the protocol field is set.
      */
     public boolean hasProtocol() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -9148,7 +9733,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       protocol_ = value;
       onChanged();
       return this;
@@ -9166,7 +9751,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       protocol_ = getDefaultInstance().getProtocol();
       onChanged();
       return this;
@@ -9189,7 +9774,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       protocol_ = value;
       onChanged();
       return this;
@@ -9208,7 +9793,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -9270,7 +9855,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       region_ = value;
       onChanged();
       return this;
@@ -9287,7 +9872,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -9309,7 +9894,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       region_ = value;
       onChanged();
       return this;
@@ -9328,7 +9913,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securityPolicy field is set.
      */
     public boolean hasSecurityPolicy() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
@@ -9390,7 +9975,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -9407,7 +9992,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityPolicy() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
       onChanged();
       return this;
@@ -9429,7 +10014,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       securityPolicy_ = value;
       onChanged();
       return this;
@@ -9454,7 +10039,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -9497,7 +10082,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       return this;
     }
     /**
@@ -9518,7 +10103,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       return this;
     }
     /**
@@ -9533,7 +10118,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && securitySettings_ != null
             && securitySettings_
                 != com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) {
@@ -9548,7 +10133,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       return this;
     }
     /**
@@ -9568,7 +10153,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       return this;
     }
     /**
@@ -9582,7 +10167,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.SecuritySettings.Builder getSecuritySettingsBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }
@@ -9645,7 +10230,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -9707,7 +10292,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       selfLink_ = value;
       onChanged();
       return this;
@@ -9724,7 +10309,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -9746,7 +10331,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       selfLink_ = value;
       onChanged();
       return this;
@@ -9766,7 +10351,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionAffinity field is set.
      */
     public boolean hasSessionAffinity() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -9831,7 +10416,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -9849,7 +10434,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       sessionAffinity_ = getDefaultInstance().getSessionAffinity();
       onChanged();
       return this;
@@ -9872,7 +10457,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -9890,7 +10475,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subsetting field is set.
      */
     public boolean hasSubsetting() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
@@ -9917,7 +10502,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
@@ -9928,13 +10513,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public Builder mergeSubsetting(com.google.cloud.compute.v1.Subsetting value) {
       if (subsettingBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && subsetting_ != null
             && subsetting_ != com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) {
           subsetting_ =
@@ -9948,7 +10533,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
@@ -9959,12 +10544,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public com.google.cloud.compute.v1.Subsetting.Builder getSubsettingBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return getSubsettingFieldBuilder().getBuilder();
     }
@@ -10001,7 +10586,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
      * <code>optional int32 timeout_sec = 79994995;</code>
@@ -10010,13 +10595,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
      * <code>optional int32 timeout_sec = 79994995;</code>
@@ -10031,7 +10616,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
      * <code>optional int32 timeout_sec = 79994995;</code>
@@ -10040,7 +10625,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       timeoutSec_ = value;
       onChanged();
       return this;
@@ -10049,7 +10634,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
+     * The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
      * </pre>
      *
      * <code>optional int32 timeout_sec = 79994995;</code>
@@ -10057,7 +10642,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       timeoutSec_ = 0;
       onChanged();
       return this;

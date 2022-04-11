@@ -42,7 +42,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     description_ = "";
     direction_ = "";
     kind_ = "";
+    ruleName_ = "";
     targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetSecureTags_ = java.util.Collections.emptyList();
     targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -81,6 +83,13 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               kind_ = s;
+              break;
+            }
+          case 442290034:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              ruleName_ = s;
               break;
             }
           case 829345322:
@@ -128,7 +137,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
             }
           case -1188231000:
             {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               ruleTupleCount_ = input.readInt32();
               break;
             }
@@ -148,19 +157,33 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
           case -633849614:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 targetServiceAccounts_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00001000;
               }
               targetServiceAccounts_.add(s);
+              break;
+            }
+          case -549908070:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                targetSecureTags_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              targetSecureTags_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.parser(),
+                      extensionRegistry));
               break;
             }
           case -69122118:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 targetResources_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               targetResources_.add(s);
               break;
@@ -179,10 +202,13 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         targetServiceAccounts_ = targetServiceAccounts_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+        targetSecureTags_ = java.util.Collections.unmodifiableList(targetSecureTags_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         targetResources_ = targetResources_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -739,6 +765,70 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     return priority_;
   }
 
+  public static final int RULE_NAME_FIELD_NUMBER = 55286254;
+  private volatile java.lang.Object ruleName_;
+  /**
+   *
+   *
+   * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return Whether the ruleName field is set.
+   */
+  @java.lang.Override
+  public boolean hasRuleName() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return The ruleName.
+   */
+  @java.lang.Override
+  public java.lang.String getRuleName() {
+    java.lang.Object ref = ruleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ruleName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An optional name for the rule. This field is not a unique identifier and can be updated.
+   * </pre>
+   *
+   * <code>optional string rule_name = 55286254;</code>
+   *
+   * @return The bytes for ruleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRuleNameBytes() {
+    java.lang.Object ref = ruleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ruleName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RULE_TUPLE_COUNT_FIELD_NUMBER = 388342037;
   private int ruleTupleCount_;
   /**
@@ -754,7 +844,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasRuleTupleCount() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -831,6 +921,87 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   public com.google.protobuf.ByteString getTargetResourcesBytes(int index) {
     return targetResources_.getByteString(index);
+  }
+
+  public static final int TARGET_SECURE_TAGS_FIELD_NUMBER = 468132403;
+  private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> targetSecureTags_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+      getTargetSecureTagsList() {
+    return targetSecureTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+      getTargetSecureTagsOrBuilderList() {
+    return targetSecureTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  @java.lang.Override
+  public int getTargetSecureTagsCount() {
+    return targetSecureTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getTargetSecureTags(int index) {
+    return targetSecureTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder
+      getTargetSecureTagsOrBuilder(int index) {
+    return targetSecureTags_.get(index);
   }
 
   public static final int TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER = 457639710;
@@ -911,6 +1082,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 55286254, ruleName_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(103668165, getMatch());
     }
@@ -926,7 +1100,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(295396515, enableLogging_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -938,6 +1112,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < targetServiceAccounts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 457639710, targetServiceAccounts_.getRaw(i));
+    }
+    for (int i = 0; i < targetSecureTags_.size(); i++) {
+      output.writeMessage(468132403, targetSecureTags_.get(i));
     }
     for (int i = 0; i < targetResources_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
@@ -955,6 +1132,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55286254, ruleName_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
     }
@@ -970,7 +1150,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(295396515, enableLogging_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -986,6 +1166,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       size += dataSize;
       size += 5 * getTargetServiceAccountsList().size();
+    }
+    for (int i = 0; i < targetSecureTags_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              468132403, targetSecureTags_.get(i));
     }
     {
       int dataSize = 0;
@@ -1043,11 +1228,16 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasPriority()) {
       if (getPriority() != other.getPriority()) return false;
     }
+    if (hasRuleName() != other.hasRuleName()) return false;
+    if (hasRuleName()) {
+      if (!getRuleName().equals(other.getRuleName())) return false;
+    }
     if (hasRuleTupleCount() != other.hasRuleTupleCount()) return false;
     if (hasRuleTupleCount()) {
       if (getRuleTupleCount() != other.getRuleTupleCount()) return false;
     }
     if (!getTargetResourcesList().equals(other.getTargetResourcesList())) return false;
+    if (!getTargetSecureTagsList().equals(other.getTargetSecureTagsList())) return false;
     if (!getTargetServiceAccountsList().equals(other.getTargetServiceAccountsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1092,6 +1282,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + getPriority();
     }
+    if (hasRuleName()) {
+      hash = (37 * hash) + RULE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleName().hashCode();
+    }
     if (hasRuleTupleCount()) {
       hash = (37 * hash) + RULE_TUPLE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getRuleTupleCount();
@@ -1099,6 +1293,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (getTargetResourcesCount() > 0) {
       hash = (37 * hash) + TARGET_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getTargetResourcesList().hashCode();
+    }
+    if (getTargetSecureTagsCount() > 0) {
+      hash = (37 * hash) + TARGET_SECURE_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetSecureTagsList().hashCode();
     }
     if (getTargetServiceAccountsCount() > 0) {
       hash = (37 * hash) + TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER;
@@ -1245,6 +1443,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMatchFieldBuilder();
+        getTargetSecureTagsFieldBuilder();
       }
     }
 
@@ -1271,12 +1470,20 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000040);
       priority_ = 0;
       bitField0_ = (bitField0_ & ~0x00000080);
-      ruleTupleCount_ = 0;
+      ruleName_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ruleTupleCount_ = 0;
       bitField0_ = (bitField0_ & ~0x00000200);
-      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
+      if (targetSecureTagsBuilder_ == null) {
+        targetSecureTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      } else {
+        targetSecureTagsBuilder_.clear();
+      }
+      targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1343,17 +1550,30 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.ruleTupleCount_ = ruleTupleCount_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      result.ruleName_ = ruleName_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ruleTupleCount_ = ruleTupleCount_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
         targetResources_ = targetResources_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.targetResources_ = targetResources_;
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (targetSecureTagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          targetSecureTags_ = java.util.Collections.unmodifiableList(targetSecureTags_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.targetSecureTags_ = targetSecureTags_;
+      } else {
+        result.targetSecureTags_ = targetSecureTagsBuilder_.build();
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
         targetServiceAccounts_ = targetServiceAccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.targetServiceAccounts_ = targetServiceAccounts_;
       result.bitField0_ = to_bitField0_;
@@ -1438,23 +1658,55 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (other.hasPriority()) {
         setPriority(other.getPriority());
       }
+      if (other.hasRuleName()) {
+        bitField0_ |= 0x00000100;
+        ruleName_ = other.ruleName_;
+        onChanged();
+      }
       if (other.hasRuleTupleCount()) {
         setRuleTupleCount(other.getRuleTupleCount());
       }
       if (!other.targetResources_.isEmpty()) {
         if (targetResources_.isEmpty()) {
           targetResources_ = other.targetResources_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureTargetResourcesIsMutable();
           targetResources_.addAll(other.targetResources_);
         }
         onChanged();
       }
+      if (targetSecureTagsBuilder_ == null) {
+        if (!other.targetSecureTags_.isEmpty()) {
+          if (targetSecureTags_.isEmpty()) {
+            targetSecureTags_ = other.targetSecureTags_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureTargetSecureTagsIsMutable();
+            targetSecureTags_.addAll(other.targetSecureTags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.targetSecureTags_.isEmpty()) {
+          if (targetSecureTagsBuilder_.isEmpty()) {
+            targetSecureTagsBuilder_.dispose();
+            targetSecureTagsBuilder_ = null;
+            targetSecureTags_ = other.targetSecureTags_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            targetSecureTagsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTargetSecureTagsFieldBuilder()
+                    : null;
+          } else {
+            targetSecureTagsBuilder_.addAllMessages(other.targetSecureTags_);
+          }
+        }
+      }
       if (!other.targetServiceAccounts_.isEmpty()) {
         if (targetServiceAccounts_.isEmpty()) {
           targetServiceAccounts_ = other.targetServiceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureTargetServiceAccountsIsMutable();
           targetServiceAccounts_.addAll(other.targetServiceAccounts_);
@@ -2367,6 +2619,126 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object ruleName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @return Whether the ruleName field is set.
+     */
+    public boolean hasRuleName() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @return The ruleName.
+     */
+    public java.lang.String getRuleName() {
+      java.lang.Object ref = ruleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ruleName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @return The bytes for ruleName.
+     */
+    public com.google.protobuf.ByteString getRuleNameBytes() {
+      java.lang.Object ref = ruleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ruleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @param value The ruleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRuleName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      ruleName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRuleName() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ruleName_ = getDefaultInstance().getRuleName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional name for the rule. This field is not a unique identifier and can be updated.
+     * </pre>
+     *
+     * <code>optional string rule_name = 55286254;</code>
+     *
+     * @param value The bytes for ruleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRuleNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      ruleName_ = value;
+      onChanged();
+      return this;
+    }
+
     private int ruleTupleCount_;
     /**
      *
@@ -2381,7 +2753,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasRuleTupleCount() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2411,7 +2783,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setRuleTupleCount(int value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       ruleTupleCount_ = value;
       onChanged();
       return this;
@@ -2428,7 +2800,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearRuleTupleCount() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ruleTupleCount_ = 0;
       onChanged();
       return this;
@@ -2438,9 +2810,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -2575,7 +2947,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetResources() {
       targetResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2602,14 +2974,418 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+        targetSecureTags_ = java.util.Collections.emptyList();
+
+    private void ensureTargetSecureTagsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        targetSecureTags_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
+                targetSecureTags_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        targetSecureTagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+        getTargetSecureTagsList() {
+      if (targetSecureTagsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(targetSecureTags_);
+      } else {
+        return targetSecureTagsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public int getTargetSecureTagsCount() {
+      if (targetSecureTagsBuilder_ == null) {
+        return targetSecureTags_.size();
+      } else {
+        return targetSecureTagsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getTargetSecureTags(int index) {
+      if (targetSecureTagsBuilder_ == null) {
+        return targetSecureTags_.get(index);
+      } else {
+        return targetSecureTagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder setTargetSecureTags(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (targetSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.set(index, value);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder setTargetSecureTags(
+        int index,
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (targetSecureTagsBuilder_ == null) {
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder addTargetSecureTags(
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (targetSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.add(value);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder addTargetSecureTags(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (targetSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.add(index, value);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder addTargetSecureTags(
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (targetSecureTagsBuilder_ == null) {
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.add(builderForValue.build());
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder addTargetSecureTags(
+        int index,
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (targetSecureTagsBuilder_ == null) {
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder addAllTargetSecureTags(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+            values) {
+      if (targetSecureTagsBuilder_ == null) {
+        ensureTargetSecureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetSecureTags_);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder clearTargetSecureTags() {
+      if (targetSecureTagsBuilder_ == null) {
+        targetSecureTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public Builder removeTargetSecureTags(int index) {
+      if (targetSecureTagsBuilder_ == null) {
+        ensureTargetSecureTagsIsMutable();
+        targetSecureTags_.remove(index);
+        onChanged();
+      } else {
+        targetSecureTagsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder
+        getTargetSecureTagsBuilder(int index) {
+      return getTargetSecureTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder
+        getTargetSecureTagsOrBuilder(int index) {
+      if (targetSecureTagsBuilder_ == null) {
+        return targetSecureTags_.get(index);
+      } else {
+        return targetSecureTagsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        getTargetSecureTagsOrBuilderList() {
+      if (targetSecureTagsBuilder_ != null) {
+        return targetSecureTagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(targetSecureTags_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder
+        addTargetSecureTagsBuilder() {
+      return getTargetSecureTagsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder
+        addTargetSecureTagsBuilder(int index) {
+      return getTargetSecureTagsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of secure tags that controls which instances the firewall rule applies to. If targetSecureTag are specified, then the firewall rule applies only to instances in the VPC network that have one of those EFFECTIVE secure tags, if all the target_secure_tag are in INEFFECTIVE state, then this rule will be ignored. targetSecureTag may not be set at the same time as targetServiceAccounts. If neither targetServiceAccounts nor targetSecureTag are specified, the firewall rule applies to all instances on the specified network. Maximum number of target label tags allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag target_secure_tags = 468132403;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder>
+        getTargetSecureTagsBuilderList() {
+      return getTargetSecureTagsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        getTargetSecureTagsFieldBuilder() {
+      if (targetSecureTagsBuilder_ == null) {
+        targetSecureTagsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
+                targetSecureTags_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        targetSecureTags_ = null;
+      }
+      return targetSecureTagsBuilder_;
+    }
+
     private com.google.protobuf.LazyStringList targetServiceAccounts_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         targetServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(targetServiceAccounts_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -2744,7 +3520,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetServiceAccounts() {
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }

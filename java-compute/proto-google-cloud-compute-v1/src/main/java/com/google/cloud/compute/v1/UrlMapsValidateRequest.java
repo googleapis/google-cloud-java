@@ -36,7 +36,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     super(builder);
   }
 
-  private UrlMapsValidateRequest() {}
+  private UrlMapsValidateRequest() {
+    loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -68,6 +70,16 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
+          case 50468218:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                loadBalancingSchemes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              loadBalancingSchemes_.add(s);
+              break;
+            }
           case 1566449778:
             {
               com.google.cloud.compute.v1.UrlMap.Builder subBuilder = null;
@@ -97,6 +109,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        loadBalancingSchemes_ = loadBalancingSchemes_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -117,7 +132,255 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.UrlMapsValidateRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.UrlMapsValidateRequest.LoadBalancingSchemes}
+   */
+  public enum LoadBalancingSchemes implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_LOAD_BALANCING_SCHEMES = 0;</code>
+     */
+    UNDEFINED_LOAD_BALANCING_SCHEMES(0),
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Classic L7 External Load Balancing.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    EXTERNAL(35607499),
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Envoy-based L7 External Load Balancing.
+     * </pre>
+     *
+     * <code>EXTERNAL_MANAGED = 512006923;</code>
+     */
+    EXTERNAL_MANAGED(512006923),
+    /**
+     *
+     *
+     * <pre>
+     * If unspecified, the validation will try to infer the scheme from the backend service resources this Url map references. If the inferrence is not possible, EXTERNAL will be used as the default type.
+     * </pre>
+     *
+     * <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code>
+     */
+    LOAD_BALANCING_SCHEME_UNSPECIFIED(526507452),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_LOAD_BALANCING_SCHEMES = 0;</code>
+     */
+    public static final int UNDEFINED_LOAD_BALANCING_SCHEMES_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Classic L7 External Load Balancing.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    public static final int EXTERNAL_VALUE = 35607499;
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for Envoy-based L7 External Load Balancing.
+     * </pre>
+     *
+     * <code>EXTERNAL_MANAGED = 512006923;</code>
+     */
+    public static final int EXTERNAL_MANAGED_VALUE = 512006923;
+    /**
+     *
+     *
+     * <pre>
+     * If unspecified, the validation will try to infer the scheme from the backend service resources this Url map references. If the inferrence is not possible, EXTERNAL will be used as the default type.
+     * </pre>
+     *
+     * <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code>
+     */
+    public static final int LOAD_BALANCING_SCHEME_UNSPECIFIED_VALUE = 526507452;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LoadBalancingSchemes valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static LoadBalancingSchemes forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_LOAD_BALANCING_SCHEMES;
+        case 35607499:
+          return EXTERNAL;
+        case 512006923:
+          return EXTERNAL_MANAGED;
+        case 526507452:
+          return LOAD_BALANCING_SCHEME_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LoadBalancingSchemes>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<LoadBalancingSchemes>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LoadBalancingSchemes>() {
+              public LoadBalancingSchemes findValueByNumber(int number) {
+                return LoadBalancingSchemes.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.UrlMapsValidateRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final LoadBalancingSchemes[] VALUES = values();
+
+    public static LoadBalancingSchemes valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LoadBalancingSchemes(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.UrlMapsValidateRequest.LoadBalancingSchemes)
+  }
+
   private int bitField0_;
+  public static final int LOAD_BALANCING_SCHEMES_FIELD_NUMBER = 6308527;
+  private com.google.protobuf.LazyStringList loadBalancingSchemes_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @return A list containing the loadBalancingSchemes.
+   */
+  public com.google.protobuf.ProtocolStringList getLoadBalancingSchemesList() {
+    return loadBalancingSchemes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @return The count of loadBalancingSchemes.
+   */
+  public int getLoadBalancingSchemesCount() {
+    return loadBalancingSchemes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The loadBalancingSchemes at the given index.
+   */
+  public java.lang.String getLoadBalancingSchemes(int index) {
+    return loadBalancingSchemes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Check the LoadBalancingSchemes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string load_balancing_schemes = 6308527;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the loadBalancingSchemes at the given index.
+   */
+  public com.google.protobuf.ByteString getLoadBalancingSchemesBytes(int index) {
+    return loadBalancingSchemes_.getByteString(index);
+  }
+
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.UrlMap resource_;
   /**
@@ -178,6 +441,10 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < loadBalancingSchemes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 6308527, loadBalancingSchemes_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(195806222, getResource());
     }
@@ -190,6 +457,14 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
+    {
+      int dataSize = 0;
+      for (int i = 0; i < loadBalancingSchemes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(loadBalancingSchemes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 4 * getLoadBalancingSchemesList().size();
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(195806222, getResource());
     }
@@ -209,6 +484,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.UrlMapsValidateRequest other =
         (com.google.cloud.compute.v1.UrlMapsValidateRequest) obj;
 
+    if (!getLoadBalancingSchemesList().equals(other.getLoadBalancingSchemesList())) return false;
     if (hasResource() != other.hasResource()) return false;
     if (hasResource()) {
       if (!getResource().equals(other.getResource())) return false;
@@ -224,6 +500,10 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getLoadBalancingSchemesCount() > 0) {
+      hash = (37 * hash) + LOAD_BALANCING_SCHEMES_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadBalancingSchemesList().hashCode();
+    }
     if (hasResource()) {
       hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getResource().hashCode();
@@ -374,12 +654,14 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (resourceBuilder_ == null) {
         resource_ = null;
       } else {
         resourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -409,7 +691,12 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
           new com.google.cloud.compute.v1.UrlMapsValidateRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        loadBalancingSchemes_ = loadBalancingSchemes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.loadBalancingSchemes_ = loadBalancingSchemes_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         if (resourceBuilder_ == null) {
           result.resource_ = resource_;
         } else {
@@ -468,6 +755,16 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.UrlMapsValidateRequest other) {
       if (other == com.google.cloud.compute.v1.UrlMapsValidateRequest.getDefaultInstance())
         return this;
+      if (!other.loadBalancingSchemes_.isEmpty()) {
+        if (loadBalancingSchemes_.isEmpty()) {
+          loadBalancingSchemes_ = other.loadBalancingSchemes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureLoadBalancingSchemesIsMutable();
+          loadBalancingSchemes_.addAll(other.loadBalancingSchemes_);
+        }
+        onChanged();
+      }
       if (other.hasResource()) {
         mergeResource(other.getResource());
       }
@@ -503,6 +800,183 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
+    private com.google.protobuf.LazyStringList loadBalancingSchemes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureLoadBalancingSchemesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        loadBalancingSchemes_ = new com.google.protobuf.LazyStringArrayList(loadBalancingSchemes_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @return A list containing the loadBalancingSchemes.
+     */
+    public com.google.protobuf.ProtocolStringList getLoadBalancingSchemesList() {
+      return loadBalancingSchemes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @return The count of loadBalancingSchemes.
+     */
+    public int getLoadBalancingSchemesCount() {
+      return loadBalancingSchemes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The loadBalancingSchemes at the given index.
+     */
+    public java.lang.String getLoadBalancingSchemes(int index) {
+      return loadBalancingSchemes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the loadBalancingSchemes at the given index.
+     */
+    public com.google.protobuf.ByteString getLoadBalancingSchemesBytes(int index) {
+      return loadBalancingSchemes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The loadBalancingSchemes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingSchemes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLoadBalancingSchemesIsMutable();
+      loadBalancingSchemes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param value The loadBalancingSchemes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLoadBalancingSchemes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLoadBalancingSchemesIsMutable();
+      loadBalancingSchemes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param values The loadBalancingSchemes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLoadBalancingSchemes(java.lang.Iterable<java.lang.String> values) {
+      ensureLoadBalancingSchemesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loadBalancingSchemes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancingSchemes() {
+      loadBalancingSchemes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for HTTP/HTTPS External Global Load Balancer with Advanced Traffic Management. Use EXTERNAL for Classic HTTP/HTTPS External Global Load Balancer. Other load balancer types are not supported. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Check the LoadBalancingSchemes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string load_balancing_schemes = 6308527;</code>
+     *
+     * @param value The bytes of the loadBalancingSchemes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLoadBalancingSchemesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLoadBalancingSchemesIsMutable();
+      loadBalancingSchemes_.add(value);
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.UrlMap resource_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UrlMap,
@@ -521,7 +995,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -562,7 +1036,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -581,7 +1055,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -595,7 +1069,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeResource(com.google.cloud.compute.v1.UrlMap value) {
       if (resourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && resource_ != null
             && resource_ != com.google.cloud.compute.v1.UrlMap.getDefaultInstance()) {
           resource_ =
@@ -609,7 +1083,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -628,7 +1102,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
       } else {
         resourceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -641,7 +1115,7 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      * <code>optional .google.cloud.compute.v1.UrlMap resource = 195806222;</code>
      */
     public com.google.cloud.compute.v1.UrlMap.Builder getResourceBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

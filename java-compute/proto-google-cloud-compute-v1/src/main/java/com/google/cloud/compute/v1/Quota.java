@@ -228,6 +228,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     DISKS_TOTAL_GB(353520543),
     /** <code>E2_CPUS = 481995837;</code> */
     E2_CPUS(481995837),
+    /** <code>EXTERNAL_MANAGED_FORWARDING_RULES = 150790089;</code> */
+    EXTERNAL_MANAGED_FORWARDING_RULES(150790089),
     /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
     EXTERNAL_NETWORK_LB_FORWARDING_RULES(374298265),
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
@@ -513,6 +515,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int DISKS_TOTAL_GB_VALUE = 353520543;
     /** <code>E2_CPUS = 481995837;</code> */
     public static final int E2_CPUS_VALUE = 481995837;
+    /** <code>EXTERNAL_MANAGED_FORWARDING_RULES = 150790089;</code> */
+    public static final int EXTERNAL_MANAGED_FORWARDING_RULES_VALUE = 150790089;
     /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
     public static final int EXTERNAL_NETWORK_LB_FORWARDING_RULES_VALUE = 374298265;
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
@@ -805,6 +809,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return DISKS_TOTAL_GB;
         case 481995837:
           return E2_CPUS;
+        case 150790089:
+          return EXTERNAL_MANAGED_FORWARDING_RULES;
         case 374298265:
           return EXTERNAL_NETWORK_LB_FORWARDING_RULES;
         case 63478888:

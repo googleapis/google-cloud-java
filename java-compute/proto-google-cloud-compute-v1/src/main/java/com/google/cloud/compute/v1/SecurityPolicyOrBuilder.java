@@ -109,6 +109,30 @@ public interface SecurityPolicyOrBuilder
   com.google.protobuf.ByteString getCreationTimestampBytes();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   *
+   * @return Whether the ddosProtectionConfig field is set.
+   */
+  boolean hasDdosProtectionConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   *
+   * @return The ddosProtectionConfig.
+   */
+  com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig getDdosProtectionConfig();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder
+      getDdosProtectionConfigOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -309,6 +333,43 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
    * </pre>
    *
@@ -398,7 +459,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -411,7 +472,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -424,7 +485,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

@@ -42,10 +42,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     creationTimestamp_ = "";
     description_ = "";
     gatewayIPv4_ = "";
+    internalIpv6Range_ = "";
     kind_ = "";
     name_ = "";
+    networkFirewallPolicyEnforcementOrder_ = "";
     peerings_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    selfLinkWithId_ = "";
     subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -81,28 +84,35 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               id_ = input.readUInt64();
               break;
             }
           case 867696:
             {
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000200;
               mtu_ = input.readInt32();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000100;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000400;
               name_ = s;
+              break;
+            }
+          case 52038274:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              networkFirewallPolicyEnforcementOrder_ = s;
               break;
             }
           case 244202930:
@@ -110,6 +120,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               creationTimestamp_ = s;
+              break;
+            }
+          case 356167698:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00004000;
+              selfLinkWithId_ = s;
               break;
             }
           case 473874866:
@@ -121,9 +138,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             }
           case 559065498:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00001000;
               }
               peerings_.add(
                   input.readMessage(
@@ -133,7 +150,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           case 1429431018:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               gatewayIPv4_ = s;
               break;
             }
@@ -143,12 +160,19 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
               autoCreateSubnetworks_ = input.readBool();
               break;
             }
+          case -2075312838:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              internalIpv6Range_ = s;
+              break;
+            }
           case -968142294:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
                 subnetworks_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00010000;
               }
               subnetworks_.add(s);
               break;
@@ -160,17 +184,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
               description_ = s;
               break;
             }
+          case -904905536:
+            {
+              bitField0_ |= 0x00000010;
+              enableUlaInternalIpv6_ = input.readBool();
+              break;
+            }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00002000;
               selfLink_ = s;
               break;
             }
           case -106518822:
             {
               com.google.cloud.compute.v1.NetworkRoutingConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) != 0)) {
+              if (((bitField0_ & 0x00001000) != 0)) {
                 subBuilder = routingConfig_.toBuilder();
               }
               routingConfig_ =
@@ -180,7 +210,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(routingConfig_);
                 routingConfig_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00001000;
               break;
             }
           default:
@@ -197,10 +227,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         peerings_ = java.util.Collections.unmodifiableList(peerings_);
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         subnetworks_ = subnetworks_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -221,6 +251,136 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.Network.class,
             com.google.cloud.compute.v1.Network.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Network.NetworkFirewallPolicyEnforcementOrder}
+   */
+  public enum NetworkFirewallPolicyEnforcementOrder
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER = 0;</code>
+     */
+    UNDEFINED_NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER(0),
+    /** <code>AFTER_CLASSIC_FIREWALL = 154582608;</code> */
+    AFTER_CLASSIC_FIREWALL(154582608),
+    /** <code>BEFORE_CLASSIC_FIREWALL = 338458349;</code> */
+    BEFORE_CLASSIC_FIREWALL(338458349),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER = 0;</code>
+     */
+    public static final int UNDEFINED_NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER_VALUE = 0;
+    /** <code>AFTER_CLASSIC_FIREWALL = 154582608;</code> */
+    public static final int AFTER_CLASSIC_FIREWALL_VALUE = 154582608;
+    /** <code>BEFORE_CLASSIC_FIREWALL = 338458349;</code> */
+    public static final int BEFORE_CLASSIC_FIREWALL_VALUE = 338458349;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NetworkFirewallPolicyEnforcementOrder valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NetworkFirewallPolicyEnforcementOrder forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER;
+        case 154582608:
+          return AFTER_CLASSIC_FIREWALL;
+        case 338458349:
+          return BEFORE_CLASSIC_FIREWALL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NetworkFirewallPolicyEnforcementOrder>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+            NetworkFirewallPolicyEnforcementOrder>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<NetworkFirewallPolicyEnforcementOrder>() {
+              public NetworkFirewallPolicyEnforcementOrder findValueByNumber(int number) {
+                return NetworkFirewallPolicyEnforcementOrder.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Network.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final NetworkFirewallPolicyEnforcementOrder[] VALUES = values();
+
+    public static NetworkFirewallPolicyEnforcementOrder valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NetworkFirewallPolicyEnforcementOrder(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Network.NetworkFirewallPolicyEnforcementOrder)
   }
 
   private int bitField0_;
@@ -449,6 +609,39 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENABLE_ULA_INTERNAL_IPV6_FIELD_NUMBER = 423757720;
+  private boolean enableUlaInternalIpv6_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+   * </pre>
+   *
+   * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+   *
+   * @return Whether the enableUlaInternalIpv6 field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableUlaInternalIpv6() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+   * </pre>
+   *
+   * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+   *
+   * @return The enableUlaInternalIpv6.
+   */
+  @java.lang.Override
+  public boolean getEnableUlaInternalIpv6() {
+    return enableUlaInternalIpv6_;
+  }
+
   public static final int GATEWAY_I_PV4_FIELD_NUMBER = 178678877;
   private volatile java.lang.Object gatewayIPv4_;
   /**
@@ -464,7 +657,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGatewayIPv4() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -528,7 +721,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -546,6 +739,70 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     return id_;
   }
 
+  public static final int INTERNAL_IPV6_RANGE_FIELD_NUMBER = 277456807;
+  private volatile java.lang.Object internalIpv6Range_;
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return Whether the internalIpv6Range field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalIpv6Range() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return The internalIpv6Range.
+   */
+  @java.lang.Override
+  public java.lang.String getInternalIpv6Range() {
+    java.lang.Object ref = internalIpv6Range_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      internalIpv6Range_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return The bytes for internalIpv6Range.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInternalIpv6RangeBytes() {
+    java.lang.Object ref = internalIpv6Range_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      internalIpv6Range_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
   /**
@@ -561,7 +818,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -625,7 +882,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMtu() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -658,7 +915,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -701,6 +958,73 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER_FIELD_NUMBER = 6504784;
+  private volatile java.lang.Object networkFirewallPolicyEnforcementOrder_;
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return Whether the networkFirewallPolicyEnforcementOrder field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkFirewallPolicyEnforcementOrder() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return The networkFirewallPolicyEnforcementOrder.
+   */
+  @java.lang.Override
+  public java.lang.String getNetworkFirewallPolicyEnforcementOrder() {
+    java.lang.Object ref = networkFirewallPolicyEnforcementOrder_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkFirewallPolicyEnforcementOrder_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return The bytes for networkFirewallPolicyEnforcementOrder.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkFirewallPolicyEnforcementOrderBytes() {
+    java.lang.Object ref = networkFirewallPolicyEnforcementOrder_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      networkFirewallPolicyEnforcementOrder_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -791,7 +1115,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRoutingConfig() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -841,7 +1165,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -884,6 +1208,70 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       selfLink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SELF_LINK_WITH_ID_FIELD_NUMBER = 44520962;
+  private volatile java.lang.Object selfLinkWithId_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLinkWithId() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  @java.lang.Override
+  public java.lang.String getSelfLinkWithId() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      selfLinkWithId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      selfLinkWithId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -965,20 +1353,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt32(108462, mtu_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 6504784, networkFirewallPolicyEnforcementOrder_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 59234358, iPv4Range_);
@@ -986,11 +1381,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < peerings_.size(); i++) {
       output.writeMessage(69883187, peerings_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178678877, gatewayIPv4_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(256156690, autoCreateSubnetworks_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 277456807, internalIpv6Range_);
     }
     for (int i = 0; i < subnetworks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 415853125, subnetworks_.getRaw(i));
@@ -998,10 +1396,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(423757720, enableUlaInternalIpv6_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(523556059, getRoutingConfig());
     }
     unknownFields.writeTo(output);
@@ -1013,21 +1414,29 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              6504784, networkFirewallPolicyEnforcementOrder_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59234358, iPv4Range_);
@@ -1035,12 +1444,16 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < peerings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(69883187, peerings_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(277456807, internalIpv6Range_);
     }
     {
       int dataSize = 0;
@@ -1053,10 +1466,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(423757720, enableUlaInternalIpv6_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(523556059, getRoutingConfig());
     }
@@ -1091,6 +1508,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (hasEnableUlaInternalIpv6() != other.hasEnableUlaInternalIpv6()) return false;
+    if (hasEnableUlaInternalIpv6()) {
+      if (getEnableUlaInternalIpv6() != other.getEnableUlaInternalIpv6()) return false;
+    }
     if (hasGatewayIPv4() != other.hasGatewayIPv4()) return false;
     if (hasGatewayIPv4()) {
       if (!getGatewayIPv4().equals(other.getGatewayIPv4())) return false;
@@ -1098,6 +1519,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
       if (getId() != other.getId()) return false;
+    }
+    if (hasInternalIpv6Range() != other.hasInternalIpv6Range()) return false;
+    if (hasInternalIpv6Range()) {
+      if (!getInternalIpv6Range().equals(other.getInternalIpv6Range())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1111,6 +1536,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasNetworkFirewallPolicyEnforcementOrder()
+        != other.hasNetworkFirewallPolicyEnforcementOrder()) return false;
+    if (hasNetworkFirewallPolicyEnforcementOrder()) {
+      if (!getNetworkFirewallPolicyEnforcementOrder()
+          .equals(other.getNetworkFirewallPolicyEnforcementOrder())) return false;
+    }
     if (!getPeeringsList().equals(other.getPeeringsList())) return false;
     if (hasRoutingConfig() != other.hasRoutingConfig()) return false;
     if (hasRoutingConfig()) {
@@ -1119,6 +1550,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSelfLinkWithId() != other.hasSelfLinkWithId()) return false;
+    if (hasSelfLinkWithId()) {
+      if (!getSelfLinkWithId().equals(other.getSelfLinkWithId())) return false;
     }
     if (!getSubnetworksList().equals(other.getSubnetworksList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1148,6 +1583,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
     }
+    if (hasEnableUlaInternalIpv6()) {
+      hash = (37 * hash) + ENABLE_ULA_INTERNAL_IPV6_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableUlaInternalIpv6());
+    }
     if (hasGatewayIPv4()) {
       hash = (37 * hash) + GATEWAY_I_PV4_FIELD_NUMBER;
       hash = (53 * hash) + getGatewayIPv4().hashCode();
@@ -1155,6 +1594,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
+    }
+    if (hasInternalIpv6Range()) {
+      hash = (37 * hash) + INTERNAL_IPV6_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getInternalIpv6Range().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1168,6 +1611,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
+    if (hasNetworkFirewallPolicyEnforcementOrder()) {
+      hash = (37 * hash) + NETWORK_FIREWALL_POLICY_ENFORCEMENT_ORDER_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkFirewallPolicyEnforcementOrder().hashCode();
+    }
     if (getPeeringsCount() > 0) {
       hash = (37 * hash) + PEERINGS_FIELD_NUMBER;
       hash = (53 * hash) + getPeeringsList().hashCode();
@@ -1179,6 +1626,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSelfLinkWithId()) {
+      hash = (37 * hash) + SELF_LINK_WITH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLinkWithId().hashCode();
     }
     if (getSubnetworksCount() > 0) {
       hash = (37 * hash) + SUBNETWORKS_FIELD_NUMBER;
@@ -1339,19 +1790,25 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      gatewayIPv4_ = "";
+      enableUlaInternalIpv6_ = false;
       bitField0_ = (bitField0_ & ~0x00000010);
-      id_ = 0L;
+      gatewayIPv4_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      kind_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
-      mtu_ = 0;
+      internalIpv6Range_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
+      mtu_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
+      networkFirewallPolicyEnforcementOrder_ = "";
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
         peeringsBuilder_.clear();
       }
@@ -1360,11 +1817,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
+      selfLinkWithId_ = "";
+      bitField0_ = (bitField0_ & ~0x00008000);
       subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -1410,49 +1869,65 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableUlaInternalIpv6_ = enableUlaInternalIpv6_;
         to_bitField0_ |= 0x00000010;
       }
-      result.gatewayIPv4_ = gatewayIPv4_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
+      result.gatewayIPv4_ = gatewayIPv4_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.mtu_ = mtu_;
         to_bitField0_ |= 0x00000080;
       }
+      result.internalIpv6Range_ = internalIpv6Range_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.mtu_ = mtu_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        to_bitField0_ |= 0x00000800;
+      }
+      result.networkFirewallPolicyEnforcementOrder_ = networkFirewallPolicyEnforcementOrder_;
       if (peeringsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           peerings_ = java.util.Collections.unmodifiableList(peerings_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.peerings_ = peerings_;
       } else {
         result.peerings_ = peeringsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         if (routingConfigBuilder_ == null) {
           result.routingConfig_ = routingConfig_;
         } else {
           result.routingConfig_ = routingConfigBuilder_.build();
         }
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000400;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        to_bitField0_ |= 0x00002000;
       }
       result.selfLink_ = selfLink_;
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
+      result.selfLinkWithId_ = selfLinkWithId_;
+      if (((bitField0_ & 0x00010000) != 0)) {
         subnetworks_ = subnetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00010000);
       }
       result.subnetworks_ = subnetworks_;
       result.bitField0_ = to_bitField0_;
@@ -1523,16 +1998,24 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         description_ = other.description_;
         onChanged();
       }
+      if (other.hasEnableUlaInternalIpv6()) {
+        setEnableUlaInternalIpv6(other.getEnableUlaInternalIpv6());
+      }
       if (other.hasGatewayIPv4()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         gatewayIPv4_ = other.gatewayIPv4_;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
+      if (other.hasInternalIpv6Range()) {
+        bitField0_ |= 0x00000080;
+        internalIpv6Range_ = other.internalIpv6Range_;
+        onChanged();
+      }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         kind_ = other.kind_;
         onChanged();
       }
@@ -1540,15 +2023,20 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         setMtu(other.getMtu());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         name_ = other.name_;
+        onChanged();
+      }
+      if (other.hasNetworkFirewallPolicyEnforcementOrder()) {
+        bitField0_ |= 0x00000800;
+        networkFirewallPolicyEnforcementOrder_ = other.networkFirewallPolicyEnforcementOrder_;
         onChanged();
       }
       if (peeringsBuilder_ == null) {
         if (!other.peerings_.isEmpty()) {
           if (peerings_.isEmpty()) {
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensurePeeringsIsMutable();
             peerings_.addAll(other.peerings_);
@@ -1561,7 +2049,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             peeringsBuilder_.dispose();
             peeringsBuilder_ = null;
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00001000);
             peeringsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPeeringsFieldBuilder()
@@ -1575,14 +2063,19 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         mergeRoutingConfig(other.getRoutingConfig());
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00004000;
         selfLink_ = other.selfLink_;
+        onChanged();
+      }
+      if (other.hasSelfLinkWithId()) {
+        bitField0_ |= 0x00008000;
+        selfLinkWithId_ = other.selfLinkWithId_;
         onChanged();
       }
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -2047,6 +2540,73 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean enableUlaInternalIpv6_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+     * </pre>
+     *
+     * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+     *
+     * @return Whether the enableUlaInternalIpv6 field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableUlaInternalIpv6() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+     * </pre>
+     *
+     * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+     *
+     * @return The enableUlaInternalIpv6.
+     */
+    @java.lang.Override
+    public boolean getEnableUlaInternalIpv6() {
+      return enableUlaInternalIpv6_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+     * </pre>
+     *
+     * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+     *
+     * @param value The enableUlaInternalIpv6 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableUlaInternalIpv6(boolean value) {
+      bitField0_ |= 0x00000010;
+      enableUlaInternalIpv6_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+     * </pre>
+     *
+     * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableUlaInternalIpv6() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableUlaInternalIpv6_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object gatewayIPv4_ = "";
     /**
      *
@@ -2060,7 +2620,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gatewayIPv4 field is set.
      */
     public boolean hasGatewayIPv4() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2122,7 +2682,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       gatewayIPv4_ = value;
       onChanged();
       return this;
@@ -2139,7 +2699,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayIPv4() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       gatewayIPv4_ = getDefaultInstance().getGatewayIPv4();
       onChanged();
       return this;
@@ -2161,7 +2721,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       gatewayIPv4_ = value;
       onChanged();
       return this;
@@ -2181,7 +2741,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2211,7 +2771,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       id_ = value;
       onChanged();
       return this;
@@ -2228,8 +2788,128 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object internalIpv6Range_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @return Whether the internalIpv6Range field is set.
+     */
+    public boolean hasInternalIpv6Range() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @return The internalIpv6Range.
+     */
+    public java.lang.String getInternalIpv6Range() {
+      java.lang.Object ref = internalIpv6Range_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        internalIpv6Range_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @return The bytes for internalIpv6Range.
+     */
+    public com.google.protobuf.ByteString getInternalIpv6RangeBytes() {
+      java.lang.Object ref = internalIpv6Range_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        internalIpv6Range_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @param value The internalIpv6Range to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalIpv6Range(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      internalIpv6Range_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalIpv6Range() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      internalIpv6Range_ = getDefaultInstance().getInternalIpv6Range();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+     * </pre>
+     *
+     * <code>optional string internal_ipv6_range = 277456807;</code>
+     *
+     * @param value The bytes for internalIpv6Range to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalIpv6RangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      internalIpv6Range_ = value;
       onChanged();
       return this;
     }
@@ -2247,7 +2927,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2309,7 +2989,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
@@ -2326,7 +3006,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2348,7 +3028,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       kind_ = value;
       onChanged();
       return this;
@@ -2368,7 +3048,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMtu() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2398,7 +3078,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMtu(int value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       mtu_ = value;
       onChanged();
       return this;
@@ -2415,7 +3095,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       mtu_ = 0;
       onChanged();
       return this;
@@ -2434,7 +3114,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2496,7 +3176,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       name_ = value;
       onChanged();
       return this;
@@ -2513,7 +3193,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2535,8 +3215,136 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object networkFirewallPolicyEnforcementOrder_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @return Whether the networkFirewallPolicyEnforcementOrder field is set.
+     */
+    public boolean hasNetworkFirewallPolicyEnforcementOrder() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @return The networkFirewallPolicyEnforcementOrder.
+     */
+    public java.lang.String getNetworkFirewallPolicyEnforcementOrder() {
+      java.lang.Object ref = networkFirewallPolicyEnforcementOrder_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkFirewallPolicyEnforcementOrder_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @return The bytes for networkFirewallPolicyEnforcementOrder.
+     */
+    public com.google.protobuf.ByteString getNetworkFirewallPolicyEnforcementOrderBytes() {
+      java.lang.Object ref = networkFirewallPolicyEnforcementOrder_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkFirewallPolicyEnforcementOrder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @param value The networkFirewallPolicyEnforcementOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkFirewallPolicyEnforcementOrder(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      networkFirewallPolicyEnforcementOrder_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkFirewallPolicyEnforcementOrder() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      networkFirewallPolicyEnforcementOrder_ =
+          getDefaultInstance().getNetworkFirewallPolicyEnforcementOrder();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+     * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+     *
+     * @param value The bytes for networkFirewallPolicyEnforcementOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkFirewallPolicyEnforcementOrderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      networkFirewallPolicyEnforcementOrder_ = value;
       onChanged();
       return this;
     }
@@ -2545,9 +3353,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePeeringsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>(peerings_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -2762,7 +3570,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPeerings() {
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         peeringsBuilder_.clear();
@@ -2884,7 +3692,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.NetworkPeering,
                 com.google.cloud.compute.v1.NetworkPeering.Builder,
                 com.google.cloud.compute.v1.NetworkPeeringOrBuilder>(
-                peerings_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                peerings_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         peerings_ = null;
       }
       return peeringsBuilder_;
@@ -2909,7 +3717,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -2952,7 +3760,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -2973,7 +3781,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -2988,7 +3796,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()) {
@@ -3003,7 +3811,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -3023,7 +3831,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } else {
         routingConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
     /**
@@ -3037,7 +3845,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfig.Builder getRoutingConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }
@@ -3100,7 +3908,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3162,7 +3970,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3179,7 +3987,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3201,8 +4009,128 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object selfLinkWithId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return Whether the selfLinkWithId field is set.
+     */
+    public boolean hasSelfLinkWithId() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The selfLinkWithId.
+     */
+    public java.lang.String getSelfLinkWithId() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        selfLinkWithId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The bytes for selfLinkWithId.
+     */
+    public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        selfLinkWithId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      selfLinkWithId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSelfLinkWithId() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The bytes for selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00008000;
+      selfLinkWithId_ = value;
       onChanged();
       return this;
     }
@@ -3211,9 +4139,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -3348,7 +4276,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubnetworks() {
       subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }

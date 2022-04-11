@@ -544,7 +544,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
    * </pre>
    *
    * <code>optional string filter_expr = 183374428;</code>
@@ -559,7 +559,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
    * </pre>
    *
    * <code>optional string filter_expr = 183374428;</code>
@@ -582,7 +582,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+   * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
    * </pre>
    *
    * <code>optional string filter_expr = 183374428;</code>
@@ -1424,7 +1424,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>
@@ -1438,7 +1438,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>
@@ -1460,7 +1460,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>
@@ -1482,7 +1482,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>
@@ -1503,7 +1503,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>
@@ -1520,7 +1520,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Export filter used to define which VPC flow logs should be logged.
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging.
      * </pre>
      *
      * <code>optional string filter_expr = 183374428;</code>

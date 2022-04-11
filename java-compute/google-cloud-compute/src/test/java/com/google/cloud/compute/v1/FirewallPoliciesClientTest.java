@@ -363,6 +363,7 @@ public class FirewallPoliciesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setParent("parent-995424086")
+            .setRegion("region-934795532")
             .setRuleTupleCount(388342037)
             .addAllRules(new ArrayList<FirewallPolicyRule>())
             .setSelfLink("selfLink1191800166")
@@ -516,8 +517,10 @@ public class FirewallPoliciesClientTest {
             .setKind("kind3292052")
             .setMatch(FirewallPolicyRuleMatcher.newBuilder().build())
             .setPriority(-1165461084)
+            .setRuleName("ruleName763275175")
             .setRuleTupleCount(388342037)
             .addAllTargetResources(new ArrayList<String>())
+            .addAllTargetSecureTags(new ArrayList<FirewallPolicyRuleSecureTag>())
             .addAllTargetServiceAccounts(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);

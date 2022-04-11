@@ -94,6 +94,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -106,6 +107,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -118,6 +120,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -131,6 +134,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -143,6 +147,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -155,6 +160,7 @@ public interface UpdateInstanceRequestOrBuilder
    *
    * <pre>
    * Specifies the most disruptive action that can be taken on the instance as part of the update. Compute Engine returns an error if the instance properties require a more disruptive action as part of the instance update. Valid options from lowest to highest are NO_EFFECT, REFRESH, and RESTART.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>

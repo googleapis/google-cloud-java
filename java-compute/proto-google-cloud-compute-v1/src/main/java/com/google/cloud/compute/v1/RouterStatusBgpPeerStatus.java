@@ -803,7 +803,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * BGP state as specified in RFC1771.
+   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -818,7 +818,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * BGP state as specified in RFC1771.
+   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -841,7 +841,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * BGP state as specified in RFC1771.
+   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -2846,7 +2846,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -2860,7 +2860,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -2882,7 +2882,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -2904,7 +2904,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -2925,7 +2925,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -2942,7 +2942,7 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP state as specified in RFC1771.
+     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>

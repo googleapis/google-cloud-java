@@ -16,12 +16,14 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.SecurityPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetSecurityPolicyRequest;
@@ -32,6 +34,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.PatchSecurityPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest;
+import com.google.cloud.compute.v1.SecurityPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
@@ -54,6 +57,16 @@ public abstract class SecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<AddRuleSecurityPolicyRequest, Operation> addRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: addRuleCallable()");
+  }
+
+  public UnaryCallable<AggregatedListSecurityPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<AggregatedListSecurityPoliciesRequest, SecurityPoliciesAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
   public OperationCallable<DeleteSecurityPolicyRequest, Operation, Operation>

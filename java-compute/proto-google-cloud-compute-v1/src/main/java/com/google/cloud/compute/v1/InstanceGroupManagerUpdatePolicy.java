@@ -176,6 +176,674 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NONE
+   * PROACTIVE
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.InstanceRedistributionType}
+   */
+  public enum InstanceRedistributionType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_INSTANCE_REDISTRIBUTION_TYPE = 0;</code>
+     */
+    UNDEFINED_INSTANCE_REDISTRIBUTION_TYPE(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_INSTANCE_REDISTRIBUTION_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_INSTANCE_REDISTRIBUTION_TYPE_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InstanceRedistributionType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static InstanceRedistributionType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_INSTANCE_REDISTRIBUTION_TYPE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InstanceRedistributionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<InstanceRedistributionType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<InstanceRedistributionType>() {
+              public InstanceRedistributionType findValueByNumber(int number) {
+                return InstanceRedistributionType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final InstanceRedistributionType[] VALUES = values();
+
+    public static InstanceRedistributionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InstanceRedistributionType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.InstanceRedistributionType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NONE
+   * REFRESH
+   * REPLACE
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.MinimalAction}
+   */
+  public enum MinimalAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    UNDEFINED_MINIMAL_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MINIMAL_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MINIMAL_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MinimalAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MinimalAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MINIMAL_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MinimalAction> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MinimalAction>() {
+          public MinimalAction findValueByNumber(int number) {
+            return MinimalAction.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final MinimalAction[] VALUES = values();
+
+    public static MinimalAction valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MinimalAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.MinimalAction)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NONE
+   * REFRESH
+   * REPLACE
+   * RESTART
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.MostDisruptiveAllowedAction}
+   */
+  public enum MostDisruptiveAllowedAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION = 0;</code>
+     */
+    public static final int UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MostDisruptiveAllowedAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MostDisruptiveAllowedAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MOST_DISRUPTIVE_ALLOWED_ACTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MostDisruptiveAllowedAction>() {
+              public MostDisruptiveAllowedAction findValueByNumber(int number) {
+                return MostDisruptiveAllowedAction.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final MostDisruptiveAllowedAction[] VALUES = values();
+
+    public static MostDisruptiveAllowedAction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MostDisruptiveAllowedAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.MostDisruptiveAllowedAction)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * What action should be used to replace instances. See minimal_action.REPLACE
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.ReplacementMethod}
+   */
+  public enum ReplacementMethod implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_REPLACEMENT_METHOD = 0;</code>
+     */
+    UNDEFINED_REPLACEMENT_METHOD(0),
+    /**
+     *
+     *
+     * <pre>
+     * Instances will be recreated (with the same name)
+     * </pre>
+     *
+     * <code>RECREATE = 522644719;</code>
+     */
+    RECREATE(522644719),
+    /**
+     *
+     *
+     * <pre>
+     * Default option: instances will be deleted and created (with a new name)
+     * </pre>
+     *
+     * <code>SUBSTITUTE = 280924314;</code>
+     */
+    SUBSTITUTE(280924314),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_REPLACEMENT_METHOD = 0;</code>
+     */
+    public static final int UNDEFINED_REPLACEMENT_METHOD_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Instances will be recreated (with the same name)
+     * </pre>
+     *
+     * <code>RECREATE = 522644719;</code>
+     */
+    public static final int RECREATE_VALUE = 522644719;
+    /**
+     *
+     *
+     * <pre>
+     * Default option: instances will be deleted and created (with a new name)
+     * </pre>
+     *
+     * <code>SUBSTITUTE = 280924314;</code>
+     */
+    public static final int SUBSTITUTE_VALUE = 280924314;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReplacementMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReplacementMethod forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_REPLACEMENT_METHOD;
+        case 522644719:
+          return RECREATE;
+        case 280924314:
+          return SUBSTITUTE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReplacementMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ReplacementMethod>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ReplacementMethod>() {
+              public ReplacementMethod findValueByNumber(int number) {
+                return ReplacementMethod.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final ReplacementMethod[] VALUES = values();
+
+    public static ReplacementMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ReplacementMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.ReplacementMethod)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * PROACTIVE
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    UNDEFINED_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * No action is being proactively performed in order to bring this IGM to its target version distribution (regardless of whether this distribution is expressed using instanceTemplate or versions field).
+     * </pre>
+     *
+     * <code>OPPORTUNISTIC = 429530089;</code>
+     */
+    OPPORTUNISTIC(429530089),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * No action is being proactively performed in order to bring this IGM to its target version distribution (regardless of whether this distribution is expressed using instanceTemplate or versions field).
+     * </pre>
+     *
+     * <code>OPPORTUNISTIC = 429530089;</code>
+     */
+    public static final int OPPORTUNISTIC_VALUE = 429530089;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TYPE;
+        case 429530089:
+          return OPPORTUNISTIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(4);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Type)
+  }
+
   private int bitField0_;
   public static final int INSTANCE_REDISTRIBUTION_TYPE_FIELD_NUMBER = 292630424;
   private volatile java.lang.Object instanceRedistributionType_;
@@ -184,6 +852,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -199,6 +868,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -222,6 +892,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
    * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -348,6 +1019,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -363,6 +1035,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -386,6 +1059,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+   * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string minimal_action = 270567060;</code>
@@ -412,6 +1086,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -427,6 +1102,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -450,6 +1126,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
    * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -476,6 +1153,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * What action should be used to replace instances. See minimal_action.REPLACE
+   * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
    * <code>optional string replacement_method = 505931694;</code>
@@ -491,6 +1169,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * What action should be used to replace instances. See minimal_action.REPLACE
+   * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
    * <code>optional string replacement_method = 505931694;</code>
@@ -514,6 +1193,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * What action should be used to replace instances. See minimal_action.REPLACE
+   * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
    * <code>optional string replacement_method = 505931694;</code>
@@ -540,6 +1220,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -555,6 +1236,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -578,6 +1260,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    *
    * <pre>
    * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -1112,6 +1795,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1126,6 +1810,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1148,6 +1833,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1170,6 +1856,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1191,6 +1878,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1208,6 +1896,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+     * Check the InstanceRedistributionType enum for the list of possible values.
      * </pre>
      *
      * <code>optional string instance_redistribution_type = 292630424;</code>
@@ -1605,6 +2294,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1619,6 +2309,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1641,6 +2332,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1663,6 +2355,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1684,6 +2377,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1701,6 +2395,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
+     * Check the MinimalAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string minimal_action = 270567060;</code>
@@ -1725,6 +2420,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1739,6 +2435,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1761,6 +2458,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1783,6 +2481,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1804,6 +2503,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1821,6 +2521,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to allow actions that do not need instance restart, RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+     * Check the MostDisruptiveAllowedAction enum for the list of possible values.
      * </pre>
      *
      * <code>optional string most_disruptive_allowed_action = 66103053;</code>
@@ -1845,6 +2546,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1859,6 +2561,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1881,6 +2584,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1903,6 +2607,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1924,6 +2629,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1941,6 +2647,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * What action should be used to replace instances. See minimal_action.REPLACE
+     * Check the ReplacementMethod enum for the list of possible values.
      * </pre>
      *
      * <code>optional string replacement_method = 505931694;</code>
@@ -1965,6 +2672,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -1979,6 +2687,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2001,6 +2710,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2023,6 +2733,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2044,6 +2755,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2061,6 +2773,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      *
      * <pre>
      * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>

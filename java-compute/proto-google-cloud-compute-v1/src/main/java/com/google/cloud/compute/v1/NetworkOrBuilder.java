@@ -163,6 +163,31 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
+   * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+   * </pre>
+   *
+   * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+   *
+   * @return Whether the enableUlaInternalIpv6 field is set.
+   */
+  boolean hasEnableUlaInternalIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
+   * </pre>
+   *
+   * <code>optional bool enable_ula_internal_ipv6 = 423757720;</code>
+   *
+   * @return The enableUlaInternalIpv6.
+   */
+  boolean getEnableUlaInternalIpv6();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The gateway address for default routing out of the network, selected by GCP.
    * </pre>
    *
@@ -220,6 +245,43 @@ public interface NetworkOrBuilder
    * @return The id.
    */
   long getId();
+
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return Whether the internalIpv6Range field is set.
+   */
+  boolean hasInternalIpv6Range();
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return The internalIpv6Range.
+   */
+  java.lang.String getInternalIpv6Range();
+  /**
+   *
+   *
+   * <pre>
+   * When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_range = 277456807;</code>
+   *
+   * @return The bytes for internalIpv6Range.
+   */
+  com.google.protobuf.ByteString getInternalIpv6RangeBytes();
 
   /**
    *
@@ -319,6 +381,46 @@ public interface NetworkOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return Whether the networkFirewallPolicyEnforcementOrder field is set.
+   */
+  boolean hasNetworkFirewallPolicyEnforcementOrder();
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return The networkFirewallPolicyEnforcementOrder.
+   */
+  java.lang.String getNetworkFirewallPolicyEnforcementOrder();
+  /**
+   *
+   *
+   * <pre>
+   * The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+   * Check the NetworkFirewallPolicyEnforcementOrder enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string network_firewall_policy_enforcement_order = 6504784;</code>
+   *
+   * @return The bytes for networkFirewallPolicyEnforcementOrder.
+   */
+  com.google.protobuf.ByteString getNetworkFirewallPolicyEnforcementOrderBytes();
 
   /**
    *
@@ -443,6 +545,43 @@ public interface NetworkOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  boolean hasSelfLinkWithId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  java.lang.String getSelfLinkWithId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  com.google.protobuf.ByteString getSelfLinkWithIdBytes();
 
   /**
    *

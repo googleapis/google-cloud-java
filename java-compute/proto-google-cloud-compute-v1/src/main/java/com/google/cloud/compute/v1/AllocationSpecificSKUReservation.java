@@ -72,7 +72,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
             break;
           case 758810744:
             {
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               count_ = input.readInt64();
               break;
             }
@@ -81,7 +81,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
               com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
                       .Builder
                   subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
+              if (((bitField0_ & 0x00000008) != 0)) {
                 subBuilder = instanceProperties_.toBuilder();
               }
               instanceProperties_ =
@@ -93,12 +93,18 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
                 subBuilder.mergeFrom(instanceProperties_);
                 instanceProperties_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          case -2045386136:
+            {
+              bitField0_ |= 0x00000001;
+              assuredCount_ = input.readInt64();
               break;
             }
           case -347296280:
             {
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               inUseCount_ = input.readInt64();
               break;
             }
@@ -137,6 +143,39 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   }
 
   private int bitField0_;
+  public static final int ASSURED_COUNT_FIELD_NUMBER = 281197645;
+  private long assuredCount_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates how many instances are actually usable currently.
+   * </pre>
+   *
+   * <code>optional int64 assured_count = 281197645;</code>
+   *
+   * @return Whether the assuredCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAssuredCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates how many instances are actually usable currently.
+   * </pre>
+   *
+   * <code>optional int64 assured_count = 281197645;</code>
+   *
+   * @return The assuredCount.
+   */
+  @java.lang.Override
+  public long getAssuredCount() {
+    return assuredCount_;
+  }
+
   public static final int COUNT_FIELD_NUMBER = 94851343;
   private long count_;
   /**
@@ -152,7 +191,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    */
   @java.lang.Override
   public boolean hasCount() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -185,7 +224,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    */
   @java.lang.Override
   public boolean hasInUseCount() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -221,7 +260,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    */
   @java.lang.Override
   public boolean hasInstanceProperties() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -279,13 +318,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(94851343, count_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(215355165, getInstanceProperties());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(281197645, assuredCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt64(493458877, inUseCount_);
     }
     unknownFields.writeTo(output);
@@ -297,15 +339,18 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(94851343, count_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               215355165, getInstanceProperties());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(281197645, assuredCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(493458877, inUseCount_);
     }
     size += unknownFields.getSerializedSize();
@@ -324,6 +369,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     com.google.cloud.compute.v1.AllocationSpecificSKUReservation other =
         (com.google.cloud.compute.v1.AllocationSpecificSKUReservation) obj;
 
+    if (hasAssuredCount() != other.hasAssuredCount()) return false;
+    if (hasAssuredCount()) {
+      if (getAssuredCount() != other.getAssuredCount()) return false;
+    }
     if (hasCount() != other.hasCount()) return false;
     if (hasCount()) {
       if (getCount() != other.getCount()) return false;
@@ -347,6 +396,10 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAssuredCount()) {
+      hash = (37 * hash) + ASSURED_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAssuredCount());
+    }
     if (hasCount()) {
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
@@ -507,16 +560,18 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      count_ = 0L;
+      assuredCount_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
-      inUseCount_ = 0L;
+      count_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
+      inUseCount_ = 0L;
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (instancePropertiesBuilder_ == null) {
         instanceProperties_ = null;
       } else {
         instancePropertiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -548,20 +603,24 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.count_ = count_;
+        result.assuredCount_ = assuredCount_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.inUseCount_ = inUseCount_;
+        result.count_ = count_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.inUseCount_ = inUseCount_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         if (instancePropertiesBuilder_ == null) {
           result.instanceProperties_ = instanceProperties_;
         } else {
           result.instanceProperties_ = instancePropertiesBuilder_.build();
         }
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -615,6 +674,9 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       if (other
           == com.google.cloud.compute.v1.AllocationSpecificSKUReservation.getDefaultInstance())
         return this;
+      if (other.hasAssuredCount()) {
+        setAssuredCount(other.getAssuredCount());
+      }
       if (other.hasCount()) {
         setCount(other.getCount());
       }
@@ -656,6 +718,73 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
     private int bitField0_;
 
+    private long assuredCount_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates how many instances are actually usable currently.
+     * </pre>
+     *
+     * <code>optional int64 assured_count = 281197645;</code>
+     *
+     * @return Whether the assuredCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssuredCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates how many instances are actually usable currently.
+     * </pre>
+     *
+     * <code>optional int64 assured_count = 281197645;</code>
+     *
+     * @return The assuredCount.
+     */
+    @java.lang.Override
+    public long getAssuredCount() {
+      return assuredCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates how many instances are actually usable currently.
+     * </pre>
+     *
+     * <code>optional int64 assured_count = 281197645;</code>
+     *
+     * @param value The assuredCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssuredCount(long value) {
+      bitField0_ |= 0x00000001;
+      assuredCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates how many instances are actually usable currently.
+     * </pre>
+     *
+     * <code>optional int64 assured_count = 281197645;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAssuredCount() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      assuredCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long count_;
     /**
      *
@@ -670,7 +799,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      */
     @java.lang.Override
     public boolean hasCount() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -700,7 +829,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setCount(long value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       count_ = value;
       onChanged();
       return this;
@@ -717,7 +846,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0L;
       onChanged();
       return this;
@@ -737,7 +866,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      */
     @java.lang.Override
     public boolean hasInUseCount() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -767,7 +896,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setInUseCount(long value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       inUseCount_ = value;
       onChanged();
       return this;
@@ -784,7 +913,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearInUseCount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       inUseCount_ = 0L;
       onChanged();
       return this;
@@ -813,7 +942,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * @return Whether the instanceProperties field is set.
      */
     public boolean hasInstanceProperties() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -862,7 +991,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       } else {
         instancePropertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -886,7 +1015,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       } else {
         instancePropertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -904,7 +1033,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
             value) {
       if (instancePropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && instanceProperties_ != null
             && instanceProperties_
                 != com.google.cloud.compute.v1
@@ -922,7 +1051,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       } else {
         instancePropertiesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -943,7 +1072,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       } else {
         instancePropertiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
     /**
@@ -960,7 +1089,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
             .Builder
         getInstancePropertiesBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInstancePropertiesFieldBuilder().getBuilder();
     }

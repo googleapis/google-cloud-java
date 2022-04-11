@@ -164,24 +164,12 @@ public interface PolicyOrBuilder
   com.google.protobuf.ByteString getEtagBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return Whether the iamOwned field is set.
    */
   boolean hasIamOwned();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool iam_owned = 450566203;</code>
    *
    * @return The iamOwned.

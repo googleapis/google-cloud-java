@@ -43,6 +43,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     fingerprint_ = "";
     kind_ = "";
     name_ = "";
+    region_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
     type_ = "";
@@ -80,28 +81,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               id_ = input.readUInt64();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               name_ = s;
               break;
             }
           case 28604882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00001000;
               type_ = s;
               break;
             }
@@ -112,15 +113,40 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 402526826:
+            {
+              com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000008) != 0)) {
+                subBuilder = ddosProtectionConfig_.toBuilder();
+              }
+              ddosProtectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ddosProtectionConfig_);
+                ddosProtectionConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
           case 870991802:
             {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000800;
               }
               rules_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.SecurityPolicyRule.parser(), extensionRegistry));
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              region_ = s;
               break;
             }
           case 1201925882:
@@ -144,14 +170,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               fingerprint_ = s;
               break;
             }
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               description_ = s;
               break;
             }
@@ -176,7 +202,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000800;
               selfLink_ = s;
               break;
             }
@@ -184,7 +210,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             {
               com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder subBuilder =
                   null;
-              if (((bitField0_ & 0x00000100) != 0)) {
+              if (((bitField0_ & 0x00000200) != 0)) {
                 subBuilder = recaptchaOptionsConfig_.toBuilder();
               }
               recaptchaOptionsConfig_ =
@@ -195,7 +221,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(recaptchaOptionsConfig_);
                 recaptchaOptionsConfig_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             }
           default:
@@ -212,7 +238,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
       this.unknownFields = unknownFields.build();
@@ -239,7 +265,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SecurityPolicy.Type}
@@ -259,6 +285,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     CLOUD_ARMOR(260640373),
     /** <code>CLOUD_ARMOR_EDGE = 250728775;</code> */
     CLOUD_ARMOR_EDGE(250728775),
+    /** <code>CLOUD_ARMOR_NETWORK = 488527428;</code> */
+    CLOUD_ARMOR_NETWORK(488527428),
     UNRECOGNIZED(-1),
     ;
 
@@ -276,6 +304,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public static final int CLOUD_ARMOR_VALUE = 260640373;
     /** <code>CLOUD_ARMOR_EDGE = 250728775;</code> */
     public static final int CLOUD_ARMOR_EDGE_VALUE = 250728775;
+    /** <code>CLOUD_ARMOR_NETWORK = 488527428;</code> */
+    public static final int CLOUD_ARMOR_NETWORK_VALUE = 488527428;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -307,6 +337,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_ARMOR;
         case 250728775:
           return CLOUD_ARMOR_EDGE;
+        case 488527428:
+          return CLOUD_ARMOR_NETWORK;
         default:
           return null;
       }
@@ -506,6 +538,45 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DDOS_PROTECTION_CONFIG_FIELD_NUMBER = 50315853;
+  private com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddosProtectionConfig_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   *
+   * @return Whether the ddosProtectionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDdosProtectionConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   *
+   * @return The ddosProtectionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig getDdosProtectionConfig() {
+    return ddosProtectionConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance()
+        : ddosProtectionConfig_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder
+      getDdosProtectionConfigOrBuilder() {
+    return ddosProtectionConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance()
+        : ddosProtectionConfig_;
+  }
+
   public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
   private volatile java.lang.Object description_;
   /**
@@ -521,7 +592,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -585,7 +656,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -649,7 +720,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -682,7 +753,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -746,7 +817,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -806,7 +877,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRecaptchaOptionsConfig() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <code>
@@ -833,6 +904,70 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     return recaptchaOptionsConfig_ == null
         ? com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.getDefaultInstance()
         : recaptchaOptionsConfig_;
+  }
+
+  public static final int REGION_FIELD_NUMBER = 138946292;
+  private volatile java.lang.Object region_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int RULES_FIELD_NUMBER = 108873975;
@@ -919,7 +1054,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -974,7 +1109,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -984,13 +1119,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1014,7 +1149,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1049,40 +1184,46 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(50315853, getDdosProtectionConfig());
+    }
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(150240735, getAdaptiveProtectionConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(519006811, getRecaptchaOptionsConfig());
     }
     unknownFields.writeTo(output);
@@ -1094,34 +1235,42 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              50315853, getDdosProtectionConfig());
+    }
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               150240735, getAdaptiveProtectionConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1129,10 +1278,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               519006811, getRecaptchaOptionsConfig());
@@ -1165,6 +1314,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
     }
+    if (hasDdosProtectionConfig() != other.hasDdosProtectionConfig()) return false;
+    if (hasDdosProtectionConfig()) {
+      if (!getDdosProtectionConfig().equals(other.getDdosProtectionConfig())) return false;
+    }
     if (hasDescription() != other.hasDescription()) return false;
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
@@ -1188,6 +1341,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasRecaptchaOptionsConfig() != other.hasRecaptchaOptionsConfig()) return false;
     if (hasRecaptchaOptionsConfig()) {
       if (!getRecaptchaOptionsConfig().equals(other.getRecaptchaOptionsConfig())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
     }
     if (!getRulesList().equals(other.getRulesList())) return false;
     if (hasSelfLink() != other.hasSelfLink()) return false;
@@ -1221,6 +1378,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getCreationTimestamp().hashCode();
     }
+    if (hasDdosProtectionConfig()) {
+      hash = (37 * hash) + DDOS_PROTECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDdosProtectionConfig().hashCode();
+    }
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
@@ -1244,6 +1405,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasRecaptchaOptionsConfig()) {
       hash = (37 * hash) + RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRecaptchaOptionsConfig().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (getRulesCount() > 0) {
       hash = (37 * hash) + RULES_FIELD_NUMBER;
@@ -1399,6 +1564,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdaptiveProtectionConfigFieldBuilder();
         getAdvancedOptionsConfigFieldBuilder();
+        getDdosProtectionConfigFieldBuilder();
         getRecaptchaOptionsConfigFieldBuilder();
         getRulesFieldBuilder();
       }
@@ -1421,32 +1587,40 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      description_ = "";
+      if (ddosProtectionConfigBuilder_ == null) {
+        ddosProtectionConfig_ = null;
+      } else {
+        ddosProtectionConfigBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000008);
-      fingerprint_ = "";
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      id_ = 0L;
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      kind_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (recaptchaOptionsConfigBuilder_ == null) {
         recaptchaOptionsConfig_ = null;
       } else {
         recaptchaOptionsConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
+      region_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         rulesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       type_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1497,48 +1671,60 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (ddosProtectionConfigBuilder_ == null) {
+          result.ddosProtectionConfig_ = ddosProtectionConfig_;
+        } else {
+          result.ddosProtectionConfig_ = ddosProtectionConfigBuilder_.build();
+        }
         to_bitField0_ |= 0x00000008;
       }
-      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.fingerprint_ = fingerprint_;
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
+      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.name_ = name_;
+      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        to_bitField0_ |= 0x00000100;
+      }
+      result.name_ = name_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         if (recaptchaOptionsConfigBuilder_ == null) {
           result.recaptchaOptionsConfig_ = recaptchaOptionsConfig_;
         } else {
           result.recaptchaOptionsConfig_ = recaptchaOptionsConfigBuilder_.build();
         }
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
+      result.region_ = region_;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000200;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        to_bitField0_ |= 0x00000800;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        to_bitField0_ |= 0x00000400;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00001000;
       }
       result.type_ = type_;
       result.bitField0_ = to_bitField0_;
@@ -1602,13 +1788,16 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
+      if (other.hasDdosProtectionConfig()) {
+        mergeDdosProtectionConfig(other.getDdosProtectionConfig());
+      }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
@@ -1616,23 +1805,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasRecaptchaOptionsConfig()) {
         mergeRecaptchaOptionsConfig(other.getRecaptchaOptionsConfig());
       }
+      if (other.hasRegion()) {
+        bitField0_ |= 0x00000400;
+        region_ = other.region_;
+        onChanged();
+      }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1645,7 +1839,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000800);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1656,12 +1850,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasType()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         type_ = other.type_;
         onChanged();
       }
@@ -2138,6 +2332,165 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddosProtectionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig,
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder>
+        ddosProtectionConfigBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     *
+     * @return Whether the ddosProtectionConfig field is set.
+     */
+    public boolean hasDdosProtectionConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     *
+     * @return The ddosProtectionConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig
+        getDdosProtectionConfig() {
+      if (ddosProtectionConfigBuilder_ == null) {
+        return ddosProtectionConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance()
+            : ddosProtectionConfig_;
+      } else {
+        return ddosProtectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public Builder setDdosProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig value) {
+      if (ddosProtectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ddosProtectionConfig_ = value;
+        onChanged();
+      } else {
+        ddosProtectionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public Builder setDdosProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder builderForValue) {
+      if (ddosProtectionConfigBuilder_ == null) {
+        ddosProtectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        ddosProtectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public Builder mergeDdosProtectionConfig(
+        com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig value) {
+      if (ddosProtectionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && ddosProtectionConfig_ != null
+            && ddosProtectionConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig
+                    .getDefaultInstance()) {
+          ddosProtectionConfig_ =
+              com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.newBuilder(
+                      ddosProtectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ddosProtectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        ddosProtectionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public Builder clearDdosProtectionConfig() {
+      if (ddosProtectionConfigBuilder_ == null) {
+        ddosProtectionConfig_ = null;
+        onChanged();
+      } else {
+        ddosProtectionConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder
+        getDdosProtectionConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDdosProtectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder
+        getDdosProtectionConfigOrBuilder() {
+      if (ddosProtectionConfigBuilder_ != null) {
+        return ddosProtectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ddosProtectionConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance()
+            : ddosProtectionConfig_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig,
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder>
+        getDdosProtectionConfigFieldBuilder() {
+      if (ddosProtectionConfigBuilder_ == null) {
+        ddosProtectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig,
+                com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfigOrBuilder>(
+                getDdosProtectionConfig(), getParentForChildren(), isClean());
+        ddosProtectionConfig_ = null;
+      }
+      return ddosProtectionConfigBuilder_;
+    }
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -2151,7 +2504,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2213,7 +2566,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
@@ -2230,7 +2583,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -2252,7 +2605,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       description_ = value;
       onChanged();
       return this;
@@ -2271,7 +2624,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2333,7 +2686,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2350,7 +2703,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -2372,7 +2725,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2392,7 +2745,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2422,7 +2775,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       id_ = value;
       onChanged();
       return this;
@@ -2439,7 +2792,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
       onChanged();
       return this;
@@ -2458,7 +2811,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2520,7 +2873,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -2537,7 +2890,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2559,7 +2912,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -2578,7 +2931,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2640,7 +2993,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2657,7 +3010,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2679,7 +3032,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2700,7 +3053,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the recaptchaOptionsConfig field is set.
      */
     public boolean hasRecaptchaOptionsConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <code>
@@ -2735,7 +3088,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2751,7 +3104,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2762,7 +3115,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRecaptchaOptionsConfig(
         com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig value) {
       if (recaptchaOptionsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && recaptchaOptionsConfig_ != null
             && recaptchaOptionsConfig_
                 != com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
@@ -2779,7 +3132,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2794,7 +3147,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
     /**
@@ -2804,7 +3157,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder
         getRecaptchaOptionsConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getRecaptchaOptionsConfigFieldBuilder().getBuilder();
     }
@@ -2845,13 +3198,133 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       return recaptchaOptionsConfigBuilder_;
     }
 
+    private java.lang.Object region_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      region_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> rules_ =
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>(rules_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3067,7 +3540,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -3189,7 +3662,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyRule,
                 com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -3208,7 +3681,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3270,7 +3743,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3287,7 +3760,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3309,7 +3782,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3320,7 +3793,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3329,13 +3802,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3358,7 +3831,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3381,7 +3854,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3394,7 +3867,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       type_ = value;
       onChanged();
       return this;
@@ -3403,7 +3876,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3412,7 +3885,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
@@ -3421,7 +3894,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. CLOUD_ARMOR - Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. CLOUD_ARMOR_EDGE - Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.
+     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE: Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -3435,7 +3908,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       type_ = value;
       onChanged();
       return this;

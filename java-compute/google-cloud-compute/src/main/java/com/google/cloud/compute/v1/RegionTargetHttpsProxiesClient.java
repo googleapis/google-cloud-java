@@ -627,6 +627,139 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Patches the specified regional TargetHttpsProxy resource with the data included in the request.
+   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String targetHttpsProxy = "targetHttpsProxy833943732";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
+   *   Operation response =
+   *       regionTargetHttpsProxiesClient
+   *           .patchAsync(project, region, targetHttpsProxy, targetHttpsProxyResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param targetHttpsProxy Name of the TargetHttpsProxy resource to patch.
+   * @param targetHttpsProxyResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchAsync(
+      String project,
+      String region,
+      String targetHttpsProxy,
+      TargetHttpsProxy targetHttpsProxyResource) {
+    PatchRegionTargetHttpsProxyRequest request =
+        PatchRegionTargetHttpsProxyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setTargetHttpsProxy(targetHttpsProxy)
+            .setTargetHttpsProxyResource(targetHttpsProxyResource)
+            .build();
+    return patchAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified regional TargetHttpsProxy resource with the data included in the request.
+   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   PatchRegionTargetHttpsProxyRequest request =
+   *       PatchRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .setTargetHttpsProxyResource(TargetHttpsProxy.newBuilder().build())
+   *           .build();
+   *   Operation response = regionTargetHttpsProxiesClient.patchAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> patchAsync(
+      PatchRegionTargetHttpsProxyRequest request) {
+    return patchOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified regional TargetHttpsProxy resource with the data included in the request.
+   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   PatchRegionTargetHttpsProxyRequest request =
+   *       PatchRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .setTargetHttpsProxyResource(TargetHttpsProxy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionTargetHttpsProxiesClient.patchOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return stub.patchOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches the specified regional TargetHttpsProxy resource with the data included in the request.
+   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
+   *     RegionTargetHttpsProxiesClient.create()) {
+   *   PatchRegionTargetHttpsProxyRequest request =
+   *       PatchRegionTargetHttpsProxyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setTargetHttpsProxy("targetHttpsProxy833943732")
+   *           .setTargetHttpsProxyResource(TargetHttpsProxy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionTargetHttpsProxiesClient.patchCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchRegionTargetHttpsProxyRequest, Operation> patchCallable() {
+    return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Replaces SslCertificates for TargetHttpsProxy.
    *
    * <p>Sample code:

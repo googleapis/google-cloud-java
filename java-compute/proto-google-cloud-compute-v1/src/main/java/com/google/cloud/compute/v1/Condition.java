@@ -150,6 +150,723 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Condition.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NO_ATTR
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Condition.Iam}
+   */
+  public enum Iam implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IAM = 0;</code>
+     */
+    UNDEFINED_IAM(0),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>APPROVER = 357258949;</code>
+     */
+    APPROVER(357258949),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ATTRIBUTION = 232465503;</code>
+     */
+    ATTRIBUTION(232465503),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>AUTHORITY = 504108835;</code>
+     */
+    AUTHORITY(504108835),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>CREDENTIALS_TYPE = 348222141;</code>
+     */
+    CREDENTIALS_TYPE(348222141),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>CREDS_ASSERTION = 332343272;</code>
+     */
+    CREDS_ASSERTION(332343272),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>JUSTIFICATION_TYPE = 206147719;</code>
+     */
+    JUSTIFICATION_TYPE(206147719),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>SECURITY_REALM = 526269616;</code>
+     */
+    SECURITY_REALM(526269616),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IAM = 0;</code>
+     */
+    public static final int UNDEFINED_IAM_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>APPROVER = 357258949;</code>
+     */
+    public static final int APPROVER_VALUE = 357258949;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ATTRIBUTION = 232465503;</code>
+     */
+    public static final int ATTRIBUTION_VALUE = 232465503;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>AUTHORITY = 504108835;</code>
+     */
+    public static final int AUTHORITY_VALUE = 504108835;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>CREDENTIALS_TYPE = 348222141;</code>
+     */
+    public static final int CREDENTIALS_TYPE_VALUE = 348222141;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>CREDS_ASSERTION = 332343272;</code>
+     */
+    public static final int CREDS_ASSERTION_VALUE = 332343272;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>JUSTIFICATION_TYPE = 206147719;</code>
+     */
+    public static final int JUSTIFICATION_TYPE_VALUE = 206147719;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>SECURITY_REALM = 526269616;</code>
+     */
+    public static final int SECURITY_REALM_VALUE = 526269616;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Iam valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Iam forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IAM;
+        case 357258949:
+          return APPROVER;
+        case 232465503:
+          return ATTRIBUTION;
+        case 504108835:
+          return AUTHORITY;
+        case 348222141:
+          return CREDENTIALS_TYPE;
+        case 332343272:
+          return CREDS_ASSERTION;
+        case 206147719:
+          return JUSTIFICATION_TYPE;
+        case 526269616:
+          return SECURITY_REALM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Iam> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Iam> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Iam>() {
+          public Iam findValueByNumber(int number) {
+            return Iam.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Condition.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Iam[] VALUES = values();
+
+    public static Iam valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Iam(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Condition.Iam)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Condition.Op}
+   */
+  public enum Op implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OP = 0;</code>
+     */
+    UNDEFINED_OP(0),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DISCHARGED = 266338274;</code>
+     */
+    DISCHARGED(266338274),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>EQUALS = 442201023;</code>
+     */
+    EQUALS(442201023),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>IN = 2341;</code>
+     */
+    IN(2341),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NOT_EQUALS = 19718859;</code>
+     */
+    NOT_EQUALS(19718859),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NOT_IN = 161144369;</code>
+     */
+    NOT_IN(161144369),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NO_OP = 74481951;</code>
+     */
+    NO_OP(74481951),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OP = 0;</code>
+     */
+    public static final int UNDEFINED_OP_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DISCHARGED = 266338274;</code>
+     */
+    public static final int DISCHARGED_VALUE = 266338274;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>EQUALS = 442201023;</code>
+     */
+    public static final int EQUALS_VALUE = 442201023;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>IN = 2341;</code>
+     */
+    public static final int IN_VALUE = 2341;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NOT_EQUALS = 19718859;</code>
+     */
+    public static final int NOT_EQUALS_VALUE = 19718859;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NOT_IN = 161144369;</code>
+     */
+    public static final int NOT_IN_VALUE = 161144369;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NO_OP = 74481951;</code>
+     */
+    public static final int NO_OP_VALUE = 74481951;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Op valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Op forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_OP;
+        case 266338274:
+          return DISCHARGED;
+        case 442201023:
+          return EQUALS;
+        case 2341:
+          return IN;
+        case 19718859:
+          return NOT_EQUALS;
+        case 161144369:
+          return NOT_IN;
+        case 74481951:
+          return NO_OP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Op> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Op> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Op>() {
+          public Op findValueByNumber(int number) {
+            return Op.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Condition.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Op[] VALUES = values();
+
+    public static Op valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Op(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Condition.Op)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * NO_ATTR
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Condition.Sys}
+   */
+  public enum Sys implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SYS = 0;</code>
+     */
+    UNDEFINED_SYS(0),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>IP = 2343;</code>
+     */
+    IP(2343),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NAME = 2388619;</code>
+     */
+    NAME(2388619),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>REGION = 266017524;</code>
+     */
+    REGION(266017524),
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>SERVICE = 17781397;</code>
+     */
+    SERVICE(17781397),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SYS = 0;</code>
+     */
+    public static final int UNDEFINED_SYS_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>IP = 2343;</code>
+     */
+    public static final int IP_VALUE = 2343;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NAME = 2388619;</code>
+     */
+    public static final int NAME_VALUE = 2388619;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>REGION = 266017524;</code>
+     */
+    public static final int REGION_VALUE = 266017524;
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>SERVICE = 17781397;</code>
+     */
+    public static final int SERVICE_VALUE = 17781397;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Sys valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Sys forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_SYS;
+        case 2343:
+          return IP;
+        case 2388619:
+          return NAME;
+        case 266017524:
+          return REGION;
+        case 17781397:
+          return SERVICE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Sys> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Sys> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Sys>() {
+          public Sys findValueByNumber(int number) {
+            return Sys.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Condition.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Sys[] VALUES = values();
+
+    public static Sys valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Sys(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Condition.Sys)
+  }
+
   private int bitField0_;
   public static final int IAM_FIELD_NUMBER = 104021;
   private volatile java.lang.Object iam_;
@@ -158,6 +875,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -173,6 +891,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -196,6 +915,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -222,6 +942,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -237,6 +958,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -260,6 +982,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -350,6 +1073,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>
@@ -365,6 +1089,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>
@@ -388,6 +1113,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>
@@ -910,6 +1636,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -924,6 +1651,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -946,6 +1674,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -968,6 +1697,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -989,6 +1719,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -1006,6 +1737,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Iam enum for the list of possible values.
      * </pre>
      *
      * <code>optional string iam = 104021;</code>
@@ -1030,6 +1762,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1044,6 +1777,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1066,6 +1800,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1088,6 +1823,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1109,6 +1845,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1126,6 +1863,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Op enum for the list of possible values.
      * </pre>
      *
      * <code>optional string op = 3553;</code>
@@ -1270,6 +2008,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>
@@ -1284,6 +2023,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>
@@ -1306,6 +2046,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>
@@ -1328,6 +2069,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>
@@ -1349,6 +2091,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>
@@ -1366,6 +2109,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the Sys enum for the list of possible values.
      * </pre>
      *
      * <code>optional string sys = 114381;</code>

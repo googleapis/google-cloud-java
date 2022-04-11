@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.SecurityPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -33,7 +34,9 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -150,6 +153,58 @@ public class SecurityPoliciesClientTest {
   }
 
   @Test
+  public void aggregatedListTest() throws Exception {
+    SecurityPoliciesScopedList responsesElement = SecurityPoliciesScopedList.newBuilder().build();
+    SecurityPoliciesAggregatedList expectedResponse =
+        SecurityPoliciesAggregatedList.newBuilder()
+            .setNextPageToken("")
+            .putAllItems(Collections.singletonMap("items", responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+
+    AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
+
+    List<Map.Entry<String, SecurityPoliciesScopedList>> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().entrySet().iterator().next(), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void aggregatedListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      client.aggregatedList(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -225,12 +280,14 @@ public class SecurityPoliciesClientTest {
                 SecurityPolicyAdaptiveProtectionConfig.newBuilder().build())
             .setAdvancedOptionsConfig(SecurityPolicyAdvancedOptionsConfig.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDdosProtectionConfig(SecurityPolicyDdosProtectionConfig.newBuilder().build())
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
             .setRecaptchaOptionsConfig(SecurityPolicyRecaptchaOptionsConfig.newBuilder().build())
+            .setRegion("region-934795532")
             .addAllRules(new ArrayList<SecurityPolicyRule>())
             .setSelfLink("selfLink1191800166")
             .setType("type3575610")

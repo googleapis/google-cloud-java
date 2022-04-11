@@ -27,6 +27,31 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Indicates how many instances are actually usable currently.
+   * </pre>
+   *
+   * <code>optional int64 assured_count = 281197645;</code>
+   *
+   * @return Whether the assuredCount field is set.
+   */
+  boolean hasAssuredCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates how many instances are actually usable currently.
+   * </pre>
+   *
+   * <code>optional int64 assured_count = 281197645;</code>
+   *
+   * @return The assuredCount.
+   */
+  long getAssuredCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the number of resources that are allocated.
    * </pre>
    *

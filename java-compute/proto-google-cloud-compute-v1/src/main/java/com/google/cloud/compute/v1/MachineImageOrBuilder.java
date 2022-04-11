@@ -101,7 +101,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
    * </pre>
    *
    * <code>optional bool guest_flush = 385550813;</code>
@@ -113,7 +113,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
+   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
    * </pre>
    *
    * <code>optional bool guest_flush = 385550813;</code>

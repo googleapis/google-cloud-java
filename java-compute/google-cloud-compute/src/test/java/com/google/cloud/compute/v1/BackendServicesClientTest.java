@@ -369,6 +369,8 @@ public class BackendServicesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setLoadBalancingScheme("loadBalancingScheme-1223583272")
+            .addAllLocalityLbPolicies(
+                new ArrayList<BackendServiceLocalityLoadBalancingPolicyConfig>())
             .setLocalityLbPolicy("localityLbPolicy-1807450933")
             .setLogConfig(BackendServiceLogConfig.newBuilder().build())
             .setMaxStreamDuration(Duration.newBuilder().build())

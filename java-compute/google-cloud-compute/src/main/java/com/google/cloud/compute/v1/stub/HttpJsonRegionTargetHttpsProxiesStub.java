@@ -39,6 +39,7 @@ import com.google.cloud.compute.v1.InsertRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListRegionTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetUrlMapRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
@@ -262,6 +263,63 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PatchRegionTargetHttpsProxyRequest, Operation>
+      patchMethodDescriptor =
+          ApiMethodDescriptor.<PatchRegionTargetHttpsProxyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpsProxies/Patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchRegionTargetHttpsProxyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/targetHttpsProxies/{targetHttpsProxy}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionTargetHttpsProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "targetHttpsProxy", request.getTargetHttpsProxy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRegionTargetHttpsProxyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "targetHttpsProxyResource",
+                                      request.getTargetHttpsProxyResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchRegionTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<
           SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesMethodDescriptor =
@@ -392,6 +450,9 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
       listCallable;
   private final UnaryCallable<ListRegionTargetHttpsProxiesRequest, ListPagedResponse>
       listPagedCallable;
+  private final UnaryCallable<PatchRegionTargetHttpsProxyRequest, Operation> patchCallable;
+  private final OperationCallable<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationCallable;
   private final UnaryCallable<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
       setSslCertificatesCallable;
   private final OperationCallable<
@@ -469,6 +530,11 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchTransportSettings =
+        HttpJsonCallSettings.<PatchRegionTargetHttpsProxyRequest, Operation>newBuilder()
+            .setMethodDescriptor(patchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
         setSslCertificatesTransportSettings =
             HttpJsonCallSettings
@@ -510,6 +576,15 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.patchCallable =
+        callableFactory.createUnaryCallable(
+            patchTransportSettings, settings.patchSettings(), clientContext);
+    this.patchOperationCallable =
+        callableFactory.createOperationCallable(
+            patchTransportSettings,
+            settings.patchOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSslCertificatesCallable =
         callableFactory.createUnaryCallable(
             setSslCertificatesTransportSettings,
@@ -542,6 +617,7 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setSslCertificatesMethodDescriptor);
     methodDescriptors.add(setUrlMapMethodDescriptor);
     return methodDescriptors;
@@ -582,6 +658,17 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
   @Override
   public UnaryCallable<ListRegionTargetHttpsProxiesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchRegionTargetHttpsProxyRequest, Operation> patchCallable() {
+    return patchCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchRegionTargetHttpsProxyRequest, Operation, Operation>
+      patchOperationCallable() {
+    return patchOperationCallable;
   }
 
   @Override

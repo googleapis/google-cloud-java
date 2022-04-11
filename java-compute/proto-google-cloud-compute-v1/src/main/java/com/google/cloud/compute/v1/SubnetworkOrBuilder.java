@@ -126,7 +126,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -138,7 +138,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -150,7 +150,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -262,6 +262,43 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return Whether the internalIpv6Prefix field is set.
+   */
+  boolean hasInternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return The internalIpv6Prefix.
+   */
+  java.lang.String getInternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return The bytes for internalIpv6Prefix.
+   */
+  com.google.protobuf.ByteString getInternalIpv6PrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
    * </pre>
    *
@@ -299,7 +336,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -312,7 +349,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -325,7 +362,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -339,7 +376,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
+   * [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -351,7 +388,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
+   * [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -363,7 +400,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork. Note this will be for private google access only eventually.
+   * [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -547,7 +584,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -560,7 +597,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -573,7 +610,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -804,7 +841,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -817,7 +854,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -830,7 +867,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *

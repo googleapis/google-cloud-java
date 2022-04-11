@@ -189,4 +189,67 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The bytes of the srcIpRanges at the given index.
    */
   com.google.protobuf.ByteString getSrcIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> getSrcSecureTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getSrcSecureTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  int getSrcSecureTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+      getSrcSecureTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder getSrcSecureTagsOrBuilder(
+      int index);
 }

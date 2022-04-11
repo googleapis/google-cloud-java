@@ -28,6 +28,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -40,6 +41,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -52,6 +54,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Iam enum for the list of possible values.
    * </pre>
    *
    * <code>optional string iam = 104021;</code>
@@ -65,6 +68,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -77,6 +81,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -89,6 +94,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Op enum for the list of possible values.
    * </pre>
    *
    * <code>optional string op = 3553;</code>
@@ -139,6 +145,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>
@@ -151,6 +158,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>
@@ -163,6 +171,7 @@ public interface ConditionOrBuilder
    *
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Sys enum for the list of possible values.
    * </pre>
    *
    * <code>optional string sys = 114381;</code>

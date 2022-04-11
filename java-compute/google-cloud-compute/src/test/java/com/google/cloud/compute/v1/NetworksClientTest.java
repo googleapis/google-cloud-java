@@ -227,14 +227,19 @@ public class NetworksClientTest {
             .setAutoCreateSubnetworks(true)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setEnableUlaInternalIpv6(true)
             .setGatewayIPv4("gatewayIPv4-435687895")
             .setId(3355)
+            .setInternalIpv6Range("internalIpv6Range1368723801")
             .setKind("kind3292052")
             .setMtu(108462)
             .setName("name3373707")
+            .setNetworkFirewallPolicyEnforcementOrder(
+                "networkFirewallPolicyEnforcementOrder1610545966")
             .addAllPeerings(new ArrayList<NetworkPeering>())
             .setRoutingConfig(NetworkRoutingConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")
+            .setSelfLinkWithId("selfLinkWithId-776809081")
             .addAllSubnetworks(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);

@@ -41,6 +41,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     destIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     layer4Configs_ = java.util.Collections.emptyList();
     srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    srcSecureTags_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -107,6 +108,20 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
               srcIpRanges_.add(s);
               break;
             }
+          case -224636878:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                srcSecureTags_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              srcSecureTags_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,6 +144,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -356,6 +374,87 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return srcIpRanges_.getByteString(index);
   }
 
+  public static final int SRC_SECURE_TAGS_FIELD_NUMBER = 508791302;
+  private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> srcSecureTags_;
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+      getSrcSecureTagsList() {
+    return srcSecureTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+      getSrcSecureTagsOrBuilderList() {
+    return srcSecureTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSrcSecureTagsCount() {
+    return srcSecureTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getSrcSecureTags(int index) {
+    return srcSecureTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder getSrcSecureTagsOrBuilder(
+      int index) {
+    return srcSecureTags_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -379,6 +478,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     }
     for (int i = 0; i < srcIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 432128083, srcIpRanges_.getRaw(i));
+    }
+    for (int i = 0; i < srcSecureTags_.size(); i++) {
+      output.writeMessage(508791302, srcSecureTags_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -410,6 +512,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       size += dataSize;
       size += 5 * getSrcIpRangesList().size();
     }
+    for (int i = 0; i < srcSecureTags_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              508791302, srcSecureTags_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -429,6 +536,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (!getDestIpRangesList().equals(other.getDestIpRangesList())) return false;
     if (!getLayer4ConfigsList().equals(other.getLayer4ConfigsList())) return false;
     if (!getSrcIpRangesList().equals(other.getSrcIpRangesList())) return false;
+    if (!getSrcSecureTagsList().equals(other.getSrcSecureTagsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -451,6 +559,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (getSrcIpRangesCount() > 0) {
       hash = (37 * hash) + SRC_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSrcIpRangesList().hashCode();
+    }
+    if (getSrcSecureTagsCount() > 0) {
+      hash = (37 * hash) + SRC_SECURE_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcSecureTagsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -594,6 +706,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLayer4ConfigsFieldBuilder();
+        getSrcSecureTagsFieldBuilder();
       }
     }
 
@@ -610,6 +723,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (srcSecureTagsBuilder_ == null) {
+        srcSecureTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        srcSecureTagsBuilder_.clear();
+      }
       return this;
     }
 
@@ -657,6 +776,15 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.srcIpRanges_ = srcIpRanges_;
+      if (srcSecureTagsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.srcSecureTags_ = srcSecureTags_;
+      } else {
+        result.srcSecureTags_ = srcSecureTagsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -753,6 +881,33 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           srcIpRanges_.addAll(other.srcIpRanges_);
         }
         onChanged();
+      }
+      if (srcSecureTagsBuilder_ == null) {
+        if (!other.srcSecureTags_.isEmpty()) {
+          if (srcSecureTags_.isEmpty()) {
+            srcSecureTags_ = other.srcSecureTags_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSrcSecureTagsIsMutable();
+            srcSecureTags_.addAll(other.srcSecureTags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.srcSecureTags_.isEmpty()) {
+          if (srcSecureTagsBuilder_.isEmpty()) {
+            srcSecureTagsBuilder_.dispose();
+            srcSecureTagsBuilder_ = null;
+            srcSecureTags_ = other.srcSecureTags_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            srcSecureTagsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSrcSecureTagsFieldBuilder()
+                    : null;
+          } else {
+            srcSecureTagsBuilder_.addAllMessages(other.srcSecureTags_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1530,6 +1685,409 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       srcIpRanges_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag> srcSecureTags_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSrcSecureTagsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        srcSecureTags_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
+                srcSecureTags_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        srcSecureTagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+        getSrcSecureTagsList() {
+      if (srcSecureTagsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(srcSecureTags_);
+      } else {
+        return srcSecureTagsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public int getSrcSecureTagsCount() {
+      if (srcSecureTagsBuilder_ == null) {
+        return srcSecureTags_.size();
+      } else {
+        return srcSecureTagsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag getSrcSecureTags(int index) {
+      if (srcSecureTagsBuilder_ == null) {
+        return srcSecureTags_.get(index);
+      } else {
+        return srcSecureTagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder setSrcSecureTags(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (srcSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.set(index, value);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder setSrcSecureTags(
+        int index,
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (srcSecureTagsBuilder_ == null) {
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder addSrcSecureTags(com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (srcSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.add(value);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder addSrcSecureTags(
+        int index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag value) {
+      if (srcSecureTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.add(index, value);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder addSrcSecureTags(
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (srcSecureTagsBuilder_ == null) {
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.add(builderForValue.build());
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder addSrcSecureTags(
+        int index,
+        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder builderForValue) {
+      if (srcSecureTagsBuilder_ == null) {
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder addAllSrcSecureTags(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>
+            values) {
+      if (srcSecureTagsBuilder_ == null) {
+        ensureSrcSecureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcSecureTags_);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder clearSrcSecureTags() {
+      if (srcSecureTagsBuilder_ == null) {
+        srcSecureTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public Builder removeSrcSecureTags(int index) {
+      if (srcSecureTagsBuilder_ == null) {
+        ensureSrcSecureTagsIsMutable();
+        srcSecureTags_.remove(index);
+        onChanged();
+      } else {
+        srcSecureTagsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder getSrcSecureTagsBuilder(
+        int index) {
+      return getSrcSecureTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder
+        getSrcSecureTagsOrBuilder(int index) {
+      if (srcSecureTagsBuilder_ == null) {
+        return srcSecureTags_.get(index);
+      } else {
+        return srcSecureTagsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        getSrcSecureTagsOrBuilderList() {
+      if (srcSecureTagsBuilder_ != null) {
+        return srcSecureTagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(srcSecureTags_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder
+        addSrcSecureTagsBuilder() {
+      return getSrcSecureTagsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder addSrcSecureTagsBuilder(
+        int index) {
+      return getSrcSecureTagsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.FirewallPolicyRuleSecureTag src_secure_tags = 508791302;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder>
+        getSrcSecureTagsBuilderList() {
+      return getSrcSecureTagsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+            com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>
+        getSrcSecureTagsFieldBuilder() {
+      if (srcSecureTagsBuilder_ == null) {
+        srcSecureTagsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag,
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
+                srcSecureTags_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        srcSecureTags_ = null;
+      }
+      return srcSecureTagsBuilder_;
     }
 
     @java.lang.Override
