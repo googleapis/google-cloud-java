@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://github.com/googleapis/java-iam/compare/v1.3.0...v1.3.1) (2022-04-11)
+
+
+### Dependencies
+
+* revert dependency com.google.protobuf:protobuf-java to v3.19.4 ([#329](https://github.com/googleapis/java-iam/issues/329)) ([0e679c5](https://github.com/googleapis/java-iam/commit/0e679c5b63ac438f3f3f53b5a920c876450e0a94))
+
 ## [1.3.0](https://github.com/googleapis/java-iam/compare/v1.2.12...v1.3.0) (2022-04-05)
 
 
