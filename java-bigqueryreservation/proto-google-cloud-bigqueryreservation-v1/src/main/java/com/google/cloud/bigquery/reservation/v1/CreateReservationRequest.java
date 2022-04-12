@@ -197,8 +197,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The reservation ID. This field must only contain lower case alphanumeric
-   * characters or dash. Max length is 64 characters.
+   * The reservation ID. It must only contain lower case alphanumeric
+   * characters or dashes. It must start with a letter and must not end
+   * with a dash. Its maximum length is 64 characters.
    * </pre>
    *
    * <code>string reservation_id = 2;</code>
@@ -221,8 +222,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The reservation ID. This field must only contain lower case alphanumeric
-   * characters or dash. Max length is 64 characters.
+   * The reservation ID. It must only contain lower case alphanumeric
+   * characters or dashes. It must start with a letter and must not end
+   * with a dash. Its maximum length is 64 characters.
    * </pre>
    *
    * <code>string reservation_id = 2;</code>
@@ -785,8 +787,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The reservation ID. This field must only contain lower case alphanumeric
-     * characters or dash. Max length is 64 characters.
+     * The reservation ID. It must only contain lower case alphanumeric
+     * characters or dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string reservation_id = 2;</code>
@@ -808,8 +811,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The reservation ID. This field must only contain lower case alphanumeric
-     * characters or dash. Max length is 64 characters.
+     * The reservation ID. It must only contain lower case alphanumeric
+     * characters or dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string reservation_id = 2;</code>
@@ -831,8 +835,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The reservation ID. This field must only contain lower case alphanumeric
-     * characters or dash. Max length is 64 characters.
+     * The reservation ID. It must only contain lower case alphanumeric
+     * characters or dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string reservation_id = 2;</code>
@@ -853,8 +858,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The reservation ID. This field must only contain lower case alphanumeric
-     * characters or dash. Max length is 64 characters.
+     * The reservation ID. It must only contain lower case alphanumeric
+     * characters or dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string reservation_id = 2;</code>
@@ -871,8 +877,9 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The reservation ID. This field must only contain lower case alphanumeric
-     * characters or dash. Max length is 64 characters.
+     * The reservation ID. It must only contain lower case alphanumeric
+     * characters or dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string reservation_id = 2;</code>

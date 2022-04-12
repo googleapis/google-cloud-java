@@ -937,6 +937,54 @@ public final class ReservationServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+          com.google.cloud.bigquery.reservation.v1.Assignment>
+      getUpdateAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAssignment",
+      requestType = com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.Assignment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+          com.google.cloud.bigquery.reservation.v1.Assignment>
+      getUpdateAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+            com.google.cloud.bigquery.reservation.v1.Assignment>
+        getUpdateAssignmentMethod;
+    if ((getUpdateAssignmentMethod = ReservationServiceGrpc.getUpdateAssignmentMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getUpdateAssignmentMethod = ReservationServiceGrpc.getUpdateAssignmentMethod)
+            == null) {
+          ReservationServiceGrpc.getUpdateAssignmentMethod =
+              getUpdateAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+                          com.google.cloud.bigquery.reservation.v1.Assignment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.Assignment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("UpdateAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest,
           com.google.cloud.bigquery.reservation.v1.BiReservation>
       getGetBiReservationMethod;
@@ -1263,7 +1311,7 @@ public final class ReservationServiceGrpc {
      * A common use case is to enable downgrading commitments.
      * For example, in order to downgrade from 10000 slots to 8000, you might
      * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
-     * you would change the plan of the first one to `FLEX` and then delete it.
+     * you delete the first one after the commitment end time passes.
      * </pre>
      */
     public void splitCapacityCommitment(
@@ -1394,8 +1442,8 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Deprecated: Looks up assignments for a specified resource for a particular region.
-     * If the request is about a project:
+     * Deprecated: Looks up assignments for a specified resource for a particular
+     * region. If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
      *    returned.
@@ -1469,6 +1517,22 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getMoveAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing assignment.
+     * Only the `priority` field can be updated.
+     * </pre>
+     */
+    public void updateAssignment(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAssignmentMethod(), responseObserver);
     }
 
     /**
@@ -1632,6 +1696,13 @@ public final class ReservationServiceGrpc {
                       com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest,
                       com.google.cloud.bigquery.reservation.v1.Assignment>(
                       this, METHODID_MOVE_ASSIGNMENT)))
+          .addMethod(
+              getUpdateAssignmentMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+                      com.google.cloud.bigquery.reservation.v1.Assignment>(
+                      this, METHODID_UPDATE_ASSIGNMENT)))
           .addMethod(
               getGetBiReservationMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1868,7 +1939,7 @@ public final class ReservationServiceGrpc {
      * A common use case is to enable downgrading commitments.
      * For example, in order to downgrade from 10000 slots to 8000, you might
      * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
-     * you would change the plan of the first one to `FLEX` and then delete it.
+     * you delete the first one after the commitment end time passes.
      * </pre>
      */
     public void splitCapacityCommitment(
@@ -2009,8 +2080,8 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Deprecated: Looks up assignments for a specified resource for a particular region.
-     * If the request is about a project:
+     * Deprecated: Looks up assignments for a specified resource for a particular
+     * region. If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
      *    returned.
@@ -2088,6 +2159,24 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMoveAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing assignment.
+     * Only the `priority` field can be updated.
+     * </pre>
+     */
+    public void updateAssignment(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAssignmentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2312,7 +2401,7 @@ public final class ReservationServiceGrpc {
      * A common use case is to enable downgrading commitments.
      * For example, in order to downgrade from 10000 slots to 8000, you might
      * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
-     * you would change the plan of the first one to `FLEX` and then delete it.
+     * you delete the first one after the commitment end time passes.
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
@@ -2433,8 +2522,8 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Deprecated: Looks up assignments for a specified resource for a particular region.
-     * If the request is about a project:
+     * Deprecated: Looks up assignments for a specified resource for a particular
+     * region. If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
      *    returned.
@@ -2501,6 +2590,20 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing assignment.
+     * Only the `priority` field can be updated.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Assignment updateAssignment(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAssignmentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2729,7 +2832,7 @@ public final class ReservationServiceGrpc {
      * A common use case is to enable downgrading commitments.
      * For example, in order to downgrade from 10000 slots to 8000, you might
      * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
-     * you would change the plan of the first one to `FLEX` and then delete it.
+     * you delete the first one after the commitment end time passes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2855,8 +2958,8 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Deprecated: Looks up assignments for a specified resource for a particular region.
-     * If the request is about a project:
+     * Deprecated: Looks up assignments for a specified resource for a particular
+     * region. If the request is about a project:
      * 1. Assignments created on the project will be returned if they exist.
      * 2. Otherwise assignments created on the closest ancestor will be
      *    returned.
@@ -2933,6 +3036,21 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Updates an existing assignment.
+     * Only the `priority` field can be updated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.Assignment>
+        updateAssignment(com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAssignmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves a BI reservation.
      * </pre>
      */
@@ -2982,8 +3100,9 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_SEARCH_ASSIGNMENTS = 15;
   private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 16;
   private static final int METHODID_MOVE_ASSIGNMENT = 17;
-  private static final int METHODID_GET_BI_RESERVATION = 18;
-  private static final int METHODID_UPDATE_BI_RESERVATION = 19;
+  private static final int METHODID_UPDATE_ASSIGNMENT = 18;
+  private static final int METHODID_GET_BI_RESERVATION = 19;
+  private static final int METHODID_UPDATE_BI_RESERVATION = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3117,6 +3236,12 @@ public final class ReservationServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_ASSIGNMENT:
+          serviceImpl.updateAssignment(
+              (com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>)
+                  responseObserver);
+          break;
         case METHODID_GET_BI_RESERVATION:
           serviceImpl.getBiReservation(
               (com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest) request,
@@ -3211,6 +3336,7 @@ public final class ReservationServiceGrpc {
                       .addMethod(getSearchAssignmentsMethod())
                       .addMethod(getSearchAllAssignmentsMethod())
                       .addMethod(getMoveAssignmentMethod())
+                      .addMethod(getUpdateAssignmentMethod())
                       .addMethod(getGetBiReservationMethod())
                       .addMethod(getUpdateBiReservationMethod())
                       .build();

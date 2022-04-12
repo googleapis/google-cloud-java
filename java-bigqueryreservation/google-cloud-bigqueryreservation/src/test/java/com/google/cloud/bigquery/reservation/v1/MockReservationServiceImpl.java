@@ -445,6 +445,27 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
   }
 
   @Override
+  public void updateAssignment(
+      UpdateAssignmentRequest request, StreamObserver<Assignment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Assignment) {
+      requests.add(request);
+      responseObserver.onNext(((Assignment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAssignment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Assignment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getBiReservation(
       GetBiReservationRequest request, StreamObserver<BiReservation> responseObserver) {
     Object response = responses.poll();

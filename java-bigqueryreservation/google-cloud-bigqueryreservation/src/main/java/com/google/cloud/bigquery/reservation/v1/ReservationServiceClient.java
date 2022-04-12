@@ -184,8 +184,9 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
-   *     characters or dash. Max length is 64 characters.
+   * @param reservationId The reservation ID. It must only contain lower case alphanumeric
+   *     characters or dashes. It must start with a letter and must not end with a dash. Its maximum
+   *     length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Reservation createReservation(
@@ -217,8 +218,9 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * @param parent Required. Project, location. E.g., `projects/myproject/locations/US`
    * @param reservation Definition of the new reservation to create.
-   * @param reservationId The reservation ID. This field must only contain lower case alphanumeric
-   *     characters or dash. Max length is 64 characters.
+   * @param reservationId The reservation ID. It must only contain lower case alphanumeric
+   *     characters or dashes. It must start with a letter and must not end with a dash. Its maximum
+   *     length is 64 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Reservation createReservation(
@@ -1259,8 +1261,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>A common use case is to enable downgrading commitments.
    *
    * <p>For example, in order to downgrade from 10000 slots to 8000, you might split a 10000
-   * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
-   * first one to `FLEX` and then delete it.
+   * capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the
+   * commitment end time passes.
    *
    * <p>Sample code:
    *
@@ -1296,8 +1298,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>A common use case is to enable downgrading commitments.
    *
    * <p>For example, in order to downgrade from 10000 slots to 8000, you might split a 10000
-   * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
-   * first one to `FLEX` and then delete it.
+   * capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the
+   * commitment end time passes.
    *
    * <p>Sample code:
    *
@@ -1330,8 +1332,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>A common use case is to enable downgrading commitments.
    *
    * <p>For example, in order to downgrade from 10000 slots to 8000, you might split a 10000
-   * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
-   * first one to `FLEX` and then delete it.
+   * capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the
+   * commitment end time passes.
    *
    * <p>Sample code:
    *
@@ -1364,8 +1366,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>A common use case is to enable downgrading commitments.
    *
    * <p>For example, in order to downgrade from 10000 slots to 8000, you might split a 10000
-   * capacity commitment into commitments of 2000 and 8000. Then, you would change the plan of the
-   * first one to `FLEX` and then delete it.
+   * capacity commitment into commitments of 2000 and 8000. Then, you delete the first one after the
+   * commitment end time passes.
    *
    * <p>Sample code:
    *
@@ -2860,6 +2862,87 @@ public class ReservationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {
     return stub.moveAssignmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing assignment.
+   *
+   * <p>Only the `priority` field can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   Assignment assignment = Assignment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Assignment response = reservationServiceClient.updateAssignment(assignment, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param assignment Content of the assignment to update.
+   * @param updateMask Standard field mask for the set of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Assignment updateAssignment(Assignment assignment, FieldMask updateMask) {
+    UpdateAssignmentRequest request =
+        UpdateAssignmentRequest.newBuilder()
+            .setAssignment(assignment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAssignment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing assignment.
+   *
+   * <p>Only the `priority` field can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   UpdateAssignmentRequest request =
+   *       UpdateAssignmentRequest.newBuilder()
+   *           .setAssignment(Assignment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Assignment response = reservationServiceClient.updateAssignment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Assignment updateAssignment(UpdateAssignmentRequest request) {
+    return updateAssignmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing assignment.
+   *
+   * <p>Only the `priority` field can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   UpdateAssignmentRequest request =
+   *       UpdateAssignmentRequest.newBuilder()
+   *           .setAssignment(Assignment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Assignment> future =
+   *       reservationServiceClient.updateAssignmentCallable().futureCall(request);
+   *   // Do something.
+   *   Assignment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAssignmentRequest, Assignment> updateAssignmentCallable() {
+    return stub.updateAssignmentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

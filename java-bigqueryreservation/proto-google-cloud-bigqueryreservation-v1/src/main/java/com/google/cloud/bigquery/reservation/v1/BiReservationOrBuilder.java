@@ -102,4 +102,62 @@ public interface BiReservationOrBuilder
    * @return The size.
    */
   long getSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference> getPreferredTablesList();
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  int getPreferredTablesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
+      getPreferredTablesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder getPreferredTablesOrBuilder(
+      int index);
 }

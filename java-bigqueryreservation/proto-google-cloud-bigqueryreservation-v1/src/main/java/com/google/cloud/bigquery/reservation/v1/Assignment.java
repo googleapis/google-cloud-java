@@ -22,7 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * A Assignment allows a project to submit jobs
+ * An assignment allows a project to submit jobs
  * of a certain type using slots from the specified reservation.
  * </pre>
  *
@@ -492,6 +492,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Name of the resource. E.g.:
    * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+   * The assignment_id must only contain lower case alphanumeric characters or
+   * dashes and the max length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -516,6 +518,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Name of the resource. E.g.:
    * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+   * The assignment_id must only contain lower case alphanumeric characters or
+   * dashes and the max length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -864,7 +868,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Assignment allows a project to submit jobs
+   * An assignment allows a project to submit jobs
    * of a certain type using slots from the specified reservation.
    * </pre>
    *
@@ -1046,6 +1050,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the resource. E.g.:
      * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+     * The assignment_id must only contain lower case alphanumeric characters or
+     * dashes and the max length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1069,6 +1075,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the resource. E.g.:
      * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+     * The assignment_id must only contain lower case alphanumeric characters or
+     * dashes and the max length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1092,6 +1100,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the resource. E.g.:
      * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+     * The assignment_id must only contain lower case alphanumeric characters or
+     * dashes and the max length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1114,6 +1124,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the resource. E.g.:
      * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+     * The assignment_id must only contain lower case alphanumeric characters or
+     * dashes and the max length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1132,6 +1144,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Name of the resource. E.g.:
      * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+     * The assignment_id must only contain lower case alphanumeric characters or
+     * dashes and the max length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

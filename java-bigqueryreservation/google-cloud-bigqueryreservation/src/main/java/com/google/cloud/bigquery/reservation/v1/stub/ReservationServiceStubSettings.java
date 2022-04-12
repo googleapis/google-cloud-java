@@ -71,6 +71,7 @@ import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
+import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
@@ -165,6 +166,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           SearchAllAssignmentsPagedResponse>
       searchAllAssignmentsSettings;
   private final UnaryCallSettings<MoveAssignmentRequest, Assignment> moveAssignmentSettings;
+  private final UnaryCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentSettings;
   private final UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings;
   private final UnaryCallSettings<UpdateBiReservationRequest, BiReservation>
       updateBiReservationSettings;
@@ -595,6 +597,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return moveAssignmentSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateAssignment. */
+  public UnaryCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentSettings() {
+    return updateAssignmentSettings;
+  }
+
   /** Returns the object with the settings used for calls to getBiReservation. */
   public UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings() {
     return getBiReservationSettings;
@@ -700,6 +707,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     searchAssignmentsSettings = settingsBuilder.searchAssignmentsSettings().build();
     searchAllAssignmentsSettings = settingsBuilder.searchAllAssignmentsSettings().build();
     moveAssignmentSettings = settingsBuilder.moveAssignmentSettings().build();
+    updateAssignmentSettings = settingsBuilder.updateAssignmentSettings().build();
     getBiReservationSettings = settingsBuilder.getBiReservationSettings().build();
     updateBiReservationSettings = settingsBuilder.updateBiReservationSettings().build();
   }
@@ -754,6 +762,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
         searchAllAssignmentsSettings;
     private final UnaryCallSettings.Builder<MoveAssignmentRequest, Assignment>
         moveAssignmentSettings;
+    private final UnaryCallSettings.Builder<UpdateAssignmentRequest, Assignment>
+        updateAssignmentSettings;
     private final UnaryCallSettings.Builder<GetBiReservationRequest, BiReservation>
         getBiReservationSettings;
     private final UnaryCallSettings.Builder<UpdateBiReservationRequest, BiReservation>
@@ -831,6 +841,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       searchAllAssignmentsSettings =
           PagedCallSettings.newBuilder(SEARCH_ALL_ASSIGNMENTS_PAGE_STR_FACT);
       moveAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBiReservationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -854,6 +865,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               searchAssignmentsSettings,
               searchAllAssignmentsSettings,
               moveAssignmentSettings,
+              updateAssignmentSettings,
               getBiReservationSettings,
               updateBiReservationSettings);
       initDefaults(this);
@@ -880,6 +892,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       searchAssignmentsSettings = settings.searchAssignmentsSettings.toBuilder();
       searchAllAssignmentsSettings = settings.searchAllAssignmentsSettings.toBuilder();
       moveAssignmentSettings = settings.moveAssignmentSettings.toBuilder();
+      updateAssignmentSettings = settings.updateAssignmentSettings.toBuilder();
       getBiReservationSettings = settings.getBiReservationSettings.toBuilder();
       updateBiReservationSettings = settings.updateBiReservationSettings.toBuilder();
 
@@ -903,6 +916,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               searchAssignmentsSettings,
               searchAllAssignmentsSettings,
               moveAssignmentSettings,
+              updateAssignmentSettings,
               getBiReservationSettings,
               updateBiReservationSettings);
     }
@@ -1010,6 +1024,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           .moveAssignmentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getBiReservationSettings()
@@ -1156,6 +1175,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     /** Returns the builder for the settings used for calls to moveAssignment. */
     public UnaryCallSettings.Builder<MoveAssignmentRequest, Assignment> moveAssignmentSettings() {
       return moveAssignmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAssignment. */
+    public UnaryCallSettings.Builder<UpdateAssignmentRequest, Assignment>
+        updateAssignmentSettings() {
+      return updateAssignmentSettings;
     }
 
     /** Returns the builder for the settings used for calls to getBiReservation. */

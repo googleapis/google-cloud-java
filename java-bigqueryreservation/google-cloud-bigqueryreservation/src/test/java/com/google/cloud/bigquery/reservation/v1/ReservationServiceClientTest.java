@@ -94,8 +94,10 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -142,8 +144,10 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -278,8 +282,10 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -320,8 +326,10 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -430,8 +438,10 @@ public class ReservationServiceClientTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -479,6 +489,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -527,6 +538,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -665,6 +677,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -712,6 +725,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -829,6 +843,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -968,6 +983,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1017,6 +1033,7 @@ public class ReservationServiceClientTest {
             .setCommitmentStartTime(Timestamp.newBuilder().build())
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
+            .setMultiRegionAuxiliary(true)
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1676,12 +1693,57 @@ public class ReservationServiceClientTest {
   }
 
   @Test
+  public void updateAssignmentTest() throws Exception {
+    Assignment expectedResponse =
+        Assignment.newBuilder()
+            .setName(
+                AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+                    .toString())
+            .setAssignee("assignee-369881649")
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    Assignment assignment = Assignment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Assignment actualResponse = client.updateAssignment(assignment, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAssignmentRequest actualRequest = ((UpdateAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(assignment, actualRequest.getAssignment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      Assignment assignment = Assignment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAssignment(assignment, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getBiReservationTest() throws Exception {
     BiReservation expectedResponse =
         BiReservation.newBuilder()
             .setName(BiReservationName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSize(3530753)
+            .addAllPreferredTables(new ArrayList<TableReference>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1722,6 +1784,7 @@ public class ReservationServiceClientTest {
             .setName(BiReservationName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSize(3530753)
+            .addAllPreferredTables(new ArrayList<TableReference>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1762,6 +1825,7 @@ public class ReservationServiceClientTest {
             .setName(BiReservationName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSize(3530753)
+            .addAllPreferredTables(new ArrayList<TableReference>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 

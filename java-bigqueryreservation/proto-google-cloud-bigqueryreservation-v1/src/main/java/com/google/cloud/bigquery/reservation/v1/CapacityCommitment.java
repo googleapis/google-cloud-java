@@ -157,6 +157,11 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 80:
+            {
+              multiRegionAuxiliary_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -441,7 +446,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Capacity commitment is pending provisioning. Pending capacity commitment
-     * does not contribute to the parent's slot_capacity.
+     * does not contribute to the project's slot_capacity.
      * </pre>
      *
      * <code>PENDING = 1;</code>
@@ -452,7 +457,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Once slots are provisioned, capacity commitment becomes active.
-     * slot_count is added to the parent's slot_capacity.
+     * slot_count is added to the project's slot_capacity.
      * </pre>
      *
      * <code>ACTIVE = 2;</code>
@@ -486,7 +491,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Capacity commitment is pending provisioning. Pending capacity commitment
-     * does not contribute to the parent's slot_capacity.
+     * does not contribute to the project's slot_capacity.
      * </pre>
      *
      * <code>PENDING = 1;</code>
@@ -497,7 +502,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Once slots are provisioned, capacity commitment becomes active.
-     * slot_count is added to the parent's slot_capacity.
+     * slot_count is added to the project's slot_capacity.
      * </pre>
      *
      * <code>ACTIVE = 2;</code>
@@ -609,6 +614,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
    * `projects/myproject/locations/US/capacityCommitments/123`
+   * The commitment_id must only contain lower case alphanumeric characters or
+   * dashes. It must start with a letter and must not end
+   * with a dash. Its maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -633,6 +641,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
    * `projects/myproject/locations/US/capacityCommitments/123`
+   * The commitment_id must only contain lower case alphanumeric characters or
+   * dashes. It must start with a letter and must not end
+   * with a dash. Its maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -959,6 +970,28 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int MULTI_REGION_AUXILIARY_FIELD_NUMBER = 10;
+  private boolean multiRegionAuxiliary_;
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only for commitments located within one of the BigQuery
+   * multi-regions (US or EU).
+   * If set to true, this commitment is placed in the organization's
+   * secondary region which is designated for disaster recovery purposes.
+   * If false, this commitment is placed in the organization's default region.
+   * </pre>
+   *
+   * <code>bool multi_region_auxiliary = 10;</code>
+   *
+   * @return The multiRegionAuxiliary.
+   */
+  @java.lang.Override
+  public boolean getMultiRegionAuxiliary() {
+    return multiRegionAuxiliary_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1005,6 +1038,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (commitmentStartTime_ != null) {
       output.writeMessage(9, getCommitmentStartTime());
     }
+    if (multiRegionAuxiliary_ != false) {
+      output.writeBool(10, multiRegionAuxiliary_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1046,6 +1082,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (commitmentStartTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCommitmentStartTime());
     }
+    if (multiRegionAuxiliary_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, multiRegionAuxiliary_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1079,6 +1118,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       if (!getFailureStatus().equals(other.getFailureStatus())) return false;
     }
     if (renewalPlan_ != other.renewalPlan_) return false;
+    if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1112,6 +1152,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + RENEWAL_PLAN_FIELD_NUMBER;
     hash = (53 * hash) + renewalPlan_;
+    hash = (37 * hash) + MULTI_REGION_AUXILIARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1293,6 +1335,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       renewalPlan_ = 0;
 
+      multiRegionAuxiliary_ = false;
+
       return this;
     }
 
@@ -1340,6 +1384,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         result.failureStatus_ = failureStatusBuilder_.build();
       }
       result.renewalPlan_ = renewalPlan_;
+      result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
       onBuilt();
       return result;
     }
@@ -1415,6 +1460,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       if (other.renewalPlan_ != 0) {
         setRenewalPlanValue(other.getRenewalPlanValue());
       }
+      if (other.getMultiRegionAuxiliary() != false) {
+        setMultiRegionAuxiliary(other.getMultiRegionAuxiliary());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1452,6 +1500,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
      * `projects/myproject/locations/US/capacityCommitments/123`
+     * The commitment_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1475,6 +1526,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
      * `projects/myproject/locations/US/capacityCommitments/123`
+     * The commitment_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1498,6 +1552,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
      * `projects/myproject/locations/US/capacityCommitments/123`
+     * The commitment_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1520,6 +1577,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
      * `projects/myproject/locations/US/capacityCommitments/123`
+     * The commitment_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1538,6 +1598,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
      * `projects/myproject/locations/US/capacityCommitments/123`
+     * The commitment_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end
+     * with a dash. Its maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2531,6 +2594,70 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public Builder clearRenewalPlan() {
 
       renewalPlan_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean multiRegionAuxiliary_;
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for commitments located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this commitment is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this commitment is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 10;</code>
+     *
+     * @return The multiRegionAuxiliary.
+     */
+    @java.lang.Override
+    public boolean getMultiRegionAuxiliary() {
+      return multiRegionAuxiliary_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for commitments located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this commitment is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this commitment is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 10;</code>
+     *
+     * @param value The multiRegionAuxiliary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultiRegionAuxiliary(boolean value) {
+
+      multiRegionAuxiliary_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for commitments located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this commitment is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this commitment is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultiRegionAuxiliary() {
+
+      multiRegionAuxiliary_ = false;
       onChanged();
       return this;
     }

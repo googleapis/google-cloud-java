@@ -117,6 +117,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 112:
+            {
+              multiRegionAuxiliary_ = input.readBool();
+              break;
+            }
+          case 128:
+            {
+              concurrency_ = input.readInt64();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -159,6 +169,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+   * The reservation_id must only contain lower case alphanumeric characters or
+   * dashes. It must start with a letter and must not end with a dash. Its
+   * maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -183,6 +196,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+   * The reservation_id must only contain lower case alphanumeric characters or
+   * dashes. It must start with a letter and must not end with a dash. Its
+   * maximum length is 64 characters.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -212,10 +228,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * computational power in BigQuery, and serves as the unit of parallelism.
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false.
-   * If the new reservation's slot capacity exceed the parent's slot capacity or
-   * if total slot capacity of the new reservation and its siblings exceeds the
-   * parent's slot capacity, the request will fail with
+   * If the new reservation's slot capacity exceeds the project's slot capacity
+   * or if total slot capacity of the new reservation and its siblings exceeds
+   * the project's slot capacity, the request will fail with
    * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+   * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
+   * are checked separately for default and auxiliary regions. See
+   * multi_region_auxiliary flag for more details.
    * </pre>
    *
    * <code>int64 slot_capacity = 2;</code>
@@ -246,6 +265,28 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getIgnoreIdleSlots() {
     return ignoreIdleSlots_;
+  }
+
+  public static final int CONCURRENCY_FIELD_NUMBER = 16;
+  private long concurrency_;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of queries that are allowed to run concurrently in this
+   * reservation. This is a soft limit due to asynchronous nature of the system
+   * and various optimizations for small queries.
+   * Default value is 0 which means that concurrency will be automatically set
+   * based on the reservation size.
+   * </pre>
+   *
+   * <code>int64 concurrency = 16;</code>
+   *
+   * @return The concurrency.
+   */
+  @java.lang.Override
+  public long getConcurrency() {
+    return concurrency_;
   }
 
   public static final int CREATION_TIME_FIELD_NUMBER = 8;
@@ -351,6 +392,28 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
+  public static final int MULTI_REGION_AUXILIARY_FIELD_NUMBER = 14;
+  private boolean multiRegionAuxiliary_;
+  /**
+   *
+   *
+   * <pre>
+   * Applicable only for reservations located within one of the BigQuery
+   * multi-regions (US or EU).
+   * If set to true, this reservation is placed in the organization's
+   * secondary region which is designated for disaster recovery purposes.
+   * If false, this reservation is placed in the organization's default region.
+   * </pre>
+   *
+   * <code>bool multi_region_auxiliary = 14;</code>
+   *
+   * @return The multiRegionAuxiliary.
+   */
+  @java.lang.Override
+  public boolean getMultiRegionAuxiliary() {
+    return multiRegionAuxiliary_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -380,6 +443,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(9, getUpdateTime());
     }
+    if (multiRegionAuxiliary_ != false) {
+      output.writeBool(14, multiRegionAuxiliary_);
+    }
+    if (concurrency_ != 0L) {
+      output.writeInt64(16, concurrency_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -404,6 +473,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
     }
+    if (multiRegionAuxiliary_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, multiRegionAuxiliary_);
+    }
+    if (concurrency_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(16, concurrency_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -423,6 +498,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (getSlotCapacity() != other.getSlotCapacity()) return false;
     if (getIgnoreIdleSlots() != other.getIgnoreIdleSlots()) return false;
+    if (getConcurrency() != other.getConcurrency()) return false;
     if (hasCreationTime() != other.hasCreationTime()) return false;
     if (hasCreationTime()) {
       if (!getCreationTime().equals(other.getCreationTime())) return false;
@@ -431,6 +507,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -448,6 +525,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSlotCapacity());
     hash = (37 * hash) + IGNORE_IDLE_SLOTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreIdleSlots());
+    hash = (37 * hash) + CONCURRENCY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getConcurrency());
     if (hasCreationTime()) {
       hash = (37 * hash) + CREATION_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreationTime().hashCode();
@@ -456,6 +535,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + MULTI_REGION_AUXILIARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -607,6 +688,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
       ignoreIdleSlots_ = false;
 
+      concurrency_ = 0L;
+
       if (creationTimeBuilder_ == null) {
         creationTime_ = null;
       } else {
@@ -619,6 +702,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      multiRegionAuxiliary_ = false;
+
       return this;
     }
 
@@ -649,6 +734,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       result.name_ = name_;
       result.slotCapacity_ = slotCapacity_;
       result.ignoreIdleSlots_ = ignoreIdleSlots_;
+      result.concurrency_ = concurrency_;
       if (creationTimeBuilder_ == null) {
         result.creationTime_ = creationTime_;
       } else {
@@ -659,6 +745,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
+      result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
       onBuilt();
       return result;
     }
@@ -719,11 +806,17 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (other.getIgnoreIdleSlots() != false) {
         setIgnoreIdleSlots(other.getIgnoreIdleSlots());
       }
+      if (other.getConcurrency() != 0L) {
+        setConcurrency(other.getConcurrency());
+      }
       if (other.hasCreationTime()) {
         mergeCreationTime(other.getCreationTime());
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.getMultiRegionAuxiliary() != false) {
+        setMultiRegionAuxiliary(other.getMultiRegionAuxiliary());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -762,6 +855,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+     * The reservation_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end with a dash. Its
+     * maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -785,6 +881,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+     * The reservation_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end with a dash. Its
+     * maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -808,6 +907,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+     * The reservation_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end with a dash. Its
+     * maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -830,6 +932,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+     * The reservation_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end with a dash. Its
+     * maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -848,6 +953,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
+     * The reservation_id must only contain lower case alphanumeric characters or
+     * dashes. It must start with a letter and must not end with a dash. Its
+     * maximum length is 64 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -875,10 +983,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceed the parent's slot capacity or
-     * if total slot capacity of the new reservation and its siblings exceeds the
-     * parent's slot capacity, the request will fail with
+     * If the new reservation's slot capacity exceeds the project's slot capacity
+     * or if total slot capacity of the new reservation and its siblings exceeds
+     * the project's slot capacity, the request will fail with
      * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
+     * are checked separately for default and auxiliary regions. See
+     * multi_region_auxiliary flag for more details.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -897,10 +1008,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceed the parent's slot capacity or
-     * if total slot capacity of the new reservation and its siblings exceeds the
-     * parent's slot capacity, the request will fail with
+     * If the new reservation's slot capacity exceeds the project's slot capacity
+     * or if total slot capacity of the new reservation and its siblings exceeds
+     * the project's slot capacity, the request will fail with
      * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
+     * are checked separately for default and auxiliary regions. See
+     * multi_region_auxiliary flag for more details.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -922,10 +1036,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceed the parent's slot capacity or
-     * if total slot capacity of the new reservation and its siblings exceeds the
-     * parent's slot capacity, the request will fail with
+     * If the new reservation's slot capacity exceeds the project's slot capacity
+     * or if total slot capacity of the new reservation and its siblings exceeds
+     * the project's slot capacity, the request will fail with
      * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
+     * are checked separately for default and auxiliary regions. See
+     * multi_region_auxiliary flag for more details.
      * </pre>
      *
      * <code>int64 slot_capacity = 2;</code>
@@ -996,6 +1113,70 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIgnoreIdleSlots() {
 
       ignoreIdleSlots_ = false;
+      onChanged();
+      return this;
+    }
+
+    private long concurrency_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of queries that are allowed to run concurrently in this
+     * reservation. This is a soft limit due to asynchronous nature of the system
+     * and various optimizations for small queries.
+     * Default value is 0 which means that concurrency will be automatically set
+     * based on the reservation size.
+     * </pre>
+     *
+     * <code>int64 concurrency = 16;</code>
+     *
+     * @return The concurrency.
+     */
+    @java.lang.Override
+    public long getConcurrency() {
+      return concurrency_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of queries that are allowed to run concurrently in this
+     * reservation. This is a soft limit due to asynchronous nature of the system
+     * and various optimizations for small queries.
+     * Default value is 0 which means that concurrency will be automatically set
+     * based on the reservation size.
+     * </pre>
+     *
+     * <code>int64 concurrency = 16;</code>
+     *
+     * @param value The concurrency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConcurrency(long value) {
+
+      concurrency_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of queries that are allowed to run concurrently in this
+     * reservation. This is a soft limit due to asynchronous nature of the system
+     * and various optimizations for small queries.
+     * Default value is 0 which means that concurrency will be automatically set
+     * based on the reservation size.
+     * </pre>
+     *
+     * <code>int64 concurrency = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConcurrency() {
+
+      concurrency_ = 0L;
       onChanged();
       return this;
     }
@@ -1402,6 +1583,70 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private boolean multiRegionAuxiliary_;
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for reservations located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this reservation is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this reservation is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 14;</code>
+     *
+     * @return The multiRegionAuxiliary.
+     */
+    @java.lang.Override
+    public boolean getMultiRegionAuxiliary() {
+      return multiRegionAuxiliary_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for reservations located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this reservation is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this reservation is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 14;</code>
+     *
+     * @param value The multiRegionAuxiliary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultiRegionAuxiliary(boolean value) {
+
+      multiRegionAuxiliary_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applicable only for reservations located within one of the BigQuery
+     * multi-regions (US or EU).
+     * If set to true, this reservation is placed in the organization's
+     * secondary region which is designated for disaster recovery purposes.
+     * If false, this reservation is placed in the organization's default region.
+     * </pre>
+     *
+     * <code>bool multi_region_auxiliary = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultiRegionAuxiliary() {
+
+      multiRegionAuxiliary_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

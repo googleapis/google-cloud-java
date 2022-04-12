@@ -191,6 +191,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     return ((ReservationServiceStubSettings) getStubSettings()).moveAssignmentSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateAssignment. */
+  public UnaryCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).updateAssignmentSettings();
+  }
+
   /** Returns the object with the settings used for calls to getBiReservation. */
   public UnaryCallSettings<GetBiReservationRequest, BiReservation> getBiReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).getBiReservationSettings();
@@ -416,6 +421,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     /** Returns the builder for the settings used for calls to moveAssignment. */
     public UnaryCallSettings.Builder<MoveAssignmentRequest, Assignment> moveAssignmentSettings() {
       return getStubSettingsBuilder().moveAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAssignment. */
+    public UnaryCallSettings.Builder<UpdateAssignmentRequest, Assignment>
+        updateAssignmentSettings() {
+      return getStubSettingsBuilder().updateAssignmentSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBiReservation. */

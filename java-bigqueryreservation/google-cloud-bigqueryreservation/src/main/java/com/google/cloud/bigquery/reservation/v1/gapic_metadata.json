@@ -61,6 +61,9 @@
             "SplitCapacityCommitment": {
               "methods": ["splitCapacityCommitment", "splitCapacityCommitment", "splitCapacityCommitment", "splitCapacityCommitmentCallable"]
             },
+            "UpdateAssignment": {
+              "methods": ["updateAssignment", "updateAssignment", "updateAssignmentCallable"]
+            },
             "UpdateBiReservation": {
               "methods": ["updateBiReservation", "updateBiReservation", "updateBiReservationCallable"]
             },

@@ -39,6 +39,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
 
   private BiReservation() {
     name_ = "";
+    preferredTables_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -60,6 +61,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -97,6 +99,20 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
               size_ = input.readInt64();
               break;
             }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                preferredTables_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.bigquery.reservation.v1.TableReference>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              preferredTables_.add(
+                  input.readMessage(
+                      com.google.cloud.bigquery.reservation.v1.TableReference.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -111,6 +127,9 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        preferredTables_ = java.util.Collections.unmodifiableList(preferredTables_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -251,6 +270,82 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     return size_;
   }
 
+  public static final int PREFERRED_TABLES_FIELD_NUMBER = 5;
+  private java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference> preferredTables_;
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference>
+      getPreferredTablesList() {
+    return preferredTables_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
+      getPreferredTablesOrBuilderList() {
+    return preferredTables_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public int getPreferredTablesCount() {
+    return preferredTables_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index) {
+    return preferredTables_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preferred tables to use BI capacity for.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder
+      getPreferredTablesOrBuilder(int index) {
+    return preferredTables_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -274,6 +369,9 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     if (size_ != 0L) {
       output.writeInt64(4, size_);
     }
+    for (int i = 0; i < preferredTables_.size(); i++) {
+      output.writeMessage(5, preferredTables_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -291,6 +389,9 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (size_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, size_);
+    }
+    for (int i = 0; i < preferredTables_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, preferredTables_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -314,6 +415,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (getSize() != other.getSize()) return false;
+    if (!getPreferredTablesList().equals(other.getPreferredTablesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -333,6 +435,10 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSize());
+    if (getPreferredTablesCount() > 0) {
+      hash = (37 * hash) + PREFERRED_TABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getPreferredTablesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -473,7 +579,9 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPreferredTablesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -489,6 +597,12 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       }
       size_ = 0L;
 
+      if (preferredTablesBuilder_ == null) {
+        preferredTables_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        preferredTablesBuilder_.clear();
+      }
       return this;
     }
 
@@ -516,6 +630,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.reservation.v1.BiReservation buildPartial() {
       com.google.cloud.bigquery.reservation.v1.BiReservation result =
           new com.google.cloud.bigquery.reservation.v1.BiReservation(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       if (updateTimeBuilder_ == null) {
         result.updateTime_ = updateTime_;
@@ -523,6 +638,15 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.size_ = size_;
+      if (preferredTablesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          preferredTables_ = java.util.Collections.unmodifiableList(preferredTables_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.preferredTables_ = preferredTables_;
+      } else {
+        result.preferredTables_ = preferredTablesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -583,6 +707,33 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       if (other.getSize() != 0L) {
         setSize(other.getSize());
       }
+      if (preferredTablesBuilder_ == null) {
+        if (!other.preferredTables_.isEmpty()) {
+          if (preferredTables_.isEmpty()) {
+            preferredTables_ = other.preferredTables_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePreferredTablesIsMutable();
+            preferredTables_.addAll(other.preferredTables_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.preferredTables_.isEmpty()) {
+          if (preferredTablesBuilder_.isEmpty()) {
+            preferredTablesBuilder_.dispose();
+            preferredTablesBuilder_ = null;
+            preferredTables_ = other.preferredTables_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            preferredTablesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPreferredTablesFieldBuilder()
+                    : null;
+          } else {
+            preferredTablesBuilder_.addAllMessages(other.preferredTables_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -612,6 +763,8 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -980,6 +1133,392 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
       size_ = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference>
+        preferredTables_ = java.util.Collections.emptyList();
+
+    private void ensurePreferredTablesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        preferredTables_ =
+            new java.util.ArrayList<com.google.cloud.bigquery.reservation.v1.TableReference>(
+                preferredTables_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.TableReference,
+            com.google.cloud.bigquery.reservation.v1.TableReference.Builder,
+            com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
+        preferredTablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference>
+        getPreferredTablesList() {
+      if (preferredTablesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(preferredTables_);
+      } else {
+        return preferredTablesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public int getPreferredTablesCount() {
+      if (preferredTablesBuilder_ == null) {
+        return preferredTables_.size();
+      } else {
+        return preferredTablesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.TableReference getPreferredTables(int index) {
+      if (preferredTablesBuilder_ == null) {
+        return preferredTables_.get(index);
+      } else {
+        return preferredTablesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder setPreferredTables(
+        int index, com.google.cloud.bigquery.reservation.v1.TableReference value) {
+      if (preferredTablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePreferredTablesIsMutable();
+        preferredTables_.set(index, value);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder setPreferredTables(
+        int index,
+        com.google.cloud.bigquery.reservation.v1.TableReference.Builder builderForValue) {
+      if (preferredTablesBuilder_ == null) {
+        ensurePreferredTablesIsMutable();
+        preferredTables_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        preferredTablesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder addPreferredTables(
+        com.google.cloud.bigquery.reservation.v1.TableReference value) {
+      if (preferredTablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePreferredTablesIsMutable();
+        preferredTables_.add(value);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder addPreferredTables(
+        int index, com.google.cloud.bigquery.reservation.v1.TableReference value) {
+      if (preferredTablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePreferredTablesIsMutable();
+        preferredTables_.add(index, value);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder addPreferredTables(
+        com.google.cloud.bigquery.reservation.v1.TableReference.Builder builderForValue) {
+      if (preferredTablesBuilder_ == null) {
+        ensurePreferredTablesIsMutable();
+        preferredTables_.add(builderForValue.build());
+        onChanged();
+      } else {
+        preferredTablesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder addPreferredTables(
+        int index,
+        com.google.cloud.bigquery.reservation.v1.TableReference.Builder builderForValue) {
+      if (preferredTablesBuilder_ == null) {
+        ensurePreferredTablesIsMutable();
+        preferredTables_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        preferredTablesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder addAllPreferredTables(
+        java.lang.Iterable<? extends com.google.cloud.bigquery.reservation.v1.TableReference>
+            values) {
+      if (preferredTablesBuilder_ == null) {
+        ensurePreferredTablesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, preferredTables_);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder clearPreferredTables() {
+      if (preferredTablesBuilder_ == null) {
+        preferredTables_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public Builder removePreferredTables(int index) {
+      if (preferredTablesBuilder_ == null) {
+        ensurePreferredTablesIsMutable();
+        preferredTables_.remove(index);
+        onChanged();
+      } else {
+        preferredTablesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
+        getPreferredTablesBuilder(int index) {
+      return getPreferredTablesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder
+        getPreferredTablesOrBuilder(int index) {
+      if (preferredTablesBuilder_ == null) {
+        return preferredTables_.get(index);
+      } else {
+        return preferredTablesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
+        getPreferredTablesOrBuilderList() {
+      if (preferredTablesBuilder_ != null) {
+        return preferredTablesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(preferredTables_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
+        addPreferredTablesBuilder() {
+      return getPreferredTablesFieldBuilder()
+          .addBuilder(com.google.cloud.bigquery.reservation.v1.TableReference.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.TableReference.Builder
+        addPreferredTablesBuilder(int index) {
+      return getPreferredTablesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.bigquery.reservation.v1.TableReference.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preferred tables to use BI capacity for.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.reservation.v1.TableReference preferred_tables = 5;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.bigquery.reservation.v1.TableReference.Builder>
+        getPreferredTablesBuilderList() {
+      return getPreferredTablesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.TableReference,
+            com.google.cloud.bigquery.reservation.v1.TableReference.Builder,
+            com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>
+        getPreferredTablesFieldBuilder() {
+      if (preferredTablesBuilder_ == null) {
+        preferredTablesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.reservation.v1.TableReference,
+                com.google.cloud.bigquery.reservation.v1.TableReference.Builder,
+                com.google.cloud.bigquery.reservation.v1.TableReferenceOrBuilder>(
+                preferredTables_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        preferredTables_ = null;
+      }
+      return preferredTablesBuilder_;
     }
 
     @java.lang.Override

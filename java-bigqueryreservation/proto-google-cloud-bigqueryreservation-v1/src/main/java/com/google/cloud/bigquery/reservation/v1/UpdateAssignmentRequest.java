@@ -22,32 +22,27 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
- * Note: "bigquery.reservationAssignments.create" permission is required on the
- * related assignee.
+ * The request for [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
  * </pre>
  *
- * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateAssignmentRequest}
+ * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest}
  */
-public final class CreateAssignmentRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateAssignmentRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
-    CreateAssignmentRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)
+    UpdateAssignmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use CreateAssignmentRequest.newBuilder() to construct.
-  private CreateAssignmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateAssignmentRequest.newBuilder() to construct.
+  private UpdateAssignmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private CreateAssignmentRequest() {
-    parent_ = "";
-    assignmentId_ = "";
-  }
+  private UpdateAssignmentRequest() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new CreateAssignmentRequest();
+    return new UpdateAssignmentRequest();
   }
 
   @java.lang.Override
@@ -55,7 +50,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private CreateAssignmentRequest(
+  private UpdateAssignmentRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,13 +70,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
             break;
           case 10:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
               com.google.cloud.bigquery.reservation.v1.Assignment.Builder subBuilder = null;
               if (assignment_ != null) {
                 subBuilder = assignment_.toBuilder();
@@ -97,11 +85,19 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
               break;
             }
-          case 34:
+          case 18:
             {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-              assignmentId_ = s;
               break;
             }
           default:
@@ -125,84 +121,29 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
-        .internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_descriptor;
+        .internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
-        .internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_fieldAccessorTable
+        .internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.class,
-            com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.Builder.class);
+            com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.class,
+            com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
-  /**
-   *
-   *
-   * <pre>
-   * Required. The parent resource name of the assignment
-   * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-   * </pre>
-   *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The parent resource name of the assignment
-   * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-   * </pre>
-   *
-   * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ASSIGNMENT_FIELD_NUMBER = 2;
+  public static final int ASSIGNMENT_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.reservation.v1.Assignment assignment_;
   /**
    *
    *
    * <pre>
-   * Assignment resource to create.
+   * Content of the assignment to update.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
    *
    * @return Whether the assignment field is set.
    */
@@ -214,10 +155,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Assignment resource to create.
+   * Content of the assignment to update.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
    *
    * @return The assignment.
    */
@@ -231,69 +172,60 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Assignment resource to create.
+   * Content of the assignment to update.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+   * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder getAssignmentOrBuilder() {
     return getAssignment();
   }
 
-  public static final int ASSIGNMENT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object assignmentId_;
+  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+  private com.google.protobuf.FieldMask updateMask_;
   /**
    *
    *
    * <pre>
-   * The optional assignment ID. Assignment name will be generated automatically
-   * if this field is empty.
-   * This field must only contain lower case alphanumeric characters or dashes.
-   * Max length is 64 characters.
+   * Standard field mask for the set of fields to be updated.
    * </pre>
    *
-   * <code>string assignment_id = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
-   * @return The assignmentId.
+   * @return Whether the updateMask field is set.
    */
   @java.lang.Override
-  public java.lang.String getAssignmentId() {
-    java.lang.Object ref = assignmentId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      assignmentId_ = s;
-      return s;
-    }
+  public boolean hasUpdateMask() {
+    return updateMask_ != null;
   }
   /**
    *
    *
    * <pre>
-   * The optional assignment ID. Assignment name will be generated automatically
-   * if this field is empty.
-   * This field must only contain lower case alphanumeric characters or dashes.
-   * Max length is 64 characters.
+   * Standard field mask for the set of fields to be updated.
    * </pre>
    *
-   * <code>string assignment_id = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    *
-   * @return The bytes for assignmentId.
+   * @return The updateMask.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getAssignmentIdBytes() {
-    java.lang.Object ref = assignmentId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      assignmentId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Standard field mask for the set of fields to be updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return getUpdateMask();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -310,14 +242,11 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
-    }
     if (assignment_ != null) {
-      output.writeMessage(2, getAssignment());
+      output.writeMessage(1, getAssignment());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assignmentId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, assignmentId_);
+    if (updateMask_ != null) {
+      output.writeMessage(2, getUpdateMask());
     }
     unknownFields.writeTo(output);
   }
@@ -328,14 +257,11 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
-    }
     if (assignment_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAssignment());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAssignment());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assignmentId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, assignmentId_);
+    if (updateMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -347,18 +273,20 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)) {
+    if (!(obj instanceof com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest other =
-        (com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest) obj;
+    com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest other =
+        (com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest) obj;
 
-    if (!getParent().equals(other.getParent())) return false;
     if (hasAssignment() != other.hasAssignment()) return false;
     if (hasAssignment()) {
       if (!getAssignment().equals(other.getAssignment())) return false;
     }
-    if (!getAssignmentId().equals(other.getAssignmentId())) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -370,84 +298,84 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     if (hasAssignment()) {
       hash = (37 * hash) + ASSIGNMENT_FIELD_NUMBER;
       hash = (53 * hash) + getAssignment().hashCode();
     }
-    hash = (37 * hash) + ASSIGNMENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAssignmentId().hashCode();
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseDelimitedFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseDelimitedFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parseFrom(
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -465,7 +393,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
   }
 
   public static Builder newBuilder(
-      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest prototype) {
+      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -483,33 +411,31 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
-   * Note: "bigquery.reservationAssignments.create" permission is required on the
-   * related assignee.
+   * The request for [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
    * </pre>
    *
-   * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateAssignmentRequest}
+   * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
-      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)
+      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.bigquery.reservation.v1.ReservationProto
-          .internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_descriptor;
+          .internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.bigquery.reservation.v1.ReservationProto
-          .internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_fieldAccessorTable
+          .internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.class,
-              com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.Builder.class);
+              com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.class,
+              com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.newBuilder()
+    // Construct using com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -526,34 +452,36 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
-
       if (assignmentBuilder_ == null) {
         assignment_ = null;
       } else {
         assignment_ = null;
         assignmentBuilder_ = null;
       }
-      assignmentId_ = "";
-
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.bigquery.reservation.v1.ReservationProto
-          .internal_static_google_cloud_bigquery_reservation_v1_CreateAssignmentRequest_descriptor;
+          .internal_static_google_cloud_bigquery_reservation_v1_UpdateAssignmentRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest
+    public com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.getDefaultInstance();
+      return com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest build() {
-      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest result = buildPartial();
+    public com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest build() {
+      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -561,16 +489,19 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest buildPartial() {
-      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest result =
-          new com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest(this);
-      result.parent_ = parent_;
+    public com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest buildPartial() {
+      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest result =
+          new com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest(this);
       if (assignmentBuilder_ == null) {
         result.assignment_ = assignment_;
       } else {
         result.assignment_ = assignmentBuilder_.build();
       }
-      result.assignmentId_ = assignmentId_;
+      if (updateMaskBuilder_ == null) {
+        result.updateMask_ = updateMask_;
+      } else {
+        result.updateMask_ = updateMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -610,8 +541,8 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest) {
-        return mergeFrom((com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest) other);
+      if (other instanceof com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest) {
+        return mergeFrom((com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -619,20 +550,15 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
     }
 
     public Builder mergeFrom(
-        com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest other) {
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest other) {
       if (other
-          == com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest.getDefaultInstance())
+          == com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest.getDefaultInstance())
         return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
       if (other.hasAssignment()) {
         mergeAssignment(other.getAssignment());
       }
-      if (!other.getAssignmentId().isEmpty()) {
-        assignmentId_ = other.assignmentId_;
-        onChanged();
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -649,12 +575,12 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest parsedMessage = null;
+      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
+            (com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -662,127 +588,6 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object parent_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. The parent resource name of the assignment
-     * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-     * </pre>
-     *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The parent resource name of the assignment
-     * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-     * </pre>
-     *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The parent resource name of the assignment
-     * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-     * </pre>
-     *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The parent resource name of the assignment
-     * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-     * </pre>
-     *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The parent resource name of the assignment
-     * E.g. `projects/myproject/locations/US/reservations/team1-prod`
-     * </pre>
-     *
-     * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      parent_ = value;
-      onChanged();
       return this;
     }
 
@@ -796,10 +601,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      *
      * @return Whether the assignment field is set.
      */
@@ -810,10 +615,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      *
      * @return The assignment.
      */
@@ -830,10 +635,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public Builder setAssignment(com.google.cloud.bigquery.reservation.v1.Assignment value) {
       if (assignmentBuilder_ == null) {
@@ -852,10 +657,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public Builder setAssignment(
         com.google.cloud.bigquery.reservation.v1.Assignment.Builder builderForValue) {
@@ -872,10 +677,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public Builder mergeAssignment(com.google.cloud.bigquery.reservation.v1.Assignment value) {
       if (assignmentBuilder_ == null) {
@@ -898,10 +703,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public Builder clearAssignment() {
       if (assignmentBuilder_ == null) {
@@ -918,10 +723,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment.Builder getAssignmentBuilder() {
 
@@ -932,10 +737,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     public com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder getAssignmentOrBuilder() {
       if (assignmentBuilder_ != null) {
@@ -950,10 +755,10 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Assignment resource to create.
+     * Content of the assignment to update.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
+     * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.reservation.v1.Assignment,
@@ -972,125 +777,187 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       return assignmentBuilder_;
     }
 
-    private java.lang.Object assignmentId_ = "";
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
      *
      *
      * <pre>
-     * The optional assignment ID. Assignment name will be generated automatically
-     * if this field is empty.
-     * This field must only contain lower case alphanumeric characters or dashes.
-     * Max length is 64 characters.
+     * Standard field mask for the set of fields to be updated.
      * </pre>
      *
-     * <code>string assignment_id = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      *
-     * @return The assignmentId.
+     * @return Whether the updateMask field is set.
      */
-    public java.lang.String getAssignmentId() {
-      java.lang.Object ref = assignmentId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        assignmentId_ = s;
-        return s;
+    public boolean hasUpdateMask() {
+      return updateMaskBuilder_ != null || updateMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard field mask for the set of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
-        return (java.lang.String) ref;
+        return updateMaskBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * The optional assignment ID. Assignment name will be generated automatically
-     * if this field is empty.
-     * This field must only contain lower case alphanumeric characters or dashes.
-     * Max length is 64 characters.
+     * Standard field mask for the set of fields to be updated.
      * </pre>
      *
-     * <code>string assignment_id = 4;</code>
-     *
-     * @return The bytes for assignmentId.
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public com.google.protobuf.ByteString getAssignmentIdBytes() {
-      java.lang.Object ref = assignmentId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        assignmentId_ = b;
-        return b;
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The optional assignment ID. Assignment name will be generated automatically
-     * if this field is empty.
-     * This field must only contain lower case alphanumeric characters or dashes.
-     * Max length is 64 characters.
-     * </pre>
-     *
-     * <code>string assignment_id = 4;</code>
-     *
-     * @param value The assignmentId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAssignmentId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
+        updateMaskBuilder_.setMessage(value);
       }
 
-      assignmentId_ = value;
-      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The optional assignment ID. Assignment name will be generated automatically
-     * if this field is empty.
-     * This field must only contain lower case alphanumeric characters or dashes.
-     * Max length is 64 characters.
+     * Standard field mask for the set of fields to be updated.
      * </pre>
      *
-     * <code>string assignment_id = 4;</code>
-     *
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder clearAssignmentId() {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
 
-      assignmentId_ = getDefaultInstance().getAssignmentId();
-      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The optional assignment ID. Assignment name will be generated automatically
-     * if this field is empty.
-     * This field must only contain lower case alphanumeric characters or dashes.
-     * Max length is 64 characters.
+     * Standard field mask for the set of fields to be updated.
      * </pre>
      *
-     * <code>string assignment_id = 4;</code>
-     *
-     * @param value The bytes for assignmentId to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder setAssignmentIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (updateMask_ != null) {
+          updateMask_ =
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        } else {
+          updateMask_ = value;
+        }
+        onChanged();
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
       }
-      checkByteStringIsUtf8(value);
 
-      assignmentId_ = value;
-      onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard field mask for the set of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public Builder clearUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = null;
+        onChanged();
+      } else {
+        updateMask_ = null;
+        updateMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard field mask for the set of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard field mask for the set of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard field mask for the set of fields to be updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     @java.lang.Override
@@ -1104,44 +971,44 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.bigquery.reservation.v1.CreateAssignmentRequest)
-  private static final com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest)
+  private static final com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest();
   }
 
-  public static com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest
+  public static com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateAssignmentRequest> PARSER =
-      new com.google.protobuf.AbstractParser<CreateAssignmentRequest>() {
+  private static final com.google.protobuf.Parser<UpdateAssignmentRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateAssignmentRequest>() {
         @java.lang.Override
-        public CreateAssignmentRequest parsePartialFrom(
+        public UpdateAssignmentRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateAssignmentRequest(input, extensionRegistry);
+          return new UpdateAssignmentRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<CreateAssignmentRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateAssignmentRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateAssignmentRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateAssignmentRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest
+  public com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

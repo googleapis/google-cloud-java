@@ -55,6 +55,7 @@ import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
+import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
@@ -283,6 +284,17 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateAssignmentRequest, Assignment>
+      updateAssignmentMethodDescriptor =
+          MethodDescriptor.<UpdateAssignmentRequest, Assignment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/UpdateAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetBiReservationRequest, BiReservation>
       getBiReservationMethodDescriptor =
           MethodDescriptor.<GetBiReservationRequest, BiReservation>newBuilder()
@@ -344,6 +356,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<SearchAllAssignmentsRequest, SearchAllAssignmentsPagedResponse>
       searchAllAssignmentsPagedCallable;
   private final UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable;
+  private final UnaryCallable<UpdateAssignmentRequest, Assignment> updateAssignmentCallable;
   private final UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable;
   private final UnaryCallable<UpdateBiReservationRequest, BiReservation>
       updateBiReservationCallable;
@@ -588,6 +601,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpdateAssignmentRequest, Assignment> updateAssignmentTransportSettings =
+        GrpcCallSettings.<UpdateAssignmentRequest, Assignment>newBuilder()
+            .setMethodDescriptor(updateAssignmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("assignment.name", String.valueOf(request.getAssignment().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetBiReservationRequest, BiReservation> getBiReservationTransportSettings =
         GrpcCallSettings.<GetBiReservationRequest, BiReservation>newBuilder()
             .setMethodDescriptor(getBiReservationMethodDescriptor)
@@ -711,6 +734,9 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     this.moveAssignmentCallable =
         callableFactory.createUnaryCallable(
             moveAssignmentTransportSettings, settings.moveAssignmentSettings(), clientContext);
+    this.updateAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            updateAssignmentTransportSettings, settings.updateAssignmentSettings(), clientContext);
     this.getBiReservationCallable =
         callableFactory.createUnaryCallable(
             getBiReservationTransportSettings, settings.getBiReservationSettings(), clientContext);
@@ -855,6 +881,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {
     return moveAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAssignmentRequest, Assignment> updateAssignmentCallable() {
+    return updateAssignmentCallable;
   }
 
   @Override

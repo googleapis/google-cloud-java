@@ -29,6 +29,8 @@ public interface AssignmentOrBuilder
    * <pre>
    * Output only. Name of the resource. E.g.:
    * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+   * The assignment_id must only contain lower case alphanumeric characters or
+   * dashes and the max length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,6 +44,8 @@ public interface AssignmentOrBuilder
    * <pre>
    * Output only. Name of the resource. E.g.:
    * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
+   * The assignment_id must only contain lower case alphanumeric characters or
+   * dashes and the max length is 64 characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

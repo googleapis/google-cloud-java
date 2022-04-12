@@ -51,6 +51,7 @@ import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
+import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
@@ -173,6 +174,10 @@ public abstract class ReservationServiceStub implements BackgroundResource {
 
   public UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {
     throw new UnsupportedOperationException("Not implemented: moveAssignmentCallable()");
+  }
+
+  public UnaryCallable<UpdateAssignmentRequest, Assignment> updateAssignmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAssignmentCallable()");
   }
 
   public UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable() {
