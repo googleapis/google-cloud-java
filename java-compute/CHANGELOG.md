@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/googleapis/java-compute/compare/v1.8.1...v1.9.0) (2022-04-11)
+
+
+### Features
+
+* update compute API to revision 20220322 ([#710](https://github.com/googleapis/java-compute/issues/710)) ([#669](https://github.com/googleapis/java-compute/issues/669)) ([b6daf94](https://github.com/googleapis/java-compute/commit/b6daf94c257912d2460407998f2a9ed43fc44491))
+
 ### [1.8.1](https://github.com/googleapis/java-compute/compare/v1.8.0...v1.8.1) (2022-03-29)
 
 
