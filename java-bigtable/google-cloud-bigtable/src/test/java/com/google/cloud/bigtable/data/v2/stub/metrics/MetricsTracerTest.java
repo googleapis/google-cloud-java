@@ -37,6 +37,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
@@ -46,6 +47,7 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Range;
+import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
@@ -58,6 +60,8 @@ import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tags;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -102,7 +106,7 @@ public class MetricsTracerTest {
   @Mock(answer = Answers.CALLS_REAL_METHODS)
   private BigtableGrpc.BigtableImplBase mockService;
 
-  private StatsComponentImpl localStats = new StatsComponentImpl();
+  private final StatsComponentImpl localStats = new StatsComponentImpl();
   private EnhancedBigtableStub stub;
   private BigtableDataSettings settings;
 
@@ -212,29 +216,42 @@ public class MetricsTracerTest {
     final long beforeSleep = 50;
     final long afterSleep = 50;
 
+    SettableFuture<Void> gotFirstRow = SettableFuture.create();
+
+    ExecutorService executor = Executors.newCachedThreadPool();
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) throws Throwable {
-                @SuppressWarnings("unchecked")
-                StreamObserver<ReadRowsResponse> observer =
-                    (StreamObserver<ReadRowsResponse>) invocation.getArguments()[1];
-                Thread.sleep(beforeSleep);
-                observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
-                Thread.sleep(afterSleep);
-                observer.onCompleted();
-                return null;
-              }
+            invocation -> {
+              StreamObserver<ReadRowsResponse> observer = invocation.getArgument(1);
+              executor.submit(
+                  () -> {
+                    Thread.sleep(beforeSleep);
+                    observer.onNext(DEFAULT_READ_ROWS_RESPONSES);
+                    // wait until the first row is consumed before padding the operation span
+                    gotFirstRow.get();
+                    Thread.sleep(afterSleep);
+                    observer.onCompleted();
+                    return null;
+                  });
+              return null;
             })
         .when(mockService)
         .readRows(any(ReadRowsRequest.class), any());
 
     Stopwatch stopwatch = Stopwatch.createStarted();
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)));
+
+    // Get the first row and notify the mock that it can start padding the operation span
+    Iterator<Row> it = stub.readRowsCallable().call(Query.create(TABLE_ID)).iterator();
+    it.next();
+    gotFirstRow.set(null);
+    // finish the stream
+    while (it.hasNext()) {
+      it.next();
+    }
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     // Give OpenCensus a chance to update the views asynchronously.
     Thread.sleep(100);
+    executor.shutdown();
 
     long firstRowLatency =
         StatsTestUtils.getAggregationValueAsLong(
@@ -245,9 +262,7 @@ public class MetricsTracerTest {
             INSTANCE_ID,
             APP_PROFILE_ID);
 
-    // adding buffer time to the upper range to allow for a race between the emulator and the client
-    // recording the duration
-    assertThat(firstRowLatency).isIn(Range.closed(beforeSleep, elapsed - afterSleep / 2));
+    assertThat(firstRowLatency).isIn(Range.closed(beforeSleep, elapsed - afterSleep));
   }
 
   @Test
