@@ -105,6 +105,21 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
               break;
             }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -384,6 +399,52 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     return deferred_.get(index);
   }
 
+  public static final int READ_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp readTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   *
+   * @return Whether the readTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadTime() {
+    return readTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   *
+   * @return The readTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getReadTime() {
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+    return getReadTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -407,6 +468,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < deferred_.size(); i++) {
       output.writeMessage(3, deferred_.get(i));
     }
+    if (readTime_ != null) {
+      output.writeMessage(7, getReadTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -424,6 +488,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < deferred_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, deferred_.get(i));
+    }
+    if (readTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getReadTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -443,6 +510,10 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     if (!getFoundList().equals(other.getFoundList())) return false;
     if (!getMissingList().equals(other.getMissingList())) return false;
     if (!getDeferredList().equals(other.getDeferredList())) return false;
+    if (hasReadTime() != other.hasReadTime()) return false;
+    if (hasReadTime()) {
+      if (!getReadTime().equals(other.getReadTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -465,6 +536,10 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     if (getDeferredCount() > 0) {
       hash = (37 * hash) + DEFERRED_FIELD_NUMBER;
       hash = (53 * hash) + getDeferredList().hashCode();
+    }
+    if (hasReadTime()) {
+      hash = (37 * hash) + READ_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getReadTime().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -633,6 +708,12 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         deferredBuilder_.clear();
       }
+      if (readTimeBuilder_ == null) {
+        readTime_ = null;
+      } else {
+        readTime_ = null;
+        readTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -687,6 +768,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         result.deferred_ = deferred_;
       } else {
         result.deferred_ = deferredBuilder_.build();
+      }
+      if (readTimeBuilder_ == null) {
+        result.readTime_ = readTime_;
+      } else {
+        result.readTime_ = readTimeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -817,6 +903,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
             deferredBuilder_.addAllMessages(other.deferred_);
           }
         }
+      }
+      if (other.hasReadTime()) {
+        mergeReadTime(other.getReadTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1996,6 +2085,185 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         deferred_ = null;
       }
       return deferredBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp readTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     *
+     * @return Whether the readTime field is set.
+     */
+    public boolean hasReadTime() {
+      return readTimeBuilder_ != null || readTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     *
+     * @return The readTime.
+     */
+    public com.google.protobuf.Timestamp getReadTime() {
+      if (readTimeBuilder_ == null) {
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+      } else {
+        return readTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public Builder setReadTime(com.google.protobuf.Timestamp value) {
+      if (readTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readTime_ = value;
+        onChanged();
+      } else {
+        readTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (readTimeBuilder_ == null) {
+        readTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        readTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
+      if (readTimeBuilder_ == null) {
+        if (readTime_ != null) {
+          readTime_ =
+              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        } else {
+          readTime_ = value;
+        }
+        onChanged();
+      } else {
+        readTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public Builder clearReadTime() {
+      if (readTimeBuilder_ == null) {
+        readTime_ = null;
+        onChanged();
+      } else {
+        readTime_ = null;
+        readTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
+
+      onChanged();
+      return getReadTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+      if (readTimeBuilder_ != null) {
+        return readTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which these entities were read or found missing.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getReadTimeFieldBuilder() {
+      if (readTimeBuilder_ == null) {
+        readTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTime(), getParentForChildren(), isClean());
+        readTime_ = null;
+      }
+      return readTimeBuilder_;
     }
 
     @java.lang.Override

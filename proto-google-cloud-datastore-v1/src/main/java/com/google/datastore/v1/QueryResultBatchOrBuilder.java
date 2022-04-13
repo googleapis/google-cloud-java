@@ -184,4 +184,63 @@ public interface QueryResultBatchOrBuilder
    * @return The snapshotVersion.
    */
   long getSnapshotVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Read timestamp this batch was returned from.
+   * This applies to the range of results from the query's `start_cursor` (or
+   * the beginning of the query if no cursor was given) to this batch's
+   * `end_cursor` (not the query's `end_cursor`).
+   * In a single transaction, subsequent query result batches for the same query
+   * can have a greater timestamp. Each batch's read timestamp
+   * is valid for all preceding batches.
+   * This value will not be set for eventually consistent queries in Cloud
+   * Datastore.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 8;</code>
+   *
+   * @return Whether the readTime field is set.
+   */
+  boolean hasReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * Read timestamp this batch was returned from.
+   * This applies to the range of results from the query's `start_cursor` (or
+   * the beginning of the query if no cursor was given) to this batch's
+   * `end_cursor` (not the query's `end_cursor`).
+   * In a single transaction, subsequent query result batches for the same query
+   * can have a greater timestamp. Each batch's read timestamp
+   * is valid for all preceding batches.
+   * This value will not be set for eventually consistent queries in Cloud
+   * Datastore.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 8;</code>
+   *
+   * @return The readTime.
+   */
+  com.google.protobuf.Timestamp getReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * Read timestamp this batch was returned from.
+   * This applies to the range of results from the query's `start_cursor` (or
+   * the beginning of the query if no cursor was given) to this batch's
+   * `end_cursor` (not the query's `end_cursor`).
+   * In a single transaction, subsequent query result batches for the same query
+   * can have a greater timestamp. Each batch's read timestamp
+   * is valid for all preceding batches.
+   * This value will not be set for eventually consistent queries in Cloud
+   * Datastore.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 8;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 }

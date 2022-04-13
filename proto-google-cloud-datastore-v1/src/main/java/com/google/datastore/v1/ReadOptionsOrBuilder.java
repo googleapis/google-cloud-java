@@ -92,5 +92,46 @@ public interface ReadOptionsOrBuilder
    */
   com.google.protobuf.ByteString getTransaction();
 
+  /**
+   *
+   *
+   * <pre>
+   * Reads entities as they were at the given time. This may not be older
+   * than 270 seconds.  This value is only supported for Cloud Firestore in
+   * Datastore mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return Whether the readTime field is set.
+   */
+  boolean hasReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * Reads entities as they were at the given time. This may not be older
+   * than 270 seconds.  This value is only supported for Cloud Firestore in
+   * Datastore mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   *
+   * @return The readTime.
+   */
+  com.google.protobuf.Timestamp getReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * Reads entities as they were at the given time. This may not be older
+   * than 270 seconds.  This value is only supported for Cloud Firestore in
+   * Datastore mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 4;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
+
   public com.google.datastore.v1.ReadOptions.ConsistencyTypeCase getConsistencyTypeCase();
 }

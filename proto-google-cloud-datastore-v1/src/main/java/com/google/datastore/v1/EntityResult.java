@@ -95,6 +95,21 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
               version_ = input.readInt64();
               break;
             }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -382,6 +397,61 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     return version_;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   public static final int CURSOR_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString cursor_;
   /**
@@ -424,6 +494,9 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     if (version_ != 0L) {
       output.writeInt64(4, version_);
     }
+    if (updateTime_ != null) {
+      output.writeMessage(5, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -441,6 +514,9 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     }
     if (version_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, version_);
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -462,6 +538,10 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       if (!getEntity().equals(other.getEntity())) return false;
     }
     if (getVersion() != other.getVersion()) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getCursor().equals(other.getCursor())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -480,6 +560,10 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVersion());
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (37 * hash) + CURSOR_FIELD_NUMBER;
     hash = (53 * hash) + getCursor().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -634,6 +718,12 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       }
       version_ = 0L;
 
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       cursor_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
@@ -668,6 +758,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
         result.entity_ = entityBuilder_.build();
       }
       result.version_ = version_;
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       result.cursor_ = cursor_;
       onBuilt();
       return result;
@@ -723,6 +818,9 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getVersion() != 0L) {
         setVersion(other.getVersion());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       if (other.getCursor() != com.google.protobuf.ByteString.EMPTY) {
         setCursor(other.getCursor());
@@ -1003,6 +1101,216 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       version_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which the entity was last changed.
+     * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+     * results.
+     * If this entity is missing, this field will not be set.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     private com.google.protobuf.ByteString cursor_ = com.google.protobuf.ByteString.EMPTY;

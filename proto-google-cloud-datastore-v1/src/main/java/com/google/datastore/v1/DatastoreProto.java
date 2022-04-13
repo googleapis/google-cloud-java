@@ -121,15 +121,17 @@ public final class DatastoreProto {
           + "ns.proto\032\027google/api/client.proto\032\037googl"
           + "e/api/field_behavior.proto\032 google/datas"
           + "tore/v1/entity.proto\032\037google/datastore/v"
-          + "1/query.proto\"\215\001\n\rLookupRequest\022\027\n\nproje"
-          + "ct_id\030\010 \001(\tB\003\340A\002\0226\n\014read_options\030\001 \001(\0132 "
-          + ".google.datastore.v1.ReadOptions\022+\n\004keys"
-          + "\030\003 \003(\0132\030.google.datastore.v1.KeyB\003\340A\002\"\242\001"
-          + "\n\016LookupResponse\0220\n\005found\030\001 \003(\0132!.google"
-          + ".datastore.v1.EntityResult\0222\n\007missing\030\002 "
-          + "\003(\0132!.google.datastore.v1.EntityResult\022*"
-          + "\n\010deferred\030\003 \003(\0132\030.google.datastore.v1.K"
-          + "ey\"\211\002\n\017RunQueryRequest\022\027\n\nproject_id\030\010 \001"
+          + "1/query.proto\032\037google/protobuf/timestamp"
+          + ".proto\"\215\001\n\rLookupRequest\022\027\n\nproject_id\030\010"
+          + " \001(\tB\003\340A\002\0226\n\014read_options\030\001 \001(\0132 .google"
+          + ".datastore.v1.ReadOptions\022+\n\004keys\030\003 \003(\0132"
+          + "\030.google.datastore.v1.KeyB\003\340A\002\"\321\001\n\016Looku"
+          + "pResponse\0220\n\005found\030\001 \003(\0132!.google.datast"
+          + "ore.v1.EntityResult\0222\n\007missing\030\002 \003(\0132!.g"
+          + "oogle.datastore.v1.EntityResult\022*\n\010defer"
+          + "red\030\003 \003(\0132\030.google.datastore.v1.Key\022-\n\tr"
+          + "ead_time\030\007 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\"\211\002\n\017RunQueryRequest\022\027\n\nproject_id\030\010 \001"
           + "(\tB\003\340A\002\0226\n\014partition_id\030\002 \001(\0132 .google.d"
           + "atastore.v1.PartitionId\0226\n\014read_options\030"
           + "\001 \001(\0132 .google.datastore.v1.ReadOptions\022"
@@ -151,75 +153,81 @@ public final class DatastoreProto {
           + "n\030\001 \001(\014H\000\0220\n\tmutations\030\006 \003(\0132\035.google.da"
           + "tastore.v1.Mutation\"F\n\004Mode\022\024\n\020MODE_UNSP"
           + "ECIFIED\020\000\022\021\n\rTRANSACTIONAL\020\001\022\025\n\021NON_TRAN"
-          + "SACTIONAL\020\002B\026\n\024transaction_selector\"f\n\016C"
-          + "ommitResponse\022=\n\020mutation_results\030\003 \003(\0132"
-          + "#.google.datastore.v1.MutationResult\022\025\n\r"
-          + "index_updates\030\004 \001(\005\"Z\n\022AllocateIdsReques"
-          + "t\022\027\n\nproject_id\030\010 \001(\tB\003\340A\002\022+\n\004keys\030\001 \003(\013"
-          + "2\030.google.datastore.v1.KeyB\003\340A\002\"=\n\023Alloc"
-          + "ateIdsResponse\022&\n\004keys\030\001 \003(\0132\030.google.da"
-          + "tastore.v1.Key\"n\n\021ReserveIdsRequest\022\027\n\np"
-          + "roject_id\030\010 \001(\tB\003\340A\002\022\023\n\013database_id\030\t \001("
-          + "\t\022+\n\004keys\030\001 \003(\0132\030.google.datastore.v1.Ke"
-          + "yB\003\340A\002\"\024\n\022ReserveIdsResponse\"\207\002\n\010Mutatio"
-          + "n\022-\n\006insert\030\004 \001(\0132\033.google.datastore.v1."
-          + "EntityH\000\022-\n\006update\030\005 \001(\0132\033.google.datast"
-          + "ore.v1.EntityH\000\022-\n\006upsert\030\006 \001(\0132\033.google"
-          + ".datastore.v1.EntityH\000\022*\n\006delete\030\007 \001(\0132\030"
-          + ".google.datastore.v1.KeyH\000\022\026\n\014base_versi"
-          + "on\030\010 \001(\003H\001B\013\n\toperationB\035\n\033conflict_dete"
-          + "ction_strategy\"c\n\016MutationResult\022%\n\003key\030"
-          + "\003 \001(\0132\030.google.datastore.v1.Key\022\017\n\007versi"
-          + "on\030\004 \001(\003\022\031\n\021conflict_detected\030\005 \001(\010\"\325\001\n\013"
-          + "ReadOptions\022L\n\020read_consistency\030\001 \001(\01620."
-          + "google.datastore.v1.ReadOptions.ReadCons"
-          + "istencyH\000\022\025\n\013transaction\030\002 \001(\014H\000\"M\n\017Read"
+          + "SACTIONAL\020\002B\026\n\024transaction_selector\"\227\001\n\016"
+          + "CommitResponse\022=\n\020mutation_results\030\003 \003(\013"
+          + "2#.google.datastore.v1.MutationResult\022\025\n"
+          + "\rindex_updates\030\004 \001(\005\022/\n\013commit_time\030\010 \001("
+          + "\0132\032.google.protobuf.Timestamp\"Z\n\022Allocat"
+          + "eIdsRequest\022\027\n\nproject_id\030\010 \001(\tB\003\340A\002\022+\n\004"
+          + "keys\030\001 \003(\0132\030.google.datastore.v1.KeyB\003\340A"
+          + "\002\"=\n\023AllocateIdsResponse\022&\n\004keys\030\001 \003(\0132\030"
+          + ".google.datastore.v1.Key\"n\n\021ReserveIdsRe"
+          + "quest\022\027\n\nproject_id\030\010 \001(\tB\003\340A\002\022\023\n\013databa"
+          + "se_id\030\t \001(\t\022+\n\004keys\030\001 \003(\0132\030.google.datas"
+          + "tore.v1.KeyB\003\340A\002\"\024\n\022ReserveIdsResponse\"\272"
+          + "\002\n\010Mutation\022-\n\006insert\030\004 \001(\0132\033.google.dat"
+          + "astore.v1.EntityH\000\022-\n\006update\030\005 \001(\0132\033.goo"
+          + "gle.datastore.v1.EntityH\000\022-\n\006upsert\030\006 \001("
+          + "\0132\033.google.datastore.v1.EntityH\000\022*\n\006dele"
+          + "te\030\007 \001(\0132\030.google.datastore.v1.KeyH\000\022\026\n\014"
+          + "base_version\030\010 \001(\003H\001\0221\n\013update_time\030\013 \001("
+          + "\0132\032.google.protobuf.TimestampH\001B\013\n\topera"
+          + "tionB\035\n\033conflict_detection_strategy\"\224\001\n\016"
+          + "MutationResult\022%\n\003key\030\003 \001(\0132\030.google.dat"
+          + "astore.v1.Key\022\017\n\007version\030\004 \001(\003\022/\n\013update"
+          + "_time\030\006 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "\031\n\021conflict_detected\030\005 \001(\010\"\206\002\n\013ReadOptio"
+          + "ns\022L\n\020read_consistency\030\001 \001(\01620.google.da"
+          + "tastore.v1.ReadOptions.ReadConsistencyH\000"
+          + "\022\025\n\013transaction\030\002 \001(\014H\000\022/\n\tread_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampH\000\"M\n\017Read"
           + "Consistency\022 \n\034READ_CONSISTENCY_UNSPECIF"
           + "IED\020\000\022\n\n\006STRONG\020\001\022\014\n\010EVENTUAL\020\002B\022\n\020consi"
-          + "stency_type\"\343\001\n\022TransactionOptions\022G\n\nre"
+          + "stency_type\"\222\002\n\022TransactionOptions\022G\n\nre"
           + "ad_write\030\001 \001(\01321.google.datastore.v1.Tra"
           + "nsactionOptions.ReadWriteH\000\022E\n\tread_only"
           + "\030\002 \001(\01320.google.datastore.v1.Transaction"
           + "Options.ReadOnlyH\000\032)\n\tReadWrite\022\034\n\024previ"
-          + "ous_transaction\030\001 \001(\014\032\n\n\010ReadOnlyB\006\n\004mod"
-          + "e2\223\n\n\tDatastore\022\235\001\n\006Lookup\022\".google.data"
-          + "store.v1.LookupRequest\032#.google.datastor"
-          + "e.v1.LookupResponse\"J\202\323\344\223\002%\" /v1/project"
-          + "s/{project_id}:lookup:\001*\332A\034project_id,re"
-          + "ad_options,keys\022\206\001\n\010RunQuery\022$.google.da"
-          + "tastore.v1.RunQueryRequest\032%.google.data"
-          + "store.v1.RunQueryResponse\"-\202\323\344\223\002\'\"\"/v1/p"
-          + "rojects/{project_id}:runQuery:\001*\022\263\001\n\020Beg"
-          + "inTransaction\022,.google.datastore.v1.Begi"
-          + "nTransactionRequest\032-.google.datastore.v"
-          + "1.BeginTransactionResponse\"B\202\323\344\223\002/\"*/v1/"
-          + "projects/{project_id}:beginTransaction:\001"
-          + "*\332A\nproject_id\022\302\001\n\006Commit\022\".google.datas"
-          + "tore.v1.CommitRequest\032#.google.datastore"
-          + ".v1.CommitResponse\"o\202\323\344\223\002%\" /v1/projects"
-          + "/{project_id}:commit:\001*\332A%project_id,mod"
-          + "e,transaction,mutations\332A\031project_id,mod"
-          + "e,mutations\022\237\001\n\010Rollback\022$.google.datast"
-          + "ore.v1.RollbackRequest\032%.google.datastor"
-          + "e.v1.RollbackResponse\"F\202\323\344\223\002\'\"\"/v1/proje"
-          + "cts/{project_id}:rollback:\001*\332A\026project_i"
-          + "d,transaction\022\244\001\n\013AllocateIds\022\'.google.d"
-          + "atastore.v1.AllocateIdsRequest\032(.google."
-          + "datastore.v1.AllocateIdsResponse\"B\202\323\344\223\002*"
-          + "\"%/v1/projects/{project_id}:allocateIds:"
-          + "\001*\332A\017project_id,keys\022\240\001\n\nReserveIds\022&.go"
-          + "ogle.datastore.v1.ReserveIdsRequest\032\'.go"
-          + "ogle.datastore.v1.ReserveIdsResponse\"A\202\323"
-          + "\344\223\002)\"$/v1/projects/{project_id}:reserveI"
-          + "ds:\001*\332A\017project_id,keys\032v\312A\030datastore.go"
-          + "ogleapis.com\322AXhttps://www.googleapis.co"
-          + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/datastoreB\300\001\n\027com.google.d"
-          + "atastore.v1B\016DatastoreProtoP\001Z<google.go"
-          + "lang.org/genproto/googleapis/datastore/v"
-          + "1;datastore\252\002\031Google.Cloud.Datastore.V1\312"
-          + "\002\031Google\\Cloud\\Datastore\\V1\352\002\034Google::Cl"
-          + "oud::Datastore::V1b\006proto3"
+          + "ous_transaction\030\001 \001(\014\0329\n\010ReadOnly\022-\n\trea"
+          + "d_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\006\n\004mode2\223\n\n\tDatastore\022\235\001\n\006Lookup\022\".goog"
+          + "le.datastore.v1.LookupRequest\032#.google.d"
+          + "atastore.v1.LookupResponse\"J\202\323\344\223\002%\" /v1/"
+          + "projects/{project_id}:lookup:\001*\332A\034projec"
+          + "t_id,read_options,keys\022\206\001\n\010RunQuery\022$.go"
+          + "ogle.datastore.v1.RunQueryRequest\032%.goog"
+          + "le.datastore.v1.RunQueryResponse\"-\202\323\344\223\002\'"
+          + "\"\"/v1/projects/{project_id}:runQuery:\001*\022"
+          + "\263\001\n\020BeginTransaction\022,.google.datastore."
+          + "v1.BeginTransactionRequest\032-.google.data"
+          + "store.v1.BeginTransactionResponse\"B\202\323\344\223\002"
+          + "/\"*/v1/projects/{project_id}:beginTransa"
+          + "ction:\001*\332A\nproject_id\022\302\001\n\006Commit\022\".googl"
+          + "e.datastore.v1.CommitRequest\032#.google.da"
+          + "tastore.v1.CommitResponse\"o\202\323\344\223\002%\" /v1/p"
+          + "rojects/{project_id}:commit:\001*\332A%project"
+          + "_id,mode,transaction,mutations\332A\031project"
+          + "_id,mode,mutations\022\237\001\n\010Rollback\022$.google"
+          + ".datastore.v1.RollbackRequest\032%.google.d"
+          + "atastore.v1.RollbackResponse\"F\202\323\344\223\002\'\"\"/v"
+          + "1/projects/{project_id}:rollback:\001*\332A\026pr"
+          + "oject_id,transaction\022\244\001\n\013AllocateIds\022\'.g"
+          + "oogle.datastore.v1.AllocateIdsRequest\032(."
+          + "google.datastore.v1.AllocateIdsResponse\""
+          + "B\202\323\344\223\002*\"%/v1/projects/{project_id}:alloc"
+          + "ateIds:\001*\332A\017project_id,keys\022\240\001\n\nReserveI"
+          + "ds\022&.google.datastore.v1.ReserveIdsReque"
+          + "st\032\'.google.datastore.v1.ReserveIdsRespo"
+          + "nse\"A\202\323\344\223\002)\"$/v1/projects/{project_id}:r"
+          + "eserveIds:\001*\332A\017project_id,keys\032v\312A\030datas"
+          + "tore.googleapis.com\322AXhttps://www.google"
+          + "apis.com/auth/cloud-platform,https://www"
+          + ".googleapis.com/auth/datastoreB\300\001\n\027com.g"
+          + "oogle.datastore.v1B\016DatastoreProtoP\001Z<go"
+          + "ogle.golang.org/genproto/googleapis/data"
+          + "store/v1;datastore\252\002\031Google.Cloud.Datast"
+          + "ore.V1\312\002\031Google\\Cloud\\Datastore\\V1\352\002\034Goo"
+          + "gle::Cloud::Datastore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -230,6 +238,7 @@ public final class DatastoreProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.datastore.v1.EntityProto.getDescriptor(),
               com.google.datastore.v1.QueryProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_datastore_v1_LookupRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -245,7 +254,7 @@ public final class DatastoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_datastore_v1_LookupResponse_descriptor,
             new java.lang.String[] {
-              "Found", "Missing", "Deferred",
+              "Found", "Missing", "Deferred", "ReadTime",
             });
     internal_static_google_datastore_v1_RunQueryRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -307,7 +316,7 @@ public final class DatastoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_datastore_v1_CommitResponse_descriptor,
             new java.lang.String[] {
-              "MutationResults", "IndexUpdates",
+              "MutationResults", "IndexUpdates", "CommitTime",
             });
     internal_static_google_datastore_v1_AllocateIdsRequest_descriptor =
         getDescriptor().getMessageTypes().get(10);
@@ -350,6 +359,7 @@ public final class DatastoreProto {
               "Upsert",
               "Delete",
               "BaseVersion",
+              "UpdateTime",
               "Operation",
               "ConflictDetectionStrategy",
             });
@@ -359,7 +369,7 @@ public final class DatastoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_datastore_v1_MutationResult_descriptor,
             new java.lang.String[] {
-              "Key", "Version", "ConflictDetected",
+              "Key", "Version", "UpdateTime", "ConflictDetected",
             });
     internal_static_google_datastore_v1_ReadOptions_descriptor =
         getDescriptor().getMessageTypes().get(16);
@@ -367,7 +377,7 @@ public final class DatastoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_datastore_v1_ReadOptions_descriptor,
             new java.lang.String[] {
-              "ReadConsistency", "Transaction", "ConsistencyType",
+              "ReadConsistency", "Transaction", "ReadTime", "ConsistencyType",
             });
     internal_static_google_datastore_v1_TransactionOptions_descriptor =
         getDescriptor().getMessageTypes().get(17);
@@ -390,7 +400,9 @@ public final class DatastoreProto {
     internal_static_google_datastore_v1_TransactionOptions_ReadOnly_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_datastore_v1_TransactionOptions_ReadOnly_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ReadTime",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -405,6 +417,7 @@ public final class DatastoreProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.datastore.v1.EntityProto.getDescriptor();
     com.google.datastore.v1.QueryProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

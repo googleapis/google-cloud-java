@@ -81,6 +81,50 @@ public interface EntityResultOrBuilder
    *
    *
    * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which the entity was last changed.
+   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
+   * results.
+   * If this entity is missing, this field will not be set.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A cursor that points to the position after the result entity.
    * Set only when the `EntityResult` is part of a `QueryResultBatch` message.
    * </pre>

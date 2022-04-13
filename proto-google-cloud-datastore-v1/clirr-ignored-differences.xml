@@ -6,4 +6,14 @@
     <className>com/google/datastore/v1/*OrBuilder</className>
     <method>* has*(*)</method>
   </difference>
+   <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/datastore/v1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+   <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/datastore/v1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
 </differences>

@@ -205,4 +205,39 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
   com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   *
+   * @return Whether the readTime field is set.
+   */
+  boolean hasReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   *
+   * @return The readTime.
+   */
+  com.google.protobuf.Timestamp getReadTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time at which these entities were read or found missing.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp read_time = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 }

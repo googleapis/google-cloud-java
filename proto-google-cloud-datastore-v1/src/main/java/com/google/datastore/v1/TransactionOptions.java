@@ -701,7 +701,46 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
   public interface ReadOnlyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.datastore.v1.TransactionOptions.ReadOnly)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return Whether the readTime field is set.
+     */
+    boolean hasReadTime();
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return The readTime.
+     */
+    com.google.protobuf.Timestamp getReadTime();
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
+  }
   /**
    *
    *
@@ -752,6 +791,21 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (readTime_ != null) {
+                  subBuilder = readTime_.toBuilder();
+                }
+                readTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(readTime_);
+                  readTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -786,6 +840,55 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
               com.google.datastore.v1.TransactionOptions.ReadOnly.Builder.class);
     }
 
+    public static final int READ_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp readTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return Whether the readTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasReadTime() {
+      return readTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     *
+     * @return The readTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getReadTime() {
+      return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reads entities at the given time.
+     * This may not be older than 60 seconds.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp read_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+      return getReadTime();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -800,6 +903,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (readTime_ != null) {
+        output.writeMessage(1, getReadTime());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -809,6 +915,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
+      if (readTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getReadTime());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -825,6 +934,10 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       com.google.datastore.v1.TransactionOptions.ReadOnly other =
           (com.google.datastore.v1.TransactionOptions.ReadOnly) obj;
 
+      if (hasReadTime() != other.hasReadTime()) return false;
+      if (hasReadTime()) {
+        if (!getReadTime().equals(other.getReadTime())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -836,6 +949,10 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasReadTime()) {
+        hash = (37 * hash) + READ_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getReadTime().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -984,6 +1101,12 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (readTimeBuilder_ == null) {
+          readTime_ = null;
+        } else {
+          readTime_ = null;
+          readTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -1011,6 +1134,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public com.google.datastore.v1.TransactionOptions.ReadOnly buildPartial() {
         com.google.datastore.v1.TransactionOptions.ReadOnly result =
             new com.google.datastore.v1.TransactionOptions.ReadOnly(this);
+        if (readTimeBuilder_ == null) {
+          result.readTime_ = readTime_;
+        } else {
+          result.readTime_ = readTimeBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1063,6 +1191,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public Builder mergeFrom(com.google.datastore.v1.TransactionOptions.ReadOnly other) {
         if (other == com.google.datastore.v1.TransactionOptions.ReadOnly.getDefaultInstance())
           return this;
+        if (other.hasReadTime()) {
+          mergeReadTime(other.getReadTime());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1091,6 +1222,194 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
           }
         }
         return this;
+      }
+
+      private com.google.protobuf.Timestamp readTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          readTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       *
+       * @return Whether the readTime field is set.
+       */
+      public boolean hasReadTime() {
+        return readTimeBuilder_ != null || readTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       *
+       * @return The readTime.
+       */
+      public com.google.protobuf.Timestamp getReadTime() {
+        if (readTimeBuilder_ == null) {
+          return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        } else {
+          return readTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public Builder setReadTime(com.google.protobuf.Timestamp value) {
+        if (readTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          readTime_ = value;
+          onChanged();
+        } else {
+          readTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (readTimeBuilder_ == null) {
+          readTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          readTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
+        if (readTimeBuilder_ == null) {
+          if (readTime_ != null) {
+            readTime_ =
+                com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+          } else {
+            readTime_ = value;
+          }
+          onChanged();
+        } else {
+          readTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public Builder clearReadTime() {
+        if (readTimeBuilder_ == null) {
+          readTime_ = null;
+          onChanged();
+        } else {
+          readTime_ = null;
+          readTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
+
+        onChanged();
+        return getReadTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
+        if (readTimeBuilder_ != null) {
+          return readTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Reads entities at the given time.
+       * This may not be older than 60 seconds.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp read_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getReadTimeFieldBuilder() {
+        if (readTimeBuilder_ == null) {
+          readTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getReadTime(), getParentForChildren(), isClean());
+          readTime_ = null;
+        }
+        return readTimeBuilder_;
       }
 
       @java.lang.Override

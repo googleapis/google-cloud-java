@@ -93,4 +93,39 @@ public interface CommitResponseOrBuilder
    * @return The indexUpdates.
    */
   int getIndexUpdates();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   *
+   * @return Whether the commitTime field is set.
+   */
+  boolean hasCommitTime();
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   *
+   * @return The commitTime.
+   */
+  com.google.protobuf.Timestamp getCommitTime();
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder();
 }

@@ -82,6 +82,50 @@ public interface MutationResultOrBuilder
    *
    *
    * <pre>
+   * The update time of the entity on the server after processing the mutation.
+   * If the mutation doesn't change anything on the server, then the timestamp
+   * will be the update timestamp of the current entity. This field will not be
+   * set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The update time of the entity on the server after processing the mutation.
+   * If the mutation doesn't change anything on the server, then the timestamp
+   * will be the update timestamp of the current entity. This field will not be
+   * set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The update time of the entity on the server after processing the mutation.
+   * If the mutation doesn't change anything on the server, then the timestamp
+   * will be the update timestamp of the current entity. This field will not be
+   * set after a 'delete'.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether a conflict was detected for this mutation. Always false when a
    * conflict detection strategy field is not set in the mutation.
    * </pre>

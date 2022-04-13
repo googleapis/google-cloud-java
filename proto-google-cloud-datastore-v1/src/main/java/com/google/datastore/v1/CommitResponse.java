@@ -88,6 +88,21 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
               indexUpdates_ = input.readInt32();
               break;
             }
+          case 66:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (commitTime_ != null) {
+                subBuilder = commitTime_.toBuilder();
+              }
+              commitTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(commitTime_);
+                commitTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -218,6 +233,52 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     return indexUpdates_;
   }
 
+  public static final int COMMIT_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp commitTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   *
+   * @return Whether the commitTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommitTime() {
+    return commitTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   *
+   * @return The commitTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCommitTime() {
+    return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The transaction commit timestamp. Not set for non-transactional commits.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
+    return getCommitTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -238,6 +299,9 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     if (indexUpdates_ != 0) {
       output.writeInt32(4, indexUpdates_);
     }
+    if (commitTime_ != null) {
+      output.writeMessage(8, getCommitTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -252,6 +316,9 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     }
     if (indexUpdates_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, indexUpdates_);
+    }
+    if (commitTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCommitTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +337,10 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
 
     if (!getMutationResultsList().equals(other.getMutationResultsList())) return false;
     if (getIndexUpdates() != other.getIndexUpdates()) return false;
+    if (hasCommitTime() != other.hasCommitTime()) return false;
+    if (hasCommitTime()) {
+      if (!getCommitTime().equals(other.getCommitTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,6 +358,10 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + INDEX_UPDATES_FIELD_NUMBER;
     hash = (53 * hash) + getIndexUpdates();
+    if (hasCommitTime()) {
+      hash = (37 * hash) + COMMIT_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCommitTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -442,6 +517,12 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       indexUpdates_ = 0;
 
+      if (commitTimeBuilder_ == null) {
+        commitTime_ = null;
+      } else {
+        commitTime_ = null;
+        commitTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -480,6 +561,11 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         result.mutationResults_ = mutationResultsBuilder_.build();
       }
       result.indexUpdates_ = indexUpdates_;
+      if (commitTimeBuilder_ == null) {
+        result.commitTime_ = commitTime_;
+      } else {
+        result.commitTime_ = commitTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -558,6 +644,9 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getIndexUpdates() != 0) {
         setIndexUpdates(other.getIndexUpdates());
+      }
+      if (other.hasCommitTime()) {
+        mergeCommitTime(other.getCommitTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1015,6 +1104,189 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       indexUpdates_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp commitTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        commitTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     *
+     * @return Whether the commitTime field is set.
+     */
+    public boolean hasCommitTime() {
+      return commitTimeBuilder_ != null || commitTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     *
+     * @return The commitTime.
+     */
+    public com.google.protobuf.Timestamp getCommitTime() {
+      if (commitTimeBuilder_ == null) {
+        return commitTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : commitTime_;
+      } else {
+        return commitTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public Builder setCommitTime(com.google.protobuf.Timestamp value) {
+      if (commitTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commitTime_ = value;
+        onChanged();
+      } else {
+        commitTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public Builder setCommitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (commitTimeBuilder_ == null) {
+        commitTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        commitTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public Builder mergeCommitTime(com.google.protobuf.Timestamp value) {
+      if (commitTimeBuilder_ == null) {
+        if (commitTime_ != null) {
+          commitTime_ =
+              com.google.protobuf.Timestamp.newBuilder(commitTime_).mergeFrom(value).buildPartial();
+        } else {
+          commitTime_ = value;
+        }
+        onChanged();
+      } else {
+        commitTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public Builder clearCommitTime() {
+      if (commitTimeBuilder_ == null) {
+        commitTime_ = null;
+        onChanged();
+      } else {
+        commitTime_ = null;
+        commitTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCommitTimeBuilder() {
+
+      onChanged();
+      return getCommitTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
+      if (commitTimeBuilder_ != null) {
+        return commitTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return commitTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : commitTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The transaction commit timestamp. Not set for non-transactional commits.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commit_time = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCommitTimeFieldBuilder() {
+      if (commitTimeBuilder_ == null) {
+        commitTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCommitTime(), getParentForChildren(), isClean());
+        commitTime_ = null;
+      }
+      return commitTimeBuilder_;
     }
 
     @java.lang.Override
