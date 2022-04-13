@@ -490,7 +490,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-java]: https://cloud.google.com/java
 [stable-stability]: https://img.shields.io/badge/stability-stable-green
 [stable-description]: #stable
-[preview-stability]: https://img.shields.io/badge/stability-preview-orange
+[preview-stability]: https://img.shields.io/badge/stability-preview-yellow
 [preview-description]: #preview
 [google-api-java-client-services]: https://github.com/googleapis/google-api-java-client-services#supported-google-apis
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
