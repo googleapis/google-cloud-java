@@ -86,7 +86,7 @@ def generate_table_contents(clients: List[CloudClient]) -> List[str]:
     return content_rows + [client_row(client) for client in clients]
 
 
-REPO_METADATA_URL_FORMAT = "https://raw.githubusercontent.com/{repo_slug}/master/.repo-metadata.json"
+REPO_METADATA_URL_FORMAT = "https://raw.githubusercontent.com/{repo_slug}/main/.repo-metadata.json"
 
 def client_for_repo(repo_slug) -> Optional[CloudClient]:
     url = REPO_METADATA_URL_FORMAT.format(repo_slug=repo_slug)
@@ -96,7 +96,6 @@ def client_for_repo(repo_slug) -> Optional[CloudClient]:
     
     return CloudClient(response.json())
 
-REPO_LIST_JSON = "https://raw.githubusercontent.com/googleapis/sloth/master/repos.json"
 REPO_EXCLUSION = [
     'googleapis/java-bigtable-emulator',
     'googleapis/java-cloud-bom',
