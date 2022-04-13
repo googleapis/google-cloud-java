@@ -69,9 +69,8 @@ def replace_content_in_readme(content_rows: List[str]) -> None:
             f.write(line)
 
 RELEASE_LEVEL_CONTENT = {
-    "alpha": "[![Alpha][alpha-stability]][alpha-description]",
-    "beta": "[![Beta][beta-stability]][beta-description]",
-    "ga": "[![GA][ga-stability]][ga-description]"
+    "preview": "[![preview][preview-stability]][preview-description]",
+    "stable": "[![stable][stable-stability]][stable-description]"
 }
 
 def client_row(client: CloudClient) -> str:
