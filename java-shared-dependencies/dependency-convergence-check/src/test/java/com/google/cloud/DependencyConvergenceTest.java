@@ -57,7 +57,10 @@ public class DependencyConvergenceTest {
             "opencensus-exporter-stats-stackdriver",
             // Because grpc-gcp's gRPC version does not use version range notation, it does not
             // break downstream build
-            "grpc-gcp"));
+            "grpc-gcp",
+            // Because native-image-support's gRPC dependency is provided scope, it does not bring
+            // inconsistent gRPC artifacts to users' class paths.
+            "native-image-support"));
   }
 
   /**
