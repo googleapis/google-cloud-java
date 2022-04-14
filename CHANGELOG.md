@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.10.8](https://github.com/googleapis/java-bigquery/compare/v2.10.7...v2.10.8) (2022-04-14)
+
+
+### Dependencies
+
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.33.3 ([#1977](https://github.com/googleapis/java-bigquery/issues/1977)) ([b084791](https://github.com/googleapis/java-bigquery/commit/b08479180e212bccae166f3a675d46fb658d3ce8))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.33.3 ([#1978](https://github.com/googleapis/java-bigquery/issues/1978)) ([a24ce6e](https://github.com/googleapis/java-bigquery/commit/a24ce6ead65f3fceff6573e24c10c324650d907b))
+
 ### [2.10.7](https://github.com/googleapis/java-bigquery/compare/v2.10.6...v2.10.7) (2022-04-08)
 
 
