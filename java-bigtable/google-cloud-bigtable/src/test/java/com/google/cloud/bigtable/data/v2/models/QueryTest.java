@@ -193,7 +193,7 @@ public class QueryTest {
                         .addRowRanges(
                             RowRange.newBuilder()
                                 .setStartKeyClosed(ByteString.copyFromUtf8("a"))
-                                .setEndKeyClosed(ByteString.copyFromUtf8("j"))))
+                                .setEndKeyOpen(ByteString.copyFromUtf8("j"))))
                 .build());
     assertThat(subQueries.get(1).toProto(requestContext))
         .isEqualTo(
@@ -204,7 +204,7 @@ public class QueryTest {
                     RowSet.newBuilder()
                         .addRowRanges(
                             RowRange.newBuilder()
-                                .setStartKeyOpen(ByteString.copyFromUtf8("j"))
+                                .setStartKeyClosed(ByteString.copyFromUtf8("j"))
                                 .setEndKeyOpen(ByteString.copyFromUtf8("z"))))
                 .build());
   }
@@ -231,7 +231,7 @@ public class QueryTest {
                         .addRowRanges(
                             RowRange.newBuilder()
                                 .setStartKeyClosed(ByteString.copyFromUtf8("a"))
-                                .setEndKeyClosed(ByteString.copyFromUtf8("j"))))
+                                .setEndKeyOpen(ByteString.copyFromUtf8("j"))))
                 .build());
     assertThat(subQueries.get(1).toProto(requestContext))
         .isEqualTo(
@@ -242,7 +242,7 @@ public class QueryTest {
                     RowSet.newBuilder()
                         .addRowRanges(
                             RowRange.newBuilder()
-                                .setStartKeyOpen(ByteString.copyFromUtf8("j"))
+                                .setStartKeyClosed(ByteString.copyFromUtf8("j"))
                                 .setEndKeyOpen(ByteString.copyFromUtf8("z"))))
                 .build());
   }

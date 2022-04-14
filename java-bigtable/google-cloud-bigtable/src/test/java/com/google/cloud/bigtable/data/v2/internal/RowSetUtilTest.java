@@ -20,12 +20,13 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
-import com.google.common.collect.ImmutableSortedSet;
-import com.google.common.collect.Lists;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -33,423 +34,180 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class RowSetUtilTest {
   @Test
-  public void noSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("a"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("p"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("q")))
-            .build();
+  public void testSplitFullScan() {
+    RowSet input = RowSet.getDefaultInstance();
+    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("g"));
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE).build();
-
-    verifySplit(rowSet, splitPoints, rowSet);
+    assertThat(split.getLeft()).isEqualTo(parse("-g]"));
+    assertThat(split.getRight()).isEqualTo(parse("(g-"));
   }
 
   @Test
-  public void splitEmptyTest() {
-    RowSet rowSet = RowSet.newBuilder().build();
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("a"))
-            .build();
+  public void testSplitAllLeft() {
+    RowSet input = parse("a,c,(a1-c],[a2-c],(a3-c),[a4-c)");
+    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("c"));
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-            .build(),
-        RowSet.newBuilder()
-            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("a")))
-            .build());
+    assertThat(split.getLeft()).isEqualTo(input);
+    assertThat(split.getRight()).isNull();
   }
 
   @Test
-  public void splitMultipleKeysTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("1-beforeSplit"))
-            .addRowKeys(ByteString.copyFromUtf8("2-onSplit"))
-            .addRowKeys(ByteString.copyFromUtf8("3-afterSplit"))
-            .build();
+  public void testSplitAllRight() {
+    RowSet input = parse("a1,c,(a-c],[a2-c],(a3-c),[a4-c)");
+    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("a"));
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("2-onSplit"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("1-beforeSplit"))
-            .addRowKeys(ByteString.copyFromUtf8("2-onSplit"))
-            .build(),
-        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("3-afterSplit")).build());
+    assertThat(split.getLeft()).isNull();
+    assertThat(split.getRight()).isEqualTo(input);
   }
 
   @Test
-  public void splitKeysEmptyLeft() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("5-test"))
-            .addRowKeys(ByteString.copyFromUtf8("8-test"))
-            .build();
+  public void testSplit() {
+    RowSet input = parse("a1,c,(a1-c],[a2-c],(a3-c),[a4-c)");
+    RowSetUtil.Split split = RowSetUtil.split(input, ByteString.copyFromUtf8("b"));
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("0-split"))
-            .add(ByteString.copyFromUtf8("6-split"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        null,
-        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("5-test")).build(),
-        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("8-test")).build());
+    assertThat(split.getLeft()).isEqualTo(parse("a1,(a1-b],[a2-b],(a3-b],[a4-b]"));
+    assertThat(split.getRight()).isEqualTo(parse("c,(b-c],(b-c],(b-c),(b-c)"));
   }
 
   @Test
-  public void splitKeysEmptyRight() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0-test"))
-            .addRowKeys(ByteString.copyFromUtf8("2-test"))
-            .build();
+  public void testShardNoop() {
+    assertShardNoSplit("a,[p-q)");
+    assertShardNoSplit("0_key,[1_range_start-2_range_end)", "3_split");
+    assertShardNoSplit("-1_range_end)", "5_split");
+    assertShardNoSplit("0_key,[1_range_start-2_range_end)", "2_range_end");
+    assertShardNoSplit("9_row_key,(5_range_start-7_range_end)", "3_split");
+    assertShardNoSplit("(5_range_start-", "3_split");
+    assertShardNoSplit("3_split,[3_split-5_split)", "3_split", "5_split");
+    assertShardNoSplit("[3_split-", "3_split");
+  }
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("1-split"))
-            .add(ByteString.copyFromUtf8("5-split"))
-            .build();
+  private static void assertShardNoSplit(String rowStr, String... splits) {
+    RowSet input = parse(rowStr);
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("0-test")).build(),
-        RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("2-test")).build(),
-        null);
+    assertThat(RowSetUtil.shard(input, splitPoints(splits))).containsExactly(input);
   }
 
   @Test
-  public void rangeLeftOfSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-            .build();
+  public void testShardFullTableScan() {
+    RowSet input = RowSet.getDefaultInstance();
+    SortedSet<ByteString> splitPoints = splitPoints("a");
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("3-split"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-            .build(),
-        null);
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("-a)"), parse("[a-"))
+        .inOrder();
   }
 
   @Test
-  public void unboundedRangeLeftOfSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder().setEndKeyOpen(ByteString.copyFromUtf8("1-range-end")))
-            .build();
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("5-split"))
-            .build();
+  public void testShardMultipleKeys() {
+    RowSet input = parse("1_beforeSplit,2_onSplit,3_afterSplit");
+    SortedSet<ByteString> splitPoints = splitPoints("2_onSplit");
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder().setEndKeyOpen(ByteString.copyFromUtf8("1-range-end")))
-            .build(),
-        null);
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("1_beforeSplit"), parse("2_onSplit,3_afterSplit"))
+        .inOrder();
   }
 
   @Test
-  public void rangeImmediatelyLeftOfSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-            .build();
+  public void testShardKeysEmptyLeft() {
+    RowSet input = parse("5_test,8_test");
+    SortedSet<ByteString> splitPoints = splitPoints("0_split", "6-split");
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("2-range-end"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("1-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("2-range-end")))
-            .build(),
-        null);
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("5_test"), parse("8_test"))
+        .inOrder();
   }
 
   @Test
-  public void rangeRightOfSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("9-row-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("5-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("7-range-end")))
-            .build();
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("3-split"))
-            .build();
+  public void testShardKeysEmptyRight() {
+    RowSet input = parse("0_test,2_test");
+    SortedSet<ByteString> splitPoints = splitPoints("1_split", "5_split");
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        null,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("9-row-key"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("5-range-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("7-range-end")))
-            .build());
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("0_test"), parse("2_test"))
+        .inOrder();
   }
 
   @Test
-  public void unboundedRightOfSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("5-range-start")))
-            .build();
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("3-split"))
-            .build();
+  public void testShardMixedSplit() {
+    RowSet input = parse("0,a,c,-a],-b],(c-e],(d-f],(m-");
+    SortedSet<ByteString> splitPoints = splitPoints("a", "d", "j", "o");
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        null,
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("5-range-start")))
-            .build());
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(
+            parse("0,-a)"),
+            parse("a,c,[a-a],-b],(c-d)"),
+            parse("[d-e],(d-f]"),
+            parse("(m-o)"),
+            parse("[o-"))
+        .inOrder();
   }
 
   @Test
-  public void rangeExactlyFitsSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("5-split"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("3-split"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("5-split")))
-            .build();
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("3-split"))
-            .add(ByteString.copyFromUtf8("5-split"))
-            .build();
+  public void testShardUnsortedRequest() {
+    RowSet input =
+        parse(
+            "7_row_key_1,2_row_key_2,[8_range_1_start-9_range_1_end),[3_range_2_start-4_range_2_end)");
+    SortedSet<ByteString> splitPoints = splitPoints("5-split");
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        null,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("5-split"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("3-split"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("5-split")))
-            .build(),
-        null);
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(
+            parse("2_row_key_2,[3_range_2_start-4_range_2_end)"),
+            parse("7_row_key_1,[8_range_1_start-9_range_1_end)"))
+        .inOrder();
   }
 
-  @Test
-  public void startOnSplitPointTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder().setStartKeyClosed(ByteString.copyFromUtf8("3-split")))
-            .build();
+  private static SortedSet<ByteString> splitPoints(String... s) {
 
-    // Inclusive start on a split point should generate 2 segments
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("3-split"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("3-split"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("3-split")))
-            .build(),
-        RowSet.newBuilder()
-            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("3-split")))
-            .build());
+    return Arrays.stream(s)
+        .map(ByteString::copyFromUtf8)
+        .collect(Collectors.toCollection(() -> new TreeSet<>(ByteStringComparator.INSTANCE)));
   }
 
-  @Test
-  public void mixedSplitTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0"))
-            .addRowKeys(ByteString.copyFromUtf8("a"))
-            .addRowKeys(ByteString.copyFromUtf8("c"))
-            // Range 1: fully in "a" segment
-            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-            // Range 2: split between segment "a" & "d"
-            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("b")))
-            // Range 3: split between segment "d" & "j"
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("c"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("e")))
-            // Range 4: fully in "j"
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("d"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("f")))
-            // Range 5: fully in "j"
-            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("m")))
-            .build();
+  private static RowSet parse(String encodedRowSet) {
+    RowSet.Builder builder = RowSet.newBuilder();
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            // Split the unbounded
-            .add(ByteString.copyFromUtf8("a"))
-            .add(ByteString.copyFromUtf8("d"))
-            .add(ByteString.copyFromUtf8("j"))
-            .add(ByteString.copyFromUtf8("o"))
-            .build();
-
-    verifySplit(
-        rowSet,
-        splitPoints,
-        // Split "a"
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("0"))
-            .addRowKeys(ByteString.copyFromUtf8("a"))
-            // Range 1
-            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-            // Range 2: part1
-            .addRowRanges(RowRange.newBuilder().setEndKeyClosed(ByteString.copyFromUtf8("a")))
-            .build(),
-        // Split "d"
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("c"))
-            // Range 2: part 2
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("a"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("b")))
-            // Range 3: part 1
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("c"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("d")))
-            .build(),
-        // Split "j"
-        RowSet.newBuilder()
-            // Range 3: part 2
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("d"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("e")))
-            // Range 4
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("d"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("f")))
-            .build(),
-        // Split "o"
-        RowSet.newBuilder()
-            // Range 5: part1
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyOpen(ByteString.copyFromUtf8("m"))
-                    .setEndKeyClosed(ByteString.copyFromUtf8("o")))
-            .build(),
-        // Remainder
-        RowSet.newBuilder()
-            // Range 5: part2
-            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("o")))
-            .build());
+    for (String s : encodedRowSet.split(",")) {
+      if (s.contains("-")) {
+        builder.addRowRanges(parseRange(s));
+      } else {
+        builder.addRowKeys(ByteString.copyFromUtf8(s));
+      }
+    }
+    return builder.build();
   }
 
-  @Test
-  public void unsortedRequestTest() {
-    RowSet rowSet =
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("7-row-key-1"))
-            .addRowKeys(ByteString.copyFromUtf8("2-row-key-2"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("8-range-1-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("9-range-1-end")))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("3-range-2-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("4-range-2-end")))
-            .build();
+  private static RowRange parseRange(String s) {
+    String[] parts = s.split("-", 2);
+    Preconditions.checkArgument(parts.length == 2, "Ranges must have exactly 2 parts: " + s);
 
-    SortedSet<ByteString> splitPoints =
-        ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
-            .add(ByteString.copyFromUtf8("5-split"))
-            .build();
+    RowRange.Builder builder = RowRange.newBuilder();
 
-    verifySplit(
-        rowSet,
-        splitPoints,
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("2-row-key-2"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("3-range-2-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("4-range-2-end")))
-            .build(),
-        RowSet.newBuilder()
-            .addRowKeys(ByteString.copyFromUtf8("7-row-key-1"))
-            .addRowRanges(
-                RowRange.newBuilder()
-                    .setStartKeyClosed(ByteString.copyFromUtf8("8-range-1-start"))
-                    .setEndKeyOpen(ByteString.copyFromUtf8("9-range-1-end")))
-            .build());
+    String encodedStart = parts[0];
+    if ("".equals(encodedStart)) {
+      // noop - start key unset
+    } else if (encodedStart.startsWith("(")) {
+      String value = encodedStart.substring(1);
+      builder.setStartKeyOpen(ByteString.copyFromUtf8(value));
+    } else if (encodedStart.startsWith("[")) {
+      String value = encodedStart.substring(1);
+      builder.setStartKeyClosed(ByteString.copyFromUtf8(value));
+    } else {
+      throw new IllegalArgumentException("unexpected range start format");
+    }
+
+    String encodedEnd = parts[1];
+    if (encodedEnd.isEmpty()) {
+      // noop - end key unset
+    } else if (encodedEnd.endsWith(")")) {
+      String value = encodedEnd.substring(0, encodedEnd.length() - 1);
+      builder.setEndKeyOpen(ByteString.copyFromUtf8(value));
+    } else if (encodedEnd.endsWith("]")) {
+      String value = encodedEnd.substring(0, encodedEnd.length() - 1);
+      builder.setEndKeyClosed(ByteString.copyFromUtf8(value));
+    } else {
+      throw new IllegalArgumentException("unexpected range end format");
+    }
+    return builder.build();
   }
 
   @Test
@@ -570,17 +328,8 @@ public class RowSetUtilTest {
   }
 
   // Helpers
-  private static void verifySplit(RowSet input, SortedSet<ByteString> splits, RowSet... expected) {
-    List<RowSet> actualWithNull = RowSetUtil.split(input, splits, true);
+  private static void verifyShard(RowSet input, SortedSet<ByteString> splits, RowSet... expected) {
+    List<RowSet> actualWithNull = RowSetUtil.shard(input, splits);
     assertThat(actualWithNull).containsExactlyElementsIn(Arrays.asList(expected)).inOrder();
-
-    List<RowSet> actualNonnull = RowSetUtil.split(input, splits, false);
-    List<RowSet> expectedNonnull = Lists.newArrayList();
-    for (RowSet rowSet : expected) {
-      if (rowSet != null) {
-        expectedNonnull.add(rowSet);
-      }
-    }
-    assertThat(actualNonnull).containsExactlyElementsIn(expectedNonnull).inOrder();
   }
 }
