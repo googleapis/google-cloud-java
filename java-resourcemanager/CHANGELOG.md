@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.9](https://github.com/googleapis/java-resourcemanager/compare/v1.2.8...v1.2.9) (2022-04-14)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.0 ([#753](https://github.com/googleapis/java-resourcemanager/issues/753)) ([51f307a](https://github.com/googleapis/java-resourcemanager/commit/51f307a57ced1e344fc10c1f9e15bfd1f5dff688))
+
 ### [1.2.8](https://github.com/googleapis/java-resourcemanager/compare/v1.2.7...v1.2.8) (2022-04-07)
 
 
