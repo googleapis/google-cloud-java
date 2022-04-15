@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/googleapis/java-ids/compare/v1.0.3...v1.0.4) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#84](https://github.com/googleapis/java-ids/issues/84)) ([c0158bc](https://github.com/googleapis/java-ids/commit/c0158bc39780bc3b40dceebf8f417c3647ae37f7))
+
 ### [1.0.3](https://github.com/googleapis/java-ids/compare/v1.0.2...v1.0.3) (2022-03-29)
 
 
