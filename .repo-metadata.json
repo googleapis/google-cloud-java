@@ -14,5 +14,5 @@
     "api_id": "bigquerystorage.googleapis.com",
     "transport": "grpc",
     "requires_billing": true,
-    "library_type": "GAPIC_AUTO"
+    "library_type": "GAPIC_COMBO"
 }
