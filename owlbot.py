@@ -21,4 +21,5 @@ java.common_templates(excludes=[
     '.github/CODEOWNERS',
     '.github/blunderbuss.yml',
     'CONTRIBUTING.md',
+    '.github/auto-label.yaml',
 ])
