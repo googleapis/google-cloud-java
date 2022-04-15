@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/googleapis/java-deploy/compare/v1.0.3...v1.0.4) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#107](https://github.com/googleapis/java-deploy/issues/107)) ([29c5eff](https://github.com/googleapis/java-deploy/commit/29c5effd0ed8a2469dfc98bd0860dc713458629a))
+
 ### [1.0.3](https://github.com/googleapis/java-deploy/compare/v1.0.2...v1.0.3) (2022-03-29)
 
 
