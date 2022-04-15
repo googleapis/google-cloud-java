@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-dialogflow:4.5.10:4.5.11-SNAPSHOT
-grpc-google-cloud-dialogflow-v2beta1:0.103.10:0.103.11-SNAPSHOT
-grpc-google-cloud-dialogflow-v2:4.5.10:4.5.11-SNAPSHOT
-proto-google-cloud-dialogflow-v2:4.5.10:4.5.11-SNAPSHOT
-proto-google-cloud-dialogflow-v2beta1:0.103.10:0.103.11-SNAPSHOT
+google-cloud-dialogflow:4.5.11:4.5.11
+grpc-google-cloud-dialogflow-v2beta1:0.103.11:0.103.11
+grpc-google-cloud-dialogflow-v2:4.5.11:4.5.11
+proto-google-cloud-dialogflow-v2:4.5.11:4.5.11
+proto-google-cloud-dialogflow-v2beta1:0.103.11:0.103.11
