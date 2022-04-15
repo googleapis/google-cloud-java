@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.3.13](https://github.com/googleapis/java-cloudbuild/compare/v3.3.12...v3.3.13) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#733](https://github.com/googleapis/java-cloudbuild/issues/733)) ([cc12cb7](https://github.com/googleapis/java-cloudbuild/commit/cc12cb7d098ae4d9b06ff53d7ee82050107f5907))
+
 ### [3.3.12](https://github.com/googleapis/java-cloudbuild/compare/v3.3.11...v3.3.12) (2022-03-29)
 
 
