@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.5](https://github.com/googleapis/java-managed-identities/compare/v1.0.4...v1.0.5) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#217](https://github.com/googleapis/java-managed-identities/issues/217)) ([3210497](https://github.com/googleapis/java-managed-identities/commit/32104972d9a7763f748d62d56783e74814fd3484))
+
 ### [1.0.4](https://github.com/googleapis/java-managed-identities/compare/v1.0.3...v1.0.4) (2022-03-29)
 
 
