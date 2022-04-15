@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-service-control:1.1.11:1.1.11
-grpc-google-cloud-service-control-v1:1.1.11:1.1.11
-proto-google-cloud-service-control-v1:1.1.11:1.1.11
-proto-google-cloud-service-control-v2:1.1.11:1.1.11
-grpc-google-cloud-service-control-v2:1.1.11:1.1.11
+google-cloud-service-control:1.1.11:1.1.12-SNAPSHOT
+grpc-google-cloud-service-control-v1:1.1.11:1.1.12-SNAPSHOT
+proto-google-cloud-service-control-v1:1.1.11:1.1.12-SNAPSHOT
+proto-google-cloud-service-control-v2:1.1.11:1.1.12-SNAPSHOT
+grpc-google-cloud-service-control-v2:1.1.11:1.1.12-SNAPSHOT
