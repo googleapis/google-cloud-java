@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.10.9](https://github.com/googleapis/java-bigquery/compare/v2.10.8...v2.10.9) (2022-04-16)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#1983](https://github.com/googleapis/java-bigquery/issues/1983)) ([50ac31c](https://github.com/googleapis/java-bigquery/commit/50ac31c598ae8c5aa4e1f6dcde80da704db904a5))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#1982](https://github.com/googleapis/java-bigquery/issues/1982)) ([04f4679](https://github.com/googleapis/java-bigquery/commit/04f4679fe376e726b21e313115bfd48adc6cbe6b))
+
 ### [2.10.8](https://github.com/googleapis/java-bigquery/compare/v2.10.7...v2.10.8) (2022-04-14)
 
 
