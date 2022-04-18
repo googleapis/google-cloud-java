@@ -902,6 +902,7 @@ public class TagKeysClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = tagKeysClient.setIamPolicy(request);
    * }
@@ -928,6 +929,7 @@ public class TagKeysClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = tagKeysClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

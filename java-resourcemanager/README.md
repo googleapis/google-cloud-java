@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-resourcemanager'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-resourcemanager:1.2.10'
+implementation 'com.google.cloud:google-cloud-resourcemanager:1.2.11'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.2.10"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.2.11"
 ```
 
 ## Authentication

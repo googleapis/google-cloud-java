@@ -1614,6 +1614,7 @@ public class FoldersClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = foldersClient.setIamPolicy(request);
    * }
@@ -1640,6 +1641,7 @@ public class FoldersClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = foldersClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.
