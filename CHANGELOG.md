@@ -1,5 +1,15 @@
 # Changelog
 
+### [2.12.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.1...v2.12.2) (2022-04-18)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.7 ([#1614](https://github.com/googleapis/java-bigquerystorage/issues/1614)) ([ccdac87](https://github.com/googleapis/java-bigquerystorage/commit/ccdac87cc439b5f765d35af6d247b83122c1f40b))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.8 ([#1618](https://github.com/googleapis/java-bigquerystorage/issues/1618)) ([b9c50f1](https://github.com/googleapis/java-bigquerystorage/commit/b9c50f169d6092647becef5d99174be61b095ca8))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.9 ([#1620](https://github.com/googleapis/java-bigquerystorage/issues/1620)) ([7e1ae93](https://github.com/googleapis/java-bigquerystorage/commit/7e1ae93a1ee54a83d93a7421b438a53455dc89c2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#1619](https://github.com/googleapis/java-bigquerystorage/issues/1619)) ([55c4134](https://github.com/googleapis/java-bigquerystorage/commit/55c413459d029bf521eadf59f3c9fba9a7e876a1))
+
 ### [2.12.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.0...v2.12.1) (2022-04-08)
 
 
