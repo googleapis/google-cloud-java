@@ -274,7 +274,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the page, unique within the agent.
+   * Required. The human-readable name of the page, unique within the flow.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -297,7 +297,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the page, unique within the agent.
+   * Required. The human-readable name of the page, unique within the flow.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1413,7 +1413,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the page, unique within the agent.
+     * Required. The human-readable name of the page, unique within the flow.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1435,7 +1435,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the page, unique within the agent.
+     * Required. The human-readable name of the page, unique within the flow.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1457,7 +1457,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the page, unique within the agent.
+     * Required. The human-readable name of the page, unique within the flow.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1478,7 +1478,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the page, unique within the agent.
+     * Required. The human-readable name of the page, unique within the flow.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1495,7 +1495,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the page, unique within the agent.
+     * Required. The human-readable name of the page, unique within the flow.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

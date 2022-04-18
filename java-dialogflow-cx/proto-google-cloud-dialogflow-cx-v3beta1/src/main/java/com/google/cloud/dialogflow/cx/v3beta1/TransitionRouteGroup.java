@@ -203,7 +203,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The human-readable name of the transition route group, unique within
-   * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+   * the flow. The display name can be no longer than 30 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -227,7 +227,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The human-readable name of the transition route group, unique within
-   * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+   * the flow. The display name can be no longer than 30 characters.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -849,7 +849,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The human-readable name of the transition route group, unique within
-     * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+     * the flow. The display name can be no longer than 30 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -872,7 +872,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The human-readable name of the transition route group, unique within
-     * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+     * the flow. The display name can be no longer than 30 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -895,7 +895,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The human-readable name of the transition route group, unique within
-     * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+     * the flow. The display name can be no longer than 30 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,7 +917,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The human-readable name of the transition route group, unique within
-     * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+     * the flow. The display name can be no longer than 30 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -935,7 +935,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The human-readable name of the transition route group, unique within
-     * the [Agent][google.cloud.dialogflow.cx.v3beta1.Agent]. The display name can be no longer than 30 characters.
+     * the flow. The display name can be no longer than 30 characters.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

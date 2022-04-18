@@ -129,7 +129,11 @@ public interface FulfillmentOrBuilder
    *
    *
    * <pre>
-   * The tag used by the webhook to identify which fulfillment is being called.
+   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+   * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
+   * called.
+   * The tag is typically used by the webhook service to identify which
+   * fulfillment is being called, but it could be used for other purposes.
    * This field is required if `webhook` is specified.
    * </pre>
    *
@@ -142,7 +146,11 @@ public interface FulfillmentOrBuilder
    *
    *
    * <pre>
-   * The tag used by the webhook to identify which fulfillment is being called.
+   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]
+   * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
+   * called.
+   * The tag is typically used by the webhook service to identify which
+   * fulfillment is being called, but it could be used for other purposes.
    * This field is required if `webhook` is specified.
    * </pre>
    *

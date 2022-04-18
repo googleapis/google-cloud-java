@@ -103,13 +103,15 @@ public final class AudioConfigProto {
           + "ODING_LINEAR_16\020\001\022\035\n\031OUTPUT_AUDIO_ENCODI"
           + "NG_MP3\020\002\022%\n!OUTPUT_AUDIO_ENCODING_MP3_64"
           + "_KBPS\020\004\022\"\n\036OUTPUT_AUDIO_ENCODING_OGG_OPU"
-          + "S\020\003\022\037\n\033OUTPUT_AUDIO_ENCODING_MULAW\020\005B\330\001\n"
+          + "S\020\003\022\037\n\033OUTPUT_AUDIO_ENCODING_MULAW\020\005B\260\002\n"
           + "&com.google.cloud.dialogflow.cx.v3beta1B"
           + "\020AudioConfigProtoP\001ZDgoogle.golang.org/g"
           + "enproto/googleapis/cloud/dialogflow/cx/v"
           + "3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogf"
           + "low.Cx.V3Beta1\352\002&Google::Cloud::Dialogfl"
-          + "ow::CX::V3beta1b\006proto3"
+          + "ow::CX::V3beta1\352AU\n\033automl.googleapis.co"
+          + "m/Model\0226projects/{project}/locations/{l"
+          + "ocation}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -168,6 +170,7 @@ public final class AudioConfigProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

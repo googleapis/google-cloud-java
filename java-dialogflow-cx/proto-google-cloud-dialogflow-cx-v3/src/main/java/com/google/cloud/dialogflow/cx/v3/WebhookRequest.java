@@ -275,8 +275,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The tag used to identify which fulfillment is being
-     * called.
+     * Always present.
+     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+     * field by Dialogflow when the associated webhook is called.
+     * The tag is typically used by the webhook service to identify which
+     * fulfillment is being called, but it could be used for other purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -288,8 +291,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The tag used to identify which fulfillment is being
-     * called.
+     * Always present.
+     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+     * field by Dialogflow when the associated webhook is called.
+     * The tag is typically used by the webhook service to identify which
+     * fulfillment is being called, but it could be used for other purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -397,8 +403,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The tag used to identify which fulfillment is being
-     * called.
+     * Always present.
+     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+     * field by Dialogflow when the associated webhook is called.
+     * The tag is typically used by the webhook service to identify which
+     * fulfillment is being called, but it could be used for other purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -421,8 +430,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Always present. The tag used to identify which fulfillment is being
-     * called.
+     * Always present.
+     * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+     * field by Dialogflow when the associated webhook is called.
+     * The tag is typically used by the webhook service to identify which
+     * fulfillment is being called, but it could be used for other purposes.
      * </pre>
      *
      * <code>string tag = 1;</code>
@@ -778,8 +790,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The tag used to identify which fulfillment is being
-       * called.
+       * Always present.
+       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+       * field by Dialogflow when the associated webhook is called.
+       * The tag is typically used by the webhook service to identify which
+       * fulfillment is being called, but it could be used for other purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -801,8 +816,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The tag used to identify which fulfillment is being
-       * called.
+       * Always present.
+       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+       * field by Dialogflow when the associated webhook is called.
+       * The tag is typically used by the webhook service to identify which
+       * fulfillment is being called, but it could be used for other purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -824,8 +842,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The tag used to identify which fulfillment is being
-       * called.
+       * Always present.
+       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+       * field by Dialogflow when the associated webhook is called.
+       * The tag is typically used by the webhook service to identify which
+       * fulfillment is being called, but it could be used for other purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -846,8 +867,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The tag used to identify which fulfillment is being
-       * called.
+       * Always present.
+       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+       * field by Dialogflow when the associated webhook is called.
+       * The tag is typically used by the webhook service to identify which
+       * fulfillment is being called, but it could be used for other purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>
@@ -864,8 +888,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Always present. The tag used to identify which fulfillment is being
-       * called.
+       * Always present.
+       * The value of the [Fulfillment.tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag] field will be populated in this
+       * field by Dialogflow when the associated webhook is called.
+       * The tag is typically used by the webhook service to identify which
+       * fulfillment is being called, but it could be used for other purposes.
        * </pre>
        *
        * <code>string tag = 1;</code>

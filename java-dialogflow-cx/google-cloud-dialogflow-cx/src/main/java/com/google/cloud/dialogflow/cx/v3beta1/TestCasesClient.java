@@ -928,7 +928,7 @@ public class TestCasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test
-   * cases and won't overwite any existing ones. The provided ID in the imported test case is
+   * cases and won't overwrite any existing ones. The provided ID in the imported test case is
    * neglected.
    *
    * <p>This method is a [long-running
@@ -963,7 +963,7 @@ public class TestCasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test
-   * cases and won't overwite any existing ones. The provided ID in the imported test case is
+   * cases and won't overwrite any existing ones. The provided ID in the imported test case is
    * neglected.
    *
    * <p>This method is a [long-running
@@ -999,7 +999,7 @@ public class TestCasesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Imports the test cases from a Cloud Storage bucket or a local file. It always creates new test
-   * cases and won't overwite any existing ones. The provided ID in the imported test case is
+   * cases and won't overwrite any existing ones. The provided ID in the imported test case is
    * neglected.
    *
    * <p>This method is a [long-running
