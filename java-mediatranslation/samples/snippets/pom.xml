@@ -27,7 +27,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-mediatranslation</artifactId>
-      <version>0.7.10</version>
+      <version>0.7.11</version>
     </dependency>
 
     <dependency>
