@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.6.2](https://github.com/googleapis/java-bigtable/compare/v2.6.1...v2.6.2) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#1221](https://github.com/googleapis/java-bigtable/issues/1221)) ([acdaa33](https://github.com/googleapis/java-bigtable/commit/acdaa33dbfd91fdf892673ad164016a35e88d695))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#1222](https://github.com/googleapis/java-bigtable/issues/1222)) ([a14de82](https://github.com/googleapis/java-bigtable/commit/a14de8249d81f01355a87a8bc351bd6bc949c04b))
+
 ### [2.6.1](https://github.com/googleapis/java-bigtable/compare/v2.6.0...v2.6.1) (2022-03-29)
 
 
