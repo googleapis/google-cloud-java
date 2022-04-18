@@ -170,7 +170,7 @@
     <findbugs.version>3.0.2</findbugs.version>
     <threetenbp.version>1.6.0</threetenbp.version>
     <objenesis.version>3.2</objenesis.version>
-    <errorprone.version>2.13.0</errorprone.version>
+    <errorprone.version>2.13.1</errorprone.version>
     <gson.version>2.9.0</gson.version>
   </properties>
 
