@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.27](https://github.com/googleapis/java-notification/compare/v0.122.26...v0.122.27) (2022-04-18)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.6.1 ([#577](https://github.com/googleapis/java-notification/issues/577)) ([e968f9c](https://github.com/googleapis/java-notification/commit/e968f9c922d4013fc04b44d9bcdedae5c4a698f7))
+
 ### [0.122.26](https://github.com/googleapis/java-notification/compare/v0.122.25...v0.122.26) (2022-04-15)
 
 
