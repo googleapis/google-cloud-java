@@ -1,5 +1,22 @@
 # Changelog
 
+### [2.0.19](https://github.com/googleapis/java-retail/compare/v2.0.18...v2.0.19) (2022-04-19)
+
+
+### Documentation
+
+* **samples:** the bash scripts for environment setup are added ([#392](https://github.com/googleapis/java-retail/issues/392)) ([a20b6fb](https://github.com/googleapis/java-retail/commit/a20b6fb321131074761d0e4277433eb3c86c7b7c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.10 ([#407](https://github.com/googleapis/java-retail/issues/407)) ([ad0f7ad](https://github.com/googleapis/java-retail/commit/ad0f7ad434ef433991dfefcda9cba6a505a1f403))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.7 ([#402](https://github.com/googleapis/java-retail/issues/402)) ([89e94f5](https://github.com/googleapis/java-retail/commit/89e94f5446c9ad8b4866e50040c75b381671eacc))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.8 ([#403](https://github.com/googleapis/java-retail/issues/403)) ([12f61a1](https://github.com/googleapis/java-retail/commit/12f61a1ca19d15e1605984aa5bce25d6a0d63702))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.9 ([#405](https://github.com/googleapis/java-retail/issues/405)) ([6506ebc](https://github.com/googleapis/java-retail/commit/6506ebcd590b9056e2f4509341ac958635e2ac80))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#404](https://github.com/googleapis/java-retail/issues/404)) ([269629d](https://github.com/googleapis/java-retail/commit/269629daccd231f9b395086146736575b64e01ae))
+* update dependency com.google.cloud:google-cloud-storage to v2.6.1 ([#406](https://github.com/googleapis/java-retail/issues/406)) ([d35579c](https://github.com/googleapis/java-retail/commit/d35579c88ecbbdeb24ace6068c7d2782d8cd11fa))
+
 ### [2.0.18](https://github.com/googleapis/java-retail/compare/v2.0.17...v2.0.18) (2022-04-01)
 
 
