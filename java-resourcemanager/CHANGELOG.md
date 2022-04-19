@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-resourcemanager/compare/v1.2.11...v1.3.0) (2022-04-18)
+
+
+### Features
+
+* AuditConfig for IAM v1 ([#747](https://github.com/googleapis/java-resourcemanager/issues/747)) ([dcad5e4](https://github.com/googleapis/java-resourcemanager/commit/dcad5e4a3c7a7caad0e433eb99bf87a0e25bed61))
+
 ### [1.2.11](https://github.com/googleapis/java-resourcemanager/compare/v1.2.10...v1.2.11) (2022-04-18)
 
 
