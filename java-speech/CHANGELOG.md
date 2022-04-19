@@ -1,5 +1,20 @@
 # Changelog
 
+### [2.2.15](https://github.com/googleapis/java-speech/compare/v2.2.14...v2.2.15) (2022-04-18)
+
+
+### Bug Fixes
+
+* use full link in comment to fix JSDoc broken link ([#861](https://github.com/googleapis/java-speech/issues/861)) ([220ccaf](https://github.com/googleapis/java-speech/commit/220ccaf8865aa92843878991c3c3e6dae16646c8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#865](https://github.com/googleapis/java-speech/issues/865)) ([de6a547](https://github.com/googleapis/java-speech/commit/de6a54708155ee34ccfbbb575e8729b75fed5cca))
+* update dependency com.google.cloud:google-cloud-storage to v2.6.1 ([#867](https://github.com/googleapis/java-speech/issues/867)) ([1115f48](https://github.com/googleapis/java-speech/commit/1115f48f4349a083ba79f32323931232efa2114c))
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.0 ([#864](https://github.com/googleapis/java-speech/issues/864)) ([260b3cb](https://github.com/googleapis/java-speech/commit/260b3cbc5de3c48b660e2aaed9c8f8cb3697745a))
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.1 ([#866](https://github.com/googleapis/java-speech/issues/866)) ([38a03f4](https://github.com/googleapis/java-speech/commit/38a03f45dd4daf9677eb9e08b1cd2b48ba6e611f))
+
 ### [2.2.14](https://github.com/googleapis/java-speech/compare/v2.2.13...v2.2.14) (2022-04-07)
 
 
