@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.3.3](https://github.com/googleapis/java-shared-config/compare/v1.3.2...v1.3.3) (2022-04-19)
+
+
+### Bug Fixes
+
+* **java:** remove protobuf feature from native profile ([#461](https://github.com/googleapis/java-shared-config/issues/461)) ([ffd07cb](https://github.com/googleapis/java-shared-config/commit/ffd07cb18ee7d45d4daee1d9ea6f6d321fdca874))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:native-image-support to v0.12.11 ([#459](https://github.com/googleapis/java-shared-config/issues/459)) ([d20008d](https://github.com/googleapis/java-shared-config/commit/d20008df15209708fdf9d06828b567778190f4d0))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#465](https://github.com/googleapis/java-shared-config/issues/465)) ([b202064](https://github.com/googleapis/java-shared-config/commit/b2020648816feb4740ad70acedfed470d7da5bcf))
+
 ### [1.3.2](https://github.com/googleapis/java-shared-config/compare/v1.3.1...v1.3.2) (2022-03-28)
 
 
