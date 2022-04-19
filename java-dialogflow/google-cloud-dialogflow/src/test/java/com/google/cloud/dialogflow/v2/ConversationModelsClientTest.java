@@ -372,7 +372,10 @@ public class ConversationModelsClientTest {
   public void getConversationModelEvaluationTest() throws Exception {
     ConversationModelEvaluation expectedResponse =
         ConversationModelEvaluation.newBuilder()
-            .setName("name3373707")
+            .setName(
+                ConversationModelEvaluationName.ofProjectConversationModelEvaluationName(
+                        "[PROJECT]", "[CONVERSATION_MODEL]", "[EVALUATION]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -462,7 +465,10 @@ public class ConversationModelsClientTest {
   public void createConversationModelEvaluationTest() throws Exception {
     ConversationModelEvaluation expectedResponse =
         ConversationModelEvaluation.newBuilder()
-            .setName("name3373707")
+            .setName(
+                ConversationModelEvaluationName.ofProjectConversationModelEvaluationName(
+                        "[PROJECT]", "[CONVERSATION_MODEL]", "[EVALUATION]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -523,7 +529,10 @@ public class ConversationModelsClientTest {
   public void createConversationModelEvaluationTest2() throws Exception {
     ConversationModelEvaluation expectedResponse =
         ConversationModelEvaluation.newBuilder()
-            .setName("name3373707")
+            .setName(
+                ConversationModelEvaluationName.ofProjectConversationModelEvaluationName(
+                        "[PROJECT]", "[CONVERSATION_MODEL]", "[EVALUATION]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setEvaluationConfig(EvaluationConfig.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
