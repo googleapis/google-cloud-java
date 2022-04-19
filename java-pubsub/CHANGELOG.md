@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.116.4](https://github.com/googleapis/java-pubsub/compare/v1.116.3...v1.116.4) (2022-04-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.6.1 ([#1084](https://github.com/googleapis/java-pubsub/issues/1084)) ([b1c4d89](https://github.com/googleapis/java-pubsub/commit/b1c4d899e98fc58bdcd6a38b4544497e65ca591d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#1085](https://github.com/googleapis/java-pubsub/issues/1085)) ([4826dcb](https://github.com/googleapis/java-pubsub/commit/4826dcb4ce80e165a4c2c7e65a8d6931ebb0abc9))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#1086](https://github.com/googleapis/java-pubsub/issues/1086)) ([98c7b2b](https://github.com/googleapis/java-pubsub/commit/98c7b2be08e80744b6bc8e38c327e3874b755df9))
+* update dependency com.google.errorprone:error_prone_annotations to v2.12.1 ([#1080](https://github.com/googleapis/java-pubsub/issues/1080)) ([d13bd94](https://github.com/googleapis/java-pubsub/commit/d13bd94074740b870c90a216715dfe18bbd6c248))
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.0 ([#1083](https://github.com/googleapis/java-pubsub/issues/1083)) ([3b8cbcb](https://github.com/googleapis/java-pubsub/commit/3b8cbcbee1b7451adcdf1305d90960f682889c44))
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.1 ([#1087](https://github.com/googleapis/java-pubsub/issues/1087)) ([34121f0](https://github.com/googleapis/java-pubsub/commit/34121f0d9943735a231d4c1e045df4f7e822268e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.0 ([#1078](https://github.com/googleapis/java-pubsub/issues/1078)) ([b064d6c](https://github.com/googleapis/java-pubsub/commit/b064d6ca8b2b1e6e083dc273073b3734d434ef8c))
+
 ### [1.116.3](https://github.com/googleapis/java-pubsub/compare/v1.116.2...v1.116.3) (2022-03-29)
 
 
