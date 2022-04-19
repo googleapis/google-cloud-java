@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-certificate-manager/compare/v0.1.1...v0.2.0) (2022-04-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* Updated resource patterns to comply with https://google.aip.dev/123#annotating-resource-types (#24)
+
+### Bug Fixes
+
+* Updated resource patterns to comply with https://google.aip.dev/123#annotating-resource-types ([#24](https://github.com/googleapis/java-certificate-manager/issues/24)) ([56aec63](https://github.com/googleapis/java-certificate-manager/commit/56aec63d62c8c4b9459ff4c927adabaa49e78e0c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#27](https://github.com/googleapis/java-certificate-manager/issues/27)) ([c43930c](https://github.com/googleapis/java-certificate-manager/commit/c43930c1f769b49785b970d0c1927fa8d5fbe4bf))
+
 ### [0.1.1](https://github.com/googleapis/java-certificate-manager/compare/v0.1.0...v0.1.1) (2022-03-29)
 
 
