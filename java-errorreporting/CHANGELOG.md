@@ -1,5 +1,18 @@
 # Changelog
 
+### [0.122.23](https://github.com/googleapis/java-errorreporting/compare/v0.122.22...v0.122.23) (2022-04-16)
+
+
+### Bug Fixes
+
+* Reenable staleness bot ([#846](https://github.com/googleapis/java-errorreporting/issues/846)) ([c4b9739](https://github.com/googleapis/java-errorreporting/commit/c4b973965242c757994cd9de17faeeff038f4e26))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.6.1 ([#847](https://github.com/googleapis/java-errorreporting/issues/847)) ([244a8b1](https://github.com/googleapis/java-errorreporting/commit/244a8b164ab87aba3a5a5b723a011b7b20a5b29b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#848](https://github.com/googleapis/java-errorreporting/issues/848)) ([4a8e08f](https://github.com/googleapis/java-errorreporting/commit/4a8e08fd2ed9aac573cf1d7a3a9f0e2915bb28e6))
+
 ### [0.122.22](https://github.com/googleapis/java-errorreporting/compare/v0.122.21...v0.122.22) (2022-03-29)
 
 
