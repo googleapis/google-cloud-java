@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.6...v2.3.0) (2022-04-15)
+
+
+### Features
+
+* Sync public protos with latests public api state. This adds support for collapsible groups, filters, labels, drilldowns, logs panels and tables ([#586](https://github.com/googleapis/java-monitoring-dashboards/issues/586)) ([c90af2d](https://github.com/googleapis/java-monitoring-dashboards/commit/c90af2d75a491acf8685ffef1857669e6a205358))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#588](https://github.com/googleapis/java-monitoring-dashboards/issues/588)) ([41ad981](https://github.com/googleapis/java-monitoring-dashboards/commit/41ad981b8f877f2aaad0fc9e0fd05edbac548aa4))
+
 ### [2.2.6](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.5...v2.2.6) (2022-03-29)
 
 
