@@ -60,6 +60,21 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - OwlBot Post Processor
+  - pattern: v2.6.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
 permissionRules:
   - team: yoshi-admins
     permission: admin

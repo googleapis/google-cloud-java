@@ -23,5 +23,12 @@ branches:
       - >-
         google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
     branch: 2.2.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: v2.6.x
 extraFiles:
   - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
