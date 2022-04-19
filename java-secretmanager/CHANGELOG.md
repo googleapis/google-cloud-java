@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.6](https://github.com/googleapis/java-secretmanager/compare/v2.1.5...v2.1.6) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#749](https://github.com/googleapis/java-secretmanager/issues/749)) ([1220d7d](https://github.com/googleapis/java-secretmanager/commit/1220d7dc5090f25df74363db3d0b561f6b5115f9))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#750](https://github.com/googleapis/java-secretmanager/issues/750)) ([68273d1](https://github.com/googleapis/java-secretmanager/commit/68273d152e12093327484adeb8e63ff042e7dec8))
+
 ### [2.1.5](https://github.com/googleapis/java-secretmanager/compare/v2.1.4...v2.1.5) (2022-04-07)
 
 
