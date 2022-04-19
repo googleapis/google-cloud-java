@@ -1,5 +1,18 @@
 # Changelog
 
+### [2.1.11](https://github.com/googleapis/java-tasks/compare/v2.1.10...v2.1.11) (2022-04-15)
+
+
+### Documentation
+
+* **sample:** modify README instructions for Native Image sample ([#666](https://github.com/googleapis/java-tasks/issues/666)) ([1f4b309](https://github.com/googleapis/java-tasks/commit/1f4b3096a2528978a48c263e72e830e0d1af2427))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#670](https://github.com/googleapis/java-tasks/issues/670)) ([0a48657](https://github.com/googleapis/java-tasks/commit/0a486572e74cf11d98c1dcdb97f9b93ed235a9b8))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#671](https://github.com/googleapis/java-tasks/issues/671)) ([c4e5766](https://github.com/googleapis/java-tasks/commit/c4e5766f34d52e1ee023de9ef111affc96decc3d))
+
 ### [2.1.10](https://github.com/googleapis/java-tasks/compare/v2.1.9...v2.1.10) (2022-03-29)
 
 
