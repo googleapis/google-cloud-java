@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/java-dlp/compare/v3.2.1...v3.3.0) (2022-04-15)
+
+
+### Features
+
+* add DataProfilePubSubMessage supporting pub/sub integration ([#855](https://github.com/googleapis/java-dlp/issues/855)) ([86eeaaa](https://github.com/googleapis/java-dlp/commit/86eeaaae7bbe809d1d4651b3417e6899a6792e6c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#863](https://github.com/googleapis/java-dlp/issues/863)) ([a0a3164](https://github.com/googleapis/java-dlp/commit/a0a316479108eda8903f423fe2bacf72be57e8dd))
+
 ### [3.2.1](https://github.com/googleapis/java-dlp/compare/v3.2.0...v3.2.1) (2022-04-01)
 
 
