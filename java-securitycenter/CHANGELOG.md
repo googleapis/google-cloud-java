@@ -1,5 +1,19 @@
 # Changelog
 
+### [2.5.4](https://github.com/googleapis/java-securitycenter/compare/v2.5.3...v2.5.4) (2022-04-15)
+
+
+### Documentation
+
+* **samples:** included snippet for unmute finding ([#794](https://github.com/googleapis/java-securitycenter/issues/794)) ([58ecede](https://github.com/googleapis/java-securitycenter/commit/58ecede10b6a7e5cc10275fe7ede3a51c0868c87))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.116.3 ([#793](https://github.com/googleapis/java-securitycenter/issues/793)) ([b5c8e4f](https://github.com/googleapis/java-securitycenter/commit/b5c8e4f63bcc27c62c7e935218b3c168e6fb1461))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#804](https://github.com/googleapis/java-securitycenter/issues/804)) ([49c459b](https://github.com/googleapis/java-securitycenter/commit/49c459be570e3f3626b0b2f180e49cd83ae4dc33))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.0 ([#799](https://github.com/googleapis/java-securitycenter/issues/799)) ([6a81d7e](https://github.com/googleapis/java-securitycenter/commit/6a81d7e28305e379268519e76b6b64a89fa3469b))
+
 ### [2.5.3](https://github.com/googleapis/java-securitycenter/compare/v2.5.2...v2.5.3) (2022-03-29)
 
 
