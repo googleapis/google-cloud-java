@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.0.9](https://github.com/googleapis/java-dns/compare/v2.0.8...v2.0.9) (2022-04-15)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#646](https://github.com/googleapis/java-dns/issues/646)) ([3f842ef](https://github.com/googleapis/java-dns/commit/3f842efb71cbf64fefa6dca4bfd5733c142b111b))
+* update dependency com.google.errorprone:error_prone_annotations to v2.12.1 ([#642](https://github.com/googleapis/java-dns/issues/642)) ([c400c0d](https://github.com/googleapis/java-dns/commit/c400c0d53c23a6a11f03cab19a1cadbec98dbdd0))
+
 ### [2.0.8](https://github.com/googleapis/java-dns/compare/v2.0.7...v2.0.8) (2022-03-29)
 
 
