@@ -1,6 +1,18 @@
 # Changelog
 
 
+### [0.122.21](https://github.com/googleapis/java-logging-logback/compare/v0.122.20...v0.122.21) (2022-04-21)
+
+
+### Bug Fixes
+
+* Reenable staleness bot ([#738](https://github.com/googleapis/java-logging-logback/issues/738)) ([947a4ae](https://github.com/googleapis/java-logging-logback/commit/947a4aec8ded52e0d7da6cb16c7289c7b060a3d7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.7.5 ([#744](https://github.com/googleapis/java-logging-logback/issues/744)) ([e7cfbe2](https://github.com/googleapis/java-logging-logback/commit/e7cfbe236a3a0125f4174fc9e74f1a9f6c260b1d))
+
 ### [0.122.20](https://github.com/googleapis/java-logging-logback/compare/v0.122.19...v0.122.20) (2022-04-15)
 
 
