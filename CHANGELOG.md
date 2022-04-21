@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-datastore/compare/v2.3.1...v2.4.0) (2022-04-21)
+
+
+### Features
+
+* expose new read_time API fields, currently only available in private preview ([#706](https://github.com/googleapis/java-datastore/issues/706)) ([e11bd20](https://github.com/googleapis/java-datastore/commit/e11bd20fb99a3d671b09e1b46247fdfd11927fbe))
+* next release from main branch is 2.4.0 ([#715](https://github.com/googleapis/java-datastore/issues/715)) ([9cc80c9](https://github.com/googleapis/java-datastore/commit/9cc80c999d08d5ccfd667e765f94181904e17645))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#710](https://github.com/googleapis/java-datastore/issues/710)) ([ed8de9c](https://github.com/googleapis/java-datastore/commit/ed8de9cc519d5817b8af2c9705b9f335b909b78a))
+* update dependency com.google.cloud:native-image-support to v0.13.1 ([#709](https://github.com/googleapis/java-datastore/issues/709)) ([354ad90](https://github.com/googleapis/java-datastore/commit/354ad90aa075b203329b9ebde88f2b668351c37e))
+* update dependency com.google.errorprone:error_prone_core to v2.13.0 ([#708](https://github.com/googleapis/java-datastore/issues/708)) ([f22a1bc](https://github.com/googleapis/java-datastore/commit/f22a1bce83c850e34f27984a4d57347d860f436b))
+* update dependency com.google.errorprone:error_prone_core to v2.13.1 ([#711](https://github.com/googleapis/java-datastore/issues/711)) ([a9f565d](https://github.com/googleapis/java-datastore/commit/a9f565d2d4251f36cf9868420c9ce6efb2b71be3))
+
 ### [2.3.1](https://github.com/googleapis/java-datastore/compare/v2.3.0...v2.3.1) (2022-04-07)
 
 
