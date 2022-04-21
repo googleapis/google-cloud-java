@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-iamcredentials'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-iamcredentials:2.0.13'
+implementation 'com.google.cloud:google-cloud-iamcredentials:2.0.14'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "2.0.13"
+libraryDependencies += "com.google.cloud" % "google-cloud-iamcredentials" % "2.0.14"
 ```
 
 ## Authentication
