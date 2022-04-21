@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.6](https://github.com/googleapis/java-securitycenter/compare/v2.5.5...v2.5.6) (2022-04-21)
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.1 ([#814](https://github.com/googleapis/java-securitycenter/issues/814)) ([51848c2](https://github.com/googleapis/java-securitycenter/commit/51848c2d3a91fde360f1cbbc73748149f1e1fe77))
+
 ### [2.5.5](https://github.com/googleapis/java-securitycenter/compare/v2.5.4...v2.5.5) (2022-04-21)
 
 
