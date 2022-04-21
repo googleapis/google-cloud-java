@@ -268,8 +268,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
-   * for naming requirements.  For example: `example.googleapis.com`.
+   * Required. The name of the service.  See the
+   * [overview](/service-management/overview) for naming requirements.  For
+   * example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -292,8 +293,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the service.  See the [overview](/service-management/overview)
-   * for naming requirements.  For example: `example.googleapis.com`.
+   * Required. The name of the service.  See the
+   * [overview](/service-management/overview) for naming requirements.  For
+   * example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,8 +767,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
-     * for naming requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the
+     * [overview](/service-management/overview) for naming requirements.  For
+     * example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -788,8 +791,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
-     * for naming requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the
+     * [overview](/service-management/overview) for naming requirements.  For
+     * example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -811,8 +815,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
-     * for naming requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the
+     * [overview](/service-management/overview) for naming requirements.  For
+     * example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -833,8 +838,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
-     * for naming requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the
+     * [overview](/service-management/overview) for naming requirements.  For
+     * example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,8 +857,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the service.  See the [overview](/service-management/overview)
-     * for naming requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the
+     * [overview](/service-management/overview) for naming requirements.  For
+     * example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

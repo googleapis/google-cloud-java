@@ -117,8 +117,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The name of the service.  See the `ServiceManager` overview for naming
-   * requirements.  For example: `example.googleapis.com`.
+   * Required. The name of the service.  See the `ServiceManager` overview for
+   * naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -141,8 +141,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The name of the service.  See the `ServiceManager` overview for naming
-   * requirements.  For example: `example.googleapis.com`.
+   * Required. The name of the service.  See the `ServiceManager` overview for
+   * naming requirements.  For example: `example.googleapis.com`.
    * </pre>
    *
    * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -486,8 +486,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the service.  See the `ServiceManager` overview for naming
-     * requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the `ServiceManager` overview for
+     * naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -509,8 +509,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the service.  See the `ServiceManager` overview for naming
-     * requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the `ServiceManager` overview for
+     * naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -532,8 +532,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the service.  See the `ServiceManager` overview for naming
-     * requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the `ServiceManager` overview for
+     * naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -554,8 +554,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the service.  See the `ServiceManager` overview for naming
-     * requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the `ServiceManager` overview for
+     * naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -572,8 +572,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The name of the service.  See the `ServiceManager` overview for naming
-     * requirements.  For example: `example.googleapis.com`.
+     * Required. The name of the service.  See the `ServiceManager` overview for
+     * naming requirements.  For example: `example.googleapis.com`.
      * </pre>
      *
      * <code>string service_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

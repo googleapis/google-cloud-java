@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * [Google Service Management API](/service-management/overview)
+ * [Google Service Management
+ * API](https://cloud.google.com/service-infrastructure/docs/overview)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -688,7 +689,8 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
    * </pre>
    */
   public abstract static class ServiceManagerImplBase implements io.grpc.BindableService {
@@ -753,8 +755,10 @@ public final class ServiceManagerGrpc {
      * <pre>
      * Deletes a managed service. This method will change the service to the
      * `Soft-Delete` state for 30 days. Within this period, service producers may
-     * call [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService] to restore the service.
-     * After 30 days, the service will be permanently deleted.
+     * call
+     * [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService]
+     * to restore the service. After 30 days, the service will be permanently
+     * deleted.
      * Operation&lt;response: google.protobuf.Empty&gt;
      * </pre>
      */
@@ -843,7 +847,8 @@ public final class ServiceManagerGrpc {
      * Specification). This method stores the source configurations as well as the
      * generated service configuration. To rollout the service configuration to
      * other services,
-     * please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
      * Only the 100 most recent configuration sources and ones referenced by
      * existing service configurtions are kept for each service. The rest will be
      * deleted eventually.
@@ -877,7 +882,8 @@ public final class ServiceManagerGrpc {
      *
      *
      * <pre>
-     * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
+     * Gets a service configuration
+     * [rollout][google.api.servicemanagement.v1.Rollout].
      * </pre>
      */
     public void getServiceRollout(
@@ -1031,7 +1037,8 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
    * </pre>
    */
   public static final class ServiceManagerStub
@@ -1110,8 +1117,10 @@ public final class ServiceManagerGrpc {
      * <pre>
      * Deletes a managed service. This method will change the service to the
      * `Soft-Delete` state for 30 days. Within this period, service producers may
-     * call [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService] to restore the service.
-     * After 30 days, the service will be permanently deleted.
+     * call
+     * [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService]
+     * to restore the service. After 30 days, the service will be permanently
+     * deleted.
      * Operation&lt;response: google.protobuf.Empty&gt;
      * </pre>
      */
@@ -1210,7 +1219,8 @@ public final class ServiceManagerGrpc {
      * Specification). This method stores the source configurations as well as the
      * generated service configuration. To rollout the service configuration to
      * other services,
-     * please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
      * Only the 100 most recent configuration sources and ones referenced by
      * existing service configurtions are kept for each service. The rest will be
      * deleted eventually.
@@ -1248,7 +1258,8 @@ public final class ServiceManagerGrpc {
      *
      *
      * <pre>
-     * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
+     * Gets a service configuration
+     * [rollout][google.api.servicemanagement.v1.Rollout].
      * </pre>
      */
     public void getServiceRollout(
@@ -1318,7 +1329,8 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
    * </pre>
    */
   public static final class ServiceManagerBlockingStub
@@ -1389,8 +1401,10 @@ public final class ServiceManagerGrpc {
      * <pre>
      * Deletes a managed service. This method will change the service to the
      * `Soft-Delete` state for 30 days. Within this period, service producers may
-     * call [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService] to restore the service.
-     * After 30 days, the service will be permanently deleted.
+     * call
+     * [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService]
+     * to restore the service. After 30 days, the service will be permanently
+     * deleted.
      * Operation&lt;response: google.protobuf.Empty&gt;
      * </pre>
      */
@@ -1473,7 +1487,8 @@ public final class ServiceManagerGrpc {
      * Specification). This method stores the source configurations as well as the
      * generated service configuration. To rollout the service configuration to
      * other services,
-     * please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
      * Only the 100 most recent configuration sources and ones referenced by
      * existing service configurtions are kept for each service. The rest will be
      * deleted eventually.
@@ -1504,7 +1519,8 @@ public final class ServiceManagerGrpc {
      *
      *
      * <pre>
-     * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
+     * Gets a service configuration
+     * [rollout][google.api.servicemanagement.v1.Rollout].
      * </pre>
      */
     public com.google.api.servicemanagement.v1.Rollout getServiceRollout(
@@ -1563,7 +1579,8 @@ public final class ServiceManagerGrpc {
    *
    *
    * <pre>
-   * [Google Service Management API](/service-management/overview)
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
    * </pre>
    */
   public static final class ServiceManagerFutureStub
@@ -1636,8 +1653,10 @@ public final class ServiceManagerGrpc {
      * <pre>
      * Deletes a managed service. This method will change the service to the
      * `Soft-Delete` state for 30 days. Within this period, service producers may
-     * call [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService] to restore the service.
-     * After 30 days, the service will be permanently deleted.
+     * call
+     * [UndeleteService][google.api.servicemanagement.v1.ServiceManager.UndeleteService]
+     * to restore the service. After 30 days, the service will be permanently
+     * deleted.
      * Operation&lt;response: google.protobuf.Empty&gt;
      * </pre>
      */
@@ -1722,7 +1741,8 @@ public final class ServiceManagerGrpc {
      * Specification). This method stores the source configurations as well as the
      * generated service configuration. To rollout the service configuration to
      * other services,
-     * please call [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
+     * please call
+     * [CreateServiceRollout][google.api.servicemanagement.v1.ServiceManager.CreateServiceRollout].
      * Only the 100 most recent configuration sources and ones referenced by
      * existing service configurtions are kept for each service. The rest will be
      * deleted eventually.
@@ -1755,7 +1775,8 @@ public final class ServiceManagerGrpc {
      *
      *
      * <pre>
-     * Gets a service configuration [rollout][google.api.servicemanagement.v1.Rollout].
+     * Gets a service configuration
+     * [rollout][google.api.servicemanagement.v1.Rollout].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

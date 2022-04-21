@@ -27,8 +27,9 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique identifier of this Rollout. Must be no longer than 63 characters
-   * and only lower case letters, digits, '.', '_' and '-' are allowed.
+   * Optional. Unique identifier of this Rollout. Must be no longer than 63
+   * characters and only lower case letters, digits, '.', '_' and '-' are
+   * allowed.
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing
@@ -45,8 +46,9 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Unique identifier of this Rollout. Must be no longer than 63 characters
-   * and only lower case letters, digits, '.', '_' and '-' are allowed.
+   * Optional. Unique identifier of this Rollout. Must be no longer than 63
+   * characters and only lower case letters, digits, '.', '_' and '-' are
+   * allowed.
    * If not specified by client, the server will generate one. The generated id
    * will have the form of &lt;date&gt;&lt;revision number&gt;, where "date" is the create
    * date in ISO 8601 format.  "revision number" is a monotonically increasing

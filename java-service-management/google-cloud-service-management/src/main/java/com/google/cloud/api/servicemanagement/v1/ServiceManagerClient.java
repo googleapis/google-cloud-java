@@ -65,7 +65,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Google Service Management API](/service-management/overview)
+ * Service Description: [Google Service Management
+ * API](https://cloud.google.com/service-infrastructure/docs/overview)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -1192,11 +1193,10 @@ public class ServiceManagerClient implements BackgroundResource {
    *     [overview](/service-management/overview) for naming requirements. For example:
    *     `example.googleapis.com`.
    * @param filter Required. Use `filter` to return subset of rollouts. The following filters are
-   *     supported: -- To limit the results to only those in
-   *     [status](google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use
-   *     filter='status=SUCCESS' -- To limit the results to those in
-   *     [status](google.api.servicemanagement.v1.RolloutStatus) 'CANCELLED' or 'FAILED', use
-   *     filter='status=CANCELLED OR status=FAILED'
+   *     supported: -- To limit the results to only those in status
+   *     (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use filter='status=SUCCESS' --
+   *     To limit the results to those in status (google.api.servicemanagement.v1.RolloutStatus)
+   *     'CANCELLED' or 'FAILED', use filter='status=CANCELLED OR status=FAILED'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceRolloutsPagedResponse listServiceRollouts(
