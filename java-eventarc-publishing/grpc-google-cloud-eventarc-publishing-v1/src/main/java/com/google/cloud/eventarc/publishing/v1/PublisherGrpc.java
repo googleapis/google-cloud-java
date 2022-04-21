@@ -107,6 +107,52 @@ public final class PublisherGrpc {
     return getPublishChannelConnectionEventsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
+          com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+      getPublishEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PublishEvents",
+      requestType = com.google.cloud.eventarc.publishing.v1.PublishEventsRequest.class,
+      responseType = com.google.cloud.eventarc.publishing.v1.PublishEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
+          com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+      getPublishEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
+            com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+        getPublishEventsMethod;
+    if ((getPublishEventsMethod = PublisherGrpc.getPublishEventsMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getPublishEventsMethod = PublisherGrpc.getPublishEventsMethod) == null) {
+          PublisherGrpc.getPublishEventsMethod =
+              getPublishEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
+                          com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PublishEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.publishing.v1.PublishEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.publishing.v1.PublishEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new PublisherMethodDescriptorSupplier("PublishEvents"))
+                      .build();
+        }
+      }
+    }
+    return getPublishEventsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PublisherStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PublisherStub> factory =
@@ -188,6 +234,21 @@ public final class PublisherGrpc {
           getPublishChannelConnectionEventsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a subscriber's channel.
+     * </pre>
+     */
+    public void publishEvents(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPublishEventsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -199,6 +260,13 @@ public final class PublisherGrpc {
                       com.google.cloud.eventarc.publishing.v1
                           .PublishChannelConnectionEventsResponse>(
                       this, METHODID_PUBLISH_CHANNEL_CONNECTION_EVENTS)))
+          .addMethod(
+              getPublishEventsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
+                      com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>(
+                      this, METHODID_PUBLISH_EVENTS)))
           .build();
     }
   }
@@ -253,6 +321,23 @@ public final class PublisherGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a subscriber's channel.
+     * </pre>
+     */
+    public void publishEvents(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPublishEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -302,6 +387,19 @@ public final class PublisherGrpc {
             com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPublishChannelConnectionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a subscriber's channel.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.publishing.v1.PublishEventsResponse publishEvents(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishEventsMethod(), getCallOptions(), request);
     }
   }
 
@@ -354,9 +452,24 @@ public final class PublisherGrpc {
           getChannel().newCall(getPublishChannelConnectionEventsMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a subscriber's channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>
+        publishEvents(com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPublishEventsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PUBLISH_CHANNEL_CONNECTION_EVENTS = 0;
+  private static final int METHODID_PUBLISH_EVENTS = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -382,6 +495,13 @@ public final class PublisherGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.eventarc.publishing.v1
                           .PublishChannelConnectionEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_PUBLISH_EVENTS:
+          serviceImpl.publishEvents(
+              (com.google.cloud.eventarc.publishing.v1.PublishEventsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>)
                   responseObserver);
           break;
         default:
@@ -449,6 +569,7 @@ public final class PublisherGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new PublisherFileDescriptorSupplier())
                       .addMethod(getPublishChannelConnectionEventsMethod())
+                      .addMethod(getPublishEventsMethod())
                       .build();
         }
       }

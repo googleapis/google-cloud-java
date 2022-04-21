@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -56,9 +58,21 @@ public class GrpcPublisherStub extends PublisherStub {
                       PublishChannelConnectionEventsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PublishEventsRequest, PublishEventsResponse>
+      publishEventsMethodDescriptor =
+          MethodDescriptor.<PublishEventsRequest, PublishEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.publishing.v1.Publisher/PublishEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PublishEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PublishEventsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<
           PublishChannelConnectionEventsRequest, PublishChannelConnectionEventsResponse>
       publishChannelConnectionEventsCallable;
+  private final UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -115,12 +129,25 @@ public class GrpcPublisherStub extends PublisherStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsTransportSettings =
+        GrpcCallSettings.<PublishEventsRequest, PublishEventsResponse>newBuilder()
+            .setMethodDescriptor(publishEventsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("channel", String.valueOf(request.getChannel()));
+                  return params.build();
+                })
+            .build();
 
     this.publishChannelConnectionEventsCallable =
         callableFactory.createUnaryCallable(
             publishChannelConnectionEventsTransportSettings,
             settings.publishChannelConnectionEventsSettings(),
             clientContext);
+    this.publishEventsCallable =
+        callableFactory.createUnaryCallable(
+            publishEventsTransportSettings, settings.publishEventsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -135,6 +162,11 @@ public class GrpcPublisherStub extends PublisherStub {
           PublishChannelConnectionEventsRequest, PublishChannelConnectionEventsResponse>
       publishChannelConnectionEventsCallable() {
     return publishChannelConnectionEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
+    return publishEventsCallable;
   }
 
   @Override

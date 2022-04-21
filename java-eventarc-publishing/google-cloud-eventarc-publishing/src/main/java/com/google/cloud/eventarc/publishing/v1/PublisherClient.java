@@ -213,6 +213,54 @@ public class PublisherClient implements BackgroundResource {
     return stub.publishChannelConnectionEventsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Publish events to a subscriber's channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   PublishEventsRequest request =
+   *       PublishEventsRequest.newBuilder()
+   *           .setChannel("channel738950403")
+   *           .addAllEvents(new ArrayList<Any>())
+   *           .build();
+   *   PublishEventsResponse response = publisherClient.publishEvents(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublishEventsResponse publishEvents(PublishEventsRequest request) {
+    return publishEventsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Publish events to a subscriber's channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   PublishEventsRequest request =
+   *       PublishEventsRequest.newBuilder()
+   *           .setChannel("channel738950403")
+   *           .addAllEvents(new ArrayList<Any>())
+   *           .build();
+   *   ApiFuture<PublishEventsResponse> future =
+   *       publisherClient.publishEventsCallable().futureCall(request);
+   *   // Do something.
+   *   PublishEventsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
+    return stub.publishEventsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

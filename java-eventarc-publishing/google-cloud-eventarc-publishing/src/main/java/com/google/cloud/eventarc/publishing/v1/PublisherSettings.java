@@ -73,6 +73,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
     return ((PublisherStubSettings) getStubSettings()).publishChannelConnectionEventsSettings();
   }
 
+  /** Returns the object with the settings used for calls to publishEvents. */
+  public UnaryCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishEventsSettings();
+  }
+
   public static final PublisherSettings create(PublisherStubSettings stub) throws IOException {
     return new PublisherSettings.Builder(stub.toBuilder()).build();
   }
@@ -174,6 +179,12 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
             PublishChannelConnectionEventsRequest, PublishChannelConnectionEventsResponse>
         publishChannelConnectionEventsSettings() {
       return getStubSettingsBuilder().publishChannelConnectionEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to publishEvents. */
+    public UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
+        publishEventsSettings() {
+      return getStubSettingsBuilder().publishEventsSettings();
     }
 
     @Override

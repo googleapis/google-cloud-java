@@ -20,6 +20,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -36,6 +38,10 @@ public abstract class PublisherStub implements BackgroundResource {
       publishChannelConnectionEventsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: publishChannelConnectionEventsCallable()");
+  }
+
+  public UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: publishEventsCallable()");
   }
 
   @Override

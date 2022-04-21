@@ -12,6 +12,9 @@
           "rpcs": {
             "PublishChannelConnectionEvents": {
               "methods": ["publishChannelConnectionEvents", "publishChannelConnectionEventsCallable"]
+            },
+            "PublishEvents": {
+              "methods": ["publishEvents", "publishEventsCallable"]
             }
           }
         }

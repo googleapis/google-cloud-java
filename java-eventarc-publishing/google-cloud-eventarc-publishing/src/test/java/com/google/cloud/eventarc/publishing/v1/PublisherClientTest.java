@@ -123,4 +123,48 @@ public class PublisherClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void publishEventsTest() throws Exception {
+    PublishEventsResponse expectedResponse = PublishEventsResponse.newBuilder().build();
+    mockPublisher.addResponse(expectedResponse);
+
+    PublishEventsRequest request =
+        PublishEventsRequest.newBuilder()
+            .setChannel("channel738950403")
+            .addAllEvents(new ArrayList<Any>())
+            .build();
+
+    PublishEventsResponse actualResponse = client.publishEvents(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PublishEventsRequest actualRequest = ((PublishEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getChannel(), actualRequest.getChannel());
+    Assert.assertEquals(request.getEventsList(), actualRequest.getEventsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void publishEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPublisher.addException(exception);
+
+    try {
+      PublishEventsRequest request =
+          PublishEventsRequest.newBuilder()
+              .setChannel("channel738950403")
+              .addAllEvents(new ArrayList<Any>())
+              .build();
+      client.publishEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }
