@@ -27,13 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-workflows:2.1.9'
+implementation 'com.google.cloud:google-cloud-workflows:2.1.10'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-workflows" % "2.1.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-workflows" % "2.1.10"
 ```
 
 ## Authentication
