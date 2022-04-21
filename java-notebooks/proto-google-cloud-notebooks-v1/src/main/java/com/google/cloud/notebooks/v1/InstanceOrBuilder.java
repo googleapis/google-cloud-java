@@ -1178,6 +1178,45 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. Email address of entity that sent original CreateInstance request.
+   * </pre>
+   *
+   * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The creator.
+   */
+  java.lang.String getCreator();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of entity that sent original CreateInstance request.
+   * </pre>
+   *
+   * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for creator.
+   */
+  com.google.protobuf.ByteString getCreatorBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag to enable ip forwarding or not, default false/off.
+   * https://cloud.google.com/vpc/docs/using-routes#canipforward
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The canIpForward.
+   */
+  boolean getCanIpForward();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Instance creation time.
    * </pre>
    *

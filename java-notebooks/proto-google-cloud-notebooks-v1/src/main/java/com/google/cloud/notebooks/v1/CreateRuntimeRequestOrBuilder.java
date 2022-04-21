@@ -116,4 +116,29 @@ public interface CreateRuntimeRequestOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v1.RuntimeOrBuilder getRuntimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

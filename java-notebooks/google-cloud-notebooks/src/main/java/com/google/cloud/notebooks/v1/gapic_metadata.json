@@ -22,6 +22,9 @@
             "ListRuntimes": {
               "methods": ["listRuntimes", "listRuntimes", "listRuntimes", "listRuntimesPagedCallable", "listRuntimesCallable"]
             },
+            "RefreshRuntimeTokenInternal": {
+              "methods": ["refreshRuntimeTokenInternal", "refreshRuntimeTokenInternal", "refreshRuntimeTokenInternal", "refreshRuntimeTokenInternalCallable"]
+            },
             "ReportRuntimeEvent": {
               "methods": ["reportRuntimeEventAsync", "reportRuntimeEventAsync", "reportRuntimeEventAsync", "reportRuntimeEventOperationCallable", "reportRuntimeEventCallable"]
             },
@@ -132,6 +135,9 @@
             },
             "UpdateInstanceConfig": {
               "methods": ["updateInstanceConfigAsync", "updateInstanceConfigOperationCallable", "updateInstanceConfigCallable"]
+            },
+            "UpdateInstanceMetadataItems": {
+              "methods": ["updateInstanceMetadataItems", "updateInstanceMetadataItemsCallable"]
             },
             "UpdateShieldedInstanceConfig": {
               "methods": ["updateShieldedInstanceConfigAsync", "updateShieldedInstanceConfigOperationCallable", "updateShieldedInstanceConfigCallable"]

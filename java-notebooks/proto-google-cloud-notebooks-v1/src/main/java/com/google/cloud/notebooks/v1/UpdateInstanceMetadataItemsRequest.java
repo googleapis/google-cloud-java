@@ -22,32 +22,30 @@ package com.google.cloud.notebooks.v1;
  *
  *
  * <pre>
- * Request for upgrading a notebook instance from within the VM
+ * Request for adding/changing metadata items  for an instance.
  * </pre>
  *
- * Protobuf type {@code google.cloud.notebooks.v1.UpgradeInstanceInternalRequest}
+ * Protobuf type {@code google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest}
  */
-public final class UpgradeInstanceInternalRequest extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateInstanceMetadataItemsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)
-    UpgradeInstanceInternalRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
+    UpdateInstanceMetadataItemsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use UpgradeInstanceInternalRequest.newBuilder() to construct.
-  private UpgradeInstanceInternalRequest(
+  // Use UpdateInstanceMetadataItemsRequest.newBuilder() to construct.
+  private UpdateInstanceMetadataItemsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private UpgradeInstanceInternalRequest() {
+  private UpdateInstanceMetadataItemsRequest() {
     name_ = "";
-    vmId_ = "";
-    type_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpgradeInstanceInternalRequest();
+    return new UpdateInstanceMetadataItemsRequest();
   }
 
   @java.lang.Override
@@ -55,7 +53,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private UpgradeInstanceInternalRequest(
+  private UpdateInstanceMetadataItemsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -63,6 +61,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,16 +81,15 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
             }
           case 18:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vmId_ = s;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                items_ =
+                    com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> items__ =
+                  input.readMessage(
+                      ItemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              items_.getMutableMap().put(items__.getKey(), items__.getValue());
               break;
             }
           default:
@@ -115,17 +113,28 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.NotebooksProto
-        .internal_static_google_cloud_notebooks_v1_UpgradeInstanceInternalRequest_descriptor;
+        .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 2:
+        return internalGetItems();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.notebooks.v1.NotebooksProto
-        .internal_static_google_cloud_notebooks_v1_UpgradeInstanceInternalRequest_fieldAccessorTable
+        .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.class,
-            com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.Builder.class);
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.class,
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -179,97 +188,102 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int VM_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vmId_;
-  /**
-   *
-   *
-   * <pre>
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-   * </pre>
-   *
-   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The vmId.
-   */
-  @java.lang.Override
-  public java.lang.String getVmId() {
-    java.lang.Object ref = vmId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      vmId_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-   * </pre>
-   *
-   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for vmId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getVmIdBytes() {
-    java.lang.Object ref = vmId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      vmId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public static final int ITEMS_FIELD_NUMBER = 2;
+
+  private static final class ItemsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.notebooks.v1.NotebooksProto
+                .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_ItemsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
 
-  public static final int TYPE_FIELD_NUMBER = 3;
-  private int type_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The optional UpgradeType. Setting this field will search for additional
-   * compute images to upgrade this instance.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for type.
-   */
-  @java.lang.Override
-  public int getTypeValue() {
-    return type_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> items_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetItems() {
+    if (items_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ItemsDefaultEntryHolder.defaultEntry);
+    }
+    return items_;
+  }
+
+  public int getItemsCount() {
+    return internalGetItems().getMap().size();
   }
   /**
    *
    *
    * <pre>
-   * Optional. The optional UpgradeType. Setting this field will search for additional
-   * compute images to upgrade this instance.
+   * Metadata items to add/update for the instance.
    * </pre>
    *
-   * <code>
-   * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The type.
+   * <code>map&lt;string, string&gt; items = 2;</code>
    */
   @java.lang.Override
-  public com.google.cloud.notebooks.v1.UpgradeType getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.notebooks.v1.UpgradeType result =
-        com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
-    return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
+  public boolean containsItems(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetItems().getMap().containsKey(key);
+  }
+  /** Use {@link #getItemsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getItems() {
+    return getItemsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata items to add/update for the instance.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; items = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
+    return internalGetItems().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata items to add/update for the instance.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; items = 2;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata items to add/update for the instance.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; items = 2;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getItemsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -289,12 +303,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vmId_);
-    }
-    if (type_ != com.google.cloud.notebooks.v1.UpgradeType.UPGRADE_TYPE_UNSPECIFIED.getNumber()) {
-      output.writeEnum(3, type_);
-    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetItems(), ItemsDefaultEntryHolder.defaultEntry, 2);
     unknownFields.writeTo(output);
   }
 
@@ -307,11 +317,15 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vmId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vmId_);
-    }
-    if (type_ != com.google.cloud.notebooks.v1.UpgradeType.UPGRADE_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, type_);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetItems().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> items__ =
+          ItemsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, items__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -323,15 +337,14 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)) {
+    if (!(obj instanceof com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest other =
-        (com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest) obj;
+    com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest other =
+        (com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getVmId().equals(other.getVmId())) return false;
-    if (type_ != other.type_) return false;
+    if (!internalGetItems().equals(other.internalGetItems())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -345,80 +358,80 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVmId().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
+    if (!internalGetItems().getMap().isEmpty()) {
+      hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetItems().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseDelimitedFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseDelimitedFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parseFrom(
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -436,7 +449,7 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
   }
 
   public static Builder newBuilder(
-      com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest prototype) {
+      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -454,31 +467,51 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request for upgrading a notebook instance from within the VM
+   * Request for adding/changing metadata items  for an instance.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.notebooks.v1.UpgradeInstanceInternalRequest}
+   * Protobuf type {@code google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)
-      com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
+      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.NotebooksProto
-          .internal_static_google_cloud_notebooks_v1_UpgradeInstanceInternalRequest_descriptor;
+          .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 2:
+          return internalGetItems();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableItems();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.notebooks.v1.NotebooksProto
-          .internal_static_google_cloud_notebooks_v1_UpgradeInstanceInternalRequest_fieldAccessorTable
+          .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.class,
-              com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.Builder.class);
+              com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.class,
+              com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.newBuilder()
+    // Construct using com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -497,28 +530,25 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       super.clear();
       name_ = "";
 
-      vmId_ = "";
-
-      type_ = 0;
-
+      internalGetMutableItems().clear();
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.notebooks.v1.NotebooksProto
-          .internal_static_google_cloud_notebooks_v1_UpgradeInstanceInternalRequest_descriptor;
+          .internal_static_google_cloud_notebooks_v1_UpdateInstanceMetadataItemsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest
+    public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest
         getDefaultInstanceForType() {
-      return com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.getDefaultInstance();
+      return com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest build() {
-      com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest result = buildPartial();
+    public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest build() {
+      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -526,12 +556,13 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
-    public com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest buildPartial() {
-      com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest result =
-          new com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest(this);
+    public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest buildPartial() {
+      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest result =
+          new com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.vmId_ = vmId_;
-      result.type_ = type_;
+      result.items_ = internalGetItems();
+      result.items_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -571,29 +602,24 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest) {
-        return mergeFrom((com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest) other);
+      if (other instanceof com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest) {
+        return mergeFrom((com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest other) {
+    public Builder mergeFrom(
+        com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest other) {
       if (other
-          == com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest.getDefaultInstance())
+          == com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.getDefaultInstance())
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getVmId().isEmpty()) {
-        vmId_ = other.vmId_;
-        onChanged();
-      }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
-      }
+      internalGetMutableItems().mergeFrom(other.internalGetItems());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -609,12 +635,13 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest parsedMessage = null;
+      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest) e.getUnfinishedMessage();
+            (com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -623,6 +650,8 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -735,220 +764,159 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       return this;
     }
 
-    private java.lang.Object vmId_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. The VM hardware token for authenticating the VM.
-     * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-     * </pre>
-     *
-     * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The vmId.
-     */
-    public java.lang.String getVmId() {
-      java.lang.Object ref = vmId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vmId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The VM hardware token for authenticating the VM.
-     * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-     * </pre>
-     *
-     * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for vmId.
-     */
-    public com.google.protobuf.ByteString getVmIdBytes() {
-      java.lang.Object ref = vmId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        vmId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The VM hardware token for authenticating the VM.
-     * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-     * </pre>
-     *
-     * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The vmId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVmId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> items_;
 
-      vmId_ = value;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetItems() {
+      if (items_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ItemsDefaultEntryHolder.defaultEntry);
+      }
+      return items_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableItems() {
       onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The VM hardware token for authenticating the VM.
-     * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-     * </pre>
-     *
-     * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearVmId() {
-
-      vmId_ = getDefaultInstance().getVmId();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. The VM hardware token for authenticating the VM.
-     * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-     * </pre>
-     *
-     * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The bytes for vmId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setVmIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+      ;
+      if (items_ == null) {
+        items_ = com.google.protobuf.MapField.newMapField(ItemsDefaultEntryHolder.defaultEntry);
       }
-      checkByteStringIsUtf8(value);
-
-      vmId_ = value;
-      onChanged();
-      return this;
+      if (!items_.isMutable()) {
+        items_ = items_.copy();
+      }
+      return items_;
     }
 
-    private int type_ = 0;
+    public int getItemsCount() {
+      return internalGetItems().getMap().size();
+    }
     /**
      *
      *
      * <pre>
-     * Optional. The optional UpgradeType. Setting this field will search for additional
-     * compute images to upgrade this instance.
+     * Metadata items to add/update for the instance.
      * </pre>
      *
-     * <code>
-     * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for type.
+     * <code>map&lt;string, string&gt; items = 2;</code>
      */
     @java.lang.Override
-    public int getTypeValue() {
-      return type_;
+    public boolean containsItems(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetItems().getMap().containsKey(key);
+    }
+    /** Use {@link #getItemsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getItems() {
+      return getItemsMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. The optional UpgradeType. Setting this field will search for additional
-     * compute images to upgrade this instance.
+     * Metadata items to add/update for the instance.
      * </pre>
      *
-     * <code>
-     * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeValue(int value) {
-
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The optional UpgradeType. Setting this field will search for additional
-     * compute images to upgrade this instance.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The type.
+     * <code>map&lt;string, string&gt; items = 2;</code>
      */
     @java.lang.Override
-    public com.google.cloud.notebooks.v1.UpgradeType getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.notebooks.v1.UpgradeType result =
-          com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
-      return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
+    public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
+      return internalGetItems().getMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. The optional UpgradeType. Setting this field will search for additional
-     * compute images to upgrade this instance.
+     * Metadata items to add/update for the instance.
      * </pre>
      *
-     * <code>
-     * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The type to set.
-     * @return This builder for chaining.
+     * <code>map&lt;string, string&gt; items = 2;</code>
      */
-    public Builder setType(com.google.cloud.notebooks.v1.UpgradeType value) {
-      if (value == null) {
-        throw new NullPointerException();
+    @java.lang.Override
+    public java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
       }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata items to add/update for the instance.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; items = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getItemsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
 
-      type_ = value.getNumber();
-      onChanged();
+    public Builder clearItems() {
+      internalGetMutableItems().getMutableMap().clear();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. The optional UpgradeType. Setting this field will search for additional
-     * compute images to upgrade this instance.
+     * Metadata items to add/update for the instance.
      * </pre>
      *
-     * <code>
-     * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return This builder for chaining.
+     * <code>map&lt;string, string&gt; items = 2;</code>
      */
-    public Builder clearType() {
-
-      type_ = 0;
-      onChanged();
+    public Builder removeItems(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableItems().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
+      return internalGetMutableItems().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata items to add/update for the instance.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; items = 2;</code>
+     */
+    public Builder putItems(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableItems().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata items to add/update for the instance.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; items = 2;</code>
+     */
+    public Builder putAllItems(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableItems().getMutableMap().putAll(values);
       return this;
     }
 
@@ -963,43 +931,45 @@ public final class UpgradeInstanceInternalRequest extends com.google.protobuf.Ge
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)
-  private static final com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest
+  // @@protoc_insertion_point(class_scope:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
+  private static final com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest();
   }
 
-  public static com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest getDefaultInstance() {
+  public static com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpgradeInstanceInternalRequest> PARSER =
-      new com.google.protobuf.AbstractParser<UpgradeInstanceInternalRequest>() {
+  private static final com.google.protobuf.Parser<UpdateInstanceMetadataItemsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateInstanceMetadataItemsRequest>() {
         @java.lang.Override
-        public UpgradeInstanceInternalRequest parsePartialFrom(
+        public UpdateInstanceMetadataItemsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpgradeInstanceInternalRequest(input, extensionRegistry);
+          return new UpdateInstanceMetadataItemsRequest(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<UpgradeInstanceInternalRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateInstanceMetadataItemsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpgradeInstanceInternalRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateInstanceMetadataItemsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest getDefaultInstanceForType() {
+  public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

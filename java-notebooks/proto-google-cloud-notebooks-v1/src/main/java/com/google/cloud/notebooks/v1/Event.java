@@ -60,6 +60,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -92,6 +93,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
               type_ = rawValue;
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                details_ =
+                    com.google.protobuf.MapField.newMapField(
+                        DetailsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> details__ =
+                  input.readMessage(
+                      DetailsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              details_.getMutableMap().put(details__.getKey(), details__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -116,6 +131,17 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_notebooks_v1_Event_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 3:
+        return internalGetDetails();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -130,7 +156,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The definition of the even types.
+   * The definition of the event types.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.notebooks.v1.Event.EventType}
@@ -156,6 +182,42 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>IDLE = 1;</code>
      */
     IDLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime is available.
+     * This event indicates that instance / runtime underlying compute is
+     * operational.
+     * </pre>
+     *
+     * <code>HEARTBEAT = 2;</code>
+     */
+    HEARTBEAT(2),
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime health is available.
+     * This event indicates that instance / runtime health information.
+     * </pre>
+     *
+     * <code>HEALTH = 3;</code>
+     */
+    HEALTH(3),
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime is available.
+     * This event allows instance / runtime to send Host maintenance
+     * information to Control Plane.
+     * https://cloud.google.com/compute/docs/gpus/gpu-host-maintenance
+     * </pre>
+     *
+     * <code>MAINTENANCE = 4;</code>
+     */
+    MAINTENANCE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -179,6 +241,42 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>IDLE = 1;</code>
      */
     public static final int IDLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime is available.
+     * This event indicates that instance / runtime underlying compute is
+     * operational.
+     * </pre>
+     *
+     * <code>HEARTBEAT = 2;</code>
+     */
+    public static final int HEARTBEAT_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime health is available.
+     * This event indicates that instance / runtime health information.
+     * </pre>
+     *
+     * <code>HEALTH = 3;</code>
+     */
+    public static final int HEALTH_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The instance / runtime is available.
+     * This event allows instance / runtime to send Host maintenance
+     * information to Control Plane.
+     * https://cloud.google.com/compute/docs/gpus/gpu-host-maintenance
+     * </pre>
+     *
+     * <code>MAINTENANCE = 4;</code>
+     */
+    public static final int MAINTENANCE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,6 +306,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           return EVENT_TYPE_UNSPECIFIED;
         case 1:
           return IDLE;
+        case 2:
+          return HEARTBEAT;
+        case 3:
+          return HEALTH;
+        case 4:
+          return MAINTENANCE;
         default:
           return null;
       }
@@ -343,6 +447,104 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.notebooks.v1.Event.EventType.UNRECOGNIZED : result;
   }
 
+  public static final int DETAILS_FIELD_NUMBER = 3;
+
+  private static final class DetailsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.notebooks.v1.EventProto
+                .internal_static_google_cloud_notebooks_v1_Event_DetailsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> details_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDetails() {
+    if (details_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(DetailsDefaultEntryHolder.defaultEntry);
+    }
+    return details_;
+  }
+
+  public int getDetailsCount() {
+    return internalGetDetails().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsDetails(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetDetails().getMap().containsKey(key);
+  }
+  /** Use {@link #getDetailsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getDetails() {
+    return getDetailsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
+    return internalGetDetails().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getDetailsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getDetailsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -363,6 +565,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.notebooks.v1.Event.EventType.EVENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, type_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDetails(), DetailsDefaultEntryHolder.defaultEntry, 3);
     unknownFields.writeTo(output);
   }
 
@@ -377,6 +581,16 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (type_ != com.google.cloud.notebooks.v1.Event.EventType.EVENT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetDetails().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> details__ =
+          DetailsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, details__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -398,6 +612,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (!getReportTime().equals(other.getReportTime())) return false;
     }
     if (type_ != other.type_) return false;
+    if (!internalGetDetails().equals(other.internalGetDetails())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -415,6 +630,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (!internalGetDetails().getMap().isEmpty()) {
+      hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDetails().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -532,6 +751,26 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_notebooks_v1_Event_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetDetails();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableDetails();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -567,6 +806,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       type_ = 0;
 
+      internalGetMutableDetails().clear();
       return this;
     }
 
@@ -593,12 +833,15 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.notebooks.v1.Event buildPartial() {
       com.google.cloud.notebooks.v1.Event result = new com.google.cloud.notebooks.v1.Event(this);
+      int from_bitField0_ = bitField0_;
       if (reportTimeBuilder_ == null) {
         result.reportTime_ = reportTime_;
       } else {
         result.reportTime_ = reportTimeBuilder_.build();
       }
       result.type_ = type_;
+      result.details_ = internalGetDetails();
+      result.details_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -654,6 +897,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      internalGetMutableDetails().mergeFrom(other.internalGetDetails());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -682,6 +926,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp reportTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -954,6 +1200,163 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
       type_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> details_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDetails() {
+      if (details_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(DetailsDefaultEntryHolder.defaultEntry);
+      }
+      return details_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableDetails() {
+      onChanged();
+      ;
+      if (details_ == null) {
+        details_ = com.google.protobuf.MapField.newMapField(DetailsDefaultEntryHolder.defaultEntry);
+      }
+      if (!details_.isMutable()) {
+        details_ = details_.copy();
+      }
+      return details_;
+    }
+
+    public int getDetailsCount() {
+      return internalGetDetails().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsDetails(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetDetails().getMap().containsKey(key);
+    }
+    /** Use {@link #getDetailsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDetails() {
+      return getDetailsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
+      return internalGetDetails().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getDetailsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getDetailsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearDetails() {
+      internalGetMutableDetails().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeDetails(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDetails().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableDetails() {
+      return internalGetMutableDetails().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putDetails(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDetails().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Event details. This field is used to pass event information.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllDetails(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDetails().getMutableMap().putAll(values);
       return this;
     }
 

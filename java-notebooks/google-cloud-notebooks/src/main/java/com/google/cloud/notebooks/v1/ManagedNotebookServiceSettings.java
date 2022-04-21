@@ -165,6 +165,13 @@ public class ManagedNotebookServiceSettings extends ClientSettings<ManagedNotebo
         .reportRuntimeEventOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to refreshRuntimeTokenInternal. */
+  public UnaryCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalSettings() {
+    return ((ManagedNotebookServiceStubSettings) getStubSettings())
+        .refreshRuntimeTokenInternalSettings();
+  }
+
   public static final ManagedNotebookServiceSettings create(ManagedNotebookServiceStubSettings stub)
       throws IOException {
     return new ManagedNotebookServiceSettings.Builder(stub.toBuilder()).build();
@@ -351,6 +358,13 @@ public class ManagedNotebookServiceSettings extends ClientSettings<ManagedNotebo
     public OperationCallSettings.Builder<ReportRuntimeEventRequest, Runtime, OperationMetadata>
         reportRuntimeEventOperationSettings() {
       return getStubSettingsBuilder().reportRuntimeEventOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshRuntimeTokenInternal. */
+    public UnaryCallSettings.Builder<
+            RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+        refreshRuntimeTokenInternalSettings() {
+      return getStubSettingsBuilder().refreshRuntimeTokenInternalSettings();
     }
 
     @Override

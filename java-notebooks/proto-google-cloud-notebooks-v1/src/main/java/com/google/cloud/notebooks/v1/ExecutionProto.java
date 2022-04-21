@@ -40,6 +40,14 @@ public final class ExecutionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_ExecutionTemplate_DataprocParameters_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_fieldAccessorTable;
@@ -60,7 +68,7 @@ public final class ExecutionProto {
           + "oto\022\031google.cloud.notebooks.v1\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\361\t\n\021ExecutionTemplate\022Q\n\nscale_tier\030"
+          + "oto\"\352\014\n\021ExecutionTemplate\022Q\n\nscale_tier\030"
           + "\001 \001(\01626.google.cloud.notebooks.v1.Execut"
           + "ionTemplate.ScaleTierB\005\030\001\340A\002\022\023\n\013master_t"
           + "ype\030\002 \001(\t\022c\n\022accelerator_config\030\003 \001(\0132G."
@@ -75,43 +83,55 @@ public final class ExecutionProto {
           + "\001(\01624.google.cloud.notebooks.v1.Executio"
           + "nTemplate.JobType\022^\n\023dataproc_parameters"
           + "\030\014 \001(\0132?.google.cloud.notebooks.v1.Execu"
-          + "tionTemplate.DataprocParametersH\000\032\205\001\n\032Sc"
-          + "hedulerAcceleratorConfig\022S\n\004type\030\001 \001(\0162E"
-          + ".google.cloud.notebooks.v1.ExecutionTemp"
-          + "late.SchedulerAcceleratorType\022\022\n\ncore_co"
-          + "unt\030\002 \001(\003\032%\n\022DataprocParameters\022\017\n\007clust"
-          + "er\030\001 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"{\n\tScaleTier\022\032\n\026SCALE_TI"
-          + "ER_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\016\n\nSTANDARD_"
-          + "1\020\002\022\r\n\tPREMIUM_1\020\003\022\r\n\tBASIC_GPU\020\004\022\r\n\tBAS"
-          + "IC_TPU\020\005\022\n\n\006CUSTOM\020\006\"\314\001\n\030SchedulerAccele"
-          + "ratorType\022*\n&SCHEDULER_ACCELERATOR_TYPE_"
-          + "UNSPECIFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021N"
-          + "VIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020"
-          + "\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T"
-          + "4\020\005\022\n\n\006TPU_V2\020\006\022\n\n\006TPU_V3\020\007\"@\n\007JobType\022\030"
-          + "\n\024JOB_TYPE_UNSPECIFIED\020\000\022\r\n\tVERTEX_AI\020\001\022"
-          + "\014\n\010DATAPROC\020\002B\020\n\016job_parameters\"\202\005\n\tExec"
-          + "ution\022H\n\022execution_template\030\001 \001(\0132,.goog"
-          + "le.cloud.notebooks.v1.ExecutionTemplate\022"
-          + "\021\n\004name\030\002 \001(\tB\003\340A\003\022\031\n\014display_name\030\003 \001(\t"
-          + "B\003\340A\003\022\023\n\013description\030\004 \001(\t\0224\n\013create_tim"
-          + "e\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022>\n\005state\030\007 \001(\0162*.google.c"
-          + "loud.notebooks.v1.Execution.StateB\003\340A\003\022\034"
-          + "\n\024output_notebook_file\030\010 \001(\t\022\024\n\007job_uri\030"
-          + "\t \001(\tB\003\340A\003\"\237\001\n\005State\022\025\n\021STATE_UNSPECIFIE"
-          + "D\020\000\022\n\n\006QUEUED\020\001\022\r\n\tPREPARING\020\002\022\013\n\007RUNNIN"
-          + "G\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\016\n\nCANCEL"
-          + "LING\020\006\022\r\n\tCANCELLED\020\007\022\013\n\007EXPIRED\020\t\022\020\n\014IN"
-          + "ITIALIZING\020\n:f\352Ac\n\"notebooks.googleapis."
-          + "com/Execution\022=projects/{project}/locati"
-          + "on/{location}/executions/{execution}Bu\n\035"
-          + "com.google.cloud.notebooks.v1B\016Execution"
-          + "ProtoP\001ZBgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/notebooks/v1;notebooksb\006pro"
-          + "to3"
+          + "tionTemplate.DataprocParametersH\000\022_\n\024ver"
+          + "tex_ai_parameters\030\r \001(\0132?.google.cloud.n"
+          + "otebooks.v1.ExecutionTemplate.VertexAIPa"
+          + "rametersH\000\022\023\n\013kernel_spec\030\016 \001(\t\022?\n\013tenso"
+          + "rboard\030\017 \001(\tB*\372A\'\n%aiplatform.googleapis"
+          + ".com/Tensorboard\032\205\001\n\032SchedulerAccelerato"
+          + "rConfig\022S\n\004type\030\001 \001(\0162E.google.cloud.not"
+          + "ebooks.v1.ExecutionTemplate.SchedulerAcc"
+          + "eleratorType\022\022\n\ncore_count\030\002 \001(\003\032%\n\022Data"
+          + "procParameters\022\017\n\007cluster\030\001 \001(\t\032\250\001\n\022Vert"
+          + "exAIParameters\022\017\n\007network\030\001 \001(\t\022U\n\003env\030\002"
+          + " \003(\0132H.google.cloud.notebooks.v1.Executi"
+          + "onTemplate.VertexAIParameters.EnvEntry\032*"
+          + "\n\010EnvEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\"{\n\tScaleTier\022\032\n\026SCALE_TIER_UNS"
+          + "PECIFIED\020\000\022\t\n\005BASIC\020\001\022\016\n\nSTANDARD_1\020\002\022\r\n"
+          + "\tPREMIUM_1\020\003\022\r\n\tBASIC_GPU\020\004\022\r\n\tBASIC_TPU"
+          + "\020\005\022\n\n\006CUSTOM\020\006\"\343\001\n\030SchedulerAcceleratorT"
+          + "ype\022*\n&SCHEDULER_ACCELERATOR_TYPE_UNSPEC"
+          + "IFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021NVIDIA_"
+          + "TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020\003\022\023\n\017N"
+          + "VIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T4\020\005\022\025\n"
+          + "\021NVIDIA_TESLA_A100\020\n\022\n\n\006TPU_V2\020\006\022\n\n\006TPU_"
+          + "V3\020\007\"@\n\007JobType\022\030\n\024JOB_TYPE_UNSPECIFIED\020"
+          + "\000\022\r\n\tVERTEX_AI\020\001\022\014\n\010DATAPROC\020\002B\020\n\016job_pa"
+          + "rameters\"\202\005\n\tExecution\022H\n\022execution_temp"
+          + "late\030\001 \001(\0132,.google.cloud.notebooks.v1.E"
+          + "xecutionTemplate\022\021\n\004name\030\002 \001(\tB\003\340A\003\022\031\n\014d"
+          + "isplay_name\030\003 \001(\tB\003\340A\003\022\023\n\013description\030\004 "
+          + "\001(\t\0224\n\013create_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022>\n\005state"
+          + "\030\007 \001(\0162*.google.cloud.notebooks.v1.Execu"
+          + "tion.StateB\003\340A\003\022\034\n\024output_notebook_file\030"
+          + "\010 \001(\t\022\024\n\007job_uri\030\t \001(\tB\003\340A\003\"\237\001\n\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n\006QUEUED\020\001\022\r\n\tPREP"
+          + "ARING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006F"
+          + "AILED\020\005\022\016\n\nCANCELLING\020\006\022\r\n\tCANCELLED\020\007\022\013"
+          + "\n\007EXPIRED\020\t\022\020\n\014INITIALIZING\020\n:f\352Ac\n\"note"
+          + "books.googleapis.com/Execution\022=projects"
+          + "/{project}/location/{location}/execution"
+          + "s/{execution}B\343\001\n\035com.google.cloud.noteb"
+          + "ooks.v1B\016ExecutionProtoP\001ZBgoogle.golang"
+          + ".org/genproto/googleapis/cloud/notebooks"
+          + "/v1;notebooks\352Ak\n%aiplatform.googleapis."
+          + "com/Tensorboard\022Bprojects/{project}/loca"
+          + "tions/{location}/tensorboards/{tensorboa"
+          + "rd}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,6 +159,9 @@ public final class ExecutionProto {
               "ServiceAccount",
               "JobType",
               "DataprocParameters",
+              "VertexAiParameters",
+              "KernelSpec",
+              "Tensorboard",
               "JobParameters",
             });
     internal_static_google_cloud_notebooks_v1_ExecutionTemplate_SchedulerAcceleratorConfig_descriptor =
@@ -161,10 +184,30 @@ public final class ExecutionProto {
             new java.lang.String[] {
               "Cluster",
             });
-    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_descriptor =
+    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor =
         internal_static_google_cloud_notebooks_v1_ExecutionTemplate_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor,
+            new java.lang.String[] {
+              "Network", "Env",
+            });
+    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_descriptor =
+        internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_descriptor =
+        internal_static_google_cloud_notebooks_v1_ExecutionTemplate_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ExecutionTemplate_LabelsEntry_descriptor,
@@ -191,6 +234,8 @@ public final class ExecutionProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

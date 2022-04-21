@@ -68,6 +68,8 @@ import com.google.cloud.notebooks.v1.StartInstanceRequest;
 import com.google.cloud.notebooks.v1.StopInstanceRequest;
 import com.google.cloud.notebooks.v1.TriggerScheduleRequest;
 import com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse;
 import com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceRequest;
@@ -177,6 +179,20 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetInstanceLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsMethodDescriptor =
+          MethodDescriptor
+              .<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.notebooks.v1.NotebookService/UpdateInstanceMetadataItems")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateInstanceMetadataItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UpdateInstanceMetadataItemsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -439,6 +455,9 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   private final UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable;
   private final OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationCallable;
+  private final UnaryCallable<
+          UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -640,6 +659,19 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+        updateInstanceMetadataItemsTransportSettings =
+            GrpcCallSettings
+                .<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+                    newBuilder()
+                .setMethodDescriptor(updateInstanceMetadataItemsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
@@ -960,6 +992,11 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.setInstanceLabelsOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateInstanceMetadataItemsCallable =
+        callableFactory.createUnaryCallable(
+            updateInstanceMetadataItemsTransportSettings,
+            settings.updateInstanceMetadataItemsSettings(),
+            clientContext);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -1241,6 +1278,12 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   public OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationCallable() {
     return setInstanceLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsCallable() {
+    return updateInstanceMetadataItemsCallable;
   }
 
   @Override

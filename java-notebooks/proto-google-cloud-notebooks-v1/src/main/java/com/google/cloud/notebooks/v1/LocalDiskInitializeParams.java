@@ -211,6 +211,16 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>PD_BALANCED = 3;</code>
      */
     PD_BALANCED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Extreme persistent disk type.
+     * </pre>
+     *
+     * <code>PD_EXTREME = 4;</code>
+     */
+    PD_EXTREME(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -254,6 +264,16 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
      * <code>PD_BALANCED = 3;</code>
      */
     public static final int PD_BALANCED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Extreme persistent disk type.
+     * </pre>
+     *
+     * <code>PD_EXTREME = 4;</code>
+     */
+    public static final int PD_EXTREME_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -287,6 +307,8 @@ public final class LocalDiskInitializeParams extends com.google.protobuf.Generat
           return PD_SSD;
         case 3:
           return PD_BALANCED;
+        case 4:
+          return PD_EXTREME;
         default:
           return null;
       }

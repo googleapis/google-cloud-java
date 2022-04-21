@@ -40,6 +40,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
   private SwitchRuntimeRequest() {
     name_ = "";
     machineType_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -100,6 +101,13 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
                 acceleratorConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
               break;
             }
           default:
@@ -285,6 +293,55 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     return getAcceleratorConfig();
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +365,9 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     if (acceleratorConfig_ != null) {
       output.writeMessage(3, getAcceleratorConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -325,6 +385,9 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     }
     if (acceleratorConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAcceleratorConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -348,6 +411,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
     if (hasAcceleratorConfig()) {
       if (!getAcceleratorConfig().equals(other.getAcceleratorConfig())) return false;
     }
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -367,6 +431,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + ACCELERATOR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorConfig().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -522,6 +588,8 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         acceleratorConfig_ = null;
         acceleratorConfigBuilder_ = null;
       }
+      requestId_ = "";
+
       return this;
     }
 
@@ -556,6 +624,7 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.acceleratorConfig_ = acceleratorConfigBuilder_.build();
       }
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -616,6 +685,10 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
       }
       if (other.hasAcceleratorConfig()) {
         mergeAcceleratorConfig(other.getAcceleratorConfig());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1052,6 +1125,112 @@ public final class SwitchRuntimeRequest extends com.google.protobuf.GeneratedMes
         acceleratorConfig_ = null;
       }
       return acceleratorConfigBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      requestId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

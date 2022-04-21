@@ -456,6 +456,59 @@ public final class NotebookServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest,
+          com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+      getUpdateInstanceMetadataItemsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstanceMetadataItems",
+      requestType = com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest.class,
+      responseType = com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest,
+          com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+      getUpdateInstanceMetadataItemsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest,
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+        getUpdateInstanceMetadataItemsMethod;
+    if ((getUpdateInstanceMetadataItemsMethod =
+            NotebookServiceGrpc.getUpdateInstanceMetadataItemsMethod)
+        == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getUpdateInstanceMetadataItemsMethod =
+                NotebookServiceGrpc.getUpdateInstanceMetadataItemsMethod)
+            == null) {
+          NotebookServiceGrpc.getUpdateInstanceMetadataItemsMethod =
+              getUpdateInstanceMetadataItemsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest,
+                          com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateInstanceMetadataItems"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier(
+                              "UpdateInstanceMetadataItems"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateInstanceMetadataItemsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.notebooks.v1.DeleteInstanceRequest, com.google.longrunning.Operation>
       getDeleteInstanceMethod;
 
@@ -1669,6 +1722,22 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Add/update metadata items for an instance.
+     * </pre>
+     */
+    public void updateInstanceMetadataItems(
+        com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateInstanceMetadataItemsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Instance.
      * </pre>
      */
@@ -1986,7 +2055,7 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Scheduled Notebook in a given project and location.
+     * Creates a new Execution in a given project and location.
      * </pre>
      */
     public void createExecution(
@@ -2055,6 +2124,13 @@ public final class NotebookServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.notebooks.v1.SetInstanceLabelsRequest,
                       com.google.longrunning.Operation>(this, METHODID_SET_INSTANCE_LABELS)))
+          .addMethod(
+              getUpdateInstanceMetadataItemsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest,
+                      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>(
+                      this, METHODID_UPDATE_INSTANCE_METADATA_ITEMS)))
           .addMethod(
               getDeleteInstanceMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2364,6 +2440,24 @@ public final class NotebookServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSetInstanceLabelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update metadata items for an instance.
+     * </pre>
+     */
+    public void updateInstanceMetadataItems(
+        com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInstanceMetadataItemsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2733,7 +2827,7 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Scheduled Notebook in a given project and location.
+     * Creates a new Execution in a given project and location.
      * </pre>
      */
     public void createExecution(
@@ -2883,6 +2977,20 @@ public final class NotebookServiceGrpc {
         com.google.cloud.notebooks.v1.SetInstanceLabelsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetInstanceLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update metadata items for an instance.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse
+        updateInstanceMetadataItems(
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMetadataItemsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3179,7 +3287,7 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Scheduled Notebook in a given project and location.
+     * Creates a new Execution in a given project and location.
      * </pre>
      */
     public com.google.longrunning.Operation createExecution(
@@ -3331,6 +3439,21 @@ public final class NotebookServiceGrpc {
         setInstanceLabels(com.google.cloud.notebooks.v1.SetInstanceLabelsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetInstanceLabelsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update metadata items for an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>
+        updateInstanceMetadataItems(
+            com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInstanceMetadataItemsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3636,7 +3759,7 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new Scheduled Notebook in a given project and location.
+     * Creates a new Execution in a given project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3655,29 +3778,30 @@ public final class NotebookServiceGrpc {
   private static final int METHODID_UPDATE_INSTANCE_CONFIG = 6;
   private static final int METHODID_UPDATE_SHIELDED_INSTANCE_CONFIG = 7;
   private static final int METHODID_SET_INSTANCE_LABELS = 8;
-  private static final int METHODID_DELETE_INSTANCE = 9;
-  private static final int METHODID_START_INSTANCE = 10;
-  private static final int METHODID_STOP_INSTANCE = 11;
-  private static final int METHODID_RESET_INSTANCE = 12;
-  private static final int METHODID_REPORT_INSTANCE_INFO = 13;
-  private static final int METHODID_IS_INSTANCE_UPGRADEABLE = 14;
-  private static final int METHODID_GET_INSTANCE_HEALTH = 15;
-  private static final int METHODID_UPGRADE_INSTANCE = 16;
-  private static final int METHODID_ROLLBACK_INSTANCE = 17;
-  private static final int METHODID_UPGRADE_INSTANCE_INTERNAL = 18;
-  private static final int METHODID_LIST_ENVIRONMENTS = 19;
-  private static final int METHODID_GET_ENVIRONMENT = 20;
-  private static final int METHODID_CREATE_ENVIRONMENT = 21;
-  private static final int METHODID_DELETE_ENVIRONMENT = 22;
-  private static final int METHODID_LIST_SCHEDULES = 23;
-  private static final int METHODID_GET_SCHEDULE = 24;
-  private static final int METHODID_DELETE_SCHEDULE = 25;
-  private static final int METHODID_CREATE_SCHEDULE = 26;
-  private static final int METHODID_TRIGGER_SCHEDULE = 27;
-  private static final int METHODID_LIST_EXECUTIONS = 28;
-  private static final int METHODID_GET_EXECUTION = 29;
-  private static final int METHODID_DELETE_EXECUTION = 30;
-  private static final int METHODID_CREATE_EXECUTION = 31;
+  private static final int METHODID_UPDATE_INSTANCE_METADATA_ITEMS = 9;
+  private static final int METHODID_DELETE_INSTANCE = 10;
+  private static final int METHODID_START_INSTANCE = 11;
+  private static final int METHODID_STOP_INSTANCE = 12;
+  private static final int METHODID_RESET_INSTANCE = 13;
+  private static final int METHODID_REPORT_INSTANCE_INFO = 14;
+  private static final int METHODID_IS_INSTANCE_UPGRADEABLE = 15;
+  private static final int METHODID_GET_INSTANCE_HEALTH = 16;
+  private static final int METHODID_UPGRADE_INSTANCE = 17;
+  private static final int METHODID_ROLLBACK_INSTANCE = 18;
+  private static final int METHODID_UPGRADE_INSTANCE_INTERNAL = 19;
+  private static final int METHODID_LIST_ENVIRONMENTS = 20;
+  private static final int METHODID_GET_ENVIRONMENT = 21;
+  private static final int METHODID_CREATE_ENVIRONMENT = 22;
+  private static final int METHODID_DELETE_ENVIRONMENT = 23;
+  private static final int METHODID_LIST_SCHEDULES = 24;
+  private static final int METHODID_GET_SCHEDULE = 25;
+  private static final int METHODID_DELETE_SCHEDULE = 26;
+  private static final int METHODID_CREATE_SCHEDULE = 27;
+  private static final int METHODID_TRIGGER_SCHEDULE = 28;
+  private static final int METHODID_LIST_EXECUTIONS = 29;
+  private static final int METHODID_GET_EXECUTION = 30;
+  private static final int METHODID_DELETE_EXECUTION = 31;
+  private static final int METHODID_CREATE_EXECUTION = 32;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3742,6 +3866,13 @@ public final class NotebookServiceGrpc {
           serviceImpl.setInstanceLabels(
               (com.google.cloud.notebooks.v1.SetInstanceLabelsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_INSTANCE_METADATA_ITEMS:
+          serviceImpl.updateInstanceMetadataItems(
+              (com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse>)
+                  responseObserver);
           break;
         case METHODID_DELETE_INSTANCE:
           serviceImpl.deleteInstance(
@@ -3940,6 +4071,7 @@ public final class NotebookServiceGrpc {
                       .addMethod(getUpdateInstanceConfigMethod())
                       .addMethod(getUpdateShieldedInstanceConfigMethod())
                       .addMethod(getSetInstanceLabelsMethod())
+                      .addMethod(getUpdateInstanceMetadataItemsMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getStartInstanceMethod())
                       .addMethod(getStopInstanceMethod())

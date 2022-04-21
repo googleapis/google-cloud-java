@@ -50,6 +50,8 @@ import com.google.cloud.notebooks.v1.GetRuntimeRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesResponse;
 import com.google.cloud.notebooks.v1.OperationMetadata;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse;
 import com.google.cloud.notebooks.v1.ReportRuntimeEventRequest;
 import com.google.cloud.notebooks.v1.ResetRuntimeRequest;
 import com.google.cloud.notebooks.v1.Runtime;
@@ -132,6 +134,9 @@ public class ManagedNotebookServiceStubSettings
   private final UnaryCallSettings<ReportRuntimeEventRequest, Operation> reportRuntimeEventSettings;
   private final OperationCallSettings<ReportRuntimeEventRequest, Runtime, OperationMetadata>
       reportRuntimeEventOperationSettings;
+  private final UnaryCallSettings<
+          RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalSettings;
 
   private static final PagedListDescriptor<ListRuntimesRequest, ListRuntimesResponse, Runtime>
       LIST_RUNTIMES_PAGE_STR_DESC =
@@ -274,6 +279,12 @@ public class ManagedNotebookServiceStubSettings
     return reportRuntimeEventOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to refreshRuntimeTokenInternal. */
+  public UnaryCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalSettings() {
+    return refreshRuntimeTokenInternalSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ManagedNotebookServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -367,6 +378,8 @@ public class ManagedNotebookServiceStubSettings
     reportRuntimeEventSettings = settingsBuilder.reportRuntimeEventSettings().build();
     reportRuntimeEventOperationSettings =
         settingsBuilder.reportRuntimeEventOperationSettings().build();
+    refreshRuntimeTokenInternalSettings =
+        settingsBuilder.refreshRuntimeTokenInternalSettings().build();
   }
 
   /** Builder for ManagedNotebookServiceStubSettings. */
@@ -400,6 +413,9 @@ public class ManagedNotebookServiceStubSettings
     private final OperationCallSettings.Builder<
             ReportRuntimeEventRequest, Runtime, OperationMetadata>
         reportRuntimeEventOperationSettings;
+    private final UnaryCallSettings.Builder<
+            RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+        refreshRuntimeTokenInternalSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -464,6 +480,7 @@ public class ManagedNotebookServiceStubSettings
       resetRuntimeOperationSettings = OperationCallSettings.newBuilder();
       reportRuntimeEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reportRuntimeEventOperationSettings = OperationCallSettings.newBuilder();
+      refreshRuntimeTokenInternalSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -475,7 +492,8 @@ public class ManagedNotebookServiceStubSettings
               stopRuntimeSettings,
               switchRuntimeSettings,
               resetRuntimeSettings,
-              reportRuntimeEventSettings);
+              reportRuntimeEventSettings,
+              refreshRuntimeTokenInternalSettings);
       initDefaults(this);
     }
 
@@ -499,6 +517,8 @@ public class ManagedNotebookServiceStubSettings
       reportRuntimeEventSettings = settings.reportRuntimeEventSettings.toBuilder();
       reportRuntimeEventOperationSettings =
           settings.reportRuntimeEventOperationSettings.toBuilder();
+      refreshRuntimeTokenInternalSettings =
+          settings.refreshRuntimeTokenInternalSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -510,7 +530,8 @@ public class ManagedNotebookServiceStubSettings
               stopRuntimeSettings,
               switchRuntimeSettings,
               resetRuntimeSettings,
-              reportRuntimeEventSettings);
+              reportRuntimeEventSettings,
+              refreshRuntimeTokenInternalSettings);
     }
 
     private static Builder createDefault() {
@@ -571,6 +592,11 @@ public class ManagedNotebookServiceStubSettings
           .reportRuntimeEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .refreshRuntimeTokenInternalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createRuntimeOperationSettings()
@@ -859,6 +885,13 @@ public class ManagedNotebookServiceStubSettings
     public OperationCallSettings.Builder<ReportRuntimeEventRequest, Runtime, OperationMetadata>
         reportRuntimeEventOperationSettings() {
       return reportRuntimeEventOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refreshRuntimeTokenInternal. */
+    public UnaryCallSettings.Builder<
+            RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+        refreshRuntimeTokenInternalSettings() {
+      return refreshRuntimeTokenInternalSettings;
     }
 
     @Override

@@ -22,7 +22,7 @@ package com.google.cloud.notebooks.v1;
  *
  *
  * <pre>
- * Request for reseting a notebook instance
+ * Request for resetting a notebook instance
  * </pre>
  *
  * Protobuf type {@code google.cloud.notebooks.v1.ResetInstanceRequest}
@@ -325,7 +325,7 @@ public final class ResetInstanceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for reseting a notebook instance
+   * Request for resetting a notebook instance
    * </pre>
    *
    * Protobuf type {@code google.cloud.notebooks.v1.ResetInstanceRequest}

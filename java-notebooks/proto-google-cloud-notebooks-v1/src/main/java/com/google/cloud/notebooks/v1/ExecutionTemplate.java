@@ -47,6 +47,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     parameters_ = "";
     serviceAccount_ = "";
     jobType_ = 0;
+    kernelSpec_ = "";
+    tensorboard_ = "";
   }
 
   @java.lang.Override
@@ -197,6 +199,43 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
               jobParametersCase_ = 12;
               break;
             }
+          case 106:
+            {
+              com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder
+                  subBuilder = null;
+              if (jobParametersCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+                            jobParameters_)
+                        .toBuilder();
+              }
+              jobParameters_ =
+                  input.readMessage(
+                      com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+                        jobParameters_);
+                jobParameters_ = subBuilder.buildPartial();
+              }
+              jobParametersCase_ = 13;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kernelSpec_ = s;
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tensorboard_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -321,22 +360,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * The CUSTOM tier is not a set tier, but rather enables you to use your
      * own cluster specification. When you use this tier, set values to
      * configure your processing cluster according to these guidelines:
-     * *   You _must_ set `TrainingInput.masterType` to specify the type
+     * *   You _must_ set `ExecutionTemplate.masterType` to specify the type
      *     of machine to use for your master node. This is the only required
      *     setting.
-     * *   You _may_ set `TrainingInput.workerCount` to specify the number of
-     *     workers to use. If you specify one or more workers, you _must_ also
-     *     set `TrainingInput.workerType` to specify the type of machine to use
-     *     for your worker nodes.
-     * *   You _may_ set `TrainingInput.parameterServerCount` to specify the
-     *     number of parameter servers to use. If you specify one or more
-     *     parameter servers, you _must_ also set
-     *     `TrainingInput.parameterServerType` to specify the type of machine to
-     *     use for your parameter servers.
-     * Note that all of your workers must use the same machine type, which can
-     * be different from your parameter server type and master type. Your
-     * parameter servers must likewise use the same machine type, which can be
-     * different from your worker type and master type.
      * </pre>
      *
      * <code>CUSTOM = 6;</code>
@@ -413,22 +439,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * The CUSTOM tier is not a set tier, but rather enables you to use your
      * own cluster specification. When you use this tier, set values to
      * configure your processing cluster according to these guidelines:
-     * *   You _must_ set `TrainingInput.masterType` to specify the type
+     * *   You _must_ set `ExecutionTemplate.masterType` to specify the type
      *     of machine to use for your master node. This is the only required
      *     setting.
-     * *   You _may_ set `TrainingInput.workerCount` to specify the number of
-     *     workers to use. If you specify one or more workers, you _must_ also
-     *     set `TrainingInput.workerType` to specify the type of machine to use
-     *     for your worker nodes.
-     * *   You _may_ set `TrainingInput.parameterServerCount` to specify the
-     *     number of parameter servers to use. If you specify one or more
-     *     parameter servers, you _must_ also set
-     *     `TrainingInput.parameterServerType` to specify the type of machine to
-     *     use for your parameter servers.
-     * Note that all of your workers must use the same machine type, which can
-     * be different from your parameter server type and master type. Your
-     * parameter servers must likewise use the same machine type, which can be
-     * different from your worker type and master type.
      * </pre>
      *
      * <code>CUSTOM = 6;</code>
@@ -600,6 +613,16 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Nvidia Tesla A100 GPU.
+     * </pre>
+     *
+     * <code>NVIDIA_TESLA_A100 = 10;</code>
+     */
+    NVIDIA_TESLA_A100(10),
+    /**
+     *
+     *
+     * <pre>
      * TPU v2.
      * </pre>
      *
@@ -683,6 +706,16 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Nvidia Tesla A100 GPU.
+     * </pre>
+     *
+     * <code>NVIDIA_TESLA_A100 = 10;</code>
+     */
+    public static final int NVIDIA_TESLA_A100_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
      * TPU v2.
      * </pre>
      *
@@ -736,6 +769,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           return NVIDIA_TESLA_P4;
         case 5:
           return NVIDIA_TESLA_T4;
+        case 10:
+          return NVIDIA_TESLA_A100;
         case 6:
           return TPU_V2;
         case 7:
@@ -1005,8 +1040,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Definition of a hardware accelerator. Note that not all combinations
-   * of `type` and `core_count` are valid. Check GPUs on
-   * Compute Engine to find a valid
+   * of `type` and `core_count` are valid. Check [GPUs on
+   * Compute Engine](https://cloud.google.com/compute/docs/gpus) to find a valid
    * combination. TPUs are not supported.
    * </pre>
    *
@@ -1347,8 +1382,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Definition of a hardware accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check GPUs on
-     * Compute Engine to find a valid
+     * of `type` and `core_count` are valid. Check [GPUs on
+     * Compute Engine](https://cloud.google.com/compute/docs/gpus) to find a valid
      * combination. TPUs are not supported.
      * </pre>
      *
@@ -2404,6 +2439,1151 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface VertexAIParametersOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form `projects/{project}/global/networks/{network}`.
+     * Where {project} is a project number, as in `12345`, and {network} is a
+     * network name.
+     * Private services access must already be configured for the network. If
+     * left unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The network.
+     */
+    java.lang.String getNetwork();
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form `projects/{project}/global/networks/{network}`.
+     * Where {project} is a project number, as in `12345`, and {network} is a
+     * network name.
+     * Private services access must already be configured for the network. If
+     * left unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The bytes for network.
+     */
+    com.google.protobuf.ByteString getNetworkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    int getEnvCount();
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    boolean containsEnv(java.lang.String key);
+    /** Use {@link #getEnvMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getEnv();
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getEnvMap();
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    java.lang.String getEnvOrThrow(java.lang.String key);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters}
+   */
+  public static final class VertexAIParameters extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+      VertexAIParametersOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VertexAIParameters.newBuilder() to construct.
+    private VertexAIParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VertexAIParameters() {
+      network_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VertexAIParameters();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private VertexAIParameters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                network_ = s;
+                break;
+              }
+            case 18:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  env_ =
+                      com.google.protobuf.MapField.newMapField(EnvDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+                    input.readMessage(
+                        EnvDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                env_.getMutableMap().put(env__.getKey(), env__.getValue());
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.notebooks.v1.ExecutionProto
+          .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 2:
+          return internalGetEnv();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.notebooks.v1.ExecutionProto
+          .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.class,
+              com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder.class);
+    }
+
+    public static final int NETWORK_FIELD_NUMBER = 1;
+    private volatile java.lang.Object network_;
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form `projects/{project}/global/networks/{network}`.
+     * Where {project} is a project number, as in `12345`, and {network} is a
+     * network name.
+     * Private services access must already be configured for the network. If
+     * left unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The network.
+     */
+    @java.lang.Override
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full name of the Compute Engine
+     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+     * is of the form `projects/{project}/global/networks/{network}`.
+     * Where {project} is a project number, as in `12345`, and {network} is a
+     * network name.
+     * Private services access must already be configured for the network. If
+     * left unspecified, the job is not peered with any network.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The bytes for network.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENV_FIELD_NUMBER = 2;
+
+    private static final class EnvDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.notebooks.v1.ExecutionProto
+                  .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_EnvEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+      if (env_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+      }
+      return env_;
+    }
+
+    public int getEnvCount() {
+      return internalGetEnv().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    @java.lang.Override
+    public boolean containsEnv(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetEnv().getMap().containsKey(key);
+    }
+    /** Use {@link #getEnvMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+      return getEnvMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+      return internalGetEnv().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables.
+     *  At most 100 environment variables can be specified and unique.
+     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getEnvOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetEnv(), EnvDefaultEntryHolder.defaultEntry, 2);
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetEnv().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+            EnvDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, env__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters other =
+          (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) obj;
+
+      if (!getNetwork().equals(other.getNetwork())) return false;
+      if (!internalGetEnv().equals(other.internalGetEnv())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+      if (!internalGetEnv().getMap().isEmpty()) {
+        hash = (37 * hash) + ENV_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetEnv().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.notebooks.v1.ExecutionProto
+            .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
+        switch (number) {
+          case 2:
+            return internalGetEnv();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableEnv();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.notebooks.v1.ExecutionProto
+            .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.class,
+                com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        network_ = "";
+
+        internalGetMutableEnv().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.notebooks.v1.ExecutionProto
+            .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+          getDefaultInstanceForType() {
+        return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters build() {
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters buildPartial() {
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters result =
+            new com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters(this);
+        int from_bitField0_ = bitField0_;
+        result.network_ = network_;
+        result.env_ = internalGetEnv();
+        result.env_.makeImmutable();
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) {
+          return mergeFrom(
+              (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters other) {
+        if (other
+            == com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+                .getDefaultInstance()) return this;
+        if (!other.getNetwork().isEmpty()) {
+          network_ = other.network_;
+          onChanged();
+        }
+        internalGetMutableEnv().mergeFrom(other.internalGetEnv());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object network_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The full name of the Compute Engine
+       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+       * is of the form `projects/{project}/global/networks/{network}`.
+       * Where {project} is a project number, as in `12345`, and {network} is a
+       * network name.
+       * Private services access must already be configured for the network. If
+       * left unspecified, the job is not peered with any network.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return The network.
+       */
+      public java.lang.String getNetwork() {
+        java.lang.Object ref = network_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          network_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The full name of the Compute Engine
+       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+       * is of the form `projects/{project}/global/networks/{network}`.
+       * Where {project} is a project number, as in `12345`, and {network} is a
+       * network name.
+       * Private services access must already be configured for the network. If
+       * left unspecified, the job is not peered with any network.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return The bytes for network.
+       */
+      public com.google.protobuf.ByteString getNetworkBytes() {
+        java.lang.Object ref = network_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          network_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The full name of the Compute Engine
+       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+       * is of the form `projects/{project}/global/networks/{network}`.
+       * Where {project} is a project number, as in `12345`, and {network} is a
+       * network name.
+       * Private services access must already be configured for the network. If
+       * left unspecified, the job is not peered with any network.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @param value The network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetwork(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        network_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The full name of the Compute Engine
+       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+       * is of the form `projects/{project}/global/networks/{network}`.
+       * Where {project} is a project number, as in `12345`, and {network} is a
+       * network name.
+       * Private services access must already be configured for the network. If
+       * left unspecified, the job is not peered with any network.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetwork() {
+
+        network_ = getDefaultInstance().getNetwork();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The full name of the Compute Engine
+       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
+       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
+       * is of the form `projects/{project}/global/networks/{network}`.
+       * Where {project} is a project number, as in `12345`, and {network} is a
+       * network name.
+       * Private services access must already be configured for the network. If
+       * left unspecified, the job is not peered with any network.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @param value The bytes for network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        network_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+        if (env_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+        }
+        return env_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableEnv() {
+        onChanged();
+        ;
+        if (env_ == null) {
+          env_ = com.google.protobuf.MapField.newMapField(EnvDefaultEntryHolder.defaultEntry);
+        }
+        if (!env_.isMutable()) {
+          env_ = env_.copy();
+        }
+        return env_;
+      }
+
+      public int getEnvCount() {
+        return internalGetEnv().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      @java.lang.Override
+      public boolean containsEnv(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        return internalGetEnv().getMap().containsKey(key);
+      }
+      /** Use {@link #getEnvMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+        return getEnvMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+        return internalGetEnv().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getEnvOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearEnv() {
+        internalGetMutableEnv().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      public Builder removeEnv(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableEnv().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
+        return internalGetMutableEnv().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      public Builder putEnv(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableEnv().getMutableMap().put(key, value);
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Environment variables.
+       *  At most 100 environment variables can be specified and unique.
+       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; env = 2;</code>
+       */
+      public Builder putAllEnv(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableEnv().getMutableMap().putAll(values);
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+    private static final com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters();
+    }
+
+    public static com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VertexAIParameters> PARSER =
+        new com.google.protobuf.AbstractParser<VertexAIParameters>() {
+          @java.lang.Override
+          public VertexAIParameters parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new VertexAIParameters(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<VertexAIParameters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VertexAIParameters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int jobParametersCase_ = 0;
   private java.lang.Object jobParameters_;
 
@@ -2412,6 +3592,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATAPROC_PARAMETERS(12),
+    VERTEX_AI_PARAMETERS(13),
     JOBPARAMETERS_NOT_SET(0);
     private final int value;
 
@@ -2432,6 +3613,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 12:
           return DATAPROC_PARAMETERS;
+        case 13:
+          return VERTEX_AI_PARAMETERS;
         case 0:
           return JOBPARAMETERS_NOT_SET;
         default:
@@ -2539,7 +3722,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `complex_model_l_v100`
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
-   * with TPU.
+   * with
+   * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
    * </pre>
    *
    * <code>string master_type = 2;</code>
@@ -2601,7 +3785,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `complex_model_l_v100`
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
-   * with TPU.
+   * with
+   * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
    * </pre>
    *
    * <code>string master_type = 2;</code>
@@ -2804,7 +3989,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the notebook file to execute.
    * Must be in a Google Cloud Storage bucket.
-   * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+   * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
    * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
    * </pre>
    *
@@ -2830,7 +4015,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the notebook file to execute.
    * Must be in a Google Cloud Storage bucket.
-   * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+   * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
    * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
    * </pre>
    *
@@ -2914,7 +4099,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the notebook folder to write to.
    * Must be in a Google Cloud Storage bucket path.
-   * Format: `gs://{project_id}/{folder}`
+   * Format: `gs://{bucket_name}/{folder}`
    * Ex: `gs://notebook_user/scheduled_notebooks`
    * </pre>
    *
@@ -2940,7 +4125,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the notebook folder to write to.
    * Must be in a Google Cloud Storage bucket path.
-   * Format: `gs://{project_id}/{folder}`
+   * Format: `gs://{bucket_name}/{folder}`
    * Ex: `gs://notebook_user/scheduled_notebooks`
    * </pre>
    *
@@ -3214,6 +4399,173 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters.getDefaultInstance();
   }
 
+  public static final int VERTEX_AI_PARAMETERS_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   *
+   * @return Whether the vertexAiParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexAiParameters() {
+    return jobParametersCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   *
+   * @return The vertexAiParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+      getVertexAiParameters() {
+    if (jobParametersCase_ == 13) {
+      return (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) jobParameters_;
+    }
+    return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder
+      getVertexAiParametersOrBuilder() {
+    if (jobParametersCase_ == 13) {
+      return (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) jobParameters_;
+    }
+    return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.getDefaultInstance();
+  }
+
+  public static final int KERNEL_SPEC_FIELD_NUMBER = 14;
+  private volatile java.lang.Object kernelSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the kernel spec to use. This must be specified if the
+   * kernel spec name on the execution target does not match the name in the
+   * input notebook file.
+   * </pre>
+   *
+   * <code>string kernel_spec = 14;</code>
+   *
+   * @return The kernelSpec.
+   */
+  @java.lang.Override
+  public java.lang.String getKernelSpec() {
+    java.lang.Object ref = kernelSpec_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kernelSpec_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the kernel spec to use. This must be specified if the
+   * kernel spec name on the execution target does not match the name in the
+   * input notebook file.
+   * </pre>
+   *
+   * <code>string kernel_spec = 14;</code>
+   *
+   * @return The bytes for kernelSpec.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKernelSpecBytes() {
+    java.lang.Object ref = kernelSpec_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kernelSpec_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TENSORBOARD_FIELD_NUMBER = 15;
+  private volatile java.lang.Object tensorboard_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of a Vertex AI [Tensorboard] resource to which this execution
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The tensorboard.
+   */
+  @java.lang.Override
+  public java.lang.String getTensorboard() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tensorboard_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of a Vertex AI [Tensorboard] resource to which this execution
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for tensorboard.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTensorboardBytes() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tensorboard_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3267,6 +4619,16 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     if (jobParametersCase_ == 12) {
       output.writeMessage(
           12, (com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters) jobParameters_);
+    }
+    if (jobParametersCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) jobParameters_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kernelSpec_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, kernelSpec_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, tensorboard_);
     }
     unknownFields.writeTo(output);
   }
@@ -3327,6 +4689,18 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
               12,
               (com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters) jobParameters_);
     }
+    if (jobParametersCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13,
+              (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) jobParameters_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kernelSpec_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, kernelSpec_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, tensorboard_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3357,10 +4731,15 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     if (!getParameters().equals(other.getParameters())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (jobType_ != other.jobType_) return false;
+    if (!getKernelSpec().equals(other.getKernelSpec())) return false;
+    if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (!getJobParametersCase().equals(other.getJobParametersCase())) return false;
     switch (jobParametersCase_) {
       case 12:
         if (!getDataprocParameters().equals(other.getDataprocParameters())) return false;
+        break;
+      case 13:
+        if (!getVertexAiParameters().equals(other.getVertexAiParameters())) return false;
         break;
       case 0:
       default:
@@ -3402,10 +4781,18 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + JOB_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + jobType_;
+    hash = (37 * hash) + KERNEL_SPEC_FIELD_NUMBER;
+    hash = (53 * hash) + getKernelSpec().hashCode();
+    hash = (37 * hash) + TENSORBOARD_FIELD_NUMBER;
+    hash = (53 * hash) + getTensorboard().hashCode();
     switch (jobParametersCase_) {
       case 12:
         hash = (37 * hash) + DATAPROC_PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getDataprocParameters().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + VERTEX_AI_PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexAiParameters().hashCode();
         break;
       case 0:
       default:
@@ -3600,6 +4987,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
 
       jobType_ = 0;
 
+      kernelSpec_ = "";
+
+      tensorboard_ = "";
+
       jobParametersCase_ = 0;
       jobParameters_ = null;
       return this;
@@ -3653,6 +5044,15 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
           result.jobParameters_ = dataprocParametersBuilder_.build();
         }
       }
+      if (jobParametersCase_ == 13) {
+        if (vertexAiParametersBuilder_ == null) {
+          result.jobParameters_ = jobParameters_;
+        } else {
+          result.jobParameters_ = vertexAiParametersBuilder_.build();
+        }
+      }
+      result.kernelSpec_ = kernelSpec_;
+      result.tensorboard_ = tensorboard_;
       result.jobParametersCase_ = jobParametersCase_;
       onBuilt();
       return result;
@@ -3742,10 +5142,23 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       if (other.jobType_ != 0) {
         setJobTypeValue(other.getJobTypeValue());
       }
+      if (!other.getKernelSpec().isEmpty()) {
+        kernelSpec_ = other.kernelSpec_;
+        onChanged();
+      }
+      if (!other.getTensorboard().isEmpty()) {
+        tensorboard_ = other.tensorboard_;
+        onChanged();
+      }
       switch (other.getJobParametersCase()) {
         case DATAPROC_PARAMETERS:
           {
             mergeDataprocParameters(other.getDataprocParameters());
+            break;
+          }
+        case VERTEX_AI_PARAMETERS:
+          {
+            mergeVertexAiParameters(other.getVertexAiParameters());
             break;
           }
         case JOBPARAMETERS_NOT_SET:
@@ -3955,7 +5368,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `complex_model_l_v100`
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
-     * with TPU.
+     * with
+     * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
      * </pre>
      *
      * <code>string master_type = 2;</code>
@@ -4016,7 +5430,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `complex_model_l_v100`
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
-     * with TPU.
+     * with
+     * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
      * </pre>
      *
      * <code>string master_type = 2;</code>
@@ -4077,7 +5492,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `complex_model_l_v100`
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
-     * with TPU.
+     * with
+     * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
      * </pre>
      *
      * <code>string master_type = 2;</code>
@@ -4137,7 +5553,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `complex_model_l_v100`
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
-     * with TPU.
+     * with
+     * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
      * </pre>
      *
      * <code>string master_type = 2;</code>
@@ -4193,7 +5610,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `complex_model_l_v100`
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
-     * with TPU.
+     * with
+     * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
      * </pre>
      *
      * <code>string master_type = 2;</code>
@@ -4628,7 +6046,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
      * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      * </pre>
      *
@@ -4653,7 +6071,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
      * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      * </pre>
      *
@@ -4678,7 +6096,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
      * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      * </pre>
      *
@@ -4702,7 +6120,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
      * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      * </pre>
      *
@@ -4722,7 +6140,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
      * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      * </pre>
      *
@@ -4870,7 +6288,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: `gs://{project_id}/{folder}`
+     * Format: `gs://{bucket_name}/{folder}`
      * Ex: `gs://notebook_user/scheduled_notebooks`
      * </pre>
      *
@@ -4895,7 +6313,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: `gs://{project_id}/{folder}`
+     * Format: `gs://{bucket_name}/{folder}`
      * Ex: `gs://notebook_user/scheduled_notebooks`
      * </pre>
      *
@@ -4920,7 +6338,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: `gs://{project_id}/{folder}`
+     * Format: `gs://{bucket_name}/{folder}`
      * Ex: `gs://notebook_user/scheduled_notebooks`
      * </pre>
      *
@@ -4944,7 +6362,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: `gs://{project_id}/{folder}`
+     * Format: `gs://{bucket_name}/{folder}`
      * Ex: `gs://notebook_user/scheduled_notebooks`
      * </pre>
      *
@@ -4964,7 +6382,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: `gs://{project_id}/{folder}`
+     * Format: `gs://{bucket_name}/{folder}`
      * Ex: `gs://notebook_user/scheduled_notebooks`
      * </pre>
      *
@@ -5666,6 +7084,486 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       onChanged();
       ;
       return dataprocParametersBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters,
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder,
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder>
+        vertexAiParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     *
+     * @return Whether the vertexAiParameters field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexAiParameters() {
+      return jobParametersCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     *
+     * @return The vertexAiParameters.
+     */
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+        getVertexAiParameters() {
+      if (vertexAiParametersBuilder_ == null) {
+        if (jobParametersCase_ == 13) {
+          return (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+              jobParameters_;
+        }
+        return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+            .getDefaultInstance();
+      } else {
+        if (jobParametersCase_ == 13) {
+          return vertexAiParametersBuilder_.getMessage();
+        }
+        return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    public Builder setVertexAiParameters(
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters value) {
+      if (vertexAiParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobParameters_ = value;
+        onChanged();
+      } else {
+        vertexAiParametersBuilder_.setMessage(value);
+      }
+      jobParametersCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    public Builder setVertexAiParameters(
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder
+            builderForValue) {
+      if (vertexAiParametersBuilder_ == null) {
+        jobParameters_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexAiParametersBuilder_.setMessage(builderForValue.build());
+      }
+      jobParametersCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    public Builder mergeVertexAiParameters(
+        com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters value) {
+      if (vertexAiParametersBuilder_ == null) {
+        if (jobParametersCase_ == 13
+            && jobParameters_
+                != com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+                    .getDefaultInstance()) {
+          jobParameters_ =
+              com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.newBuilder(
+                      (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+                          jobParameters_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobParameters_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobParametersCase_ == 13) {
+          vertexAiParametersBuilder_.mergeFrom(value);
+        }
+        vertexAiParametersBuilder_.setMessage(value);
+      }
+      jobParametersCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    public Builder clearVertexAiParameters() {
+      if (vertexAiParametersBuilder_ == null) {
+        if (jobParametersCase_ == 13) {
+          jobParametersCase_ = 0;
+          jobParameters_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobParametersCase_ == 13) {
+          jobParametersCase_ = 0;
+          jobParameters_ = null;
+        }
+        vertexAiParametersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder
+        getVertexAiParametersBuilder() {
+      return getVertexAiParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder
+        getVertexAiParametersOrBuilder() {
+      if ((jobParametersCase_ == 13) && (vertexAiParametersBuilder_ != null)) {
+        return vertexAiParametersBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobParametersCase_ == 13) {
+          return (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters)
+              jobParameters_;
+        }
+        return com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters used in Vertex AI JobType executions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters,
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder,
+            com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder>
+        getVertexAiParametersFieldBuilder() {
+      if (vertexAiParametersBuilder_ == null) {
+        if (!(jobParametersCase_ == 13)) {
+          jobParameters_ =
+              com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters
+                  .getDefaultInstance();
+        }
+        vertexAiParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters,
+                com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters.Builder,
+                com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder>(
+                (com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters) jobParameters_,
+                getParentForChildren(),
+                isClean());
+        jobParameters_ = null;
+      }
+      jobParametersCase_ = 13;
+      onChanged();
+      ;
+      return vertexAiParametersBuilder_;
+    }
+
+    private java.lang.Object kernelSpec_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the kernel spec to use. This must be specified if the
+     * kernel spec name on the execution target does not match the name in the
+     * input notebook file.
+     * </pre>
+     *
+     * <code>string kernel_spec = 14;</code>
+     *
+     * @return The kernelSpec.
+     */
+    public java.lang.String getKernelSpec() {
+      java.lang.Object ref = kernelSpec_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kernelSpec_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the kernel spec to use. This must be specified if the
+     * kernel spec name on the execution target does not match the name in the
+     * input notebook file.
+     * </pre>
+     *
+     * <code>string kernel_spec = 14;</code>
+     *
+     * @return The bytes for kernelSpec.
+     */
+    public com.google.protobuf.ByteString getKernelSpecBytes() {
+      java.lang.Object ref = kernelSpec_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kernelSpec_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the kernel spec to use. This must be specified if the
+     * kernel spec name on the execution target does not match the name in the
+     * input notebook file.
+     * </pre>
+     *
+     * <code>string kernel_spec = 14;</code>
+     *
+     * @param value The kernelSpec to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKernelSpec(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      kernelSpec_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the kernel spec to use. This must be specified if the
+     * kernel spec name on the execution target does not match the name in the
+     * input notebook file.
+     * </pre>
+     *
+     * <code>string kernel_spec = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKernelSpec() {
+
+      kernelSpec_ = getDefaultInstance().getKernelSpec();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the kernel spec to use. This must be specified if the
+     * kernel spec name on the execution target does not match the name in the
+     * input notebook file.
+     * </pre>
+     *
+     * <code>string kernel_spec = 14;</code>
+     *
+     * @param value The bytes for kernelSpec to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKernelSpecBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      kernelSpec_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tensorboard_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of a Vertex AI [Tensorboard] resource to which this execution
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The tensorboard.
+     */
+    public java.lang.String getTensorboard() {
+      java.lang.Object ref = tensorboard_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tensorboard_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a Vertex AI [Tensorboard] resource to which this execution
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for tensorboard.
+     */
+    public com.google.protobuf.ByteString getTensorboardBytes() {
+      java.lang.Object ref = tensorboard_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tensorboard_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a Vertex AI [Tensorboard] resource to which this execution
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboard(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      tensorboard_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a Vertex AI [Tensorboard] resource to which this execution
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTensorboard() {
+
+      tensorboard_ = getDefaultInstance().getTensorboard();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of a Vertex AI [Tensorboard] resource to which this execution
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboardBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      tensorboard_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

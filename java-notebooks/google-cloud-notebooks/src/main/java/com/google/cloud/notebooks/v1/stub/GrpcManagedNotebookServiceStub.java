@@ -31,6 +31,8 @@ import com.google.cloud.notebooks.v1.GetRuntimeRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesResponse;
 import com.google.cloud.notebooks.v1.OperationMetadata;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse;
 import com.google.cloud.notebooks.v1.ReportRuntimeEventRequest;
 import com.google.cloud.notebooks.v1.ResetRuntimeRequest;
 import com.google.cloud.notebooks.v1.Runtime;
@@ -140,6 +142,20 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalMethodDescriptor =
+          MethodDescriptor
+              .<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.notebooks.v1.ManagedNotebookService/RefreshRuntimeTokenInternal")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RefreshRuntimeTokenInternalRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RefreshRuntimeTokenInternalResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListRuntimesRequest, ListRuntimesResponse> listRuntimesCallable;
   private final UnaryCallable<ListRuntimesRequest, ListRuntimesPagedResponse>
       listRuntimesPagedCallable;
@@ -165,6 +181,9 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
   private final UnaryCallable<ReportRuntimeEventRequest, Operation> reportRuntimeEventCallable;
   private final OperationCallable<ReportRuntimeEventRequest, Runtime, OperationMetadata>
       reportRuntimeEventOperationCallable;
+  private final UnaryCallable<
+          RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -300,6 +319,19 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+        refreshRuntimeTokenInternalTransportSettings =
+            GrpcCallSettings
+                .<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+                    newBuilder()
+                .setMethodDescriptor(refreshRuntimeTokenInternalMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.listRuntimesCallable =
         callableFactory.createUnaryCallable(
@@ -375,6 +407,11 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
             settings.reportRuntimeEventOperationSettings(),
             clientContext,
             operationsStub);
+    this.refreshRuntimeTokenInternalCallable =
+        callableFactory.createUnaryCallable(
+            refreshRuntimeTokenInternalTransportSettings,
+            settings.refreshRuntimeTokenInternalSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -474,6 +511,12 @@ public class GrpcManagedNotebookServiceStub extends ManagedNotebookServiceStub {
   public OperationCallable<ReportRuntimeEventRequest, Runtime, OperationMetadata>
       reportRuntimeEventOperationCallable() {
     return reportRuntimeEventOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalCallable() {
+    return refreshRuntimeTokenInternalCallable;
   }
 
   @Override

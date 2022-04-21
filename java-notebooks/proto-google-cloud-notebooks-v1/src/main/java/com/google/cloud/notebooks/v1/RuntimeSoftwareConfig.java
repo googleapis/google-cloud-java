@@ -27,7 +27,7 @@ package com.google.cloud.notebooks.v1;
  * Properties keys are specified in `key:value` format, for example:
  * * `idle_shutdown: true`
  * * `idle_shutdown_timeout: 180`
- * * `report-system-health: true`
+ * * `enable_health_monitoring: true`
  * </pre>
  *
  * Protobuf type {@code google.cloud.notebooks.v1.RuntimeSoftwareConfig}
@@ -46,6 +46,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     notebookUpgradeSchedule_ = "";
     customGpuDriverPath_ = "";
     postStartupScript_ = "";
+    kernels_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -121,6 +122,23 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
               postStartupScript_ = s;
               break;
             }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                kernels_ = new java.util.ArrayList<com.google.cloud.notebooks.v1.ContainerImage>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              kernels_.add(
+                  input.readMessage(
+                      com.google.cloud.notebooks.v1.ContainerImage.parser(), extensionRegistry));
+              break;
+            }
+          case 72:
+            {
+              bitField0_ |= 0x00000004;
+              upgradeable_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -135,6 +153,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        kernels_ = java.util.Collections.unmodifiableList(kernels_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -302,6 +323,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Install Nvidia Driver automatically.
+   * Default: True
    * </pre>
    *
    * <code>bool install_gpu_driver = 5;</code>
@@ -417,6 +439,118 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int KERNELS_FIELD_NUMBER = 8;
+  private java.util.List<com.google.cloud.notebooks.v1.ContainerImage> kernels_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getKernelsList() {
+    return kernels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
+      getKernelsOrBuilderList() {
+    return kernels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getKernelsCount() {
+    return kernels_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.ContainerImage getKernels(int index) {
+    return kernels_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.ContainerImageOrBuilder getKernelsOrBuilder(int index) {
+    return kernels_.get(index);
+  }
+
+  public static final int UPGRADEABLE_FIELD_NUMBER = 9;
+  private boolean upgradeable_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bool indicating whether an newer image is available in an image family.
+   * </pre>
+   *
+   * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the upgradeable field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeable() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bool indicating whether an newer image is available in an image family.
+   * </pre>
+   *
+   * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The upgradeable.
+   */
+  @java.lang.Override
+  public boolean getUpgradeable() {
+    return upgradeable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -452,6 +586,12 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postStartupScript_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, postStartupScript_);
     }
+    for (int i = 0; i < kernels_.size(); i++) {
+      output.writeMessage(8, kernels_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(9, upgradeable_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -482,6 +622,12 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postStartupScript_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, postStartupScript_);
     }
+    for (int i = 0; i < kernels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, kernels_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, upgradeable_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -511,6 +657,11 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (getInstallGpuDriver() != other.getInstallGpuDriver()) return false;
     if (!getCustomGpuDriverPath().equals(other.getCustomGpuDriverPath())) return false;
     if (!getPostStartupScript().equals(other.getPostStartupScript())) return false;
+    if (!getKernelsList().equals(other.getKernelsList())) return false;
+    if (hasUpgradeable() != other.hasUpgradeable()) return false;
+    if (hasUpgradeable()) {
+      if (getUpgradeable() != other.getUpgradeable()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -540,6 +691,14 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getCustomGpuDriverPath().hashCode();
     hash = (37 * hash) + POST_STARTUP_SCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getPostStartupScript().hashCode();
+    if (getKernelsCount() > 0) {
+      hash = (37 * hash) + KERNELS_FIELD_NUMBER;
+      hash = (53 * hash) + getKernelsList().hashCode();
+    }
+    if (hasUpgradeable()) {
+      hash = (37 * hash) + UPGRADEABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpgradeable());
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -649,7 +808,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
    * Properties keys are specified in `key:value` format, for example:
    * * `idle_shutdown: true`
    * * `idle_shutdown_timeout: 180`
-   * * `report-system-health: true`
+   * * `enable_health_monitoring: true`
    * </pre>
    *
    * Protobuf type {@code google.cloud.notebooks.v1.RuntimeSoftwareConfig}
@@ -684,7 +843,9 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getKernelsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -704,6 +865,14 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
       postStartupScript_ = "";
 
+      if (kernelsBuilder_ == null) {
+        kernels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        kernelsBuilder_.clear();
+      }
+      upgradeable_ = false;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -746,6 +915,19 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       result.installGpuDriver_ = installGpuDriver_;
       result.customGpuDriverPath_ = customGpuDriverPath_;
       result.postStartupScript_ = postStartupScript_;
+      if (kernelsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          kernels_ = java.util.Collections.unmodifiableList(kernels_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.kernels_ = kernels_;
+      } else {
+        result.kernels_ = kernelsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.upgradeable_ = upgradeable_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -820,6 +1002,36 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (!other.getPostStartupScript().isEmpty()) {
         postStartupScript_ = other.postStartupScript_;
         onChanged();
+      }
+      if (kernelsBuilder_ == null) {
+        if (!other.kernels_.isEmpty()) {
+          if (kernels_.isEmpty()) {
+            kernels_ = other.kernels_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureKernelsIsMutable();
+            kernels_.addAll(other.kernels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.kernels_.isEmpty()) {
+          if (kernelsBuilder_.isEmpty()) {
+            kernelsBuilder_.dispose();
+            kernelsBuilder_ = null;
+            kernels_ = other.kernels_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            kernelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getKernelsFieldBuilder()
+                    : null;
+          } else {
+            kernelsBuilder_.addAllMessages(other.kernels_);
+          }
+        }
+      }
+      if (other.hasUpgradeable()) {
+        setUpgradeable(other.getUpgradeable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1164,6 +1376,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Install Nvidia Driver automatically.
+     * Default: True
      * </pre>
      *
      * <code>bool install_gpu_driver = 5;</code>
@@ -1179,6 +1392,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Install Nvidia Driver automatically.
+     * Default: True
      * </pre>
      *
      * <code>bool install_gpu_driver = 5;</code>
@@ -1197,6 +1411,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Install Nvidia Driver automatically.
+     * Default: True
      * </pre>
      *
      * <code>bool install_gpu_driver = 5;</code>
@@ -1433,6 +1648,459 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       postStartupScript_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.notebooks.v1.ContainerImage> kernels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureKernelsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        kernels_ = new java.util.ArrayList<com.google.cloud.notebooks.v1.ContainerImage>(kernels_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.notebooks.v1.ContainerImage,
+            com.google.cloud.notebooks.v1.ContainerImage.Builder,
+            com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
+        kernelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getKernelsList() {
+      if (kernelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(kernels_);
+      } else {
+        return kernelsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getKernelsCount() {
+      if (kernelsBuilder_ == null) {
+        return kernels_.size();
+      } else {
+        return kernelsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ContainerImage getKernels(int index) {
+      if (kernelsBuilder_ == null) {
+        return kernels_.get(index);
+      } else {
+        return kernelsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKernels(int index, com.google.cloud.notebooks.v1.ContainerImage value) {
+      if (kernelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKernelsIsMutable();
+        kernels_.set(index, value);
+        onChanged();
+      } else {
+        kernelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKernels(
+        int index, com.google.cloud.notebooks.v1.ContainerImage.Builder builderForValue) {
+      if (kernelsBuilder_ == null) {
+        ensureKernelsIsMutable();
+        kernels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        kernelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addKernels(com.google.cloud.notebooks.v1.ContainerImage value) {
+      if (kernelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKernelsIsMutable();
+        kernels_.add(value);
+        onChanged();
+      } else {
+        kernelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addKernels(int index, com.google.cloud.notebooks.v1.ContainerImage value) {
+      if (kernelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKernelsIsMutable();
+        kernels_.add(index, value);
+        onChanged();
+      } else {
+        kernelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addKernels(
+        com.google.cloud.notebooks.v1.ContainerImage.Builder builderForValue) {
+      if (kernelsBuilder_ == null) {
+        ensureKernelsIsMutable();
+        kernels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        kernelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addKernels(
+        int index, com.google.cloud.notebooks.v1.ContainerImage.Builder builderForValue) {
+      if (kernelsBuilder_ == null) {
+        ensureKernelsIsMutable();
+        kernels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        kernelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllKernels(
+        java.lang.Iterable<? extends com.google.cloud.notebooks.v1.ContainerImage> values) {
+      if (kernelsBuilder_ == null) {
+        ensureKernelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kernels_);
+        onChanged();
+      } else {
+        kernelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKernels() {
+      if (kernelsBuilder_ == null) {
+        kernels_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        kernelsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeKernels(int index) {
+      if (kernelsBuilder_ == null) {
+        ensureKernelsIsMutable();
+        kernels_.remove(index);
+        onChanged();
+      } else {
+        kernelsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ContainerImage.Builder getKernelsBuilder(int index) {
+      return getKernelsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ContainerImageOrBuilder getKernelsOrBuilder(int index) {
+      if (kernelsBuilder_ == null) {
+        return kernels_.get(index);
+      } else {
+        return kernelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
+        getKernelsOrBuilderList() {
+      if (kernelsBuilder_ != null) {
+        return kernelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(kernels_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ContainerImage.Builder addKernelsBuilder() {
+      return getKernelsFieldBuilder()
+          .addBuilder(com.google.cloud.notebooks.v1.ContainerImage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.ContainerImage.Builder addKernelsBuilder(int index) {
+      return getKernelsFieldBuilder()
+          .addBuilder(index, com.google.cloud.notebooks.v1.ContainerImage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.notebooks.v1.ContainerImage.Builder>
+        getKernelsBuilderList() {
+      return getKernelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.notebooks.v1.ContainerImage,
+            com.google.cloud.notebooks.v1.ContainerImage.Builder,
+            com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
+        getKernelsFieldBuilder() {
+      if (kernelsBuilder_ == null) {
+        kernelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.notebooks.v1.ContainerImage,
+                com.google.cloud.notebooks.v1.ContainerImage.Builder,
+                com.google.cloud.notebooks.v1.ContainerImageOrBuilder>(
+                kernels_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        kernels_ = null;
+      }
+      return kernelsBuilder_;
+    }
+
+    private boolean upgradeable_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bool indicating whether an newer image is available in an image family.
+     * </pre>
+     *
+     * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the upgradeable field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpgradeable() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bool indicating whether an newer image is available in an image family.
+     * </pre>
+     *
+     * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The upgradeable.
+     */
+    @java.lang.Override
+    public boolean getUpgradeable() {
+      return upgradeable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bool indicating whether an newer image is available in an image family.
+     * </pre>
+     *
+     * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The upgradeable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpgradeable(boolean value) {
+      bitField0_ |= 0x00000008;
+      upgradeable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bool indicating whether an newer image is available in an image family.
+     * </pre>
+     *
+     * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpgradeable() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      upgradeable_ = false;
       onChanged();
       return this;
     }

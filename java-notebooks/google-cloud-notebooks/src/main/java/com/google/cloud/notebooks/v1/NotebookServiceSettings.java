@@ -170,6 +170,12 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     return ((NotebookServiceStubSettings) getStubSettings()).setInstanceLabelsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateInstanceMetadataItems. */
+  public UnaryCallSettings<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).updateInstanceMetadataItemsSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).deleteInstanceSettings();
@@ -575,6 +581,13 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     public OperationCallSettings.Builder<SetInstanceLabelsRequest, Instance, OperationMetadata>
         setInstanceLabelsOperationSettings() {
       return getStubSettingsBuilder().setInstanceLabelsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstanceMetadataItems. */
+    public UnaryCallSettings.Builder<
+            UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+        updateInstanceMetadataItemsSettings() {
+      return getStubSettingsBuilder().updateInstanceMetadataItemsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

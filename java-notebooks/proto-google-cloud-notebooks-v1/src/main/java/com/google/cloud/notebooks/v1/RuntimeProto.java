@@ -84,6 +84,10 @@ public final class RuntimeProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_fieldAccessorTable;
@@ -109,7 +113,7 @@ public final class RuntimeProto {
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032+google/cloud/notebooks/v1/envi"
           + "ronment.proto\032\037google/protobuf/timestamp"
-          + ".proto\"\375\006\n\007Runtime\022\021\n\004name\030\001 \001(\tB\003\340A\003\022D\n"
+          + ".proto\"\255\007\n\007Runtime\022\021\n\004name\030\001 \001(\tB\003\340A\003\022D\n"
           + "\017virtual_machine\030\002 \001(\0132).google.cloud.no"
           + "tebooks.v1.VirtualMachineH\000\022<\n\005state\030\003 \001"
           + "(\0162(.google.cloud.notebooks.v1.Runtime.S"
@@ -126,102 +130,110 @@ public final class RuntimeProto {
           + "\340A\003\"\224\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010"
           + "STARTING\020\001\022\020\n\014PROVISIONING\020\002\022\n\n\006ACTIVE\020\003"
           + "\022\014\n\010STOPPING\020\004\022\013\n\007STOPPED\020\005\022\014\n\010DELETING\020"
-          + "\006\022\r\n\tUPGRADING\020\007\022\020\n\014INITIALIZING\020\010\"G\n\013He"
+          + "\006\022\r\n\tUPGRADING\020\007\022\020\n\014INITIALIZING\020\010\"w\n\013He"
           + "althState\022\034\n\030HEALTH_STATE_UNSPECIFIED\020\000\022"
-          + "\013\n\007HEALTHY\020\001\022\r\n\tUNHEALTHY\020\002:a\352A^\n notebo"
-          + "oks.googleapis.com/Runtime\022:projects/{pr"
-          + "oject}/locations/{location}/runtimes/{ru"
-          + "ntime}B\016\n\014runtime_type\"\241\003\n\030RuntimeAccele"
-          + "ratorConfig\022Q\n\004type\030\001 \001(\0162C.google.cloud"
-          + ".notebooks.v1.RuntimeAcceleratorConfig.A"
-          + "cceleratorType\022\022\n\ncore_count\030\002 \001(\003\"\235\002\n\017A"
-          + "cceleratorType\022 \n\034ACCELERATOR_TYPE_UNSPE"
-          + "CIFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025\n\021NVIDIA"
-          + "_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V100\020\003\022\023\n\017"
-          + "NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESLA_T4\020\005\022\025"
-          + "\n\021NVIDIA_TESLA_A100\020\006\022\n\n\006TPU_V2\020\007\022\n\n\006TPU"
-          + "_V3\020\010\022\027\n\023NVIDIA_TESLA_T4_VWS\020\t\022\031\n\025NVIDIA"
-          + "_TESLA_P100_VWS\020\n\022\027\n\023NVIDIA_TESLA_P4_VWS"
-          + "\020\013\"#\n\020EncryptionConfig\022\017\n\007kms_key\030\001 \001(\t\""
-          + "\250\003\n\tLocalDisk\022\030\n\013auto_delete\030\001 \001(\010B\003\340A\003\022"
-          + "\021\n\004boot\030\002 \001(\010B\003\340A\003\022\030\n\013device_name\030\003 \001(\tB"
-          + "\003\340A\003\022Z\n\021guest_os_features\030\004 \003(\0132:.google"
-          + ".cloud.notebooks.v1.LocalDisk.RuntimeGue"
-          + "stOsFeatureB\003\340A\003\022\022\n\005index\030\005 \001(\005B\003\340A\003\022T\n\021"
-          + "initialize_params\030\006 \001(\01324.google.cloud.n"
-          + "otebooks.v1.LocalDiskInitializeParamsB\003\340"
-          + "A\004\022\021\n\tinterface\030\007 \001(\t\022\021\n\004kind\030\010 \001(\tB\003\340A\003"
-          + "\022\025\n\010licenses\030\t \003(\tB\003\340A\003\022\014\n\004mode\030\n \001(\t\022\016\n"
-          + "\006source\030\013 \001(\t\022\014\n\004type\030\014 \001(\t\032%\n\025RuntimeGu"
-          + "estOsFeature\022\014\n\004type\030\001 \001(\t\"\232\003\n\031LocalDisk"
-          + "InitializeParams\022\030\n\013description\030\001 \001(\tB\003\340"
-          + "A\001\022\026\n\tdisk_name\030\002 \001(\tB\003\340A\001\022\031\n\014disk_size_"
-          + "gb\030\003 \001(\003B\003\340A\001\022U\n\tdisk_type\030\004 \001(\0162=.googl"
-          + "e.cloud.notebooks.v1.LocalDiskInitialize"
-          + "Params.DiskTypeB\003\340A\004\022U\n\006labels\030\005 \003(\0132@.g"
-          + "oogle.cloud.notebooks.v1.LocalDiskInitia"
-          + "lizeParams.LabelsEntryB\003\340A\001\032-\n\013LabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"S\n\010Di"
-          + "skType\022\031\n\025DISK_TYPE_UNSPECIFIED\020\000\022\017\n\013PD_"
-          + "STANDARD\020\001\022\n\n\006PD_SSD\020\002\022\017\n\013PD_BALANCED\020\003\""
-          + "\346\001\n\023RuntimeAccessConfig\022U\n\013access_type\030\001"
-          + " \001(\0162@.google.cloud.notebooks.v1.Runtime"
-          + "AccessConfig.RuntimeAccessType\022\025\n\rruntim"
-          + "e_owner\030\002 \001(\t\022\026\n\tproxy_uri\030\003 \001(\tB\003\340A\003\"I\n"
-          + "\021RuntimeAccessType\022#\n\037RUNTIME_ACCESS_TYP"
-          + "E_UNSPECIFIED\020\000\022\017\n\013SINGLE_USER\020\001\"\244\002\n\025Run"
-          + "timeSoftwareConfig\022!\n\031notebook_upgrade_s"
-          + "chedule\030\001 \001(\t\022%\n\030enable_health_monitorin"
-          + "g\030\002 \001(\010H\000\210\001\001\022\032\n\ridle_shutdown\030\003 \001(\010H\001\210\001\001"
-          + "\022\035\n\025idle_shutdown_timeout\030\004 \001(\005\022\032\n\022insta"
-          + "ll_gpu_driver\030\005 \001(\010\022\036\n\026custom_gpu_driver"
-          + "_path\030\006 \001(\t\022\033\n\023post_startup_script\030\007 \001(\t"
-          + "B\033\n\031_enable_health_monitoringB\020\n\016_idle_s"
-          + "hutdown\"\241\001\n\016RuntimeMetrics\022Y\n\016system_met"
-          + "rics\030\001 \003(\0132<.google.cloud.notebooks.v1.R"
-          + "untimeMetrics.SystemMetricsEntryB\003\340A\003\0324\n"
-          + "\022SystemMetricsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001\"u\n\035RuntimeShieldedInstanceCo"
-          + "nfig\022\032\n\022enable_secure_boot\030\001 \001(\010\022\023\n\013enab"
-          + "le_vtpm\030\002 \001(\010\022#\n\033enable_integrity_monito"
-          + "ring\030\003 \001(\010\"\227\001\n\016VirtualMachine\022\032\n\rinstanc"
-          + "e_name\030\001 \001(\tB\003\340A\003\022\030\n\013instance_id\030\002 \001(\tB\003"
-          + "\340A\003\022O\n\026virtual_machine_config\030\003 \001(\0132/.go"
-          + "ogle.cloud.notebooks.v1.VirtualMachineCo"
-          + "nfig\"\342\010\n\024VirtualMachineConfig\022\021\n\004zone\030\001 "
-          + "\001(\tB\003\340A\003\022\031\n\014machine_type\030\002 \001(\tB\003\340A\002\022H\n\020c"
-          + "ontainer_images\030\003 \003(\0132).google.cloud.not"
-          + "ebooks.v1.ContainerImageB\003\340A\001\022<\n\tdata_di"
-          + "sk\030\004 \001(\0132$.google.cloud.notebooks.v1.Loc"
-          + "alDiskB\003\340A\002\022K\n\021encryption_config\030\005 \001(\0132+"
-          + ".google.cloud.notebooks.v1.EncryptionCon"
-          + "figB\003\340A\001\022_\n\030shielded_instance_config\030\006 \001"
-          + "(\01328.google.cloud.notebooks.v1.RuntimeSh"
-          + "ieldedInstanceConfigB\003\340A\001\022T\n\022accelerator"
-          + "_config\030\007 \001(\01323.google.cloud.notebooks.v"
-          + "1.RuntimeAcceleratorConfigB\003\340A\001\022\024\n\007netwo"
-          + "rk\030\010 \001(\tB\003\340A\001\022\023\n\006subnet\030\t \001(\tB\003\340A\001\022\035\n\020in"
-          + "ternal_ip_only\030\n \001(\010B\003\340A\001\022\021\n\004tags\030\r \003(\tB"
-          + "\003\340A\001\022c\n\020guest_attributes\030\016 \003(\0132D.google."
-          + "cloud.notebooks.v1.VirtualMachineConfig."
-          + "GuestAttributesEntryB\003\340A\003\022T\n\010metadata\030\017 "
-          + "\003(\0132=.google.cloud.notebooks.v1.VirtualM"
-          + "achineConfig.MetadataEntryB\003\340A\001\022P\n\006label"
-          + "s\030\020 \003(\0132;.google.cloud.notebooks.v1.Virt"
-          + "ualMachineConfig.LabelsEntryB\003\340A\001\022N\n\010nic"
-          + "_type\030\021 \001(\01627.google.cloud.notebooks.v1."
-          + "VirtualMachineConfig.NicTypeB\003\340A\001\0326\n\024Gue"
-          + "stAttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\">\n\007NicType\022\030\n\024"
-          + "UNSPECIFIED_NIC_TYPE\020\000\022\016\n\nVIRTIO_NET\020\001\022\t"
-          + "\n\005GVNIC\020\002B\312\001\n\035com.google.cloud.notebooks"
-          + ".v1B\014RuntimeProtoP\001ZBgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/notebooks/v1;no"
-          + "tebooks\252\002\031Google.Cloud.Notebooks.V1\312\002\031Go"
-          + "ogle\\Cloud\\Notebooks\\V1\352\002\034Google::Cloud:"
-          + ":Notebooks::V1b\006proto3"
+          + "\013\n\007HEALTHY\020\001\022\r\n\tUNHEALTHY\020\002\022\027\n\023AGENT_NOT"
+          + "_INSTALLED\020\003\022\025\n\021AGENT_NOT_RUNNING\020\004:a\352A^"
+          + "\n notebooks.googleapis.com/Runtime\022:proj"
+          + "ects/{project}/locations/{location}/runt"
+          + "imes/{runtime}B\016\n\014runtime_type\"\241\003\n\030Runti"
+          + "meAcceleratorConfig\022Q\n\004type\030\001 \001(\0162C.goog"
+          + "le.cloud.notebooks.v1.RuntimeAccelerator"
+          + "Config.AcceleratorType\022\022\n\ncore_count\030\002 \001"
+          + "(\003\"\235\002\n\017AcceleratorType\022 \n\034ACCELERATOR_TY"
+          + "PE_UNSPECIFIED\020\000\022\024\n\020NVIDIA_TESLA_K80\020\001\022\025"
+          + "\n\021NVIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V1"
+          + "00\020\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TESL"
+          + "A_T4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\006\022\n\n\006TPU_V2\020"
+          + "\007\022\n\n\006TPU_V3\020\010\022\027\n\023NVIDIA_TESLA_T4_VWS\020\t\022\031"
+          + "\n\025NVIDIA_TESLA_P100_VWS\020\n\022\027\n\023NVIDIA_TESL"
+          + "A_P4_VWS\020\013\"#\n\020EncryptionConfig\022\017\n\007kms_ke"
+          + "y\030\001 \001(\t\"\250\003\n\tLocalDisk\022\030\n\013auto_delete\030\001 \001"
+          + "(\010B\003\340A\003\022\021\n\004boot\030\002 \001(\010B\003\340A\003\022\030\n\013device_nam"
+          + "e\030\003 \001(\tB\003\340A\003\022Z\n\021guest_os_features\030\004 \003(\0132"
+          + ":.google.cloud.notebooks.v1.LocalDisk.Ru"
+          + "ntimeGuestOsFeatureB\003\340A\003\022\022\n\005index\030\005 \001(\005B"
+          + "\003\340A\003\022T\n\021initialize_params\030\006 \001(\01324.google"
+          + ".cloud.notebooks.v1.LocalDiskInitializeP"
+          + "aramsB\003\340A\004\022\021\n\tinterface\030\007 \001(\t\022\021\n\004kind\030\010 "
+          + "\001(\tB\003\340A\003\022\025\n\010licenses\030\t \003(\tB\003\340A\003\022\014\n\004mode\030"
+          + "\n \001(\t\022\016\n\006source\030\013 \001(\t\022\014\n\004type\030\014 \001(\t\032%\n\025R"
+          + "untimeGuestOsFeature\022\014\n\004type\030\001 \001(\t\"\252\003\n\031L"
+          + "ocalDiskInitializeParams\022\030\n\013description\030"
+          + "\001 \001(\tB\003\340A\001\022\026\n\tdisk_name\030\002 \001(\tB\003\340A\001\022\031\n\014di"
+          + "sk_size_gb\030\003 \001(\003B\003\340A\001\022U\n\tdisk_type\030\004 \001(\016"
+          + "2=.google.cloud.notebooks.v1.LocalDiskIn"
+          + "itializeParams.DiskTypeB\003\340A\004\022U\n\006labels\030\005"
+          + " \003(\0132@.google.cloud.notebooks.v1.LocalDi"
+          + "skInitializeParams.LabelsEntryB\003\340A\001\032-\n\013L"
+          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\"c\n\010DiskType\022\031\n\025DISK_TYPE_UNSPECIFIED\020"
+          + "\000\022\017\n\013PD_STANDARD\020\001\022\n\n\006PD_SSD\020\002\022\017\n\013PD_BAL"
+          + "ANCED\020\003\022\016\n\nPD_EXTREME\020\004\"\373\001\n\023RuntimeAcces"
+          + "sConfig\022U\n\013access_type\030\001 \001(\0162@.google.cl"
+          + "oud.notebooks.v1.RuntimeAccessConfig.Run"
+          + "timeAccessType\022\025\n\rruntime_owner\030\002 \001(\t\022\026\n"
+          + "\tproxy_uri\030\003 \001(\tB\003\340A\003\"^\n\021RuntimeAccessTy"
+          + "pe\022#\n\037RUNTIME_ACCESS_TYPE_UNSPECIFIED\020\000\022"
+          + "\017\n\013SINGLE_USER\020\001\022\023\n\017SERVICE_ACCOUNT\020\002\"\224\003"
+          + "\n\025RuntimeSoftwareConfig\022!\n\031notebook_upgr"
+          + "ade_schedule\030\001 \001(\t\022%\n\030enable_health_moni"
+          + "toring\030\002 \001(\010H\000\210\001\001\022\032\n\ridle_shutdown\030\003 \001(\010"
+          + "H\001\210\001\001\022\035\n\025idle_shutdown_timeout\030\004 \001(\005\022\032\n\022"
+          + "install_gpu_driver\030\005 \001(\010\022\036\n\026custom_gpu_d"
+          + "river_path\030\006 \001(\t\022\033\n\023post_startup_script\030"
+          + "\007 \001(\t\022?\n\007kernels\030\010 \003(\0132).google.cloud.no"
+          + "tebooks.v1.ContainerImageB\003\340A\001\022\035\n\013upgrad"
+          + "eable\030\t \001(\010B\003\340A\003H\002\210\001\001B\033\n\031_enable_health_"
+          + "monitoringB\020\n\016_idle_shutdownB\016\n\014_upgrade"
+          + "able\"\241\001\n\016RuntimeMetrics\022Y\n\016system_metric"
+          + "s\030\001 \003(\0132<.google.cloud.notebooks.v1.Runt"
+          + "imeMetrics.SystemMetricsEntryB\003\340A\003\0324\n\022Sy"
+          + "stemMetricsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"u\n\035RuntimeShieldedInstanceConfi"
+          + "g\022\032\n\022enable_secure_boot\030\001 \001(\010\022\023\n\013enable_"
+          + "vtpm\030\002 \001(\010\022#\n\033enable_integrity_monitorin"
+          + "g\030\003 \001(\010\"\227\001\n\016VirtualMachine\022\032\n\rinstance_n"
+          + "ame\030\001 \001(\tB\003\340A\003\022\030\n\013instance_id\030\002 \001(\tB\003\340A\003"
+          + "\022O\n\026virtual_machine_config\030\003 \001(\0132/.googl"
+          + "e.cloud.notebooks.v1.VirtualMachineConfi"
+          + "g\"\343\t\n\024VirtualMachineConfig\022\021\n\004zone\030\001 \001(\t"
+          + "B\003\340A\003\022\031\n\014machine_type\030\002 \001(\tB\003\340A\002\022H\n\020cont"
+          + "ainer_images\030\003 \003(\0132).google.cloud.notebo"
+          + "oks.v1.ContainerImageB\003\340A\001\022<\n\tdata_disk\030"
+          + "\004 \001(\0132$.google.cloud.notebooks.v1.LocalD"
+          + "iskB\003\340A\002\022K\n\021encryption_config\030\005 \001(\0132+.go"
+          + "ogle.cloud.notebooks.v1.EncryptionConfig"
+          + "B\003\340A\001\022_\n\030shielded_instance_config\030\006 \001(\0132"
+          + "8.google.cloud.notebooks.v1.RuntimeShiel"
+          + "dedInstanceConfigB\003\340A\001\022T\n\022accelerator_co"
+          + "nfig\030\007 \001(\01323.google.cloud.notebooks.v1.R"
+          + "untimeAcceleratorConfigB\003\340A\001\022\024\n\007network\030"
+          + "\010 \001(\tB\003\340A\001\022\023\n\006subnet\030\t \001(\tB\003\340A\001\022\035\n\020inter"
+          + "nal_ip_only\030\n \001(\010B\003\340A\001\022\021\n\004tags\030\r \003(\tB\003\340A"
+          + "\001\022c\n\020guest_attributes\030\016 \003(\0132D.google.clo"
+          + "ud.notebooks.v1.VirtualMachineConfig.Gue"
+          + "stAttributesEntryB\003\340A\003\022T\n\010metadata\030\017 \003(\013"
+          + "2=.google.cloud.notebooks.v1.VirtualMach"
+          + "ineConfig.MetadataEntryB\003\340A\001\022P\n\006labels\030\020"
+          + " \003(\0132;.google.cloud.notebooks.v1.Virtual"
+          + "MachineConfig.LabelsEntryB\003\340A\001\022N\n\010nic_ty"
+          + "pe\030\021 \001(\01627.google.cloud.notebooks.v1.Vir"
+          + "tualMachineConfig.NicTypeB\003\340A\001\022\036\n\021reserv"
+          + "ed_ip_range\030\022 \001(\tB\003\340A\001\022R\n\nboot_image\030\023 \001"
+          + "(\01329.google.cloud.notebooks.v1.VirtualMa"
+          + "chineConfig.BootImageB\003\340A\001\032\013\n\tBootImage\032"
+          + "6\n\024GuestAttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001\032/\n\rMetadataEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\">\n\007NicTy"
+          + "pe\022\030\n\024UNSPECIFIED_NIC_TYPE\020\000\022\016\n\nVIRTIO_N"
+          + "ET\020\001\022\t\n\005GVNIC\020\002B\312\001\n\035com.google.cloud.not"
+          + "ebooks.v1B\014RuntimeProtoP\001ZBgoogle.golang"
+          + ".org/genproto/googleapis/cloud/notebooks"
+          + "/v1;notebooks\252\002\031Google.Cloud.Notebooks.V"
+          + "1\312\002\031Google\\Cloud\\Notebooks\\V1\352\002\034Google::"
+          + "Cloud::Notebooks::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -331,8 +343,11 @@ public final class RuntimeProto {
               "InstallGpuDriver",
               "CustomGpuDriverPath",
               "PostStartupScript",
+              "Kernels",
+              "Upgradeable",
               "EnableHealthMonitoring",
               "IdleShutdown",
+              "Upgradeable",
             });
     internal_static_google_cloud_notebooks_v1_RuntimeMetrics_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -387,11 +402,21 @@ public final class RuntimeProto {
               "Metadata",
               "Labels",
               "NicType",
+              "ReservedIpRange",
+              "BootImage",
             });
-    internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_descriptor =
+    internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor =
         internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_descriptor
             .getNestedTypes()
             .get(0);
+    internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_descriptor =
+        internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_descriptor
+            .getNestedTypes()
+            .get(1);
     internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_GuestAttributesEntry_descriptor,
@@ -401,7 +426,7 @@ public final class RuntimeProto {
     internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_MetadataEntry_descriptor =
         internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(2);
     internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_MetadataEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_MetadataEntry_descriptor,
@@ -411,7 +436,7 @@ public final class RuntimeProto {
     internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_LabelsEntry_descriptor =
         internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(3);
     internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_LabelsEntry_descriptor,

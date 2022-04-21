@@ -109,4 +109,29 @@ public interface SwitchRuntimeRequestOrBuilder
    * <code>.google.cloud.notebooks.v1.RuntimeAcceleratorConfig accelerator_config = 3;</code>
    */
   com.google.cloud.notebooks.v1.RuntimeAcceleratorConfigOrBuilder getAcceleratorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

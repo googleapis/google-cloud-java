@@ -49,4 +49,35 @@ public interface UpgradeInstanceRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional UpgradeType. Setting this field will search for additional
+   * compute images to upgrade this instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional UpgradeType. Setting this field will search for additional
+   * compute images to upgrade this instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.notebooks.v1.UpgradeType getType();
 }

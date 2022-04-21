@@ -57,6 +57,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     upgradeHistory_ = java.util.Collections.emptyList();
     nicType_ = 0;
+    creator_ = "";
   }
 
   @java.lang.Override
@@ -415,6 +416,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 290:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              creator_ = s;
+              break;
+            }
+          case 312:
+            {
+              canIpForward_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -532,7 +545,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -582,7 +595,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 10;</code>
@@ -655,7 +668,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -705,7 +718,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 10;</code>
@@ -946,6 +959,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>REGISTERING = 9;</code>
      */
     REGISTERING(9),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 10;</code>
+     */
+    SUSPENDING(10),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 11;</code>
+     */
+    SUSPENDED(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -1050,6 +1083,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>REGISTERING = 9;</code>
      */
     public static final int REGISTERING_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 10;</code>
+     */
+    public static final int SUSPENDING_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 11;</code>
+     */
+    public static final int SUSPENDED_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1095,6 +1148,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return INITIALIZING;
         case 9:
           return REGISTERING;
+        case 10:
+          return SUSPENDING;
+        case 11:
+          return SUSPENDED;
         default:
           return null;
       }
@@ -1198,6 +1255,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PD_BALANCED = 3;</code>
      */
     PD_BALANCED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Extreme persistent disk type.
+     * </pre>
+     *
+     * <code>PD_EXTREME = 4;</code>
+     */
+    PD_EXTREME(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -1241,6 +1308,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>PD_BALANCED = 3;</code>
      */
     public static final int PD_BALANCED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Extreme persistent disk type.
+     * </pre>
+     *
+     * <code>PD_EXTREME = 4;</code>
+     */
+    public static final int PD_EXTREME_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1274,6 +1351,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return PD_SSD;
         case 3:
           return PD_BALANCED;
+        case 4:
+          return PD_EXTREME;
         default:
           return null;
       }
@@ -11902,6 +11981,74 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return getReservationAffinity();
   }
 
+  public static final int CREATOR_FIELD_NUMBER = 36;
+  private volatile java.lang.Object creator_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of entity that sent original CreateInstance request.
+   * </pre>
+   *
+   * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The creator.
+   */
+  @java.lang.Override
+  public java.lang.String getCreator() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creator_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of entity that sent original CreateInstance request.
+   * </pre>
+   *
+   * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for creator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCreatorBytes() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      creator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 39;
+  private boolean canIpForward_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag to enable ip forwarding or not, default false/off.
+   * https://cloud.google.com/vpc/docs/using-routes#canipforward
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The canIpForward.
+   */
+  @java.lang.Override
+  public boolean getCanIpForward() {
+    return canIpForward_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 23;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -12120,6 +12267,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (reservationAffinity_ != null) {
       output.writeMessage(34, getReservationAffinity());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, creator_);
+    }
+    if (canIpForward_ != false) {
+      output.writeBool(39, canIpForward_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -12271,6 +12424,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(34, getReservationAffinity());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, creator_);
+    }
+    if (canIpForward_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(39, canIpForward_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12325,6 +12484,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
     }
+    if (!getCreator().equals(other.getCreator())) return false;
+    if (getCanIpForward() != other.getCanIpForward()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -12435,6 +12596,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
     }
+    hash = (37 * hash) + CREATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getCreator().hashCode();
+    hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -12705,6 +12870,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         reservationAffinity_ = null;
         reservationAffinityBuilder_ = null;
       }
+      creator_ = "";
+
+      canIpForward_ = false;
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -12833,6 +13002,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.reservationAffinity_ = reservationAffinityBuilder_.build();
       }
+      result.creator_ = creator_;
+      result.canIpForward_ = canIpForward_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -13056,6 +13227,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
+      }
+      if (!other.getCreator().isEmpty()) {
+        creator_ = other.creator_;
+        onChanged();
+      }
+      if (other.getCanIpForward() != false) {
+        setCanIpForward(other.getCanIpForward());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -17842,6 +18020,167 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         reservationAffinity_ = null;
       }
       return reservationAffinityBuilder_;
+    }
+
+    private java.lang.Object creator_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of entity that sent original CreateInstance request.
+     * </pre>
+     *
+     * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The creator.
+     */
+    public java.lang.String getCreator() {
+      java.lang.Object ref = creator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of entity that sent original CreateInstance request.
+     * </pre>
+     *
+     * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for creator.
+     */
+    public com.google.protobuf.ByteString getCreatorBytes() {
+      java.lang.Object ref = creator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        creator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of entity that sent original CreateInstance request.
+     * </pre>
+     *
+     * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreator(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      creator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of entity that sent original CreateInstance request.
+     * </pre>
+     *
+     * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreator() {
+
+      creator_ = getDefaultInstance().getCreator();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of entity that sent original CreateInstance request.
+     * </pre>
+     *
+     * <code>string creator = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      creator_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean canIpForward_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The canIpForward.
+     */
+    @java.lang.Override
+    public boolean getCanIpForward() {
+      return canIpForward_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The canIpForward to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanIpForward(boolean value) {
+
+      canIpForward_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanIpForward() {
+
+      canIpForward_ = false;
+      onChanged();
+      return this;
     }
 
     private com.google.protobuf.Timestamp createTime_;

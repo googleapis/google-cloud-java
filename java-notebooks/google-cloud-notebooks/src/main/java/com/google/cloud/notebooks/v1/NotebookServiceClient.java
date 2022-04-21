@@ -903,6 +903,58 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Add/update metadata items for an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpdateInstanceMetadataItemsRequest request =
+   *       UpdateInstanceMetadataItemsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .putAllItems(new HashMap<String, String>())
+   *           .build();
+   *   UpdateInstanceMetadataItemsResponse response =
+   *       notebookServiceClient.updateInstanceMetadataItems(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UpdateInstanceMetadataItemsResponse updateInstanceMetadataItems(
+      UpdateInstanceMetadataItemsRequest request) {
+    return updateInstanceMetadataItemsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add/update metadata items for an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpdateInstanceMetadataItemsRequest request =
+   *       UpdateInstanceMetadataItemsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .putAllItems(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<UpdateInstanceMetadataItemsResponse> future =
+   *       notebookServiceClient.updateInstanceMetadataItemsCallable().futureCall(request);
+   *   // Do something.
+   *   UpdateInstanceMetadataItemsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsCallable() {
+    return stub.updateInstanceMetadataItemsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single Instance.
    *
    * <p>Sample code:
@@ -1274,6 +1326,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   IsInstanceUpgradeableRequest request =
    *       IsInstanceUpgradeableRequest.newBuilder()
    *           .setNotebookInstance("notebookInstance-544239728")
+   *           .setType(UpgradeType.forNumber(0))
    *           .build();
    *   IsInstanceUpgradeableResponse response = notebookServiceClient.isInstanceUpgradeable(request);
    * }
@@ -1298,6 +1351,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   IsInstanceUpgradeableRequest request =
    *       IsInstanceUpgradeableRequest.newBuilder()
    *           .setNotebookInstance("notebookInstance-544239728")
+   *           .setType(UpgradeType.forNumber(0))
    *           .build();
    *   ApiFuture<IsInstanceUpgradeableResponse> future =
    *       notebookServiceClient.isInstanceUpgradeableCallable().futureCall(request);
@@ -1414,7 +1468,10 @@ public class NotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
-   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *       UpgradeInstanceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setType(UpgradeType.forNumber(0))
+   *           .build();
    *   Instance response = notebookServiceClient.upgradeInstanceAsync(request).get();
    * }
    * }</pre>
@@ -1436,7 +1493,10 @@ public class NotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
-   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *       UpgradeInstanceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setType(UpgradeType.forNumber(0))
+   *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       notebookServiceClient.upgradeInstanceOperationCallable().futureCall(request);
    *   // Do something.
@@ -1458,7 +1518,10 @@ public class NotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
    *   UpgradeInstanceRequest request =
-   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *       UpgradeInstanceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setType(UpgradeType.forNumber(0))
+   *           .build();
    *   ApiFuture<Operation> future =
    *       notebookServiceClient.upgradeInstanceCallable().futureCall(request);
    *   // Do something.
@@ -1557,6 +1620,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *       UpgradeInstanceInternalRequest.newBuilder()
    *           .setName("name3373707")
    *           .setVmId("vmId3622450")
+   *           .setType(UpgradeType.forNumber(0))
    *           .build();
    *   Instance response = notebookServiceClient.upgradeInstanceInternalAsync(request).get();
    * }
@@ -1583,6 +1647,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *       UpgradeInstanceInternalRequest.newBuilder()
    *           .setName("name3373707")
    *           .setVmId("vmId3622450")
+   *           .setType(UpgradeType.forNumber(0))
    *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       notebookServiceClient.upgradeInstanceInternalOperationCallable().futureCall(request);
@@ -1609,6 +1674,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *       UpgradeInstanceInternalRequest.newBuilder()
    *           .setName("name3373707")
    *           .setVmId("vmId3622450")
+   *           .setType(UpgradeType.forNumber(0))
    *           .build();
    *   ApiFuture<Operation> future =
    *       notebookServiceClient.upgradeInstanceInternalCallable().futureCall(request);
@@ -2915,7 +2981,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
+   * Creates a new Execution in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2947,7 +3013,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
+   * Creates a new Execution in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2979,7 +3045,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
+   * Creates a new Execution in a given project and location.
    *
    * <p>Sample code:
    *
@@ -3005,7 +3071,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
+   * Creates a new Execution in a given project and location.
    *
    * <p>Sample code:
    *
@@ -3031,7 +3097,7 @@ public class NotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Scheduled Notebook in a given project and location.
+   * Creates a new Execution in a given project and location.
    *
    * <p>Sample code:
    *

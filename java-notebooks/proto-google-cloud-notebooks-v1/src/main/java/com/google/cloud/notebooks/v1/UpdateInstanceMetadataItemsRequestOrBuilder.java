@@ -18,9 +18,9 @@
 
 package com.google.cloud.notebooks.v1;
 
-public interface UpgradeInstanceInternalRequestOrBuilder
+public interface UpdateInstanceMetadataItemsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.UpgradeInstanceInternalRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -54,57 +54,53 @@ public interface UpgradeInstanceInternalRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+   * Metadata items to add/update for the instance.
    * </pre>
    *
-   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The vmId.
+   * <code>map&lt;string, string&gt; items = 2;</code>
    */
-  java.lang.String getVmId();
+  int getItemsCount();
   /**
    *
    *
    * <pre>
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+   * Metadata items to add/update for the instance.
    * </pre>
    *
-   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for vmId.
+   * <code>map&lt;string, string&gt; items = 2;</code>
    */
-  com.google.protobuf.ByteString getVmIdBytes();
-
+  boolean containsItems(java.lang.String key);
+  /** Use {@link #getItemsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getItems();
   /**
    *
    *
    * <pre>
-   * Optional. The optional UpgradeType. Setting this field will search for additional
-   * compute images to upgrade this instance.
+   * Metadata items to add/update for the instance.
    * </pre>
    *
-   * <code>
-   * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for type.
+   * <code>map&lt;string, string&gt; items = 2;</code>
    */
-  int getTypeValue();
+  java.util.Map<java.lang.String, java.lang.String> getItemsMap();
   /**
    *
    *
    * <pre>
-   * Optional. The optional UpgradeType. Setting this field will search for additional
-   * compute images to upgrade this instance.
+   * Metadata items to add/update for the instance.
    * </pre>
    *
-   * <code>
-   * .google.cloud.notebooks.v1.UpgradeType type = 3 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The type.
+   * <code>map&lt;string, string&gt; items = 2;</code>
    */
-  com.google.cloud.notebooks.v1.UpgradeType getType();
+  java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Metadata items to add/update for the instance.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; items = 2;</code>
+   */
+  java.lang.String getItemsOrThrow(java.lang.String key);
 }

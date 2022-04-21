@@ -27,6 +27,8 @@ import com.google.cloud.notebooks.v1.GetRuntimeRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesResponse;
 import com.google.cloud.notebooks.v1.OperationMetadata;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest;
+import com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse;
 import com.google.cloud.notebooks.v1.ReportRuntimeEventRequest;
 import com.google.cloud.notebooks.v1.ResetRuntimeRequest;
 import com.google.cloud.notebooks.v1.Runtime;
@@ -125,6 +127,12 @@ public abstract class ManagedNotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<ReportRuntimeEventRequest, Operation> reportRuntimeEventCallable() {
     throw new UnsupportedOperationException("Not implemented: reportRuntimeEventCallable()");
+  }
+
+  public UnaryCallable<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: refreshRuntimeTokenInternalCallable()");
   }
 
   @Override

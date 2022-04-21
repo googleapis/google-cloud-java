@@ -18,9 +18,9 @@
 
 package com.google.cloud.notebooks.v1;
 
-public interface StartRuntimeRequestOrBuilder
+public interface RefreshRuntimeTokenInternalRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.StartRuntimeRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -31,7 +31,9 @@ public interface StartRuntimeRequestOrBuilder
    * `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface StartRuntimeRequestOrBuilder
    * `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,24 +58,26 @@ public interface StartRuntimeRequestOrBuilder
    *
    *
    * <pre>
-   * Idempotent request UUID.
+   * Required. The VM hardware token for authenticating the VM.
+   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
    * </pre>
    *
-   * <code>string request_id = 2;</code>
+   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The requestId.
+   * @return The vmId.
    */
-  java.lang.String getRequestId();
+  java.lang.String getVmId();
   /**
    *
    *
    * <pre>
-   * Idempotent request UUID.
+   * Required. The VM hardware token for authenticating the VM.
+   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
    * </pre>
    *
-   * <code>string request_id = 2;</code>
+   * <code>string vm_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The bytes for requestId.
+   * @return The bytes for vmId.
    */
-  com.google.protobuf.ByteString getRequestIdBytes();
+  com.google.protobuf.ByteString getVmIdBytes();
 }

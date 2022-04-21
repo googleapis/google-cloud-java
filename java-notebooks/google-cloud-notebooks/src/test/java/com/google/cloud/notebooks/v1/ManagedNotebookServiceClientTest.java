@@ -762,4 +762,92 @@ public class ManagedNotebookServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void refreshRuntimeTokenInternalTest() throws Exception {
+    RefreshRuntimeTokenInternalResponse expectedResponse =
+        RefreshRuntimeTokenInternalResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockManagedNotebookService.addResponse(expectedResponse);
+
+    RuntimeName name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]");
+    String vmId = "vmId3622450";
+
+    RefreshRuntimeTokenInternalResponse actualResponse =
+        client.refreshRuntimeTokenInternal(name, vmId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshRuntimeTokenInternalRequest actualRequest =
+        ((RefreshRuntimeTokenInternalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(vmId, actualRequest.getVmId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshRuntimeTokenInternalExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedNotebookService.addException(exception);
+
+    try {
+      RuntimeName name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]");
+      String vmId = "vmId3622450";
+      client.refreshRuntimeTokenInternal(name, vmId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void refreshRuntimeTokenInternalTest2() throws Exception {
+    RefreshRuntimeTokenInternalResponse expectedResponse =
+        RefreshRuntimeTokenInternalResponse.newBuilder()
+            .setAccessToken("accessToken-1042689291")
+            .setExpireTime(Timestamp.newBuilder().build())
+            .build();
+    mockManagedNotebookService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String vmId = "vmId3622450";
+
+    RefreshRuntimeTokenInternalResponse actualResponse =
+        client.refreshRuntimeTokenInternal(name, vmId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockManagedNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshRuntimeTokenInternalRequest actualRequest =
+        ((RefreshRuntimeTokenInternalRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(vmId, actualRequest.getVmId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshRuntimeTokenInternalExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockManagedNotebookService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String vmId = "vmId3622450";
+      client.refreshRuntimeTokenInternal(name, vmId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

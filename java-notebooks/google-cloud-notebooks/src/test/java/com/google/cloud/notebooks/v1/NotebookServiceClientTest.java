@@ -162,6 +162,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -226,6 +228,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -304,6 +308,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -385,6 +391,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -468,6 +476,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -550,6 +560,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -632,6 +644,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -715,6 +729,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -764,6 +780,55 @@ public class NotebookServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateInstanceMetadataItemsTest() throws Exception {
+    UpdateInstanceMetadataItemsResponse expectedResponse =
+        UpdateInstanceMetadataItemsResponse.newBuilder()
+            .putAllItems(new HashMap<String, String>())
+            .build();
+    mockNotebookService.addResponse(expectedResponse);
+
+    UpdateInstanceMetadataItemsRequest request =
+        UpdateInstanceMetadataItemsRequest.newBuilder()
+            .setName("name3373707")
+            .putAllItems(new HashMap<String, String>())
+            .build();
+
+    UpdateInstanceMetadataItemsResponse actualResponse =
+        client.updateInstanceMetadataItems(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotebookService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateInstanceMetadataItemsRequest actualRequest =
+        ((UpdateInstanceMetadataItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getItemsMap(), actualRequest.getItemsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateInstanceMetadataItemsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNotebookService.addException(exception);
+
+    try {
+      UpdateInstanceMetadataItemsRequest request =
+          UpdateInstanceMetadataItemsRequest.newBuilder()
+              .setName("name3373707")
+              .putAllItems(new HashMap<String, String>())
+              .build();
+      client.updateInstanceMetadataItems(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -838,6 +903,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -911,6 +978,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -983,6 +1052,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1056,6 +1127,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1125,6 +1198,7 @@ public class NotebookServiceClientTest {
     IsInstanceUpgradeableRequest request =
         IsInstanceUpgradeableRequest.newBuilder()
             .setNotebookInstance("notebookInstance-544239728")
+            .setType(UpgradeType.forNumber(0))
             .build();
 
     IsInstanceUpgradeableResponse actualResponse = client.isInstanceUpgradeable(request);
@@ -1136,6 +1210,7 @@ public class NotebookServiceClientTest {
         ((IsInstanceUpgradeableRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getNotebookInstance(), actualRequest.getNotebookInstance());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1151,6 +1226,7 @@ public class NotebookServiceClientTest {
       IsInstanceUpgradeableRequest request =
           IsInstanceUpgradeableRequest.newBuilder()
               .setNotebookInstance("notebookInstance-544239728")
+              .setType(UpgradeType.forNumber(0))
               .build();
       client.isInstanceUpgradeable(request);
       Assert.fail("No exception raised");
@@ -1264,6 +1340,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1276,7 +1354,10 @@ public class NotebookServiceClientTest {
     mockNotebookService.addResponse(resultOperation);
 
     UpgradeInstanceRequest request =
-        UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+        UpgradeInstanceRequest.newBuilder()
+            .setName("name3373707")
+            .setType(UpgradeType.forNumber(0))
+            .build();
 
     Instance actualResponse = client.upgradeInstanceAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1286,6 +1367,7 @@ public class NotebookServiceClientTest {
     UpgradeInstanceRequest actualRequest = ((UpgradeInstanceRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1299,7 +1381,10 @@ public class NotebookServiceClientTest {
 
     try {
       UpgradeInstanceRequest request =
-          UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+          UpgradeInstanceRequest.newBuilder()
+              .setName("name3373707")
+              .setType(UpgradeType.forNumber(0))
+              .build();
       client.upgradeInstanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -1338,6 +1423,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1419,6 +1506,8 @@ public class NotebookServiceClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllUpgradeHistory(new ArrayList<Instance.UpgradeHistoryEntry>())
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setCanIpForward(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -1434,6 +1523,7 @@ public class NotebookServiceClientTest {
         UpgradeInstanceInternalRequest.newBuilder()
             .setName("name3373707")
             .setVmId("vmId3622450")
+            .setType(UpgradeType.forNumber(0))
             .build();
 
     Instance actualResponse = client.upgradeInstanceInternalAsync(request).get();
@@ -1446,6 +1536,7 @@ public class NotebookServiceClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getVmId(), actualRequest.getVmId());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1462,6 +1553,7 @@ public class NotebookServiceClientTest {
           UpgradeInstanceInternalRequest.newBuilder()
               .setName("name3373707")
               .setVmId("vmId3622450")
+              .setType(UpgradeType.forNumber(0))
               .build();
       client.upgradeInstanceInternalAsync(request).get();
       Assert.fail("No exception raised");

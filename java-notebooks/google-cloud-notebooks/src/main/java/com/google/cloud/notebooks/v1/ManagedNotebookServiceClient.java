@@ -485,6 +485,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Runtime response = managedNotebookServiceClient.createRuntimeAsync(request).get();
    * }
@@ -512,6 +513,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Runtime, OperationMetadata> future =
    *       managedNotebookServiceClient.createRuntimeOperationCallable().futureCall(request);
@@ -539,6 +541,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setParent(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
    *           .setRuntimeId("runtimeId121455379")
    *           .setRuntime(Runtime.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.createRuntimeCallable().futureCall(request);
@@ -610,6 +613,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *   DeleteRuntimeRequest request =
    *       DeleteRuntimeRequest.newBuilder()
    *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   managedNotebookServiceClient.deleteRuntimeAsync(request).get();
    * }
@@ -635,6 +639,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *   DeleteRuntimeRequest request =
    *       DeleteRuntimeRequest.newBuilder()
    *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       managedNotebookServiceClient.deleteRuntimeOperationCallable().futureCall(request);
@@ -660,6 +665,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *   DeleteRuntimeRequest request =
    *       DeleteRuntimeRequest.newBuilder()
    *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.deleteRuntimeCallable().futureCall(request);
@@ -708,7 +714,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StartRuntimeRequest request = StartRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StartRuntimeRequest request =
+   *       StartRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Runtime response = managedNotebookServiceClient.startRuntimeAsync(request).get();
    * }
    * }</pre>
@@ -732,7 +742,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StartRuntimeRequest request = StartRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StartRuntimeRequest request =
+   *       StartRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   OperationFuture<Runtime, OperationMetadata> future =
    *       managedNotebookServiceClient.startRuntimeOperationCallable().futureCall(request);
    *   // Do something.
@@ -756,7 +770,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StartRuntimeRequest request = StartRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StartRuntimeRequest request =
+   *       StartRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.startRuntimeCallable().futureCall(request);
    *   // Do something.
@@ -804,7 +822,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StopRuntimeRequest request = StopRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StopRuntimeRequest request =
+   *       StopRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Runtime response = managedNotebookServiceClient.stopRuntimeAsync(request).get();
    * }
    * }</pre>
@@ -828,7 +850,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StopRuntimeRequest request = StopRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StopRuntimeRequest request =
+   *       StopRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   OperationFuture<Runtime, OperationMetadata> future =
    *       managedNotebookServiceClient.stopRuntimeOperationCallable().futureCall(request);
    *   // Do something.
@@ -852,7 +878,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   StopRuntimeRequest request = StopRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   StopRuntimeRequest request =
+   *       StopRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.stopRuntimeCallable().futureCall(request);
    *   // Do something.
@@ -901,6 +931,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setMachineType("machineType-218117087")
    *           .setAcceleratorConfig(RuntimeAcceleratorConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Runtime response = managedNotebookServiceClient.switchRuntimeAsync(request).get();
    * }
@@ -928,6 +959,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setMachineType("machineType-218117087")
    *           .setAcceleratorConfig(RuntimeAcceleratorConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Runtime, OperationMetadata> future =
    *       managedNotebookServiceClient.switchRuntimeOperationCallable().futureCall(request);
@@ -955,6 +987,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *           .setName("name3373707")
    *           .setMachineType("machineType-218117087")
    *           .setAcceleratorConfig(RuntimeAcceleratorConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.switchRuntimeCallable().futureCall(request);
@@ -999,7 +1032,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   ResetRuntimeRequest request = ResetRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   ResetRuntimeRequest request =
+   *       ResetRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   Runtime response = managedNotebookServiceClient.resetRuntimeAsync(request).get();
    * }
    * }</pre>
@@ -1021,7 +1058,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   ResetRuntimeRequest request = ResetRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   ResetRuntimeRequest request =
+   *       ResetRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   OperationFuture<Runtime, OperationMetadata> future =
    *       managedNotebookServiceClient.resetRuntimeOperationCallable().futureCall(request);
    *   // Do something.
@@ -1043,7 +1084,11 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (ManagedNotebookServiceClient managedNotebookServiceClient =
    *     ManagedNotebookServiceClient.create()) {
-   *   ResetRuntimeRequest request = ResetRuntimeRequest.newBuilder().setName("name3373707").build();
+   *   ResetRuntimeRequest request =
+   *       ResetRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
    *   ApiFuture<Operation> future =
    *       managedNotebookServiceClient.resetRuntimeCallable().futureCall(request);
    *   // Do something.
@@ -1184,6 +1229,125 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ReportRuntimeEventRequest, Operation> reportRuntimeEventCallable() {
     return stub.reportRuntimeEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an access token for the consumer service account that the customer attached to the
+   * runtime. Only accessible from the tenant instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   RuntimeName name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]");
+   *   String vmId = "vmId3622450";
+   *   RefreshRuntimeTokenInternalResponse response =
+   *       managedNotebookServiceClient.refreshRuntimeTokenInternal(name, vmId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+   * @param vmId Required. The VM hardware token for authenticating the VM.
+   *     https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RefreshRuntimeTokenInternalResponse refreshRuntimeTokenInternal(
+      RuntimeName name, String vmId) {
+    RefreshRuntimeTokenInternalRequest request =
+        RefreshRuntimeTokenInternalRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setVmId(vmId)
+            .build();
+    return refreshRuntimeTokenInternal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an access token for the consumer service account that the customer attached to the
+   * runtime. Only accessible from the tenant instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   String name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString();
+   *   String vmId = "vmId3622450";
+   *   RefreshRuntimeTokenInternalResponse response =
+   *       managedNotebookServiceClient.refreshRuntimeTokenInternal(name, vmId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+   * @param vmId Required. The VM hardware token for authenticating the VM.
+   *     https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RefreshRuntimeTokenInternalResponse refreshRuntimeTokenInternal(
+      String name, String vmId) {
+    RefreshRuntimeTokenInternalRequest request =
+        RefreshRuntimeTokenInternalRequest.newBuilder().setName(name).setVmId(vmId).build();
+    return refreshRuntimeTokenInternal(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an access token for the consumer service account that the customer attached to the
+   * runtime. Only accessible from the tenant instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   RefreshRuntimeTokenInternalRequest request =
+   *       RefreshRuntimeTokenInternalRequest.newBuilder()
+   *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setVmId("vmId3622450")
+   *           .build();
+   *   RefreshRuntimeTokenInternalResponse response =
+   *       managedNotebookServiceClient.refreshRuntimeTokenInternal(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RefreshRuntimeTokenInternalResponse refreshRuntimeTokenInternal(
+      RefreshRuntimeTokenInternalRequest request) {
+    return refreshRuntimeTokenInternalCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an access token for the consumer service account that the customer attached to the
+   * runtime. Only accessible from the tenant instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   RefreshRuntimeTokenInternalRequest request =
+   *       RefreshRuntimeTokenInternalRequest.newBuilder()
+   *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setVmId("vmId3622450")
+   *           .build();
+   *   ApiFuture<RefreshRuntimeTokenInternalResponse> future =
+   *       managedNotebookServiceClient.refreshRuntimeTokenInternalCallable().futureCall(request);
+   *   // Do something.
+   *   RefreshRuntimeTokenInternalResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
+      refreshRuntimeTokenInternalCallable() {
+    return stub.refreshRuntimeTokenInternalCallable();
   }
 
   @Override

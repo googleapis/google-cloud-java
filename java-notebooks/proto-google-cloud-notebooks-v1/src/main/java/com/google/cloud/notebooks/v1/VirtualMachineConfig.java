@@ -45,6 +45,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     subnet_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     nicType_ = 0;
+    reservedIpRange_ = "";
   }
 
   @java.lang.Override
@@ -248,6 +249,31 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
               int rawValue = input.readEnum();
 
               nicType_ = rawValue;
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reservedIpRange_ = s;
+              break;
+            }
+          case 154:
+            {
+              com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder subBuilder =
+                  null;
+              if (bootImage_ != null) {
+                subBuilder = bootImage_.toBuilder();
+              }
+              bootImage_ =
+                  input.readMessage(
+                      com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bootImage_);
+                bootImage_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -465,6 +491,461 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.notebooks.v1.VirtualMachineConfig.NicType)
   }
 
+  public interface BootImageOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Definition of the boot image used by the Runtime.
+   * Used to facilitate runtime upgradeability.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.notebooks.v1.VirtualMachineConfig.BootImage}
+   */
+  public static final class BootImage extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+      BootImageOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BootImage.newBuilder() to construct.
+    private BootImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BootImage() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BootImage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private BootImage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.notebooks.v1.RuntimeProto
+          .internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.notebooks.v1.RuntimeProto
+          .internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.class,
+              com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage other =
+          (com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Definition of the boot image used by the Runtime.
+     * Used to facilitate runtime upgradeability.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.notebooks.v1.VirtualMachineConfig.BootImage}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.notebooks.v1.RuntimeProto
+            .internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.notebooks.v1.RuntimeProto
+            .internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.class,
+                com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder.class);
+      }
+
+      // Construct using com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.notebooks.v1.RuntimeProto
+            .internal_static_google_cloud_notebooks_v1_VirtualMachineConfig_BootImage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage
+          getDefaultInstanceForType() {
+        return com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage build() {
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage buildPartial() {
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage result =
+            new com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage) {
+          return mergeFrom((com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage other) {
+        if (other
+            == com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.notebooks.v1.VirtualMachineConfig.BootImage)
+    private static final com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage();
+    }
+
+    public static com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BootImage> PARSER =
+        new com.google.protobuf.AbstractParser<BootImage>() {
+          @java.lang.Override
+          public BootImage parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new BootImage(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<BootImage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BootImage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int ZONE_FIELD_NUMBER = 1;
   private volatile java.lang.Object zone_;
   /**
@@ -583,7 +1064,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -598,7 +1079,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -614,7 +1095,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -629,7 +1110,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -644,7 +1125,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -1489,6 +1970,132 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         : result;
   }
 
+  public static final int RESERVED_IP_RANGE_FIELD_NUMBER = 18;
+  private volatile java.lang.Object reservedIpRange_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved IP Range name is used for VPC Peering.
+   * The subnetwork allocation will use the range *name* if it's assigned.
+   * Example: managed-notebooks-range-c
+   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *   --global &#92;
+   *   --prefix-length=24 &#92;
+   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *   --network=$NETWORK &#92;
+   *   --addresses=192.168.0.0 &#92;
+   *   --purpose=VPC_PEERING
+   * Field value will be: `managed-notebooks-range-c`
+   * </pre>
+   *
+   * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reservedIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getReservedIpRange() {
+    java.lang.Object ref = reservedIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservedIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved IP Range name is used for VPC Peering.
+   * The subnetwork allocation will use the range *name* if it's assigned.
+   * Example: managed-notebooks-range-c
+   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *   --global &#92;
+   *   --prefix-length=24 &#92;
+   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *   --network=$NETWORK &#92;
+   *   --addresses=192.168.0.0 &#92;
+   *   --purpose=VPC_PEERING
+   * Field value will be: `managed-notebooks-range-c`
+   * </pre>
+   *
+   * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for reservedIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservedIpRangeBytes() {
+    java.lang.Object ref = reservedIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservedIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BOOT_IMAGE_FIELD_NUMBER = 19;
+  private com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage bootImage_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootImage field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootImage() {
+    return bootImage_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootImage.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage getBootImage() {
+    return bootImage_ == null
+        ? com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance()
+        : bootImage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder
+      getBootImageOrBuilder() {
+    return getBootImage();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1546,6 +2153,12 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
         != com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType.UNSPECIFIED_NIC_TYPE
             .getNumber()) {
       output.writeEnum(17, nicType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, reservedIpRange_);
+    }
+    if (bootImage_ != null) {
+      output.writeMessage(19, getBootImage());
     }
     unknownFields.writeTo(output);
   }
@@ -1630,6 +2243,12 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, nicType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservedIpRange_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, reservedIpRange_);
+    }
+    if (bootImage_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getBootImage());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1673,6 +2292,11 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (nicType_ != other.nicType_) return false;
+    if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
+    if (hasBootImage() != other.hasBootImage()) return false;
+    if (hasBootImage()) {
+      if (!getBootImage().equals(other.getBootImage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1732,6 +2356,12 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + nicType_;
+    hash = (37 * hash) + RESERVED_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getReservedIpRange().hashCode();
+    if (hasBootImage()) {
+      hash = (37 * hash) + BOOT_IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getBootImage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1954,6 +2584,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().clear();
       nicType_ = 0;
 
+      reservedIpRange_ = "";
+
+      if (bootImageBuilder_ == null) {
+        bootImage_ = null;
+      } else {
+        bootImage_ = null;
+        bootImageBuilder_ = null;
+      }
       return this;
     }
 
@@ -2028,6 +2666,12 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
       result.nicType_ = nicType_;
+      result.reservedIpRange_ = reservedIpRange_;
+      if (bootImageBuilder_ == null) {
+        result.bootImage_ = bootImage_;
+      } else {
+        result.bootImage_ = bootImageBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2151,6 +2795,13 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.nicType_ != 0) {
         setNicTypeValue(other.getNicTypeValue());
+      }
+      if (!other.getReservedIpRange().isEmpty()) {
+        reservedIpRange_ = other.reservedIpRange_;
+        onChanged();
+      }
+      if (other.hasBootImage()) {
+        mergeBootImage(other.getBootImage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2452,7 +3103,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2470,7 +3121,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2488,7 +3139,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2506,7 +3157,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2531,7 +3182,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2553,7 +3204,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2577,7 +3228,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2602,7 +3253,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2624,7 +3275,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2646,7 +3297,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2668,7 +3319,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2689,7 +3340,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2710,7 +3361,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2725,7 +3376,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2744,7 +3395,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2763,7 +3414,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2778,7 +3429,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -2794,7 +3445,7 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Use a list of container images to start the notebook instance.
+     * Optional. Use a list of container images to use as Kernels in the notebook instance.
      * </pre>
      *
      * <code>
@@ -4871,6 +5522,375 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
       nicType_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object reservedIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved IP Range name is used for VPC Peering.
+     * The subnetwork allocation will use the range *name* if it's assigned.
+     * Example: managed-notebooks-range-c
+     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *   --global &#92;
+     *   --prefix-length=24 &#92;
+     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *   --network=$NETWORK &#92;
+     *   --addresses=192.168.0.0 &#92;
+     *   --purpose=VPC_PEERING
+     * Field value will be: `managed-notebooks-range-c`
+     * </pre>
+     *
+     * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The reservedIpRange.
+     */
+    public java.lang.String getReservedIpRange() {
+      java.lang.Object ref = reservedIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservedIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved IP Range name is used for VPC Peering.
+     * The subnetwork allocation will use the range *name* if it's assigned.
+     * Example: managed-notebooks-range-c
+     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *   --global &#92;
+     *   --prefix-length=24 &#92;
+     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *   --network=$NETWORK &#92;
+     *   --addresses=192.168.0.0 &#92;
+     *   --purpose=VPC_PEERING
+     * Field value will be: `managed-notebooks-range-c`
+     * </pre>
+     *
+     * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for reservedIpRange.
+     */
+    public com.google.protobuf.ByteString getReservedIpRangeBytes() {
+      java.lang.Object ref = reservedIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservedIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved IP Range name is used for VPC Peering.
+     * The subnetwork allocation will use the range *name* if it's assigned.
+     * Example: managed-notebooks-range-c
+     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *   --global &#92;
+     *   --prefix-length=24 &#92;
+     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *   --network=$NETWORK &#92;
+     *   --addresses=192.168.0.0 &#92;
+     *   --purpose=VPC_PEERING
+     * Field value will be: `managed-notebooks-range-c`
+     * </pre>
+     *
+     * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The reservedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      reservedIpRange_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved IP Range name is used for VPC Peering.
+     * The subnetwork allocation will use the range *name* if it's assigned.
+     * Example: managed-notebooks-range-c
+     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *   --global &#92;
+     *   --prefix-length=24 &#92;
+     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *   --network=$NETWORK &#92;
+     *   --addresses=192.168.0.0 &#92;
+     *   --purpose=VPC_PEERING
+     * Field value will be: `managed-notebooks-range-c`
+     * </pre>
+     *
+     * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservedIpRange() {
+
+      reservedIpRange_ = getDefaultInstance().getReservedIpRange();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reserved IP Range name is used for VPC Peering.
+     * The subnetwork allocation will use the range *name* if it's assigned.
+     * Example: managed-notebooks-range-c
+     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *   --global &#92;
+     *   --prefix-length=24 &#92;
+     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *   --network=$NETWORK &#92;
+     *   --addresses=192.168.0.0 &#92;
+     *   --purpose=VPC_PEERING
+     * Field value will be: `managed-notebooks-range-c`
+     * </pre>
+     *
+     * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for reservedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      reservedIpRange_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage bootImage_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage,
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder,
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder>
+        bootImageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootImage field is set.
+     */
+    public boolean hasBootImage() {
+      return bootImageBuilder_ != null || bootImage_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootImage.
+     */
+    public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage getBootImage() {
+      if (bootImageBuilder_ == null) {
+        return bootImage_ == null
+            ? com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance()
+            : bootImage_;
+      } else {
+        return bootImageBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBootImage(
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage value) {
+      if (bootImageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootImage_ = value;
+        onChanged();
+      } else {
+        bootImageBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBootImage(
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder builderForValue) {
+      if (bootImageBuilder_ == null) {
+        bootImage_ = builderForValue.build();
+        onChanged();
+      } else {
+        bootImageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBootImage(
+        com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage value) {
+      if (bootImageBuilder_ == null) {
+        if (bootImage_ != null) {
+          bootImage_ =
+              com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.newBuilder(bootImage_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          bootImage_ = value;
+        }
+        onChanged();
+      } else {
+        bootImageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBootImage() {
+      if (bootImageBuilder_ == null) {
+        bootImage_ = null;
+        onChanged();
+      } else {
+        bootImage_ = null;
+        bootImageBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder
+        getBootImageBuilder() {
+
+      onChanged();
+      return getBootImageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder
+        getBootImageOrBuilder() {
+      if (bootImageBuilder_ != null) {
+        return bootImageBuilder_.getMessageOrBuilder();
+      } else {
+        return bootImage_ == null
+            ? com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.getDefaultInstance()
+            : bootImage_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot image metadata used for runtime upgradeability.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage,
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder,
+            com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder>
+        getBootImageFieldBuilder() {
+      if (bootImageBuilder_ == null) {
+        bootImageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage,
+                com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage.Builder,
+                com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder>(
+                getBootImage(), getParentForChildren(), isClean());
+        bootImage_ = null;
+      }
+      return bootImageBuilder_;
     }
 
     @java.lang.Override

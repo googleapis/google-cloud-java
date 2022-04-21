@@ -248,6 +248,28 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
   }
 
   @Override
+  public void updateInstanceMetadataItems(
+      UpdateInstanceMetadataItemsRequest request,
+      StreamObserver<UpdateInstanceMetadataItemsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UpdateInstanceMetadataItemsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((UpdateInstanceMetadataItemsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateInstanceMetadataItems, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UpdateInstanceMetadataItemsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteInstance(
       DeleteInstanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

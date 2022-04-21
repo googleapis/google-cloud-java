@@ -158,6 +158,19 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * <code>SINGLE_USER = 1;</code>
      */
     SINGLE_USER(1),
+    /**
+     *
+     *
+     * <pre>
+     * Service Account mode.
+     * In Service Account mode, Runtime creator will specify a SA that exists
+     * in the consumer project. Using Runtime Service Account field.
+     * Users accessing the Runtime need ActAs (Service Account User) permission.
+     * </pre>
+     *
+     * <code>SERVICE_ACCOUNT = 2;</code>
+     */
+    SERVICE_ACCOUNT(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -181,6 +194,19 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
      * <code>SINGLE_USER = 1;</code>
      */
     public static final int SINGLE_USER_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Service Account mode.
+     * In Service Account mode, Runtime creator will specify a SA that exists
+     * in the consumer project. Using Runtime Service Account field.
+     * Users accessing the Runtime need ActAs (Service Account User) permission.
+     * </pre>
+     *
+     * <code>SERVICE_ACCOUNT = 2;</code>
+     */
+    public static final int SERVICE_ACCOUNT_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -210,6 +236,8 @@ public final class RuntimeAccessConfig extends com.google.protobuf.GeneratedMess
           return RUNTIME_ACCESS_TYPE_UNSPECIFIED;
         case 1:
           return SINGLE_USER;
+        case 2:
+          return SERVICE_ACCOUNT;
         default:
           return null;
       }

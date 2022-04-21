@@ -122,6 +122,7 @@ public interface RuntimeSoftwareConfigOrBuilder
    *
    * <pre>
    * Install Nvidia Driver automatically.
+   * Default: True
    * </pre>
    *
    * <code>bool install_gpu_driver = 5;</code>
@@ -185,4 +186,91 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The bytes for postStartupScript.
    */
   com.google.protobuf.ByteString getPostStartupScriptBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.notebooks.v1.ContainerImage> getKernelsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.notebooks.v1.ContainerImage getKernels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getKernelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.notebooks.v1.ContainerImageOrBuilder>
+      getKernelsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.notebooks.v1.ContainerImage kernels = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.notebooks.v1.ContainerImageOrBuilder getKernelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bool indicating whether an newer image is available in an image family.
+   * </pre>
+   *
+   * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the upgradeable field is set.
+   */
+  boolean hasUpgradeable();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bool indicating whether an newer image is available in an image family.
+   * </pre>
+   *
+   * <code>optional bool upgradeable = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The upgradeable.
+   */
+  boolean getUpgradeable();
 }

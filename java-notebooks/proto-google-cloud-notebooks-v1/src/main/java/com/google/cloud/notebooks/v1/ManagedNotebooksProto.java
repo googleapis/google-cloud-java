@@ -67,6 +67,14 @@ public final class ManagedNotebooksProto {
       internal_static_google_cloud_notebooks_v1_ReportRuntimeEventRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_ReportRuntimeEventRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -83,84 +91,100 @@ public final class ManagedNotebooksProto {
           + "roto\032\031google/api/resource.proto\032%google/"
           + "cloud/notebooks/v1/event.proto\032\'google/c"
           + "loud/notebooks/v1/runtime.proto\032#google/"
-          + "longrunning/operations.proto\"v\n\023ListRunt"
-          + "imesRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 not"
-          + "ebooks.googleapis.com/Runtime\022\021\n\tpage_si"
-          + "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"z\n\024ListRunt"
-          + "imesResponse\0224\n\010runtimes\030\001 \003(\0132\".google."
-          + "cloud.notebooks.v1.Runtime\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"K\n\021GetR"
-          + "untimeRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n not"
-          + "ebooks.googleapis.com/Runtime\"\243\001\n\024Create"
-          + "RuntimeRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n "
-          + "notebooks.googleapis.com/Runtime\022\027\n\nrunt"
-          + "ime_id\030\002 \001(\tB\003\340A\002\0228\n\007runtime\030\003 \001(\0132\".goo"
-          + "gle.cloud.notebooks.v1.RuntimeB\003\340A\002\"N\n\024D"
-          + "eleteRuntimeRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A"
-          + "\"\n notebooks.googleapis.com/Runtime\"(\n\023S"
-          + "tartRuntimeRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\'\n"
-          + "\022StopRuntimeRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\220"
-          + "\001\n\024SwitchRuntimeRequest\022\021\n\004name\030\001 \001(\tB\003\340"
-          + "A\002\022\024\n\014machine_type\030\002 \001(\t\022O\n\022accelerator_"
-          + "config\030\003 \001(\01323.google.cloud.notebooks.v1"
-          + ".RuntimeAcceleratorConfig\"(\n\023ResetRuntim"
-          + "eRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\235\001\n\031ReportRu"
-          + "ntimeEventRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " notebooks.googleapis.com/Runtime\022\022\n\005vm_"
-          + "id\030\002 \001(\tB\003\340A\002\0224\n\005event\030\003 \001(\0132 .google.cl"
-          + "oud.notebooks.v1.EventB\003\340A\0022\310\016\n\026ManagedN"
-          + "otebookService\022\256\001\n\014ListRuntimes\022..google"
-          + ".cloud.notebooks.v1.ListRuntimesRequest\032"
-          + "/.google.cloud.notebooks.v1.ListRuntimes"
-          + "Response\"=\202\323\344\223\002.\022,/v1/{parent=projects/*"
-          + "/locations/*}/runtimes\332A\006parent\022\233\001\n\nGetR"
-          + "untime\022,.google.cloud.notebooks.v1.GetRu"
-          + "ntimeRequest\032\".google.cloud.notebooks.v1"
-          + ".Runtime\";\202\323\344\223\002.\022,/v1/{name=projects/*/l"
-          + "ocations/*/runtimes/*}\332A\004name\022\331\001\n\rCreate"
-          + "Runtime\022/.google.cloud.notebooks.v1.Crea"
-          + "teRuntimeRequest\032\035.google.longrunning.Op"
-          + "eration\"x\202\323\344\223\0027\",/v1/{parent=projects/*/"
-          + "locations/*}/runtimes:\007runtime\332A\031parent,"
-          + "runtime_id,runtime\312A\034\n\007Runtime\022\021Operatio"
-          + "nMetadata\022\311\001\n\rDeleteRuntime\022/.google.clo"
-          + "ud.notebooks.v1.DeleteRuntimeRequest\032\035.g"
-          + "oogle.longrunning.Operation\"h\202\323\344\223\002.*,/v1"
-          + "/{name=projects/*/locations/*/runtimes/*"
-          + "}\332A\004name\312A*\n\025google.protobuf.Empty\022\021Oper"
-          + "ationMetadata\022\302\001\n\014StartRuntime\022..google."
-          + "cloud.notebooks.v1.StartRuntimeRequest\032\035"
-          + ".google.longrunning.Operation\"c\202\323\344\223\0027\"2/"
-          + "v1/{name=projects/*/locations/*/runtimes"
-          + "/*}:start:\001*\332A\004name\312A\034\n\007Runtime\022\021Operati"
-          + "onMetadata\022\277\001\n\013StopRuntime\022-.google.clou"
-          + "d.notebooks.v1.StopRuntimeRequest\032\035.goog"
-          + "le.longrunning.Operation\"b\202\323\344\223\0026\"1/v1/{n"
-          + "ame=projects/*/locations/*/runtimes/*}:s"
-          + "top:\001*\332A\004name\312A\034\n\007Runtime\022\021OperationMeta"
-          + "data\022\305\001\n\rSwitchRuntime\022/.google.cloud.no"
-          + "tebooks.v1.SwitchRuntimeRequest\032\035.google"
-          + ".longrunning.Operation\"d\202\323\344\223\0028\"3/v1/{nam"
-          + "e=projects/*/locations/*/runtimes/*}:swi"
-          + "tch:\001*\332A\004name\312A\034\n\007Runtime\022\021OperationMeta"
-          + "data\022\302\001\n\014ResetRuntime\022..google.cloud.not"
-          + "ebooks.v1.ResetRuntimeRequest\032\035.google.l"
-          + "ongrunning.Operation\"c\202\323\344\223\0027\"2/v1/{name="
-          + "projects/*/locations/*/runtimes/*}:reset"
-          + ":\001*\332A\004name\312A\034\n\007Runtime\022\021OperationMetadat"
-          + "a\022\324\001\n\022ReportRuntimeEvent\0224.google.cloud."
-          + "notebooks.v1.ReportRuntimeEventRequest\032\035"
-          + ".google.longrunning.Operation\"i\202\323\344\223\002=\"8/"
-          + "v1/{name=projects/*/locations/*/runtimes"
-          + "/*}:reportEvent:\001*\332A\004name\312A\034\n\007Runtime\022\021O"
-          + "perationMetadata\032L\312A\030notebooks.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/"
-          + "cloud-platformB\323\001\n\035com.google.cloud.note"
-          + "books.v1B\025ManagedNotebooksProtoP\001ZBgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/n"
-          + "otebooks/v1;notebooks\252\002\031Google.Cloud.Not"
-          + "ebooks.V1\312\002\031Google\\Cloud\\Notebooks\\V1\352\002\034"
-          + "Google::Cloud::Notebooks::V1b\006proto3"
+          + "longrunning/operations.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\"v\n\023ListRuntimesReq"
+          + "uest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 notebooks."
+          + "googleapis.com/Runtime\022\021\n\tpage_size\030\002 \001("
+          + "\005\022\022\n\npage_token\030\003 \001(\t\"z\n\024ListRuntimesRes"
+          + "ponse\0224\n\010runtimes\030\001 \003(\0132\".google.cloud.n"
+          + "otebooks.v1.Runtime\022\027\n\017next_page_token\030\002"
+          + " \001(\t\022\023\n\013unreachable\030\003 \003(\t\"K\n\021GetRuntimeR"
+          + "equest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n notebooks."
+          + "googleapis.com/Runtime\"\267\001\n\024CreateRuntime"
+          + "Request\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n noteboo"
+          + "ks.googleapis.com/Runtime\022\027\n\nruntime_id\030"
+          + "\002 \001(\tB\003\340A\002\0228\n\007runtime\030\003 \001(\0132\".google.clo"
+          + "ud.notebooks.v1.RuntimeB\003\340A\002\022\022\n\nrequest_"
+          + "id\030\004 \001(\t\"b\n\024DeleteRuntimeRequest\0226\n\004name"
+          + "\030\001 \001(\tB(\340A\002\372A\"\n notebooks.googleapis.com"
+          + "/Runtime\022\022\n\nrequest_id\030\002 \001(\t\"<\n\023StartRun"
+          + "timeRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\nreques"
+          + "t_id\030\002 \001(\t\";\n\022StopRuntimeRequest\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\002\022\022\n\nrequest_id\030\002 \001(\t\"\244\001\n\024Swit"
+          + "chRuntimeRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\024\n\014m"
+          + "achine_type\030\002 \001(\t\022O\n\022accelerator_config\030"
+          + "\003 \001(\01323.google.cloud.notebooks.v1.Runtim"
+          + "eAcceleratorConfig\022\022\n\nrequest_id\030\004 \001(\t\"<"
+          + "\n\023ResetRuntimeRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002"
+          + "\022\022\n\nrequest_id\030\002 \001(\t\"\235\001\n\031ReportRuntimeEv"
+          + "entRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n notebo"
+          + "oks.googleapis.com/Runtime\022\022\n\005vm_id\030\002 \001("
+          + "\tB\003\340A\002\0224\n\005event\030\003 \001(\0132 .google.cloud.not"
+          + "ebooks.v1.EventB\003\340A\002\"p\n\"RefreshRuntimeTo"
+          + "kenInternalRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\""
+          + "\n notebooks.googleapis.com/Runtime\022\022\n\005vm"
+          + "_id\030\002 \001(\tB\003\340A\002\"q\n#RefreshRuntimeTokenInt"
+          + "ernalResponse\022\024\n\014access_token\030\001 \001(\t\0224\n\013e"
+          + "xpire_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\0032\311\020\n\026ManagedNotebookService\022\256\001\n"
+          + "\014ListRuntimes\022..google.cloud.notebooks.v"
+          + "1.ListRuntimesRequest\032/.google.cloud.not"
+          + "ebooks.v1.ListRuntimesResponse\"=\202\323\344\223\002.\022,"
+          + "/v1/{parent=projects/*/locations/*}/runt"
+          + "imes\332A\006parent\022\233\001\n\nGetRuntime\022,.google.cl"
+          + "oud.notebooks.v1.GetRuntimeRequest\032\".goo"
+          + "gle.cloud.notebooks.v1.Runtime\";\202\323\344\223\002.\022,"
+          + "/v1/{name=projects/*/locations/*/runtime"
+          + "s/*}\332A\004name\022\331\001\n\rCreateRuntime\022/.google.c"
+          + "loud.notebooks.v1.CreateRuntimeRequest\032\035"
+          + ".google.longrunning.Operation\"x\202\323\344\223\0027\",/"
+          + "v1/{parent=projects/*/locations/*}/runti"
+          + "mes:\007runtime\332A\031parent,runtime_id,runtime"
+          + "\312A\034\n\007Runtime\022\021OperationMetadata\022\311\001\n\rDele"
+          + "teRuntime\022/.google.cloud.notebooks.v1.De"
+          + "leteRuntimeRequest\032\035.google.longrunning."
+          + "Operation\"h\202\323\344\223\002.*,/v1/{name=projects/*/"
+          + "locations/*/runtimes/*}\332A\004name\312A*\n\025googl"
+          + "e.protobuf.Empty\022\021OperationMetadata\022\302\001\n\014"
+          + "StartRuntime\022..google.cloud.notebooks.v1"
+          + ".StartRuntimeRequest\032\035.google.longrunnin"
+          + "g.Operation\"c\202\323\344\223\0027\"2/v1/{name=projects/"
+          + "*/locations/*/runtimes/*}:start:\001*\332A\004nam"
+          + "e\312A\034\n\007Runtime\022\021OperationMetadata\022\277\001\n\013Sto"
+          + "pRuntime\022-.google.cloud.notebooks.v1.Sto"
+          + "pRuntimeRequest\032\035.google.longrunning.Ope"
+          + "ration\"b\202\323\344\223\0026\"1/v1/{name=projects/*/loc"
+          + "ations/*/runtimes/*}:stop:\001*\332A\004name\312A\034\n\007"
+          + "Runtime\022\021OperationMetadata\022\305\001\n\rSwitchRun"
+          + "time\022/.google.cloud.notebooks.v1.SwitchR"
+          + "untimeRequest\032\035.google.longrunning.Opera"
+          + "tion\"d\202\323\344\223\0028\"3/v1/{name=projects/*/locat"
+          + "ions/*/runtimes/*}:switch:\001*\332A\004name\312A\034\n\007"
+          + "Runtime\022\021OperationMetadata\022\302\001\n\014ResetRunt"
+          + "ime\022..google.cloud.notebooks.v1.ResetRun"
+          + "timeRequest\032\035.google.longrunning.Operati"
+          + "on\"c\202\323\344\223\0027\"2/v1/{name=projects/*/locatio"
+          + "ns/*/runtimes/*}:reset:\001*\332A\004name\312A\034\n\007Run"
+          + "time\022\021OperationMetadata\022\324\001\n\022ReportRuntim"
+          + "eEvent\0224.google.cloud.notebooks.v1.Repor"
+          + "tRuntimeEventRequest\032\035.google.longrunnin"
+          + "g.Operation\"i\202\323\344\223\002=\"8/v1/{name=projects/"
+          + "*/locations/*/runtimes/*}:reportEvent:\001*"
+          + "\332A\004name\312A\034\n\007Runtime\022\021OperationMetadata\022\376"
+          + "\001\n\033RefreshRuntimeTokenInternal\022=.google."
+          + "cloud.notebooks.v1.RefreshRuntimeTokenIn"
+          + "ternalRequest\032>.google.cloud.notebooks.v"
+          + "1.RefreshRuntimeTokenInternalResponse\"`\202"
+          + "\323\344\223\002M\"H/v1/{name=projects/*/locations/*/"
+          + "runtimes/*}:refreshRuntimeTokenInternal:"
+          + "\001*\332A\nname,vm_id\032L\312A\030notebooks.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformB\323\001\n\035com.google.cloud.noteb"
+          + "ooks.v1B\025ManagedNotebooksProtoP\001ZBgoogle"
+          + ".golang.org/genproto/googleapis/cloud/no"
+          + "tebooks/v1;notebooks\252\002\031Google.Cloud.Note"
+          + "books.V1\312\002\031Google\\Cloud\\Notebooks\\V1\352\002\034G"
+          + "oogle::Cloud::Notebooks::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -173,6 +197,7 @@ public final class ManagedNotebooksProto {
               com.google.cloud.notebooks.v1.EventProto.getDescriptor(),
               com.google.cloud.notebooks.v1.RuntimeProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_notebooks_v1_ListRuntimesRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -204,7 +229,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_CreateRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "RuntimeId", "Runtime",
+              "Parent", "RuntimeId", "Runtime", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_DeleteRuntimeRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -212,7 +237,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_DeleteRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_StartRuntimeRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -220,7 +245,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_StartRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_StopRuntimeRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -228,7 +253,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_StopRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_SwitchRuntimeRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -236,7 +261,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_SwitchRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Name", "MachineType", "AcceleratorConfig",
+              "Name", "MachineType", "AcceleratorConfig", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_ResetRuntimeRequest_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -244,7 +269,7 @@ public final class ManagedNotebooksProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ResetRuntimeRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RequestId",
             });
     internal_static_google_cloud_notebooks_v1_ReportRuntimeEventRequest_descriptor =
         getDescriptor().getMessageTypes().get(9);
@@ -253,6 +278,22 @@ public final class ManagedNotebooksProto {
             internal_static_google_cloud_notebooks_v1_ReportRuntimeEventRequest_descriptor,
             new java.lang.String[] {
               "Name", "VmId", "Event",
+            });
+    internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "VmId",
+            });
+    internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_RefreshRuntimeTokenInternalResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpireTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -272,6 +313,7 @@ public final class ManagedNotebooksProto {
     com.google.cloud.notebooks.v1.EventProto.getDescriptor();
     com.google.cloud.notebooks.v1.RuntimeProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

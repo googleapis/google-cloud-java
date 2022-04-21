@@ -99,7 +99,8 @@ public interface ExecutionTemplateOrBuilder
    * - `complex_model_l_v100`
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
-   * with TPU.
+   * with
+   * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
    * </pre>
    *
    * <code>string master_type = 2;</code>
@@ -150,7 +151,8 @@ public interface ExecutionTemplateOrBuilder
    * - `complex_model_l_v100`
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
-   * with TPU.
+   * with
+   * TPU](https://cloud.google.com/ai-platform/training/docs/using-tpus#configuring_a_custom_tpu_machine).
    * </pre>
    *
    * <code>string master_type = 2;</code>
@@ -284,7 +286,7 @@ public interface ExecutionTemplateOrBuilder
    * <pre>
    * Path to the notebook file to execute.
    * Must be in a Google Cloud Storage bucket.
-   * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+   * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
    * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
    * </pre>
    *
@@ -299,7 +301,7 @@ public interface ExecutionTemplateOrBuilder
    * <pre>
    * Path to the notebook file to execute.
    * Must be in a Google Cloud Storage bucket.
-   * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+   * Format: `gs://{bucket_name}/{folder}/{notebook_file_name}`
    * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
    * </pre>
    *
@@ -346,7 +348,7 @@ public interface ExecutionTemplateOrBuilder
    * <pre>
    * Path to the notebook folder to write to.
    * Must be in a Google Cloud Storage bucket path.
-   * Format: `gs://{project_id}/{folder}`
+   * Format: `gs://{bucket_name}/{folder}`
    * Ex: `gs://notebook_user/scheduled_notebooks`
    * </pre>
    *
@@ -361,7 +363,7 @@ public interface ExecutionTemplateOrBuilder
    * <pre>
    * Path to the notebook folder to write to.
    * Must be in a Google Cloud Storage bucket path.
-   * Format: `gs://{project_id}/{folder}`
+   * Format: `gs://{bucket_name}/{folder}`
    * Ex: `gs://notebook_user/scheduled_notebooks`
    * </pre>
    *
@@ -521,6 +523,108 @@ public interface ExecutionTemplateOrBuilder
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParametersOrBuilder
       getDataprocParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   *
+   * @return Whether the vertexAiParameters field is set.
+   */
+  boolean hasVertexAiParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   *
+   * @return The vertexAiParameters.
+   */
+  com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters getVertexAiParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters used in Vertex AI JobType executions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters vertex_ai_parameters = 13;
+   * </code>
+   */
+  com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParametersOrBuilder
+      getVertexAiParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the kernel spec to use. This must be specified if the
+   * kernel spec name on the execution target does not match the name in the
+   * input notebook file.
+   * </pre>
+   *
+   * <code>string kernel_spec = 14;</code>
+   *
+   * @return The kernelSpec.
+   */
+  java.lang.String getKernelSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the kernel spec to use. This must be specified if the
+   * kernel spec name on the execution target does not match the name in the
+   * input notebook file.
+   * </pre>
+   *
+   * <code>string kernel_spec = 14;</code>
+   *
+   * @return The bytes for kernelSpec.
+   */
+  com.google.protobuf.ByteString getKernelSpecBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of a Vertex AI [Tensorboard] resource to which this execution
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The tensorboard.
+   */
+  java.lang.String getTensorboard();
+  /**
+   *
+   *
+   * <pre>
+   * The name of a Vertex AI [Tensorboard] resource to which this execution
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 15 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for tensorboard.
+   */
+  com.google.protobuf.ByteString getTensorboardBytes();
 
   public com.google.cloud.notebooks.v1.ExecutionTemplate.JobParametersCase getJobParametersCase();
 }

@@ -30,6 +30,7 @@ package com.google.cloud.notebooks.v1;
  * * `nvidia-tesla-k80`
  * * `nvidia-tesla-p100`
  * * `nvidia-tesla-v100`
+ * * `nvidia-tesla-p4`
  * * `nvidia-tesla-t4`
  * * `nvidia-tesla-a100`
  * </pre>
@@ -179,7 +180,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -249,7 +250,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P.4 GPU Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 11;</code>
@@ -302,7 +303,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P4 GPU.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -372,7 +373,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P.4 GPU Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 11;</code>
@@ -727,6 +728,7 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
    * * `nvidia-tesla-k80`
    * * `nvidia-tesla-p100`
    * * `nvidia-tesla-v100`
+   * * `nvidia-tesla-p4`
    * * `nvidia-tesla-t4`
    * * `nvidia-tesla-a100`
    * </pre>

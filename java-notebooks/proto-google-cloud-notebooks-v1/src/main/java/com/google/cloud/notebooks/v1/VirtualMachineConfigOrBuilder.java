@@ -91,7 +91,7 @@ public interface VirtualMachineConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public interface VirtualMachineConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -115,7 +115,7 @@ public interface VirtualMachineConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -127,7 +127,7 @@ public interface VirtualMachineConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -140,7 +140,7 @@ public interface VirtualMachineConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Use a list of container images to start the notebook instance.
+   * Optional. Use a list of container images to use as Kernels in the notebook instance.
    * </pre>
    *
    * <code>
@@ -728,4 +728,92 @@ public interface VirtualMachineConfigOrBuilder
    * @return The nicType.
    */
   com.google.cloud.notebooks.v1.VirtualMachineConfig.NicType getNicType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved IP Range name is used for VPC Peering.
+   * The subnetwork allocation will use the range *name* if it's assigned.
+   * Example: managed-notebooks-range-c
+   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *   --global &#92;
+   *   --prefix-length=24 &#92;
+   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *   --network=$NETWORK &#92;
+   *   --addresses=192.168.0.0 &#92;
+   *   --purpose=VPC_PEERING
+   * Field value will be: `managed-notebooks-range-c`
+   * </pre>
+   *
+   * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reservedIpRange.
+   */
+  java.lang.String getReservedIpRange();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved IP Range name is used for VPC Peering.
+   * The subnetwork allocation will use the range *name* if it's assigned.
+   * Example: managed-notebooks-range-c
+   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *   --global &#92;
+   *   --prefix-length=24 &#92;
+   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *   --network=$NETWORK &#92;
+   *   --addresses=192.168.0.0 &#92;
+   *   --purpose=VPC_PEERING
+   * Field value will be: `managed-notebooks-range-c`
+   * </pre>
+   *
+   * <code>string reserved_ip_range = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for reservedIpRange.
+   */
+  com.google.protobuf.ByteString getReservedIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootImage field is set.
+   */
+  boolean hasBootImage();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootImage.
+   */
+  com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImage getBootImage();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot image metadata used for runtime upgradeability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.VirtualMachineConfig.BootImage boot_image = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.notebooks.v1.VirtualMachineConfig.BootImageOrBuilder getBootImageOrBuilder();
 }

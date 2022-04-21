@@ -428,6 +428,59 @@ public final class ManagedNotebookServiceGrpc {
     return getReportRuntimeEventMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+          com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+      getRefreshRuntimeTokenInternalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefreshRuntimeTokenInternal",
+      requestType = com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest.class,
+      responseType = com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+          com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+      getRefreshRuntimeTokenInternalMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+        getRefreshRuntimeTokenInternalMethod;
+    if ((getRefreshRuntimeTokenInternalMethod =
+            ManagedNotebookServiceGrpc.getRefreshRuntimeTokenInternalMethod)
+        == null) {
+      synchronized (ManagedNotebookServiceGrpc.class) {
+        if ((getRefreshRuntimeTokenInternalMethod =
+                ManagedNotebookServiceGrpc.getRefreshRuntimeTokenInternalMethod)
+            == null) {
+          ManagedNotebookServiceGrpc.getRefreshRuntimeTokenInternalMethod =
+              getRefreshRuntimeTokenInternalMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+                          com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RefreshRuntimeTokenInternal"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ManagedNotebookServiceMethodDescriptorSupplier(
+                              "RefreshRuntimeTokenInternal"))
+                      .build();
+        }
+      }
+    }
+    return getRefreshRuntimeTokenInternalMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ManagedNotebookServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ManagedNotebookServiceStub> factory =
@@ -613,6 +666,23 @@ public final class ManagedNotebookServiceGrpc {
           getReportRuntimeEventMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets an access token for the consumer service account that the customer
+     * attached to the runtime. Only accessible from the tenant instance.
+     * </pre>
+     */
+    public void refreshRuntimeTokenInternal(
+        com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRefreshRuntimeTokenInternalMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -671,6 +741,13 @@ public final class ManagedNotebookServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.notebooks.v1.ReportRuntimeEventRequest,
                       com.google.longrunning.Operation>(this, METHODID_REPORT_RUNTIME_EVENT)))
+          .addMethod(
+              getRefreshRuntimeTokenInternalMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+                      com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>(
+                      this, METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL)))
           .build();
     }
   }
@@ -845,6 +922,25 @@ public final class ManagedNotebookServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an access token for the consumer service account that the customer
+     * attached to the runtime. Only accessible from the tenant instance.
+     * </pre>
+     */
+    public void refreshRuntimeTokenInternal(
+        com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefreshRuntimeTokenInternalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -991,6 +1087,21 @@ public final class ManagedNotebookServiceGrpc {
         com.google.cloud.notebooks.v1.ReportRuntimeEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportRuntimeEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an access token for the consumer service account that the customer
+     * attached to the runtime. Only accessible from the tenant instance.
+     * </pre>
+     */
+    public com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse
+        refreshRuntimeTokenInternal(
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefreshRuntimeTokenInternalMethod(), getCallOptions(), request);
     }
   }
 
@@ -1140,6 +1251,22 @@ public final class ManagedNotebookServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportRuntimeEventMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an access token for the consumer service account that the customer
+     * attached to the runtime. Only accessible from the tenant instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
+        refreshRuntimeTokenInternal(
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefreshRuntimeTokenInternalMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_RUNTIMES = 0;
@@ -1151,6 +1278,7 @@ public final class ManagedNotebookServiceGrpc {
   private static final int METHODID_SWITCH_RUNTIME = 6;
   private static final int METHODID_RESET_RUNTIME = 7;
   private static final int METHODID_REPORT_RUNTIME_EVENT = 8;
+  private static final int METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1215,6 +1343,13 @@ public final class ManagedNotebookServiceGrpc {
           serviceImpl.reportRuntimeEvent(
               (com.google.cloud.notebooks.v1.ReportRuntimeEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL:
+          serviceImpl.refreshRuntimeTokenInternal(
+              (com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1289,6 +1424,7 @@ public final class ManagedNotebookServiceGrpc {
                       .addMethod(getSwitchRuntimeMethod())
                       .addMethod(getResetRuntimeMethod())
                       .addMethod(getReportRuntimeEventMethod())
+                      .addMethod(getRefreshRuntimeTokenInternalMethod())
                       .build();
         }
       }

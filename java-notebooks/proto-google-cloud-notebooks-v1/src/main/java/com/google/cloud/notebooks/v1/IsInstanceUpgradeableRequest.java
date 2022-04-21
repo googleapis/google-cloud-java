@@ -39,6 +39,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
 
   private IsInstanceUpgradeableRequest() {
     notebookInstance_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
               java.lang.String s = input.readStringRequireUtf8();
 
               notebookInstance_ = s;
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
           default:
@@ -162,6 +170,48 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 2;
+  private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional UpgradeType. Setting this field will search for additional
+   * compute images to upgrade this instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional UpgradeType. Setting this field will search for additional
+   * compute images to upgrade this instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.UpgradeType getType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.notebooks.v1.UpgradeType result =
+        com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
+    return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,6 +229,9 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, notebookInstance_);
     }
+    if (type_ != com.google.cloud.notebooks.v1.UpgradeType.UPGRADE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -190,6 +243,9 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, notebookInstance_);
+    }
+    if (type_ != com.google.cloud.notebooks.v1.UpgradeType.UPGRADE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -208,6 +264,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
         (com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest) obj;
 
     if (!getNotebookInstance().equals(other.getNotebookInstance())) return false;
+    if (type_ != other.type_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -221,6 +278,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NOTEBOOK_INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getNotebookInstance().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -369,6 +428,8 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       super.clear();
       notebookInstance_ = "";
 
+      type_ = 0;
+
       return this;
     }
 
@@ -397,6 +458,7 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest result =
           new com.google.cloud.notebooks.v1.IsInstanceUpgradeableRequest(this);
       result.notebookInstance_ = notebookInstance_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -450,6 +512,9 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       if (!other.getNotebookInstance().isEmpty()) {
         notebookInstance_ = other.notebookInstance_;
         onChanged();
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -588,6 +653,112 @@ public final class IsInstanceUpgradeableRequest extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
 
       notebookInstance_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional UpgradeType. Setting this field will search for additional
+     * compute images to upgrade this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional UpgradeType. Setting this field will search for additional
+     * compute images to upgrade this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional UpgradeType. Setting this field will search for additional
+     * compute images to upgrade this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.UpgradeType getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.notebooks.v1.UpgradeType result =
+          com.google.cloud.notebooks.v1.UpgradeType.valueOf(type_);
+      return result == null ? com.google.cloud.notebooks.v1.UpgradeType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional UpgradeType. Setting this field will search for additional
+     * compute images to upgrade this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.notebooks.v1.UpgradeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional UpgradeType. Setting this field will search for additional
+     * compute images to upgrade this instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.UpgradeType type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+
+      type_ = 0;
       onChanged();
       return this;
     }

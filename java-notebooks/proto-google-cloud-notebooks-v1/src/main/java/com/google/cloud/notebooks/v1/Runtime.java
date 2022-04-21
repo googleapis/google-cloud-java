@@ -559,6 +559,28 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHEALTHY = 2;</code>
      */
     UNHEALTHY(2),
+    /**
+     *
+     *
+     * <pre>
+     * The runtime has not installed health monitoring agent.
+     * Applies to ACTIVE state.
+     * </pre>
+     *
+     * <code>AGENT_NOT_INSTALLED = 3;</code>
+     */
+    AGENT_NOT_INSTALLED(3),
+    /**
+     *
+     *
+     * <pre>
+     * The runtime health monitoring agent is not running.
+     * Applies to ACTIVE state.
+     * </pre>
+     *
+     * <code>AGENT_NOT_RUNNING = 4;</code>
+     */
+    AGENT_NOT_RUNNING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -596,6 +618,28 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHEALTHY = 2;</code>
      */
     public static final int UNHEALTHY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The runtime has not installed health monitoring agent.
+     * Applies to ACTIVE state.
+     * </pre>
+     *
+     * <code>AGENT_NOT_INSTALLED = 3;</code>
+     */
+    public static final int AGENT_NOT_INSTALLED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The runtime health monitoring agent is not running.
+     * Applies to ACTIVE state.
+     * </pre>
+     *
+     * <code>AGENT_NOT_RUNNING = 4;</code>
+     */
+    public static final int AGENT_NOT_RUNNING_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -627,6 +671,10 @@ public final class Runtime extends com.google.protobuf.GeneratedMessageV3
           return HEALTHY;
         case 2:
           return UNHEALTHY;
+        case 3:
+          return AGENT_NOT_INSTALLED;
+        case 4:
+          return AGENT_NOT_RUNNING;
         default:
           return null;
       }

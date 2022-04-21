@@ -64,6 +64,8 @@ import com.google.cloud.notebooks.v1.StartInstanceRequest;
 import com.google.cloud.notebooks.v1.StopInstanceRequest;
 import com.google.cloud.notebooks.v1.TriggerScheduleRequest;
 import com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse;
 import com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceRequest;
@@ -166,6 +168,12 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setInstanceLabelsCallable()");
+  }
+
+  public UnaryCallable<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateInstanceMetadataItemsCallable()");
   }
 
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>

@@ -82,4 +82,58 @@ public interface EventOrBuilder
    * @return The type.
    */
   com.google.cloud.notebooks.v1.Event.EventType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsDetails(java.lang.String key);
+  /** Use {@link #getDetailsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getDetailsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getDetailsOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Event details. This field is used to pass event information.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; details = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getDetailsOrThrow(java.lang.String key);
 }

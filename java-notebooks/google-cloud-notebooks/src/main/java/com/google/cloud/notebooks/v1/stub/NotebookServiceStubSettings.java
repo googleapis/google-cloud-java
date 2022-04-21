@@ -87,6 +87,8 @@ import com.google.cloud.notebooks.v1.StartInstanceRequest;
 import com.google.cloud.notebooks.v1.StopInstanceRequest;
 import com.google.cloud.notebooks.v1.TriggerScheduleRequest;
 import com.google.cloud.notebooks.v1.UpdateInstanceConfigRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest;
+import com.google.cloud.notebooks.v1.UpdateInstanceMetadataItemsResponse;
 import com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceRequest;
@@ -169,6 +171,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
   private final UnaryCallSettings<SetInstanceLabelsRequest, Operation> setInstanceLabelsSettings;
   private final OperationCallSettings<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationSettings;
+  private final UnaryCallSettings<
+          UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
@@ -542,6 +547,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return setInstanceLabelsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateInstanceMetadataItems. */
+  public UnaryCallSettings<UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+      updateInstanceMetadataItemsSettings() {
+    return updateInstanceMetadataItemsSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return deleteInstanceSettings;
@@ -853,6 +864,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     setInstanceLabelsSettings = settingsBuilder.setInstanceLabelsSettings().build();
     setInstanceLabelsOperationSettings =
         settingsBuilder.setInstanceLabelsOperationSettings().build();
+    updateInstanceMetadataItemsSettings =
+        settingsBuilder.updateInstanceMetadataItemsSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     startInstanceSettings = settingsBuilder.startInstanceSettings().build();
@@ -938,6 +951,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     private final OperationCallSettings.Builder<
             SetInstanceLabelsRequest, Instance, OperationMetadata>
         setInstanceLabelsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+        updateInstanceMetadataItemsSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
@@ -1082,6 +1098,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       updateShieldedInstanceConfigOperationSettings = OperationCallSettings.newBuilder();
       setInstanceLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setInstanceLabelsOperationSettings = OperationCallSettings.newBuilder();
+      updateInstanceMetadataItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       startInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1132,6 +1149,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               updateInstanceConfigSettings,
               updateShieldedInstanceConfigSettings,
               setInstanceLabelsSettings,
+              updateInstanceMetadataItemsSettings,
               deleteInstanceSettings,
               startInstanceSettings,
               stopInstanceSettings,
@@ -1182,6 +1200,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           settings.updateShieldedInstanceConfigOperationSettings.toBuilder();
       setInstanceLabelsSettings = settings.setInstanceLabelsSettings.toBuilder();
       setInstanceLabelsOperationSettings = settings.setInstanceLabelsOperationSettings.toBuilder();
+      updateInstanceMetadataItemsSettings =
+          settings.updateInstanceMetadataItemsSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       startInstanceSettings = settings.startInstanceSettings.toBuilder();
@@ -1234,6 +1254,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               updateInstanceConfigSettings,
               updateShieldedInstanceConfigSettings,
               setInstanceLabelsSettings,
+              updateInstanceMetadataItemsSettings,
               deleteInstanceSettings,
               startInstanceSettings,
               stopInstanceSettings,
@@ -1317,6 +1338,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           .setInstanceLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateInstanceMetadataItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteInstanceSettings()
@@ -2088,6 +2114,13 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     public OperationCallSettings.Builder<SetInstanceLabelsRequest, Instance, OperationMetadata>
         setInstanceLabelsOperationSettings() {
       return setInstanceLabelsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstanceMetadataItems. */
+    public UnaryCallSettings.Builder<
+            UpdateInstanceMetadataItemsRequest, UpdateInstanceMetadataItemsResponse>
+        updateInstanceMetadataItemsSettings() {
+      return updateInstanceMetadataItemsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
