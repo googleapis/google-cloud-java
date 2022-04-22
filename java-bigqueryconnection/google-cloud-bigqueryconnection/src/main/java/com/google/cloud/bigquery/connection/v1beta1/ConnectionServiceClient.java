@@ -799,7 +799,6 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param options OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.
-   *     This field is only used by Cloud IAM.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(ResourceName resource, GetPolicyOptions options) {
@@ -829,7 +828,6 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param options OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.
-   *     This field is only used by Cloud IAM.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource, GetPolicyOptions options) {
@@ -962,6 +960,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = connectionServiceClient.setIamPolicy(request);
    * }
@@ -988,6 +987,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = connectionServiceClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

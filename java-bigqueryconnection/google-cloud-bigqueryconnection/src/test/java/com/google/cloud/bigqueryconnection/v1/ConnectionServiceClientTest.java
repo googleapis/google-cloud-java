@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.connection.v1.ListConnectionsResponse;
 import com.google.cloud.bigquery.connection.v1.LocationName;
 import com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -543,6 +544,7 @@ public class ConnectionServiceClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockConnectionService.addResponse(expectedResponse);
@@ -586,6 +588,7 @@ public class ConnectionServiceClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockConnectionService.addResponse(expectedResponse);
@@ -629,6 +632,7 @@ public class ConnectionServiceClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockConnectionService.addResponse(expectedResponse);
@@ -672,6 +676,7 @@ public class ConnectionServiceClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockConnectionService.addResponse(expectedResponse);
