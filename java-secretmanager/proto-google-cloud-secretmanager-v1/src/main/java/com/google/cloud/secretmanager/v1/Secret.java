@@ -191,6 +191,23 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                versionAliases_ =
+                    com.google.protobuf.MapField.newMapField(
+                        VersionAliasesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> versionAliases__ =
+                  input.readMessage(
+                      VersionAliasesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              versionAliases_
+                  .getMutableMap()
+                  .put(versionAliases__.getKey(), versionAliases__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -224,6 +241,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 11:
+        return internalGetVersionAliases();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -865,6 +884,142 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return getRotation();
   }
 
+  public static final int VERSION_ALIASES_FIELD_NUMBER = 11;
+
+  private static final class VersionAliasesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Long>newDefaultInstance(
+            com.google.cloud.secretmanager.v1.ResourcesProto
+                .internal_static_google_cloud_secretmanager_v1_Secret_VersionAliasesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.INT64,
+            0L);
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Long> versionAliases_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetVersionAliases() {
+    if (versionAliases_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          VersionAliasesDefaultEntryHolder.defaultEntry);
+    }
+    return versionAliases_;
+  }
+
+  public int getVersionAliasesCount() {
+    return internalGetVersionAliases().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsVersionAliases(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetVersionAliases().getMap().containsKey(key);
+  }
+  /** Use {@link #getVersionAliasesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Long> getVersionAliases() {
+    return getVersionAliasesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap() {
+    return internalGetVersionAliases().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public long getVersionAliasesOrDefault(java.lang.String key, long defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public long getVersionAliasesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -905,6 +1060,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (rotation_ != null) {
       output.writeMessage(9, getRotation());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetVersionAliases(), VersionAliasesDefaultEntryHolder.defaultEntry, 11);
     unknownFields.writeTo(output);
   }
 
@@ -952,6 +1109,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (rotation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRotation());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry :
+        internalGetVersionAliases().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> versionAliases__ =
+          VersionAliasesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, versionAliases__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -983,6 +1150,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (hasRotation()) {
       if (!getRotation().equals(other.getRotation())) return false;
     }
+    if (!internalGetVersionAliases().equals(other.internalGetVersionAliases())) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -1028,6 +1196,10 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (hasRotation()) {
       hash = (37 * hash) + ROTATION_FIELD_NUMBER;
       hash = (53 * hash) + getRotation().hashCode();
+    }
+    if (!internalGetVersionAliases().getMap().isEmpty()) {
+      hash = (37 * hash) + VERSION_ALIASES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetVersionAliases().hashCode();
     }
     switch (expirationCase_) {
       case 6:
@@ -1167,6 +1339,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 11:
+          return internalGetVersionAliases();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1177,6 +1351,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 11:
+          return internalGetMutableVersionAliases();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1240,6 +1416,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         rotation_ = null;
         rotationBuilder_ = null;
       }
+      internalGetMutableVersionAliases().clear();
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -1312,6 +1489,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.rotation_ = rotationBuilder_.build();
       }
+      result.versionAliases_ = internalGetVersionAliases();
+      result.versionAliases_.makeImmutable();
       result.expirationCase_ = expirationCase_;
       onBuilt();
       return result;
@@ -1407,6 +1586,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRotation()) {
         mergeRotation(other.getRotation());
       }
+      internalGetMutableVersionAliases().mergeFrom(other.internalGetVersionAliases());
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -3340,6 +3520,233 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         rotation_ = null;
       }
       return rotationBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long> versionAliases_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+        internalGetVersionAliases() {
+      if (versionAliases_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            VersionAliasesDefaultEntryHolder.defaultEntry);
+      }
+      return versionAliases_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+        internalGetMutableVersionAliases() {
+      onChanged();
+      ;
+      if (versionAliases_ == null) {
+        versionAliases_ =
+            com.google.protobuf.MapField.newMapField(VersionAliasesDefaultEntryHolder.defaultEntry);
+      }
+      if (!versionAliases_.isMutable()) {
+        versionAliases_ = versionAliases_.copy();
+      }
+      return versionAliases_;
+    }
+
+    public int getVersionAliasesCount() {
+      return internalGetVersionAliases().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsVersionAliases(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetVersionAliases().getMap().containsKey(key);
+    }
+    /** Use {@link #getVersionAliasesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getVersionAliases() {
+      return getVersionAliasesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap() {
+      return internalGetVersionAliases().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public long getVersionAliasesOrDefault(java.lang.String key, long defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public long getVersionAliasesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.Long> map = internalGetVersionAliases().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearVersionAliases() {
+      internalGetMutableVersionAliases().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeVersionAliases(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableVersionAliases().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getMutableVersionAliases() {
+      return internalGetMutableVersionAliases().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putVersionAliases(java.lang.String key, long value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+
+      internalGetMutableVersionAliases().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping from version alias to version name.
+     * A version alias is a string with a maximum length of 63 characters and can
+     * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+     * and underscore ('_') characters. An alias string must start with a
+     * letter and cannot be the string 'latest' or 'NEW'.
+     * No more than 50 aliases can be assigned to a given secret.
+     * Version-Alias pairs will be viewable via GetSecret and modifiable via
+     * UpdateSecret. At launch access by alias will only be supported on
+     * GetSecretVersion and AccessSecretVersion.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllVersionAliases(java.util.Map<java.lang.String, java.lang.Long> values) {
+      internalGetMutableVersionAliases().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

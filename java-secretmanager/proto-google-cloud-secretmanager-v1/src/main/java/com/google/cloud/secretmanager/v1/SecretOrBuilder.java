@@ -431,5 +431,104 @@ public interface SecretOrBuilder
    */
   com.google.cloud.secretmanager.v1.RotationOrBuilder getRotationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getVersionAliasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsVersionAliases(java.lang.String key);
+  /** Use {@link #getVersionAliasesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Long> getVersionAliases();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.Long> getVersionAliasesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  long getVersionAliasesOrDefault(java.lang.String key, long defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping from version alias to version name.
+   * A version alias is a string with a maximum length of 63 characters and can
+   * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
+   * and underscore ('_') characters. An alias string must start with a
+   * letter and cannot be the string 'latest' or 'NEW'.
+   * No more than 50 aliases can be assigned to a given secret.
+   * Version-Alias pairs will be viewable via GetSecret and modifiable via
+   * UpdateSecret. At launch access by alias will only be supported on
+   * GetSecretVersion and AccessSecretVersion.
+   * </pre>
+   *
+   * <code>map&lt;string, int64&gt; version_aliases = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  long getVersionAliasesOrThrow(java.lang.String key);
+
   public com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }

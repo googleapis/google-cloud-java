@@ -1596,6 +1596,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = secretManagerServiceClient.setIamPolicy(request);
    * }
@@ -1624,6 +1625,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       secretManagerServiceClient.setIamPolicyCallable().futureCall(request);
