@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.1.13](https://github.com/googleapis/java-translate/compare/v2.1.12...v2.1.13) (2022-04-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.6.1 ([#977](https://github.com/googleapis/java-translate/issues/977)) ([d614cdb](https://github.com/googleapis/java-translate/commit/d614cdb9ca51756b6c00bc1b29ca3b4c3d212c16))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#978](https://github.com/googleapis/java-translate/issues/978)) ([baa8f88](https://github.com/googleapis/java-translate/commit/baa8f882bb55f480975898f69a54dabb8f5821ea))
+* update dependency com.google.cloud:google-cloud-storage to v2.6.0 ([#973](https://github.com/googleapis/java-translate/issues/973)) ([2cb5130](https://github.com/googleapis/java-translate/commit/2cb5130d0cc5b0cf62426245578b76499055f9b9))
+
 ### [2.1.12](https://github.com/googleapis/java-translate/compare/v2.1.11...v2.1.12) (2022-03-30)
 
 
