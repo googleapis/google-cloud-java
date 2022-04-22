@@ -525,8 +525,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(String serviceName) {
@@ -634,8 +634,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UndeleteServiceResponse, OperationMetadata> undeleteServiceAsync(
@@ -739,8 +739,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceConfigsPagedResponse listServiceConfigs(String serviceName) {
@@ -859,8 +859,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param configId Required. The id of the service configuration resource.
    *     <p>This field must be specified for the server to return all fields, including
    *     `SourceInfo`.
@@ -946,8 +946,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param serviceConfig Required. The service configuration resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1046,8 +1046,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param configSource Required. The source configuration for the service.
    * @param validateOnly Optional. If set, this will result in the generation of a
    *     `google.api.Service` configuration based on the `ConfigSource` provided, but the generated
@@ -1190,8 +1190,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param filter Required. Use `filter` to return subset of rollouts. The following filters are
    *     supported: -- To limit the results to only those in status
    *     (google.api.servicemanagement.v1.RolloutStatus) 'SUCCESS', use filter='status=SUCCESS' --
@@ -1321,8 +1321,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param rolloutId Required. The id of the rollout resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1409,8 +1409,8 @@ public class ServiceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param serviceName Required. The name of the service. See the
-   *     [overview](/service-management/overview) for naming requirements. For example:
-   *     `example.googleapis.com`.
+   *     [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming
+   *     requirements. For example: `example.googleapis.com`.
    * @param rollout Required. The rollout resource. The `service_name` field is output only.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

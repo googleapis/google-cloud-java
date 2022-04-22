@@ -118,7 +118,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The name of the service. See the
-   * [overview](/service-management/overview) for naming requirements. For
+   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
    * example: `example.googleapis.com`.
    * </pre>
    *
@@ -143,7 +143,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The name of the service. See the
-   * [overview](/service-management/overview) for naming requirements. For
+   * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
    * example: `example.googleapis.com`.
    * </pre>
    *
@@ -489,7 +489,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the service. See the
-     * [overview](/service-management/overview) for naming requirements. For
+     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
      * example: `example.googleapis.com`.
      * </pre>
      *
@@ -513,7 +513,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the service. See the
-     * [overview](/service-management/overview) for naming requirements. For
+     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
      * example: `example.googleapis.com`.
      * </pre>
      *
@@ -537,7 +537,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the service. See the
-     * [overview](/service-management/overview) for naming requirements. For
+     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
      * example: `example.googleapis.com`.
      * </pre>
      *
@@ -560,7 +560,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the service. See the
-     * [overview](/service-management/overview) for naming requirements. For
+     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
      * example: `example.googleapis.com`.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class UndeleteServiceRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the service. See the
-     * [overview](/service-management/overview) for naming requirements. For
+     * [overview](https://cloud.google.com/service-infrastructure/docs/overview) for naming requirements. For
      * example: `example.googleapis.com`.
      * </pre>
      *
