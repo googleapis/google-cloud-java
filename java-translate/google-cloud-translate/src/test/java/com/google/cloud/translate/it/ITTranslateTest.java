@@ -108,8 +108,8 @@ public class ITTranslateTest {
     assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("es", translation.getSourceLanguage());
     translation = translations.get(1);
-    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
-    assertEquals("de", translation.getSourceLanguage());
+    assertEquals("act", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
+    assertEquals("ga", translation.getSourceLanguage());
   }
 
   @Test
@@ -121,8 +121,8 @@ public class ITTranslateTest {
     assertEquals("es", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
     translation = translations.get(1);
-    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
-    assertEquals("de", translation.getSourceLanguage());
+    assertEquals("act", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
+    assertEquals("ga", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
   }
 
