@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.12](https://github.com/googleapis/java-network-management/compare/v1.1.11...v1.1.12) (2022-04-22)
+
+
+### Bug Fixes
+
+* fixing failed release ([#165](https://github.com/googleapis/java-network-management/issues/165)) ([49cf9eb](https://github.com/googleapis/java-network-management/commit/49cf9eb99ef105253024cd19188623b722b69996))
+
 ### [1.1.11](https://github.com/googleapis/java-network-management/compare/v1.1.10...v1.1.11) (2022-04-15)
 
 
