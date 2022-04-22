@@ -40,6 +40,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
   private ListCustomersRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -88,6 +89,13 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               pageToken_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
               break;
             }
           default:
@@ -250,6 +258,59 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+   * for more information.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+   * for more information.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -273,6 +334,9 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -290,6 +354,9 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +377,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -327,6 +395,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,6 +548,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
 
       pageToken_ = "";
 
+      filter_ = "";
+
       return this;
     }
 
@@ -508,6 +580,7 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
       result.parent_ = parent_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -567,6 +640,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -884,6 +961,122 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
 
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+     * for more information.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+     * for more information.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+     * for more information.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+     * for more information.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+     * for more information.
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
       onChanged();
       return this;
     }

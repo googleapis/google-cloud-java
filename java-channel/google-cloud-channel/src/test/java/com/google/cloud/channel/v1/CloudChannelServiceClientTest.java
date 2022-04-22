@@ -112,6 +112,7 @@ public class CloudChannelServiceClientTest {
             .setParent("parent-995424086")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
             .build();
 
     ListCustomersPagedResponse pagedListResponse = client.listCustomers(request);
@@ -128,6 +129,7 @@ public class CloudChannelServiceClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -145,6 +147,7 @@ public class CloudChannelServiceClientTest {
               .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       client.listCustomers(request);
       Assert.fail("No exception raised");

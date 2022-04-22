@@ -95,4 +95,33 @@ public interface ListCustomersRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+   * for more information.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
+   * for more information.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

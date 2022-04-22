@@ -23,7 +23,7 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * Represents information which resellers will get as part of notification from
- * Cloud Pub/Sub.
+ * Pub/Sub.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.SubscriberEvent}
@@ -187,7 +187,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Customer event send as part of Pub/Sub event to partners.
+   * Customer event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -202,7 +202,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Customer event send as part of Pub/Sub event to partners.
+   * Customer event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -220,7 +220,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Customer event send as part of Pub/Sub event to partners.
+   * Customer event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -238,7 +238,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Entitlement event send as part of Pub/Sub event to partners.
+   * Entitlement event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -253,7 +253,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Entitlement event send as part of Pub/Sub event to partners.
+   * Entitlement event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -271,7 +271,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Entitlement event send as part of Pub/Sub event to partners.
+   * Entitlement event sent as part of Pub/Sub event to partners.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -478,7 +478,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Represents information which resellers will get as part of notification from
-   * Cloud Pub/Sub.
+   * Pub/Sub.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.SubscriberEvent}
@@ -680,7 +680,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -695,7 +695,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -720,7 +720,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -742,7 +742,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -762,7 +762,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -793,7 +793,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -818,7 +818,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -830,7 +830,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -850,7 +850,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Customer event send as part of Pub/Sub event to partners.
+     * Customer event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent customer_event = 1;</code>
@@ -889,7 +889,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -904,7 +904,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -929,7 +929,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -951,7 +951,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -971,7 +971,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -1002,7 +1002,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -1027,7 +1027,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -1039,7 +1039,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>
@@ -1059,7 +1059,7 @@ public final class SubscriberEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Entitlement event send as part of Pub/Sub event to partners.
+     * Entitlement event sent as part of Pub/Sub event to partners.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.EntitlementEvent entitlement_event = 2;</code>

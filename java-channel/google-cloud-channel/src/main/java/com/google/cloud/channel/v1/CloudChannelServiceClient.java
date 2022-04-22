@@ -205,6 +205,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Customer element : cloudChannelServiceClient.listCustomers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -243,6 +244,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Customer> future =
    *       cloudChannelServiceClient.listCustomersPagedCallable().futureCall(request);
@@ -282,6 +284,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListCustomersResponse response =

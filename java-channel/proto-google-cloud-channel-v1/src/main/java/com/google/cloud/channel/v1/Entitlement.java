@@ -1131,7 +1131,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * Optional. This purchase order (PO) information is for resellers to use for their
    * company tracking usage. If a purchaseOrderId value is given, it appears in
    * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters.
+   * 80 plain text characters. This is only supported for Google Workspace
+   * entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1157,7 +1158,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    * Optional. This purchase order (PO) information is for resellers to use for their
    * company tracking usage. If a purchaseOrderId value is given, it appears in
    * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters.
+   * 80 plain text characters. This is only supported for Google Workspace
+   * entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3411,7 +3413,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * Optional. This purchase order (PO) information is for resellers to use for their
      * company tracking usage. If a purchaseOrderId value is given, it appears in
      * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters.
+     * 80 plain text characters. This is only supported for Google Workspace
+     * entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3436,7 +3439,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * Optional. This purchase order (PO) information is for resellers to use for their
      * company tracking usage. If a purchaseOrderId value is given, it appears in
      * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters.
+     * 80 plain text characters. This is only supported for Google Workspace
+     * entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3461,7 +3465,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * Optional. This purchase order (PO) information is for resellers to use for their
      * company tracking usage. If a purchaseOrderId value is given, it appears in
      * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters.
+     * 80 plain text characters. This is only supported for Google Workspace
+     * entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3485,7 +3490,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * Optional. This purchase order (PO) information is for resellers to use for their
      * company tracking usage. If a purchaseOrderId value is given, it appears in
      * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters.
+     * 80 plain text characters. This is only supported for Google Workspace
+     * entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3505,7 +3511,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * Optional. This purchase order (PO) information is for resellers to use for their
      * company tracking usage. If a purchaseOrderId value is given, it appears in
      * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters.
+     * 80 plain text characters. This is only supported for Google Workspace
+     * entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
