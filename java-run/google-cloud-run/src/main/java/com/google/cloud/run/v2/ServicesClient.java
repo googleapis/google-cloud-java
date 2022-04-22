@@ -831,6 +831,7 @@ public class ServicesClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = servicesClient.setIamPolicy(request);
    * }
@@ -855,6 +856,7 @@ public class ServicesClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = servicesClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.
