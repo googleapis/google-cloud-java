@@ -114,13 +114,18 @@ public class ITPaginationTest extends BaseTest {
         ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(1).build();
     ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
     boolean presented = false;
+    int count = 0;
     for (Zone element : response.iterateAll()) {
+      count++;
       if (element.getName().equals(DEFAULT_ZONE)) {
         presented = true;
       }
     }
     Assert.assertTrue(
-        String.format("Zone %s was not found in zones list.", DEFAULT_ZONE), presented);
+        String.format(
+            "Zone %s was not found for %s in zones list (size: %d).",
+            DEFAULT_ZONE, DEFAULT_PROJECT, count),
+        presented);
   }
 
   @Test
