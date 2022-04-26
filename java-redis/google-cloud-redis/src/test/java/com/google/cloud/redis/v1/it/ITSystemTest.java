@@ -46,7 +46,7 @@ public class ITSystemTest {
 
   private static final Logger LOG = Logger.getLogger(ITSystemTest.class.getName());
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  private static final String NETWORK = System.getProperty("redis.network", "default");
+  private static final String NETWORK = System.getProperty("redis.network", "redis-vpc");
   private static final String INSTANCE =
       "test-instance-" + UUID.randomUUID().toString().substring(0, 8);
   private static final String LOCATION = "us-central1";
