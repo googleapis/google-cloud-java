@@ -1,5 +1,5 @@
 {
-  "api_shortname": "bigquery-data-exchange",
+  "api_shortname": "analyticshub",
   "name_pretty": "Analytics Hub",
   "product_documentation": "https://cloud.google.com/analytics-hub",
   "api_description": "is a data exchange that allows you to efficiently and securely exchange data assets across organizations to address challenges of data reliability and cost.",
@@ -10,7 +10,7 @@
   "repo": "googleapis/java-bigquery-data-exchange",
   "repo_short": "java-bigquery-data-exchange",
   "distribution_name": "com.google.cloud:google-cloud-bigquery-data-exchange",
-  "api_id": "bigquery-data-exchange.googleapis.com",
+  "api_id": "analyticshub.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
