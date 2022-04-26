@@ -132,6 +132,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -274,6 +276,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1724,8 +1728,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         if (responseCase_ == 1) {
           appendResultBuilder_.mergeFrom(value);
+        } else {
+          appendResultBuilder_.setMessage(value);
         }
-        appendResultBuilder_.setMessage(value);
       }
       responseCase_ = 1;
       return this;
@@ -2002,8 +2007,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         if (responseCase_ == 2) {
           errorBuilder_.mergeFrom(value);
+        } else {
+          errorBuilder_.setMessage(value);
         }
-        errorBuilder_.setMessage(value);
       }
       responseCase_ = 2;
       return this;

@@ -209,6 +209,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -351,6 +353,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1257,6 +1261,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4197,8 +4203,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (schemaCase_ == 4) {
           avroSchemaBuilder_.mergeFrom(value);
+        } else {
+          avroSchemaBuilder_.setMessage(value);
         }
-        avroSchemaBuilder_.setMessage(value);
       }
       schemaCase_ = 4;
       return this;
@@ -4425,8 +4432,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (schemaCase_ == 5) {
           arrowSchemaBuilder_.mergeFrom(value);
+        } else {
+          arrowSchemaBuilder_.setMessage(value);
         }
-        arrowSchemaBuilder_.setMessage(value);
       }
       schemaCase_ = 5;
       return this;

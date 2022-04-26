@@ -91,6 +91,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -144,6 +146,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>int64 row_count = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.storage.v1.AvroRows.row_count is deprecated. See
+   *     google/cloud/bigquery/storage/v1/avro.proto;l=39
    * @return The rowCount.
    */
   @java.lang.Override
@@ -549,6 +553,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.AvroRows.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/avro.proto;l=39
      * @return The rowCount.
      */
     @java.lang.Override
@@ -566,6 +572,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.AvroRows.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/avro.proto;l=39
      * @param value The rowCount to set.
      * @return This builder for chaining.
      */
@@ -586,6 +594,8 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.AvroRows.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/avro.proto;l=39
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

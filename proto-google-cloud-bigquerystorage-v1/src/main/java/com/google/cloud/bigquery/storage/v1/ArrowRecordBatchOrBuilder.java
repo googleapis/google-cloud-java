@@ -46,6 +46,8 @@ public interface ArrowRecordBatchOrBuilder
    *
    * <code>int64 row_count = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.storage.v1.ArrowRecordBatch.row_count is deprecated. See
+   *     google/cloud/bigquery/storage/v1/arrow.proto;l=43
    * @return The rowCount.
    */
   @java.lang.Deprecated

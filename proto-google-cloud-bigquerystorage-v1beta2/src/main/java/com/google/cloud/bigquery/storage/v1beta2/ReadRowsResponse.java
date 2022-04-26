@@ -195,6 +195,8 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1306,8 +1308,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         if (rowsCase_ == 3) {
           avroRowsBuilder_.mergeFrom(value);
+        } else {
+          avroRowsBuilder_.setMessage(value);
         }
-        avroRowsBuilder_.setMessage(value);
       }
       rowsCase_ = 3;
       return this;
@@ -1519,8 +1522,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         if (rowsCase_ == 4) {
           arrowRecordBatchBuilder_.mergeFrom(value);
+        } else {
+          arrowRecordBatchBuilder_.setMessage(value);
         }
-        arrowRecordBatchBuilder_.setMessage(value);
       }
       rowsCase_ = 4;
       return this;
@@ -2177,8 +2181,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         if (schemaCase_ == 7) {
           avroSchemaBuilder_.mergeFrom(value);
+        } else {
+          avroSchemaBuilder_.setMessage(value);
         }
-        avroSchemaBuilder_.setMessage(value);
       }
       schemaCase_ = 7;
       return this;
@@ -2405,8 +2410,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       } else {
         if (schemaCase_ == 8) {
           arrowSchemaBuilder_.mergeFrom(value);
+        } else {
+          arrowSchemaBuilder_.setMessage(value);
         }
-        arrowSchemaBuilder_.setMessage(value);
       }
       schemaCase_ = 8;
       return this;

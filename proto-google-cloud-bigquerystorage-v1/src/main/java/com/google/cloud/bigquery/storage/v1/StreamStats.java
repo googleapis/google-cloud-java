@@ -96,6 +96,8 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -223,6 +225,8 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -306,10 +310,10 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (atResponseStart_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(atResponseStart_) != 0) {
         output.writeDouble(1, atResponseStart_);
       }
-      if (atResponseEnd_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(atResponseEnd_) != 0) {
         output.writeDouble(2, atResponseEnd_);
       }
       unknownFields.writeTo(output);
@@ -321,10 +325,10 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (atResponseStart_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(atResponseStart_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, atResponseStart_);
       }
-      if (atResponseEnd_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(atResponseEnd_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, atResponseEnd_);
       }
       size += unknownFields.getSerializedSize();

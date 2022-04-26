@@ -91,6 +91,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -144,6 +146,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>int64 row_count = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.storage.v1.ArrowRecordBatch.row_count is deprecated. See
+   *     google/cloud/bigquery/storage/v1/arrow.proto;l=43
    * @return The rowCount.
    */
   @java.lang.Override
@@ -552,6 +556,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.ArrowRecordBatch.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/arrow.proto;l=43
      * @return The rowCount.
      */
     @java.lang.Override
@@ -569,6 +575,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.ArrowRecordBatch.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/arrow.proto;l=43
      * @param value The rowCount to set.
      * @return This builder for chaining.
      */
@@ -589,6 +597,8 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      * <code>int64 row_count = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.storage.v1.ArrowRecordBatch.row_count is deprecated. See
+     *     google/cloud/bigquery/storage/v1/arrow.proto;l=43
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
