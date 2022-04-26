@@ -81,7 +81,12 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    *
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
-  com.google.rpc.Status getLogEntryErrorsOrDefault(int key, com.google.rpc.Status defaultValue);
+
+  /* nullable */
+  com.google.rpc.Status getLogEntryErrorsOrDefault(
+      int key,
+      /* nullable */
+      com.google.rpc.Status defaultValue);
   /**
    *
    *

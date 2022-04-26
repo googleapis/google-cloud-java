@@ -209,6 +209,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -807,7 +809,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabelExtractors(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabelExtractors().getMap().containsKey(key);
   }
@@ -867,7 +869,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLabelExtractorsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -896,7 +898,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
     if (!map.containsKey(key)) {
@@ -1081,6 +1083,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    *
+   * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+   *     google/logging/v2/logging_metrics.proto;l=220
    * @return The enum numeric value on the wire for version.
    */
   @java.lang.Override
@@ -1098,6 +1102,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    *
+   * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+   *     google/logging/v2/logging_metrics.proto;l=220
    * @return The version.
    */
   @java.lang.Override
@@ -2695,7 +2701,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabelExtractors(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabelExtractors().getMap().containsKey(key);
     }
@@ -2757,7 +2763,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelExtractorsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2787,7 +2793,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
       if (!map.containsKey(key)) {
@@ -2824,7 +2830,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabelExtractors(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabelExtractors().getMutableMap().remove(key);
       return this;
@@ -2858,11 +2864,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabelExtractors(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabelExtractors().getMutableMap().put(key, value);
       return this;
     }
@@ -3546,6 +3553,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
+     * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+     *     google/logging/v2/logging_metrics.proto;l=220
      * @return The enum numeric value on the wire for version.
      */
     @java.lang.Override
@@ -3563,6 +3572,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
+     * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+     *     google/logging/v2/logging_metrics.proto;l=220
      * @param value The enum numeric value on the wire for version to set.
      * @return This builder for chaining.
      */
@@ -3583,6 +3594,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
+     * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+     *     google/logging/v2/logging_metrics.proto;l=220
      * @return The version.
      */
     @java.lang.Override
@@ -3603,6 +3616,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
+     * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+     *     google/logging/v2/logging_metrics.proto;l=220
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -3626,6 +3641,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
+     * @deprecated google.logging.v2.LogMetric.version is deprecated. See
+     *     google/logging/v2/logging_metrics.proto;l=220
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
