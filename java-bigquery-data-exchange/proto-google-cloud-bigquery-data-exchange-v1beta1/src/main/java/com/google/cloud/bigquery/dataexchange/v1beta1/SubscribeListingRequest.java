@@ -111,6 +111,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -922,8 +924,9 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 3) {
           destinationDatasetBuilder_.mergeFrom(value);
+        } else {
+          destinationDatasetBuilder_.setMessage(value);
         }
-        destinationDatasetBuilder_.setMessage(value);
       }
       destinationCase_ = 3;
       return this;
