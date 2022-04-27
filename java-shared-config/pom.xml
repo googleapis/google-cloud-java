@@ -775,12 +775,6 @@
       <id>native</id>
 
       <dependencies>
-        <dependency>
-          <groupId>com.google.cloud</groupId>
-          <artifactId>native-image-support</artifactId>
-          <version>0.13.1</version>
-          <scope>test</scope>
-        </dependency>
 
         <dependency>
           <groupId>org.junit.vintage</groupId>
