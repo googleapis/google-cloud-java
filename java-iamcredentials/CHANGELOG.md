@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-iamcredentials/compare/v2.0.14...v2.1.0) (2022-04-27)
+
+
+### Features
+
+* trigger a new release ([#672](https://github.com/googleapis/java-iamcredentials/issues/672)) ([13615b6](https://github.com/googleapis/java-iamcredentials/commit/13615b695e3949dc37b1e801e0aa1045128f6df0))
+
 ### [2.0.14](https://github.com/googleapis/java-iamcredentials/compare/v2.0.13...v2.0.14) (2022-04-15)
 
 
