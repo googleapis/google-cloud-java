@@ -81,11 +81,6 @@
 
       <dependencies>
         <dependency>
-          <groupId>com.google.cloud</groupId>
-          <artifactId>native-image-support</artifactId>
-          <version>0.13.1</version>
-        </dependency>
-        <dependency>
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
           <version>5.8.2</version>
