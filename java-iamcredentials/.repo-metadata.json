@@ -13,4 +13,4 @@
     "distribution_name": "com.google.cloud:google-cloud-iamcredentials",
     "api_id": "iamcredentials.googleapis.com",
     "library_type": "GAPIC_AUTO"
-}
+} 
