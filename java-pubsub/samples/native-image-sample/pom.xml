@@ -105,11 +105,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
       <dependencies>
         <dependency>
-          <groupId>com.google.cloud</groupId>
-          <artifactId>native-image-support</artifactId>
-          <version>0.13.1</version>
-        </dependency>
-        <dependency>
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
           <version>5.8.2</version>
@@ -147,7 +142,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
-                <buildArg>--features=com.google.cloud.nativeimage.features.ProtobufMessageFeature</buildArg>
               </buildArgs>
             </configuration>
             <executions>
