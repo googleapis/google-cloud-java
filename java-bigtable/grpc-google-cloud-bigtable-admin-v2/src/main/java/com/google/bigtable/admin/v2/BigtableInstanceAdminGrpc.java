@@ -922,6 +922,53 @@ public final class BigtableInstanceAdminGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListHotTabletsRequest,
+          com.google.bigtable.admin.v2.ListHotTabletsResponse>
+      getListHotTabletsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListHotTablets",
+      requestType = com.google.bigtable.admin.v2.ListHotTabletsRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListHotTabletsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListHotTabletsRequest,
+          com.google.bigtable.admin.v2.ListHotTabletsResponse>
+      getListHotTabletsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListHotTabletsRequest,
+            com.google.bigtable.admin.v2.ListHotTabletsResponse>
+        getListHotTabletsMethod;
+    if ((getListHotTabletsMethod = BigtableInstanceAdminGrpc.getListHotTabletsMethod) == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getListHotTabletsMethod = BigtableInstanceAdminGrpc.getListHotTabletsMethod) == null) {
+          BigtableInstanceAdminGrpc.getListHotTabletsMethod =
+              getListHotTabletsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListHotTabletsRequest,
+                          com.google.bigtable.admin.v2.ListHotTabletsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListHotTablets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListHotTabletsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListHotTabletsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("ListHotTablets"))
+                      .build();
+        }
+      }
+    }
+    return getListHotTabletsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableInstanceAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigtableInstanceAdminStub> factory =
@@ -1284,6 +1331,22 @@ public final class BigtableInstanceAdminGrpc {
           getTestIamPermissionsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Lists hot tablets in a cluster, within the time range provided. Hot
+     * tablets are ordered based on CPU usage.
+     * </pre>
+     */
+    public void listHotTablets(
+        com.google.bigtable.admin.v2.ListHotTabletsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListHotTabletsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListHotTabletsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1411,6 +1474,13 @@ public final class BigtableInstanceAdminGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getListHotTabletsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.ListHotTabletsRequest,
+                      com.google.bigtable.admin.v2.ListHotTabletsResponse>(
+                      this, METHODID_LIST_HOT_TABLETS)))
           .build();
     }
   }
@@ -1784,6 +1854,24 @@ public final class BigtableInstanceAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hot tablets in a cluster, within the time range provided. Hot
+     * tablets are ordered based on CPU usage.
+     * </pre>
+     */
+    public void listHotTablets(
+        com.google.bigtable.admin.v2.ListHotTabletsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListHotTabletsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListHotTabletsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2091,6 +2179,20 @@ public final class BigtableInstanceAdminGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hot tablets in a cluster, within the time range provided. Hot
+     * tablets are ordered based on CPU usage.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListHotTabletsResponse listHotTablets(
+        com.google.bigtable.admin.v2.ListHotTabletsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHotTabletsMethod(), getCallOptions(), request);
     }
   }
 
@@ -2408,6 +2510,21 @@ public final class BigtableInstanceAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hot tablets in a cluster, within the time range provided. Hot
+     * tablets are ordered based on CPU usage.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListHotTabletsResponse>
+        listHotTablets(com.google.bigtable.admin.v2.ListHotTabletsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListHotTabletsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INSTANCE = 0;
@@ -2430,6 +2547,7 @@ public final class BigtableInstanceAdminGrpc {
   private static final int METHODID_GET_IAM_POLICY = 17;
   private static final int METHODID_SET_IAM_POLICY = 18;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 19;
+  private static final int METHODID_LIST_HOT_TABLETS = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2556,6 +2674,12 @@ public final class BigtableInstanceAdminGrpc {
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_HOT_TABLETS:
+          serviceImpl.listHotTablets(
+              (com.google.bigtable.admin.v2.ListHotTabletsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListHotTabletsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2640,6 +2764,7 @@ public final class BigtableInstanceAdminGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getListHotTabletsMethod())
                       .build();
         }
       }

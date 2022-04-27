@@ -104,6 +104,8 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -845,8 +847,9 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceInfoCase_ == 2) {
           backupInfoBuilder_.mergeFrom(value);
+        } else {
+          backupInfoBuilder_.setMessage(value);
         }
-        backupInfoBuilder_.setMessage(value);
       }
       sourceInfoCase_ = 2;
       return this;

@@ -106,6 +106,8 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -361,8 +363,8 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               }
             case 32:
               {
-                modCase_ = 4;
                 mod_ = input.readBool();
+                modCase_ = 4;
                 break;
               }
             default:
@@ -376,6 +378,8 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1308,8 +1312,9 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         } else {
           if (modCase_ == 2) {
             createBuilder_.mergeFrom(value);
+          } else {
+            createBuilder_.setMessage(value);
           }
-          createBuilder_.setMessage(value);
         }
         modCase_ = 2;
         return this;
@@ -1525,8 +1530,9 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         } else {
           if (modCase_ == 3) {
             updateBuilder_.mergeFrom(value);
+          } else {
+            updateBuilder_.setMessage(value);
           }
-          updateBuilder_.setMessage(value);
         }
         modCase_ = 3;
         return this;

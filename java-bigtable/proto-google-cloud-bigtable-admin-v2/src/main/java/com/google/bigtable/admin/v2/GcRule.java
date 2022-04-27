@@ -70,8 +70,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              ruleCase_ = 1;
               rule_ = input.readInt32();
+              ruleCase_ = 1;
               break;
             }
           case 18:
@@ -131,6 +131,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -285,6 +287,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1275,6 +1279,8 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3000,8 +3006,9 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (ruleCase_ == 2) {
           maxAgeBuilder_.mergeFrom(value);
+        } else {
+          maxAgeBuilder_.setMessage(value);
         }
-        maxAgeBuilder_.setMessage(value);
       }
       ruleCase_ = 2;
       return this;
@@ -3215,8 +3222,9 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (ruleCase_ == 3) {
           intersectionBuilder_.mergeFrom(value);
+        } else {
+          intersectionBuilder_.setMessage(value);
         }
-        intersectionBuilder_.setMessage(value);
       }
       ruleCase_ = 3;
       return this;
@@ -3423,8 +3431,9 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (ruleCase_ == 4) {
           unionBuilder_.mergeFrom(value);
+        } else {
+          unionBuilder_.setMessage(value);
         }
-        unionBuilder_.setMessage(value);
       }
       ruleCase_ = 4;
       return this;

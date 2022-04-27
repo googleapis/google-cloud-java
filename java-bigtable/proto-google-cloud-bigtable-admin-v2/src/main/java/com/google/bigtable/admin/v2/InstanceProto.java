@@ -71,6 +71,10 @@ public final class InstanceProto {
       internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_HotTablet_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -140,15 +144,25 @@ public final class InstanceProto {
           + "bigtableadmin.googleapis.com/AppProfile\022"
           + "Aprojects/{project}/instances/{instance}"
           + "/appProfiles/{app_profile}B\020\n\016routing_po"
-          + "licyB\320\002\n\034com.google.bigtable.admin.v2B\rI"
-          + "nstanceProtoP\001Z=google.golang.org/genpro"
-          + "to/googleapis/bigtable/admin/v2;admin\252\002\036"
-          + "Google.Cloud.Bigtable.Admin.V2\312\002\036Google\\"
-          + "Cloud\\Bigtable\\Admin\\V2\352\002\"Google::Cloud:"
-          + ":Bigtable::Admin::V2\352Ax\n!cloudkms.google"
-          + "apis.com/CryptoKey\022Sprojects/{project}/l"
-          + "ocations/{location}/keyRings/{key_ring}/"
-          + "cryptoKeys/{crypto_key}b\006proto3"
+          + "licy\"\210\003\n\tHotTablet\022\014\n\004name\030\001 \001(\t\022;\n\ntabl"
+          + "e_name\030\002 \001(\tB\'\372A$\n\"bigtableadmin.googlea"
+          + "pis.com/Table\0223\n\nstart_time\030\003 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\tstart_key\030\005 \001(\t\022\017\n\007end_key\030\006 \001(\t\022#\n\026nod"
+          + "e_cpu_usage_percent\030\007 \001(\002B\003\340A\003:\177\352A|\n&big"
+          + "tableadmin.googleapis.com/HotTablet\022Rpro"
+          + "jects/{project}/instances/{instance}/clu"
+          + "sters/{cluster}/hotTablets/{hot_tablet}B"
+          + "\320\002\n\034com.google.bigtable.admin.v2B\rInstan"
+          + "ceProtoP\001Z=google.golang.org/genproto/go"
+          + "ogleapis/bigtable/admin/v2;admin\252\002\036Googl"
+          + "e.Cloud.Bigtable.Admin.V2\312\002\036Google\\Cloud"
+          + "\\Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigt"
+          + "able::Admin::V2\352Ax\n!cloudkms.googleapis."
+          + "com/CryptoKey\022Sprojects/{project}/locati"
+          + "ons/{location}/keyRings/{key_ring}/crypt"
+          + "oKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -259,6 +273,20 @@ public final class InstanceProto {
             internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor,
             new java.lang.String[] {
               "ClusterId", "AllowTransactionalWrites",
+            });
+    internal_static_google_bigtable_admin_v2_HotTablet_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_HotTablet_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "TableName",
+              "StartTime",
+              "EndTime",
+              "StartKey",
+              "EndKey",
+              "NodeCpuUsagePercent",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

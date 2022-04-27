@@ -116,8 +116,12 @@ public interface TableOrBuilder
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
    * </code>
    */
+
+  /* nullable */
   com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
-      java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.bigtable.admin.v2.Table.ClusterState defaultValue);
   /**
    *
    *
@@ -184,8 +188,12 @@ public interface TableOrBuilder
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
+
+  /* nullable */
   com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
-      java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.bigtable.admin.v2.ColumnFamily defaultValue);
   /**
    *
    *

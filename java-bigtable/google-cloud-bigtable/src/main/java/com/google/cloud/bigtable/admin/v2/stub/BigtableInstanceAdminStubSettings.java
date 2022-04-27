@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -57,11 +58,14 @@ import com.google.bigtable.admin.v2.DeleteInstanceRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
+import com.google.bigtable.admin.v2.ListHotTabletsRequest;
+import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
@@ -175,6 +179,9 @@ public class BigtableInstanceAdminStubSettings
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final PagedCallSettings<
+          ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+      listHotTabletsSettings;
 
   private static final PagedListDescriptor<
           ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>
@@ -215,6 +222,43 @@ public class BigtableInstanceAdminStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet>
+      LIST_HOT_TABLETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListHotTabletsRequest injectToken(ListHotTabletsRequest payload, String token) {
+              return ListHotTabletsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListHotTabletsRequest injectPageSize(
+                ListHotTabletsRequest payload, int pageSize) {
+              return ListHotTabletsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListHotTabletsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListHotTabletsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HotTablet> extractResources(ListHotTabletsResponse payload) {
+              return payload.getHotTabletsList() == null
+                  ? ImmutableList.<HotTablet>of()
+                  : payload.getHotTabletsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAppProfilesRequest, ListAppProfilesResponse, ListAppProfilesPagedResponse>
       LIST_APP_PROFILES_PAGE_STR_FACT =
@@ -229,6 +273,23 @@ public class BigtableInstanceAdminStubSettings
               PageContext<ListAppProfilesRequest, ListAppProfilesResponse, AppProfile> pageContext =
                   PageContext.create(callable, LIST_APP_PROFILES_PAGE_STR_DESC, request, context);
               return ListAppProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+      LIST_HOT_TABLETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>() {
+            @Override
+            public ApiFuture<ListHotTabletsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListHotTabletsRequest, ListHotTabletsResponse> callable,
+                ListHotTabletsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListHotTabletsResponse> futureResponse) {
+              PageContext<ListHotTabletsRequest, ListHotTabletsResponse, HotTablet> pageContext =
+                  PageContext.create(callable, LIST_HOT_TABLETS_PAGE_STR_DESC, request, context);
+              return ListHotTabletsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -372,6 +433,13 @@ public class BigtableInstanceAdminStubSettings
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listHotTablets. */
+  public PagedCallSettings<
+          ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+      listHotTabletsSettings() {
+    return listHotTabletsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigtableInstanceAdminStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -476,6 +544,7 @@ public class BigtableInstanceAdminStubSettings
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    listHotTabletsSettings = settingsBuilder.listHotTabletsSettings().build();
   }
 
   /** Builder for BigtableInstanceAdminStubSettings. */
@@ -530,6 +599,9 @@ public class BigtableInstanceAdminStubSettings
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final PagedCallSettings.Builder<
+            ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+        listHotTabletsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -616,6 +688,7 @@ public class BigtableInstanceAdminStubSettings
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listHotTabletsSettings = PagedCallSettings.newBuilder(LIST_HOT_TABLETS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -638,7 +711,8 @@ public class BigtableInstanceAdminStubSettings
               deleteAppProfileSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              listHotTabletsSettings);
       initDefaults(this);
     }
 
@@ -673,6 +747,7 @@ public class BigtableInstanceAdminStubSettings
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      listHotTabletsSettings = settings.listHotTabletsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -695,7 +770,8 @@ public class BigtableInstanceAdminStubSettings
               deleteAppProfileSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              listHotTabletsSettings);
     }
 
     private static Builder createDefault() {
@@ -809,6 +885,11 @@ public class BigtableInstanceAdminStubSettings
 
       builder
           .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listHotTabletsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
@@ -1132,6 +1213,13 @@ public class BigtableInstanceAdminStubSettings
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listHotTablets. */
+    public PagedCallSettings.Builder<
+            ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+        listHotTabletsSettings() {
+      return listHotTabletsSettings;
     }
 
     @Override

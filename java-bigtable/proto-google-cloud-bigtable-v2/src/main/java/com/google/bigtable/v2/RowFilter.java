@@ -145,8 +145,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              filterCase_ = 4;
               filter_ = input.readBytes();
+              filterCase_ = 4;
               break;
             }
           case 42:
@@ -158,8 +158,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           case 50:
             {
-              filterCase_ = 6;
               filter_ = input.readBytes();
+              filterCase_ = 6;
               break;
             }
           case 58:
@@ -195,38 +195,38 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              filterCase_ = 9;
               filter_ = input.readBytes();
+              filterCase_ = 9;
               break;
             }
           case 80:
             {
-              filterCase_ = 10;
               filter_ = input.readInt32();
+              filterCase_ = 10;
               break;
             }
           case 88:
             {
-              filterCase_ = 11;
               filter_ = input.readInt32();
+              filterCase_ = 11;
               break;
             }
           case 96:
             {
-              filterCase_ = 12;
               filter_ = input.readInt32();
+              filterCase_ = 12;
               break;
             }
           case 104:
             {
-              filterCase_ = 13;
               filter_ = input.readBool();
+              filterCase_ = 13;
               break;
             }
           case 113:
             {
-              filterCase_ = 14;
               filter_ = input.readDouble();
+              filterCase_ = 14;
               break;
             }
           case 122:
@@ -246,20 +246,20 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
             }
           case 128:
             {
-              filterCase_ = 16;
               filter_ = input.readBool();
+              filterCase_ = 16;
               break;
             }
           case 136:
             {
-              filterCase_ = 17;
               filter_ = input.readBool();
+              filterCase_ = 17;
               break;
             }
           case 144:
             {
-              filterCase_ = 18;
               filter_ = input.readBool();
+              filterCase_ = 18;
               break;
             }
           case 154:
@@ -280,6 +280,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -442,6 +444,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1586,6 +1590,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3183,6 +3189,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6479,8 +6487,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 1) {
           chainBuilder_.mergeFrom(value);
+        } else {
+          chainBuilder_.setMessage(value);
         }
-        chainBuilder_.setMessage(value);
       }
       filterCase_ = 1;
       return this;
@@ -6697,8 +6706,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 2) {
           interleaveBuilder_.mergeFrom(value);
+        } else {
+          interleaveBuilder_.setMessage(value);
         }
-        interleaveBuilder_.setMessage(value);
       }
       filterCase_ = 2;
       return this;
@@ -6915,8 +6925,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 3) {
           conditionBuilder_.mergeFrom(value);
+        } else {
+          conditionBuilder_.setMessage(value);
         }
-        conditionBuilder_.setMessage(value);
       }
       filterCase_ = 3;
       return this;
@@ -7980,8 +7991,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 7) {
           columnRangeFilterBuilder_.mergeFrom(value);
+        } else {
+          columnRangeFilterBuilder_.setMessage(value);
         }
-        columnRangeFilterBuilder_.setMessage(value);
       }
       filterCase_ = 7;
       return this;
@@ -8187,8 +8199,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 8) {
           timestampRangeFilterBuilder_.mergeFrom(value);
+        } else {
+          timestampRangeFilterBuilder_.setMessage(value);
         }
-        timestampRangeFilterBuilder_.setMessage(value);
       }
       filterCase_ = 8;
       return this;
@@ -8481,8 +8494,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (filterCase_ == 15) {
           valueRangeFilterBuilder_.mergeFrom(value);
+        } else {
+          valueRangeFilterBuilder_.setMessage(value);
         }
-        valueRangeFilterBuilder_.setMessage(value);
       }
       filterCase_ = 15;
       return this;

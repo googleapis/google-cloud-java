@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -40,12 +41,15 @@ import com.google.bigtable.admin.v2.DeleteInstanceRequest;
 import com.google.bigtable.admin.v2.GetAppProfileRequest;
 import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
+import com.google.bigtable.admin.v2.ListHotTabletsRequest;
+import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.LocationName;
@@ -55,6 +59,7 @@ import com.google.bigtable.admin.v2.ProjectName;
 import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -1436,6 +1441,7 @@ public class BaseBigtableInstanceAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
@@ -1476,6 +1482,7 @@ public class BaseBigtableInstanceAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
@@ -1516,6 +1523,7 @@ public class BaseBigtableInstanceAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
@@ -1559,6 +1567,7 @@ public class BaseBigtableInstanceAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
@@ -1668,6 +1677,94 @@ public class BaseBigtableInstanceAdminClientTest {
       String resource = "resource-341064690";
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listHotTabletsTest() throws Exception {
+    HotTablet responsesElement = HotTablet.newBuilder().build();
+    ListHotTabletsResponse expectedResponse =
+        ListHotTabletsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHotTablets(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+
+    ListHotTabletsPagedResponse pagedListResponse = client.listHotTablets(parent);
+
+    List<HotTablet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHotTabletsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListHotTabletsRequest actualRequest = ((ListHotTabletsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listHotTabletsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      client.listHotTablets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listHotTabletsTest2() throws Exception {
+    HotTablet responsesElement = HotTablet.newBuilder().build();
+    ListHotTabletsResponse expectedResponse =
+        ListHotTabletsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHotTablets(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListHotTabletsPagedResponse pagedListResponse = client.listHotTablets(parent);
+
+    List<HotTablet> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHotTabletsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListHotTabletsRequest actualRequest = ((ListHotTabletsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listHotTabletsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listHotTablets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

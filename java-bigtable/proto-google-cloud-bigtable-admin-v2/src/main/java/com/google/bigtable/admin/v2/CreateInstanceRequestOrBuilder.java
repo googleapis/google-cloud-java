@@ -193,8 +193,12 @@ public interface CreateInstanceRequestOrBuilder
    * map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+
+  /* nullable */
   com.google.bigtable.admin.v2.Cluster getClustersOrDefault(
-      java.lang.String key, com.google.bigtable.admin.v2.Cluster defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.bigtable.admin.v2.Cluster defaultValue);
   /**
    *
    *

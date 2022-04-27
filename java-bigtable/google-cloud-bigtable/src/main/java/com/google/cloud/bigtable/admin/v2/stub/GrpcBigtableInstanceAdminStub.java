@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -44,6 +45,8 @@ import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
+import com.google.bigtable.admin.v2.ListHotTabletsRequest;
+import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
@@ -265,6 +268,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListHotTabletsRequest, ListHotTabletsResponse>
+      listHotTabletsMethodDescriptor =
+          MethodDescriptor.<ListHotTabletsRequest, ListHotTabletsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/ListHotTablets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListHotTabletsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListHotTabletsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, CreateInstanceMetadata>
       createInstanceOperationCallable;
@@ -303,6 +317,9 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<ListHotTabletsRequest, ListHotTabletsResponse> listHotTabletsCallable;
+  private final UnaryCallable<ListHotTabletsRequest, ListHotTabletsPagedResponse>
+      listHotTabletsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -551,6 +568,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ListHotTabletsRequest, ListHotTabletsResponse>
+        listHotTabletsTransportSettings =
+            GrpcCallSettings.<ListHotTabletsRequest, ListHotTabletsResponse>newBuilder()
+                .setMethodDescriptor(listHotTabletsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -657,6 +685,12 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.listHotTabletsCallable =
+        callableFactory.createUnaryCallable(
+            listHotTabletsTransportSettings, settings.listHotTabletsSettings(), clientContext);
+    this.listHotTabletsPagedCallable =
+        callableFactory.createPagedCallable(
+            listHotTabletsTransportSettings, settings.listHotTabletsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -807,6 +841,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHotTabletsRequest, ListHotTabletsResponse> listHotTabletsCallable() {
+    return listHotTabletsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHotTabletsRequest, ListHotTabletsPagedResponse>
+      listHotTabletsPagedCallable() {
+    return listHotTabletsPagedCallable;
   }
 
   @Override

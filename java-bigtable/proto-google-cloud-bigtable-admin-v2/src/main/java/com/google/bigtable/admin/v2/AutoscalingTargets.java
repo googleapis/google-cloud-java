@@ -84,6 +84,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -115,7 +117,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The cpu utilization that the Autoscaler should be trying to achieve.
    * This number is on a scale from 0 (no utilization) to
-   * 100 (total utilization).
+   * 100 (total utilization), and is limited between 10 and 80, otherwise it
+   * will return INVALID_ARGUMENT error.
    * </pre>
    *
    * <code>int32 cpu_utilization_percent = 2;</code>
@@ -450,7 +453,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The cpu utilization that the Autoscaler should be trying to achieve.
      * This number is on a scale from 0 (no utilization) to
-     * 100 (total utilization).
+     * 100 (total utilization), and is limited between 10 and 80, otherwise it
+     * will return INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>int32 cpu_utilization_percent = 2;</code>
@@ -467,7 +471,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The cpu utilization that the Autoscaler should be trying to achieve.
      * This number is on a scale from 0 (no utilization) to
-     * 100 (total utilization).
+     * 100 (total utilization), and is limited between 10 and 80, otherwise it
+     * will return INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>int32 cpu_utilization_percent = 2;</code>
@@ -487,7 +492,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The cpu utilization that the Autoscaler should be trying to achieve.
      * This number is on a scale from 0 (no utilization) to
-     * 100 (total utilization).
+     * 100 (total utilization), and is limited between 10 and 80, otherwise it
+     * will return INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>int32 cpu_utilization_percent = 2;</code>

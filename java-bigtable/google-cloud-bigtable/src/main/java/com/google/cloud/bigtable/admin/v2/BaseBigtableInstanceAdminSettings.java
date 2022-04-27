@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -49,6 +50,8 @@ import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
+import com.google.bigtable.admin.v2.ListHotTabletsRequest;
+import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
@@ -214,6 +217,13 @@ public class BaseBigtableInstanceAdminSettings
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listHotTablets. */
+  public PagedCallSettings<
+          ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+      listHotTabletsSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).listHotTabletsSettings();
   }
 
   public static final BaseBigtableInstanceAdminSettings create(
@@ -455,6 +465,13 @@ public class BaseBigtableInstanceAdminSettings
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listHotTablets. */
+    public PagedCallSettings.Builder<
+            ListHotTabletsRequest, ListHotTabletsResponse, ListHotTabletsPagedResponse>
+        listHotTabletsSettings() {
+      return getStubSettingsBuilder().listHotTabletsSettings();
     }
 
     @Override

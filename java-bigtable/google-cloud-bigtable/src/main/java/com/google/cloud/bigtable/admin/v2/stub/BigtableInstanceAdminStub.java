@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.stub;
 
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAppProfilesPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,8 @@ import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
 import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
+import com.google.bigtable.admin.v2.ListHotTabletsRequest;
+import com.google.bigtable.admin.v2.ListHotTabletsResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
@@ -185,6 +188,15 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<ListHotTabletsRequest, ListHotTabletsPagedResponse>
+      listHotTabletsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHotTabletsPagedCallable()");
+  }
+
+  public UnaryCallable<ListHotTabletsRequest, ListHotTabletsResponse> listHotTabletsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHotTabletsCallable()");
   }
 
   @Override

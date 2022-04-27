@@ -152,6 +152,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -752,6 +754,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2270,7 +2274,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsClusterStates(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetClusterStates().getMap().containsKey(key);
   }
@@ -2318,7 +2322,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
         internalGetClusterStates().getMap();
@@ -2342,7 +2346,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
         internalGetClusterStates().getMap();
@@ -2397,7 +2401,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsColumnFamilies(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetColumnFamilies().getMap().containsKey(key);
   }
@@ -2439,7 +2443,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
         internalGetColumnFamilies().getMap();
@@ -2459,7 +2463,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
         internalGetColumnFamilies().getMap();
@@ -3164,7 +3168,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsClusterStates(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetClusterStates().getMap().containsKey(key);
     }
@@ -3212,7 +3216,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
         java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
           internalGetClusterStates().getMap();
@@ -3236,7 +3240,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
           internalGetClusterStates().getMap();
@@ -3266,7 +3270,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeClusterStates(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableClusterStates().getMutableMap().remove(key);
       return this;
@@ -3294,11 +3298,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public Builder putClusterStates(
         java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableClusterStates().getMutableMap().put(key, value);
       return this;
     }
@@ -3368,7 +3373,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsColumnFamilies(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetColumnFamilies().getMap().containsKey(key);
     }
@@ -3410,7 +3415,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
         java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
           internalGetColumnFamilies().getMap();
@@ -3431,7 +3436,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
           internalGetColumnFamilies().getMap();
@@ -3458,7 +3463,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeColumnFamilies(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableColumnFamilies().getMutableMap().remove(key);
       return this;
@@ -3483,11 +3488,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public Builder putColumnFamilies(
         java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableColumnFamilies().getMutableMap().put(key, value);
       return this;
     }

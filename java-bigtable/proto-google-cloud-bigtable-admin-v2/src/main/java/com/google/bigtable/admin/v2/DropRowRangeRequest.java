@@ -80,14 +80,14 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
             }
           case 18:
             {
-              targetCase_ = 2;
               target_ = input.readBytes();
+              targetCase_ = 2;
               break;
             }
           case 24:
             {
-              targetCase_ = 3;
               target_ = input.readBool();
+              targetCase_ = 3;
               break;
             }
           default:
@@ -101,6 +101,8 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

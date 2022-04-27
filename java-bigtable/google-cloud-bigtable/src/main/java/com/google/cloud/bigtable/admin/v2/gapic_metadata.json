@@ -46,6 +46,9 @@
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersCallable"]
             },
+            "ListHotTablets": {
+              "methods": ["listHotTablets", "listHotTablets", "listHotTablets", "listHotTabletsPagedCallable", "listHotTabletsCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesCallable"]
             },

@@ -70,26 +70,26 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              startKeyCase_ = 1;
               startKey_ = input.readBytes();
+              startKeyCase_ = 1;
               break;
             }
           case 18:
             {
-              startKeyCase_ = 2;
               startKey_ = input.readBytes();
+              startKeyCase_ = 2;
               break;
             }
           case 26:
             {
-              endKeyCase_ = 3;
               endKey_ = input.readBytes();
+              endKeyCase_ = 3;
               break;
             }
           case 34:
             {
-              endKeyCase_ = 4;
               endKey_ = input.readBytes();
+              endKeyCase_ = 4;
               break;
             }
           default:
@@ -103,6 +103,8 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

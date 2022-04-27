@@ -2887,6 +2887,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(request);
    * }
@@ -2912,6 +2913,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       baseBigtableTableAdminClient.setIamPolicyCallable().futureCall(request);

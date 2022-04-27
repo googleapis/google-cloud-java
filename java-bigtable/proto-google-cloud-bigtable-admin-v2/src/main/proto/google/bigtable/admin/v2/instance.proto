@@ -1,4 +1,4 @@
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -118,7 +118,8 @@ message Instance {
 message AutoscalingTargets {
   // The cpu utilization that the Autoscaler should be trying to achieve.
   // This number is on a scale from 0 (no utilization) to
-  // 100 (total utilization).
+  // 100 (total utilization), and is limited between 10 and 80, otherwise it
+  // will return INVALID_ARGUMENT error.
   int32 cpu_utilization_percent = 2;
 }
 
@@ -165,7 +166,6 @@ message Cluster {
     //  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
     //  2) Only regional keys can be used and the region of the CMEK key must
     //  match the region of the cluster.
-    // 3) All clusters within an instance must use the same CMEK key.
     string kms_key_name = 1 [(google.api.resource_reference) = {
       type: "cloudkms.googleapis.com/CryptoKey"
     }];
@@ -290,4 +290,44 @@ message AppProfile {
     // Use a single-cluster routing policy.
     SingleClusterRouting single_cluster_routing = 6;
   }
+}
+
+// A tablet is a defined by a start and end key and is explained in
+// https://cloud.google.com/bigtable/docs/overview#architecture and
+// https://cloud.google.com/bigtable/docs/performance#optimization.
+// A Hot tablet is a tablet that exhibits high average cpu usage during the time
+// interval from start time to end time.
+message HotTablet {
+  option (google.api.resource) = {
+    type: "bigtableadmin.googleapis.com/HotTablet"
+    pattern: "projects/{project}/instances/{instance}/clusters/{cluster}/hotTablets/{hot_tablet}"
+  };
+
+  // The unique name of the hot tablet. Values are of the form
+  // `projects/{project}/instances/{instance}/clusters/{cluster}/hotTablets/[a-zA-Z0-9_-]*`.
+  string name = 1;
+
+  // Name of the table that contains the tablet. Values are of the form
+  // `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+  string table_name = 2 [(google.api.resource_reference) = {
+                           type: "bigtableadmin.googleapis.com/Table"
+                         }];
+
+  // Output only. The start time of the hot tablet.
+  google.protobuf.Timestamp start_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The end time of the hot tablet.
+  google.protobuf.Timestamp end_time = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Tablet Start Key (inclusive).
+  string start_key = 5;
+
+  // Tablet End Key (inclusive).
+  string end_key = 6;
+
+  // Output only. The average CPU usage spent by a node on this tablet over the start_time to
+  // end_time time range. The percentage is the amount of CPU used by the node
+  // to serve the tablet, from 0% (tablet was not interacted with) to 100% (the
+  // node spent all cycles serving the hot tablet).
+  float node_cpu_usage_percent = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

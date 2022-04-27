@@ -154,6 +154,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -573,6 +575,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1666,6 +1670,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2361,7 +2367,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     * 3) All clusters within an instance must use the same CMEK key.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2380,7 +2385,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     * 3) All clusters within an instance must use the same CMEK key.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2460,6 +2464,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2496,7 +2502,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     * 3) All clusters within an instance must use the same CMEK key.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2526,7 +2531,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
-     * 3) All clusters within an instance must use the same CMEK key.
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2882,7 +2886,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       * 3) All clusters within an instance must use the same CMEK key.
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2911,7 +2914,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       * 3) All clusters within an instance must use the same CMEK key.
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2940,7 +2942,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       * 3) All clusters within an instance must use the same CMEK key.
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2968,7 +2969,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       * 3) All clusters within an instance must use the same CMEK key.
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2992,7 +2992,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
-       * 3) All clusters within an instance must use the same CMEK key.
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4390,8 +4389,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (configCase_ == 7) {
           clusterConfigBuilder_.mergeFrom(value);
+        } else {
+          clusterConfigBuilder_.setMessage(value);
         }
-        clusterConfigBuilder_.setMessage(value);
       }
       configCase_ = 7;
       return this;

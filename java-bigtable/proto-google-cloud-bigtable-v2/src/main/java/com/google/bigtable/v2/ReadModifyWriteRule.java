@@ -86,14 +86,14 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
             }
           case 26:
             {
-              ruleCase_ = 3;
               rule_ = input.readBytes();
+              ruleCase_ = 3;
               break;
             }
           case 32:
             {
-              ruleCase_ = 4;
               rule_ = input.readInt64();
+              ruleCase_ = 4;
               break;
             }
           default:
@@ -107,6 +107,8 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

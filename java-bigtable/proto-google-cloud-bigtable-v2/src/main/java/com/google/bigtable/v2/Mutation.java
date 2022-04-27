@@ -146,6 +146,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -330,6 +332,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1342,6 +1346,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2358,6 +2364,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2982,6 +2990,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4166,8 +4176,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (mutationCase_ == 1) {
           setCellBuilder_.mergeFrom(value);
+        } else {
+          setCellBuilder_.setMessage(value);
         }
-        setCellBuilder_.setMessage(value);
       }
       mutationCase_ = 1;
       return this;
@@ -4375,8 +4386,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (mutationCase_ == 2) {
           deleteFromColumnBuilder_.mergeFrom(value);
+        } else {
+          deleteFromColumnBuilder_.setMessage(value);
         }
-        deleteFromColumnBuilder_.setMessage(value);
       }
       mutationCase_ = 2;
       return this;
@@ -4585,8 +4597,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (mutationCase_ == 3) {
           deleteFromFamilyBuilder_.mergeFrom(value);
+        } else {
+          deleteFromFamilyBuilder_.setMessage(value);
         }
-        deleteFromFamilyBuilder_.setMessage(value);
       }
       mutationCase_ = 3;
       return this;
@@ -4795,8 +4808,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (mutationCase_ == 4) {
           deleteFromRowBuilder_.mergeFrom(value);
+        } else {
+          deleteFromRowBuilder_.setMessage(value);
         }
-        deleteFromRowBuilder_.setMessage(value);
       }
       mutationCase_ = 4;
       return this;
