@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.BetaApi;
 import java.util.concurrent.Future;
 
 /**
@@ -32,6 +33,8 @@ import java.util.concurrent.Future;
  * with an AckResponse.SUCCESS. Because re-deliveries are possible, you should ensure that your
  * processing code is idempotent, as you may receive any given message more than once.
  */
+@BetaApi(
+    "This is a preview feature. For more details, see https://cloud.google.com/pubsub/docs/exactly-once-delivery.")
 public interface AckReplyConsumerWithResponse {
   /**
    * Acknowledges that the message has been successfully processed. The service will not send the
