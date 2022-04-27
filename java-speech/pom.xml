@@ -189,11 +189,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>com.google.errorprone</groupId>
-        <artifactId>error_prone_annotations</artifactId>
-        <version>2.13.1</version>
-      </dependency>
 
       <dependency>
         <groupId>junit</groupId>
