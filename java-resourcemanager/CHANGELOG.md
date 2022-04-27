@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://github.com/googleapis/java-resourcemanager/compare/v1.3.0...v1.3.1) (2022-04-27)
+
+
+### Dependencies
+
+* error_prone_annotations from shared deps BOM ([#770](https://github.com/googleapis/java-resourcemanager/issues/770)) ([36ca536](https://github.com/googleapis/java-resourcemanager/commit/36ca536ebfc516885c2c5244cceb883ab7aea4f5))
+
 ## [1.3.0](https://github.com/googleapis/java-resourcemanager/compare/v1.2.11...v1.3.0) (2022-04-18)
 
 
