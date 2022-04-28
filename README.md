@@ -142,6 +142,9 @@ logging.create(metricInfo);
 ```
 
 #### Writing log entries
+For an interactive tutorial click
+
+[![Guide Me](_static/guide-me.svg)](https://console.cloud.google.com/?walkthrough_id=logging__logging-java)
 
 With Logging you can also write custom log entries. Add the following imports at the top of your
 file:
