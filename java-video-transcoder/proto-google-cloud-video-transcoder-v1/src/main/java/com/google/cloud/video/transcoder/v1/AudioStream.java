@@ -130,6 +130,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -367,6 +369,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -592,7 +596,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (outputChannel_ != 0) {
         output.writeInt32(5, outputChannel_);
       }
-      if (gainDb_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(gainDb_) != 0) {
         output.writeDouble(6, gainDb_);
       }
       unknownFields.writeTo(output);
@@ -619,7 +623,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (outputChannel_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, outputChannel_);
       }
-      if (gainDb_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(gainDb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, gainDb_);
       }
       size += unknownFields.getSerializedSize();

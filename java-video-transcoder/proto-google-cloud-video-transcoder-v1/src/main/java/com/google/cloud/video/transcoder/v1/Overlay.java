@@ -113,6 +113,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -398,6 +400,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -471,10 +475,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (x_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
         output.writeDouble(1, x_);
       }
-      if (y_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
         output.writeDouble(2, y_);
       }
       unknownFields.writeTo(output);
@@ -486,10 +490,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (x_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, x_);
       }
-      if (y_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, y_);
       }
       size += unknownFields.getSerializedSize();
@@ -1151,6 +1155,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1322,7 +1328,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (resolution_ != null) {
         output.writeMessage(2, getResolution());
       }
-      if (alpha_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(alpha_) != 0) {
         output.writeDouble(3, alpha_);
       }
       unknownFields.writeTo(output);
@@ -1340,7 +1346,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (resolution_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResolution());
       }
-      if (alpha_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(alpha_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, alpha_);
       }
       size += unknownFields.getSerializedSize();
@@ -2291,6 +2297,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3530,6 +3538,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5049,6 +5059,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5933,6 +5945,8 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6707,8 +6721,9 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (animationTypeCase_ == 1) {
             animationStaticBuilder_.mergeFrom(value);
+          } else {
+            animationStaticBuilder_.setMessage(value);
           }
-          animationStaticBuilder_.setMessage(value);
         }
         animationTypeCase_ = 1;
         return this;
@@ -6927,8 +6942,9 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (animationTypeCase_ == 2) {
             animationFadeBuilder_.mergeFrom(value);
+          } else {
+            animationFadeBuilder_.setMessage(value);
           }
-          animationFadeBuilder_.setMessage(value);
         }
         animationTypeCase_ = 2;
         return this;
@@ -7143,8 +7159,9 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (animationTypeCase_ == 3) {
             animationEndBuilder_.mergeFrom(value);
+          } else {
+            animationEndBuilder_.setMessage(value);
           }
-          animationEndBuilder_.setMessage(value);
         }
         animationTypeCase_ = 3;
         return this;

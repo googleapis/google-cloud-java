@@ -137,8 +137,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
             }
           case 72:
             {
-              extractionStrategyCase_ = 9;
               extractionStrategy_ = input.readInt32();
+              extractionStrategyCase_ = 9;
               break;
             }
           case 82:
@@ -172,6 +172,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2251,8 +2253,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (extractionStrategyCase_ == 10) {
           intervalBuilder_.mergeFrom(value);
+        } else {
+          intervalBuilder_.setMessage(value);
         }
-        intervalBuilder_.setMessage(value);
       }
       extractionStrategyCase_ = 10;
       return this;

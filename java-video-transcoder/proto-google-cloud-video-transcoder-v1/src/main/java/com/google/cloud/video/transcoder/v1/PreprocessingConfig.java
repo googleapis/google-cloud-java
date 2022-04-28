@@ -187,6 +187,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -336,6 +338,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -433,13 +437,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (saturation_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(saturation_) != 0) {
         output.writeDouble(1, saturation_);
       }
-      if (contrast_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(contrast_) != 0) {
         output.writeDouble(2, contrast_);
       }
-      if (brightness_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(brightness_) != 0) {
         output.writeDouble(3, brightness_);
       }
       unknownFields.writeTo(output);
@@ -451,13 +455,13 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (saturation_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(saturation_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, saturation_);
       }
-      if (contrast_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(contrast_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, contrast_);
       }
-      if (brightness_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(brightness_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, brightness_);
       }
       size += unknownFields.getSerializedSize();
@@ -1141,6 +1145,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1252,7 +1258,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (strength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(strength_) != 0) {
         output.writeDouble(1, strength_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
@@ -1267,7 +1273,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (strength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(strength_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, strength_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
@@ -1923,6 +1929,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1998,7 +2006,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (strength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(strength_) != 0) {
         output.writeDouble(1, strength_);
       }
       if (enabled_ != false) {
@@ -2013,7 +2021,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (strength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(strength_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, strength_);
       }
       if (enabled_ != false) {
@@ -2627,6 +2635,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2727,7 +2737,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (lufs_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(lufs_) != 0) {
         output.writeDouble(1, lufs_);
       }
       if (highBoost_ != false) {
@@ -2745,7 +2755,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (size != -1) return size;
 
       size = 0;
-      if (lufs_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(lufs_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, lufs_);
       }
       if (highBoost_ != false) {
@@ -3449,6 +3459,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4318,6 +4330,8 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

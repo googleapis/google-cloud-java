@@ -147,6 +147,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1075,8 +1077,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       } else {
         if (elementaryStreamCase_ == 1) {
           videoStreamBuilder_.mergeFrom(value);
+        } else {
+          videoStreamBuilder_.setMessage(value);
         }
-        videoStreamBuilder_.setMessage(value);
       }
       elementaryStreamCase_ = 1;
       return this;
@@ -1285,8 +1288,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       } else {
         if (elementaryStreamCase_ == 2) {
           audioStreamBuilder_.mergeFrom(value);
+        } else {
+          audioStreamBuilder_.setMessage(value);
         }
-        audioStreamBuilder_.setMessage(value);
       }
       elementaryStreamCase_ = 2;
       return this;
@@ -1495,8 +1499,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       } else {
         if (elementaryStreamCase_ == 3) {
           textStreamBuilder_.mergeFrom(value);
+        } else {
+          textStreamBuilder_.setMessage(value);
         }
-        textStreamBuilder_.setMessage(value);
       }
       elementaryStreamCase_ = 3;
       return this;
