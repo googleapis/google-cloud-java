@@ -100,6 +100,8 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -202,7 +204,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (kgCO2E_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(kgCO2E_) != 0) {
       output.writeDouble(1, kgCO2E_);
     }
     if (duration_ != null) {
@@ -217,7 +219,7 @@ public final class SustainabilityProjection extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (kgCO2E_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(kgCO2E_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, kgCO2E_);
     }
     if (duration_ != null) {

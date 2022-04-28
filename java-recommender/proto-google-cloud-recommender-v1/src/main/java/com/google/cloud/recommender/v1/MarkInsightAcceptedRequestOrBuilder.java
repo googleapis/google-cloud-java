@@ -102,7 +102,12 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getStateMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getStateMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

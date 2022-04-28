@@ -124,6 +124,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1139,8 +1141,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (projectionCase_ == 100) {
           costProjectionBuilder_.mergeFrom(value);
+        } else {
+          costProjectionBuilder_.setMessage(value);
         }
-        costProjectionBuilder_.setMessage(value);
       }
       projectionCase_ = 100;
       return this;
@@ -1350,8 +1353,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (projectionCase_ == 101) {
           securityProjectionBuilder_.mergeFrom(value);
+        } else {
+          securityProjectionBuilder_.setMessage(value);
         }
-        securityProjectionBuilder_.setMessage(value);
       }
       projectionCase_ = 101;
       return this;

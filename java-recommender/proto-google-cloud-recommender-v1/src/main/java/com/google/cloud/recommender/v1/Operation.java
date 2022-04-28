@@ -202,6 +202,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -779,7 +781,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsPathFilters(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetPathFilters().getMap().containsKey(key);
   }
@@ -869,7 +871,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getPathFiltersOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetPathFilters().getMap();
@@ -914,7 +916,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.Value getPathFiltersOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetPathFilters().getMap();
@@ -974,7 +976,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsPathValueMatchers(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetPathValueMatchers().getMap().containsKey(key);
   }
@@ -1022,7 +1024,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
       java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher> map =
         internalGetPathValueMatchers().getMap();
@@ -1046,7 +1048,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher> map =
         internalGetPathValueMatchers().getMap();
@@ -2428,8 +2430,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (pathValueCase_ == 7) {
           valueBuilder_.mergeFrom(value);
+        } else {
+          valueBuilder_.setMessage(value);
         }
-        valueBuilder_.setMessage(value);
       }
       pathValueCase_ = 7;
       return this;
@@ -2648,8 +2651,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (pathValueCase_ == 10) {
           valueMatcherBuilder_.mergeFrom(value);
+        } else {
+          valueMatcherBuilder_.setMessage(value);
         }
-        valueMatcherBuilder_.setMessage(value);
       }
       pathValueCase_ = 10;
       return this;
@@ -2816,7 +2820,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsPathFilters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPathFilters().getMap().containsKey(key);
     }
@@ -2906,7 +2910,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value getPathFiltersOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetPathFilters().getMap();
@@ -2951,7 +2955,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Value getPathFiltersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetPathFilters().getMap();
@@ -3003,7 +3007,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removePathFilters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutablePathFilters().getMutableMap().remove(key);
       return this;
@@ -3051,11 +3055,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putPathFilters(java.lang.String key, com.google.protobuf.Value value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutablePathFilters().getMutableMap().put(key, value);
       return this;
     }
@@ -3151,7 +3156,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsPathValueMatchers(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPathValueMatchers().getMap().containsKey(key);
     }
@@ -3199,7 +3204,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
         java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher> map =
           internalGetPathValueMatchers().getMap();
@@ -3223,7 +3228,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher> map =
           internalGetPathValueMatchers().getMap();
@@ -3253,7 +3258,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removePathValueMatchers(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutablePathValueMatchers().getMutableMap().remove(key);
       return this;
@@ -3281,11 +3286,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder putPathValueMatchers(
         java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutablePathValueMatchers().getMutableMap().put(key, value);
       return this;
     }
