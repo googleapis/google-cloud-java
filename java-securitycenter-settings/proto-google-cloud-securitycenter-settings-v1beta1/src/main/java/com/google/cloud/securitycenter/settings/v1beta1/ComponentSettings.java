@@ -250,6 +250,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -389,6 +391,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1252,7 +1256,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsDetectorSettings(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDetectorSettings().getMap().containsKey(key);
   }
@@ -1307,7 +1311,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
               defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -1333,7 +1337,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
       getDetectorSettingsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -2736,7 +2740,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsDetectorSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDetectorSettings().getMap().containsKey(key);
     }
@@ -2791,7 +2795,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -2817,7 +2821,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
         getDetectorSettingsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -2849,7 +2853,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeDetectorSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDetectorSettings().getMutableMap().remove(key);
       return this;
@@ -2880,11 +2884,12 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDetectorSettings().getMutableMap().put(key, value);
       return this;
     }
@@ -3364,8 +3369,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       } else {
         if (specificSettingsCase_ == 41) {
           containerThreatDetectionSettingsBuilder_.mergeFrom(value);
+        } else {
+          containerThreatDetectionSettingsBuilder_.setMessage(value);
         }
-        containerThreatDetectionSettingsBuilder_.setMessage(value);
       }
       specificSettingsCase_ = 41;
       return this;
@@ -3624,8 +3630,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       } else {
         if (specificSettingsCase_ == 42) {
           eventThreatDetectionSettingsBuilder_.mergeFrom(value);
+        } else {
+          eventThreatDetectionSettingsBuilder_.setMessage(value);
         }
-        eventThreatDetectionSettingsBuilder_.setMessage(value);
       }
       specificSettingsCase_ = 42;
       return this;
@@ -3883,8 +3890,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       } else {
         if (specificSettingsCase_ == 44) {
           securityHealthAnalyticsSettingsBuilder_.mergeFrom(value);
+        } else {
+          securityHealthAnalyticsSettingsBuilder_.setMessage(value);
         }
-        securityHealthAnalyticsSettingsBuilder_.setMessage(value);
       }
       specificSettingsCase_ = 44;
       return this;
@@ -4140,8 +4148,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       } else {
         if (specificSettingsCase_ == 40) {
           webSecurityScannerSettingsBuilder_.mergeFrom(value);
+        } else {
+          webSecurityScannerSettingsBuilder_.setMessage(value);
         }
-        webSecurityScannerSettingsBuilder_.setMessage(value);
       }
       specificSettingsCase_ = 40;
       return this;

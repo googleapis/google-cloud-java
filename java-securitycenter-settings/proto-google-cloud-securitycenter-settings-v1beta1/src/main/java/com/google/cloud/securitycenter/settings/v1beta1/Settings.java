@@ -205,6 +205,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -598,6 +600,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1478,7 +1482,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsComponentSettings(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetComponentSettings().getMap().containsKey(key);
   }
@@ -1524,7 +1528,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -1546,7 +1550,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
       getComponentSettingsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -1612,7 +1616,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsDetectorGroupSettings(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDetectorGroupSettings().getMap().containsKey(key);
   }
@@ -1665,7 +1669,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
               defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -1690,7 +1694,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
       getDetectorGroupSettingsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -3136,7 +3140,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsComponentSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetComponentSettings().getMap().containsKey(key);
     }
@@ -3182,7 +3186,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -3204,7 +3208,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
         getComponentSettingsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -3232,7 +3236,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeComponentSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableComponentSettings().getMutableMap().remove(key);
       return this;
@@ -3259,11 +3263,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableComponentSettings().getMutableMap().put(key, value);
       return this;
     }
@@ -3339,7 +3344,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsDetectorGroupSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDetectorGroupSettings().getMap().containsKey(key);
     }
@@ -3392,7 +3397,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -3417,7 +3422,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
         getDetectorGroupSettingsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -3448,7 +3453,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeDetectorGroupSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDetectorGroupSettings().getMutableMap().remove(key);
       return this;
@@ -3478,11 +3483,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDetectorGroupSettings().getMutableMap().put(key, value);
       return this;
     }
