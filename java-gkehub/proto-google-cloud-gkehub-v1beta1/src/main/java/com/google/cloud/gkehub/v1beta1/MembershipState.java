@@ -111,6 +111,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -410,6 +412,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string description = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=501
    * @return The description.
    */
   @java.lang.Override
@@ -434,6 +438,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string description = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=501
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -461,6 +467,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=504
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -477,6 +485,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=504
    * @return The updateTime.
    */
   @java.lang.Override
@@ -974,6 +984,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string description = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=501
      * @return The description.
      */
     @java.lang.Deprecated
@@ -997,6 +1009,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string description = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=501
      * @return The bytes for description.
      */
     @java.lang.Deprecated
@@ -1020,6 +1034,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string description = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=501
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1042,6 +1058,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string description = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=501
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1060,6 +1078,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string description = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=501
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1090,6 +1110,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=504
      * @return Whether the updateTime field is set.
      */
     @java.lang.Deprecated
@@ -1105,6 +1127,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=504
      * @return The updateTime.
      */
     @java.lang.Deprecated

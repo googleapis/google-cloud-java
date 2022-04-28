@@ -102,6 +102,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -136,6 +138,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=724
    * @return The name.
    */
   @java.lang.Override
@@ -160,6 +164,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=724
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -612,6 +618,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=724
      * @return The name.
      */
     @java.lang.Deprecated
@@ -635,6 +643,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=724
      * @return The bytes for name.
      */
     @java.lang.Deprecated
@@ -658,6 +668,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=724
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -680,6 +692,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=724
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -698,6 +712,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
+     *     google/cloud/gkehub/v1beta1/membership.proto;l=724
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

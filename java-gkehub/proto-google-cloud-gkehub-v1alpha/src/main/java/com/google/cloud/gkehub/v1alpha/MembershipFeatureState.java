@@ -159,6 +159,8 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1003,8 +1005,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         if (featureStateCase_ == 100) {
           servicemeshBuilder_.mergeFrom(value);
+        } else {
+          servicemeshBuilder_.setMessage(value);
         }
-        servicemeshBuilder_.setMessage(value);
       }
       featureStateCase_ = 100;
       return this;
@@ -1216,8 +1219,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         if (featureStateCase_ == 104) {
           meteringBuilder_.mergeFrom(value);
+        } else {
+          meteringBuilder_.setMessage(value);
         }
-        meteringBuilder_.setMessage(value);
       }
       featureStateCase_ = 104;
       return this;
@@ -1439,8 +1443,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         if (featureStateCase_ == 106) {
           configmanagementBuilder_.mergeFrom(value);
+        } else {
+          configmanagementBuilder_.setMessage(value);
         }
-        configmanagementBuilder_.setMessage(value);
       }
       featureStateCase_ = 106;
       return this;

@@ -121,6 +121,8 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -814,8 +816,9 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       } else {
         if (featureSpecCase_ == 102) {
           multiclusteringressBuilder_.mergeFrom(value);
+        } else {
+          multiclusteringressBuilder_.setMessage(value);
         }
-        multiclusteringressBuilder_.setMessage(value);
       }
       featureSpecCase_ = 102;
       return this;
@@ -1039,8 +1042,9 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       } else {
         if (featureSpecCase_ == 108) {
           cloudauditloggingBuilder_.mergeFrom(value);
+        } else {
+          cloudauditloggingBuilder_.setMessage(value);
         }
-        cloudauditloggingBuilder_.setMessage(value);
       }
       featureSpecCase_ = 108;
       return this;

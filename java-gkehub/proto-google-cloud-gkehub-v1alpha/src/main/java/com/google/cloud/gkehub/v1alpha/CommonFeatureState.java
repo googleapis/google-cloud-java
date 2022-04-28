@@ -115,6 +115,8 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -792,8 +794,9 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       } else {
         if (featureStateCase_ == 100) {
           servicemeshBuilder_.mergeFrom(value);
+        } else {
+          servicemeshBuilder_.setMessage(value);
         }
-        servicemeshBuilder_.setMessage(value);
       }
       featureStateCase_ = 100;
       return this;

@@ -101,6 +101,8 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -707,8 +709,9 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       } else {
         if (featureSpecCase_ == 106) {
           configmanagementBuilder_.mergeFrom(value);
+        } else {
+          configmanagementBuilder_.setMessage(value);
         }
-        configmanagementBuilder_.setMessage(value);
       }
       featureSpecCase_ = 106;
       return this;

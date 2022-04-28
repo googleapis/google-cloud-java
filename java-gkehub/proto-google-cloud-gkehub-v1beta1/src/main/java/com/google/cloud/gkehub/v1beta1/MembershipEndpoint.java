@@ -164,6 +164,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1131,8 +1133,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       } else {
         if (typeCase_ == 4) {
           gkeClusterBuilder_.mergeFrom(value);
+        } else {
+          gkeClusterBuilder_.setMessage(value);
         }
-        gkeClusterBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -1358,8 +1361,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       } else {
         if (typeCase_ == 7) {
           onPremClusterBuilder_.mergeFrom(value);
+        } else {
+          onPremClusterBuilder_.setMessage(value);
         }
-        onPremClusterBuilder_.setMessage(value);
       }
       typeCase_ = 7;
       return this;
@@ -1585,8 +1589,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       } else {
         if (typeCase_ == 8) {
           multiCloudClusterBuilder_.mergeFrom(value);
+        } else {
+          multiCloudClusterBuilder_.setMessage(value);
         }
-        multiCloudClusterBuilder_.setMessage(value);
       }
       typeCase_ = 8;
       return this;
