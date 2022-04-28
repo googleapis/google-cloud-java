@@ -96,6 +96,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -191,6 +193,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+   *     google/cloud/dataplex/v1/metadata.proto;l=325
    * @return The etag.
    */
   @java.lang.Override
@@ -215,6 +219,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
    *
    * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+   *     google/cloud/dataplex/v1/metadata.proto;l=325
    * @return The bytes for etag.
    */
   @java.lang.Override
@@ -711,6 +717,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=325
      * @return The etag.
      */
     @java.lang.Deprecated
@@ -734,6 +742,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=325
      * @return The bytes for etag.
      */
     @java.lang.Deprecated
@@ -757,6 +767,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=325
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -779,6 +791,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=325
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -797,6 +811,8 @@ public final class DeletePartitionRequest extends com.google.protobuf.GeneratedM
      *
      * <code>string etag = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.DeletePartitionRequest.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=325
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
      */

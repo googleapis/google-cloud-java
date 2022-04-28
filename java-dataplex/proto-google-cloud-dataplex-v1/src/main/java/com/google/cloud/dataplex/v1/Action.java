@@ -311,6 +311,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -581,6 +583,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1030,6 +1034,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1519,6 +1525,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2289,6 +2297,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3568,6 +3578,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5198,6 +5210,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5979,6 +5993,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6425,6 +6441,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9645,8 +9663,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 10) {
           invalidDataFormatBuilder_.mergeFrom(value);
+        } else {
+          invalidDataFormatBuilder_.setMessage(value);
         }
-        invalidDataFormatBuilder_.setMessage(value);
       }
       detailsCase_ = 10;
       return this;
@@ -9865,8 +9884,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 11) {
           incompatibleDataSchemaBuilder_.mergeFrom(value);
+        } else {
+          incompatibleDataSchemaBuilder_.setMessage(value);
         }
-        incompatibleDataSchemaBuilder_.setMessage(value);
       }
       detailsCase_ = 11;
       return this;
@@ -10094,8 +10114,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 12) {
           invalidDataPartitionBuilder_.mergeFrom(value);
+        } else {
+          invalidDataPartitionBuilder_.setMessage(value);
         }
-        invalidDataPartitionBuilder_.setMessage(value);
       }
       detailsCase_ = 12;
       return this;
@@ -10313,8 +10334,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 13) {
           missingDataBuilder_.mergeFrom(value);
+        } else {
+          missingDataBuilder_.setMessage(value);
         }
-        missingDataBuilder_.setMessage(value);
       }
       detailsCase_ = 13;
       return this;
@@ -10523,8 +10545,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 14) {
           missingResourceBuilder_.mergeFrom(value);
+        } else {
+          missingResourceBuilder_.setMessage(value);
         }
-        missingResourceBuilder_.setMessage(value);
       }
       detailsCase_ = 14;
       return this;
@@ -10746,8 +10769,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 15) {
           unauthorizedResourceBuilder_.mergeFrom(value);
+        } else {
+          unauthorizedResourceBuilder_.setMessage(value);
         }
-        unauthorizedResourceBuilder_.setMessage(value);
       }
       detailsCase_ = 15;
       return this;
@@ -10980,8 +11004,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 21) {
           failedSecurityPolicyApplyBuilder_.mergeFrom(value);
+        } else {
+          failedSecurityPolicyApplyBuilder_.setMessage(value);
         }
-        failedSecurityPolicyApplyBuilder_.setMessage(value);
       }
       detailsCase_ = 21;
       return this;
@@ -11215,8 +11240,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 22) {
           invalidDataOrganizationBuilder_.mergeFrom(value);
+        } else {
+          invalidDataOrganizationBuilder_.setMessage(value);
         }
-        invalidDataOrganizationBuilder_.setMessage(value);
       }
       detailsCase_ = 22;
       return this;

@@ -132,6 +132,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -586,6 +588,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3271,8 +3275,9 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailCase_ == 5) {
           queryBuilder_.mergeFrom(value);
+        } else {
+          queryBuilder_.setMessage(value);
         }
-        queryBuilder_.setMessage(value);
       }
       detailCase_ = 5;
       return this;

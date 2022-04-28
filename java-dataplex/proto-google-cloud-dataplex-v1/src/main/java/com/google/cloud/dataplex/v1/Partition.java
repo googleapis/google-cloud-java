@@ -116,6 +116,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -348,6 +350,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+   *     google/cloud/dataplex/v1/metadata.proto;l=514
    * @return The etag.
    */
   @java.lang.Override
@@ -372,6 +376,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+   *     google/cloud/dataplex/v1/metadata.proto;l=514
    * @return The bytes for etag.
    */
   @java.lang.Override
@@ -1248,6 +1254,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=514
      * @return The etag.
      */
     @java.lang.Deprecated
@@ -1271,6 +1279,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=514
      * @return The bytes for etag.
      */
     @java.lang.Deprecated
@@ -1294,6 +1304,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=514
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -1316,6 +1328,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=514
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1334,6 +1348,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
+     *     google/cloud/dataplex/v1/metadata.proto;l=514
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
      */

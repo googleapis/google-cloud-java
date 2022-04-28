@@ -214,6 +214,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -506,6 +508,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -632,6 +636,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1412,7 +1418,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
-      java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+      /* nullable */
+      java.lang.String getPropertiesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue);
       /**
        *
        *
@@ -1531,6 +1542,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1757,7 +1770,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsProperties(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetProperties().getMap().containsKey(key);
       }
@@ -1807,7 +1820,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getPropertiesOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1831,7 +1844,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public java.lang.String getPropertiesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
         if (!map.containsKey(key)) {
@@ -2709,7 +2722,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public boolean containsProperties(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           return internalGetProperties().getMap().containsKey(key);
         }
@@ -2759,7 +2772,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getPropertiesOrDefault(
             java.lang.String key, java.lang.String defaultValue) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2783,7 +2796,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public java.lang.String getPropertiesOrThrow(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
           if (!map.containsKey(key)) {
@@ -2814,7 +2827,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder removeProperties(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           internalGetMutableProperties().getMutableMap().remove(key);
           return this;
@@ -2842,11 +2855,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder putProperties(java.lang.String key, java.lang.String value) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           if (value == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map value");
           }
+
           internalGetMutableProperties().getMutableMap().put(key, value);
           return this;
         }
@@ -3152,6 +3166,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5284,8 +5300,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (resourcesCase_ == 52) {
             batchBuilder_.mergeFrom(value);
+          } else {
+            batchBuilder_.setMessage(value);
           }
-          batchBuilder_.setMessage(value);
         }
         resourcesCase_ = 52;
         return this;
@@ -5527,8 +5544,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (runtimeCase_ == 101) {
             containerImageBuilder_.mergeFrom(value);
+          } else {
+            containerImageBuilder_.setMessage(value);
           }
-          containerImageBuilder_.setMessage(value);
         }
         runtimeCase_ = 101;
         return this;
@@ -5764,8 +5782,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (networkCase_ == 150) {
             vpcNetworkBuilder_.mergeFrom(value);
+          } else {
+            vpcNetworkBuilder_.setMessage(value);
           }
-          vpcNetworkBuilder_.setMessage(value);
         }
         networkCase_ = 150;
         return this;
@@ -6191,6 +6210,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7824,7 +7845,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    java.lang.String getArgsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+    /* nullable */
+    java.lang.String getArgsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
     /**
      *
      *
@@ -8016,6 +8042,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8098,7 +8126,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsArgs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetArgs().getMap().containsKey(key);
     }
@@ -8155,7 +8183,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getArgsOrDefault(java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -8183,7 +8211,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getArgsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
       if (!map.containsKey(key)) {
@@ -8743,7 +8771,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsArgs(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetArgs().getMap().containsKey(key);
       }
@@ -8801,7 +8829,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getArgsOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -8829,7 +8857,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public java.lang.String getArgsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
         if (!map.containsKey(key)) {
@@ -8864,7 +8892,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeArgs(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableArgs().getMutableMap().remove(key);
         return this;
@@ -8896,11 +8924,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putArgs(java.lang.String key, java.lang.String value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableArgs().getMutableMap().put(key, value);
         return this;
       }
@@ -9824,6 +9853,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12831,7 +12862,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -12866,7 +12897,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -12883,7 +12914,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -14626,7 +14657,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -14662,7 +14693,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -14679,7 +14710,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -14703,7 +14734,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -14724,11 +14755,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -15266,8 +15298,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (configCase_ == 300) {
           sparkBuilder_.mergeFrom(value);
+        } else {
+          sparkBuilder_.setMessage(value);
         }
-        sparkBuilder_.setMessage(value);
       }
       configCase_ = 300;
       return this;
