@@ -12,7 +12,24 @@
     <artifactId>google-cloud-live-stream-parent</artifactId>
     <version>0.2.1</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   </parent>
-
+<dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
