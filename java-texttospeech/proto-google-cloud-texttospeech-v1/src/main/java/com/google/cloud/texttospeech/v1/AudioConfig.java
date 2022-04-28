@@ -120,6 +120,8 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -389,13 +391,13 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.texttospeech.v1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, audioEncoding_);
     }
-    if (speakingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       output.writeDouble(2, speakingRate_);
     }
-    if (pitch_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(pitch_) != 0) {
       output.writeDouble(3, pitch_);
     }
-    if (volumeGainDb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(volumeGainDb_) != 0) {
       output.writeDouble(4, volumeGainDb_);
     }
     if (sampleRateHertz_ != 0) {
@@ -417,13 +419,13 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.texttospeech.v1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, audioEncoding_);
     }
-    if (speakingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, speakingRate_);
     }
-    if (pitch_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(pitch_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, pitch_);
     }
-    if (volumeGainDb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(volumeGainDb_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, volumeGainDb_);
     }
     if (sampleRateHertz_ != 0) {
