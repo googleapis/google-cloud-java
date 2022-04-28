@@ -150,6 +150,8 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1249,8 +1251,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (typeCase_ == 3) {
           largeCustomDictionaryBuilder_.mergeFrom(value);
+        } else {
+          largeCustomDictionaryBuilder_.setMessage(value);
         }
-        largeCustomDictionaryBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;
@@ -1460,8 +1463,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (typeCase_ == 4) {
           dictionaryBuilder_.mergeFrom(value);
+        } else {
+          dictionaryBuilder_.setMessage(value);
         }
-        dictionaryBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -1669,8 +1673,9 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (typeCase_ == 5) {
           regexBuilder_.mergeFrom(value);
+        } else {
+          regexBuilder_.setMessage(value);
         }
-        regexBuilder_.setMessage(value);
       }
       typeCase_ = 5;
       return this;

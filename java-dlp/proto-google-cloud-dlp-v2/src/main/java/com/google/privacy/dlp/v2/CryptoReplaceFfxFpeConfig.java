@@ -126,8 +126,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
             }
           case 48:
             {
-              alphabetCase_ = 6;
               alphabet_ = input.readInt32();
+              alphabetCase_ = 6;
               break;
             }
           case 66:
@@ -156,6 +156,8 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

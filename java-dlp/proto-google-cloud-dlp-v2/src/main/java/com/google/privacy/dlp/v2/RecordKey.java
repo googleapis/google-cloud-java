@@ -124,6 +124,8 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -818,8 +820,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           datastoreKeyBuilder_.mergeFrom(value);
+        } else {
+          datastoreKeyBuilder_.setMessage(value);
         }
-        datastoreKeyBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;
@@ -955,8 +958,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 3) {
           bigQueryKeyBuilder_.mergeFrom(value);
+        } else {
+          bigQueryKeyBuilder_.setMessage(value);
         }
-        bigQueryKeyBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;

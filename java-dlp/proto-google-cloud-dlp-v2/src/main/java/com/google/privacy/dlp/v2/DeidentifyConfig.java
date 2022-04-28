@@ -134,6 +134,8 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -909,8 +911,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (transformationCase_ == 1) {
           infoTypeTransformationsBuilder_.mergeFrom(value);
+        } else {
+          infoTypeTransformationsBuilder_.setMessage(value);
         }
-        infoTypeTransformationsBuilder_.setMessage(value);
       }
       transformationCase_ = 1;
       return this;
@@ -1136,8 +1139,9 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (transformationCase_ == 2) {
           recordTransformationsBuilder_.mergeFrom(value);
+        } else {
+          recordTransformationsBuilder_.setMessage(value);
         }
-        recordTransformationsBuilder_.setMessage(value);
       }
       transformationCase_ = 2;
       return this;

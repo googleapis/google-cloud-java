@@ -150,6 +150,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -361,8 +363,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
               }
             case 16:
               {
-                targetCase_ = 2;
                 target_ = input.readBool();
+                targetCase_ = 2;
                 break;
               }
             case 26:
@@ -391,6 +393,8 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1160,8 +1164,9 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
         } else {
           if (targetCase_ == 1) {
             infoTypeBuilder_.mergeFrom(value);
+          } else {
+            infoTypeBuilder_.setMessage(value);
           }
-          infoTypeBuilder_.setMessage(value);
         }
         targetCase_ = 1;
         return this;

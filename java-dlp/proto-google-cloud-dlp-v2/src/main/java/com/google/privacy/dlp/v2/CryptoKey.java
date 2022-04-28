@@ -132,6 +132,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -885,8 +887,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 1) {
           transientBuilder_.mergeFrom(value);
+        } else {
+          transientBuilder_.setMessage(value);
         }
-        transientBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;
@@ -1094,8 +1097,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 2) {
           unwrappedBuilder_.mergeFrom(value);
+        } else {
+          unwrappedBuilder_.setMessage(value);
         }
-        unwrappedBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -1303,8 +1307,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 3) {
           kmsWrappedBuilder_.mergeFrom(value);
+        } else {
+          kmsWrappedBuilder_.setMessage(value);
         }
-        kmsWrappedBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;

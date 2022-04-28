@@ -104,6 +104,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1079,8 +1081,9 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (typeCase_ == 1) {
           tableBuilder_.mergeFrom(value);
+        } else {
+          tableBuilder_.setMessage(value);
         }
-        tableBuilder_.setMessage(value);
       }
       typeCase_ = 1;
       return this;

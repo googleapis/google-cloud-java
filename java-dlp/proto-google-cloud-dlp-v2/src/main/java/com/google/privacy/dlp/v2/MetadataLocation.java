@@ -104,6 +104,8 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -835,8 +837,9 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
       } else {
         if (labelCase_ == 3) {
           storageLabelBuilder_.mergeFrom(value);
+        } else {
+          storageLabelBuilder_.setMessage(value);
         }
-        storageLabelBuilder_.setMessage(value);
       }
       labelCase_ = 3;
       return this;

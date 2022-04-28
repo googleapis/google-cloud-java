@@ -118,6 +118,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -478,6 +480,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1381,6 +1385,8 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3383,8 +3389,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       } else {
         if (actionCase_ == 1) {
           exportDataBuilder_.mergeFrom(value);
+        } else {
+          exportDataBuilder_.setMessage(value);
         }
-        exportDataBuilder_.setMessage(value);
       }
       actionCase_ = 1;
       return this;
@@ -3601,8 +3608,9 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       } else {
         if (actionCase_ == 2) {
           pubSubNotificationBuilder_.mergeFrom(value);
+        } else {
+          pubSubNotificationBuilder_.setMessage(value);
         }
-        pubSubNotificationBuilder_.setMessage(value);
       }
       actionCase_ = 2;
       return this;

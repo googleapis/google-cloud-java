@@ -160,6 +160,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -470,6 +472,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2785,8 +2789,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           datastoreOptionsBuilder_.mergeFrom(value);
+        } else {
+          datastoreOptionsBuilder_.setMessage(value);
         }
-        datastoreOptionsBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;
@@ -2994,8 +2999,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 3) {
           cloudStorageOptionsBuilder_.mergeFrom(value);
+        } else {
+          cloudStorageOptionsBuilder_.setMessage(value);
         }
-        cloudStorageOptionsBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;
@@ -3204,8 +3210,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 4) {
           bigQueryOptionsBuilder_.mergeFrom(value);
+        } else {
+          bigQueryOptionsBuilder_.setMessage(value);
         }
-        bigQueryOptionsBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -3413,8 +3420,9 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 9) {
           hybridOptionsBuilder_.mergeFrom(value);
+        } else {
+          hybridOptionsBuilder_.setMessage(value);
         }
-        hybridOptionsBuilder_.setMessage(value);
       }
       typeCase_ = 9;
       return this;

@@ -132,6 +132,8 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1108,8 +1110,9 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       } else {
         if (sourceCase_ == 2) {
           cloudStorageFileSetBuilder_.mergeFrom(value);
+        } else {
+          cloudStorageFileSetBuilder_.setMessage(value);
         }
-        cloudStorageFileSetBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -1318,8 +1321,9 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       } else {
         if (sourceCase_ == 3) {
           bigQueryFieldBuilder_.mergeFrom(value);
+        } else {
+          bigQueryFieldBuilder_.setMessage(value);
         }
-        bigQueryFieldBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;

@@ -148,6 +148,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1750,8 +1752,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       } else {
         if (transformationCase_ == 4) {
           primitiveTransformationBuilder_.mergeFrom(value);
+        } else {
+          primitiveTransformationBuilder_.setMessage(value);
         }
-        primitiveTransformationBuilder_.setMessage(value);
       }
       transformationCase_ = 4;
       return this;
@@ -1969,8 +1972,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
       } else {
         if (transformationCase_ == 5) {
           infoTypeTransformationsBuilder_.mergeFrom(value);
+        } else {
+          infoTypeTransformationsBuilder_.setMessage(value);
         }
-        infoTypeTransformationsBuilder_.setMessage(value);
       }
       transformationCase_ = 5;
       return this;

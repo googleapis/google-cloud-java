@@ -125,6 +125,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -299,7 +301,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     if (upperBound_ != null) {
       output.writeMessage(2, getUpperBound());
     }
-    if (bucketSize_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(bucketSize_) != 0) {
       output.writeDouble(3, bucketSize_);
     }
     unknownFields.writeTo(output);
@@ -317,7 +319,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
     if (upperBound_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpperBound());
     }
-    if (bucketSize_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(bucketSize_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, bucketSize_);
     }
     size += unknownFields.getSerializedSize();

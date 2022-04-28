@@ -349,6 +349,8 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1599,7 +1601,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsResourceLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetResourceLabels().getMap().containsKey(key);
   }
@@ -1635,7 +1637,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
   public java.lang.String getResourceLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1652,7 +1654,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     if (!map.containsKey(key)) {
@@ -5917,7 +5919,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsResourceLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetResourceLabels().getMap().containsKey(key);
     }
@@ -5953,7 +5955,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public java.lang.String getResourceLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -5970,7 +5972,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       if (!map.containsKey(key)) {
@@ -5994,7 +5996,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeResourceLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableResourceLabels().getMutableMap().remove(key);
       return this;
@@ -6015,11 +6017,12 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder putResourceLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableResourceLabels().getMutableMap().put(key, value);
       return this;
     }

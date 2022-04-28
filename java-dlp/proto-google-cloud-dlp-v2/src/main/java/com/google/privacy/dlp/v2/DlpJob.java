@@ -206,6 +206,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2000,8 +2002,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 4) {
           riskDetailsBuilder_.mergeFrom(value);
+        } else {
+          riskDetailsBuilder_.setMessage(value);
         }
-        riskDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 4;
       return this;
@@ -2211,8 +2214,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 5) {
           inspectDetailsBuilder_.mergeFrom(value);
+        } else {
+          inspectDetailsBuilder_.setMessage(value);
         }
-        inspectDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 5;
       return this;

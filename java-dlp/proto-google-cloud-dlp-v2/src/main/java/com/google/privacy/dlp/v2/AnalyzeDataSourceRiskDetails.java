@@ -278,6 +278,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -537,6 +539,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2125,6 +2129,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2366,6 +2372,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4818,6 +4826,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5010,6 +5020,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6318,6 +6330,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -8886,6 +8900,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9155,6 +9171,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -11015,6 +11033,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -13633,6 +13653,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -13814,6 +13836,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -15080,6 +15104,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -17851,6 +17877,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -18040,6 +18068,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -18180,7 +18210,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         for (int i = 0; i < quasiIdsValues_.size(); i++) {
           output.writeMessage(1, quasiIdsValues_.get(i));
         }
-        if (estimatedProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(estimatedProbability_) != 0) {
           output.writeDouble(2, estimatedProbability_);
         }
         unknownFields.writeTo(output);
@@ -18196,7 +18226,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIdsValues_.get(i));
         }
-        if (estimatedProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(estimatedProbability_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, estimatedProbability_);
         }
         size += unknownFields.getSerializedSize();
@@ -19344,6 +19374,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -19556,10 +19588,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (minProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(minProbability_) != 0) {
           output.writeDouble(1, minProbability_);
         }
-        if (maxProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(maxProbability_) != 0) {
           output.writeDouble(2, maxProbability_);
         }
         if (bucketSize_ != 0L) {
@@ -19580,10 +19612,10 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         if (size != -1) return size;
 
         size = 0;
-        if (minProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(minProbability_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, minProbability_);
         }
-        if (maxProbability_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(maxProbability_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, maxProbability_);
         }
         if (bucketSize_ != 0L) {
@@ -22088,6 +22120,8 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -24472,8 +24506,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 3) {
           numericalStatsResultBuilder_.mergeFrom(value);
+        } else {
+          numericalStatsResultBuilder_.setMessage(value);
         }
-        numericalStatsResultBuilder_.setMessage(value);
       }
       resultCase_ = 3;
       return this;
@@ -24719,8 +24754,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 4) {
           categoricalStatsResultBuilder_.mergeFrom(value);
+        } else {
+          categoricalStatsResultBuilder_.setMessage(value);
         }
-        categoricalStatsResultBuilder_.setMessage(value);
       }
       resultCase_ = 4;
       return this;
@@ -24964,8 +25000,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 5) {
           kAnonymityResultBuilder_.mergeFrom(value);
+        } else {
+          kAnonymityResultBuilder_.setMessage(value);
         }
-        kAnonymityResultBuilder_.setMessage(value);
       }
       resultCase_ = 5;
       return this;
@@ -25205,8 +25242,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 6) {
           lDiversityResultBuilder_.mergeFrom(value);
+        } else {
+          lDiversityResultBuilder_.setMessage(value);
         }
-        lDiversityResultBuilder_.setMessage(value);
       }
       resultCase_ = 6;
       return this;
@@ -25448,8 +25486,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 7) {
           kMapEstimationResultBuilder_.mergeFrom(value);
+        } else {
+          kMapEstimationResultBuilder_.setMessage(value);
         }
-        kMapEstimationResultBuilder_.setMessage(value);
       }
       resultCase_ = 7;
       return this;
@@ -25700,8 +25739,9 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
       } else {
         if (resultCase_ == 9) {
           deltaPresenceEstimationResultBuilder_.mergeFrom(value);
+        } else {
+          deltaPresenceEstimationResultBuilder_.setMessage(value);
         }
-        deltaPresenceEstimationResultBuilder_.setMessage(value);
       }
       resultCase_ = 9;
       return this;

@@ -299,6 +299,8 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1798,8 +1800,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 1) {
           replaceConfigBuilder_.mergeFrom(value);
+        } else {
+          replaceConfigBuilder_.setMessage(value);
         }
-        replaceConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 1;
       return this;
@@ -2006,8 +2009,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 2) {
           redactConfigBuilder_.mergeFrom(value);
+        } else {
+          redactConfigBuilder_.setMessage(value);
         }
-        redactConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 2;
       return this;
@@ -2216,8 +2220,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 3) {
           characterMaskConfigBuilder_.mergeFrom(value);
+        } else {
+          characterMaskConfigBuilder_.setMessage(value);
         }
-        characterMaskConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 3;
       return this;
@@ -2434,8 +2439,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 4) {
           cryptoReplaceFfxFpeConfigBuilder_.mergeFrom(value);
+        } else {
+          cryptoReplaceFfxFpeConfigBuilder_.setMessage(value);
         }
-        cryptoReplaceFfxFpeConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 4;
       return this;
@@ -2653,8 +2659,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 5) {
           fixedSizeBucketingConfigBuilder_.mergeFrom(value);
+        } else {
+          fixedSizeBucketingConfigBuilder_.setMessage(value);
         }
-        fixedSizeBucketingConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 5;
       return this;
@@ -2864,8 +2871,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 6) {
           bucketingConfigBuilder_.mergeFrom(value);
+        } else {
+          bucketingConfigBuilder_.setMessage(value);
         }
-        bucketingConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 6;
       return this;
@@ -3081,8 +3089,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 7) {
           replaceWithInfoTypeConfigBuilder_.mergeFrom(value);
+        } else {
+          replaceWithInfoTypeConfigBuilder_.setMessage(value);
         }
-        replaceWithInfoTypeConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 7;
       return this;
@@ -3297,8 +3306,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 8) {
           timePartConfigBuilder_.mergeFrom(value);
+        } else {
+          timePartConfigBuilder_.setMessage(value);
         }
-        timePartConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 8;
       return this;
@@ -3506,8 +3516,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 9) {
           cryptoHashConfigBuilder_.mergeFrom(value);
+        } else {
+          cryptoHashConfigBuilder_.setMessage(value);
         }
-        cryptoHashConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 9;
       return this;
@@ -3715,8 +3726,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 11) {
           dateShiftConfigBuilder_.mergeFrom(value);
+        } else {
+          dateShiftConfigBuilder_.setMessage(value);
         }
-        dateShiftConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 11;
       return this;
@@ -3932,8 +3944,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 12) {
           cryptoDeterministicConfigBuilder_.mergeFrom(value);
+        } else {
+          cryptoDeterministicConfigBuilder_.setMessage(value);
         }
-        cryptoDeterministicConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 12;
       return this;
@@ -4151,8 +4164,9 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       } else {
         if (transformationCase_ == 13) {
           replaceDictionaryConfigBuilder_.mergeFrom(value);
+        } else {
+          replaceDictionaryConfigBuilder_.setMessage(value);
         }
-        replaceDictionaryConfigBuilder_.setMessage(value);
       }
       transformationCase_ = 13;
       return this;

@@ -131,6 +131,8 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -219,6 +221,8 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -680,6 +684,8 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1765,8 +1771,9 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       } else {
         if (modeCase_ == 1) {
           throwErrorBuilder_.mergeFrom(value);
+        } else {
+          throwErrorBuilder_.setMessage(value);
         }
-        throwErrorBuilder_.setMessage(value);
       }
       modeCase_ = 1;
       return this;
@@ -1997,8 +2004,9 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
       } else {
         if (modeCase_ == 2) {
           leaveUntransformedBuilder_.mergeFrom(value);
+        } else {
+          leaveUntransformedBuilder_.setMessage(value);
         }
-        leaveUntransformedBuilder_.setMessage(value);
       }
       modeCase_ = 2;
       return this;

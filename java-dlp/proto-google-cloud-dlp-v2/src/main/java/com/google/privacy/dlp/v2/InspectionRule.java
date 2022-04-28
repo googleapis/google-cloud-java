@@ -117,6 +117,8 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -801,8 +803,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 1) {
           hotwordRuleBuilder_.mergeFrom(value);
+        } else {
+          hotwordRuleBuilder_.setMessage(value);
         }
-        hotwordRuleBuilder_.setMessage(value);
       }
       typeCase_ = 1;
       return this;
@@ -1019,8 +1022,9 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           exclusionRuleBuilder_.mergeFrom(value);
+        } else {
+          exclusionRuleBuilder_.setMessage(value);
         }
-        exclusionRuleBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;

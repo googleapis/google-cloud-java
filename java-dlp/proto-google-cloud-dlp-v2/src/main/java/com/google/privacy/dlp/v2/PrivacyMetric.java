@@ -202,6 +202,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -346,6 +348,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1129,6 +1133,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2036,6 +2042,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3537,6 +3545,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4999,6 +5009,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5316,6 +5328,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6418,8 +6432,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (tagCase_ == 2) {
               infoTypeBuilder_.mergeFrom(value);
+            } else {
+              infoTypeBuilder_.setMessage(value);
             }
-            infoTypeBuilder_.setMessage(value);
           }
           tagCase_ = 2;
           return this;
@@ -6789,8 +6804,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (tagCase_ == 4) {
               inferredBuilder_.mergeFrom(value);
+            } else {
+              inferredBuilder_.setMessage(value);
             }
-            inferredBuilder_.setMessage(value);
           }
           tagCase_ = 4;
           return this;
@@ -7223,6 +7239,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7404,6 +7422,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -11874,6 +11894,8 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -14546,8 +14568,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 1) {
           numericalStatsConfigBuilder_.mergeFrom(value);
+        } else {
+          numericalStatsConfigBuilder_.setMessage(value);
         }
-        numericalStatsConfigBuilder_.setMessage(value);
       }
       typeCase_ = 1;
       return this;
@@ -14776,8 +14799,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           categoricalStatsConfigBuilder_.mergeFrom(value);
+        } else {
+          categoricalStatsConfigBuilder_.setMessage(value);
         }
-        categoricalStatsConfigBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;
@@ -14999,8 +15023,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 3) {
           kAnonymityConfigBuilder_.mergeFrom(value);
+        } else {
+          kAnonymityConfigBuilder_.setMessage(value);
         }
-        kAnonymityConfigBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;
@@ -15213,8 +15238,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 4) {
           lDiversityConfigBuilder_.mergeFrom(value);
+        } else {
+          lDiversityConfigBuilder_.setMessage(value);
         }
-        lDiversityConfigBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -15433,8 +15459,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 5) {
           kMapEstimationConfigBuilder_.mergeFrom(value);
+        } else {
+          kMapEstimationConfigBuilder_.setMessage(value);
         }
-        kMapEstimationConfigBuilder_.setMessage(value);
       }
       typeCase_ = 5;
       return this;
@@ -15666,8 +15693,9 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 6) {
           deltaPresenceEstimationConfigBuilder_.mergeFrom(value);
+        } else {
+          deltaPresenceEstimationConfigBuilder_.setMessage(value);
         }
-        deltaPresenceEstimationConfigBuilder_.setMessage(value);
       }
       typeCase_ = 6;
       return this;

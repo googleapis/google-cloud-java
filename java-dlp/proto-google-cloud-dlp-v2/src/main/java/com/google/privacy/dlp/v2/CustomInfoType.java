@@ -197,6 +197,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -550,6 +552,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -711,6 +715,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2078,8 +2084,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (sourceCase_ == 1) {
             wordListBuilder_.mergeFrom(value);
+          } else {
+            wordListBuilder_.setMessage(value);
           }
-          wordListBuilder_.setMessage(value);
         }
         sourceCase_ = 1;
         return this;
@@ -2295,8 +2302,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (sourceCase_ == 3) {
             cloudStoragePathBuilder_.mergeFrom(value);
+          } else {
+            cloudStoragePathBuilder_.setMessage(value);
           }
-          cloudStoragePathBuilder_.setMessage(value);
         }
         sourceCase_ = 3;
         return this;
@@ -2618,6 +2626,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3489,6 +3499,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4009,6 +4021,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4135,6 +4149,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4846,8 +4862,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 }
               case 16:
                 {
-                  adjustmentCase_ = 2;
                   adjustment_ = input.readInt32();
+                  adjustmentCase_ = 2;
                   break;
                 }
               default:
@@ -4861,6 +4877,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5970,6 +5988,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7885,8 +7905,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (typeCase_ == 1) {
             hotwordRuleBuilder_.mergeFrom(value);
+          } else {
+            hotwordRuleBuilder_.setMessage(value);
           }
-          hotwordRuleBuilder_.setMessage(value);
         }
         typeCase_ = 1;
         return this;
@@ -9532,8 +9553,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           dictionaryBuilder_.mergeFrom(value);
+        } else {
+          dictionaryBuilder_.setMessage(value);
         }
-        dictionaryBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;
@@ -9741,8 +9763,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 3) {
           regexBuilder_.mergeFrom(value);
+        } else {
+          regexBuilder_.setMessage(value);
         }
-        regexBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;
@@ -9957,8 +9980,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 4) {
           surrogateTypeBuilder_.mergeFrom(value);
+        } else {
+          surrogateTypeBuilder_.setMessage(value);
         }
-        surrogateTypeBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -10175,8 +10199,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 5) {
           storedTypeBuilder_.mergeFrom(value);
+        } else {
+          storedTypeBuilder_.setMessage(value);
         }
-        storedTypeBuilder_.setMessage(value);
       }
       typeCase_ = 5;
       return this;

@@ -75,14 +75,14 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              typeCase_ = 1;
               type_ = input.readInt64();
+              typeCase_ = 1;
               break;
             }
           case 17:
             {
-              typeCase_ = 2;
               type_ = input.readDouble();
+              typeCase_ = 2;
               break;
             }
           case 26:
@@ -94,8 +94,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             }
           case 32:
             {
-              typeCase_ = 4;
               type_ = input.readBool();
+              typeCase_ = 4;
               break;
             }
           case 42:
@@ -158,6 +158,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1606,8 +1608,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 5) {
           timestampValueBuilder_.mergeFrom(value);
+        } else {
+          timestampValueBuilder_.setMessage(value);
         }
-        timestampValueBuilder_.setMessage(value);
       }
       typeCase_ = 5;
       return this;
@@ -1810,8 +1813,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 6) {
           timeValueBuilder_.mergeFrom(value);
+        } else {
+          timeValueBuilder_.setMessage(value);
         }
-        timeValueBuilder_.setMessage(value);
       }
       typeCase_ = 6;
       return this;
@@ -2012,8 +2016,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 7) {
           dateValueBuilder_.mergeFrom(value);
+        } else {
+          dateValueBuilder_.setMessage(value);
         }
-        dateValueBuilder_.setMessage(value);
       }
       typeCase_ = 7;
       return this;

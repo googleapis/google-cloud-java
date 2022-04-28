@@ -198,6 +198,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -578,6 +580,8 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1251,8 +1255,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (triggerCase_ == 1) {
             scheduleBuilder_.mergeFrom(value);
+          } else {
+            scheduleBuilder_.setMessage(value);
           }
-          scheduleBuilder_.setMessage(value);
         }
         triggerCase_ = 1;
         return this;
@@ -1457,8 +1462,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (triggerCase_ == 2) {
             manualBuilder_.mergeFrom(value);
+          } else {
+            manualBuilder_.setMessage(value);
           }
-          manualBuilder_.setMessage(value);
         }
         triggerCase_ = 2;
         return this;
@@ -3269,8 +3275,9 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (jobCase_ == 4) {
           inspectJobBuilder_.mergeFrom(value);
+        } else {
+          inspectJobBuilder_.setMessage(value);
         }
-        inspectJobBuilder_.setMessage(value);
       }
       jobCase_ = 4;
       return this;

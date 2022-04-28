@@ -97,6 +97,8 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -689,8 +691,9 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
       } else {
         if (typeCase_ == 1) {
           largeCustomDictionaryBuilder_.mergeFrom(value);
+        } else {
+          largeCustomDictionaryBuilder_.setMessage(value);
         }
-        largeCustomDictionaryBuilder_.setMessage(value);
       }
       typeCase_ = 1;
       return this;

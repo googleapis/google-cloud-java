@@ -176,6 +176,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1381,8 +1383,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (locationCase_ == 2) {
           recordLocationBuilder_.mergeFrom(value);
+        } else {
+          recordLocationBuilder_.setMessage(value);
         }
-        recordLocationBuilder_.setMessage(value);
       }
       locationCase_ = 2;
       return this;
@@ -1590,8 +1593,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (locationCase_ == 3) {
           imageLocationBuilder_.mergeFrom(value);
+        } else {
+          imageLocationBuilder_.setMessage(value);
         }
-        imageLocationBuilder_.setMessage(value);
       }
       locationCase_ = 3;
       return this;
@@ -1799,8 +1803,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (locationCase_ == 5) {
           documentLocationBuilder_.mergeFrom(value);
+        } else {
+          documentLocationBuilder_.setMessage(value);
         }
-        documentLocationBuilder_.setMessage(value);
       }
       locationCase_ = 5;
       return this;
@@ -2008,8 +2013,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (locationCase_ == 8) {
           metadataLocationBuilder_.mergeFrom(value);
+        } else {
+          metadataLocationBuilder_.setMessage(value);
         }
-        metadataLocationBuilder_.setMessage(value);
       }
       locationCase_ = 8;
       return this;
