@@ -119,6 +119,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -281,6 +283,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1164,6 +1168,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1367,6 +1373,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3886,8 +3894,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (replicationCase_ == 1) {
           automaticBuilder_.mergeFrom(value);
+        } else {
+          automaticBuilder_.setMessage(value);
         }
-        automaticBuilder_.setMessage(value);
       }
       replicationCase_ = 1;
       return this;
@@ -4099,8 +4108,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (replicationCase_ == 2) {
           userManagedBuilder_.mergeFrom(value);
+        } else {
+          userManagedBuilder_.setMessage(value);
         }
-        userManagedBuilder_.setMessage(value);
       }
       replicationCase_ = 2;
       return this;
