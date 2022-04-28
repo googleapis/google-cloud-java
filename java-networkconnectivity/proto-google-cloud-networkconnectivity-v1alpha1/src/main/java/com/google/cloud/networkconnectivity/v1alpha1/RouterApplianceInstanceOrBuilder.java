@@ -76,6 +76,8 @@ public interface RouterApplianceInstanceOrBuilder
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface
+   *     is deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
    * @return The networkInterface.
    */
   @java.lang.Deprecated
@@ -83,6 +85,8 @@ public interface RouterApplianceInstanceOrBuilder
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface
+   *     is deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
    * @return The bytes for networkInterface.
    */
   @java.lang.Deprecated

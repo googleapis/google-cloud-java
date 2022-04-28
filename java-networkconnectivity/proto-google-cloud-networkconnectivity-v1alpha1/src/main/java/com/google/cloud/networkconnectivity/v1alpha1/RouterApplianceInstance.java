@@ -105,6 +105,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -231,6 +233,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface
+   *     is deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
    * @return The networkInterface.
    */
   @java.lang.Override
@@ -249,6 +253,8 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface
+   *     is deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
    * @return The bytes for networkInterface.
    */
   @java.lang.Override
@@ -841,6 +847,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface is
+     *     deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
      * @return The networkInterface.
      */
     @java.lang.Deprecated
@@ -858,6 +867,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface is
+     *     deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
      * @return The bytes for networkInterface.
      */
     @java.lang.Deprecated
@@ -875,6 +887,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface is
+     *     deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
      * @param value The networkInterface to set.
      * @return This builder for chaining.
      */
@@ -891,6 +906,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface is
+     *     deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -903,6 +921,9 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance.network_interface is
+     *     deprecated. See google/cloud/networkconnectivity/v1alpha1/hub.proto;l=533
      * @param value The bytes for networkInterface to set.
      * @return This builder for chaining.
      */
