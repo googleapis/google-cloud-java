@@ -83,8 +83,12 @@ public interface LocationMetadataOrBuilder
    * map&lt;string, .google.cloud.memcache.v1beta2.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.memcache.v1beta2.ZoneMetadata getAvailableZonesOrDefault(
-      java.lang.String key, com.google.cloud.memcache.v1beta2.ZoneMetadata defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.memcache.v1beta2.ZoneMetadata defaultValue);
   /**
    *
    *
