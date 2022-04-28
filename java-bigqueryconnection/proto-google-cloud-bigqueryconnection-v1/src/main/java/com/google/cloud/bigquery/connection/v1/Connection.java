@@ -202,6 +202,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1664,8 +1666,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (propertiesCase_ == 4) {
           cloudSqlBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlBuilder_.setMessage(value);
         }
-        cloudSqlBuilder_.setMessage(value);
       }
       propertiesCase_ = 4;
       return this;
@@ -1876,8 +1879,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (propertiesCase_ == 8) {
           awsBuilder_.mergeFrom(value);
+        } else {
+          awsBuilder_.setMessage(value);
         }
-        awsBuilder_.setMessage(value);
       }
       propertiesCase_ = 8;
       return this;
@@ -2089,8 +2093,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (propertiesCase_ == 21) {
           cloudSpannerBuilder_.mergeFrom(value);
+        } else {
+          cloudSpannerBuilder_.setMessage(value);
         }
-        cloudSpannerBuilder_.setMessage(value);
       }
       propertiesCase_ = 21;
       return this;
@@ -2310,8 +2315,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (propertiesCase_ == 22) {
           cloudResourceBuilder_.mergeFrom(value);
+        } else {
+          cloudResourceBuilder_.setMessage(value);
         }
-        cloudResourceBuilder_.setMessage(value);
       }
       propertiesCase_ = 22;
       return this;

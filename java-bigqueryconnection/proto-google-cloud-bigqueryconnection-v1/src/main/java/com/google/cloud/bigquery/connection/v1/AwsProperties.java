@@ -121,6 +121,8 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -815,8 +817,9 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (authenticationMethodCase_ == 2) {
           crossAccountRoleBuilder_.mergeFrom(value);
+        } else {
+          crossAccountRoleBuilder_.setMessage(value);
         }
-        crossAccountRoleBuilder_.setMessage(value);
       }
       authenticationMethodCase_ = 2;
       return this;
@@ -1038,8 +1041,9 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (authenticationMethodCase_ == 3) {
           accessRoleBuilder_.mergeFrom(value);
+        } else {
+          accessRoleBuilder_.setMessage(value);
         }
-        accessRoleBuilder_.setMessage(value);
       }
       authenticationMethodCase_ = 3;
       return this;
