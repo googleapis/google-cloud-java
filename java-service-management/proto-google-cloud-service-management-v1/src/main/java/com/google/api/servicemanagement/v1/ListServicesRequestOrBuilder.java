@@ -101,6 +101,8 @@ public interface ListServicesRequestOrBuilder
    *
    * <code>string consumer_id = 7 [deprecated = true];</code>
    *
+   * @deprecated google.api.servicemanagement.v1.ListServicesRequest.consumer_id is deprecated. See
+   *     google/api/servicemanagement/v1/servicemanager.proto;l=277
    * @return The consumerId.
    */
   @java.lang.Deprecated
@@ -117,6 +119,8 @@ public interface ListServicesRequestOrBuilder
    *
    * <code>string consumer_id = 7 [deprecated = true];</code>
    *
+   * @deprecated google.api.servicemanagement.v1.ListServicesRequest.consumer_id is deprecated. See
+   *     google/api/servicemanagement/v1/servicemanager.proto;l=277
    * @return The bytes for consumerId.
    */
   @java.lang.Deprecated

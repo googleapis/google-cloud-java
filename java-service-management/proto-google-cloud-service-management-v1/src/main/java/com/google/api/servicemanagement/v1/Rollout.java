@@ -171,6 +171,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -614,6 +616,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -689,7 +693,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsPercentages(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPercentages().getMap().containsKey(key);
     }
@@ -728,7 +732,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getPercentagesOrDefault(java.lang.String key, double defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -747,7 +751,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getPercentagesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
       if (!map.containsKey(key)) {
@@ -1182,7 +1186,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsPercentages(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetPercentages().getMap().containsKey(key);
       }
@@ -1221,7 +1225,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public double getPercentagesOrDefault(java.lang.String key, double defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1240,7 +1244,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public double getPercentagesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetPercentages().getMap();
         if (!map.containsKey(key)) {
@@ -1266,7 +1270,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removePercentages(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutablePercentages().getMutableMap().remove(key);
         return this;
@@ -1289,7 +1293,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putPercentages(java.lang.String key, double value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
 
         internalGetMutablePercentages().getMutableMap().put(key, value);
@@ -1432,6 +1436,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3400,8 +3406,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (strategyCase_ == 5) {
           trafficPercentStrategyBuilder_.mergeFrom(value);
+        } else {
+          trafficPercentStrategyBuilder_.setMessage(value);
         }
-        trafficPercentStrategyBuilder_.setMessage(value);
       }
       strategyCase_ = 5;
       return this;
@@ -3648,8 +3655,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (strategyCase_ == 200) {
           deleteServiceStrategyBuilder_.mergeFrom(value);
+        } else {
+          deleteServiceStrategyBuilder_.setMessage(value);
         }
-        deleteServiceStrategyBuilder_.setMessage(value);
       }
       strategyCase_ = 200;
       return this;
