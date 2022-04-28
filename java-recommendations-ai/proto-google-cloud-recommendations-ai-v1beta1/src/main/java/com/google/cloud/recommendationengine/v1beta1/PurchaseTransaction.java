@@ -128,6 +128,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -271,7 +273,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsTaxes(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTaxes().getMap().containsKey(key);
   }
@@ -306,7 +308,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public float getTaxesOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -323,7 +325,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public float getTaxesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
     if (!map.containsKey(key)) {
@@ -377,7 +379,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsCosts(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCosts().getMap().containsKey(key);
   }
@@ -428,7 +430,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public float getCostsOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -453,7 +455,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public float getCostsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     if (!map.containsKey(key)) {
@@ -530,7 +532,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (revenue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(revenue_) != 0) {
       output.writeFloat(2, revenue_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -552,7 +554,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (revenue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(revenue_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, revenue_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.Float> entry :
@@ -1143,7 +1145,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsTaxes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTaxes().getMap().containsKey(key);
     }
@@ -1178,7 +1180,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public float getTaxesOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1195,7 +1197,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public float getTaxesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetTaxes().getMap();
       if (!map.containsKey(key)) {
@@ -1219,7 +1221,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder removeTaxes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTaxes().getMutableMap().remove(key);
       return this;
@@ -1240,7 +1242,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder putTaxes(java.lang.String key, float value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableTaxes().getMutableMap().put(key, value);
@@ -1305,7 +1307,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCosts().getMap().containsKey(key);
     }
@@ -1356,7 +1358,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public float getCostsOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1381,7 +1383,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public float getCostsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       if (!map.containsKey(key)) {
@@ -1413,7 +1415,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder removeCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
@@ -1442,7 +1444,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      */
     public Builder putCosts(java.lang.String key, float value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableCosts().getMutableMap().put(key, value);

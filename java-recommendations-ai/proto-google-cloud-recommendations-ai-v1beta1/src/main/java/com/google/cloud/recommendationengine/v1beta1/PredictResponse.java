@@ -145,6 +145,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -277,8 +279,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
+
+    /* nullable */
     com.google.protobuf.Value getItemMetadataOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue);
     /**
      *
      *
@@ -385,6 +391,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -515,7 +523,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public boolean containsItemMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetItemMetadata().getMap().containsKey(key);
     }
@@ -561,7 +569,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Value getItemMetadataOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetItemMetadata().getMap();
@@ -584,7 +592,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.protobuf.Value getItemMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetItemMetadata().getMap();
@@ -1139,7 +1147,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public boolean containsItemMetadata(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetItemMetadata().getMap().containsKey(key);
       }
@@ -1185,7 +1193,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.Value getItemMetadataOrDefault(
           java.lang.String key, com.google.protobuf.Value defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetItemMetadata().getMap();
@@ -1208,7 +1216,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public com.google.protobuf.Value getItemMetadataOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetItemMetadata().getMap();
@@ -1238,7 +1246,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        */
       public Builder removeItemMetadata(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableItemMetadata().getMutableMap().remove(key);
         return this;
@@ -1264,11 +1272,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        */
       public Builder putItemMetadata(java.lang.String key, com.google.protobuf.Value value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableItemMetadata().getMutableMap().put(key, value);
         return this;
       }
@@ -1614,7 +1623,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
@@ -1650,7 +1659,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Value getMetadataOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1667,7 +1676,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.protobuf.Value getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
@@ -3028,7 +3037,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
@@ -3064,7 +3073,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Value getMetadataOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetMetadata().getMap();
@@ -3082,7 +3091,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.protobuf.Value getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetMetadata().getMap();
@@ -3107,7 +3116,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
@@ -3128,11 +3137,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putMetadata(java.lang.String key, com.google.protobuf.Value value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }

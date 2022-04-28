@@ -343,8 +343,12 @@ public interface PredictRequestOrBuilder
    * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getParamsOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *
@@ -434,7 +438,12 @@ public interface PredictRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

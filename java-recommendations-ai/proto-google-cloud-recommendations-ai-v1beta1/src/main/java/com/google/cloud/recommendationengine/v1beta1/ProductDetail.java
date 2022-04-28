@@ -141,6 +141,8 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -470,10 +472,10 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, currencyCode_);
     }
-    if (originalPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
       output.writeFloat(3, originalPrice_);
     }
-    if (displayPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(displayPrice_) != 0) {
       output.writeFloat(4, displayPrice_);
     }
     if (stockState_
@@ -506,10 +508,10 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, currencyCode_);
     }
-    if (originalPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, originalPrice_);
     }
-    if (displayPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(displayPrice_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, displayPrice_);
     }
     if (stockState_

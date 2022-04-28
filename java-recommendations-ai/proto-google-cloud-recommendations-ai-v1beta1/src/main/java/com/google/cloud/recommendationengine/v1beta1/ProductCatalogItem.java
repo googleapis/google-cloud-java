@@ -185,6 +185,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -535,6 +537,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -610,10 +614,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (displayPrice_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(displayPrice_) != 0) {
         output.writeFloat(1, displayPrice_);
       }
-      if (originalPrice_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
         output.writeFloat(2, originalPrice_);
       }
       unknownFields.writeTo(output);
@@ -625,10 +629,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (displayPrice_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(displayPrice_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, displayPrice_);
       }
-      if (originalPrice_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, originalPrice_);
       }
       size += unknownFields.getSerializedSize();
@@ -1221,6 +1225,8 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1295,10 +1301,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (min_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(min_) != 0) {
         output.writeFloat(1, min_);
       }
-      if (max_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(max_) != 0) {
         output.writeFloat(2, max_);
       }
       unknownFields.writeTo(output);
@@ -1310,10 +1316,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (min_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(min_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, min_);
       }
-      if (max_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(max_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, max_);
       }
       size += unknownFields.getSerializedSize();
@@ -2012,7 +2018,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsCosts(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCosts().getMap().containsKey(key);
   }
@@ -2057,7 +2063,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public float getCostsOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2079,7 +2085,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public float getCostsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
     if (!map.containsKey(key)) {
@@ -3029,8 +3035,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       } else {
         if (priceCase_ == 1) {
           exactPriceBuilder_.mergeFrom(value);
+        } else {
+          exactPriceBuilder_.setMessage(value);
         }
-        exactPriceBuilder_.setMessage(value);
       }
       priceCase_ = 1;
       return this;
@@ -3275,8 +3282,9 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       } else {
         if (priceCase_ == 2) {
           priceRangeBuilder_.mergeFrom(value);
+        } else {
+          priceRangeBuilder_.setMessage(value);
         }
-        priceRangeBuilder_.setMessage(value);
       }
       priceCase_ = 2;
       return this;
@@ -3430,7 +3438,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCosts().getMap().containsKey(key);
     }
@@ -3475,7 +3483,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public float getCostsOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3497,7 +3505,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public float getCostsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Float> map = internalGetCosts().getMap();
       if (!map.containsKey(key)) {
@@ -3526,7 +3534,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
@@ -3552,7 +3560,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      */
     public Builder putCosts(java.lang.String key, float value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableCosts().getMutableMap().put(key, value);

@@ -122,6 +122,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -288,6 +290,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1079,6 +1083,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1748,7 +1754,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsCategoricalFeatures(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCategoricalFeatures().getMap().containsKey(key);
   }
@@ -1804,7 +1810,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -1831,7 +1837,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
       getCategoricalFeaturesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -1896,7 +1902,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsNumericalFeatures(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetNumericalFeatures().getMap().containsKey(key);
   }
@@ -1950,7 +1956,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -1976,7 +1982,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
       getNumericalFeaturesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -2426,7 +2432,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsCategoricalFeatures(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCategoricalFeatures().getMap().containsKey(key);
     }
@@ -2482,7 +2488,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -2509,7 +2515,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
         getCategoricalFeaturesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -2542,7 +2548,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeCategoricalFeatures(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCategoricalFeatures().getMutableMap().remove(key);
       return this;
@@ -2574,11 +2580,12 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableCategoricalFeatures().getMutableMap().put(key, value);
       return this;
     }
@@ -2658,7 +2665,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsNumericalFeatures(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetNumericalFeatures().getMap().containsKey(key);
     }
@@ -2712,7 +2719,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -2738,7 +2745,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
         getNumericalFeaturesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -2770,7 +2777,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeNumericalFeatures(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableNumericalFeatures().getMutableMap().remove(key);
       return this;
@@ -2801,11 +2808,12 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableNumericalFeatures().getMutableMap().put(key, value);
       return this;
     }

@@ -189,6 +189,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -360,6 +362,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4033,8 +4037,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (recommendationTypeCase_ == 10) {
           productMetadataBuilder_.mergeFrom(value);
+        } else {
+          productMetadataBuilder_.setMessage(value);
         }
-        productMetadataBuilder_.setMessage(value);
       }
       recommendationTypeCase_ = 10;
       return this;

@@ -97,9 +97,12 @@ public interface FeatureMapOrBuilder
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
       getCategoricalFeaturesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList defaultValue);
   /**
    *
@@ -190,8 +193,11 @@ public interface FeatureMapOrBuilder
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList getNumericalFeaturesOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList defaultValue);
   /**
    *
