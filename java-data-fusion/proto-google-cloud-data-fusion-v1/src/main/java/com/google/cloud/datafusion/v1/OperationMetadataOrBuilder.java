@@ -263,8 +263,12 @@ public interface OperationMetadataOrBuilder
    *
    * <code>map&lt;string, string&gt; additional_status = 8;</code>
    */
+
+  /* nullable */
   java.lang.String getAdditionalStatusOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

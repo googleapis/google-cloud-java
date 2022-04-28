@@ -237,7 +237,12 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -297,7 +302,12 @@ public interface InstanceOrBuilder
    *
    * <code>map&lt;string, string&gt; options = 9;</code>
    */
-  java.lang.String getOptionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getOptionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -530,6 +540,8 @@ public interface InstanceOrBuilder
    * string service_account = 17 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.datafusion.v1beta1.Instance.service_account is deprecated. See
+   *     google/cloud/datafusion/v1beta1/v1beta1.proto;l=392
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -545,6 +557,8 @@ public interface InstanceOrBuilder
    * string service_account = 17 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.datafusion.v1beta1.Instance.service_account is deprecated. See
+   *     google/cloud/datafusion/v1beta1/v1beta1.proto;l=392
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated

@@ -165,6 +165,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -550,7 +552,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsAdditionalStatus(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAdditionalStatus().getMap().containsKey(key);
   }
@@ -592,7 +594,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public java.lang.String getAdditionalStatusOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAdditionalStatus().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -612,7 +614,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public java.lang.String getAdditionalStatusOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAdditionalStatus().getMap();
     if (!map.containsKey(key)) {
@@ -1992,7 +1994,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsAdditionalStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAdditionalStatus().getMap().containsKey(key);
     }
@@ -2034,7 +2036,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public java.lang.String getAdditionalStatusOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetAdditionalStatus().getMap();
@@ -2055,7 +2057,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getAdditionalStatusOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetAdditionalStatus().getMap();
@@ -2083,7 +2085,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeAdditionalStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAdditionalStatus().getMutableMap().remove(key);
       return this;
@@ -2107,11 +2109,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAdditionalStatus(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAdditionalStatus().getMutableMap().put(key, value);
       return this;
     }
