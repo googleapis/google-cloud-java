@@ -96,6 +96,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -685,8 +687,9 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
       } else {
         if (credentialCase_ == 1) {
           publicKeyCertificateBuilder_.mergeFrom(value);
+        } else {
+          publicKeyCertificateBuilder_.setMessage(value);
         }
-        publicKeyCertificateBuilder_.setMessage(value);
       }
       credentialCase_ = 1;
       return this;

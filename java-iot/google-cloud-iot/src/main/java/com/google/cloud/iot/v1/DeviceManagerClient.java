@@ -1589,6 +1589,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *           .setResource(
    *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = deviceManagerClient.setIamPolicy(request);
    * }
@@ -1614,6 +1615,7 @@ public class DeviceManagerClient implements BackgroundResource {
    *           .setResource(
    *               DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = deviceManagerClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

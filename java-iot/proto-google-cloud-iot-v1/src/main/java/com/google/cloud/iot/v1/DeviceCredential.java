@@ -111,6 +111,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -861,8 +863,9 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
       } else {
         if (credentialCase_ == 2) {
           publicKeyBuilder_.mergeFrom(value);
+        } else {
+          publicKeyBuilder_.setMessage(value);
         }
-        publicKeyBuilder_.setMessage(value);
       }
       credentialCase_ = 2;
       return this;
