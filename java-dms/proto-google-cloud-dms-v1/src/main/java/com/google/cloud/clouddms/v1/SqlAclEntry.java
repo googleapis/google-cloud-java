@@ -126,6 +126,8 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1045,8 +1047,9 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (expirationCase_ == 10) {
           expireTimeBuilder_.mergeFrom(value);
+        } else {
+          expireTimeBuilder_.setMessage(value);
         }
-        expireTimeBuilder_.setMessage(value);
       }
       expirationCase_ = 10;
       return this;
@@ -1258,8 +1261,9 @@ public final class SqlAclEntry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (expirationCase_ == 11) {
           ttlBuilder_.mergeFrom(value);
+        } else {
+          ttlBuilder_.setMessage(value);
         }
-        ttlBuilder_.setMessage(value);
       }
       expirationCase_ = 11;
       return this;

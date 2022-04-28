@@ -243,6 +243,8 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -970,7 +972,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsUserLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
@@ -1012,7 +1014,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   public java.lang.String getUserLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1032,7 +1034,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1357,7 +1359,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsDatabaseFlags(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDatabaseFlags().getMap().containsKey(key);
   }
@@ -1397,7 +1399,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   public java.lang.String getDatabaseFlagsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1416,7 +1418,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getDatabaseFlagsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
     if (!map.containsKey(key)) {
@@ -2517,7 +2519,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
@@ -2559,7 +2561,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     public java.lang.String getUserLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2579,7 +2581,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2606,7 +2608,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
@@ -2630,11 +2632,12 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder putUserLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableUserLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3572,7 +3575,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsDatabaseFlags(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDatabaseFlags().getMap().containsKey(key);
     }
@@ -3612,7 +3615,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     public java.lang.String getDatabaseFlagsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3631,7 +3634,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getDatabaseFlagsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
       if (!map.containsKey(key)) {
@@ -3657,7 +3660,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeDatabaseFlags(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDatabaseFlags().getMutableMap().remove(key);
       return this;
@@ -3680,11 +3683,12 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder putDatabaseFlags(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDatabaseFlags().getMutableMap().put(key, value);
       return this;
     }

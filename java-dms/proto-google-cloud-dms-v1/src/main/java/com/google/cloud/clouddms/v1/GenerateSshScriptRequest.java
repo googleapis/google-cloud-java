@@ -135,6 +135,8 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1183,8 +1185,9 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       } else {
         if (vmConfigCase_ == 100) {
           vmCreationConfigBuilder_.mergeFrom(value);
+        } else {
+          vmCreationConfigBuilder_.setMessage(value);
         }
-        vmCreationConfigBuilder_.setMessage(value);
       }
       vmConfigCase_ = 100;
       return this;
@@ -1392,8 +1395,9 @@ public final class GenerateSshScriptRequest extends com.google.protobuf.Generate
       } else {
         if (vmConfigCase_ == 101) {
           vmSelectionConfigBuilder_.mergeFrom(value);
+        } else {
+          vmSelectionConfigBuilder_.setMessage(value);
         }
-        vmSelectionConfigBuilder_.setMessage(value);
       }
       vmConfigCase_ = 101;
       return this;
