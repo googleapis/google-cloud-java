@@ -130,7 +130,12 @@ public interface GetInstanceHealthResponseOrBuilder
    * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  java.lang.String getHealthInfoOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getHealthInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

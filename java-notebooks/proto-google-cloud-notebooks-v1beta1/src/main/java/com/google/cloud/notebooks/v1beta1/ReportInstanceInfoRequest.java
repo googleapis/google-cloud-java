@@ -112,6 +112,8 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -286,7 +288,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
@@ -324,7 +326,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -342,7 +344,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
@@ -993,7 +995,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
@@ -1031,7 +1033,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1049,7 +1051,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
@@ -1074,7 +1076,7 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
@@ -1096,11 +1098,12 @@ public final class ReportInstanceInfoRequest extends com.google.protobuf.Generat
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }

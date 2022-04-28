@@ -35,6 +35,8 @@ public interface ExecutionTemplateOrBuilder
    * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+   *     google/cloud/notebooks/v1/execution.proto;l=150
    * @return The enum numeric value on the wire for scaleTier.
    */
   @java.lang.Deprecated
@@ -51,6 +53,8 @@ public interface ExecutionTemplateOrBuilder
    * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+   *     google/cloud/notebooks/v1/execution.proto;l=150
    * @return The scaleTier.
    */
   @java.lang.Deprecated
@@ -264,7 +268,12 @@ public interface ExecutionTemplateOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

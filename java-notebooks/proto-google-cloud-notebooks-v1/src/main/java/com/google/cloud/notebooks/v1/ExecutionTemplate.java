@@ -247,6 +247,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1114,6 +1116,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1868,6 +1872,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2535,7 +2541,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
      */
-    java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+    /* nullable */
+    java.lang.String getEnvOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
     /**
      *
      *
@@ -2633,6 +2644,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2771,7 +2784,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsEnv(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetEnv().getMap().containsKey(key);
     }
@@ -2810,7 +2823,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2829,7 +2842,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getEnvOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
       if (!map.containsKey(key)) {
@@ -3398,7 +3411,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public boolean containsEnv(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetEnv().getMap().containsKey(key);
       }
@@ -3437,7 +3450,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public java.lang.String getEnvOrDefault(java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3456,7 +3469,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public java.lang.String getEnvOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
         if (!map.containsKey(key)) {
@@ -3482,7 +3495,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        */
       public Builder removeEnv(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableEnv().getMutableMap().remove(key);
         return this;
@@ -3505,11 +3518,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        */
       public Builder putEnv(java.lang.String key, java.lang.String value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableEnv().getMutableMap().put(key, value);
         return this;
       }
@@ -3645,6 +3659,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+   *     google/cloud/notebooks/v1/execution.proto;l=150
    * @return The enum numeric value on the wire for scaleTier.
    */
   @java.lang.Override
@@ -3664,6 +3680,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+   *     google/cloud/notebooks/v1/execution.proto;l=150
    * @return The scaleTier.
    */
   @java.lang.Override
@@ -3908,7 +3926,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -3951,7 +3969,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3972,7 +3990,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -5224,6 +5242,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+     *     google/cloud/notebooks/v1/execution.proto;l=150
      * @return The enum numeric value on the wire for scaleTier.
      */
     @java.lang.Override
@@ -5243,6 +5263,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+     *     google/cloud/notebooks/v1/execution.proto;l=150
      * @param value The enum numeric value on the wire for scaleTier to set.
      * @return This builder for chaining.
      */
@@ -5265,6 +5287,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+     *     google/cloud/notebooks/v1/execution.proto;l=150
      * @return The scaleTier.
      */
     @java.lang.Override
@@ -5289,6 +5313,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+     *     google/cloud/notebooks/v1/execution.proto;l=150
      * @param value The scaleTier to set.
      * @return This builder for chaining.
      */
@@ -5314,6 +5340,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * .google.cloud.notebooks.v1.ExecutionTemplate.ScaleTier scale_tier = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
+     *     google/cloud/notebooks/v1/execution.proto;l=150
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5895,7 +5923,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -5939,7 +5967,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -5960,7 +5988,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -5988,7 +6016,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -6013,11 +6041,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -6975,8 +7004,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       } else {
         if (jobParametersCase_ == 12) {
           dataprocParametersBuilder_.mergeFrom(value);
+        } else {
+          dataprocParametersBuilder_.setMessage(value);
         }
-        dataprocParametersBuilder_.setMessage(value);
       }
       jobParametersCase_ = 12;
       return this;
@@ -7218,8 +7248,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       } else {
         if (jobParametersCase_ == 13) {
           vertexAiParametersBuilder_.mergeFrom(value);
+        } else {
+          vertexAiParametersBuilder_.setMessage(value);
         }
-        vertexAiParametersBuilder_.setMessage(value);
       }
       jobParametersCase_ = 13;
       return this;

@@ -96,7 +96,12 @@ public interface SetInstanceLabelsRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

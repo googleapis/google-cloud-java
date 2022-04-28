@@ -92,7 +92,12 @@ public interface UpdateInstanceMetadataItemsRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; items = 2;</code>
    */
-  java.lang.String getItemsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getItemsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

@@ -533,7 +533,12 @@ public interface VirtualMachineConfigOrBuilder
    * map&lt;string, string&gt; guest_attributes = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  java.lang.String getGuestAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getGuestAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -600,7 +605,12 @@ public interface VirtualMachineConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -680,7 +690,12 @@ public interface VirtualMachineConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

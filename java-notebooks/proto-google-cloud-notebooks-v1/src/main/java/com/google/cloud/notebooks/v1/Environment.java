@@ -161,6 +161,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1504,8 +1506,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (imageTypeCase_ == 6) {
           vmImageBuilder_.mergeFrom(value);
+        } else {
+          vmImageBuilder_.setMessage(value);
         }
-        vmImageBuilder_.setMessage(value);
       }
       imageTypeCase_ = 6;
       return this;
@@ -1713,8 +1716,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (imageTypeCase_ == 7) {
           containerImageBuilder_.mergeFrom(value);
+        } else {
+          containerImageBuilder_.setMessage(value);
         }
-        containerImageBuilder_.setMessage(value);
       }
       imageTypeCase_ = 7;
       return this;
