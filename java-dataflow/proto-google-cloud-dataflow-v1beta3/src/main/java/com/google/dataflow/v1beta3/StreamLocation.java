@@ -152,6 +152,8 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -999,8 +1001,9 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (locationCase_ == 1) {
           streamingStageLocationBuilder_.mergeFrom(value);
+        } else {
+          streamingStageLocationBuilder_.setMessage(value);
         }
-        streamingStageLocationBuilder_.setMessage(value);
       }
       locationCase_ = 1;
       return this;
@@ -1214,8 +1217,9 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (locationCase_ == 2) {
           pubsubLocationBuilder_.mergeFrom(value);
+        } else {
+          pubsubLocationBuilder_.setMessage(value);
         }
-        pubsubLocationBuilder_.setMessage(value);
       }
       locationCase_ = 2;
       return this;
@@ -1426,8 +1430,9 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (locationCase_ == 3) {
           sideInputLocationBuilder_.mergeFrom(value);
+        } else {
+          sideInputLocationBuilder_.setMessage(value);
         }
-        sideInputLocationBuilder_.setMessage(value);
       }
       locationCase_ = 3;
       return this;
@@ -1638,8 +1643,9 @@ public final class StreamLocation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (locationCase_ == 4) {
           customSourceLocationBuilder_.mergeFrom(value);
+        } else {
+          customSourceLocationBuilder_.setMessage(value);
         }
-        customSourceLocationBuilder_.setMessage(value);
       }
       locationCase_ = 4;
       return this;

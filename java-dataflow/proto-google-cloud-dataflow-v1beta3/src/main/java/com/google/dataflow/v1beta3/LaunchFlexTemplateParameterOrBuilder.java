@@ -171,7 +171,12 @@ public interface LaunchFlexTemplateParameterOrBuilder
    *
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
-  java.lang.String getParametersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -234,7 +239,12 @@ public interface LaunchFlexTemplateParameterOrBuilder
    *
    * <code>map&lt;string, string&gt; launch_options = 6;</code>
    */
-  java.lang.String getLaunchOptionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLaunchOptionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -344,8 +354,12 @@ public interface LaunchFlexTemplateParameterOrBuilder
    *
    * <code>map&lt;string, string&gt; transform_name_mappings = 9;</code>
    */
+
+  /* nullable */
   java.lang.String getTransformNameMappingsOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

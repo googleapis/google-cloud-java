@@ -65,8 +65,12 @@ public interface JobExecutionInfoOrBuilder
    *
    * <code>map&lt;string, .google.dataflow.v1beta3.JobExecutionStageInfo&gt; stages = 1;</code>
    */
+
+  /* nullable */
   com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
-      java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue);
   /**
    *
    *

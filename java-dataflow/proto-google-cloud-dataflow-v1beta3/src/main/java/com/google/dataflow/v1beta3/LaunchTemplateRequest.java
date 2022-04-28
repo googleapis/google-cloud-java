@@ -145,6 +145,8 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1397,8 +1399,9 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       } else {
         if (templateCase_ == 6) {
           dynamicTemplateBuilder_.mergeFrom(value);
+        } else {
+          dynamicTemplateBuilder_.setMessage(value);
         }
-        dynamicTemplateBuilder_.setMessage(value);
       }
       templateCase_ = 6;
       return this;

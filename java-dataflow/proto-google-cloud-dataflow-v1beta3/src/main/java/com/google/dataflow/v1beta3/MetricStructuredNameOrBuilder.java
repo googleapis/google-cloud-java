@@ -133,7 +133,12 @@ public interface MetricStructuredNameOrBuilder
    *
    * <code>map&lt;string, string&gt; context = 3;</code>
    */
-  java.lang.String getContextOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

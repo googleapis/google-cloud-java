@@ -97,6 +97,8 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -176,7 +178,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsStages(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetStages().getMap().containsKey(key);
   }
@@ -214,7 +216,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
   public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
       java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> map =
         internalGetStages().getMap();
@@ -232,7 +234,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> map =
         internalGetStages().getMap();
@@ -631,7 +633,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsStages(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetStages().getMap().containsKey(key);
     }
@@ -669,7 +671,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrDefault(
         java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> map =
           internalGetStages().getMap();
@@ -688,7 +690,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public com.google.dataflow.v1beta3.JobExecutionStageInfo getStagesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.dataflow.v1beta3.JobExecutionStageInfo> map =
           internalGetStages().getMap();
@@ -713,7 +715,7 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeStages(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableStages().getMutableMap().remove(key);
       return this;
@@ -736,11 +738,12 @@ public final class JobExecutionInfo extends com.google.protobuf.GeneratedMessage
     public Builder putStages(
         java.lang.String key, com.google.dataflow.v1beta3.JobExecutionStageInfo value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableStages().getMutableMap().put(key, value);
       return this;
     }

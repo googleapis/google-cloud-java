@@ -100,6 +100,8 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -260,6 +262,8 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -364,7 +368,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       if (time_ != null) {
         output.writeMessage(1, getTime());
       }
-      if (value_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
         output.writeDouble(2, value_);
       }
       unknownFields.writeTo(output);
@@ -379,7 +383,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       if (time_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTime());
       }
-      if (value_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
@@ -1090,7 +1094,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (currentProgress_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(currentProgress_) != 0) {
       output.writeDouble(1, currentProgress_);
     }
     for (int i = 0; i < dataPoints_.size(); i++) {
@@ -1105,7 +1109,7 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (currentProgress_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(currentProgress_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, currentProgress_);
     }
     for (int i = 0; i < dataPoints_.size(); i++) {

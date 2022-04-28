@@ -231,7 +231,12 @@ public interface ParameterMetadataOrBuilder
    *
    * <code>map&lt;string, string&gt; custom_metadata = 7;</code>
    */
-  java.lang.String getCustomMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getCustomMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

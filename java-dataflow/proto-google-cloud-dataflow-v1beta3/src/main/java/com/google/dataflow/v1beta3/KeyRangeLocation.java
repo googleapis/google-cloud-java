@@ -122,6 +122,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -361,6 +363,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
    *
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
+   * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
    * @return The deprecatedPersistentDirectory.
    */
   @java.lang.Override
@@ -386,6 +390,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
    *
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
+   * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
    * @return The bytes for deprecatedPersistentDirectory.
    */
   @java.lang.Override
@@ -1242,6 +1248,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
      * @return The deprecatedPersistentDirectory.
      */
     @java.lang.Deprecated
@@ -1266,6 +1274,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
      * @return The bytes for deprecatedPersistentDirectory.
      */
     @java.lang.Deprecated
@@ -1290,6 +1300,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
      * @param value The deprecatedPersistentDirectory to set.
      * @return This builder for chaining.
      */
@@ -1313,6 +1325,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1332,6 +1346,8 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
      * @param value The bytes for deprecatedPersistentDirectory to set.
      * @return This builder for chaining.
      */

@@ -125,6 +125,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -436,6 +438,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
+   * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+   *     google/dataflow/v1beta3/jobs.proto;l=849
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Override
@@ -453,6 +457,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
+   * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+   *     google/dataflow/v1beta3/jobs.proto;l=849
    * @return The view.
    */
   @java.lang.Override
@@ -1190,6 +1196,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+     *     google/dataflow/v1beta3/jobs.proto;l=849
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override
@@ -1207,6 +1215,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+     *     google/dataflow/v1beta3/jobs.proto;l=849
      * @param value The enum numeric value on the wire for view to set.
      * @return This builder for chaining.
      */
@@ -1227,6 +1237,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+     *     google/dataflow/v1beta3/jobs.proto;l=849
      * @return The view.
      */
     @java.lang.Override
@@ -1247,6 +1259,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+     *     google/dataflow/v1beta3/jobs.proto;l=849
      * @param value The view to set.
      * @return This builder for chaining.
      */
@@ -1270,6 +1284,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
+     * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
+     *     google/dataflow/v1beta3/jobs.proto;l=849
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

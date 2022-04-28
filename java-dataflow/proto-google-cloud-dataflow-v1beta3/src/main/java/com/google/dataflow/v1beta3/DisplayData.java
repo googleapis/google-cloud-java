@@ -97,14 +97,14 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
             }
           case 40:
             {
-              valueCase_ = 5;
               value_ = input.readInt64();
+              valueCase_ = 5;
               break;
             }
           case 53:
             {
-              valueCase_ = 6;
               value_ = input.readFloat();
+              valueCase_ = 6;
               break;
             }
           case 58:
@@ -144,8 +144,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
             }
           case 80:
             {
-              valueCase_ = 10;
               value_ = input.readBool();
+              valueCase_ = 10;
               break;
             }
           case 90:
@@ -180,6 +180,8 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2210,8 +2212,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 8) {
           timestampValueBuilder_.mergeFrom(value);
+        } else {
+          timestampValueBuilder_.setMessage(value);
         }
-        timestampValueBuilder_.setMessage(value);
       }
       valueCase_ = 8;
       return this;
@@ -2414,8 +2417,9 @@ public final class DisplayData extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 9) {
           durationValueBuilder_.mergeFrom(value);
+        } else {
+          durationValueBuilder_.setMessage(value);
         }
-        durationValueBuilder_.setMessage(value);
       }
       valueCase_ = 9;
       return this;

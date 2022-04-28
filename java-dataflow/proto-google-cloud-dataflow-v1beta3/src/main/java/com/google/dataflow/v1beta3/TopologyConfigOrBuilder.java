@@ -170,8 +170,12 @@ public interface TopologyConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
    */
+
+  /* nullable */
   java.lang.String getUserStageToComputationNameMapOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

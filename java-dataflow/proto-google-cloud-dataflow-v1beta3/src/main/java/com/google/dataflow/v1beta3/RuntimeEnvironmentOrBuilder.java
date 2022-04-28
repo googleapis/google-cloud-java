@@ -353,8 +353,12 @@ public interface RuntimeEnvironmentOrBuilder
    *
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
+
+  /* nullable */
   java.lang.String getAdditionalUserLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

@@ -184,6 +184,8 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -482,7 +484,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean containsParameters(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetParameters().getMap().containsKey(key);
   }
@@ -520,7 +522,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.lang.String getParametersOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -538,7 +540,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public java.lang.String getParametersOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     if (!map.containsKey(key)) {
@@ -588,7 +590,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean containsLaunchOptions(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLaunchOptions().getMap().containsKey(key);
   }
@@ -628,7 +630,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.lang.String getLaunchOptionsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -647,7 +649,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public java.lang.String getLaunchOptionsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
     if (!map.containsKey(key)) {
@@ -765,7 +767,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean containsTransformNameMappings(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTransformNameMappings().getMap().containsKey(key);
   }
@@ -803,7 +805,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.lang.String getTransformNameMappingsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetTransformNameMappings().getMap();
@@ -822,7 +824,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   @java.lang.Override
   public java.lang.String getTransformNameMappingsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetTransformNameMappings().getMap();
@@ -1597,8 +1599,9 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       } else {
         if (templateCase_ == 4) {
           containerSpecBuilder_.mergeFrom(value);
+        } else {
+          containerSpecBuilder_.setMessage(value);
         }
-        containerSpecBuilder_.setMessage(value);
       }
       templateCase_ = 4;
       return this;
@@ -1875,7 +1878,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParameters().getMap().containsKey(key);
     }
@@ -1913,7 +1916,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.lang.String getParametersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1931,7 +1934,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public java.lang.String getParametersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       if (!map.containsKey(key)) {
@@ -1956,7 +1959,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder removeParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
@@ -1978,11 +1981,12 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder putParameters(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableParameters().getMutableMap().put(key, value);
       return this;
     }
@@ -2043,7 +2047,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean containsLaunchOptions(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLaunchOptions().getMap().containsKey(key);
     }
@@ -2083,7 +2087,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.lang.String getLaunchOptionsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2102,7 +2106,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public java.lang.String getLaunchOptionsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
       if (!map.containsKey(key)) {
@@ -2128,7 +2132,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder removeLaunchOptions(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLaunchOptions().getMutableMap().remove(key);
       return this;
@@ -2151,11 +2155,12 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder putLaunchOptions(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLaunchOptions().getMutableMap().put(key, value);
       return this;
     }
@@ -2465,7 +2470,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean containsTransformNameMappings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTransformNameMappings().getMap().containsKey(key);
     }
@@ -2503,7 +2508,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.lang.String getTransformNameMappingsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTransformNameMappings().getMap();
@@ -2522,7 +2527,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     @java.lang.Override
     public java.lang.String getTransformNameMappingsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTransformNameMappings().getMap();
@@ -2548,7 +2553,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder removeTransformNameMappings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTransformNameMappings().getMutableMap().remove(key);
       return this;
@@ -2570,11 +2575,12 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
      */
     public Builder putTransformNameMappings(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableTransformNameMappings().getMutableMap().put(key, value);
       return this;
     }

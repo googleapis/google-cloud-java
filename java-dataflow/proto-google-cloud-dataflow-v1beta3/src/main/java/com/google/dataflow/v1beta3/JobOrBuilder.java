@@ -521,8 +521,12 @@ public interface JobOrBuilder
    *
    * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
    */
+
+  /* nullable */
   java.lang.String getTransformNameMappingOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -748,7 +752,12 @@ public interface JobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

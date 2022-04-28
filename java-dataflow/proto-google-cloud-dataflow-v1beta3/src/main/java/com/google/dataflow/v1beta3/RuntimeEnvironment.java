@@ -210,6 +210,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -728,7 +730,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsAdditionalUserLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAdditionalUserLabels().getMap().containsKey(key);
   }
@@ -774,7 +776,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAdditionalUserLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetAdditionalUserLabels().getMap();
@@ -797,7 +799,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getAdditionalUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetAdditionalUserLabels().getMap();
@@ -2714,7 +2716,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsAdditionalUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAdditionalUserLabels().getMap().containsKey(key);
     }
@@ -2760,7 +2762,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAdditionalUserLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetAdditionalUserLabels().getMap();
@@ -2783,7 +2785,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public java.lang.String getAdditionalUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetAdditionalUserLabels().getMap();
@@ -2813,7 +2815,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeAdditionalUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAdditionalUserLabels().getMutableMap().remove(key);
       return this;
@@ -2839,11 +2841,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAdditionalUserLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAdditionalUserLabels().getMutableMap().put(key, value);
       return this;
     }
