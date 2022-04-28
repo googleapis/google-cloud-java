@@ -130,6 +130,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -262,6 +264,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    * <code>bool can_reschedule = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.redis.v1beta1.MaintenanceSchedule.can_reschedule is deprecated. See
+   *     google/cloud/redis/v1beta1/cloud_redis.proto;l=627
    * @return The canReschedule.
    */
   @java.lang.Override
@@ -1116,6 +1120,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.redis.v1beta1.MaintenanceSchedule.can_reschedule is deprecated. See
+     *     google/cloud/redis/v1beta1/cloud_redis.proto;l=627
      * @return The canReschedule.
      */
     @java.lang.Override
@@ -1132,6 +1138,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.redis.v1beta1.MaintenanceSchedule.can_reschedule is deprecated. See
+     *     google/cloud/redis/v1beta1/cloud_redis.proto;l=627
      * @param value The canReschedule to set.
      * @return This builder for chaining.
      */
@@ -1151,6 +1159,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.redis.v1beta1.MaintenanceSchedule.can_reschedule is deprecated. See
+     *     google/cloud/redis/v1beta1/cloud_redis.proto;l=627
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

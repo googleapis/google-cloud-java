@@ -108,6 +108,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    * <code>bool can_reschedule = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.redis.v1beta1.MaintenanceSchedule.can_reschedule is deprecated. See
+   *     google/cloud/redis/v1beta1/cloud_redis.proto;l=627
    * @return The canReschedule.
    */
   @java.lang.Deprecated
