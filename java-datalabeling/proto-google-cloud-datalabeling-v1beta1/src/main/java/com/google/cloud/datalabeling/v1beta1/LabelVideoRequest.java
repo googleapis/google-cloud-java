@@ -196,6 +196,8 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1503,8 +1505,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 4) {
           videoClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationConfigBuilder_.setMessage(value);
         }
-        videoClassificationConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 4;
       return this;
@@ -1750,8 +1753,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 5) {
           objectDetectionConfigBuilder_.mergeFrom(value);
+        } else {
+          objectDetectionConfigBuilder_.setMessage(value);
         }
-        objectDetectionConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 5;
       return this;
@@ -1993,8 +1997,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 6) {
           objectTrackingConfigBuilder_.mergeFrom(value);
+        } else {
+          objectTrackingConfigBuilder_.setMessage(value);
         }
-        objectTrackingConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 6;
       return this;
@@ -2228,8 +2233,9 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 7) {
           eventConfigBuilder_.mergeFrom(value);
+        } else {
+          eventConfigBuilder_.setMessage(value);
         }
-        eventConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 7;
       return this;

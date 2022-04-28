@@ -159,6 +159,8 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1248,8 +1250,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       } else {
         if (requestConfigCase_ == 4) {
           textClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          textClassificationConfigBuilder_.setMessage(value);
         }
-        textClassificationConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 4;
       return this;
@@ -1504,8 +1507,9 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
       } else {
         if (requestConfigCase_ == 5) {
           textEntityExtractionConfigBuilder_.mergeFrom(value);
+        } else {
+          textEntityExtractionConfigBuilder_.setMessage(value);
         }
-        textEntityExtractionConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 5;
       return this;

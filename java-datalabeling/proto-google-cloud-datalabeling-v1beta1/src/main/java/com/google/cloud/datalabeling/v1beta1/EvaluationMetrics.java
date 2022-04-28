@@ -112,6 +112,8 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -730,8 +732,9 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         if (metricsCase_ == 1) {
           classificationMetricsBuilder_.mergeFrom(value);
+        } else {
+          classificationMetricsBuilder_.setMessage(value);
         }
-        classificationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 1;
       return this;
@@ -902,8 +905,9 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
       } else {
         if (metricsCase_ == 2) {
           objectDetectionMetricsBuilder_.mergeFrom(value);
+        } else {
+          objectDetectionMetricsBuilder_.setMessage(value);
         }
-        objectDetectionMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 2;
       return this;

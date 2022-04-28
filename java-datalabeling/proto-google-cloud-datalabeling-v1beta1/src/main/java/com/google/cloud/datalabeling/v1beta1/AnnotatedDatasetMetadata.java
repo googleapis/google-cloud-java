@@ -318,6 +318,8 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1832,8 +1834,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 2) {
           imageClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationConfigBuilder_.setMessage(value);
         }
-        imageClassificationConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 2;
       return this;
@@ -2059,8 +2062,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 3) {
           boundingPolyConfigBuilder_.mergeFrom(value);
+        } else {
+          boundingPolyConfigBuilder_.setMessage(value);
         }
-        boundingPolyConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 3;
       return this;
@@ -2274,8 +2278,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 4) {
           polylineConfigBuilder_.mergeFrom(value);
+        } else {
+          polylineConfigBuilder_.setMessage(value);
         }
-        polylineConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 4;
       return this;
@@ -2490,8 +2495,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 5) {
           segmentationConfigBuilder_.mergeFrom(value);
+        } else {
+          segmentationConfigBuilder_.setMessage(value);
         }
-        segmentationConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 5;
       return this;
@@ -2720,8 +2726,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 6) {
           videoClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationConfigBuilder_.setMessage(value);
         }
-        videoClassificationConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 6;
       return this;
@@ -2953,8 +2960,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 7) {
           objectDetectionConfigBuilder_.mergeFrom(value);
+        } else {
+          objectDetectionConfigBuilder_.setMessage(value);
         }
-        objectDetectionConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 7;
       return this;
@@ -3182,8 +3190,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 8) {
           objectTrackingConfigBuilder_.mergeFrom(value);
+        } else {
+          objectTrackingConfigBuilder_.setMessage(value);
         }
-        objectTrackingConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 8;
       return this;
@@ -3401,8 +3410,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 9) {
           eventConfigBuilder_.mergeFrom(value);
+        } else {
+          eventConfigBuilder_.setMessage(value);
         }
-        eventConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 9;
       return this;
@@ -3628,8 +3638,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 10) {
           textClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          textClassificationConfigBuilder_.setMessage(value);
         }
-        textClassificationConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 10;
       return this;
@@ -3869,8 +3880,9 @@ public final class AnnotatedDatasetMetadata extends com.google.protobuf.Generate
       } else {
         if (annotationRequestConfigCase_ == 11) {
           textEntityExtractionConfigBuilder_.mergeFrom(value);
+        } else {
+          textEntityExtractionConfigBuilder_.setMessage(value);
         }
-        textEntityExtractionConfigBuilder_.setMessage(value);
       }
       annotationRequestConfigCase_ = 11;
       return this;

@@ -196,6 +196,8 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1550,8 +1552,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 4) {
           imageClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationConfigBuilder_.setMessage(value);
         }
-        imageClassificationConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 4;
       return this;
@@ -1791,8 +1794,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 5) {
           boundingPolyConfigBuilder_.mergeFrom(value);
+        } else {
+          boundingPolyConfigBuilder_.setMessage(value);
         }
-        boundingPolyConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 5;
       return this;
@@ -2022,8 +2026,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 6) {
           polylineConfigBuilder_.mergeFrom(value);
+        } else {
+          polylineConfigBuilder_.setMessage(value);
         }
-        polylineConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 6;
       return this;
@@ -2254,8 +2259,9 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (requestConfigCase_ == 7) {
           segmentationConfigBuilder_.mergeFrom(value);
+        } else {
+          segmentationConfigBuilder_.setMessage(value);
         }
-        segmentationConfigBuilder_.setMessage(value);
       }
       requestConfigCase_ = 7;
       return this;

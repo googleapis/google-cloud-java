@@ -420,6 +420,8 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2376,8 +2378,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 3) {
           imageClassificationDetailsBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationDetailsBuilder_.setMessage(value);
         }
-        imageClassificationDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 3;
       return this;
@@ -2624,8 +2627,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 4) {
           imageBoundingBoxDetailsBuilder_.mergeFrom(value);
+        } else {
+          imageBoundingBoxDetailsBuilder_.setMessage(value);
         }
-        imageBoundingBoxDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 4;
       return this;
@@ -2872,8 +2876,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 11) {
           imageBoundingPolyDetailsBuilder_.mergeFrom(value);
+        } else {
+          imageBoundingPolyDetailsBuilder_.setMessage(value);
         }
-        imageBoundingPolyDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 11;
       return this;
@@ -3125,8 +3130,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 14) {
           imageOrientedBoundingBoxDetailsBuilder_.mergeFrom(value);
+        } else {
+          imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
         }
-        imageOrientedBoundingBoxDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 14;
       return this;
@@ -3378,8 +3384,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 12) {
           imagePolylineDetailsBuilder_.mergeFrom(value);
+        } else {
+          imagePolylineDetailsBuilder_.setMessage(value);
         }
-        imagePolylineDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 12;
       return this;
@@ -3624,8 +3631,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 15) {
           imageSegmentationDetailsBuilder_.mergeFrom(value);
+        } else {
+          imageSegmentationDetailsBuilder_.setMessage(value);
         }
-        imageSegmentationDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 15;
       return this;
@@ -3873,8 +3881,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 5) {
           videoClassificationDetailsBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationDetailsBuilder_.setMessage(value);
         }
-        videoClassificationDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 5;
       return this;
@@ -4124,8 +4133,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 6) {
           videoObjectDetectionDetailsBuilder_.mergeFrom(value);
+        } else {
+          videoObjectDetectionDetailsBuilder_.setMessage(value);
         }
-        videoObjectDetectionDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 6;
       return this;
@@ -4375,8 +4385,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 7) {
           videoObjectTrackingDetailsBuilder_.mergeFrom(value);
+        } else {
+          videoObjectTrackingDetailsBuilder_.setMessage(value);
         }
-        videoObjectTrackingDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 7;
       return this;
@@ -4621,8 +4632,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 8) {
           videoEventDetailsBuilder_.mergeFrom(value);
+        } else {
+          videoEventDetailsBuilder_.setMessage(value);
         }
-        videoEventDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 8;
       return this;
@@ -4865,8 +4877,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 9) {
           textClassificationDetailsBuilder_.mergeFrom(value);
+        } else {
+          textClassificationDetailsBuilder_.setMessage(value);
         }
-        textClassificationDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 9;
       return this;
@@ -5115,8 +5128,9 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       } else {
         if (detailsCase_ == 13) {
           textEntityExtractionDetailsBuilder_.mergeFrom(value);
+        } else {
+          textEntityExtractionDetailsBuilder_.setMessage(value);
         }
-        textEntityExtractionDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 13;
       return this;

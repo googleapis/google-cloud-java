@@ -114,6 +114,8 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -198,7 +200,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean containsAnnotationColors(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAnnotationColors().getMap().containsKey(key);
   }
@@ -244,7 +246,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
       java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec> map =
         internalGetAnnotationColors().getMap();
@@ -267,7 +269,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec> map =
         internalGetAnnotationColors().getMap();
@@ -779,7 +781,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean containsAnnotationColors(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAnnotationColors().getMap().containsKey(key);
     }
@@ -825,7 +827,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
         java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec> map =
           internalGetAnnotationColors().getMap();
@@ -848,7 +850,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec> map =
           internalGetAnnotationColors().getMap();
@@ -877,7 +879,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      */
     public Builder removeAnnotationColors(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAnnotationColors().getMutableMap().remove(key);
       return this;
@@ -904,11 +906,12 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     public Builder putAnnotationColors(
         java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAnnotationColors().getMutableMap().put(key, value);
       return this;
     }

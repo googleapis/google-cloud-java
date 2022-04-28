@@ -170,6 +170,8 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1203,8 +1205,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataTypeMetadataCase_ == 6) {
           textMetadataBuilder_.mergeFrom(value);
+        } else {
+          textMetadataBuilder_.setMessage(value);
         }
-        textMetadataBuilder_.setMessage(value);
       }
       dataTypeMetadataCase_ = 6;
       return this;
@@ -1413,8 +1416,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 2) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -1628,8 +1632,9 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 5) {
           bigquerySourceBuilder_.mergeFrom(value);
+        } else {
+          bigquerySourceBuilder_.setMessage(value);
         }
-        bigquerySourceBuilder_.setMessage(value);
       }
       sourceCase_ = 5;
       return this;

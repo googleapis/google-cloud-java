@@ -84,6 +84,8 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -143,7 +145,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (iouThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iouThreshold_) != 0) {
       output.writeFloat(1, iouThreshold_);
     }
     unknownFields.writeTo(output);
@@ -155,7 +157,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (iouThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iouThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, iouThreshold_);
     }
     size += unknownFields.getSerializedSize();

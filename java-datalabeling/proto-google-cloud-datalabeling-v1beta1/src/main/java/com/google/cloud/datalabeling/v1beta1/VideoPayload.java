@@ -124,6 +124,8 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -409,7 +411,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < videoThumbnails_.size(); i++) {
       output.writeMessage(3, videoThumbnails_.get(i));
     }
-    if (frameRate_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(frameRate_) != 0) {
       output.writeFloat(4, frameRate_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signedUri_)) {
@@ -433,7 +435,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < videoThumbnails_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, videoThumbnails_.get(i));
     }
-    if (frameRate_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(frameRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, frameRate_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signedUri_)) {

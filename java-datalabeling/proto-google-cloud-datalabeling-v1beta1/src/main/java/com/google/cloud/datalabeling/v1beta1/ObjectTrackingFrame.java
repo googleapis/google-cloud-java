@@ -134,6 +134,8 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -813,8 +815,9 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       } else {
         if (boundedAreaCase_ == 1) {
           boundingPolyBuilder_.mergeFrom(value);
+        } else {
+          boundingPolyBuilder_.setMessage(value);
         }
-        boundingPolyBuilder_.setMessage(value);
       }
       boundedAreaCase_ = 1;
       return this;
@@ -970,8 +973,9 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       } else {
         if (boundedAreaCase_ == 2) {
           normalizedBoundingPolyBuilder_.mergeFrom(value);
+        } else {
+          normalizedBoundingPolyBuilder_.setMessage(value);
         }
-        normalizedBoundingPolyBuilder_.setMessage(value);
       }
       boundedAreaCase_ = 2;
       return this;

@@ -131,6 +131,8 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -809,8 +811,9 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       } else {
         if (polyCase_ == 2) {
           polylineBuilder_.mergeFrom(value);
+        } else {
+          polylineBuilder_.setMessage(value);
         }
-        polylineBuilder_.setMessage(value);
       }
       polyCase_ = 2;
       return this;
@@ -959,8 +962,9 @@ public final class ImagePolylineAnnotation extends com.google.protobuf.Generated
       } else {
         if (polyCase_ == 3) {
           normalizedPolylineBuilder_.mergeFrom(value);
+        } else {
+          normalizedPolylineBuilder_.setMessage(value);
         }
-        normalizedPolylineBuilder_.setMessage(value);
       }
       polyCase_ = 3;
       return this;

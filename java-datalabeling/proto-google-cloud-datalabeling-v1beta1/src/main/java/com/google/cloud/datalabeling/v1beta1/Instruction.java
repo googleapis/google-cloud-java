@@ -189,6 +189,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -511,6 +513,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+   *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
    * @return Whether the csvInstruction field is set.
    */
   @java.lang.Override
@@ -533,6 +537,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+   *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
    * @return The csvInstruction.
    */
   @java.lang.Override
@@ -2003,6 +2009,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+     *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
      * @return Whether the csvInstruction field is set.
      */
     @java.lang.Deprecated
@@ -2024,6 +2032,8 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+     *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
      * @return The csvInstruction.
      */
     @java.lang.Deprecated

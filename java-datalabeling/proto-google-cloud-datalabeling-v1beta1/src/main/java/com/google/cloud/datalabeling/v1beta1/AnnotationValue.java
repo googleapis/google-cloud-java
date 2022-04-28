@@ -277,6 +277,8 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1632,8 +1634,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 1) {
           imageClassificationAnnotationBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationAnnotationBuilder_.setMessage(value);
         }
-        imageClassificationAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 1;
       return this;
@@ -1877,8 +1880,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 2) {
           imageBoundingPolyAnnotationBuilder_.mergeFrom(value);
+        } else {
+          imageBoundingPolyAnnotationBuilder_.setMessage(value);
         }
-        imageBoundingPolyAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 2;
       return this;
@@ -2133,8 +2137,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 8) {
           imagePolylineAnnotationBuilder_.mergeFrom(value);
+        } else {
+          imagePolylineAnnotationBuilder_.setMessage(value);
         }
-        imagePolylineAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 8;
       return this;
@@ -2383,8 +2388,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 9) {
           imageSegmentationAnnotationBuilder_.mergeFrom(value);
+        } else {
+          imageSegmentationAnnotationBuilder_.setMessage(value);
         }
-        imageSegmentationAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 9;
       return this;
@@ -2624,8 +2630,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 3) {
           textClassificationAnnotationBuilder_.mergeFrom(value);
+        } else {
+          textClassificationAnnotationBuilder_.setMessage(value);
         }
-        textClassificationAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 3;
       return this;
@@ -2865,8 +2872,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 10) {
           textEntityExtractionAnnotationBuilder_.mergeFrom(value);
+        } else {
+          textEntityExtractionAnnotationBuilder_.setMessage(value);
         }
-        textEntityExtractionAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 10;
       return this;
@@ -3106,8 +3114,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 4) {
           videoClassificationAnnotationBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationAnnotationBuilder_.setMessage(value);
         }
-        videoClassificationAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 4;
       return this;
@@ -3347,8 +3356,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 5) {
           videoObjectTrackingAnnotationBuilder_.mergeFrom(value);
+        } else {
+          videoObjectTrackingAnnotationBuilder_.setMessage(value);
         }
-        videoObjectTrackingAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 5;
       return this;
@@ -3578,8 +3588,9 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       } else {
         if (valueTypeCase_ == 6) {
           videoEventAnnotationBuilder_.mergeFrom(value);
+        } else {
+          videoEventAnnotationBuilder_.setMessage(value);
         }
-        videoEventAnnotationBuilder_.setMessage(value);
       }
       valueTypeCase_ = 6;
       return this;

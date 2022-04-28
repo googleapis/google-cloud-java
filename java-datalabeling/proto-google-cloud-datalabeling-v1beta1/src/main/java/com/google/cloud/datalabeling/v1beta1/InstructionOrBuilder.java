@@ -212,6 +212,8 @@ public interface InstructionOrBuilder
    * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+   *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
    * @return Whether the csvInstruction field is set.
    */
   @java.lang.Deprecated
@@ -231,6 +233,8 @@ public interface InstructionOrBuilder
    * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datalabeling.v1beta1.Instruction.csv_instruction is deprecated. See
+   *     google/cloud/datalabeling/v1beta1/instruction.proto;l=65
    * @return The csvInstruction.
    */
   @java.lang.Deprecated

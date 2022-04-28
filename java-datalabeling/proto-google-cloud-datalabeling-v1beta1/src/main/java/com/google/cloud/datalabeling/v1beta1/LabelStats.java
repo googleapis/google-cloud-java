@@ -95,6 +95,8 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -171,7 +173,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsExampleCount(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetExampleCount().getMap().containsKey(key);
   }
@@ -214,7 +216,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getExampleCountOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -235,7 +237,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getExampleCountOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
     if (!map.containsKey(key)) {
@@ -633,7 +635,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsExampleCount(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetExampleCount().getMap().containsKey(key);
     }
@@ -676,7 +678,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getExampleCountOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -697,7 +699,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getExampleCountOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
       if (!map.containsKey(key)) {
@@ -725,7 +727,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeExampleCount(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableExampleCount().getMutableMap().remove(key);
       return this;
@@ -750,7 +752,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putExampleCount(java.lang.String key, long value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableExampleCount().getMutableMap().put(key, value);

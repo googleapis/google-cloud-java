@@ -115,6 +115,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -388,6 +390,8 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -613,34 +617,34 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         output.writeFloat(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         output.writeFloat(2, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         output.writeFloat(3, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         output.writeFloat(4, f1Score_);
       }
-      if (recallAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recallAt1_) != 0) {
         output.writeFloat(5, recallAt1_);
       }
-      if (precisionAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precisionAt1_) != 0) {
         output.writeFloat(6, precisionAt1_);
       }
-      if (f1ScoreAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1ScoreAt1_) != 0) {
         output.writeFloat(7, f1ScoreAt1_);
       }
-      if (recallAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recallAt5_) != 0) {
         output.writeFloat(8, recallAt5_);
       }
-      if (precisionAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precisionAt5_) != 0) {
         output.writeFloat(9, precisionAt5_);
       }
-      if (f1ScoreAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1ScoreAt5_) != 0) {
         output.writeFloat(10, f1ScoreAt5_);
       }
       unknownFields.writeTo(output);
@@ -652,34 +656,34 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, f1Score_);
       }
-      if (recallAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recallAt1_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, recallAt1_);
       }
-      if (precisionAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precisionAt1_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, precisionAt1_);
       }
-      if (f1ScoreAt1_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1ScoreAt1_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, f1ScoreAt1_);
       }
-      if (recallAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recallAt5_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, recallAt5_);
       }
-      if (precisionAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precisionAt5_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, precisionAt5_);
       }
-      if (f1ScoreAt5_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1ScoreAt5_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(10, f1ScoreAt5_);
       }
       size += unknownFields.getSerializedSize();
@@ -1864,13 +1868,13 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     if (annotationSpec_ != null) {
       output.writeMessage(1, getAnnotationSpec());
     }
-    if (areaUnderCurve_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(areaUnderCurve_) != 0) {
       output.writeFloat(2, areaUnderCurve_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {
       output.writeMessage(3, confidenceMetricsEntries_.get(i));
     }
-    if (meanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       output.writeFloat(4, meanAveragePrecision_);
     }
     unknownFields.writeTo(output);
@@ -1885,7 +1889,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     if (annotationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAnnotationSpec());
     }
-    if (areaUnderCurve_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(areaUnderCurve_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, areaUnderCurve_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {
@@ -1893,7 +1897,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, confidenceMetricsEntries_.get(i));
     }
-    if (meanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, meanAveragePrecision_);
     }
     size += unknownFields.getSerializedSize();

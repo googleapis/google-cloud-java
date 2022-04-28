@@ -97,6 +97,8 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -204,7 +206,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecSet_);
     }
-    if (extractionFrameRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(extractionFrameRate_) != 0) {
       output.writeDouble(3, extractionFrameRate_);
     }
     unknownFields.writeTo(output);
@@ -219,7 +221,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationSpecSet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotationSpecSet_);
     }
-    if (extractionFrameRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(extractionFrameRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, extractionFrameRate_);
     }
     size += unknownFields.getSerializedSize();

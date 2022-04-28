@@ -246,6 +246,8 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -799,7 +801,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsBigqueryImportKeys(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetBigqueryImportKeys().getMap().containsKey(key);
   }
@@ -865,7 +867,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getBigqueryImportKeysOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetBigqueryImportKeys().getMap();
@@ -898,7 +900,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public java.lang.String getBigqueryImportKeysOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetBigqueryImportKeys().getMap();
@@ -1060,7 +1062,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     if (exampleCount_ != 0) {
       output.writeInt32(10, exampleCount_);
     }
-    if (exampleSamplePercentage_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exampleSamplePercentage_) != 0) {
       output.writeDouble(11, exampleSamplePercentage_);
     }
     if (evaluationJobAlertConfig_ != null) {
@@ -1119,7 +1121,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     if (exampleCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, exampleCount_);
     }
-    if (exampleSamplePercentage_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exampleSamplePercentage_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(11, exampleSamplePercentage_);
     }
     if (evaluationJobAlertConfig_ != null) {
@@ -1797,8 +1799,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (humanAnnotationRequestConfigCase_ == 4) {
           imageClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationConfigBuilder_.setMessage(value);
         }
-        imageClassificationConfigBuilder_.setMessage(value);
       }
       humanAnnotationRequestConfigCase_ = 4;
       return this;
@@ -2059,8 +2062,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (humanAnnotationRequestConfigCase_ == 5) {
           boundingPolyConfigBuilder_.mergeFrom(value);
+        } else {
+          boundingPolyConfigBuilder_.setMessage(value);
         }
-        boundingPolyConfigBuilder_.setMessage(value);
       }
       humanAnnotationRequestConfigCase_ = 5;
       return this;
@@ -2322,8 +2326,9 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (humanAnnotationRequestConfigCase_ == 8) {
           textClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          textClassificationConfigBuilder_.setMessage(value);
         }
-        textClassificationConfigBuilder_.setMessage(value);
       }
       humanAnnotationRequestConfigCase_ = 8;
       return this;
@@ -3242,7 +3247,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsBigqueryImportKeys(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetBigqueryImportKeys().getMap().containsKey(key);
     }
@@ -3308,7 +3313,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getBigqueryImportKeysOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBigqueryImportKeys().getMap();
@@ -3341,7 +3346,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public java.lang.String getBigqueryImportKeysOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBigqueryImportKeys().getMap();
@@ -3381,7 +3386,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder removeBigqueryImportKeys(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableBigqueryImportKeys().getMutableMap().remove(key);
       return this;
@@ -3417,11 +3422,12 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder putBigqueryImportKeys(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableBigqueryImportKeys().getMutableMap().put(key, value);
       return this;
     }
