@@ -113,6 +113,8 @@ public interface NodeOrBuilder
    *
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=275
    * @return The ipAddress.
    */
   @java.lang.Deprecated
@@ -128,6 +130,8 @@ public interface NodeOrBuilder
    *
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=275
    * @return The bytes for ipAddress.
    */
   @java.lang.Deprecated
@@ -143,6 +147,8 @@ public interface NodeOrBuilder
    *
    * <code>string port = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
    * @return The port.
    */
   @java.lang.Deprecated
@@ -157,6 +163,8 @@ public interface NodeOrBuilder
    *
    * <code>string port = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
    * @return The bytes for port.
    */
   @java.lang.Deprecated
@@ -552,7 +560,12 @@ public interface NodeOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
