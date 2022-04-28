@@ -222,6 +222,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -813,6 +815,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+   *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
    * @return Whether the gcsPath field is set.
    */
   @java.lang.Deprecated
@@ -829,6 +833,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+   *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
    * @return The gcsPath.
    */
   @java.lang.Deprecated
@@ -858,6 +864,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+   *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
    * @return The bytes for gcsPath.
    */
   @java.lang.Deprecated
@@ -1098,6 +1106,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string version = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+   *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
    * @return The version.
    */
   @java.lang.Override
@@ -1122,6 +1132,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string version = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+   *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
    * @return The bytes for version.
    */
   @java.lang.Override
@@ -2630,6 +2642,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @return Whether the gcsPath field is set.
      */
     @java.lang.Override
@@ -2647,6 +2661,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @return The gcsPath.
      */
     @java.lang.Override
@@ -2677,6 +2693,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @return The bytes for gcsPath.
      */
     @java.lang.Override
@@ -2707,6 +2725,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @param value The gcsPath to set.
      * @return This builder for chaining.
      */
@@ -2730,6 +2750,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2751,6 +2773,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      * <code>string gcs_path = 11 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.gcs_path is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=464
      * @param value The bytes for gcsPath to set.
      * @return This builder for chaining.
      */
@@ -2888,8 +2912,9 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 15) {
           gitSourceBuilder_.mergeFrom(value);
+        } else {
+          gitSourceBuilder_.setMessage(value);
         }
-        gitSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 15;
       return this;
@@ -3609,6 +3634,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string version = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
      * @return The version.
      */
     @java.lang.Deprecated
@@ -3632,6 +3659,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string version = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
      * @return The bytes for version.
      */
     @java.lang.Deprecated
@@ -3655,6 +3684,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string version = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -3677,6 +3708,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string version = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3695,6 +3728,8 @@ public final class AssetReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string version = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.privatecatalog.v1beta1.AssetReference.version is deprecated. See
+     *     google/cloud/privatecatalog/v1beta1/private_catalog.proto;l=483
      * @param value The bytes for version to set.
      * @return This builder for chaining.
      */
