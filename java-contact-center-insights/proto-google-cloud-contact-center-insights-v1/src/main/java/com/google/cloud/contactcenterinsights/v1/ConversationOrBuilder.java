@@ -412,7 +412,12 @@ public interface ConversationOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -717,8 +722,11 @@ public interface ConversationOrBuilder
    * map&lt;string, .google.cloud.contactcenterinsights.v1.DialogflowIntent&gt; dialogflow_intents = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.contactcenterinsights.v1.DialogflowIntent getDialogflowIntentsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.contactcenterinsights.v1.DialogflowIntent defaultValue);
   /**
    *

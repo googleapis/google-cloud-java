@@ -253,6 +253,8 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1536,8 +1538,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 10) {
           interruptionDataBuilder_.mergeFrom(value);
+        } else {
+          interruptionDataBuilder_.setMessage(value);
         }
-        interruptionDataBuilder_.setMessage(value);
       }
       dataCase_ = 10;
       return this;
@@ -1749,8 +1752,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 11) {
           sentimentDataBuilder_.mergeFrom(value);
+        } else {
+          sentimentDataBuilder_.setMessage(value);
         }
-        sentimentDataBuilder_.setMessage(value);
       }
       dataCase_ = 11;
       return this;
@@ -1961,8 +1965,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 12) {
           silenceDataBuilder_.mergeFrom(value);
+        } else {
+          silenceDataBuilder_.setMessage(value);
         }
-        silenceDataBuilder_.setMessage(value);
       }
       dataCase_ = 12;
       return this;
@@ -2171,8 +2176,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 13) {
           holdDataBuilder_.mergeFrom(value);
+        } else {
+          holdDataBuilder_.setMessage(value);
         }
-        holdDataBuilder_.setMessage(value);
       }
       dataCase_ = 13;
       return this;
@@ -2389,8 +2395,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 15) {
           entityMentionDataBuilder_.mergeFrom(value);
+        } else {
+          entityMentionDataBuilder_.setMessage(value);
         }
-        entityMentionDataBuilder_.setMessage(value);
       }
       dataCase_ = 15;
       return this;
@@ -2607,8 +2614,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 16) {
           intentMatchDataBuilder_.mergeFrom(value);
+        } else {
+          intentMatchDataBuilder_.setMessage(value);
         }
-        intentMatchDataBuilder_.setMessage(value);
       }
       dataCase_ = 16;
       return this;
@@ -2821,8 +2829,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 17) {
           phraseMatchDataBuilder_.mergeFrom(value);
+        } else {
+          phraseMatchDataBuilder_.setMessage(value);
         }
-        phraseMatchDataBuilder_.setMessage(value);
       }
       dataCase_ = 17;
       return this;

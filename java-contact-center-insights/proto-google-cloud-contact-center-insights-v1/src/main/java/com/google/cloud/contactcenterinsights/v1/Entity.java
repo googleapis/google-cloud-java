@@ -136,6 +136,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -729,7 +731,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
@@ -771,7 +773,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -791,7 +793,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
@@ -893,7 +895,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 3);
-    if (salience_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(salience_) != 0) {
       output.writeFloat(4, salience_);
     }
     if (sentiment_ != null) {
@@ -925,7 +927,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, metadata__);
     }
-    if (salience_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(salience_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, salience_);
     }
     if (sentiment_ != null) {
@@ -1534,7 +1536,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
@@ -1576,7 +1578,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1596,7 +1598,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
@@ -1623,7 +1625,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
@@ -1647,11 +1649,12 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }

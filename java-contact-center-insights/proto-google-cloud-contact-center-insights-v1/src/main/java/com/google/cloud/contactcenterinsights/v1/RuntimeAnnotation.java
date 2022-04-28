@@ -257,6 +257,8 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1582,8 +1584,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         if (dataCase_ == 6) {
           articleSuggestionBuilder_.mergeFrom(value);
+        } else {
+          articleSuggestionBuilder_.setMessage(value);
         }
-        articleSuggestionBuilder_.setMessage(value);
       }
       dataCase_ = 6;
       return this;
@@ -1799,8 +1802,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         if (dataCase_ == 7) {
           faqAnswerBuilder_.mergeFrom(value);
+        } else {
+          faqAnswerBuilder_.setMessage(value);
         }
-        faqAnswerBuilder_.setMessage(value);
       }
       dataCase_ = 7;
       return this;
@@ -2010,8 +2014,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         if (dataCase_ == 8) {
           smartReplyBuilder_.mergeFrom(value);
+        } else {
+          smartReplyBuilder_.setMessage(value);
         }
-        smartReplyBuilder_.setMessage(value);
       }
       dataCase_ = 8;
       return this;
@@ -2238,8 +2243,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         if (dataCase_ == 9) {
           smartComposeSuggestionBuilder_.mergeFrom(value);
+        } else {
+          smartComposeSuggestionBuilder_.setMessage(value);
         }
-        smartComposeSuggestionBuilder_.setMessage(value);
       }
       dataCase_ = 9;
       return this;
@@ -2478,8 +2484,9 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       } else {
         if (dataCase_ == 10) {
           dialogflowInteractionBuilder_.mergeFrom(value);
+        } else {
+          dialogflowInteractionBuilder_.setMessage(value);
         }
-        dialogflowInteractionBuilder_.setMessage(value);
       }
       dataCase_ = 10;
       return this;

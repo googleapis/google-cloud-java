@@ -118,6 +118,8 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -547,6 +549,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
    *
    * <code>string dialogflow_participant = 1 [deprecated = true];</code>
    *
+   * @deprecated
+   *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
    * @return The dialogflowParticipant.
    */
   @java.lang.Override
@@ -573,6 +578,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
    *
    * <code>string dialogflow_participant = 1 [deprecated = true];</code>
    *
+   * @deprecated
+   *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
    * @return The bytes for dialogflowParticipant.
    */
   @java.lang.Override
@@ -1408,6 +1416,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
      * @return The dialogflowParticipant.
      */
     @java.lang.Deprecated
@@ -1433,6 +1444,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
      * @return The bytes for dialogflowParticipant.
      */
     @java.lang.Deprecated
@@ -1458,6 +1472,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
      * @param value The dialogflowParticipant to set.
      * @return This builder for chaining.
      */
@@ -1482,6 +1499,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1502,6 +1522,9 @@ public final class ConversationParticipant extends com.google.protobuf.Generated
      *
      * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1083
      * @param value The bytes for dialogflowParticipant to set.
      * @return This builder for chaining.
      */

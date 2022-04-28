@@ -339,6 +339,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -639,6 +641,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1356,6 +1360,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1877,6 +1883,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2132,6 +2140,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -2352,7 +2362,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 3, word_);
           }
-          if (confidence_ != 0F) {
+          if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
             output.writeFloat(4, confidence_);
           }
           unknownFields.writeTo(output);
@@ -2373,7 +2383,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(word_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
           }
-          if (confidence_ != 0F) {
+          if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
             size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
           }
           size += unknownFields.getSerializedSize();
@@ -3483,6 +3493,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -4498,7 +4510,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
         for (int i = 0; i < words_.size(); i++) {
@@ -4534,7 +4546,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
         for (int i = 0; i < words_.size(); i++) {
@@ -8333,7 +8345,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -8370,7 +8382,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -8388,7 +8400,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -8755,7 +8767,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsDialogflowIntents(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDialogflowIntents().getMap().containsKey(key);
   }
@@ -8802,7 +8814,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       java.lang.String key,
       com.google.cloud.contactcenterinsights.v1.DialogflowIntent defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
         map = internalGetDialogflowIntents().getMap();
@@ -8825,7 +8837,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contactcenterinsights.v1.DialogflowIntent getDialogflowIntentsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
         map = internalGetDialogflowIntents().getMap();
@@ -9883,8 +9895,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (metadataCase_ == 7) {
           callMetadataBuilder_.mergeFrom(value);
+        } else {
+          callMetadataBuilder_.setMessage(value);
         }
-        callMetadataBuilder_.setMessage(value);
       }
       metadataCase_ = 7;
       return this;
@@ -10104,8 +10117,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (expirationCase_ == 15) {
           expireTimeBuilder_.mergeFrom(value);
+        } else {
+          expireTimeBuilder_.setMessage(value);
         }
-        expireTimeBuilder_.setMessage(value);
       }
       expirationCase_ = 15;
       return this;
@@ -10318,8 +10332,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (expirationCase_ == 16) {
           ttlBuilder_.mergeFrom(value);
+        } else {
+          ttlBuilder_.setMessage(value);
         }
-        ttlBuilder_.setMessage(value);
       }
       expirationCase_ = 16;
       return this;
@@ -11560,7 +11575,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -11598,7 +11613,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -11616,7 +11631,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -11641,7 +11656,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -11663,11 +11678,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -12917,7 +12933,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsDialogflowIntents(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDialogflowIntents().getMap().containsKey(key);
     }
@@ -12966,7 +12982,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.contactcenterinsights.v1.DialogflowIntent defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
           map = internalGetDialogflowIntents().getMap();
@@ -12989,7 +13005,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.DialogflowIntent getDialogflowIntentsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
           map = internalGetDialogflowIntents().getMap();
@@ -13018,7 +13034,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeDialogflowIntents(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDialogflowIntents().getMutableMap().remove(key);
       return this;
@@ -13046,11 +13062,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public Builder putDialogflowIntents(
         java.lang.String key, com.google.cloud.contactcenterinsights.v1.DialogflowIntent value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDialogflowIntents().getMutableMap().put(key, value);
       return this;
     }

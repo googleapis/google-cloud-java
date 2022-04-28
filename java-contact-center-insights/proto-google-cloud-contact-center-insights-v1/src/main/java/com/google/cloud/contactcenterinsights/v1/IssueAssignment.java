@@ -101,6 +101,8 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -260,7 +262,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issue_);
     }
-    if (score_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       output.writeDouble(2, score_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
@@ -278,7 +280,7 @@ public final class IssueAssignment extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, issue_);
     }
-    if (score_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, score_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {

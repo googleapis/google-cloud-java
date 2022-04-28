@@ -106,8 +106,11 @@ public interface IssueModelLabelStatsOrBuilder
    * map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_stats = 3;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats getIssueStatsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue);
   /**
    *

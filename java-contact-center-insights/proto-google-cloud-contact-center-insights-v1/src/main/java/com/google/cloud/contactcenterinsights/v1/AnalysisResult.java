@@ -118,6 +118,8 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -242,8 +244,12 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Entity&gt; entities = 3;</code>
      */
+
+    /* nullable */
     com.google.cloud.contactcenterinsights.v1.Entity getEntitiesOrDefault(
-        java.lang.String key, com.google.cloud.contactcenterinsights.v1.Entity defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.contactcenterinsights.v1.Entity defaultValue);
     /**
      *
      *
@@ -363,8 +369,12 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.Intent&gt; intents = 6;</code>
      */
+
+    /* nullable */
     com.google.cloud.contactcenterinsights.v1.Intent getIntentsOrDefault(
-        java.lang.String key, com.google.cloud.contactcenterinsights.v1.Intent defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.contactcenterinsights.v1.Intent defaultValue);
     /**
      *
      *
@@ -428,8 +438,11 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.contactcenterinsights.v1.PhraseMatchData&gt; phrase_matchers = 7;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.contactcenterinsights.v1.PhraseMatchData getPhraseMatchersOrDefault(
         java.lang.String key,
+        /* nullable */
         com.google.cloud.contactcenterinsights.v1.PhraseMatchData defaultValue);
     /**
      *
@@ -646,6 +659,8 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -808,7 +823,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsEntities(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetEntities().getMap().containsKey(key);
     }
@@ -846,7 +861,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Entity getEntitiesOrDefault(
         java.lang.String key, com.google.cloud.contactcenterinsights.v1.Entity defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity> map =
           internalGetEntities().getMap();
@@ -865,7 +880,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Entity getEntitiesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity> map =
           internalGetEntities().getMap();
@@ -1004,7 +1019,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsIntents(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetIntents().getMap().containsKey(key);
     }
@@ -1042,7 +1057,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Intent getIntentsOrDefault(
         java.lang.String key, com.google.cloud.contactcenterinsights.v1.Intent defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent> map =
           internalGetIntents().getMap();
@@ -1061,7 +1076,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Intent getIntentsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent> map =
           internalGetIntents().getMap();
@@ -1120,7 +1135,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsPhraseMatchers(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPhraseMatchers().getMap().containsKey(key);
     }
@@ -1165,7 +1180,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.contactcenterinsights.v1.PhraseMatchData defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
           map = internalGetPhraseMatchers().getMap();
@@ -1186,7 +1201,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.PhraseMatchData getPhraseMatchersOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
           map = internalGetPhraseMatchers().getMap();
@@ -2245,7 +2260,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsEntities(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetEntities().getMap().containsKey(key);
       }
@@ -2283,7 +2298,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contactcenterinsights.v1.Entity getEntitiesOrDefault(
           java.lang.String key, com.google.cloud.contactcenterinsights.v1.Entity defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity> map =
             internalGetEntities().getMap();
@@ -2302,7 +2317,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contactcenterinsights.v1.Entity getEntitiesOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Entity> map =
             internalGetEntities().getMap();
@@ -2327,7 +2342,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeEntities(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableEntities().getMutableMap().remove(key);
         return this;
@@ -2350,11 +2365,12 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public Builder putEntities(
           java.lang.String key, com.google.cloud.contactcenterinsights.v1.Entity value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableEntities().getMutableMap().put(key, value);
         return this;
       }
@@ -2830,7 +2846,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsIntents(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetIntents().getMap().containsKey(key);
       }
@@ -2868,7 +2884,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contactcenterinsights.v1.Intent getIntentsOrDefault(
           java.lang.String key, com.google.cloud.contactcenterinsights.v1.Intent defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent> map =
             internalGetIntents().getMap();
@@ -2887,7 +2903,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contactcenterinsights.v1.Intent getIntentsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.Intent> map =
             internalGetIntents().getMap();
@@ -2912,7 +2928,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeIntents(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableIntents().getMutableMap().remove(key);
         return this;
@@ -2935,11 +2951,12 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public Builder putIntents(
           java.lang.String key, com.google.cloud.contactcenterinsights.v1.Intent value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableIntents().getMutableMap().put(key, value);
         return this;
       }
@@ -3006,7 +3023,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsPhraseMatchers(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetPhraseMatchers().getMap().containsKey(key);
       }
@@ -3051,7 +3068,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.contactcenterinsights.v1.PhraseMatchData defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
             map = internalGetPhraseMatchers().getMap();
@@ -3072,7 +3089,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.contactcenterinsights.v1.PhraseMatchData getPhraseMatchersOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.PhraseMatchData>
             map = internalGetPhraseMatchers().getMap();
@@ -3099,7 +3116,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removePhraseMatchers(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutablePhraseMatchers().getMutableMap().remove(key);
         return this;
@@ -3125,11 +3142,12 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       public Builder putPhraseMatchers(
           java.lang.String key, com.google.cloud.contactcenterinsights.v1.PhraseMatchData value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutablePhraseMatchers().getMutableMap().put(key, value);
         return this;
       }
@@ -4090,8 +4108,9 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (metadataCase_ == 2) {
           callAnalysisMetadataBuilder_.mergeFrom(value);
+        } else {
+          callAnalysisMetadataBuilder_.setMessage(value);
         }
-        callAnalysisMetadataBuilder_.setMessage(value);
       }
       metadataCase_ = 2;
       return this;

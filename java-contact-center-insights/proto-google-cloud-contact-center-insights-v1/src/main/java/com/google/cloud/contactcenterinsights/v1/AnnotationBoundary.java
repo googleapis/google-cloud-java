@@ -75,8 +75,8 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
             }
           case 24:
             {
-              detailedBoundaryCase_ = 3;
               detailedBoundary_ = input.readInt32();
+              detailedBoundaryCase_ = 3;
               break;
             }
           default:
@@ -90,6 +90,8 @@ public final class AnnotationBoundary extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

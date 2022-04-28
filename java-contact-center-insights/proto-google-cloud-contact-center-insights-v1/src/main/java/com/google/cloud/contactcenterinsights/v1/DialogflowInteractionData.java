@@ -93,6 +93,8 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -203,7 +205,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowIntentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dialogflowIntentId_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(2, confidence_);
     }
     unknownFields.writeTo(output);
@@ -218,7 +220,7 @@ public final class DialogflowInteractionData extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dialogflowIntentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dialogflowIntentId_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
     size += unknownFields.getSerializedSize();

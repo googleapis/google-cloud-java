@@ -196,6 +196,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -450,6 +452,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -612,6 +616,8 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2799,7 +2805,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public boolean containsSmartHighlighterMatches(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSmartHighlighterMatches().getMap().containsKey(key);
   }
@@ -2836,7 +2842,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getSmartHighlighterMatchesOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetSmartHighlighterMatches().getMap();
@@ -2855,7 +2861,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getSmartHighlighterMatchesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetSmartHighlighterMatches().getMap();
@@ -2906,7 +2912,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public boolean containsCustomHighlighterMatches(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCustomHighlighterMatches().getMap().containsKey(key);
   }
@@ -2943,7 +2949,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getCustomHighlighterMatchesOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetCustomHighlighterMatches().getMap();
@@ -2962,7 +2968,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getCustomHighlighterMatchesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetCustomHighlighterMatches().getMap();
@@ -3016,7 +3022,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public boolean containsIssueMatches(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetIssueMatches().getMap().containsKey(key);
   }
@@ -3059,7 +3065,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Deprecated
   public int getIssueMatchesOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3080,7 +3086,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Deprecated
   public int getIssueMatchesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
     if (!map.containsKey(key)) {
@@ -3144,7 +3150,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public boolean containsIssueMatchesStats(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetIssueMatchesStats().getMap().containsKey(key);
   }
@@ -3196,7 +3202,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
           java.lang.String key,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -3221,7 +3227,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
       getIssueMatchesStatsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -4170,7 +4176,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean containsSmartHighlighterMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSmartHighlighterMatches().getMap().containsKey(key);
     }
@@ -4207,7 +4213,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getSmartHighlighterMatchesOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSmartHighlighterMatches().getMap();
@@ -4226,7 +4232,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getSmartHighlighterMatchesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSmartHighlighterMatches().getMap();
@@ -4252,7 +4258,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder removeSmartHighlighterMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSmartHighlighterMatches().getMutableMap().remove(key);
       return this;
@@ -4274,7 +4280,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder putSmartHighlighterMatches(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableSmartHighlighterMatches().getMutableMap().put(key, value);
@@ -4339,7 +4345,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean containsCustomHighlighterMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCustomHighlighterMatches().getMap().containsKey(key);
     }
@@ -4376,7 +4382,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getCustomHighlighterMatchesOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetCustomHighlighterMatches().getMap();
@@ -4395,7 +4401,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getCustomHighlighterMatchesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetCustomHighlighterMatches().getMap();
@@ -4421,7 +4427,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder removeCustomHighlighterMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCustomHighlighterMatches().getMutableMap().remove(key);
       return this;
@@ -4443,7 +4449,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder putCustomHighlighterMatches(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableCustomHighlighterMatches().getMutableMap().put(key, value);
@@ -4510,7 +4516,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean containsIssueMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetIssueMatches().getMap().containsKey(key);
     }
@@ -4553,7 +4559,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public int getIssueMatchesOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -4574,7 +4580,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public int getIssueMatchesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetIssueMatches().getMap();
       if (!map.containsKey(key)) {
@@ -4603,7 +4609,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public Builder removeIssueMatches(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableIssueMatches().getMutableMap().remove(key);
       return this;
@@ -4628,7 +4634,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public Builder putIssueMatches(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableIssueMatches().getMutableMap().put(key, value);
@@ -4704,7 +4710,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean containsIssueMatchesStats(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetIssueMatchesStats().getMap().containsKey(key);
     }
@@ -4757,7 +4763,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -4782,7 +4788,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats
         getIssueMatchesStatsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -4813,7 +4819,7 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
      */
     public Builder removeIssueMatchesStats(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableIssueMatchesStats().getMutableMap().remove(key);
       return this;
@@ -4843,11 +4849,12 @@ public final class CalculateStatsResponse extends com.google.protobuf.GeneratedM
         java.lang.String key,
         com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableIssueMatchesStats().getMutableMap().put(key, value);
       return this;
     }

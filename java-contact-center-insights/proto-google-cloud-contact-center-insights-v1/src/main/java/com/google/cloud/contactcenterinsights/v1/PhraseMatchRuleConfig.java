@@ -99,6 +99,8 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -700,8 +702,9 @@ public final class PhraseMatchRuleConfig extends com.google.protobuf.GeneratedMe
       } else {
         if (configCase_ == 1) {
           exactMatchConfigBuilder_.mergeFrom(value);
+        } else {
+          exactMatchConfigBuilder_.setMessage(value);
         }
-        exactMatchConfigBuilder_.setMessage(value);
       }
       configCase_ = 1;
       return this;
