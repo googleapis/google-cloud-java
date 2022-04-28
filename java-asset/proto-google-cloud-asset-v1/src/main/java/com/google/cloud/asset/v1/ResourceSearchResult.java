@@ -294,6 +294,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -886,7 +888,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -939,7 +941,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -965,7 +967,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1738,7 +1740,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsRelationships(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetRelationships().getMap().containsKey(key);
   }
@@ -1786,7 +1788,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
       java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
         internalGetRelationships().getMap();
@@ -1809,7 +1811,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
         internalGetRelationships().getMap();
@@ -3871,7 +3873,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -3925,7 +3927,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3951,7 +3953,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -3984,7 +3986,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -4014,11 +4016,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -6516,7 +6519,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsRelationships(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetRelationships().getMap().containsKey(key);
     }
@@ -6564,7 +6567,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
         java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
           internalGetRelationships().getMap();
@@ -6588,7 +6591,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> map =
           internalGetRelationships().getMap();
@@ -6618,7 +6621,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder removeRelationships(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableRelationships().getMutableMap().remove(key);
       return this;
@@ -6646,11 +6649,12 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder putRelationships(
         java.lang.String key, com.google.cloud.asset.v1.RelatedResources value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableRelationships().getMutableMap().put(key, value);
       return this;
     }

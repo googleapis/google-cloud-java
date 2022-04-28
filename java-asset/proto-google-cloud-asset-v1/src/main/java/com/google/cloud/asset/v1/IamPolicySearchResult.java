@@ -155,6 +155,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -266,9 +268,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions defaultValue);
     /**
      *
@@ -372,6 +377,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -536,6 +543,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1272,7 +1281,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public boolean containsMatchedPermissions(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMatchedPermissions().getMap().containsKey(key);
     }
@@ -1332,7 +1341,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             java.lang.String key,
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1361,7 +1370,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1792,7 +1801,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public boolean containsMatchedPermissions(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetMatchedPermissions().getMap().containsKey(key);
       }
@@ -1853,7 +1862,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
               com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -1882,7 +1891,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
           getMatchedPermissionsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -1917,7 +1926,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        */
       public Builder removeMatchedPermissions(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableMatchedPermissions().getMutableMap().remove(key);
         return this;
@@ -1951,11 +1960,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           java.lang.String key,
           com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableMatchedPermissions().getMutableMap().put(key, value);
         return this;
       }

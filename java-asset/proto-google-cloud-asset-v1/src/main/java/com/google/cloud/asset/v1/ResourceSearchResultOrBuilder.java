@@ -421,7 +421,12 @@ public interface ResourceSearchResultOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1067,8 +1072,12 @@ public interface ResourceSearchResultOrBuilder
    *
    * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
    */
+
+  /* nullable */
   com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
-      java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.asset.v1.RelatedResources defaultValue);
   /**
    *
    *
