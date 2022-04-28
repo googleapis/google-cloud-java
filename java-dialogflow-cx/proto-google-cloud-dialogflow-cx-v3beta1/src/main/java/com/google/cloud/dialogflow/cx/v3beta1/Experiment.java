@@ -280,6 +280,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -673,6 +675,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1468,8 +1472,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (variantsCase_ == 2) {
             versionVariantsBuilder_.mergeFrom(value);
+          } else {
+            versionVariantsBuilder_.setMessage(value);
           }
-          versionVariantsBuilder_.setMessage(value);
         }
         variantsCase_ = 2;
         return this;
@@ -1828,6 +1833,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2403,6 +2410,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2516,16 +2525,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (confidenceLevel_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(confidenceLevel_) != 0) {
           output.writeDouble(1, confidenceLevel_);
         }
-        if (ratio_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(ratio_) != 0) {
           output.writeDouble(2, ratio_);
         }
-        if (lowerBound_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(lowerBound_) != 0) {
           output.writeDouble(3, lowerBound_);
         }
-        if (upperBound_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(upperBound_) != 0) {
           output.writeDouble(4, upperBound_);
         }
         unknownFields.writeTo(output);
@@ -2537,16 +2546,16 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (confidenceLevel_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(confidenceLevel_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, confidenceLevel_);
         }
-        if (ratio_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(ratio_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, ratio_);
         }
-        if (lowerBound_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(lowerBound_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, lowerBound_);
         }
-        if (upperBound_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(upperBound_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, upperBound_);
         }
         size += unknownFields.getSerializedSize();
@@ -3404,8 +3413,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
                 }
               case 17:
                 {
-                  valueCase_ = 2;
                   value_ = input.readDouble();
+                  valueCase_ = 2;
                   break;
                 }
               case 26:
@@ -3430,8 +3439,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
                 }
               case 33:
                 {
-                  valueCase_ = 4;
                   value_ = input.readDouble();
+                  valueCase_ = 4;
                   break;
                 }
               case 40:
@@ -3452,6 +3461,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5036,6 +5047,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);

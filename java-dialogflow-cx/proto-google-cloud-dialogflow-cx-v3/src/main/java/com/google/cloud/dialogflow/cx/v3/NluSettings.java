@@ -101,6 +101,8 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -565,7 +567,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(1, modelType_);
     }
-    if (classificationThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(classificationThreshold_) != 0) {
       output.writeFloat(3, classificationThreshold_);
     }
     if (modelTrainingMode_
@@ -588,7 +590,7 @@ public final class NluSettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, modelType_);
     }
-    if (classificationThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(classificationThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, classificationThreshold_);
     }
     if (modelTrainingMode_

@@ -137,6 +137,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -857,8 +859,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       } else {
         if (responseCase_ == 1) {
           recognitionResultBuilder_.mergeFrom(value);
+        } else {
+          recognitionResultBuilder_.setMessage(value);
         }
-        recognitionResultBuilder_.setMessage(value);
       }
       responseCase_ = 1;
       return this;
@@ -1084,8 +1087,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       } else {
         if (responseCase_ == 2) {
           detectIntentResponseBuilder_.mergeFrom(value);
+        } else {
+          detectIntentResponseBuilder_.setMessage(value);
         }
-        detectIntentResponseBuilder_.setMessage(value);
       }
       responseCase_ = 2;
       return this;

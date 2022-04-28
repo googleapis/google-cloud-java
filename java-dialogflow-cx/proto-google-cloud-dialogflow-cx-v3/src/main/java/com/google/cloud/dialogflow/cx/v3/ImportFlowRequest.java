@@ -87,8 +87,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             }
           case 26:
             {
-              flowCase_ = 3;
               flow_ = input.readBytes();
+              flowCase_ = 3;
               break;
             }
           case 32:
@@ -109,6 +109,8 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

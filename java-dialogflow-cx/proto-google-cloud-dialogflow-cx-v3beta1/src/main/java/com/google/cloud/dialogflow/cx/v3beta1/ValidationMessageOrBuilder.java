@@ -59,6 +59,8 @@ public interface ValidationMessageOrBuilder
    *
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
    * @return A list containing the resources.
    */
   @java.lang.Deprecated
@@ -72,6 +74,8 @@ public interface ValidationMessageOrBuilder
    *
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
    * @return The count of resources.
    */
   @java.lang.Deprecated
@@ -85,6 +89,8 @@ public interface ValidationMessageOrBuilder
    *
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
    * @param index The index of the element to return.
    * @return The resources at the given index.
    */
@@ -99,6 +105,8 @@ public interface ValidationMessageOrBuilder
    *
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3beta1.ValidationMessage.resources is deprecated. See
+   *     google/cloud/dialogflow/cx/v3beta1/validation_message.proto;l=93
    * @param index The index of the value to return.
    * @return The bytes of the resources at the given index.
    */

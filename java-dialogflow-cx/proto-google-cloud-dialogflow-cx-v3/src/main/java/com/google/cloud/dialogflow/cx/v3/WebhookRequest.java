@@ -240,6 +240,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -374,6 +376,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1095,9 +1099,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue&gt; parameters = 2;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
         getParametersOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
                 defaultValue);
     /**
@@ -1234,6 +1241,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1422,6 +1431,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2448,7 +2459,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParameters().getMap().containsKey(key);
     }
@@ -2503,7 +2514,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -2529,7 +2540,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
         getParametersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -2582,7 +2593,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(4, confidence_);
       }
       unknownFields.writeTo(output);
@@ -2615,7 +2626,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
       }
       size += unknownFields.getSerializedSize();
@@ -3246,7 +3257,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsParameters(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetParameters().getMap().containsKey(key);
       }
@@ -3301,7 +3312,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3327,7 +3338,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue
           getParametersOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3359,7 +3370,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeParameters(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableParameters().getMutableMap().remove(key);
         return this;
@@ -3390,11 +3401,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.dialogflow.cx.v3.WebhookRequest.IntentInfo.IntentParameterValue value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableParameters().getMutableMap().put(key, value);
         return this;
       }
@@ -3634,6 +3646,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3711,10 +3725,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         output.writeFloat(1, score_);
       }
-      if (magnitude_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(magnitude_) != 0) {
         output.writeFloat(2, magnitude_);
       }
       unknownFields.writeTo(output);
@@ -3726,10 +3740,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
       }
-      if (magnitude_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(magnitude_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, magnitude_);
       }
       size += unknownFields.getSerializedSize();

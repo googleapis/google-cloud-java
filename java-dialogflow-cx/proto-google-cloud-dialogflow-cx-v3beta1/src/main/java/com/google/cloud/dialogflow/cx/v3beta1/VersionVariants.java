@@ -96,6 +96,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -263,6 +265,8 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -393,7 +397,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
       }
-      if (trafficAllocation_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(trafficAllocation_) != 0) {
         output.writeFloat(2, trafficAllocation_);
       }
       if (isControlGroup_ != false) {
@@ -411,7 +415,7 @@ public final class VersionVariants extends com.google.protobuf.GeneratedMessageV
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
       }
-      if (trafficAllocation_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(trafficAllocation_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, trafficAllocation_);
       }
       if (isControlGroup_ != false) {

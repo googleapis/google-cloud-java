@@ -164,6 +164,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -226,6 +228,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string username = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
      * @return The username.
      */
     @java.lang.Deprecated
@@ -239,6 +243,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string username = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -253,6 +259,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string password = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
      * @return The password.
      */
     @java.lang.Deprecated
@@ -266,6 +274,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string password = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
      * @return The bytes for password.
      */
     @java.lang.Deprecated
@@ -317,8 +327,12 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
+
+    /* nullable */
     java.lang.String getRequestHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue);
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
     /**
      *
      *
@@ -519,6 +533,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -616,6 +632,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string username = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
      * @return The username.
      */
     @java.lang.Override
@@ -640,6 +658,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string username = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
      * @return The bytes for username.
      */
     @java.lang.Override
@@ -667,6 +687,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string password = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
      * @return The password.
      */
     @java.lang.Override
@@ -691,6 +713,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string password = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -747,7 +771,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsRequestHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetRequestHeaders().getMap().containsKey(key);
     }
@@ -785,7 +809,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRequestHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetRequestHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -803,7 +827,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getRequestHeadersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetRequestHeaders().getMap();
       if (!map.containsKey(key)) {
@@ -1452,6 +1476,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string username = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
        * @return The username.
        */
       @java.lang.Deprecated
@@ -1475,6 +1501,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string username = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
        * @return The bytes for username.
        */
       @java.lang.Deprecated
@@ -1498,6 +1526,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string username = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
        * @param value The username to set.
        * @return This builder for chaining.
        */
@@ -1520,6 +1550,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string username = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1538,6 +1570,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string username = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=107
        * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
@@ -1563,6 +1597,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string password = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
        * @return The password.
        */
       @java.lang.Deprecated
@@ -1586,6 +1622,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string password = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
        * @return The bytes for password.
        */
       @java.lang.Deprecated
@@ -1609,6 +1647,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string password = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -1631,6 +1671,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string password = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1649,6 +1691,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string password = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=110
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -1706,7 +1750,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsRequestHeaders(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetRequestHeaders().getMap().containsKey(key);
       }
@@ -1744,7 +1788,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getRequestHeadersOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetRequestHeaders().getMap();
@@ -1763,7 +1807,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public java.lang.String getRequestHeadersOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map =
             internalGetRequestHeaders().getMap();
@@ -1789,7 +1833,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeRequestHeaders(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableRequestHeaders().getMutableMap().remove(key);
         return this;
@@ -1811,11 +1855,12 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putRequestHeaders(java.lang.String key, java.lang.String value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableRequestHeaders().getMutableMap().put(key, value);
         return this;
       }
@@ -2281,6 +2326,8 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4352,8 +4399,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (webhookCase_ == 4) {
           genericWebServiceBuilder_.mergeFrom(value);
+        } else {
+          genericWebServiceBuilder_.setMessage(value);
         }
-        genericWebServiceBuilder_.setMessage(value);
       }
       webhookCase_ = 4;
       return this;
@@ -4593,8 +4641,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (webhookCase_ == 7) {
           serviceDirectoryBuilder_.mergeFrom(value);
+        } else {
+          serviceDirectoryBuilder_.setMessage(value);
         }
-        serviceDirectoryBuilder_.setMessage(value);
       }
       webhookCase_ = 7;
       return this;

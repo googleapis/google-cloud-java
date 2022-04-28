@@ -360,6 +360,75 @@ public interface SecuritySettingsOrBuilder
    *
    *
    * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   *
+   * @return Whether the audioExportSettings field is set.
+   */
+  boolean hasAudioExportSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   *
+   * @return The audioExportSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings getAudioExportSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.AudioExportSettingsOrBuilder
+      getAudioExportSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,

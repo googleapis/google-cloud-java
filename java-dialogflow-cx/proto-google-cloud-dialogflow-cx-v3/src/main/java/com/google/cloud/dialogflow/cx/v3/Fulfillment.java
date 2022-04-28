@@ -154,6 +154,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -335,6 +337,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1296,6 +1300,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1520,6 +1526,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1735,6 +1743,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -2473,8 +2483,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             } else {
               if (casesOrMessageCase_ == 1) {
                 messageBuilder_.mergeFrom(value);
+              } else {
+                messageBuilder_.setMessage(value);
               }
-              messageBuilder_.setMessage(value);
             }
             casesOrMessageCase_ = 1;
             return this;
@@ -2698,8 +2709,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             } else {
               if (casesOrMessageCase_ == 2) {
                 additionalCasesBuilder_.mergeFrom(value);
+              } else {
+                additionalCasesBuilder_.setMessage(value);
               }
-              additionalCasesBuilder_.setMessage(value);
             }
             casesOrMessageCase_ = 2;
             return this;

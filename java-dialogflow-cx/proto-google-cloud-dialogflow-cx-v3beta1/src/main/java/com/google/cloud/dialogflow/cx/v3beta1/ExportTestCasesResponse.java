@@ -77,8 +77,8 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
             }
           case 18:
             {
-              destinationCase_ = 2;
               destination_ = input.readBytes();
+              destinationCase_ = 2;
               break;
             }
           default:
@@ -92,6 +92,8 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

@@ -77,8 +77,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
             }
           case 18:
             {
-              flowCase_ = 2;
               flow_ = input.readBytes();
+              flowCase_ = 2;
               break;
             }
           default:
@@ -92,6 +92,8 @@ public final class ExportFlowResponse extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

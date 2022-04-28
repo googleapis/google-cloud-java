@@ -104,6 +104,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -355,6 +357,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -520,6 +524,8 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1489,7 +1495,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       for (int i = 0; i < transitions_.size(); i++) {
         output.writeMessage(2, transitions_.get(i));
       }
-      if (coverageScore_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
         output.writeFloat(3, coverageScore_);
       }
       unknownFields.writeTo(output);
@@ -1507,7 +1513,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
       for (int i = 0; i < transitions_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, transitions_.get(i));
       }
-      if (coverageScore_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, coverageScore_);
       }
       size += unknownFields.getSerializedSize();
@@ -2749,7 +2755,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     for (int i = 0; i < coverages_.size(); i++) {
       output.writeMessage(1, coverages_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       output.writeFloat(2, coverageScore_);
     }
     unknownFields.writeTo(output);
@@ -2764,7 +2770,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
     for (int i = 0; i < coverages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, coverages_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, coverageScore_);
     }
     size += unknownFields.getSerializedSize();

@@ -87,8 +87,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
             }
           case 26:
             {
-              agentCase_ = 3;
               agent_ = input.readBytes();
+              agentCase_ = 3;
               break;
             }
           case 40:
@@ -109,6 +109,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

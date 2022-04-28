@@ -103,6 +103,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -306,6 +308,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1013,8 +1017,9 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         } else {
           if (kindCase_ == 1) {
             pageBuilder_.mergeFrom(value);
+          } else {
+            pageBuilder_.setMessage(value);
           }
-          pageBuilder_.setMessage(value);
         }
         kindCase_ = 1;
         return this;
@@ -1230,8 +1235,9 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         } else {
           if (kindCase_ == 2) {
             flowBuilder_.mergeFrom(value);
+          } else {
+            flowBuilder_.setMessage(value);
           }
-          flowBuilder_.setMessage(value);
         }
         kindCase_ = 2;
         return this;
@@ -1718,6 +1724,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3150,8 +3158,9 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         } else {
           if (detailCase_ == 5) {
             transitionRouteBuilder_.mergeFrom(value);
+          } else {
+            transitionRouteBuilder_.setMessage(value);
           }
-          transitionRouteBuilder_.setMessage(value);
         }
         detailCase_ = 5;
         return this;
@@ -3362,8 +3371,9 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
         } else {
           if (detailCase_ == 6) {
             eventHandlerBuilder_.mergeFrom(value);
+          } else {
+            eventHandlerBuilder_.setMessage(value);
           }
-          eventHandlerBuilder_.setMessage(value);
         }
         detailCase_ = 6;
         return this;
@@ -3634,7 +3644,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < transitions_.size(); i++) {
       output.writeMessage(1, transitions_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       output.writeFloat(2, coverageScore_);
     }
     unknownFields.writeTo(output);
@@ -3649,7 +3659,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < transitions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, transitions_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, coverageScore_);
     }
     size += unknownFields.getSerializedSize();

@@ -147,6 +147,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1086,8 +1088,9 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       } else {
         if (coverageTypeCase_ == 2) {
           intentCoverageBuilder_.mergeFrom(value);
+        } else {
+          intentCoverageBuilder_.setMessage(value);
         }
-        intentCoverageBuilder_.setMessage(value);
       }
       coverageTypeCase_ = 2;
       return this;
@@ -1298,8 +1301,9 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       } else {
         if (coverageTypeCase_ == 4) {
           transitionCoverageBuilder_.mergeFrom(value);
+        } else {
+          transitionCoverageBuilder_.setMessage(value);
         }
-        transitionCoverageBuilder_.setMessage(value);
       }
       coverageTypeCase_ = 4;
       return this;
@@ -1519,8 +1523,9 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       } else {
         if (coverageTypeCase_ == 6) {
           routeGroupCoverageBuilder_.mergeFrom(value);
+        } else {
+          routeGroupCoverageBuilder_.setMessage(value);
         }
-        routeGroupCoverageBuilder_.setMessage(value);
       }
       coverageTypeCase_ = 6;
       return this;

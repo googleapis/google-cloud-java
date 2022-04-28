@@ -112,6 +112,8 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -778,8 +780,9 @@ public final class VariantsHistory extends com.google.protobuf.GeneratedMessageV
       } else {
         if (variantsCase_ == 1) {
           versionVariantsBuilder_.mergeFrom(value);
+        } else {
+          versionVariantsBuilder_.setMessage(value);
         }
-        versionVariantsBuilder_.setMessage(value);
       }
       variantsCase_ = 1;
       return this;

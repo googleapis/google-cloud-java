@@ -102,6 +102,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -247,6 +249,8 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1002,7 +1006,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < intents_.size(); i++) {
       output.writeMessage(1, intents_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       output.writeFloat(2, coverageScore_);
     }
     unknownFields.writeTo(output);
@@ -1017,7 +1021,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < intents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, intents_.get(i));
     }
-    if (coverageScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(coverageScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, coverageScore_);
     }
     size += unknownFields.getSerializedSize();

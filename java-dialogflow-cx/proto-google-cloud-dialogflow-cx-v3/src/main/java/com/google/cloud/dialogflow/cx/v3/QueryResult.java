@@ -269,6 +269,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1137,6 +1139,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=604
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -1156,6 +1160,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=604
    * @return The intent.
    */
   @java.lang.Override
@@ -1200,6 +1206,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=613
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1401,7 +1409,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (intent_ != null) {
       output.writeMessage(8, getIntent());
     }
-    if (intentDetectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       output.writeFloat(9, intentDetectionConfidence_);
     }
     if (diagnosticInfo_ != null) {
@@ -1458,7 +1466,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (intent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getIntent());
     }
-    if (intentDetectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, intentDetectionConfidence_);
     }
     if (diagnosticInfo_ != null) {
@@ -2873,8 +2881,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (queryCase_ == 23) {
           dtmfBuilder_.mergeFrom(value);
+        } else {
+          dtmfBuilder_.setMessage(value);
         }
-        dtmfBuilder_.setMessage(value);
       }
       queryCase_ = 23;
       return this;
@@ -4715,6 +4724,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
+     *     google/cloud/dialogflow/cx/v3/session.proto;l=604
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -4733,6 +4744,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
+     *     google/cloud/dialogflow/cx/v3/session.proto;l=604
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -4933,6 +4946,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=613
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -4955,6 +4970,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=613
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -4980,6 +4997,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=613
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

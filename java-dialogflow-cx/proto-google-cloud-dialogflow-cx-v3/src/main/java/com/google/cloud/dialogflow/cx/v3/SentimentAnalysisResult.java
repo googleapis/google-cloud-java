@@ -91,6 +91,8 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -166,10 +168,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(1, score_);
     }
-    if (magnitude_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(magnitude_) != 0) {
       output.writeFloat(2, magnitude_);
     }
     unknownFields.writeTo(output);
@@ -181,10 +183,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
     }
-    if (magnitude_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(magnitude_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, magnitude_);
     }
     size += unknownFields.getSerializedSize();

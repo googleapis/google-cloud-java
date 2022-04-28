@@ -140,6 +140,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -733,7 +735,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.dialogflow.cx.v3.Match.MatchType.MATCH_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, matchType_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(5, confidence_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(event_)) {
@@ -761,7 +763,7 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.dialogflow.cx.v3.Match.MatchType.MATCH_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, matchType_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(event_)) {

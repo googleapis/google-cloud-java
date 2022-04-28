@@ -180,6 +180,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1170,8 +1172,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 2) {
           textBuilder_.mergeFrom(value);
+        } else {
+          textBuilder_.setMessage(value);
         }
-        textBuilder_.setMessage(value);
       }
       inputCase_ = 2;
       return this;
@@ -1379,8 +1382,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 3) {
           intentBuilder_.mergeFrom(value);
+        } else {
+          intentBuilder_.setMessage(value);
         }
-        intentBuilder_.setMessage(value);
       }
       inputCase_ = 3;
       return this;
@@ -1588,8 +1592,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 5) {
           audioBuilder_.mergeFrom(value);
+        } else {
+          audioBuilder_.setMessage(value);
         }
-        audioBuilder_.setMessage(value);
       }
       inputCase_ = 5;
       return this;
@@ -1797,8 +1802,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 6) {
           eventBuilder_.mergeFrom(value);
+        } else {
+          eventBuilder_.setMessage(value);
         }
-        eventBuilder_.setMessage(value);
       }
       inputCase_ = 6;
       return this;
@@ -2006,8 +2012,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 7) {
           dtmfBuilder_.mergeFrom(value);
+        } else {
+          dtmfBuilder_.setMessage(value);
         }
-        dtmfBuilder_.setMessage(value);
       }
       inputCase_ = 7;
       return this;

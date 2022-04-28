@@ -211,6 +211,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -802,6 +804,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -2826,6 +2830,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -2844,6 +2850,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -2865,6 +2873,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=245
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
