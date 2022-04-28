@@ -122,6 +122,8 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -854,8 +856,9 @@ public final class VmUtilizationInfo extends com.google.protobuf.GeneratedMessag
       } else {
         if (vmDetailsCase_ == 1) {
           vmwareVmDetailsBuilder_.mergeFrom(value);
+        } else {
+          vmwareVmDetailsBuilder_.setMessage(value);
         }
-        vmwareVmDetailsBuilder_.setMessage(value);
       }
       vmDetailsCase_ = 1;
       return this;

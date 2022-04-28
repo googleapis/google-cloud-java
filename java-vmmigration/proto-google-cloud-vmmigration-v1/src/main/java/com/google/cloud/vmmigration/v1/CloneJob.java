@@ -169,6 +169,8 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1411,8 +1413,9 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetVmDetailsCase_ == 20) {
           computeEngineTargetDetailsBuilder_.mergeFrom(value);
+        } else {
+          computeEngineTargetDetailsBuilder_.setMessage(value);
         }
-        computeEngineTargetDetailsBuilder_.setMessage(value);
       }
       targetVmDetailsCase_ = 20;
       return this;

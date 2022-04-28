@@ -112,6 +112,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -802,8 +804,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       } else {
         if (sourceVmsCase_ == 1) {
           vmwareVmsBuilder_.mergeFrom(value);
+        } else {
+          vmwareVmsBuilder_.setMessage(value);
         }
-        vmwareVmsBuilder_.setMessage(value);
       }
       sourceVmsCase_ = 1;
       return this;
