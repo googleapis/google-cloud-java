@@ -227,6 +227,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1135,6 +1137,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1298,6 +1302,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2271,6 +2277,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3968,8 +3976,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (authenticationCase_ == 1) {
             googleAccountBuilder_.mergeFrom(value);
+          } else {
+            googleAccountBuilder_.setMessage(value);
           }
-          googleAccountBuilder_.setMessage(value);
         }
         authenticationCase_ = 1;
         return this;
@@ -4228,8 +4237,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (authenticationCase_ == 2) {
             customAccountBuilder_.mergeFrom(value);
+          } else {
+            customAccountBuilder_.setMessage(value);
           }
-          customAccountBuilder_.setMessage(value);
         }
         authenticationCase_ = 2;
         return this;
@@ -4547,6 +4557,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
