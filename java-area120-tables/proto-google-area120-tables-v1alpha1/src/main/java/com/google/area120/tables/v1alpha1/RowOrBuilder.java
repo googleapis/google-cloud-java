@@ -102,8 +102,12 @@ public interface RowOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; values = 2;</code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getValuesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *
