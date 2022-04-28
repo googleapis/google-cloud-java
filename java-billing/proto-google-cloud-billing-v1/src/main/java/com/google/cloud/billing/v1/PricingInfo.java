@@ -140,6 +140,8 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -424,7 +426,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
     if (aggregationInfo_ != null) {
       output.writeMessage(4, getAggregationInfo());
     }
-    if (currencyConversionRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(currencyConversionRate_) != 0) {
       output.writeDouble(5, currencyConversionRate_);
     }
     unknownFields.writeTo(output);
@@ -448,7 +450,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
     if (aggregationInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAggregationInfo());
     }
-    if (currencyConversionRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(currencyConversionRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, currencyConversionRate_);
     }
     size += unknownFields.getSerializedSize();

@@ -145,6 +145,8 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -309,6 +311,8 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -415,7 +419,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (startUsageAmount_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(startUsageAmount_) != 0) {
         output.writeDouble(1, startUsageAmount_);
       }
       if (unitPrice_ != null) {
@@ -430,7 +434,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       if (size != -1) return size;
 
       size = 0;
-      if (startUsageAmount_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(startUsageAmount_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, startUsageAmount_);
       }
       if (unitPrice_ != null) {
@@ -1398,7 +1402,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, usageUnit_);
     }
-    if (displayQuantity_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(displayQuantity_) != 0) {
       output.writeDouble(2, displayQuantity_);
     }
     for (int i = 0; i < tieredRates_.size(); i++) {
@@ -1413,7 +1417,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnitDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, baseUnitDescription_);
     }
-    if (baseUnitConversionFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baseUnitConversionFactor_) != 0) {
       output.writeDouble(7, baseUnitConversionFactor_);
     }
     unknownFields.writeTo(output);
@@ -1428,7 +1432,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(usageUnit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, usageUnit_);
     }
-    if (displayQuantity_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(displayQuantity_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, displayQuantity_);
     }
     for (int i = 0; i < tieredRates_.size(); i++) {
@@ -1443,7 +1447,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseUnitDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, baseUnitDescription_);
     }
-    if (baseUnitConversionFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baseUnitConversionFactor_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(7, baseUnitConversionFactor_);
     }
     size += unknownFields.getSerializedSize();

@@ -1143,6 +1143,7 @@ public class CloudBillingClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = cloudBillingClient.setIamPolicy(request);
    * }
@@ -1170,6 +1171,7 @@ public class CloudBillingClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = cloudBillingClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.
