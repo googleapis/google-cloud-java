@@ -98,6 +98,8 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -399,10 +401,10 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       output.writeEnum(1, unit_);
     }
-    if (width_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(width_) != 0) {
       output.writeFloat(2, width_);
     }
-    if (height_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(height_) != 0) {
       output.writeFloat(3, height_);
     }
     unknownFields.writeTo(output);
@@ -420,10 +422,10 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, unit_);
     }
-    if (width_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(width_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, width_);
     }
-    if (height_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(height_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, height_);
     }
     size += unknownFields.getSerializedSize();

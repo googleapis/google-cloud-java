@@ -73,8 +73,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              dataCase_ = 1;
               data_ = input.readBytes();
+              dataCase_ = 1;
               break;
             }
           case 34:
@@ -111,6 +111,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -909,8 +911,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dataCase_ == 6) {
           inputConfigBuilder_.mergeFrom(value);
+        } else {
+          inputConfigBuilder_.setMessage(value);
         }
-        inputConfigBuilder_.setMessage(value);
       }
       dataCase_ = 6;
       return this;

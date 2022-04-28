@@ -109,6 +109,8 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -275,6 +277,8 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -385,16 +389,16 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         output.writeFloat(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         output.writeFloat(2, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         output.writeFloat(3, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         output.writeFloat(4, f1Score_);
       }
       unknownFields.writeTo(output);
@@ -406,16 +410,16 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, f1Score_);
       }
       size += unknownFields.getSerializedSize();
@@ -1182,10 +1186,10 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (iouThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iouThreshold_) != 0) {
       output.writeFloat(1, iouThreshold_);
     }
-    if (meanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       output.writeFloat(2, meanAveragePrecision_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {
@@ -1200,10 +1204,10 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (iouThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iouThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, iouThreshold_);
     }
-    if (meanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, meanAveragePrecision_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {

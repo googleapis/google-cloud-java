@@ -148,6 +148,8 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -491,7 +493,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public boolean containsTargetColumnCorrelations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTargetColumnCorrelations().getMap().containsKey(key);
   }
@@ -547,7 +549,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
       java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats> map =
         internalGetTargetColumnCorrelations().getMap();
@@ -575,7 +577,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
   public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats> map =
         internalGetTargetColumnCorrelations().getMap();
@@ -1718,7 +1720,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public boolean containsTargetColumnCorrelations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTargetColumnCorrelations().getMap().containsKey(key);
     }
@@ -1774,7 +1776,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
         java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats> map =
           internalGetTargetColumnCorrelations().getMap();
@@ -1802,7 +1804,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats> map =
           internalGetTargetColumnCorrelations().getMap();
@@ -1836,7 +1838,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      */
     public Builder removeTargetColumnCorrelations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTargetColumnCorrelations().getMutableMap().remove(key);
       return this;
@@ -1868,11 +1870,12 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     public Builder putTargetColumnCorrelations(
         java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableTargetColumnCorrelations().getMutableMap().put(key, value);
       return this;
     }

@@ -115,6 +115,8 @@ public final class VideoObjectTrackingEvaluationMetrics
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -319,7 +321,7 @@ public final class VideoObjectTrackingEvaluationMetrics
     for (int i = 0; i < boundingBoxMetricsEntries_.size(); i++) {
       output.writeMessage(4, boundingBoxMetricsEntries_.get(i));
     }
-    if (boundingBoxMeanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boundingBoxMeanAveragePrecision_) != 0) {
       output.writeFloat(6, boundingBoxMeanAveragePrecision_);
     }
     unknownFields.writeTo(output);
@@ -342,7 +344,7 @@ public final class VideoObjectTrackingEvaluationMetrics
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, boundingBoxMetricsEntries_.get(i));
     }
-    if (boundingBoxMeanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boundingBoxMeanAveragePrecision_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               6, boundingBoxMeanAveragePrecision_);

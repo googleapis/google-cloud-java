@@ -101,6 +101,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -255,7 +257,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(1, score_);
     }
     if (annotationCase_ == 3) {
@@ -270,7 +272,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
     }
     if (annotationCase_ == 3) {
@@ -736,8 +738,9 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       } else {
         if (annotationCase_ == 3) {
           textSegmentBuilder_.mergeFrom(value);
+        } else {
+          textSegmentBuilder_.setMessage(value);
         }
-        textSegmentBuilder_.setMessage(value);
       }
       annotationCase_ = 3;
       return this;

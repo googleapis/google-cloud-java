@@ -136,6 +136,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -936,8 +938,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       } else {
         if (modelDeploymentMetadataCase_ == 2) {
           imageObjectDetectionModelDeploymentMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageObjectDetectionModelDeploymentMetadataBuilder_.setMessage(value);
         }
-        imageObjectDetectionModelDeploymentMetadataBuilder_.setMessage(value);
       }
       modelDeploymentMetadataCase_ = 2;
       return this;
@@ -1181,8 +1184,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       } else {
         if (modelDeploymentMetadataCase_ == 4) {
           imageClassificationModelDeploymentMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationModelDeploymentMetadataBuilder_.setMessage(value);
         }
-        imageClassificationModelDeploymentMetadataBuilder_.setMessage(value);
       }
       modelDeploymentMetadataCase_ = 4;
       return this;

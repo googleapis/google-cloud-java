@@ -109,6 +109,8 @@ public final class ImageObjectDetectionEvaluationMetrics
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -292,7 +294,7 @@ public final class ImageObjectDetectionEvaluationMetrics
     for (int i = 0; i < boundingBoxMetricsEntries_.size(); i++) {
       output.writeMessage(2, boundingBoxMetricsEntries_.get(i));
     }
-    if (boundingBoxMeanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boundingBoxMeanAveragePrecision_) != 0) {
       output.writeFloat(3, boundingBoxMeanAveragePrecision_);
     }
     unknownFields.writeTo(output);
@@ -312,7 +314,7 @@ public final class ImageObjectDetectionEvaluationMetrics
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, boundingBoxMetricsEntries_.get(i));
     }
-    if (boundingBoxMeanAveragePrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boundingBoxMeanAveragePrecision_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               3, boundingBoxMeanAveragePrecision_);

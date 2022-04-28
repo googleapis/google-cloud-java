@@ -187,6 +187,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1245,8 +1247,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailCase_ == 2) {
           translationBuilder_.mergeFrom(value);
+        } else {
+          translationBuilder_.setMessage(value);
         }
-        translationBuilder_.setMessage(value);
       }
       detailCase_ = 2;
       return this;
@@ -1455,8 +1458,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailCase_ == 3) {
           classificationBuilder_.mergeFrom(value);
+        } else {
+          classificationBuilder_.setMessage(value);
         }
-        classificationBuilder_.setMessage(value);
       }
       detailCase_ = 3;
       return this;
@@ -1673,8 +1677,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailCase_ == 4) {
           imageObjectDetectionBuilder_.mergeFrom(value);
+        } else {
+          imageObjectDetectionBuilder_.setMessage(value);
         }
-        imageObjectDetectionBuilder_.setMessage(value);
       }
       detailCase_ = 4;
       return this;
@@ -1889,8 +1894,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailCase_ == 6) {
           textExtractionBuilder_.mergeFrom(value);
+        } else {
+          textExtractionBuilder_.setMessage(value);
         }
-        textExtractionBuilder_.setMessage(value);
       }
       detailCase_ = 6;
       return this;
@@ -2099,8 +2105,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailCase_ == 7) {
           textSentimentBuilder_.mergeFrom(value);
+        } else {
+          textSentimentBuilder_.setMessage(value);
         }
-        textSentimentBuilder_.setMessage(value);
       }
       detailCase_ = 7;
       return this;

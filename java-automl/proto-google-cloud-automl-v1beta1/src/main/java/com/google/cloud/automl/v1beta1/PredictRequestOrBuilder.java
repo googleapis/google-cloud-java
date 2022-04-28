@@ -202,7 +202,12 @@ public interface PredictRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
-  java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

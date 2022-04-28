@@ -117,6 +117,8 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -396,7 +398,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (nodeCount_ != 0L) {
       output.writeInt64(3, nodeCount_);
     }
-    if (nodeQps_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(nodeQps_) != 0) {
       output.writeDouble(4, nodeQps_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {
@@ -423,7 +425,7 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
     if (nodeCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, nodeCount_);
     }
-    if (nodeQps_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(nodeQps_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, nodeQps_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stopReason_)) {

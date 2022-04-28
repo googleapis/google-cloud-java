@@ -89,6 +89,8 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -162,10 +164,10 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (bleuScore_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(bleuScore_) != 0) {
       output.writeDouble(1, bleuScore_);
     }
-    if (baseBleuScore_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baseBleuScore_) != 0) {
       output.writeDouble(2, baseBleuScore_);
     }
     unknownFields.writeTo(output);
@@ -177,10 +179,10 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (bleuScore_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(bleuScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, bleuScore_);
     }
-    if (baseBleuScore_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baseBleuScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, baseBleuScore_);
     }
     size += unknownFields.getSerializedSize();

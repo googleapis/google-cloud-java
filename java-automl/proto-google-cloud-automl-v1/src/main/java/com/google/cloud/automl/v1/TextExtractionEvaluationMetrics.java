@@ -104,6 +104,8 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -272,6 +274,8 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -385,16 +389,16 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         output.writeFloat(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         output.writeFloat(3, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         output.writeFloat(4, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         output.writeFloat(5, f1Score_);
       }
       unknownFields.writeTo(output);
@@ -406,16 +410,16 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
       if (size != -1) return size;
 
       size = 0;
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, recall_);
       }
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, precision_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, f1Score_);
       }
       size += unknownFields.getSerializedSize();
@@ -1165,7 +1169,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (auPrc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(auPrc_) != 0) {
       output.writeFloat(1, auPrc_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {
@@ -1180,7 +1184,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (auPrc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(auPrc_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, auPrc_);
     }
     for (int i = 0; i < confidenceMetricsEntries_.size(); i++) {

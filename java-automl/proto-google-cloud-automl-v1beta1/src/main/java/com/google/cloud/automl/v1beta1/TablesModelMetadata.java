@@ -139,14 +139,14 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             }
           case 141:
             {
-              additionalOptimizationObjectiveConfigCase_ = 17;
               additionalOptimizationObjectiveConfig_ = input.readFloat();
+              additionalOptimizationObjectiveConfigCase_ = 17;
               break;
             }
           case 149:
             {
-              additionalOptimizationObjectiveConfigCase_ = 18;
               additionalOptimizationObjectiveConfig_ = input.readFloat();
+              additionalOptimizationObjectiveConfigCase_ = 18;
               break;
             }
           default:
@@ -160,6 +160,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

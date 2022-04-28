@@ -334,6 +334,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2061,8 +2063,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 23) {
           translationDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          translationDatasetMetadataBuilder_.setMessage(value);
         }
-        translationDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 23;
       return this;
@@ -2301,8 +2304,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 24) {
           imageClassificationDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationDatasetMetadataBuilder_.setMessage(value);
         }
-        imageClassificationDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 24;
       return this;
@@ -2544,8 +2548,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 25) {
           textClassificationDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          textClassificationDatasetMetadataBuilder_.setMessage(value);
         }
-        textClassificationDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 25;
       return this;
@@ -2788,8 +2793,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 26) {
           imageObjectDetectionDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageObjectDetectionDatasetMetadataBuilder_.setMessage(value);
         }
-        imageObjectDetectionDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 26;
       return this;
@@ -3032,8 +3038,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 31) {
           videoClassificationDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationDatasetMetadataBuilder_.setMessage(value);
         }
-        videoClassificationDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 31;
       return this;
@@ -3276,8 +3283,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 29) {
           videoObjectTrackingDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          videoObjectTrackingDatasetMetadataBuilder_.setMessage(value);
         }
-        videoObjectTrackingDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 29;
       return this;
@@ -3516,8 +3524,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 28) {
           textExtractionDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          textExtractionDatasetMetadataBuilder_.setMessage(value);
         }
-        textExtractionDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 28;
       return this;
@@ -3752,8 +3761,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 30) {
           textSentimentDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          textSentimentDatasetMetadataBuilder_.setMessage(value);
         }
-        textSentimentDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 30;
       return this;
@@ -3975,8 +3985,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (datasetMetadataCase_ == 33) {
           tablesDatasetMetadataBuilder_.mergeFrom(value);
+        } else {
+          tablesDatasetMetadataBuilder_.setMessage(value);
         }
-        tablesDatasetMetadataBuilder_.setMessage(value);
       }
       datasetMetadataCase_ = 33;
       return this;

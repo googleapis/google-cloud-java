@@ -134,6 +134,8 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -365,25 +367,25 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (precision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
       output.writeFloat(1, precision_);
     }
-    if (recall_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
       output.writeFloat(2, recall_);
     }
-    if (f1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
       output.writeFloat(3, f1Score_);
     }
-    if (meanAbsoluteError_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
       output.writeFloat(4, meanAbsoluteError_);
     }
-    if (meanSquaredError_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanSquaredError_) != 0) {
       output.writeFloat(5, meanSquaredError_);
     }
-    if (linearKappa_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(linearKappa_) != 0) {
       output.writeFloat(6, linearKappa_);
     }
-    if (quadraticKappa_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(quadraticKappa_) != 0) {
       output.writeFloat(7, quadraticKappa_);
     }
     if (confusionMatrix_ != null) {
@@ -398,25 +400,25 @@ public final class TextSentimentEvaluationMetrics extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (precision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, precision_);
     }
-    if (recall_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
     }
-    if (f1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, f1Score_);
     }
-    if (meanAbsoluteError_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, meanAbsoluteError_);
     }
-    if (meanSquaredError_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanSquaredError_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, meanSquaredError_);
     }
-    if (linearKappa_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(linearKappa_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, linearKappa_);
     }
-    if (quadraticKappa_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(quadraticKappa_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, quadraticKappa_);
     }
     if (confusionMatrix_ != null) {

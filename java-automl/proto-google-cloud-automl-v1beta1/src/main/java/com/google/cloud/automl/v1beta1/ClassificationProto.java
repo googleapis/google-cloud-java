@@ -276,6 +276,8 @@ public final class ClassificationProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -336,7 +338,7 @@ public final class ClassificationProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         output.writeFloat(1, score_);
       }
       unknownFields.writeTo(output);
@@ -348,7 +350,7 @@ public final class ClassificationProto {
       if (size != -1) return size;
 
       size = 0;
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
       }
       size += unknownFields.getSerializedSize();
@@ -1040,6 +1042,8 @@ public final class ClassificationProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2356,6 +2360,8 @@ public final class ClassificationProto {
      *
      * <code>float base_au_prc = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
+     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
      * @return The baseAuPrc.
      */
     @java.lang.Deprecated
@@ -2730,6 +2736,8 @@ public final class ClassificationProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3094,6 +3102,8 @@ public final class ClassificationProto {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3400,31 +3410,31 @@ public final class ClassificationProto {
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (confidenceThreshold_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
           output.writeFloat(1, confidenceThreshold_);
         }
-        if (recall_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
           output.writeFloat(2, recall_);
         }
-        if (precision_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
           output.writeFloat(3, precision_);
         }
-        if (f1Score_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
           output.writeFloat(4, f1Score_);
         }
-        if (recallAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(recallAt1_) != 0) {
           output.writeFloat(5, recallAt1_);
         }
-        if (precisionAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(precisionAt1_) != 0) {
           output.writeFloat(6, precisionAt1_);
         }
-        if (f1ScoreAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(f1ScoreAt1_) != 0) {
           output.writeFloat(7, f1ScoreAt1_);
         }
-        if (falsePositiveRate_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(falsePositiveRate_) != 0) {
           output.writeFloat(8, falsePositiveRate_);
         }
-        if (falsePositiveRateAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(falsePositiveRateAt1_) != 0) {
           output.writeFloat(9, falsePositiveRateAt1_);
         }
         if (truePositiveCount_ != 0L) {
@@ -3451,31 +3461,31 @@ public final class ClassificationProto {
         if (size != -1) return size;
 
         size = 0;
-        if (confidenceThreshold_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
         }
-        if (recall_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
         }
-        if (precision_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, precision_);
         }
-        if (f1Score_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, f1Score_);
         }
-        if (recallAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(recallAt1_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, recallAt1_);
         }
-        if (precisionAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(precisionAt1_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, precisionAt1_);
         }
-        if (f1ScoreAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(f1ScoreAt1_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, f1ScoreAt1_);
         }
-        if (falsePositiveRate_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(falsePositiveRate_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, falsePositiveRate_);
         }
-        if (falsePositiveRateAt1_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(falsePositiveRateAt1_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, falsePositiveRateAt1_);
         }
         if (truePositiveCount_ != 0L) {
@@ -5136,6 +5146,8 @@ public final class ClassificationProto {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5312,6 +5324,8 @@ public final class ClassificationProto {
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -7801,6 +7815,8 @@ public final class ClassificationProto {
      *
      * <code>float base_au_prc = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
+     *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
      * @return The baseAuPrc.
      */
     @java.lang.Override
@@ -8113,10 +8129,10 @@ public final class ClassificationProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (auPrc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(auPrc_) != 0) {
         output.writeFloat(1, auPrc_);
       }
-      if (baseAuPrc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(baseAuPrc_) != 0) {
         output.writeFloat(2, baseAuPrc_);
       }
       for (int i = 0; i < confidenceMetricsEntry_.size(); i++) {
@@ -8128,10 +8144,10 @@ public final class ClassificationProto {
       for (int i = 0; i < annotationSpecId_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, annotationSpecId_.getRaw(i));
       }
-      if (auRoc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(auRoc_) != 0) {
         output.writeFloat(6, auRoc_);
       }
-      if (logLoss_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(logLoss_) != 0) {
         output.writeFloat(7, logLoss_);
       }
       unknownFields.writeTo(output);
@@ -8143,10 +8159,10 @@ public final class ClassificationProto {
       if (size != -1) return size;
 
       size = 0;
-      if (auPrc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(auPrc_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, auPrc_);
       }
-      if (baseAuPrc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(baseAuPrc_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, baseAuPrc_);
       }
       for (int i = 0; i < confidenceMetricsEntry_.size(); i++) {
@@ -8165,10 +8181,10 @@ public final class ClassificationProto {
         size += dataSize;
         size += 1 * getAnnotationSpecIdList().size();
       }
-      if (auRoc_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(auRoc_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, auRoc_);
       }
-      if (logLoss_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(logLoss_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, logLoss_);
       }
       size += unknownFields.getSerializedSize();
@@ -8702,6 +8718,8 @@ public final class ClassificationProto {
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
        * @return The baseAuPrc.
        */
       @java.lang.Override
@@ -8720,6 +8738,8 @@ public final class ClassificationProto {
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
        * @param value The baseAuPrc to set.
        * @return This builder for chaining.
        */
@@ -8741,6 +8761,8 @@ public final class ClassificationProto {
        *
        * <code>float base_au_prc = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.base_au_prc is
+       *     deprecated. See google/cloud/automl/v1beta1/classification.proto;l=189
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

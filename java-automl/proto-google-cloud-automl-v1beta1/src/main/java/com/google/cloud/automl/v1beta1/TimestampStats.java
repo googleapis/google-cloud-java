@@ -100,6 +100,8 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -275,6 +277,8 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1018,7 +1022,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsGranularStats(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetGranularStats().getMap().containsKey(key);
   }
@@ -1071,7 +1075,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       java.lang.String key,
       com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
         map = internalGetGranularStats().getMap();
@@ -1096,7 +1100,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
         map = internalGetGranularStats().getMap();
@@ -1503,7 +1507,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsGranularStats(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetGranularStats().getMap().containsKey(key);
     }
@@ -1556,7 +1560,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
           map = internalGetGranularStats().getMap();
@@ -1581,7 +1585,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
           map = internalGetGranularStats().getMap();
@@ -1612,7 +1616,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeGranularStats(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableGranularStats().getMutableMap().remove(key);
       return this;
@@ -1642,11 +1646,12 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     public Builder putGranularStats(
         java.lang.String key, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableGranularStats().getMutableMap().put(key, value);
       return this;
     }

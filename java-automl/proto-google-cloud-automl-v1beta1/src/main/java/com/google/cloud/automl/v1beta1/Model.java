@@ -337,6 +337,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2232,8 +2234,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 15) {
           translationModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          translationModelMetadataBuilder_.setMessage(value);
         }
-        translationModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 15;
       return this;
@@ -2466,8 +2469,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 13) {
           imageClassificationModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageClassificationModelMetadataBuilder_.setMessage(value);
         }
-        imageClassificationModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 13;
       return this;
@@ -2703,8 +2707,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 14) {
           textClassificationModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          textClassificationModelMetadataBuilder_.setMessage(value);
         }
-        textClassificationModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 14;
       return this;
@@ -2941,8 +2946,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 20) {
           imageObjectDetectionModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          imageObjectDetectionModelMetadataBuilder_.setMessage(value);
         }
-        imageObjectDetectionModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 20;
       return this;
@@ -3181,8 +3187,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 23) {
           videoClassificationModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          videoClassificationModelMetadataBuilder_.setMessage(value);
         }
-        videoClassificationModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 23;
       return this;
@@ -3420,8 +3427,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 21) {
           videoObjectTrackingModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          videoObjectTrackingModelMetadataBuilder_.setMessage(value);
         }
-        videoObjectTrackingModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 21;
       return this;
@@ -3656,8 +3664,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 19) {
           textExtractionModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          textExtractionModelMetadataBuilder_.setMessage(value);
         }
-        textExtractionModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 19;
       return this;
@@ -3879,8 +3888,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 24) {
           tablesModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          tablesModelMetadataBuilder_.setMessage(value);
         }
-        tablesModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 24;
       return this;
@@ -4105,8 +4115,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (modelMetadataCase_ == 22) {
           textSentimentModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          textSentimentModelMetadataBuilder_.setMessage(value);
         }
-        textSentimentModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 22;
       return this;

@@ -102,6 +102,8 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -280,7 +282,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, columnDisplayName_);
     }
-    if (featureImportance_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(featureImportance_) != 0) {
       output.writeFloat(3, featureImportance_);
     }
     unknownFields.writeTo(output);
@@ -298,7 +300,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, columnDisplayName_);
     }
-    if (featureImportance_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(featureImportance_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, featureImportance_);
     }
     size += unknownFields.getSerializedSize();

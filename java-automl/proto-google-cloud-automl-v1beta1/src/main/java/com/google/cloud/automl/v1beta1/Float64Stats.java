@@ -130,6 +130,8 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -281,6 +283,8 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -374,10 +378,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (min_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(min_) != 0) {
         output.writeDouble(1, min_);
       }
-      if (max_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(max_) != 0) {
         output.writeDouble(2, max_);
       }
       if (count_ != 0L) {
@@ -392,10 +396,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      if (min_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(min_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, min_);
       }
-      if (max_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(max_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, max_);
       }
       if (count_ != 0L) {
@@ -1146,10 +1150,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (mean_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(mean_) != 0) {
       output.writeDouble(1, mean_);
     }
-    if (standardDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(standardDeviation_) != 0) {
       output.writeDouble(2, standardDeviation_);
     }
     if (getQuantilesList().size() > 0) {
@@ -1171,10 +1175,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (mean_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(mean_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, mean_);
     }
-    if (standardDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(standardDeviation_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, standardDeviation_);
     }
     {

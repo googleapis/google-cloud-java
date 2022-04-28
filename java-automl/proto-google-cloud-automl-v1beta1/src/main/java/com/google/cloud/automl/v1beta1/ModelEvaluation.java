@@ -291,6 +291,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1867,8 +1869,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 8) {
           classificationEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          classificationEvaluationMetricsBuilder_.setMessage(value);
         }
-        classificationEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 8;
       return this;
@@ -2142,8 +2145,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 24) {
           regressionEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          regressionEvaluationMetricsBuilder_.setMessage(value);
         }
-        regressionEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 24;
       return this;
@@ -2390,8 +2394,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 9) {
           translationEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          translationEvaluationMetricsBuilder_.setMessage(value);
         }
-        translationEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 9;
       return this;
@@ -2629,8 +2634,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 12) {
           imageObjectDetectionEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          imageObjectDetectionEvaluationMetricsBuilder_.setMessage(value);
         }
-        imageObjectDetectionEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 12;
       return this;
@@ -2870,8 +2876,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 14) {
           videoObjectTrackingEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          videoObjectTrackingEvaluationMetricsBuilder_.setMessage(value);
         }
-        videoObjectTrackingEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 14;
       return this;
@@ -3116,8 +3123,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 11) {
           textSentimentEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          textSentimentEvaluationMetricsBuilder_.setMessage(value);
         }
-        textSentimentEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 11;
       return this;
@@ -3360,8 +3368,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         if (metricsCase_ == 13) {
           textExtractionEvaluationMetricsBuilder_.mergeFrom(value);
+        } else {
+          textExtractionEvaluationMetricsBuilder_.setMessage(value);
         }
-        textExtractionEvaluationMetricsBuilder_.setMessage(value);
       }
       metricsCase_ = 13;
       return this;

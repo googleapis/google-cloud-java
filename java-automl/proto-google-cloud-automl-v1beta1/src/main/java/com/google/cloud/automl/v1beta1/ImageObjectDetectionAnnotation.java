@@ -101,6 +101,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -208,7 +210,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     if (boundingBox_ != null) {
       output.writeMessage(1, getBoundingBox());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(2, score_);
     }
     unknownFields.writeTo(output);
@@ -223,7 +225,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     if (boundingBox_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBoundingBox());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
     }
     size += unknownFields.getSerializedSize();

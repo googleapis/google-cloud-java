@@ -86,6 +86,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -141,7 +143,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (cramersV_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cramersV_) != 0) {
       output.writeDouble(1, cramersV_);
     }
     unknownFields.writeTo(output);
@@ -153,7 +155,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (cramersV_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cramersV_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, cramersV_);
     }
     size += unknownFields.getSerializedSize();

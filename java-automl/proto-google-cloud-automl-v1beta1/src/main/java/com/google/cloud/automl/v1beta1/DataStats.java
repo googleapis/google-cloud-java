@@ -190,6 +190,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1283,8 +1285,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 3) {
           float64StatsBuilder_.mergeFrom(value);
+        } else {
+          float64StatsBuilder_.setMessage(value);
         }
-        float64StatsBuilder_.setMessage(value);
       }
       statsCase_ = 3;
       return this;
@@ -1492,8 +1495,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 4) {
           stringStatsBuilder_.mergeFrom(value);
+        } else {
+          stringStatsBuilder_.setMessage(value);
         }
-        stringStatsBuilder_.setMessage(value);
       }
       statsCase_ = 4;
       return this;
@@ -1701,8 +1705,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 5) {
           timestampStatsBuilder_.mergeFrom(value);
+        } else {
+          timestampStatsBuilder_.setMessage(value);
         }
-        timestampStatsBuilder_.setMessage(value);
       }
       statsCase_ = 5;
       return this;
@@ -1910,8 +1915,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 6) {
           arrayStatsBuilder_.mergeFrom(value);
+        } else {
+          arrayStatsBuilder_.setMessage(value);
         }
-        arrayStatsBuilder_.setMessage(value);
       }
       statsCase_ = 6;
       return this;
@@ -2119,8 +2125,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 7) {
           structStatsBuilder_.mergeFrom(value);
+        } else {
+          structStatsBuilder_.setMessage(value);
         }
-        structStatsBuilder_.setMessage(value);
       }
       statsCase_ = 7;
       return this;
@@ -2328,8 +2335,9 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (statsCase_ == 8) {
           categoryStatsBuilder_.mergeFrom(value);
+        } else {
+          categoryStatsBuilder_.setMessage(value);
         }
-        categoryStatsBuilder_.setMessage(value);
       }
       statsCase_ = 8;
       return this;

@@ -122,6 +122,8 @@ public final class TextSentimentProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -818,6 +820,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
@@ -832,6 +836,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
@@ -846,6 +852,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @param index The index of the element to return.
      * @return The annotationSpecId at the given index.
      */
@@ -861,6 +869,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @param index The index of the value to return.
      * @return The bytes of the annotationSpecId at the given index.
      */
@@ -998,6 +1008,8 @@ public final class TextSentimentProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1235,6 +1247,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @return A list containing the annotationSpecId.
      */
     @java.lang.Deprecated
@@ -1251,6 +1265,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @return The count of annotationSpecId.
      */
     @java.lang.Deprecated
@@ -1267,6 +1283,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @param index The index of the element to return.
      * @return The annotationSpecId at the given index.
      */
@@ -1284,6 +1302,8 @@ public final class TextSentimentProto {
      *
      * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id is
+     *     deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
      * @param index The index of the value to return.
      * @return The bytes of the annotationSpecId at the given index.
      */
@@ -1306,25 +1326,25 @@ public final class TextSentimentProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         output.writeFloat(1, precision_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         output.writeFloat(2, recall_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         output.writeFloat(3, f1Score_);
       }
-      if (meanAbsoluteError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
         output.writeFloat(4, meanAbsoluteError_);
       }
-      if (meanSquaredError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanSquaredError_) != 0) {
         output.writeFloat(5, meanSquaredError_);
       }
-      if (linearKappa_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(linearKappa_) != 0) {
         output.writeFloat(6, linearKappa_);
       }
-      if (quadraticKappa_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(quadraticKappa_) != 0) {
         output.writeFloat(7, quadraticKappa_);
       }
       if (confusionMatrix_ != null) {
@@ -1342,25 +1362,25 @@ public final class TextSentimentProto {
       if (size != -1) return size;
 
       size = 0;
-      if (precision_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(precision_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, precision_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
       }
-      if (f1Score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(f1Score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, f1Score_);
       }
-      if (meanAbsoluteError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, meanAbsoluteError_);
       }
-      if (meanSquaredError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanSquaredError_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, meanSquaredError_);
       }
-      if (linearKappa_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(linearKappa_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, linearKappa_);
       }
-      if (quadraticKappa_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(quadraticKappa_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, quadraticKappa_);
       }
       if (confusionMatrix_ != null) {
@@ -2446,6 +2466,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @return A list containing the annotationSpecId.
        */
       @java.lang.Deprecated
@@ -2462,6 +2484,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @return The count of annotationSpecId.
        */
       @java.lang.Deprecated
@@ -2478,6 +2502,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param index The index of the element to return.
        * @return The annotationSpecId at the given index.
        */
@@ -2495,6 +2521,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param index The index of the value to return.
        * @return The bytes of the annotationSpecId at the given index.
        */
@@ -2512,6 +2540,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param index The index to set the value at.
        * @param value The annotationSpecId to set.
        * @return This builder for chaining.
@@ -2536,6 +2566,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param value The annotationSpecId to add.
        * @return This builder for chaining.
        */
@@ -2559,6 +2591,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param values The annotationSpecId to add.
        * @return This builder for chaining.
        */
@@ -2579,6 +2613,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -2598,6 +2634,8 @@ public final class TextSentimentProto {
        *
        * <code>repeated string annotation_spec_id = 9 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics.annotation_spec_id
+       *     is deprecated. See google/cloud/automl/v1beta1/text_sentiment.proto;l=78
        * @param value The bytes of the annotationSpecId to add.
        * @return This builder for chaining.
        */

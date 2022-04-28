@@ -124,6 +124,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -353,7 +355,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     if (boundingBox_ != null) {
       output.writeMessage(3, getBoundingBox());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(4, score_);
     }
     unknownFields.writeTo(output);
@@ -374,7 +376,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     if (boundingBox_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBoundingBox());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
     }
     size += unknownFields.getSerializedSize();

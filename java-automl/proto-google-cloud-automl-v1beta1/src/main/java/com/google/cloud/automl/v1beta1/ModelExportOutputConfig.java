@@ -136,6 +136,8 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -522,7 +524,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetParams().getMap().containsKey(key);
   }
@@ -567,7 +569,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -589,7 +591,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
     if (!map.containsKey(key)) {
@@ -1195,8 +1197,9 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 1) {
           gcsDestinationBuilder_.mergeFrom(value);
+        } else {
+          gcsDestinationBuilder_.setMessage(value);
         }
-        gcsDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 1;
       return this;
@@ -1448,8 +1451,9 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 3) {
           gcrDestinationBuilder_.mergeFrom(value);
+        } else {
+          gcrDestinationBuilder_.setMessage(value);
         }
-        gcrDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 3;
       return this;
@@ -1910,7 +1914,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParams().getMap().containsKey(key);
     }
@@ -1956,7 +1960,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1978,7 +1982,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParams().getMap();
       if (!map.containsKey(key)) {
@@ -2007,7 +2011,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      */
     public Builder removeParams(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableParams().getMutableMap().remove(key);
       return this;
@@ -2033,11 +2037,12 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      */
     public Builder putParams(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableParams().getMutableMap().put(key, value);
       return this;
     }

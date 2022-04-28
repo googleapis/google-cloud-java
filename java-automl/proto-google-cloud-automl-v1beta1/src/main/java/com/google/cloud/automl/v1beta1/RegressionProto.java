@@ -185,6 +185,8 @@ public final class RegressionProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -314,19 +316,19 @@ public final class RegressionProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (rootMeanSquaredError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rootMeanSquaredError_) != 0) {
         output.writeFloat(1, rootMeanSquaredError_);
       }
-      if (meanAbsoluteError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
         output.writeFloat(2, meanAbsoluteError_);
       }
-      if (meanAbsolutePercentageError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsolutePercentageError_) != 0) {
         output.writeFloat(3, meanAbsolutePercentageError_);
       }
-      if (rSquared_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rSquared_) != 0) {
         output.writeFloat(4, rSquared_);
       }
-      if (rootMeanSquaredLogError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rootMeanSquaredLogError_) != 0) {
         output.writeFloat(5, rootMeanSquaredLogError_);
       }
       unknownFields.writeTo(output);
@@ -338,20 +340,20 @@ public final class RegressionProto {
       if (size != -1) return size;
 
       size = 0;
-      if (rootMeanSquaredError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rootMeanSquaredError_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, rootMeanSquaredError_);
       }
-      if (meanAbsoluteError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsoluteError_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, meanAbsoluteError_);
       }
-      if (meanAbsolutePercentageError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(meanAbsolutePercentageError_) != 0) {
         size +=
             com.google.protobuf.CodedOutputStream.computeFloatSize(3, meanAbsolutePercentageError_);
       }
-      if (rSquared_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rSquared_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, rSquared_);
       }
-      if (rootMeanSquaredLogError_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(rootMeanSquaredLogError_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, rootMeanSquaredLogError_);
       }
       size += unknownFields.getSerializedSize();

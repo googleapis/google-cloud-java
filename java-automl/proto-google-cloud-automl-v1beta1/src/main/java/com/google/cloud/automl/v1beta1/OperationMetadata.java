@@ -316,6 +316,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1927,8 +1929,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 8) {
           deleteDetailsBuilder_.mergeFrom(value);
+        } else {
+          deleteDetailsBuilder_.setMessage(value);
         }
-        deleteDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 8;
       return this;
@@ -2147,8 +2150,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 24) {
           deployModelDetailsBuilder_.mergeFrom(value);
+        } else {
+          deployModelDetailsBuilder_.setMessage(value);
         }
-        deployModelDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 24;
       return this;
@@ -2378,8 +2382,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 25) {
           undeployModelDetailsBuilder_.mergeFrom(value);
+        } else {
+          undeployModelDetailsBuilder_.setMessage(value);
         }
-        undeployModelDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 25;
       return this;
@@ -2607,8 +2612,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 10) {
           createModelDetailsBuilder_.mergeFrom(value);
+        } else {
+          createModelDetailsBuilder_.setMessage(value);
         }
-        createModelDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 10;
       return this;
@@ -2832,8 +2838,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 15) {
           importDataDetailsBuilder_.mergeFrom(value);
+        } else {
+          importDataDetailsBuilder_.setMessage(value);
         }
-        importDataDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 15;
       return this;
@@ -3057,8 +3064,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 16) {
           batchPredictDetailsBuilder_.mergeFrom(value);
+        } else {
+          batchPredictDetailsBuilder_.setMessage(value);
         }
-        batchPredictDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 16;
       return this;
@@ -3282,8 +3290,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 21) {
           exportDataDetailsBuilder_.mergeFrom(value);
+        } else {
+          exportDataDetailsBuilder_.setMessage(value);
         }
-        exportDataDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 21;
       return this;
@@ -3507,8 +3516,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 22) {
           exportModelDetailsBuilder_.mergeFrom(value);
+        } else {
+          exportModelDetailsBuilder_.setMessage(value);
         }
-        exportModelDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 22;
       return this;
@@ -3743,8 +3753,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         if (detailsCase_ == 26) {
           exportEvaluatedExamplesDetailsBuilder_.mergeFrom(value);
+        } else {
+          exportEvaluatedExamplesDetailsBuilder_.setMessage(value);
         }
-        exportEvaluatedExamplesDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 26;
       return this;
