@@ -406,8 +406,12 @@ public interface FilterOrBuilder
    * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.protobuf.ListValue getLabelsOrDefault(
-      java.lang.String key, com.google.protobuf.ListValue defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.ListValue defaultValue);
   /**
    *
    *

@@ -113,6 +113,8 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -824,8 +826,9 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (budgetAmountCase_ == 1) {
           specifiedAmountBuilder_.mergeFrom(value);
+        } else {
+          specifiedAmountBuilder_.setMessage(value);
         }
-        specifiedAmountBuilder_.setMessage(value);
       }
       budgetAmountCase_ = 1;
       return this;
@@ -1063,8 +1066,9 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (budgetAmountCase_ == 2) {
           lastPeriodAmountBuilder_.mergeFrom(value);
+        } else {
+          lastPeriodAmountBuilder_.setMessage(value);
         }
-        lastPeriodAmountBuilder_.setMessage(value);
       }
       budgetAmountCase_ = 2;
       return this;

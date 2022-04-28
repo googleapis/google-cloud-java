@@ -175,6 +175,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -864,7 +866,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -916,7 +918,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ListValue getLabelsOrDefault(
       java.lang.String key, com.google.protobuf.ListValue defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
         internalGetLabels().getMap();
@@ -942,7 +944,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
         internalGetLabels().getMap();
@@ -2673,7 +2675,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2725,7 +2727,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ListValue getLabelsOrDefault(
         java.lang.String key, com.google.protobuf.ListValue defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
           internalGetLabels().getMap();
@@ -2751,7 +2753,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
           internalGetLabels().getMap();
@@ -2784,7 +2786,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -2813,11 +2815,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, com.google.protobuf.ListValue value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3131,8 +3134,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (usagePeriodCase_ == 9) {
           customPeriodBuilder_.mergeFrom(value);
+        } else {
+          customPeriodBuilder_.setMessage(value);
         }
-        customPeriodBuilder_.setMessage(value);
       }
       usagePeriodCase_ = 9;
       return this;
