@@ -353,7 +353,12 @@ public interface BatchTranslateDocumentRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; models = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getModelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getModelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -426,8 +431,12 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * map&lt;string, .google.cloud.translation.v3.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossariesOrDefault(
-      java.lang.String key, com.google.cloud.translate.v3.TranslateTextGlossaryConfig defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.translate.v3.TranslateTextGlossaryConfig defaultValue);
   /**
    *
    *
@@ -520,8 +529,12 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   java.lang.String getFormatConversionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

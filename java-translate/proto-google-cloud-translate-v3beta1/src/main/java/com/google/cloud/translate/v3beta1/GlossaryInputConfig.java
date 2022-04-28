@@ -95,6 +95,8 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -815,8 +817,9 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (sourceCase_ == 1) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;

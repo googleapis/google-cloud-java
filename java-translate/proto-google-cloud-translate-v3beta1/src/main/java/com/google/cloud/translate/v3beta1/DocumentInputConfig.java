@@ -72,8 +72,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
             break;
           case 10:
             {
-              sourceCase_ = 1;
               source_ = input.readBytes();
+              sourceCase_ = 1;
               break;
             }
           case 18:
@@ -110,6 +110,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -924,8 +926,9 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       } else {
         if (sourceCase_ == 2) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;

@@ -180,6 +180,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -340,6 +342,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1216,6 +1220,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2986,8 +2992,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (languagesCase_ == 3) {
           languagePairBuilder_.mergeFrom(value);
+        } else {
+          languagePairBuilder_.setMessage(value);
         }
-        languagePairBuilder_.setMessage(value);
       }
       languagesCase_ = 3;
       return this;
@@ -3200,8 +3207,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (languagesCase_ == 4) {
           languageCodesSetBuilder_.mergeFrom(value);
+        } else {
+          languageCodesSetBuilder_.setMessage(value);
         }
-        languageCodesSetBuilder_.setMessage(value);
       }
       languagesCase_ = 4;
       return this;
