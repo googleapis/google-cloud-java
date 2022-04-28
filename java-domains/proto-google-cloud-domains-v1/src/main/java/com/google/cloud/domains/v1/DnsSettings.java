@@ -135,6 +135,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -540,6 +542,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2016,6 +2020,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3638,6 +3644,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5519,6 +5527,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7442,8 +7452,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dnsProviderCase_ == 1) {
           customDnsBuilder_.mergeFrom(value);
+        } else {
+          customDnsBuilder_.setMessage(value);
         }
-        customDnsBuilder_.setMessage(value);
       }
       dnsProviderCase_ = 1;
       return this;
@@ -7659,8 +7670,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (dnsProviderCase_ == 2) {
           googleDomainsDnsBuilder_.mergeFrom(value);
+        } else {
+          googleDomainsDnsBuilder_.setMessage(value);
         }
-        googleDomainsDnsBuilder_.setMessage(value);
       }
       dnsProviderCase_ = 2;
       return this;
