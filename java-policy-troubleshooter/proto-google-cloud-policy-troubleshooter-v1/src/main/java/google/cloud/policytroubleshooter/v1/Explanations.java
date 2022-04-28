@@ -590,6 +590,8 @@ public final class Explanations {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1924,6 +1926,8 @@ public final class Explanations {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4053,9 +4057,12 @@ public final class Explanations {
      * map&lt;string, .google.cloud.policytroubleshooter.v1.BindingExplanation.AnnotatedMembership&gt; memberships = 5;
      * </code>
      */
+
+    /* nullable */
     google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
         getMembershipsOrDefault(
             java.lang.String key,
+            /* nullable */
             google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
                 defaultValue);
     /**
@@ -4294,6 +4301,8 @@ public final class Explanations {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4863,6 +4872,8 @@ public final class Explanations {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5909,7 +5920,7 @@ public final class Explanations {
     @java.lang.Override
     public boolean containsMemberships(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMemberships().getMap().containsKey(key);
     }
@@ -5988,7 +5999,7 @@ public final class Explanations {
             google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -6026,7 +6037,7 @@ public final class Explanations {
     public google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
         getMembershipsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -7173,7 +7184,7 @@ public final class Explanations {
       @java.lang.Override
       public boolean containsMemberships(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetMemberships().getMap().containsKey(key);
       }
@@ -7254,7 +7265,7 @@ public final class Explanations {
                       .AnnotatedMembership
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -7293,7 +7304,7 @@ public final class Explanations {
               .AnnotatedMembership
           getMembershipsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -7337,7 +7348,7 @@ public final class Explanations {
        */
       public Builder removeMemberships(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableMemberships().getMutableMap().remove(key);
         return this;
@@ -7381,11 +7392,12 @@ public final class Explanations {
           google.cloud.policytroubleshooter.v1.Explanations.BindingExplanation.AnnotatedMembership
               value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableMemberships().getMutableMap().put(key, value);
         return this;
       }
