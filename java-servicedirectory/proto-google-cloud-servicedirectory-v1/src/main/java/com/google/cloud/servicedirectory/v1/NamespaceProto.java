@@ -46,28 +46,26 @@ public final class NamespaceProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/servicedirectory/v1/names"
           + "pace.proto\022 google.cloud.servicedirector"
-          + "y.v1\032\034google/api/annotations.proto\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\"\213\002\n\tNamespace\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\005\022L\n\006labels\030\002 \003(\01327.google.cloud.s"
-          + "ervicedirectory.v1.Namespace.LabelsEntry"
-          + "B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001:n\352Ak\n)servicedirectory.goog"
-          + "leapis.com/Namespace\022>projects/{project}"
-          + "/locations/{location}/namespaces/{namesp"
-          + "ace}B\371\001\n$com.google.cloud.servicedirecto"
-          + "ry.v1B\016NamespaceProtoP\001ZPgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/servicedire"
-          + "ctory/v1;servicedirectory\370\001\001\252\002 Google.Cl"
-          + "oud.ServiceDirectory.V1\312\002 Google\\Cloud\\S"
-          + "erviceDirectory\\V1\352\002#Google::Cloud::Serv"
-          + "iceDirectory::V1b\006proto3"
+          + "y.v1\032\037google/api/field_behavior.proto\032\031g"
+          + "oogle/api/resource.proto\"\213\002\n\tNamespace\022\021"
+          + "\n\004name\030\001 \001(\tB\003\340A\005\022L\n\006labels\030\002 \003(\01327.goog"
+          + "le.cloud.servicedirectory.v1.Namespace.L"
+          + "abelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak\n)servicedire"
+          + "ctory.googleapis.com/Namespace\022>projects"
+          + "/{project}/locations/{location}/namespac"
+          + "es/{namespace}B\371\001\n$com.google.cloud.serv"
+          + "icedirectory.v1B\016NamespaceProtoP\001ZPgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/s"
+          + "ervicedirectory/v1;servicedirectory\370\001\001\252\002"
+          + " Google.Cloud.ServiceDirectory.V1\312\002 Goog"
+          + "le\\Cloud\\ServiceDirectory\\V1\352\002#Google::C"
+          + "loud::ServiceDirectory::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -95,7 +93,6 @@ public final class NamespaceProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }

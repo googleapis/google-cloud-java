@@ -1815,6 +1815,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = registrationServiceClient.setIamPolicy(request);
    * }
@@ -1839,6 +1840,7 @@ public class RegistrationServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       registrationServiceClient.setIamPolicyCallable().futureCall(request);

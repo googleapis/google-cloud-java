@@ -222,7 +222,12 @@ public interface EndpointOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
