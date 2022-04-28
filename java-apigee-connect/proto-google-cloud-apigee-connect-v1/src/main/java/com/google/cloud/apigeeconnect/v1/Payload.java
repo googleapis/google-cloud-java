@@ -118,6 +118,8 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -865,8 +867,9 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (kindCase_ == 1) {
           httpRequestBuilder_.mergeFrom(value);
+        } else {
+          httpRequestBuilder_.setMessage(value);
         }
-        httpRequestBuilder_.setMessage(value);
       }
       kindCase_ = 1;
       return this;
@@ -1074,8 +1077,9 @@ public final class Payload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (kindCase_ == 2) {
           streamInfoBuilder_.mergeFrom(value);
+        } else {
+          streamInfoBuilder_.setMessage(value);
         }
-        streamInfoBuilder_.setMessage(value);
       }
       kindCase_ = 2;
       return this;
