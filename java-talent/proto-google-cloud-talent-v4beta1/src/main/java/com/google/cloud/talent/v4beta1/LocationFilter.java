@@ -128,6 +128,8 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -613,7 +615,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     if (latLng_ != null) {
       output.writeMessage(3, getLatLng());
     }
-    if (distanceInMiles_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(distanceInMiles_) != 0) {
       output.writeDouble(4, distanceInMiles_);
     }
     if (telecommutePreference_
@@ -643,7 +645,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     if (latLng_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLatLng());
     }
-    if (distanceInMiles_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(distanceInMiles_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, distanceInMiles_);
     }
     if (telecommutePreference_

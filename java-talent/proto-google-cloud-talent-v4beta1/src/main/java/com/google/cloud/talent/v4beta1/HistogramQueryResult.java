@@ -104,6 +104,8 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -231,7 +233,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsHistogram(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetHistogram().getMap().containsKey(key);
   }
@@ -280,7 +282,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public long getHistogramOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -304,7 +306,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public long getHistogramOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
     if (!map.containsKey(key)) {
@@ -826,7 +828,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsHistogram(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetHistogram().getMap().containsKey(key);
     }
@@ -875,7 +877,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public long getHistogramOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -899,7 +901,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public long getHistogramOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHistogram().getMap();
       if (!map.containsKey(key)) {
@@ -930,7 +932,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      */
     public Builder removeHistogram(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableHistogram().getMutableMap().remove(key);
       return this;
@@ -958,7 +960,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      */
     public Builder putHistogram(java.lang.String key, long value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableHistogram().getMutableMap().put(key, value);

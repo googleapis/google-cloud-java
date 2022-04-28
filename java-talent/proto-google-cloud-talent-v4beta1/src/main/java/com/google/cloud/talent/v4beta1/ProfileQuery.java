@@ -293,6 +293,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1760,6 +1762,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+   *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
    * @return Whether the candidateAvailabilityFilter field is set.
    */
   @java.lang.Override
@@ -1791,6 +1795,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+   *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
    * @return The candidateAvailabilityFilter.
    */
   @java.lang.Override
@@ -9011,6 +9017,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+     *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
      * @return Whether the candidateAvailabilityFilter field is set.
      */
     @java.lang.Deprecated
@@ -9041,6 +9049,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+     *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
      * @return The candidateAvailabilityFilter.
      */
     @java.lang.Deprecated

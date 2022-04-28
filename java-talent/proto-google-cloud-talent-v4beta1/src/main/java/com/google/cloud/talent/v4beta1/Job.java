@@ -464,6 +464,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -759,6 +761,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2156,6 +2160,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3565,6 +3571,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4913,7 +4921,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsCustomAttributes(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCustomAttributes().getMap().containsKey(key);
   }
@@ -4971,7 +4979,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
       java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute> map =
         internalGetCustomAttributes().getMap();
@@ -5000,7 +5008,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute> map =
         internalGetCustomAttributes().getMap();
@@ -5625,6 +5633,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+   *     google/cloud/talent/v4beta1/job.proto;l=277
    * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Override
@@ -5643,6 +5653,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+   *     google/cloud/talent/v4beta1/job.proto;l=277
    * @return The visibility.
    */
   @java.lang.Override
@@ -8851,7 +8863,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsCustomAttributes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCustomAttributes().getMap().containsKey(key);
     }
@@ -8909,7 +8921,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
         java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute> map =
           internalGetCustomAttributes().getMap();
@@ -8938,7 +8950,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute> map =
           internalGetCustomAttributes().getMap();
@@ -8973,7 +8985,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeCustomAttributes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCustomAttributes().getMutableMap().remove(key);
       return this;
@@ -9006,11 +9018,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder putCustomAttributes(
         java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableCustomAttributes().getMutableMap().put(key, value);
       return this;
     }
@@ -10437,6 +10450,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+     *     google/cloud/talent/v4beta1/job.proto;l=277
      * @return The enum numeric value on the wire for visibility.
      */
     @java.lang.Override
@@ -10455,6 +10470,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+     *     google/cloud/talent/v4beta1/job.proto;l=277
      * @param value The enum numeric value on the wire for visibility to set.
      * @return This builder for chaining.
      */
@@ -10476,6 +10493,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+     *     google/cloud/talent/v4beta1/job.proto;l=277
      * @return The visibility.
      */
     @java.lang.Override
@@ -10497,6 +10516,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+     *     google/cloud/talent/v4beta1/job.proto;l=277
      * @param value The visibility to set.
      * @return This builder for chaining.
      */
@@ -10521,6 +10542,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+     *     google/cloud/talent/v4beta1/job.proto;l=277
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -525,8 +525,12 @@ public interface JobOrBuilder
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
-      java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.talent.v4beta1.CustomAttribute defaultValue);
   /**
    *
    *
@@ -944,6 +948,8 @@ public interface JobOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+   *     google/cloud/talent/v4beta1/job.proto;l=277
    * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Deprecated
@@ -959,6 +965,8 @@ public interface JobOrBuilder
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
+   *     google/cloud/talent/v4beta1/job.proto;l=277
    * @return The visibility.
    */
   @java.lang.Deprecated

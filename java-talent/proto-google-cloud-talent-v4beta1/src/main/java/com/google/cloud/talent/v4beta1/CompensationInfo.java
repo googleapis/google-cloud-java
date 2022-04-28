@@ -132,6 +132,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1098,6 +1100,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2282,8 +2286,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         } else {
           if (compensationAmountCase_ == 3) {
             amountBuilder_.mergeFrom(value);
+          } else {
+            amountBuilder_.setMessage(value);
           }
-          amountBuilder_.setMessage(value);
         }
         compensationAmountCase_ = 3;
         return this;
@@ -2496,8 +2501,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         } else {
           if (compensationAmountCase_ == 4) {
             rangeBuilder_.mergeFrom(value);
+          } else {
+            rangeBuilder_.setMessage(value);
           }
-          rangeBuilder_.setMessage(value);
         }
         compensationAmountCase_ = 4;
         return this;
@@ -3201,6 +3207,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

@@ -155,6 +155,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1531,8 +1533,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (eventCase_ == 5) {
           jobEventBuilder_.mergeFrom(value);
+        } else {
+          jobEventBuilder_.setMessage(value);
         }
-        jobEventBuilder_.setMessage(value);
       }
       eventCase_ = 5;
       return this;
@@ -1749,8 +1752,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (eventCase_ == 6) {
           profileEventBuilder_.mergeFrom(value);
+        } else {
+          profileEventBuilder_.setMessage(value);
         }
-        profileEventBuilder_.setMessage(value);
       }
       eventCase_ = 6;
       return this;

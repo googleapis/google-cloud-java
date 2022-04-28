@@ -220,6 +220,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1047,6 +1049,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3309,6 +3313,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
+   *     google/cloud/talent/v4/job_service.proto;l=739
    * @return The disableKeywordMatch.
    */
   @java.lang.Override
@@ -7577,6 +7583,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
+     *     google/cloud/talent/v4/job_service.proto;l=739
      * @return The disableKeywordMatch.
      */
     @java.lang.Override
@@ -7614,6 +7622,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
+     *     google/cloud/talent/v4/job_service.proto;l=739
      * @param value The disableKeywordMatch to set.
      * @return This builder for chaining.
      */
@@ -7654,6 +7664,8 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
+     *     google/cloud/talent/v4/job_service.proto;l=739
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

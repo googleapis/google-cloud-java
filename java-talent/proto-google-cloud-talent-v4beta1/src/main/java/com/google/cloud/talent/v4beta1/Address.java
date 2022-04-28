@@ -125,6 +125,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1197,8 +1199,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (addressCase_ == 3) {
           structuredAddressBuilder_.mergeFrom(value);
+        } else {
+          structuredAddressBuilder_.setMessage(value);
         }
-        structuredAddressBuilder_.setMessage(value);
       }
       addressCase_ = 3;
       return this;

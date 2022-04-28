@@ -1574,8 +1574,12 @@ public interface ProfileOrBuilder
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
-      java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.talent.v4beta1.CustomAttribute defaultValue);
   /**
    *
    *

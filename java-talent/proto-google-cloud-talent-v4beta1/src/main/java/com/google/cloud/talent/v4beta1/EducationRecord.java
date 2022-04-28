@@ -209,6 +209,8 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2520,8 +2522,9 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
       } else {
         if (degreeCase_ == 7) {
           structuredDegreeBuilder_.mergeFrom(value);
+        } else {
+          structuredDegreeBuilder_.setMessage(value);
         }
-        structuredDegreeBuilder_.setMessage(value);
       }
       degreeCase_ = 7;
       return this;

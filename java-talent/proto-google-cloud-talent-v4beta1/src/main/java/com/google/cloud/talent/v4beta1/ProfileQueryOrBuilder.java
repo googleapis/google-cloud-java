@@ -1187,6 +1187,8 @@ public interface ProfileQueryOrBuilder
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+   *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
    * @return Whether the candidateAvailabilityFilter field is set.
    */
   @java.lang.Deprecated
@@ -1215,6 +1217,8 @@ public interface ProfileQueryOrBuilder
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.talent.v4beta1.ProfileQuery.candidate_availability_filter is
+   *     deprecated. See google/cloud/talent/v4beta1/filters.proto;l=397
    * @return The candidateAvailabilityFilter.
    */
   @java.lang.Deprecated

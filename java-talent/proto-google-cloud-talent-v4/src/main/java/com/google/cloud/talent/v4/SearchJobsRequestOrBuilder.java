@@ -968,6 +968,8 @@ public interface SearchJobsRequestOrBuilder
    *
    * <code>bool disable_keyword_match = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.SearchJobsRequest.disable_keyword_match is deprecated. See
+   *     google/cloud/talent/v4/job_service.proto;l=739
    * @return The disableKeywordMatch.
    */
   @java.lang.Deprecated
