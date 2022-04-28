@@ -3605,6 +3605,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = keyManagementServiceClient.setIamPolicy(request);
    * }
@@ -3695,6 +3696,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       keyManagementServiceClient.setIamPolicyCallable().futureCall(request);

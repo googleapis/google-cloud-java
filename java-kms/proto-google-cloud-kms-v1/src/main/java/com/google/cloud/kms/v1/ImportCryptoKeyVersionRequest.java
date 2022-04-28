@@ -97,8 +97,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
             }
           case 42:
             {
-              wrappedKeyMaterialCase_ = 5;
               wrappedKeyMaterial_ = input.readBytes();
+              wrappedKeyMaterialCase_ = 5;
               break;
             }
           case 50:
@@ -119,6 +119,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

@@ -622,6 +622,7 @@ public class EkmServiceClient implements BackgroundResource {
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = ekmServiceClient.setIamPolicy(request);
    * }
@@ -650,6 +651,7 @@ public class EkmServiceClient implements BackgroundResource {
    *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = ekmServiceClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

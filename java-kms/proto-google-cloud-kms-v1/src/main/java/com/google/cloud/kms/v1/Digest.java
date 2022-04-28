@@ -70,20 +70,20 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              digestCase_ = 1;
               digest_ = input.readBytes();
+              digestCase_ = 1;
               break;
             }
           case 18:
             {
-              digestCase_ = 2;
               digest_ = input.readBytes();
+              digestCase_ = 2;
               break;
             }
           case 26:
             {
-              digestCase_ = 3;
               digest_ = input.readBytes();
+              digestCase_ = 3;
               break;
             }
           default:
@@ -97,6 +97,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

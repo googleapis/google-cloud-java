@@ -424,7 +424,12 @@ public interface CryptoKeyOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
