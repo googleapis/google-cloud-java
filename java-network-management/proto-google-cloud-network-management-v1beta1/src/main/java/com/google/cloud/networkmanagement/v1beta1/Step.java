@@ -409,6 +409,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -3350,8 +3352,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 5) {
           instanceBuilder_.mergeFrom(value);
+        } else {
+          instanceBuilder_.setMessage(value);
         }
-        instanceBuilder_.setMessage(value);
       }
       stepInfoCase_ = 5;
       return this;
@@ -3560,8 +3563,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 6) {
           firewallBuilder_.mergeFrom(value);
+        } else {
+          firewallBuilder_.setMessage(value);
         }
-        firewallBuilder_.setMessage(value);
       }
       stepInfoCase_ = 6;
       return this;
@@ -3770,8 +3774,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 7) {
           routeBuilder_.mergeFrom(value);
+        } else {
+          routeBuilder_.setMessage(value);
         }
-        routeBuilder_.setMessage(value);
       }
       stepInfoCase_ = 7;
       return this;
@@ -3995,8 +4000,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 8) {
           endpointBuilder_.mergeFrom(value);
+        } else {
+          endpointBuilder_.setMessage(value);
         }
-        endpointBuilder_.setMessage(value);
       }
       stepInfoCase_ = 8;
       return this;
@@ -4220,8 +4226,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 9) {
           forwardingRuleBuilder_.mergeFrom(value);
+        } else {
+          forwardingRuleBuilder_.setMessage(value);
         }
-        forwardingRuleBuilder_.setMessage(value);
       }
       stepInfoCase_ = 9;
       return this;
@@ -4434,8 +4441,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 10) {
           vpnGatewayBuilder_.mergeFrom(value);
+        } else {
+          vpnGatewayBuilder_.setMessage(value);
         }
-        vpnGatewayBuilder_.setMessage(value);
       }
       stepInfoCase_ = 10;
       return this;
@@ -4647,8 +4655,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 11) {
           vpnTunnelBuilder_.mergeFrom(value);
+        } else {
+          vpnTunnelBuilder_.setMessage(value);
         }
-        vpnTunnelBuilder_.setMessage(value);
       }
       stepInfoCase_ = 11;
       return this;
@@ -4858,8 +4867,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 12) {
           deliverBuilder_.mergeFrom(value);
+        } else {
+          deliverBuilder_.setMessage(value);
         }
-        deliverBuilder_.setMessage(value);
       }
       stepInfoCase_ = 12;
       return this;
@@ -5068,8 +5078,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 13) {
           forwardBuilder_.mergeFrom(value);
+        } else {
+          forwardBuilder_.setMessage(value);
         }
-        forwardBuilder_.setMessage(value);
       }
       stepInfoCase_ = 13;
       return this;
@@ -5278,8 +5289,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 14) {
           abortBuilder_.mergeFrom(value);
+        } else {
+          abortBuilder_.setMessage(value);
         }
-        abortBuilder_.setMessage(value);
       }
       stepInfoCase_ = 14;
       return this;
@@ -5488,8 +5500,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 15) {
           dropBuilder_.mergeFrom(value);
+        } else {
+          dropBuilder_.setMessage(value);
         }
-        dropBuilder_.setMessage(value);
       }
       stepInfoCase_ = 15;
       return this;
@@ -5701,8 +5714,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 16) {
           loadBalancerBuilder_.mergeFrom(value);
+        } else {
+          loadBalancerBuilder_.setMessage(value);
         }
-        loadBalancerBuilder_.setMessage(value);
       }
       stepInfoCase_ = 16;
       return this;
@@ -5914,8 +5928,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 17) {
           networkBuilder_.mergeFrom(value);
+        } else {
+          networkBuilder_.setMessage(value);
         }
-        networkBuilder_.setMessage(value);
       }
       stepInfoCase_ = 17;
       return this;
@@ -6124,8 +6139,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 18) {
           gkeMasterBuilder_.mergeFrom(value);
+        } else {
+          gkeMasterBuilder_.setMessage(value);
         }
-        gkeMasterBuilder_.setMessage(value);
       }
       stepInfoCase_ = 18;
       return this;
@@ -6343,8 +6359,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (stepInfoCase_ == 19) {
           cloudSqlInstanceBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceBuilder_.setMessage(value);
         }
-        cloudSqlInstanceBuilder_.setMessage(value);
       }
       stepInfoCase_ = 19;
       return this;

@@ -148,6 +148,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -540,6 +542,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string service_account = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
    * @return The serviceAccount.
    */
   @java.lang.Override
@@ -564,6 +568,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string service_account = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
@@ -1845,6 +1851,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -1868,6 +1876,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -1891,6 +1901,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -1913,6 +1925,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1931,6 +1945,8 @@ public final class InstanceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=234
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */
