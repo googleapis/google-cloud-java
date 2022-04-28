@@ -261,8 +261,12 @@ public interface FindingOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getSourcePropertiesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *

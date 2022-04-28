@@ -54,6 +54,56 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   *
+   *
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString getTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The full resource name of project that the resource belongs to.
    * </pre>
    *
@@ -79,7 +129,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The project id that the resource belongs to.
+   * The project ID that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -91,7 +141,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The project id that the resource belongs to.
+   * The project ID that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -149,31 +199,6 @@ public interface ResourceOrBuilder
    * @return The bytes for parentDisplayName.
    */
   com.google.protobuf.ByteString getParentDisplayNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The full resource type of the resource.
-   * </pre>
-   *
-   * <code>string type = 6;</code>
-   *
-   * @return The type.
-   */
-  java.lang.String getType();
-  /**
-   *
-   *
-   * <pre>
-   * The full resource type of the resource.
-   * </pre>
-   *
-   * <code>string type = 6;</code>
-   *
-   * @return The bytes for type.
-   */
-  com.google.protobuf.ByteString getTypeBytes();
 
   /**
    *
@@ -246,29 +271,4 @@ public interface ResourceOrBuilder
    * </code>
    */
   com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The human readable name of the resource.
-   * </pre>
-   *
-   * <code>string display_name = 8;</code>
-   *
-   * @return The displayName.
-   */
-  java.lang.String getDisplayName();
-  /**
-   *
-   *
-   * <pre>
-   * The human readable name of the resource.
-   * </pre>
-   *
-   * <code>string display_name = 8;</code>
-   *
-   * @return The bytes for displayName.
-   */
-  com.google.protobuf.ByteString getDisplayNameBytes();
 }

@@ -151,6 +151,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -240,6 +242,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string display_name = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
    * @return The displayName.
    */
   @java.lang.Override
@@ -264,6 +268,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string display_name = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1143,6 +1149,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string display_name = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
      * @return The displayName.
      */
     @java.lang.Deprecated
@@ -1166,6 +1174,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string display_name = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated
@@ -1189,6 +1199,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string display_name = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -1211,6 +1223,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string display_name = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1229,6 +1243,8 @@ public final class MuteConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string display_name = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+     *     google/cloud/securitycenter/v1/mute_config.proto;l=47
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */

@@ -375,12 +375,12 @@ public final class SecuritycenterService {
           + "\022g\n\010resource\030\003 \001(\0132P.google.cloud.securi"
           + "tycenter.v1.ListFindingsResponse.ListFin"
           + "dingsResult.ResourceB\003\340A\003\032\333\001\n\010Resource\022\014"
-          + "\n\004name\030\001 \001(\t\022\024\n\014project_name\030\002 \001(\t\022\034\n\024pr"
-          + "oject_display_name\030\003 \001(\t\022\023\n\013parent_name\030"
-          + "\004 \001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022\014\n\004ty"
-          + "pe\030\006 \001(\t\0227\n\007folders\030\007 \003(\0132&.google.cloud"
-          + ".securitycenter.v1.Folder\022\024\n\014display_nam"
-          + "e\030\010 \001(\t\"M\n\013StateChange\022\n\n\006UNUSED\020\000\022\013\n\007CH"
+          + "\n\004name\030\001 \001(\t\022\024\n\014display_name\030\010 \001(\t\022\014\n\004ty"
+          + "pe\030\006 \001(\t\022\024\n\014project_name\030\002 \001(\t\022\034\n\024projec"
+          + "t_display_name\030\003 \001(\t\022\023\n\013parent_name\030\004 \001("
+          + "\t\022\033\n\023parent_display_name\030\005 \001(\t\0227\n\007folder"
+          + "s\030\007 \003(\0132&.google.cloud.securitycenter.v1"
+          + ".Folder\"M\n\013StateChange\022\n\n\006UNUSED\020\000\022\013\n\007CH"
           + "ANGED\020\001\022\r\n\tUNCHANGED\020\002\022\t\n\005ADDED\020\003\022\013\n\007REM"
           + "OVED\020\004\"\315\001\n\026SetFindingStateRequest\022;\n\004nam"
           + "e\030\001 \001(\tB-\340A\002\372A\'\n%securitycenter.googleap"
@@ -1006,13 +1006,13 @@ public final class SecuritycenterService {
             internal_static_google_cloud_securitycenter_v1_ListFindingsResponse_ListFindingsResult_Resource_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
+              "Type",
               "ProjectName",
               "ProjectDisplayName",
               "ParentName",
               "ParentDisplayName",
-              "Type",
               "Folders",
-              "DisplayName",
             });
     internal_static_google_cloud_securitycenter_v1_SetFindingStateRequest_descriptor =
         getDescriptor().getMessageTypes().get(28);

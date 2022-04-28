@@ -122,7 +122,12 @@ public interface SecurityMarksOrBuilder
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
-  java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMarksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

@@ -105,6 +105,8 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -239,7 +241,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsMarks(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMarks().getMap().containsKey(key);
   }
@@ -286,7 +288,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMarks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -309,7 +311,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getMarksOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMarks().getMap();
     if (!map.containsKey(key)) {
@@ -853,7 +855,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMarks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMarks().getMap().containsKey(key);
     }
@@ -900,7 +902,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMarks().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -923,7 +925,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getMarksOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMarks().getMap();
       if (!map.containsKey(key)) {
@@ -953,7 +955,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeMarks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMarks().getMutableMap().remove(key);
       return this;
@@ -980,11 +982,12 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putMarks(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMarks().getMutableMap().put(key, value);
       return this;
     }

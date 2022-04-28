@@ -2491,6 +2491,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.setIamPolicy(request);
    * }
@@ -2515,6 +2516,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(FolderName.of("[FOLDER]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

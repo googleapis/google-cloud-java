@@ -39,13 +39,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
   private Resource() {
     name_ = "";
+    displayName_ = "";
+    type_ = "";
     project_ = "";
     projectDisplayName_ = "";
     parent_ = "";
     parentDisplayName_ = "";
-    type_ = "";
     folders_ = java.util.Collections.emptyList();
-    displayName_ = "";
   }
 
   @java.lang.Override
@@ -149,6 +149,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -226,6 +228,104 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The human readable name of the resource.
+   * </pre>
+   *
+   * <code>string display_name = 8;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object type_;
+  /**
+   *
+   *
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   *
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 2;
   private volatile java.lang.Object project_;
   /**
@@ -281,7 +381,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project id that the resource belongs to.
+   * The project ID that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -304,7 +404,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project id that the resource belongs to.
+   * The project ID that the resource belongs to.
    * </pre>
    *
    * <code>string project_display_name = 3;</code>
@@ -422,55 +522,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object type_;
-  /**
-   *
-   *
-   * <pre>
-   * The full resource type of the resource.
-   * </pre>
-   *
-   * <code>string type = 6;</code>
-   *
-   * @return The type.
-   */
-  @java.lang.Override
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The full resource type of the resource.
-   * </pre>
-   *
-   * <code>string type = 6;</code>
-   *
-   * @return The bytes for type.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      type_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int FOLDERS_FIELD_NUMBER = 7;
   private java.util.List<com.google.cloud.securitycenter.v1.Folder> folders_;
   /**
@@ -558,55 +609,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.FolderOrBuilder getFoldersOrBuilder(int index) {
     return folders_.get(index);
-  }
-
-  public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object displayName_;
-  /**
-   *
-   *
-   * <pre>
-   * The human readable name of the resource.
-   * </pre>
-   *
-   * <code>string display_name = 8;</code>
-   *
-   * @return The displayName.
-   */
-  @java.lang.Override
-  public java.lang.String getDisplayName() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      displayName_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The human readable name of the resource.
-   * </pre>
-   *
-   * <code>string display_name = 8;</code>
-   *
-   * @return The bytes for displayName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getDisplayNameBytes() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      displayName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -697,13 +699,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.securitycenter.v1.Resource) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getType().equals(other.getType())) return false;
     if (!getProject().equals(other.getProject())) return false;
     if (!getProjectDisplayName().equals(other.getProjectDisplayName())) return false;
     if (!getParent().equals(other.getParent())) return false;
     if (!getParentDisplayName().equals(other.getParentDisplayName())) return false;
-    if (!getType().equals(other.getType())) return false;
     if (!getFoldersList().equals(other.getFoldersList())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -717,6 +719,10 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + PROJECT_DISPLAY_NAME_FIELD_NUMBER;
@@ -725,14 +731,10 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PARENT_DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getParentDisplayName().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
     if (getFoldersCount() > 0) {
       hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
       hash = (53 * hash) + getFoldersList().hashCode();
     }
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -882,6 +884,10 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
+      displayName_ = "";
+
+      type_ = "";
+
       project_ = "";
 
       projectDisplayName_ = "";
@@ -890,16 +896,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
 
       parentDisplayName_ = "";
 
-      type_ = "";
-
       if (foldersBuilder_ == null) {
         folders_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         foldersBuilder_.clear();
       }
-      displayName_ = "";
-
       return this;
     }
 
@@ -929,11 +931,12 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.securitycenter.v1.Resource(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
+      result.displayName_ = displayName_;
+      result.type_ = type_;
       result.project_ = project_;
       result.projectDisplayName_ = projectDisplayName_;
       result.parent_ = parent_;
       result.parentDisplayName_ = parentDisplayName_;
-      result.type_ = type_;
       if (foldersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           folders_ = java.util.Collections.unmodifiableList(folders_);
@@ -943,7 +946,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.folders_ = foldersBuilder_.build();
       }
-      result.displayName_ = displayName_;
       onBuilt();
       return result;
     }
@@ -997,6 +999,14 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        onChanged();
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
+        onChanged();
+      }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
         onChanged();
@@ -1011,10 +1021,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getParentDisplayName().isEmpty()) {
         parentDisplayName_ = other.parentDisplayName_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
         onChanged();
       }
       if (foldersBuilder_ == null) {
@@ -1043,10 +1049,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
             foldersBuilder_.addAllMessages(other.folders_);
           }
         }
-      }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1190,6 +1192,218 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable name of the resource.
+     * </pre>
+     *
+     * <code>string display_name = 8;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     *
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     *
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     *
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      type_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object project_ = "";
     /**
      *
@@ -1301,7 +1515,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project id that the resource belongs to.
+     * The project ID that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1323,7 +1537,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project id that the resource belongs to.
+     * The project ID that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1345,7 +1559,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project id that the resource belongs to.
+     * The project ID that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1366,7 +1580,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project id that the resource belongs to.
+     * The project ID that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1383,7 +1597,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project id that the resource belongs to.
+     * The project ID that the resource belongs to.
      * </pre>
      *
      * <code>string project_display_name = 3;</code>
@@ -1610,112 +1824,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       parentDisplayName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The full resource type of the resource.
-     * </pre>
-     *
-     * <code>string type = 6;</code>
-     *
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full resource type of the resource.
-     * </pre>
-     *
-     * <code>string type = 6;</code>
-     *
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full resource type of the resource.
-     * </pre>
-     *
-     * <code>string type = 6;</code>
-     *
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full resource type of the resource.
-     * </pre>
-     *
-     * <code>string type = 6;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The full resource type of the resource.
-     * </pre>
-     *
-     * <code>string type = 6;</code>
-     *
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      type_ = value;
       onChanged();
       return this;
     }
@@ -2139,112 +2247,6 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         folders_ = null;
       }
       return foldersBuilder_;
-    }
-
-    private java.lang.Object displayName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The human readable name of the resource.
-     * </pre>
-     *
-     * <code>string display_name = 8;</code>
-     *
-     * @return The displayName.
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The human readable name of the resource.
-     * </pre>
-     *
-     * <code>string display_name = 8;</code>
-     *
-     * @return The bytes for displayName.
-     */
-    public com.google.protobuf.ByteString getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The human readable name of the resource.
-     * </pre>
-     *
-     * <code>string display_name = 8;</code>
-     *
-     * @param value The displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      displayName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The human readable name of the resource.
-     * </pre>
-     *
-     * <code>string display_name = 8;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDisplayName() {
-
-      displayName_ = getDefaultInstance().getDisplayName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The human readable name of the resource.
-     * </pre>
-     *
-     * <code>string display_name = 8;</code>
-     *
-     * @param value The bytes for displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      displayName_ = value;
-      onChanged();
-      return this;
     }
 
     @java.lang.Override

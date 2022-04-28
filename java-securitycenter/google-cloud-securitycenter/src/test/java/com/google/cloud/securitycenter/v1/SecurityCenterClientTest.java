@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -301,7 +302,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -364,7 +369,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1244,6 +1253,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -1284,6 +1294,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2526,7 +2537,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2591,7 +2606,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2654,7 +2673,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2716,7 +2739,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2759,6 +2786,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2802,6 +2830,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -2986,7 +3015,11 @@ public class SecurityCenterClientTest {
             .putAllExternalSystems(new HashMap<String, ExternalSystem>())
             .setMitreAttack(MitreAttack.newBuilder().build())
             .setAccess(Access.newBuilder().build())
+            .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setDescription("description-1724546052")
+            .addAllIamBindings(new ArrayList<IamBinding>())
+            .setNextSteps("nextSteps1206138868")
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

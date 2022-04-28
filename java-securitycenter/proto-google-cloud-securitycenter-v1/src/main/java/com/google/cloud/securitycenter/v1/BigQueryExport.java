@@ -158,6 +158,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -541,9 +543,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query
-   * export. This field is set by the server and will be ignored if provided on
-   * export creation or update.
+   * Output only. Email address of the user who last edited the big query export.
+   * This field is set by the server and will be ignored if provided on export
+   * creation or update.
    * </pre>
    *
    * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -566,9 +568,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query
-   * export. This field is set by the server and will be ignored if provided on
-   * export creation or update.
+   * Output only. Email address of the user who last edited the big query export.
+   * This field is set by the server and will be ignored if provided on export
+   * creation or update.
    * </pre>
    *
    * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -594,8 +596,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table,
-   * upload data to the big query dataset.
+   * Output only. The service account that needs permission to create table, upload data to
+   * the big query dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -618,8 +620,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table,
-   * upload data to the big query dataset.
+   * Output only. The service account that needs permission to create table, upload data to
+   * the big query dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2080,9 +2082,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Email address of the user who last edited the big query
-     * export. This field is set by the server and will be ignored if provided on
-     * export creation or update.
+     * Output only. Email address of the user who last edited the big query export.
+     * This field is set by the server and will be ignored if provided on export
+     * creation or update.
      * </pre>
      *
      * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2104,9 +2106,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Email address of the user who last edited the big query
-     * export. This field is set by the server and will be ignored if provided on
-     * export creation or update.
+     * Output only. Email address of the user who last edited the big query export.
+     * This field is set by the server and will be ignored if provided on export
+     * creation or update.
      * </pre>
      *
      * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2128,9 +2130,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Email address of the user who last edited the big query
-     * export. This field is set by the server and will be ignored if provided on
-     * export creation or update.
+     * Output only. Email address of the user who last edited the big query export.
+     * This field is set by the server and will be ignored if provided on export
+     * creation or update.
      * </pre>
      *
      * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2151,9 +2153,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Email address of the user who last edited the big query
-     * export. This field is set by the server and will be ignored if provided on
-     * export creation or update.
+     * Output only. Email address of the user who last edited the big query export.
+     * This field is set by the server and will be ignored if provided on export
+     * creation or update.
      * </pre>
      *
      * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2170,9 +2172,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Email address of the user who last edited the big query
-     * export. This field is set by the server and will be ignored if provided on
-     * export creation or update.
+     * Output only. Email address of the user who last edited the big query export.
+     * This field is set by the server and will be ignored if provided on export
+     * creation or update.
      * </pre>
      *
      * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2196,8 +2198,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that needs permission to create table,
-     * upload data to the big query dataset.
+     * Output only. The service account that needs permission to create table, upload data to
+     * the big query dataset.
      * </pre>
      *
      * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2219,8 +2221,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that needs permission to create table,
-     * upload data to the big query dataset.
+     * Output only. The service account that needs permission to create table, upload data to
+     * the big query dataset.
      * </pre>
      *
      * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2242,8 +2244,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that needs permission to create table,
-     * upload data to the big query dataset.
+     * Output only. The service account that needs permission to create table, upload data to
+     * the big query dataset.
      * </pre>
      *
      * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2264,8 +2266,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that needs permission to create table,
-     * upload data to the big query dataset.
+     * Output only. The service account that needs permission to create table, upload data to
+     * the big query dataset.
      * </pre>
      *
      * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2282,8 +2284,8 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that needs permission to create table,
-     * upload data to the big query dataset.
+     * Output only. The service account that needs permission to create table, upload data to
+     * the big query dataset.
      * </pre>
      *
      * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

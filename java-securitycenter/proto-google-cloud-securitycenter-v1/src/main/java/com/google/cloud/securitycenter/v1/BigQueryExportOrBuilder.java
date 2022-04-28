@@ -263,9 +263,9 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query
-   * export. This field is set by the server and will be ignored if provided on
-   * export creation or update.
+   * Output only. Email address of the user who last edited the big query export.
+   * This field is set by the server and will be ignored if provided on export
+   * creation or update.
    * </pre>
    *
    * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -277,9 +277,9 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. Email address of the user who last edited the big query
-   * export. This field is set by the server and will be ignored if provided on
-   * export creation or update.
+   * Output only. Email address of the user who last edited the big query export.
+   * This field is set by the server and will be ignored if provided on export
+   * creation or update.
    * </pre>
    *
    * <code>string most_recent_editor = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -292,8 +292,8 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table,
-   * upload data to the big query dataset.
+   * Output only. The service account that needs permission to create table, upload data to
+   * the big query dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -305,8 +305,8 @@ public interface BigQueryExportOrBuilder
    *
    *
    * <pre>
-   * Output only. The service account that needs permission to create table,
-   * upload data to the big query dataset.
+   * Output only. The service account that needs permission to create table, upload data to
+   * the big query dataset.
    * </pre>
    *
    * <code>string principal = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

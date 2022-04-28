@@ -176,6 +176,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -636,6 +638,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
    * See: https://attack.mitre.org/techniques/enterprise/
+   * Next ID: 31
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v1.MitreAttack.Technique}
@@ -931,6 +934,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
      */
     MODIFY_AUTHENTICATION_PROCESS(28),
+    /**
+     *
+     *
+     * <pre>
+     * T1485
+     * </pre>
+     *
+     * <code>DATA_DESTRUCTION = 29;</code>
+     */
+    DATA_DESTRUCTION(29),
+    /**
+     *
+     *
+     * <pre>
+     * T1484
+     * </pre>
+     *
+     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     */
+    DOMAIN_POLICY_MODIFICATION(30),
     UNRECOGNIZED(-1),
     ;
 
@@ -1224,6 +1247,26 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
      */
     public static final int MODIFY_AUTHENTICATION_PROCESS_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
+     * T1485
+     * </pre>
+     *
+     * <code>DATA_DESTRUCTION = 29;</code>
+     */
+    public static final int DATA_DESTRUCTION_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * T1484
+     * </pre>
+     *
+     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     */
+    public static final int DOMAIN_POLICY_MODIFICATION_VALUE = 30;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1307,6 +1350,10 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return EXPLOIT_PUBLIC_FACING_APPLICATION;
         case 28:
           return MODIFY_AUTHENTICATION_PROCESS;
+        case 29:
+          return DATA_DESTRUCTION;
+        case 30:
+          return DOMAIN_POLICY_MODIFICATION;
         default:
           return null;
       }

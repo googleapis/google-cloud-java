@@ -63,6 +63,8 @@ public interface MuteConfigOrBuilder
    *
    * <code>string display_name = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
    * @return The displayName.
    */
   @java.lang.Deprecated
@@ -76,6 +78,8 @@ public interface MuteConfigOrBuilder
    *
    * <code>string display_name = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.securitycenter.v1.MuteConfig.display_name is deprecated. See
+   *     google/cloud/securitycenter/v1/mute_config.proto;l=47
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated

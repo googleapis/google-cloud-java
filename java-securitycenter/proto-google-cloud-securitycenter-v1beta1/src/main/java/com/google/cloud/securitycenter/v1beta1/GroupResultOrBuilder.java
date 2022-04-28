@@ -65,8 +65,12 @@ public interface GroupResultOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getPropertiesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *

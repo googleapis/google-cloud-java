@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -297,6 +298,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -337,6 +339,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -1118,6 +1121,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -1161,6 +1165,7 @@ public class SecurityCenterClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);

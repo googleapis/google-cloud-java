@@ -44,12 +44,12 @@ public final class ResourceProto {
           + "e.proto\022\036google.cloud.securitycenter.v1\032"
           + "\037google/api/field_behavior.proto\032+google"
           + "/cloud/securitycenter/v1/folder.proto\"\326\001"
-          + "\n\010Resource\022\014\n\004name\030\001 \001(\t\022\017\n\007project\030\002 \001("
-          + "\t\022\034\n\024project_display_name\030\003 \001(\t\022\016\n\006paren"
-          + "t\030\004 \001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022\014\n\004"
-          + "type\030\006 \001(\t\022<\n\007folders\030\007 \003(\0132&.google.clo"
-          + "ud.securitycenter.v1.FolderB\003\340A\003\022\024\n\014disp"
-          + "lay_name\030\010 \001(\tB\351\001\n\"com.google.cloud.secu"
+          + "\n\010Resource\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name"
+          + "\030\010 \001(\t\022\014\n\004type\030\006 \001(\t\022\017\n\007project\030\002 \001(\t\022\034\n"
+          + "\024project_display_name\030\003 \001(\t\022\016\n\006parent\030\004 "
+          + "\001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022<\n\007fold"
+          + "ers\030\007 \003(\0132&.google.cloud.securitycenter."
+          + "v1.FolderB\003\340A\003B\351\001\n\"com.google.cloud.secu"
           + "ritycenter.v1B\rResourceProtoP\001ZLgoogle.g"
           + "olang.org/genproto/googleapis/cloud/secu"
           + "ritycenter/v1;securitycenter\252\002\036Google.Cl"
@@ -71,13 +71,13 @@ public final class ResourceProto {
             internal_static_google_cloud_securitycenter_v1_Resource_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
+              "Type",
               "Project",
               "ProjectDisplayName",
               "Parent",
               "ParentDisplayName",
-              "Type",
               "Folders",
-              "DisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

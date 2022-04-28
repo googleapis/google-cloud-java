@@ -123,6 +123,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -973,8 +975,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       } else {
         if (eventCase_ == 2) {
           findingBuilder_.mergeFrom(value);
+        } else {
+          findingBuilder_.setMessage(value);
         }
-        findingBuilder_.setMessage(value);
       }
       eventCase_ = 2;
       return this;

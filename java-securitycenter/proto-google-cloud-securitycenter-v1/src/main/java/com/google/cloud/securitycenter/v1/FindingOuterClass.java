@@ -52,67 +52,74 @@ public final class FindingOuterClass {
           + ".proto\022\036google.cloud.securitycenter.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032+google/cloud/securit"
-          + "ycenter/v1/access.proto\0324google/cloud/se"
-          + "curitycenter/v1/external_system.proto\032.g"
-          + "oogle/cloud/securitycenter/v1/indicator."
-          + "proto\0321google/cloud/securitycenter/v1/mi"
-          + "tre_attack.proto\0323google/cloud/securityc"
-          + "enter/v1/security_marks.proto\0322google/cl"
-          + "oud/securitycenter/v1/vulnerability.prot"
-          + "o\032\034google/protobuf/struct.proto\032\037google/"
-          + "protobuf/timestamp.proto\"\255\016\n\007Finding\022\014\n\004"
-          + "name\030\001 \001(\t\022\016\n\006parent\030\002 \001(\t\022\025\n\rresource_n"
-          + "ame\030\003 \001(\t\022<\n\005state\030\004 \001(\0162-.google.cloud."
-          + "securitycenter.v1.Finding.State\022\020\n\010categ"
-          + "ory\030\005 \001(\t\022\024\n\014external_uri\030\006 \001(\t\022X\n\021sourc"
-          + "e_properties\030\007 \003(\0132=.google.cloud.securi"
-          + "tycenter.v1.Finding.SourcePropertiesEntr"
-          + "y\022J\n\016security_marks\030\010 \001(\0132-.google.cloud"
-          + ".securitycenter.v1.SecurityMarksB\003\340A\003\022.\n"
-          + "\nevent_time\030\t \001(\0132\032.google.protobuf.Time"
-          + "stamp\022/\n\013create_time\030\n \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022B\n\010severity\030\014 \001(\01620.googl"
-          + "e.cloud.securitycenter.v1.Finding.Severi"
-          + "ty\022\026\n\016canonical_name\030\016 \001(\t\022:\n\004mute\030\017 \001(\016"
-          + "2,.google.cloud.securitycenter.v1.Findin"
-          + "g.Mute\022K\n\rfinding_class\030\021 \001(\01624.google.c"
-          + "loud.securitycenter.v1.Finding.FindingCl"
-          + "ass\022<\n\tindicator\030\022 \001(\0132).google.cloud.se"
-          + "curitycenter.v1.Indicator\022D\n\rvulnerabili"
-          + "ty\030\024 \001(\0132-.google.cloud.securitycenter.v"
-          + "1.Vulnerability\0229\n\020mute_update_time\030\025 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022[\n\020ex"
-          + "ternal_systems\030\026 \003(\0132<.google.cloud.secu"
-          + "ritycenter.v1.Finding.ExternalSystemsEnt"
-          + "ryB\003\340A\003\022A\n\014mitre_attack\030\031 \001(\0132+.google.c"
-          + "loud.securitycenter.v1.MitreAttack\0226\n\006ac"
-          + "cess\030\032 \001(\0132&.google.cloud.securitycenter"
-          + ".v1.Access\022\026\n\016mute_initiator\030\034 \001(\t\032O\n\025So"
-          + "urcePropertiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005valu"
-          + "e\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\032f\n\024E"
-          + "xternalSystemsEntry\022\013\n\003key\030\001 \001(\t\022=\n\005valu"
-          + "e\030\002 \001(\0132..google.cloud.securitycenter.v1"
-          + ".ExternalSystem:\0028\001\"8\n\005State\022\025\n\021STATE_UN"
-          + "SPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\"Q\n"
-          + "\010Severity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010C"
-          + "RITICAL\020\001\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004"
-          + "\"C\n\004Mute\022\024\n\020MUTE_UNSPECIFIED\020\000\022\t\n\005MUTED\020"
-          + "\001\022\013\n\007UNMUTED\020\002\022\r\n\tUNDEFINED\020\004\"\202\001\n\014Findin"
-          + "gClass\022\035\n\031FINDING_CLASS_UNSPECIFIED\020\000\022\n\n"
-          + "\006THREAT\020\001\022\021\n\rVULNERABILITY\020\002\022\024\n\020MISCONFI"
-          + "GURATION\020\003\022\017\n\013OBSERVATION\020\004\022\r\n\tSCC_ERROR"
-          + "\020\005:\333\001\352A\327\001\n%securitycenter.googleapis.com"
-          + "/Finding\022@organizations/{organization}/s"
-          + "ources/{source}/findings/{finding}\0224fold"
-          + "ers/{folder}/sources/{source}/findings/{"
-          + "finding}\0226projects/{project}/sources/{so"
-          + "urce}/findings/{finding}B\332\001\n\"com.google."
-          + "cloud.securitycenter.v1P\001ZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/securityc"
-          + "enter/v1;securitycenter\252\002\036Google.Cloud.S"
-          + "ecurityCenter.V1\312\002\036Google\\Cloud\\Security"
-          + "Center\\V1\352\002!Google::Cloud::SecurityCente"
-          + "r::V1b\006proto3"
+          + "ycenter/v1/access.proto\032/google/cloud/se"
+          + "curitycenter/v1/connection.proto\0324google"
+          + "/cloud/securitycenter/v1/external_system"
+          + ".proto\0320google/cloud/securitycenter/v1/i"
+          + "am_binding.proto\032.google/cloud/securityc"
+          + "enter/v1/indicator.proto\0321google/cloud/s"
+          + "ecuritycenter/v1/mitre_attack.proto\0323goo"
+          + "gle/cloud/securitycenter/v1/security_mar"
+          + "ks.proto\0322google/cloud/securitycenter/v1"
+          + "/vulnerability.proto\032\034google/protobuf/st"
+          + "ruct.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\"\331\017\n\007Finding\022\014\n\004name\030\001 \001(\t\022\016\n\006parent\030"
+          + "\002 \001(\t\022\025\n\rresource_name\030\003 \001(\t\022<\n\005state\030\004 "
+          + "\001(\0162-.google.cloud.securitycenter.v1.Fin"
+          + "ding.State\022\020\n\010category\030\005 \001(\t\022\024\n\014external"
+          + "_uri\030\006 \001(\t\022X\n\021source_properties\030\007 \003(\0132=."
+          + "google.cloud.securitycenter.v1.Finding.S"
+          + "ourcePropertiesEntry\022J\n\016security_marks\030\010"
+          + " \001(\0132-.google.cloud.securitycenter.v1.Se"
+          + "curityMarksB\003\340A\003\022.\n\nevent_time\030\t \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\022/\n\013create_time\030"
+          + "\n \001(\0132\032.google.protobuf.Timestamp\022B\n\010sev"
+          + "erity\030\014 \001(\01620.google.cloud.securitycente"
+          + "r.v1.Finding.Severity\022\026\n\016canonical_name\030"
+          + "\016 \001(\t\022:\n\004mute\030\017 \001(\0162,.google.cloud.secur"
+          + "itycenter.v1.Finding.Mute\022K\n\rfinding_cla"
+          + "ss\030\021 \001(\01624.google.cloud.securitycenter.v"
+          + "1.Finding.FindingClass\022<\n\tindicator\030\022 \001("
+          + "\0132).google.cloud.securitycenter.v1.Indic"
+          + "ator\022D\n\rvulnerability\030\024 \001(\0132-.google.clo"
+          + "ud.securitycenter.v1.Vulnerability\0229\n\020mu"
+          + "te_update_time\030\025 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\022[\n\020external_systems\030\026 \003(\0132"
+          + "<.google.cloud.securitycenter.v1.Finding"
+          + ".ExternalSystemsEntryB\003\340A\003\022A\n\014mitre_atta"
+          + "ck\030\031 \001(\0132+.google.cloud.securitycenter.v"
+          + "1.MitreAttack\0226\n\006access\030\032 \001(\0132&.google.c"
+          + "loud.securitycenter.v1.Access\022?\n\013connect"
+          + "ions\030\037 \003(\0132*.google.cloud.securitycenter"
+          + ".v1.Connection\022\026\n\016mute_initiator\030\034 \001(\t\022\023"
+          + "\n\013description\030% \001(\t\022@\n\014iam_bindings\030\' \003("
+          + "\0132*.google.cloud.securitycenter.v1.IamBi"
+          + "nding\022\022\n\nnext_steps\030( \001(\t\032O\n\025SourcePrope"
+          + "rtiesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026"
+          + ".google.protobuf.Value:\0028\001\032f\n\024ExternalSy"
+          + "stemsEntry\022\013\n\003key\030\001 \001(\t\022=\n\005value\030\002 \001(\0132."
+          + ".google.cloud.securitycenter.v1.External"
+          + "System:\0028\001\"8\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\"Q\n\010Severity"
+          + "\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001"
+          + "\022\010\n\004HIGH\020\002\022\n\n\006MEDIUM\020\003\022\007\n\003LOW\020\004\"C\n\004Mute\022"
+          + "\024\n\020MUTE_UNSPECIFIED\020\000\022\t\n\005MUTED\020\001\022\013\n\007UNMU"
+          + "TED\020\002\022\r\n\tUNDEFINED\020\004\"\202\001\n\014FindingClass\022\035\n"
+          + "\031FINDING_CLASS_UNSPECIFIED\020\000\022\n\n\006THREAT\020\001"
+          + "\022\021\n\rVULNERABILITY\020\002\022\024\n\020MISCONFIGURATION\020"
+          + "\003\022\017\n\013OBSERVATION\020\004\022\r\n\tSCC_ERROR\020\005:\333\001\352A\327\001"
+          + "\n%securitycenter.googleapis.com/Finding\022"
+          + "@organizations/{organization}/sources/{s"
+          + "ource}/findings/{finding}\0224folders/{fold"
+          + "er}/sources/{source}/findings/{finding}\022"
+          + "6projects/{project}/sources/{source}/fin"
+          + "dings/{finding}B\332\001\n\"com.google.cloud.sec"
+          + "uritycenter.v1P\001ZLgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/securitycenter/v1;"
+          + "securitycenter\252\002\036Google.Cloud.SecurityCe"
+          + "nter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1"
+          + "\352\002!Google::Cloud::SecurityCenter::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -121,7 +128,9 @@ public final class FindingOuterClass {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.AccessProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.ConnectionProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.ExternalSystemProto.getDescriptor(),
+              com.google.cloud.securitycenter.v1.IamBindingProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.IndicatorProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.MitreAttackProto.getDescriptor(),
               com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor(),
@@ -155,7 +164,11 @@ public final class FindingOuterClass {
               "ExternalSystems",
               "MitreAttack",
               "Access",
+              "Connections",
               "MuteInitiator",
+              "Description",
+              "IamBindings",
+              "NextSteps",
             });
     internal_static_google_cloud_securitycenter_v1_Finding_SourcePropertiesEntry_descriptor =
         internal_static_google_cloud_securitycenter_v1_Finding_descriptor.getNestedTypes().get(0);
@@ -182,7 +195,9 @@ public final class FindingOuterClass {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.securitycenter.v1.AccessProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.ConnectionProto.getDescriptor();
     com.google.cloud.securitycenter.v1.ExternalSystemProto.getDescriptor();
+    com.google.cloud.securitycenter.v1.IamBindingProto.getDescriptor();
     com.google.cloud.securitycenter.v1.IndicatorProto.getDescriptor();
     com.google.cloud.securitycenter.v1.MitreAttackProto.getDescriptor();
     com.google.cloud.securitycenter.v1.SecurityMarksOuterClass.getDescriptor();

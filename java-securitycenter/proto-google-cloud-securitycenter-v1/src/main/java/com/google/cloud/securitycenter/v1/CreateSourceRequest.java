@@ -104,6 +104,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -188,8 +190,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>
@@ -206,8 +208,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>
@@ -226,8 +228,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>
@@ -717,8 +719,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -734,8 +736,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -757,8 +759,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -782,8 +784,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -804,8 +806,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -833,8 +835,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -856,8 +858,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -873,8 +875,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>
@@ -894,8 +896,8 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>

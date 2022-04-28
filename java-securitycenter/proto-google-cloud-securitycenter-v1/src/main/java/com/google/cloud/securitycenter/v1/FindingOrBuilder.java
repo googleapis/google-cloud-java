@@ -259,8 +259,12 @@ public interface FindingOrBuilder
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getSourcePropertiesOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *
@@ -476,7 +480,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * Indicates the mute state of a finding (either muted, unmuted
    * or undefined). Unlike other attributes of a finding, a finding provider
    * shouldn't set the value of mute.
    * </pre>
@@ -490,7 +494,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Indicates the mute state of a finding (either unspecified, muted, unmuted
+   * Indicates the mute state of a finding (either muted, unmuted
    * or undefined). Unlike other attributes of a finding, a finding provider
    * shouldn't set the value of mute.
    * </pre>
@@ -659,8 +663,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -672,8 +676,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -689,8 +693,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -703,22 +707,26 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
    * map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrDefault(
-      java.lang.String key, com.google.cloud.securitycenter.v1.ExternalSystem defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.securitycenter.v1.ExternalSystem defaultValue);
   /**
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -807,6 +815,58 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Contains information about the IP connection associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Connection connections = 31;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Connection> getConnectionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the IP connection associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Connection connections = 31;</code>
+   */
+  com.google.cloud.securitycenter.v1.Connection getConnections(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the IP connection associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Connection connections = 31;</code>
+   */
+  int getConnectionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the IP connection associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Connection connections = 31;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.ConnectionOrBuilder>
+      getConnectionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the IP connection associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Connection connections = 31;</code>
+   */
+  com.google.cloud.securitycenter.v1.ConnectionOrBuilder getConnectionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * First known as mute_annotation. Records additional information about the
    * mute operation e.g. mute config that muted the finding, user who muted the
    * finding, etc. Unlike other attributes of a finding, a finding provider
@@ -833,4 +893,106 @@ public interface FindingOrBuilder
    * @return The bytes for muteInitiator.
    */
   com.google.protobuf.ByteString getMuteInitiatorBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains more detail about the finding.
+   * </pre>
+   *
+   * <code>string description = 37;</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Contains more detail about the finding.
+   * </pre>
+   *
+   * <code>string description = 37;</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents IAM bindings associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.IamBinding> getIamBindingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Represents IAM bindings associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
+   */
+  com.google.cloud.securitycenter.v1.IamBinding getIamBindings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Represents IAM bindings associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
+   */
+  int getIamBindingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Represents IAM bindings associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.IamBindingOrBuilder>
+      getIamBindingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Represents IAM bindings associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
+   */
+  com.google.cloud.securitycenter.v1.IamBindingOrBuilder getIamBindingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Next steps associate to the finding.
+   * </pre>
+   *
+   * <code>string next_steps = 40;</code>
+   *
+   * @return The nextSteps.
+   */
+  java.lang.String getNextSteps();
+  /**
+   *
+   *
+   * <pre>
+   * Next steps associate to the finding.
+   * </pre>
+   *
+   * <code>string next_steps = 40;</code>
+   *
+   * @return The bytes for nextSteps.
+   */
+  com.google.protobuf.ByteString getNextStepsBytes();
 }

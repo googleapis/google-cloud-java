@@ -147,6 +147,8 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -378,9 +380,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping
-   * (including `state_change`). The string value should follow SQL syntax:
-   * comma separated list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping (including
+   * `state_change`). The string value should follow SQL syntax: comma separated
+   * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category
@@ -411,9 +413,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping
-   * (including `state_change`). The string value should follow SQL syntax:
-   * comma separated list of fields. For example: "parent,resource_name".
+   * Required. Expression that defines what assets fields to use for grouping (including
+   * `state_change`). The string value should follow SQL syntax: comma separated
+   * list of fields. For example: "parent,resource_name".
    * The following fields are supported:
    * * resource_name
    * * category
@@ -1609,9 +1611,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping
-     * (including `state_change`). The string value should follow SQL syntax:
-     * comma separated list of fields. For example: "parent,resource_name".
+     * Required. Expression that defines what assets fields to use for grouping (including
+     * `state_change`). The string value should follow SQL syntax: comma separated
+     * list of fields. For example: "parent,resource_name".
      * The following fields are supported:
      * * resource_name
      * * category
@@ -1641,9 +1643,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping
-     * (including `state_change`). The string value should follow SQL syntax:
-     * comma separated list of fields. For example: "parent,resource_name".
+     * Required. Expression that defines what assets fields to use for grouping (including
+     * `state_change`). The string value should follow SQL syntax: comma separated
+     * list of fields. For example: "parent,resource_name".
      * The following fields are supported:
      * * resource_name
      * * category
@@ -1673,9 +1675,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping
-     * (including `state_change`). The string value should follow SQL syntax:
-     * comma separated list of fields. For example: "parent,resource_name".
+     * Required. Expression that defines what assets fields to use for grouping (including
+     * `state_change`). The string value should follow SQL syntax: comma separated
+     * list of fields. For example: "parent,resource_name".
      * The following fields are supported:
      * * resource_name
      * * category
@@ -1704,9 +1706,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping
-     * (including `state_change`). The string value should follow SQL syntax:
-     * comma separated list of fields. For example: "parent,resource_name".
+     * Required. Expression that defines what assets fields to use for grouping (including
+     * `state_change`). The string value should follow SQL syntax: comma separated
+     * list of fields. For example: "parent,resource_name".
      * The following fields are supported:
      * * resource_name
      * * category
@@ -1731,9 +1733,9 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping
-     * (including `state_change`). The string value should follow SQL syntax:
-     * comma separated list of fields. For example: "parent,resource_name".
+     * Required. Expression that defines what assets fields to use for grouping (including
+     * `state_change`). The string value should follow SQL syntax: comma separated
+     * list of fields. For example: "parent,resource_name".
      * The following fields are supported:
      * * resource_name
      * * category

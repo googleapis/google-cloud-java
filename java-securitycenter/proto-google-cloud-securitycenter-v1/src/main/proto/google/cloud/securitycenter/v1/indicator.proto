@@ -16,14 +16,13 @@ syntax = "proto3";
 
 package google.cloud.securitycenter.v1;
 
+option csharp_namespace = "Google.Cloud.SecurityCenter.V1";
 option go_package = "google.golang.org/genproto/googleapis/cloud/securitycenter/v1;securitycenter";
 option java_multiple_files = true;
 option java_outer_classname = "IndicatorProto";
 option java_package = "com.google.cloud.securitycenter.v1";
-option csharp_namespace = "Google.Cloud.SecurityCenter.V1";
 option php_namespace = "Google\\Cloud\\SecurityCenter\\V1";
 option ruby_package = "Google::Cloud::SecurityCenter::V1";
-
 
 // Represents what's commonly known as an Indicator of compromise (IoC) in
 // computer forensics. This is an artifact observed on a network or in an

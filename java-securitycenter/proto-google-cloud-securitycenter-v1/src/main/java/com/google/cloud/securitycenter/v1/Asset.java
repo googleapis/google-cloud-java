@@ -201,6 +201,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -685,6 +687,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3227,6 +3231,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3954,7 +3960,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsResourceProperties(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetResourceProperties().getMap().containsKey(key);
   }
@@ -3992,7 +3998,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getResourcePropertiesOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetResourceProperties().getMap();
@@ -4011,7 +4017,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetResourceProperties().getMap();
@@ -5189,7 +5195,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsResourceProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetResourceProperties().getMap().containsKey(key);
     }
@@ -5227,7 +5233,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value getResourcePropertiesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetResourceProperties().getMap();
@@ -5246,7 +5252,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetResourceProperties().getMap();
@@ -5272,7 +5278,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeResourceProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableResourceProperties().getMutableMap().remove(key);
       return this;
@@ -5295,11 +5301,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putResourceProperties(java.lang.String key, com.google.protobuf.Value value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableResourceProperties().getMutableMap().put(key, value);
       return this;
     }

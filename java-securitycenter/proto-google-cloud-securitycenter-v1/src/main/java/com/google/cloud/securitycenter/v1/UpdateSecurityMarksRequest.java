@@ -125,6 +125,8 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -266,7 +268,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
    * SecurityMarks that are active immediately preceding this time. Must be
-   * smaller or equal to the server time.
+   * earlier or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -284,7 +286,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
    * SecurityMarks that are active immediately preceding this time. Must be
-   * smaller or equal to the server time.
+   * earlier or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -302,7 +304,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    * The time at which the updated SecurityMarks take effect.
    * If not set uses current server time.  Updates will be applied to the
    * SecurityMarks that are active immediately preceding this time. Must be
-   * smaller or equal to the server time.
+   * earlier or equal to the server time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1129,7 +1131,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1146,7 +1148,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1167,7 +1169,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1192,7 +1194,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1214,7 +1216,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1241,7 +1243,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1264,7 +1266,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1281,7 +1283,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
@@ -1300,7 +1302,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
      * The time at which the updated SecurityMarks take effect.
      * If not set uses current server time.  Updates will be applied to the
      * SecurityMarks that are active immediately preceding this time. Must be
-     * smaller or equal to the server time.
+     * earlier or equal to the server time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
