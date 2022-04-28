@@ -124,6 +124,8 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -329,7 +331,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsSshPublicKeys(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSshPublicKeys().getMap().containsKey(key);
   }
@@ -368,7 +370,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       java.lang.String key,
       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
         internalGetSshPublicKeys().getMap();
@@ -387,7 +389,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
         internalGetSshPublicKeys().getMap();
@@ -1336,7 +1338,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsSshPublicKeys(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSshPublicKeys().getMap().containsKey(key);
     }
@@ -1379,7 +1381,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
           map = internalGetSshPublicKeys().getMap();
@@ -1399,7 +1401,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
           map = internalGetSshPublicKeys().getMap();
@@ -1425,7 +1427,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeSshPublicKeys(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSshPublicKeys().getMutableMap().remove(key);
       return this;
@@ -1450,11 +1452,12 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder putSshPublicKeys(
         java.lang.String key, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableSshPublicKeys().getMutableMap().put(key, value);
       return this;
     }
