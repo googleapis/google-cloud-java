@@ -116,6 +116,8 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -248,7 +250,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsActionMetrics(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetActionMetrics().getMap().containsKey(key);
   }
@@ -294,7 +296,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrDefault(
       java.lang.String key, com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution> map =
         internalGetActionMetrics().getMap();
@@ -317,7 +319,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution> map =
         internalGetActionMetrics().getMap();
@@ -936,7 +938,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsActionMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetActionMetrics().getMap().containsKey(key);
     }
@@ -982,7 +984,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrDefault(
         java.lang.String key, com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution> map =
           internalGetActionMetrics().getMap();
@@ -1005,7 +1007,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.ScoreDistribution getActionMetricsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution> map =
           internalGetActionMetrics().getMap();
@@ -1034,7 +1036,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeActionMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableActionMetrics().getMutableMap().remove(key);
       return this;
@@ -1061,11 +1063,12 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public Builder putActionMetrics(
         java.lang.String key, com.google.recaptchaenterprise.v1.ScoreDistribution value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableActionMetrics().getMutableMap().put(key, value);
       return this;
     }

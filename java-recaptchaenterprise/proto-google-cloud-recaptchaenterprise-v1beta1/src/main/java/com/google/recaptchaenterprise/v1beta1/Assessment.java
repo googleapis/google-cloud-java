@@ -153,6 +153,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -721,7 +723,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (event_ != null) {
       output.writeMessage(2, getEvent());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(3, score_);
     }
     if (tokenProperties_ != null) {
@@ -749,7 +751,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (event_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEvent());
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, score_);
     }
     if (tokenProperties_ != null) {

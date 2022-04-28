@@ -157,6 +157,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1263,8 +1265,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (platformSettingsCase_ == 3) {
           webSettingsBuilder_.mergeFrom(value);
+        } else {
+          webSettingsBuilder_.setMessage(value);
         }
-        webSettingsBuilder_.setMessage(value);
       }
       platformSettingsCase_ = 3;
       return this;
@@ -1482,8 +1485,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (platformSettingsCase_ == 4) {
           androidSettingsBuilder_.mergeFrom(value);
+        } else {
+          androidSettingsBuilder_.setMessage(value);
         }
-        androidSettingsBuilder_.setMessage(value);
       }
       platformSettingsCase_ = 4;
       return this;
@@ -1699,8 +1703,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (platformSettingsCase_ == 5) {
           iosSettingsBuilder_.mergeFrom(value);
+        } else {
+          iosSettingsBuilder_.setMessage(value);
         }
-        iosSettingsBuilder_.setMessage(value);
       }
       platformSettingsCase_ = 5;
       return this;
