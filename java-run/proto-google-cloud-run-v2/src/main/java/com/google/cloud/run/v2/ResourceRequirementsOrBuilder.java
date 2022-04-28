@@ -81,7 +81,12 @@ public interface ResourceRequirementsOrBuilder
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
    */
-  java.lang.String getLimitsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLimitsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

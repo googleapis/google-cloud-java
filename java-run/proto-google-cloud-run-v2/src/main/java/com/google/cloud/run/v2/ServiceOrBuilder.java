@@ -202,7 +202,12 @@ public interface ServiceOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -285,7 +290,12 @@ public interface ServiceOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
    */
-  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

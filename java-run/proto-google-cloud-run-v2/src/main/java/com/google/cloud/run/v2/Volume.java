@@ -120,6 +120,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -969,8 +971,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (volumeTypeCase_ == 2) {
           secretBuilder_.mergeFrom(value);
+        } else {
+          secretBuilder_.setMessage(value);
         }
-        secretBuilder_.setMessage(value);
       }
       volumeTypeCase_ = 2;
       return this;
@@ -1192,8 +1195,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (volumeTypeCase_ == 3) {
           cloudSqlInstanceBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceBuilder_.setMessage(value);
         }
-        cloudSqlInstanceBuilder_.setMessage(value);
       }
       volumeTypeCase_ = 3;
       return this;

@@ -72,8 +72,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             break;
           case 8:
             {
-              binauthzMethodCase_ = 1;
               binauthzMethod_ = input.readBool();
+              binauthzMethodCase_ = 1;
               break;
             }
           case 18:
@@ -94,6 +94,8 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
