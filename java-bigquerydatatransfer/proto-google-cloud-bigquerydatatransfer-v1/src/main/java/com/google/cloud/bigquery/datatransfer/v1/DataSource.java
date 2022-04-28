@@ -227,6 +227,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -940,6 +942,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
    * @return The enum numeric value on the wire for transferType.
    */
   @java.lang.Override
@@ -958,6 +962,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
    * @return The transferType.
    */
   @java.lang.Override
@@ -982,6 +988,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.supports_multiple_transfers is
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=378
    * @return The supportsMultipleTransfers.
    */
   @java.lang.Override
@@ -2789,6 +2797,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+     *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
      * @return The enum numeric value on the wire for transferType.
      */
     @java.lang.Override
@@ -2807,6 +2817,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+     *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
      * @param value The enum numeric value on the wire for transferType to set.
      * @return This builder for chaining.
      */
@@ -2828,6 +2840,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+     *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
      * @return The transferType.
      */
     @java.lang.Override
@@ -2851,6 +2865,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+     *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
      * @param value The transferType to set.
      * @return This builder for chaining.
      */
@@ -2875,6 +2891,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
+     *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2895,6 +2913,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.supports_multiple_transfers is
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=378
      * @return The supportsMultipleTransfers.
      */
     @java.lang.Override
@@ -2911,6 +2931,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.supports_multiple_transfers is
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=378
      * @param value The supportsMultipleTransfers to set.
      * @return This builder for chaining.
      */
@@ -2930,6 +2952,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.supports_multiple_transfers is
+     *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=378
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -130,6 +130,8 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -339,6 +341,8 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2234,8 +2238,9 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       } else {
         if (timeCase_ == 3) {
           requestedTimeRangeBuilder_.mergeFrom(value);
+        } else {
+          requestedTimeRangeBuilder_.setMessage(value);
         }
-        requestedTimeRangeBuilder_.setMessage(value);
       }
       timeCase_ = 3;
       return this;
@@ -2467,8 +2472,9 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
       } else {
         if (timeCase_ == 4) {
           requestedRunTimeBuilder_.mergeFrom(value);
+        } else {
+          requestedRunTimeBuilder_.setMessage(value);
         }
-        requestedRunTimeBuilder_.setMessage(value);
       }
       timeCase_ = 4;
       return this;
