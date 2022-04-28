@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-video-live-stream/compare/v0.2.1...v0.3.0) (2022-04-28)
+
+
+### Features
+
+* add source code ([12ade64](https://github.com/googleapis/java-video-live-stream/commit/12ade64a93b27d8caecebd2afb3d1bf23340d526))
+* fix owlbot path ([#41](https://github.com/googleapis/java-video-live-stream/issues/41)) ([b7b1db3](https://github.com/googleapis/java-video-live-stream/commit/b7b1db38baa047a65903b7fa4f4e77c938a478ab))
+* update dependency com.google.cloud:google-cloud-shared-config to v1.4.0 ([#43](https://github.com/googleapis/java-video-live-stream/issues/43)) ([f612099](https://github.com/googleapis/java-video-live-stream/commit/f6120995d96a757f226ec83e50757a6b4648a5b0))
+
 ### [0.2.1](https://github.com/googleapis/java-video-live-stream/compare/v0.2.0...v0.2.1) (2022-04-19)
 
 
