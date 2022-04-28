@@ -332,6 +332,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -972,6 +974,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2022,6 +2026,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3160,6 +3166,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3984,6 +3992,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4810,6 +4820,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5643,6 +5655,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6535,6 +6549,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7707,6 +7723,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9564,6 +9582,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Override
@@ -9583,6 +9603,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
    * @return The il4Settings.
    */
   @java.lang.Override
@@ -9630,6 +9652,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Override
@@ -9649,6 +9673,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
    * @return The cjisSettings.
    */
   @java.lang.Override
@@ -9696,6 +9722,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Override
@@ -9715,6 +9743,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
    * @return The fedrampHighSettings.
    */
   @java.lang.Override
@@ -9765,6 +9795,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Override
@@ -9784,6 +9816,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
    * @return The fedrampModerateSettings.
    */
   @java.lang.Override
@@ -9909,7 +9943,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -9944,7 +9978,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -9961,7 +9995,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -12325,6 +12359,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
      * @return Whether the il4Settings field is set.
      */
     @java.lang.Override
@@ -12344,6 +12380,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
      * @return The il4Settings.
      */
     @java.lang.Override
@@ -12446,8 +12484,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (complianceRegimeSettingsCase_ == 7) {
           il4SettingsBuilder_.mergeFrom(value);
+        } else {
+          il4SettingsBuilder_.setMessage(value);
         }
-        il4SettingsBuilder_.setMessage(value);
       }
       complianceRegimeSettingsCase_ = 7;
       return this;
@@ -12580,6 +12619,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
      * @return Whether the cjisSettings field is set.
      */
     @java.lang.Override
@@ -12599,6 +12640,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
      * @return The cjisSettings.
      */
     @java.lang.Override
@@ -12701,8 +12744,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (complianceRegimeSettingsCase_ == 8) {
           cjisSettingsBuilder_.mergeFrom(value);
+        } else {
+          cjisSettingsBuilder_.setMessage(value);
         }
-        cjisSettingsBuilder_.setMessage(value);
       }
       complianceRegimeSettingsCase_ = 8;
       return this;
@@ -12835,6 +12879,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
+     *     deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
      * @return Whether the fedrampHighSettings field is set.
      */
     @java.lang.Override
@@ -12854,6 +12901,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
+     *     deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
      * @return The fedrampHighSettings.
      */
     @java.lang.Override
@@ -12960,8 +13010,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (complianceRegimeSettingsCase_ == 11) {
           fedrampHighSettingsBuilder_.mergeFrom(value);
+        } else {
+          fedrampHighSettingsBuilder_.setMessage(value);
         }
-        fedrampHighSettingsBuilder_.setMessage(value);
       }
       complianceRegimeSettingsCase_ = 11;
       return this;
@@ -13096,6 +13147,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+     *     deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
      * @return Whether the fedrampModerateSettings field is set.
      */
     @java.lang.Override
@@ -13115,6 +13169,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+     *     deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
      * @return The fedrampModerateSettings.
      */
     @java.lang.Override
@@ -13221,8 +13278,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (complianceRegimeSettingsCase_ == 12) {
           fedrampModerateSettingsBuilder_.mergeFrom(value);
+        } else {
+          fedrampModerateSettingsBuilder_.setMessage(value);
         }
-        fedrampModerateSettingsBuilder_.setMessage(value);
       }
       complianceRegimeSettingsCase_ = 12;
       return this;
@@ -13489,7 +13547,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -13525,7 +13583,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -13542,7 +13600,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -13566,7 +13624,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -13587,11 +13645,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }

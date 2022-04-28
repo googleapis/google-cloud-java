@@ -287,6 +287,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Deprecated
@@ -303,6 +305,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=455
    * @return The il4Settings.
    */
   @java.lang.Deprecated
@@ -334,6 +338,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Deprecated
@@ -350,6 +356,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=464
    * @return The cjisSettings.
    */
   @java.lang.Deprecated
@@ -382,6 +390,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Deprecated
@@ -398,6 +408,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=473
    * @return The fedrampHighSettings.
    */
   @java.lang.Deprecated
@@ -430,6 +442,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Deprecated
@@ -446,6 +460,8 @@ public interface WorkloadOrBuilder
    * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads_v1beta1.proto;l=482
    * @return The fedrampModerateSettings.
    */
   @java.lang.Deprecated
@@ -536,7 +552,12 @@ public interface WorkloadOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
