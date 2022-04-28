@@ -109,6 +109,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -283,6 +285,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -398,7 +402,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
       }
-      if (boost_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
         output.writeFloat(2, boost_);
       }
       unknownFields.writeTo(output);
@@ -413,7 +417,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
       }
-      if (boost_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boost_);
       }
       size += unknownFields.getSerializedSize();
@@ -1140,7 +1144,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < phrases_.size(); i++) {
       output.writeMessage(2, phrases_.get(i));
     }
-    if (boost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
       output.writeFloat(4, boost_);
     }
     unknownFields.writeTo(output);
@@ -1158,7 +1162,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < phrases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, phrases_.get(i));
     }
-    if (boost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, boost_);
     }
     size += unknownFields.getSerializedSize();

@@ -73,8 +73,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
             break;
           case 10:
             {
-              audioSourceCase_ = 1;
               audioSource_ = input.readBytes();
+              audioSourceCase_ = 1;
               break;
             }
           case 18:
@@ -95,6 +95,8 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

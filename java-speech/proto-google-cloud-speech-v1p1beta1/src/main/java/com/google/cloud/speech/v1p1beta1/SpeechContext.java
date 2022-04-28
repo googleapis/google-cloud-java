@@ -98,6 +98,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -267,7 +269,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < phrases_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phrases_.getRaw(i));
     }
-    if (boost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
       output.writeFloat(4, boost_);
     }
     unknownFields.writeTo(output);
@@ -287,7 +289,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getPhrasesList().size();
     }
-    if (boost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, boost_);
     }
     size += unknownFields.getSerializedSize();

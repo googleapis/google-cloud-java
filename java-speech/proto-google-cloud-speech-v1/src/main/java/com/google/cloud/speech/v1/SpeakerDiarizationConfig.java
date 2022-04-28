@@ -99,6 +99,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -194,6 +196,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
+   *     google/cloud/speech/v1/cloud_speech.proto;l=438
    * @return The speakerTag.
    */
   @java.lang.Override
@@ -749,6 +753,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1/cloud_speech.proto;l=438
      * @return The speakerTag.
      */
     @java.lang.Override
@@ -766,6 +772,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1/cloud_speech.proto;l=438
      * @param value The speakerTag to set.
      * @return This builder for chaining.
      */
@@ -786,6 +794,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1/cloud_speech.proto;l=438
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

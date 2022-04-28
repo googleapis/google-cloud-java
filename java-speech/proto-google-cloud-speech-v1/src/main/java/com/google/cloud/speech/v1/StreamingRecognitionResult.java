@@ -135,6 +135,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -435,7 +437,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (isFinal_ != false) {
       output.writeBool(2, isFinal_);
     }
-    if (stability_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(stability_) != 0) {
       output.writeFloat(3, stability_);
     }
     if (resultEndTime_ != null) {
@@ -462,7 +464,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (isFinal_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, isFinal_);
     }
-    if (stability_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(stability_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, stability_);
     }
     if (resultEndTime_ != null) {

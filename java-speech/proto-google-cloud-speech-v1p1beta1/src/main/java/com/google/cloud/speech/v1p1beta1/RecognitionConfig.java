@@ -283,6 +283,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1428,6 +1430,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=379
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Override
@@ -1449,6 +1453,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=384
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Override
@@ -4879,6 +4885,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=379
      * @return The enableSpeakerDiarization.
      */
     @java.lang.Override
@@ -4898,6 +4906,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=379
      * @param value The enableSpeakerDiarization to set.
      * @return This builder for chaining.
      */
@@ -4920,6 +4930,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=379
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4942,6 +4954,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=384
      * @return The diarizationSpeakerCount.
      */
     @java.lang.Override
@@ -4960,6 +4974,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=384
      * @param value The diarizationSpeakerCount to set.
      * @return This builder for chaining.
      */
@@ -4981,6 +4997,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=384
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

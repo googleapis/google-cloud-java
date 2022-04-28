@@ -600,6 +600,8 @@ public interface RecognitionConfigOrBuilder
    *
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=379
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Deprecated
@@ -616,6 +618,8 @@ public interface RecognitionConfigOrBuilder
    *
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=384
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Deprecated

@@ -78,6 +78,8 @@ public interface SpeakerDiarizationConfigOrBuilder
    * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.speaker_tag is deprecated.
+   *     See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=462
    * @return The speakerTag.
    */
   @java.lang.Deprecated
