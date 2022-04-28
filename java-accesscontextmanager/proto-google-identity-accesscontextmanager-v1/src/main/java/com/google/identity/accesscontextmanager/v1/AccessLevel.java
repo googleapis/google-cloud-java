@@ -174,6 +174,8 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1532,8 +1534,9 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (levelCase_ == 4) {
           basicBuilder_.mergeFrom(value);
+        } else {
+          basicBuilder_.setMessage(value);
         }
-        basicBuilder_.setMessage(value);
       }
       levelCase_ = 4;
       return this;
@@ -1742,8 +1745,9 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (levelCase_ == 5) {
           customBuilder_.mergeFrom(value);
+        } else {
+          customBuilder_.setMessage(value);
         }
-        customBuilder_.setMessage(value);
       }
       levelCase_ = 5;
       return this;
