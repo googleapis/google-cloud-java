@@ -110,6 +110,8 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -975,8 +977,9 @@ public final class ReusableConfigWrapper extends com.google.protobuf.GeneratedMe
       } else {
         if (configValuesCase_ == 2) {
           reusableConfigValuesBuilder_.mergeFrom(value);
+        } else {
+          reusableConfigValuesBuilder_.setMessage(value);
         }
-        reusableConfigValuesBuilder_.setMessage(value);
       }
       configValuesCase_ = 2;
       return this;

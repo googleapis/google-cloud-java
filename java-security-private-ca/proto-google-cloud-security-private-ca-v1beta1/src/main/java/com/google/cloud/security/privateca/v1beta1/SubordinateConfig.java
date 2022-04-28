@@ -114,6 +114,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -269,6 +271,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1864,8 +1868,9 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (subordinateConfigCase_ == 2) {
           pemIssuerChainBuilder_.mergeFrom(value);
+        } else {
+          pemIssuerChainBuilder_.setMessage(value);
         }
-        pemIssuerChainBuilder_.setMessage(value);
       }
       subordinateConfigCase_ = 2;
       return this;

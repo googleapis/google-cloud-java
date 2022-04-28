@@ -4420,6 +4420,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = certificateAuthorityServiceClient.setIamPolicy(request);
    * }
@@ -4447,6 +4448,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       certificateAuthorityServiceClient.setIamPolicyCallable().futureCall(request);
