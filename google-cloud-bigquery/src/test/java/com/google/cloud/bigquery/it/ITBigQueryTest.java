@@ -3029,9 +3029,6 @@ public class ITBigQueryTest {
     assertEquals(DDL_TABLE_SCHEMA, result.getSchema());
     Table remoteTable = bigquery.getTable(DATASET, sourceTableName);
     assertNotNull(remoteTable);
-    // StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
-    // TableInfo tableInfo = TableInfo.of(sourceTableId, tableDefinition);
-    // Table createdTable = bigquery.create(tableInfo);
 
     // Create snapshot table using source table as the base table
     TableId snapshotTableId = TableId.of(DATASET, snapshotTableName);
@@ -3066,10 +3063,6 @@ public class ITBigQueryTest {
             .build();
     Job createdRestoreJob = bigquery.create(JobInfo.of(restoreConfiguration));
     CopyJobConfiguration createdRestoreConfiguration = createdRestoreJob.getConfiguration();
-    // TODO: uncomment/modify below when b/227623980 is resolved
-    // assertEquals(
-    //     restoreConfiguration.getSourceTables().get(0).getTable(),
-    //     createdRestoreConfiguration.getSourceTables().get(0).getTable());
     assertEquals(
         restoreConfiguration.getOperationType(), createdRestoreConfiguration.getOperationType());
     assertEquals(
