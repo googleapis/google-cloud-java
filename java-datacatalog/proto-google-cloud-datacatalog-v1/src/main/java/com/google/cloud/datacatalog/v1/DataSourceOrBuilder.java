@@ -74,4 +74,66 @@ public interface DataSourceOrBuilder
    * @return The bytes for resource.
    */
   com.google.protobuf.ByteString getResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data Catalog entry name, if applicable.
+   * </pre>
+   *
+   * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sourceEntry.
+   */
+  java.lang.String getSourceEntry();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data Catalog entry name, if applicable.
+   * </pre>
+   *
+   * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for sourceEntry.
+   */
+  com.google.protobuf.ByteString getSourceEntryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   *
+   * @return Whether the storageProperties field is set.
+   */
+  boolean hasStorageProperties();
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   *
+   * @return The storageProperties.
+   */
+  com.google.cloud.datacatalog.v1.StorageProperties getStorageProperties();
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   */
+  com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder getStoragePropertiesOrBuilder();
+
+  public com.google.cloud.datacatalog.v1.DataSource.PropertiesCase getPropertiesCase();
 }

@@ -116,6 +116,8 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1049,8 +1051,9 @@ public final class BigQueryConnectionSpec extends com.google.protobuf.GeneratedM
       } else {
         if (connectionSpecCase_ == 2) {
           cloudSqlBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlBuilder_.setMessage(value);
         }
-        cloudSqlBuilder_.setMessage(value);
       }
       connectionSpecCase_ = 2;
       return this;

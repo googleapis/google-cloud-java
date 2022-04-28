@@ -78,6 +78,23 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
               type_ = rawValue;
               break;
             }
+          case 18:
+            {
+              com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder subBuilder = null;
+              if (dataplexTable_ != null) {
+                subBuilder = dataplexTable_.toBuilder();
+              }
+              dataplexTable_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.v1.DataplexTableSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dataplexTable_);
+                dataplexTable_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +106,8 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -309,6 +328,57 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int DATAPLEX_TABLE_FIELD_NUMBER = 2;
+  private com.google.cloud.datacatalog.v1.DataplexTableSpec dataplexTable_;
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   *
+   * @return Whether the dataplexTable field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplexTable() {
+    return dataplexTable_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   *
+   * @return The dataplexTable.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataplexTableSpec getDataplexTable() {
+    return dataplexTable_ == null
+        ? com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()
+        : dataplexTable_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder() {
+    return getDataplexTable();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -328,6 +398,9 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(1, type_);
     }
+    if (dataplexTable_ != null) {
+      output.writeMessage(2, getDataplexTable());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -341,6 +414,9 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         != com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.TABLE_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+    }
+    if (dataplexTable_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDataplexTable());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -359,6 +435,10 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.datacatalog.v1.DatabaseTableSpec) obj;
 
     if (type_ != other.type_) return false;
+    if (hasDataplexTable() != other.hasDataplexTable()) return false;
+    if (hasDataplexTable()) {
+      if (!getDataplexTable().equals(other.getDataplexTable())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,6 +452,10 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (hasDataplexTable()) {
+      hash = (37 * hash) + DATAPLEX_TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplexTable().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -520,6 +604,12 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       super.clear();
       type_ = 0;
 
+      if (dataplexTableBuilder_ == null) {
+        dataplexTable_ = null;
+      } else {
+        dataplexTable_ = null;
+        dataplexTableBuilder_ = null;
+      }
       return this;
     }
 
@@ -548,6 +638,11 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       com.google.cloud.datacatalog.v1.DatabaseTableSpec result =
           new com.google.cloud.datacatalog.v1.DatabaseTableSpec(this);
       result.type_ = type_;
+      if (dataplexTableBuilder_ == null) {
+        result.dataplexTable_ = dataplexTable_;
+      } else {
+        result.dataplexTable_ = dataplexTableBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -600,6 +695,9 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         return this;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (other.hasDataplexTable()) {
+        mergeDataplexTable(other.getDataplexTable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -722,6 +820,201 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       type_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.datacatalog.v1.DataplexTableSpec dataplexTable_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DataplexTableSpec,
+            com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder,
+            com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder>
+        dataplexTableBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     *
+     * @return Whether the dataplexTable field is set.
+     */
+    public boolean hasDataplexTable() {
+      return dataplexTableBuilder_ != null || dataplexTable_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     *
+     * @return The dataplexTable.
+     */
+    public com.google.cloud.datacatalog.v1.DataplexTableSpec getDataplexTable() {
+      if (dataplexTableBuilder_ == null) {
+        return dataplexTable_ == null
+            ? com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()
+            : dataplexTable_;
+      } else {
+        return dataplexTableBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public Builder setDataplexTable(com.google.cloud.datacatalog.v1.DataplexTableSpec value) {
+      if (dataplexTableBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataplexTable_ = value;
+        onChanged();
+      } else {
+        dataplexTableBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public Builder setDataplexTable(
+        com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder builderForValue) {
+      if (dataplexTableBuilder_ == null) {
+        dataplexTable_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataplexTableBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public Builder mergeDataplexTable(com.google.cloud.datacatalog.v1.DataplexTableSpec value) {
+      if (dataplexTableBuilder_ == null) {
+        if (dataplexTable_ != null) {
+          dataplexTable_ =
+              com.google.cloud.datacatalog.v1.DataplexTableSpec.newBuilder(dataplexTable_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataplexTable_ = value;
+        }
+        onChanged();
+      } else {
+        dataplexTableBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public Builder clearDataplexTable() {
+      if (dataplexTableBuilder_ == null) {
+        dataplexTable_ = null;
+        onChanged();
+      } else {
+        dataplexTable_ = null;
+        dataplexTableBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder getDataplexTableBuilder() {
+
+      onChanged();
+      return getDataplexTableFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    public com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder() {
+      if (dataplexTableBuilder_ != null) {
+        return dataplexTableBuilder_.getMessageOrBuilder();
+      } else {
+        return dataplexTable_ == null
+            ? com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()
+            : dataplexTable_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields specific to a Dataplex table and present only in the Dataplex table
+     * entries.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DataplexTableSpec,
+            com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder,
+            com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder>
+        getDataplexTableFieldBuilder() {
+      if (dataplexTableBuilder_ == null) {
+        dataplexTableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.DataplexTableSpec,
+                com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder,
+                com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder>(
+                getDataplexTable(), getParentForChildren(), isClean());
+        dataplexTable_ = null;
+      }
+      return dataplexTableBuilder_;
     }
 
     @java.lang.Override

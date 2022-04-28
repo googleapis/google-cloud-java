@@ -605,6 +605,44 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   *
+   * @return Whether the filesetSpec field is set.
+   */
+  boolean hasFilesetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   *
+   * @return The filesetSpec.
+   */
+  com.google.cloud.datacatalog.v1.FilesetSpec getFilesetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   */
+  com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder getFilesetSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display name of an entry.
    * The name must contain only Unicode letters, numbers (0-9), underscores (_),
    * dashes (-), spaces ( ), and can't start or end with spaces.
@@ -675,7 +713,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -687,7 +725,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -699,7 +737,7 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -883,7 +921,12 @@ public interface EntryOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

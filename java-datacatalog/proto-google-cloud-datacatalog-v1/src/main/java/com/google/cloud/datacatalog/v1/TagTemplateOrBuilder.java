@@ -91,7 +91,7 @@ public interface TagTemplateOrBuilder
    * do not require tag template access to appear in
    * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
    * Additionally, you can search for a public tag by value with a
-   * simple search query instead of using a ``tag:`` predicate.
+   * simple search query in addition to using a ``tag:`` predicate.
    * </pre>
    *
    * <code>bool is_publicly_readable = 5;</code>
@@ -182,8 +182,12 @@ public interface TagTemplateOrBuilder
    * map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.datacatalog.v1.TagTemplateField getFieldsOrDefault(
-      java.lang.String key, com.google.cloud.datacatalog.v1.TagTemplateField defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.datacatalog.v1.TagTemplateField defaultValue);
   /**
    *
    *

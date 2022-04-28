@@ -58,6 +58,7 @@ public interface TaxonomyOrBuilder
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -73,6 +74,7 @@ public interface TaxonomyOrBuilder
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

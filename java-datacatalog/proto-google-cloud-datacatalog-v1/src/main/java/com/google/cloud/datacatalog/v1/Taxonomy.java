@@ -171,6 +171,8 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -395,6 +397,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -421,6 +424,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * The name can't start or end with spaces, must contain only Unicode letters,
    * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
    * when encoded in UTF-8.
+   * The taxonomy display name must be unique within an organization.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1259,6 +1263,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * The name can't start or end with spaces, must contain only Unicode letters,
      * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
      * when encoded in UTF-8.
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1284,6 +1289,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * The name can't start or end with spaces, must contain only Unicode letters,
      * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
      * when encoded in UTF-8.
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1309,6 +1315,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * The name can't start or end with spaces, must contain only Unicode letters,
      * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
      * when encoded in UTF-8.
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1333,6 +1340,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * The name can't start or end with spaces, must contain only Unicode letters,
      * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
      * when encoded in UTF-8.
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1353,6 +1361,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * The name can't start or end with spaces, must contain only Unicode letters,
      * numbers, underscores, dashes, and spaces, and be at most 200 bytes long
      * when encoded in UTF-8.
+     * The taxonomy display name must be unique within an organization.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

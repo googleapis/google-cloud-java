@@ -127,6 +127,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -402,6 +404,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
      * @return The includePublicTagTemplates.
      */
     @java.lang.Deprecated
@@ -518,6 +523,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -839,6 +846,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
      * @return The includePublicTagTemplates.
      */
     @java.lang.Override
@@ -2055,6 +2065,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated
+       *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
        * @return The includePublicTagTemplates.
        */
       @java.lang.Override
@@ -2074,6 +2087,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated
+       *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
        * @param value The includePublicTagTemplates to set.
        * @return This builder for chaining.
        */
@@ -2096,6 +2112,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        * bool include_public_tag_templates = 19 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated
+       *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=604
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

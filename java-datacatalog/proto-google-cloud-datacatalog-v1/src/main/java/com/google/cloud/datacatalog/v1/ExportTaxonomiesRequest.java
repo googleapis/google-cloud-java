@@ -92,8 +92,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
             }
           case 24:
             {
-              destinationCase_ = 3;
               destination_ = input.readBool();
+              destinationCase_ = 3;
               break;
             }
           default:
@@ -107,6 +107,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

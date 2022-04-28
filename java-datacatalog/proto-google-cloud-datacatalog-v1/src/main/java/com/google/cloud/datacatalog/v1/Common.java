@@ -44,15 +44,16 @@ public final class Common {
           + "to\022\033google.cloud.datacatalog.v1\032\037google/"
           + "protobuf/timestamp.proto\"Q\n\017PersonalDeta"
           + "ils\022\017\n\007starred\030\001 \001(\010\022-\n\tstar_time\030\002 \001(\0132"
-          + "\032.google.protobuf.Timestamp*m\n\020Integrate"
+          + "\032.google.protobuf.Timestamp*{\n\020Integrate"
           + "dSystem\022!\n\035INTEGRATED_SYSTEM_UNSPECIFIED"
           + "\020\000\022\014\n\010BIGQUERY\020\001\022\020\n\014CLOUD_PUBSUB\020\002\022\026\n\022DA"
-          + "TAPROC_METASTORE\020\003B\313\001\n\037com.google.cloud."
-          + "datacatalog.v1P\001ZFgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/datacatalog/v1;dat"
-          + "acatalog\370\001\001\252\002\033Google.Cloud.DataCatalog.V"
-          + "1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google"
-          + "::Cloud::DataCatalog::V1b\006proto3"
+          + "TAPROC_METASTORE\020\003\022\014\n\010DATAPLEX\020\004B\313\001\n\037com"
+          + ".google.cloud.datacatalog.v1P\001ZFgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/data"
+          + "catalog/v1;datacatalog\370\001\001\252\002\033Google.Cloud"
+          + ".DataCatalog.V1\312\002\033Google\\Cloud\\DataCatal"
+          + "og\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

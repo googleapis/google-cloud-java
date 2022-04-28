@@ -116,6 +116,8 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -241,7 +243,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsUsageWithinTimeRange(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetUsageWithinTimeRange().getMap().containsKey(key);
   }
@@ -283,7 +285,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrDefault(
       java.lang.String key, com.google.cloud.datacatalog.v1.UsageStats defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.UsageStats> map =
         internalGetUsageWithinTimeRange().getMap();
@@ -304,7 +306,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.UsageStats> map =
         internalGetUsageWithinTimeRange().getMap();
@@ -923,7 +925,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsUsageWithinTimeRange(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetUsageWithinTimeRange().getMap().containsKey(key);
     }
@@ -965,7 +967,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrDefault(
         java.lang.String key, com.google.cloud.datacatalog.v1.UsageStats defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.UsageStats> map =
           internalGetUsageWithinTimeRange().getMap();
@@ -986,7 +988,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.UsageStats> map =
           internalGetUsageWithinTimeRange().getMap();
@@ -1013,7 +1015,7 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeUsageWithinTimeRange(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableUsageWithinTimeRange().getMutableMap().remove(key);
       return this;
@@ -1038,11 +1040,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
     public Builder putUsageWithinTimeRange(
         java.lang.String key, com.google.cloud.datacatalog.v1.UsageStats value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableUsageWithinTimeRange().getMutableMap().put(key, value);
       return this;
     }

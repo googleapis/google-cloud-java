@@ -94,6 +94,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -154,8 +156,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the person in the format of `john.doe&#64;example.com`,
-     * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+     * Email of the person in the format of `john.doe&#64;xyz`,
+     * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
      * </pre>
      *
      * <code>string email = 2;</code>
@@ -167,8 +169,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the person in the format of `john.doe&#64;example.com`,
-     * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+     * Email of the person in the format of `john.doe&#64;xyz`,
+     * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
      * </pre>
      *
      * <code>string email = 2;</code>
@@ -255,6 +257,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -333,8 +337,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the person in the format of `john.doe&#64;example.com`,
-     * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+     * Email of the person in the format of `john.doe&#64;xyz`,
+     * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
      * </pre>
      *
      * <code>string email = 2;</code>
@@ -357,8 +361,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email of the person in the format of `john.doe&#64;example.com`,
-     * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+     * Email of the person in the format of `john.doe&#64;xyz`,
+     * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
      * </pre>
      *
      * <code>string email = 2;</code>
@@ -827,8 +831,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Email of the person in the format of `john.doe&#64;example.com`,
-       * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+       * Email of the person in the format of `john.doe&#64;xyz`,
+       * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
        * </pre>
        *
        * <code>string email = 2;</code>
@@ -850,8 +854,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Email of the person in the format of `john.doe&#64;example.com`,
-       * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+       * Email of the person in the format of `john.doe&#64;xyz`,
+       * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
        * </pre>
        *
        * <code>string email = 2;</code>
@@ -873,8 +877,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Email of the person in the format of `john.doe&#64;example.com`,
-       * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+       * Email of the person in the format of `john.doe&#64;xyz`,
+       * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
        * </pre>
        *
        * <code>string email = 2;</code>
@@ -895,8 +899,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Email of the person in the format of `john.doe&#64;example.com`,
-       * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+       * Email of the person in the format of `john.doe&#64;xyz`,
+       * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
        * </pre>
        *
        * <code>string email = 2;</code>
@@ -913,8 +917,8 @@ public final class Contacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Email of the person in the format of `john.doe&#64;example.com`,
-       * `&lt;john.doe&#64;example.com&gt;`, or `John Doe&lt;john.doe&#64;example.com&gt;`.
+       * Email of the person in the format of `john.doe&#64;xyz`,
+       * `&lt;john.doe&#64;xyz&gt;`, or `John Doe&lt;john.doe&#64;xyz&gt;`.
        * </pre>
        *
        * <code>string email = 2;</code>

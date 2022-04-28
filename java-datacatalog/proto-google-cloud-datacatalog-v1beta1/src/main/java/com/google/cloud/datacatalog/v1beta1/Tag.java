@@ -132,6 +132,8 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -498,7 +500,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsFields(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetFields().getMap().containsKey(key);
   }
@@ -544,7 +546,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
       java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> map =
         internalGetFields().getMap();
@@ -566,7 +568,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> map =
         internalGetFields().getMap();
@@ -1574,7 +1576,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsFields(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetFields().getMap().containsKey(key);
     }
@@ -1620,7 +1622,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
         java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> map =
           internalGetFields().getMap();
@@ -1642,7 +1644,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1beta1.TagField> map =
           internalGetFields().getMap();
@@ -1671,7 +1673,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeFields(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableFields().getMutableMap().remove(key);
       return this;
@@ -1698,11 +1700,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     public Builder putFields(
         java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableFields().getMutableMap().put(key, value);
       return this;
     }

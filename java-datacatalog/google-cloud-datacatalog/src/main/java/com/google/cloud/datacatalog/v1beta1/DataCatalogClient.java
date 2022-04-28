@@ -3318,6 +3318,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setResource(
    *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = dataCatalogClient.setIamPolicy(request);
    * }
@@ -3350,6 +3351,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setResource(
    *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = dataCatalogClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

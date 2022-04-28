@@ -40,6 +40,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
   private DataSource() {
     service_ = 0;
     resource_ = "";
+    sourceEntry_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,32 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
               resource_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceEntry_ = s;
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.datacatalog.v1.StorageProperties.Builder subBuilder = null;
+              if (propertiesCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.datacatalog.v1.StorageProperties) properties_).toBuilder();
+              }
+              properties_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.v1.StorageProperties.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.datacatalog.v1.StorageProperties) properties_);
+                properties_ = subBuilder.buildPartial();
+              }
+              propertiesCase_ = 4;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -96,6 +123,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -276,6 +305,50 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.datacatalog.v1.DataSource.Service)
   }
 
+  private int propertiesCase_ = 0;
+  private java.lang.Object properties_;
+
+  public enum PropertiesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    STORAGE_PROPERTIES(4),
+    PROPERTIES_NOT_SET(0);
+    private final int value;
+
+    private PropertiesCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PropertiesCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PropertiesCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return STORAGE_PROPERTIES;
+        case 0:
+          return PROPERTIES_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PropertiesCase getPropertiesCase() {
+    return PropertiesCase.forNumber(propertiesCase_);
+  }
+
   public static final int SERVICE_FIELD_NUMBER = 1;
   private int service_;
   /**
@@ -365,6 +438,107 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_ENTRY_FIELD_NUMBER = 3;
+  private volatile java.lang.Object sourceEntry_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data Catalog entry name, if applicable.
+   * </pre>
+   *
+   * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sourceEntry.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceEntry() {
+    java.lang.Object ref = sourceEntry_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceEntry_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data Catalog entry name, if applicable.
+   * </pre>
+   *
+   * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for sourceEntry.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceEntryBytes() {
+    java.lang.Object ref = sourceEntry_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceEntry_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STORAGE_PROPERTIES_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   *
+   * @return Whether the storageProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasStorageProperties() {
+    return propertiesCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   *
+   * @return The storageProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.StorageProperties getStorageProperties() {
+    if (propertiesCase_ == 4) {
+      return (com.google.cloud.datacatalog.v1.StorageProperties) properties_;
+    }
+    return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Detailed properties of the underlying storage.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder
+      getStoragePropertiesOrBuilder() {
+    if (propertiesCase_ == 4) {
+      return (com.google.cloud.datacatalog.v1.StorageProperties) properties_;
+    }
+    return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -386,6 +560,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resource_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceEntry_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceEntry_);
+    }
+    if (propertiesCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.datacatalog.v1.StorageProperties) properties_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -401,6 +581,14 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resource_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceEntry_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceEntry_);
+    }
+    if (propertiesCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.datacatalog.v1.StorageProperties) properties_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,6 +608,15 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
     if (service_ != other.service_) return false;
     if (!getResource().equals(other.getResource())) return false;
+    if (!getSourceEntry().equals(other.getSourceEntry())) return false;
+    if (!getPropertiesCase().equals(other.getPropertiesCase())) return false;
+    switch (propertiesCase_) {
+      case 4:
+        if (!getStorageProperties().equals(other.getStorageProperties())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -435,6 +632,16 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + service_;
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
+    hash = (37 * hash) + SOURCE_ENTRY_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceEntry().hashCode();
+    switch (propertiesCase_) {
+      case 4:
+        hash = (37 * hash) + STORAGE_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getStorageProperties().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -584,6 +791,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
       resource_ = "";
 
+      sourceEntry_ = "";
+
+      propertiesCase_ = 0;
+      properties_ = null;
       return this;
     }
 
@@ -613,6 +824,15 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.datacatalog.v1.DataSource(this);
       result.service_ = service_;
       result.resource_ = resource_;
+      result.sourceEntry_ = sourceEntry_;
+      if (propertiesCase_ == 4) {
+        if (storagePropertiesBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = storagePropertiesBuilder_.build();
+        }
+      }
+      result.propertiesCase_ = propertiesCase_;
       onBuilt();
       return result;
     }
@@ -669,6 +889,21 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         resource_ = other.resource_;
         onChanged();
       }
+      if (!other.getSourceEntry().isEmpty()) {
+        sourceEntry_ = other.sourceEntry_;
+        onChanged();
+      }
+      switch (other.getPropertiesCase()) {
+        case STORAGE_PROPERTIES:
+          {
+            mergeStorageProperties(other.getStorageProperties());
+            break;
+          }
+        case PROPERTIES_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -695,6 +930,20 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int propertiesCase_ = 0;
+    private java.lang.Object properties_;
+
+    public PropertiesCase getPropertiesCase() {
+      return PropertiesCase.forNumber(propertiesCase_);
+    }
+
+    public Builder clearProperties() {
+      propertiesCase_ = 0;
+      properties_ = null;
+      onChanged();
       return this;
     }
 
@@ -900,6 +1149,324 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       resource_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object sourceEntry_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data Catalog entry name, if applicable.
+     * </pre>
+     *
+     * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sourceEntry.
+     */
+    public java.lang.String getSourceEntry() {
+      java.lang.Object ref = sourceEntry_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceEntry_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data Catalog entry name, if applicable.
+     * </pre>
+     *
+     * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for sourceEntry.
+     */
+    public com.google.protobuf.ByteString getSourceEntryBytes() {
+      java.lang.Object ref = sourceEntry_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceEntry_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data Catalog entry name, if applicable.
+     * </pre>
+     *
+     * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The sourceEntry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceEntry(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      sourceEntry_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data Catalog entry name, if applicable.
+     * </pre>
+     *
+     * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceEntry() {
+
+      sourceEntry_ = getDefaultInstance().getSourceEntry();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data Catalog entry name, if applicable.
+     * </pre>
+     *
+     * <code>string source_entry = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for sourceEntry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceEntryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      sourceEntry_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.StorageProperties,
+            com.google.cloud.datacatalog.v1.StorageProperties.Builder,
+            com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder>
+        storagePropertiesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     *
+     * @return Whether the storageProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasStorageProperties() {
+      return propertiesCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     *
+     * @return The storageProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.StorageProperties getStorageProperties() {
+      if (storagePropertiesBuilder_ == null) {
+        if (propertiesCase_ == 4) {
+          return (com.google.cloud.datacatalog.v1.StorageProperties) properties_;
+        }
+        return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+      } else {
+        if (propertiesCase_ == 4) {
+          return storagePropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    public Builder setStorageProperties(com.google.cloud.datacatalog.v1.StorageProperties value) {
+      if (storagePropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        properties_ = value;
+        onChanged();
+      } else {
+        storagePropertiesBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    public Builder setStorageProperties(
+        com.google.cloud.datacatalog.v1.StorageProperties.Builder builderForValue) {
+      if (storagePropertiesBuilder_ == null) {
+        properties_ = builderForValue.build();
+        onChanged();
+      } else {
+        storagePropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      propertiesCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    public Builder mergeStorageProperties(com.google.cloud.datacatalog.v1.StorageProperties value) {
+      if (storagePropertiesBuilder_ == null) {
+        if (propertiesCase_ == 4
+            && properties_
+                != com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance()) {
+          properties_ =
+              com.google.cloud.datacatalog.v1.StorageProperties.newBuilder(
+                      (com.google.cloud.datacatalog.v1.StorageProperties) properties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          properties_ = value;
+        }
+        onChanged();
+      } else {
+        if (propertiesCase_ == 4) {
+          storagePropertiesBuilder_.mergeFrom(value);
+        } else {
+          storagePropertiesBuilder_.setMessage(value);
+        }
+      }
+      propertiesCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    public Builder clearStorageProperties() {
+      if (storagePropertiesBuilder_ == null) {
+        if (propertiesCase_ == 4) {
+          propertiesCase_ = 0;
+          properties_ = null;
+          onChanged();
+        }
+      } else {
+        if (propertiesCase_ == 4) {
+          propertiesCase_ = 0;
+          properties_ = null;
+        }
+        storagePropertiesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    public com.google.cloud.datacatalog.v1.StorageProperties.Builder getStoragePropertiesBuilder() {
+      return getStoragePropertiesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder
+        getStoragePropertiesOrBuilder() {
+      if ((propertiesCase_ == 4) && (storagePropertiesBuilder_ != null)) {
+        return storagePropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (propertiesCase_ == 4) {
+          return (com.google.cloud.datacatalog.v1.StorageProperties) properties_;
+        }
+        return com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed properties of the underlying storage.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.StorageProperties storage_properties = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.StorageProperties,
+            com.google.cloud.datacatalog.v1.StorageProperties.Builder,
+            com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder>
+        getStoragePropertiesFieldBuilder() {
+      if (storagePropertiesBuilder_ == null) {
+        if (!(propertiesCase_ == 4)) {
+          properties_ = com.google.cloud.datacatalog.v1.StorageProperties.getDefaultInstance();
+        }
+        storagePropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.StorageProperties,
+                com.google.cloud.datacatalog.v1.StorageProperties.Builder,
+                com.google.cloud.datacatalog.v1.StoragePropertiesOrBuilder>(
+                (com.google.cloud.datacatalog.v1.StorageProperties) properties_,
+                getParentForChildren(),
+                isClean());
+        properties_ = null;
+      }
+      propertiesCase_ = 4;
+      onChanged();
+      ;
+      return storagePropertiesBuilder_;
     }
 
     @java.lang.Override

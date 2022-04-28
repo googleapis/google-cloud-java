@@ -47,4 +47,42 @@ public interface DatabaseTableSpecOrBuilder
    * @return The type.
    */
   com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   *
+   * @return Whether the dataplexTable field is set.
+   */
+  boolean hasDataplexTable();
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   *
+   * @return The dataplexTable.
+   */
+  com.google.cloud.datacatalog.v1.DataplexTableSpec getDataplexTable();
+  /**
+   *
+   *
+   * <pre>
+   * Fields specific to a Dataplex table and present only in the Dataplex table
+   * entries.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   */
+  com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder();
 }

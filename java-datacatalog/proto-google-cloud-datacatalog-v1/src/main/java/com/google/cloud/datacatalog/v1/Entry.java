@@ -347,6 +347,22 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               fullyQualifiedName_ = s;
               break;
             }
+          case 266:
+            {
+              com.google.cloud.datacatalog.v1.FilesetSpec.Builder subBuilder = null;
+              if (specCase_ == 33) {
+                subBuilder = ((com.google.cloud.datacatalog.v1.FilesetSpec) spec_).toBuilder();
+              }
+              spec_ =
+                  input.readMessage(
+                      com.google.cloud.datacatalog.v1.FilesetSpec.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.FilesetSpec) spec_);
+                spec_ = subBuilder.buildPartial();
+              }
+              specCase_ = 33;
+              break;
+            }
           case 298:
             {
               com.google.cloud.datacatalog.v1.BusinessContext.Builder subBuilder = null;
@@ -374,6 +390,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -562,6 +580,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     DATABASE_TABLE_SPEC(24),
     DATA_SOURCE_CONNECTION_SPEC(27),
     ROUTINE_SPEC(28),
+    FILESET_SPEC(33),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -586,6 +605,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           return DATA_SOURCE_CONNECTION_SPEC;
         case 28:
           return ROUTINE_SPEC;
+        case 33:
+          return FILESET_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -1450,6 +1471,60 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
   }
 
+  public static final int FILESET_SPEC_FIELD_NUMBER = 33;
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   *
+   * @return Whether the filesetSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilesetSpec() {
+    return specCase_ == 33;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   *
+   * @return The filesetSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.FilesetSpec getFilesetSpec() {
+    if (specCase_ == 33) {
+      return (com.google.cloud.datacatalog.v1.FilesetSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a fileset resource. Valid only
+   * for entries with the `FILESET` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder getFilesetSpecOrBuilder() {
+    if (specCase_ == 33) {
+      return (com.google.cloud.datacatalog.v1.FilesetSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
@@ -1574,7 +1649,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -1589,7 +1664,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -1606,7 +1681,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Business Context of the entry. Not supported for BigQuery datasets.
+   * Business Context of the entry. Not supported for BigQuery datasets
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -1817,7 +1892,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -1858,7 +1933,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1878,7 +1953,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2071,6 +2146,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, fullyQualifiedName_);
     }
+    if (specCase_ == 33) {
+      output.writeMessage(33, (com.google.cloud.datacatalog.v1.FilesetSpec) spec_);
+    }
     if (businessContext_ != null) {
       output.writeMessage(37, getBusinessContext());
     }
@@ -2169,6 +2247,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, fullyQualifiedName_);
     }
+    if (specCase_ == 33) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, (com.google.cloud.datacatalog.v1.FilesetSpec) spec_);
+    }
     if (businessContext_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getBusinessContext());
     }
@@ -2264,6 +2347,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         break;
       case 28:
         if (!getRoutineSpec().equals(other.getRoutineSpec())) return false;
+        break;
+      case 33:
+        if (!getFilesetSpec().equals(other.getFilesetSpec())) return false;
         break;
       case 0:
       default:
@@ -2369,6 +2455,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 28:
         hash = (37 * hash) + ROUTINE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getRoutineSpec().hashCode();
+        break;
+      case 33:
+        hash = (37 * hash) + FILESET_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getFilesetSpec().hashCode();
         break;
       case 0:
       default:
@@ -2685,6 +2775,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           result.spec_ = routineSpecBuilder_.build();
         }
       }
+      if (specCase_ == 33) {
+        if (filesetSpecBuilder_ == null) {
+          result.spec_ = spec_;
+        } else {
+          result.spec_ = filesetSpecBuilder_.build();
+        }
+      }
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (businessContextBuilder_ == null) {
@@ -2882,6 +2979,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         case ROUTINE_SPEC:
           {
             mergeRoutineSpec(other.getRoutineSpec());
+            break;
+          }
+        case FILESET_SPEC:
+          {
+            mergeFilesetSpec(other.getFilesetSpec());
             break;
           }
         case SPEC_NOT_SET:
@@ -4158,8 +4260,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeSpecCase_ == 6) {
           gcsFilesetSpecBuilder_.mergeFrom(value);
+        } else {
+          gcsFilesetSpecBuilder_.setMessage(value);
         }
-        gcsFilesetSpecBuilder_.setMessage(value);
       }
       typeSpecCase_ = 6;
       return this;
@@ -4377,8 +4480,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeSpecCase_ == 12) {
           bigqueryTableSpecBuilder_.mergeFrom(value);
+        } else {
+          bigqueryTableSpecBuilder_.setMessage(value);
         }
-        bigqueryTableSpecBuilder_.setMessage(value);
       }
       typeSpecCase_ = 12;
       return this;
@@ -4614,8 +4718,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeSpecCase_ == 15) {
           bigqueryDateShardedSpecBuilder_.mergeFrom(value);
+        } else {
+          bigqueryDateShardedSpecBuilder_.setMessage(value);
         }
-        bigqueryDateShardedSpecBuilder_.setMessage(value);
       }
       typeSpecCase_ = 15;
       return this;
@@ -4846,8 +4951,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (specCase_ == 24) {
           databaseTableSpecBuilder_.mergeFrom(value);
+        } else {
+          databaseTableSpecBuilder_.setMessage(value);
         }
-        databaseTableSpecBuilder_.setMessage(value);
       }
       specCase_ = 24;
       return this;
@@ -5073,8 +5179,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (specCase_ == 27) {
           dataSourceConnectionSpecBuilder_.mergeFrom(value);
+        } else {
+          dataSourceConnectionSpecBuilder_.setMessage(value);
         }
-        dataSourceConnectionSpecBuilder_.setMessage(value);
       }
       specCase_ = 27;
       return this;
@@ -5297,8 +5404,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (specCase_ == 28) {
           routineSpecBuilder_.mergeFrom(value);
+        } else {
+          routineSpecBuilder_.setMessage(value);
         }
-        routineSpecBuilder_.setMessage(value);
       }
       specCase_ = 28;
       return this;
@@ -5396,6 +5504,225 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return routineSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.FilesetSpec,
+            com.google.cloud.datacatalog.v1.FilesetSpec.Builder,
+            com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder>
+        filesetSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     *
+     * @return Whether the filesetSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilesetSpec() {
+      return specCase_ == 33;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     *
+     * @return The filesetSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.FilesetSpec getFilesetSpec() {
+      if (filesetSpecBuilder_ == null) {
+        if (specCase_ == 33) {
+          return (com.google.cloud.datacatalog.v1.FilesetSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 33) {
+          return filesetSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    public Builder setFilesetSpec(com.google.cloud.datacatalog.v1.FilesetSpec value) {
+      if (filesetSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        filesetSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    public Builder setFilesetSpec(
+        com.google.cloud.datacatalog.v1.FilesetSpec.Builder builderForValue) {
+      if (filesetSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        filesetSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    public Builder mergeFilesetSpec(com.google.cloud.datacatalog.v1.FilesetSpec value) {
+      if (filesetSpecBuilder_ == null) {
+        if (specCase_ == 33
+            && spec_ != com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.datacatalog.v1.FilesetSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.FilesetSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 33) {
+          filesetSpecBuilder_.mergeFrom(value);
+        } else {
+          filesetSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    public Builder clearFilesetSpec() {
+      if (filesetSpecBuilder_ == null) {
+        if (specCase_ == 33) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 33) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        filesetSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    public com.google.cloud.datacatalog.v1.FilesetSpec.Builder getFilesetSpecBuilder() {
+      return getFilesetSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder getFilesetSpecOrBuilder() {
+      if ((specCase_ == 33) && (filesetSpecBuilder_ != null)) {
+        return filesetSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 33) {
+          return (com.google.cloud.datacatalog.v1.FilesetSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a fileset resource. Valid only
+     * for entries with the `FILESET` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.FilesetSpec fileset_spec = 33;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.FilesetSpec,
+            com.google.cloud.datacatalog.v1.FilesetSpec.Builder,
+            com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder>
+        getFilesetSpecFieldBuilder() {
+      if (filesetSpecBuilder_ == null) {
+        if (!(specCase_ == 33)) {
+          spec_ = com.google.cloud.datacatalog.v1.FilesetSpec.getDefaultInstance();
+        }
+        filesetSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.FilesetSpec,
+                com.google.cloud.datacatalog.v1.FilesetSpec.Builder,
+                com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.FilesetSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 33;
+      onChanged();
+      ;
+      return filesetSpecBuilder_;
     }
 
     private java.lang.Object displayName_ = "";
@@ -5670,7 +5997,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5684,7 +6011,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5704,7 +6031,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5726,7 +6053,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5746,7 +6073,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5772,7 +6099,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5792,7 +6119,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5806,7 +6133,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -5824,7 +6151,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Business Context of the entry. Not supported for BigQuery datasets.
+     * Business Context of the entry. Not supported for BigQuery datasets
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
@@ -6501,7 +6828,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -6543,7 +6870,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -6563,7 +6890,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -6590,7 +6917,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -6614,11 +6941,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }

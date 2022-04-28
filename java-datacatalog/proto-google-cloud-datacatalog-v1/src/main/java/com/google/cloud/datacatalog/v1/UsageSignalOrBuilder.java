@@ -110,8 +110,12 @@ public interface UsageSignalOrBuilder
    * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.datacatalog.v1.UsageStats getUsageWithinTimeRangeOrDefault(
-      java.lang.String key, com.google.cloud.datacatalog.v1.UsageStats defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.datacatalog.v1.UsageStats defaultValue);
   /**
    *
    *

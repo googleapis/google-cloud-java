@@ -120,6 +120,8 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -962,8 +964,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       } else {
         if (typeSpecCase_ == 2) {
           viewSpecBuilder_.mergeFrom(value);
+        } else {
+          viewSpecBuilder_.setMessage(value);
         }
-        viewSpecBuilder_.setMessage(value);
       }
       typeSpecCase_ = 2;
       return this;
@@ -1179,8 +1182,9 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       } else {
         if (typeSpecCase_ == 3) {
           tableSpecBuilder_.mergeFrom(value);
+        } else {
+          tableSpecBuilder_.setMessage(value);
         }
-        tableSpecBuilder_.setMessage(value);
       }
       typeSpecCase_ = 3;
       return this;

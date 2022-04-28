@@ -215,8 +215,12 @@ public interface TagOrBuilder
    * map&lt;string, .google.cloud.datacatalog.v1beta1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.datacatalog.v1beta1.TagField getFieldsOrDefault(
-      java.lang.String key, com.google.cloud.datacatalog.v1beta1.TagField defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.datacatalog.v1beta1.TagField defaultValue);
   /**
    *
    *

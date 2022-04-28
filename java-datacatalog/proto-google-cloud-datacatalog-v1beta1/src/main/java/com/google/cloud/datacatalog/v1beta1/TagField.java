@@ -80,8 +80,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             }
           case 17:
             {
-              kindCase_ = 2;
               kind_ = input.readDouble();
+              kindCase_ = 2;
               break;
             }
           case 26:
@@ -93,8 +93,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
             }
           case 32:
             {
-              kindCase_ = 4;
               kind_ = input.readBool();
+              kindCase_ = 4;
               break;
             }
           case 42:
@@ -146,6 +146,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -269,6 +271,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2172,8 +2176,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (kindCase_ == 5) {
           timestampValueBuilder_.mergeFrom(value);
+        } else {
+          timestampValueBuilder_.setMessage(value);
         }
-        timestampValueBuilder_.setMessage(value);
       }
       kindCase_ = 5;
       return this;
@@ -2385,8 +2390,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (kindCase_ == 6) {
           enumValueBuilder_.mergeFrom(value);
+        } else {
+          enumValueBuilder_.setMessage(value);
         }
-        enumValueBuilder_.setMessage(value);
       }
       kindCase_ = 6;
       return this;

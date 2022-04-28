@@ -128,6 +128,26 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * A Dataplex lake.
+   * </pre>
+   *
+   * <code>LAKE = 10;</code>
+   */
+  LAKE(10),
+  /**
+   *
+   *
+   * <pre>
+   * A Dataplex zone.
+   * </pre>
+   *
+   * <code>ZONE = 11;</code>
+   */
+  ZONE(11),
+  /**
+   *
+   *
+   * <pre>
    * A service, for example, a Dataproc Metastore service.
    * </pre>
    *
@@ -236,6 +256,26 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * A Dataplex lake.
+   * </pre>
+   *
+   * <code>LAKE = 10;</code>
+   */
+  public static final int LAKE_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * A Dataplex zone.
+   * </pre>
+   *
+   * <code>ZONE = 11;</code>
+   */
+  public static final int ZONE_VALUE = 11;
+  /**
+   *
+   *
+   * <pre>
    * A service, for example, a Dataproc Metastore service.
    * </pre>
    *
@@ -285,6 +325,10 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return DATA_SOURCE_CONNECTION;
       case 9:
         return ROUTINE;
+      case 10:
+        return LAKE;
+      case 11:
+        return ZONE;
       case 14:
         return SERVICE;
       default:

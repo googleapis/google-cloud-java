@@ -107,6 +107,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -894,8 +896,9 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
       } else {
         if (sourceCase_ == 2) {
           inlineSourceBuilder_.mergeFrom(value);
+        } else {
+          inlineSourceBuilder_.setMessage(value);
         }
-        inlineSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;

@@ -68,6 +68,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPROC_METASTORE = 3;</code>
    */
   DATAPROC_METASTORE(3),
+  /**
+   *
+   *
+   * <pre>
+   * Dataplex.
+   * </pre>
+   *
+   * <code>DATAPLEX = 4;</code>
+   */
+  DATAPLEX(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -111,6 +121,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATAPROC_METASTORE = 3;</code>
    */
   public static final int DATAPROC_METASTORE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Dataplex.
+   * </pre>
+   *
+   * <code>DATAPLEX = 4;</code>
+   */
+  public static final int DATAPLEX_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -144,6 +164,8 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return CLOUD_PUBSUB;
       case 3:
         return DATAPROC_METASTORE;
+      case 4:
+        return DATAPLEX;
       default:
         return null;
     }

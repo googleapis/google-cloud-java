@@ -1217,6 +1217,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *           .setResource(
    *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = policyTagManagerClient.setIamPolicy(request);
    * }
@@ -1242,6 +1243,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *           .setResource(
    *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = policyTagManagerClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.
