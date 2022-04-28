@@ -117,6 +117,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -821,7 +823,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       output.writeDouble(2, value_);
     }
     if (color_
@@ -850,7 +852,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(label_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, label_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, value_);
     }
     if (color_

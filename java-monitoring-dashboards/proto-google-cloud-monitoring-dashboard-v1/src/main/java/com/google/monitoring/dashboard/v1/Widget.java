@@ -220,6 +220,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1551,8 +1553,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 2) {
           xyChartBuilder_.mergeFrom(value);
+        } else {
+          xyChartBuilder_.setMessage(value);
         }
-        xyChartBuilder_.setMessage(value);
       }
       contentCase_ = 2;
       return this;
@@ -1760,8 +1763,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 3) {
           scorecardBuilder_.mergeFrom(value);
+        } else {
+          scorecardBuilder_.setMessage(value);
         }
-        scorecardBuilder_.setMessage(value);
       }
       contentCase_ = 3;
       return this;
@@ -1968,8 +1972,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 4) {
           textBuilder_.mergeFrom(value);
+        } else {
+          textBuilder_.setMessage(value);
         }
-        textBuilder_.setMessage(value);
       }
       contentCase_ = 4;
       return this;
@@ -2174,8 +2179,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 5) {
           blankBuilder_.mergeFrom(value);
+        } else {
+          blankBuilder_.setMessage(value);
         }
-        blankBuilder_.setMessage(value);
       }
       contentCase_ = 5;
       return this;
@@ -2381,8 +2387,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 7) {
           alertChartBuilder_.mergeFrom(value);
+        } else {
+          alertChartBuilder_.setMessage(value);
         }
-        alertChartBuilder_.setMessage(value);
       }
       contentCase_ = 7;
       return this;
@@ -2591,8 +2598,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 8) {
           timeSeriesTableBuilder_.mergeFrom(value);
+        } else {
+          timeSeriesTableBuilder_.setMessage(value);
         }
-        timeSeriesTableBuilder_.setMessage(value);
       }
       contentCase_ = 8;
       return this;
@@ -2808,8 +2816,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 9) {
           collapsibleGroupBuilder_.mergeFrom(value);
+        } else {
+          collapsibleGroupBuilder_.setMessage(value);
         }
-        collapsibleGroupBuilder_.setMessage(value);
       }
       contentCase_ = 9;
       return this;
@@ -3023,8 +3032,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contentCase_ == 10) {
           logsPanelBuilder_.mergeFrom(value);
+        } else {
+          logsPanelBuilder_.setMessage(value);
         }
-        logsPanelBuilder_.setMessage(value);
       }
       contentCase_ = 10;
       return this;

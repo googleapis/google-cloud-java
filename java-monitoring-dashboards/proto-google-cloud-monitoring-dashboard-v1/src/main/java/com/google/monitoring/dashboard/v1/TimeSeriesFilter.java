@@ -164,6 +164,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -454,6 +456,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
+   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=76
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
   @java.lang.Override
@@ -473,6 +477,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
+   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=76
    * @return The statisticalTimeSeriesFilter.
    */
   @java.lang.Override
@@ -1595,8 +1601,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       } else {
         if (outputFilterCase_ == 4) {
           pickTimeSeriesFilterBuilder_.mergeFrom(value);
+        } else {
+          pickTimeSeriesFilterBuilder_.setMessage(value);
         }
-        pickTimeSeriesFilterBuilder_.setMessage(value);
       }
       outputFilterCase_ = 4;
       return this;
@@ -1716,6 +1723,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
+     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=76
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
     @java.lang.Override
@@ -1735,6 +1744,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
+     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=76
      * @return The statisticalTimeSeriesFilter.
      */
     @java.lang.Override
@@ -1837,8 +1848,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       } else {
         if (outputFilterCase_ == 5) {
           statisticalTimeSeriesFilterBuilder_.mergeFrom(value);
+        } else {
+          statisticalTimeSeriesFilterBuilder_.setMessage(value);
         }
-        statisticalTimeSeriesFilterBuilder_.setMessage(value);
       }
       outputFilterCase_ = 5;
       return this;

@@ -134,6 +134,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -983,8 +985,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       } else {
         if (sourceCase_ == 1) {
           timeSeriesFilterBuilder_.mergeFrom(value);
+        } else {
+          timeSeriesFilterBuilder_.setMessage(value);
         }
-        timeSeriesFilterBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;
@@ -1202,8 +1205,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       } else {
         if (sourceCase_ == 2) {
           timeSeriesFilterRatioBuilder_.mergeFrom(value);
+        } else {
+          timeSeriesFilterRatioBuilder_.setMessage(value);
         }
-        timeSeriesFilterRatioBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
