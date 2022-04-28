@@ -88,14 +88,14 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
             }
           case 16:
             {
-              valueCase_ = 2;
               value_ = input.readInt64();
+              valueCase_ = 2;
               break;
             }
           case 24:
             {
-              valueCase_ = 3;
               value_ = input.readBool();
+              valueCase_ = 3;
               break;
             }
           default:
@@ -109,6 +109,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -821,8 +823,9 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 1) {
           stringValueBuilder_.mergeFrom(value);
+        } else {
+          stringValueBuilder_.setMessage(value);
         }
-        stringValueBuilder_.setMessage(value);
       }
       valueCase_ = 1;
       return this;

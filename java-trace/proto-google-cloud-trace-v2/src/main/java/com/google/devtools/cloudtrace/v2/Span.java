@@ -274,6 +274,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -612,8 +614,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.devtools.cloudtrace.v2.AttributeValue&gt; attribute_map = 1;
      * </code>
      */
+
+    /* nullable */
     com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
-        java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.devtools.cloudtrace.v2.AttributeValue defaultValue);
     /**
      *
      *
@@ -732,6 +738,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -818,7 +826,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAttributeMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAttributeMap().getMap().containsKey(key);
     }
@@ -868,7 +876,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
         java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue> map =
           internalGetAttributeMap().getMap();
@@ -893,7 +901,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue> map =
           internalGetAttributeMap().getMap();
@@ -1340,7 +1348,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsAttributeMap(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetAttributeMap().getMap().containsKey(key);
       }
@@ -1390,7 +1398,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrDefault(
           java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue> map =
             internalGetAttributeMap().getMap();
@@ -1415,7 +1423,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public com.google.devtools.cloudtrace.v2.AttributeValue getAttributeMapOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.devtools.cloudtrace.v2.AttributeValue> map =
             internalGetAttributeMap().getMap();
@@ -1446,7 +1454,7 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeAttributeMap(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableAttributeMap().getMutableMap().remove(key);
         return this;
@@ -1475,11 +1483,12 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
       public Builder putAttributeMap(
           java.lang.String key, com.google.devtools.cloudtrace.v2.AttributeValue value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableAttributeMap().getMutableMap().put(key, value);
         return this;
       }
@@ -1846,6 +1855,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2045,6 +2056,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3144,6 +3157,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5035,8 +5050,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (valueCase_ == 2) {
             annotationBuilder_.mergeFrom(value);
+          } else {
+            annotationBuilder_.setMessage(value);
           }
-          annotationBuilder_.setMessage(value);
         }
         valueCase_ = 2;
         return this;
@@ -5251,8 +5267,9 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (valueCase_ == 3) {
             messageEventBuilder_.mergeFrom(value);
+          } else {
+            messageEventBuilder_.setMessage(value);
           }
-          messageEventBuilder_.setMessage(value);
         }
         valueCase_ = 3;
         return this;
@@ -5577,6 +5594,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6851,6 +6870,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8305,6 +8326,8 @@ public final class Span extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
