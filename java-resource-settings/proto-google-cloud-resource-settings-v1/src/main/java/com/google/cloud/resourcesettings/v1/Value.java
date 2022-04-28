@@ -70,8 +70,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              valueCase_ = 1;
               value_ = input.readBool();
+              valueCase_ = 1;
               break;
             }
           case 18:
@@ -128,6 +128,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -283,6 +285,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1037,6 +1041,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2601,8 +2607,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 3) {
           stringSetValueBuilder_.mergeFrom(value);
+        } else {
+          stringSetValueBuilder_.setMessage(value);
         }
-        stringSetValueBuilder_.setMessage(value);
       }
       valueCase_ = 3;
       return this;
@@ -2812,8 +2819,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 4) {
           enumValueBuilder_.mergeFrom(value);
+        } else {
+          enumValueBuilder_.setMessage(value);
         }
-        enumValueBuilder_.setMessage(value);
       }
       valueCase_ = 4;
       return this;
