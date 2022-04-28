@@ -212,6 +212,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -368,6 +370,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -469,10 +473,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       if (numFiniteBuckets_ != 0) {
         output.writeInt32(1, numFiniteBuckets_);
       }
-      if (width_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(width_) != 0) {
         output.writeDouble(2, width_);
       }
-      if (offset_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(offset_) != 0) {
         output.writeDouble(3, offset_);
       }
       unknownFields.writeTo(output);
@@ -487,10 +491,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       if (numFiniteBuckets_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, numFiniteBuckets_);
       }
-      if (width_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(width_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, width_);
       }
-      if (offset_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(offset_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, offset_);
       }
       size += unknownFields.getSerializedSize();
@@ -1173,6 +1177,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1275,10 +1281,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       if (numFiniteBuckets_ != 0) {
         output.writeInt32(1, numFiniteBuckets_);
       }
-      if (growthFactor_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(growthFactor_) != 0) {
         output.writeDouble(2, growthFactor_);
       }
-      if (scale_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(scale_) != 0) {
         output.writeDouble(3, scale_);
       }
       unknownFields.writeTo(output);
@@ -1293,10 +1299,10 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       if (numFiniteBuckets_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, numFiniteBuckets_);
       }
-      if (growthFactor_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(growthFactor_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, growthFactor_);
       }
-      if (scale_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(scale_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, scale_);
       }
       size += unknownFields.getSerializedSize();
@@ -2027,6 +2033,8 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3220,16 +3228,16 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     if (count_ != 0L) {
       output.writeInt64(1, count_);
     }
-    if (mean_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(mean_) != 0) {
       output.writeDouble(2, mean_);
     }
-    if (minimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
       output.writeDouble(3, minimum_);
     }
-    if (maximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       output.writeDouble(4, maximum_);
     }
-    if (sumOfSquaredDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(sumOfSquaredDeviation_) != 0) {
       output.writeDouble(5, sumOfSquaredDeviation_);
     }
     if (getBucketCountsList().size() > 0) {
@@ -3266,16 +3274,16 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
     if (count_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, count_);
     }
-    if (mean_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(mean_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, mean_);
     }
-    if (minimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, minimum_);
     }
-    if (maximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, maximum_);
     }
-    if (sumOfSquaredDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(sumOfSquaredDeviation_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, sumOfSquaredDeviation_);
     }
     {
@@ -4385,8 +4393,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (bucketOptionCase_ == 7) {
           linearBucketsBuilder_.mergeFrom(value);
+        } else {
+          linearBucketsBuilder_.setMessage(value);
         }
-        linearBucketsBuilder_.setMessage(value);
       }
       bucketOptionCase_ = 7;
       return this;
@@ -4610,8 +4619,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (bucketOptionCase_ == 8) {
           exponentialBucketsBuilder_.mergeFrom(value);
+        } else {
+          exponentialBucketsBuilder_.setMessage(value);
         }
-        exponentialBucketsBuilder_.setMessage(value);
       }
       bucketOptionCase_ = 8;
       return this;
@@ -4831,8 +4841,9 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (bucketOptionCase_ == 9) {
           explicitBucketsBuilder_.mergeFrom(value);
+        } else {
+          explicitBucketsBuilder_.setMessage(value);
         }
-        explicitBucketsBuilder_.setMessage(value);
       }
       bucketOptionCase_ = 9;
       return this;
