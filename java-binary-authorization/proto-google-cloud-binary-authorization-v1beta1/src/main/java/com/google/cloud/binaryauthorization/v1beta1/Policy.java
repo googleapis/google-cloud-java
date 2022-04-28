@@ -238,6 +238,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -740,7 +742,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsClusterAdmissionRules(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetClusterAdmissionRules().getMap().containsKey(key);
   }
@@ -796,7 +798,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetClusterAdmissionRules().getMap();
@@ -823,7 +825,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule getClusterAdmissionRulesOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetClusterAdmissionRules().getMap();
@@ -884,7 +886,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
   }
@@ -930,7 +932,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetKubernetesNamespaceAdmissionRules().getMap();
@@ -952,7 +954,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetKubernetesNamespaceAdmissionRules().getMap();
@@ -1013,7 +1015,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
   }
@@ -1059,7 +1061,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
@@ -1081,7 +1083,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
@@ -1145,7 +1147,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
   }
@@ -1197,7 +1199,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetIstioServiceIdentityAdmissionRules().getMap();
@@ -1222,7 +1224,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
         map = internalGetIstioServiceIdentityAdmissionRules().getMap();
@@ -2811,7 +2813,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsClusterAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetClusterAdmissionRules().getMap().containsKey(key);
     }
@@ -2869,7 +2871,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetClusterAdmissionRules().getMap();
@@ -2896,7 +2898,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getClusterAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetClusterAdmissionRules().getMap();
@@ -2929,7 +2931,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeClusterAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableClusterAdmissionRules().getMutableMap().remove(key);
       return this;
@@ -2961,11 +2963,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder putClusterAdmissionRules(
         java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableClusterAdmissionRules().getMutableMap().put(key, value);
       return this;
     }
@@ -3041,7 +3044,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
     }
@@ -3089,7 +3092,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetKubernetesNamespaceAdmissionRules().getMap();
@@ -3111,7 +3114,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetKubernetesNamespaceAdmissionRules().getMap();
@@ -3139,7 +3142,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeKubernetesNamespaceAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().remove(key);
       return this;
@@ -3166,11 +3169,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder putKubernetesNamespaceAdmissionRules(
         java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().put(key, value);
       return this;
     }
@@ -3241,7 +3245,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
     }
@@ -3289,7 +3293,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
@@ -3311,7 +3315,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetKubernetesServiceAccountAdmissionRules().getMap();
@@ -3339,7 +3343,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeKubernetesServiceAccountAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().remove(key);
       return this;
@@ -3366,11 +3370,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder putKubernetesServiceAccountAdmissionRules(
         java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().put(key, value);
       return this;
     }
@@ -3444,7 +3449,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
     }
@@ -3498,7 +3503,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
             java.lang.String key,
             com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetIstioServiceIdentityAdmissionRules().getMap();
@@ -3523,7 +3528,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
         getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
           map = internalGetIstioServiceIdentityAdmissionRules().getMap();
@@ -3554,7 +3559,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeIstioServiceIdentityAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().remove(key);
       return this;
@@ -3584,11 +3589,12 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
     public Builder putIstioServiceIdentityAdmissionRules(
         java.lang.String key, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().put(key, value);
       return this;
     }

@@ -136,6 +136,8 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1190,8 +1192,9 @@ public final class Attestor extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (attestorTypeCase_ == 3) {
           userOwnedDrydockNoteBuilder_.mergeFrom(value);
+        } else {
+          userOwnedDrydockNoteBuilder_.setMessage(value);
         }
-        userOwnedDrydockNoteBuilder_.setMessage(value);
       }
       attestorTypeCase_ = 3;
       return this;

@@ -282,9 +282,12 @@ public final class Resources {
      * map&lt;string, .google.cloud.binaryauthorization.v1.AdmissionRule&gt; cluster_admission_rules = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+
+    /* nullable */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getClusterAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
     /**
@@ -367,9 +370,12 @@ public final class Resources {
      * map&lt;string, .google.cloud.binaryauthorization.v1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+
+    /* nullable */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getKubernetesNamespaceAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
     /**
@@ -447,9 +453,12 @@ public final class Resources {
      * map&lt;string, .google.cloud.binaryauthorization.v1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+
+    /* nullable */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getKubernetesServiceAccountAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
     /**
@@ -539,9 +548,12 @@ public final class Resources {
      * map&lt;string, .google.cloud.binaryauthorization.v1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+
+    /* nullable */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getIstioServiceIdentityAdmissionRulesOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue);
     /**
@@ -881,6 +893,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1396,7 +1410,7 @@ public final class Resources {
     @java.lang.Override
     public boolean containsClusterAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetClusterAdmissionRules().getMap().containsKey(key);
     }
@@ -1457,7 +1471,7 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1486,7 +1500,7 @@ public final class Resources {
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getClusterAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1552,7 +1566,7 @@ public final class Resources {
     @java.lang.Override
     public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
     }
@@ -1603,7 +1617,7 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1627,7 +1641,7 @@ public final class Resources {
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1693,7 +1707,7 @@ public final class Resources {
     @java.lang.Override
     public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
     }
@@ -1744,7 +1758,7 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1768,7 +1782,7 @@ public final class Resources {
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1837,7 +1851,7 @@ public final class Resources {
     @java.lang.Override
     public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
     }
@@ -1894,7 +1908,7 @@ public final class Resources {
             com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1921,7 +1935,7 @@ public final class Resources {
     public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
         getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -3586,7 +3600,7 @@ public final class Resources {
       @java.lang.Override
       public boolean containsClusterAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetClusterAdmissionRules().getMap().containsKey(key);
       }
@@ -3647,7 +3661,7 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3676,7 +3690,7 @@ public final class Resources {
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
           getClusterAdmissionRulesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3711,7 +3725,7 @@ public final class Resources {
        */
       public Builder removeClusterAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableClusterAdmissionRules().getMutableMap().remove(key);
         return this;
@@ -3745,11 +3759,12 @@ public final class Resources {
           java.lang.String key,
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableClusterAdmissionRules().getMutableMap().put(key, value);
         return this;
       }
@@ -3830,7 +3845,7 @@ public final class Resources {
       @java.lang.Override
       public boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetKubernetesNamespaceAdmissionRules().getMap().containsKey(key);
       }
@@ -3881,7 +3896,7 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3905,7 +3920,7 @@ public final class Resources {
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
           getKubernetesNamespaceAdmissionRulesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -3935,7 +3950,7 @@ public final class Resources {
        */
       public Builder removeKubernetesNamespaceAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().remove(key);
         return this;
@@ -3964,11 +3979,12 @@ public final class Resources {
           java.lang.String key,
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableKubernetesNamespaceAdmissionRules().getMutableMap().put(key, value);
         return this;
       }
@@ -4044,7 +4060,7 @@ public final class Resources {
       @java.lang.Override
       public boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetKubernetesServiceAccountAdmissionRules().getMap().containsKey(key);
       }
@@ -4095,7 +4111,7 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -4119,7 +4135,7 @@ public final class Resources {
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
           getKubernetesServiceAccountAdmissionRulesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -4149,7 +4165,7 @@ public final class Resources {
        */
       public Builder removeKubernetesServiceAccountAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().remove(key);
         return this;
@@ -4178,11 +4194,12 @@ public final class Resources {
           java.lang.String key,
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableKubernetesServiceAccountAdmissionRules().getMutableMap().put(key, value);
         return this;
       }
@@ -4261,7 +4278,7 @@ public final class Resources {
       @java.lang.Override
       public boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetIstioServiceIdentityAdmissionRules().getMap().containsKey(key);
       }
@@ -4318,7 +4335,7 @@ public final class Resources {
               com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
                   defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -4345,7 +4362,7 @@ public final class Resources {
       public com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule
           getIstioServiceIdentityAdmissionRulesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<
                 java.lang.String,
@@ -4378,7 +4395,7 @@ public final class Resources {
        */
       public Builder removeIstioServiceIdentityAdmissionRules(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().remove(key);
         return this;
@@ -4410,11 +4427,12 @@ public final class Resources {
           java.lang.String key,
           com.google.protos.google.cloud.binaryauthorization.v1.Resources.AdmissionRule value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableIstioServiceIdentityAdmissionRules().getMutableMap().put(key, value);
         return this;
       }
@@ -5035,6 +5053,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5909,6 +5929,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7668,6 +7690,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8776,8 +8800,9 @@ public final class Resources {
         } else {
           if (attestorTypeCase_ == 3) {
             userOwnedGrafeasNoteBuilder_.mergeFrom(value);
+          } else {
+            userOwnedGrafeasNoteBuilder_.setMessage(value);
           }
-          userOwnedGrafeasNoteBuilder_.setMessage(value);
         }
         attestorTypeCase_ = 3;
         return this;
@@ -9439,6 +9464,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11187,6 +11214,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12726,6 +12755,8 @@ public final class Resources {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -14085,8 +14116,9 @@ public final class Resources {
         } else {
           if (publicKeyCase_ == 5) {
             pkixPublicKeyBuilder_.mergeFrom(value);
+          } else {
+            pkixPublicKeyBuilder_.setMessage(value);
           }
-          pkixPublicKeyBuilder_.setMessage(value);
         }
         publicKeyCase_ = 5;
         return this;

@@ -133,6 +133,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -488,6 +490,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -831,6 +835,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3959,6 +3965,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5316,8 +5324,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       } else {
         if (eventTypeCase_ == 1) {
           podEventBuilder_.mergeFrom(value);
+        } else {
+          podEventBuilder_.setMessage(value);
         }
-        podEventBuilder_.setMessage(value);
       }
       eventTypeCase_ = 1;
       return this;
@@ -5582,8 +5591,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       } else {
         if (eventTypeCase_ == 2) {
           unsupportedPolicyEventBuilder_.mergeFrom(value);
+        } else {
+          unsupportedPolicyEventBuilder_.setMessage(value);
         }
-        unsupportedPolicyEventBuilder_.setMessage(value);
       }
       eventTypeCase_ = 2;
       return this;

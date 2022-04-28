@@ -263,8 +263,11 @@ public interface PolicyOrBuilder
    * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; cluster_admission_rules = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule getClusterAdmissionRulesOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
   /**
    *
@@ -342,9 +345,12 @@ public interface PolicyOrBuilder
    * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_namespace_admission_rules = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesNamespaceAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
   /**
    *
@@ -417,9 +423,12 @@ public interface PolicyOrBuilder
    * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; kubernetes_service_account_admission_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getKubernetesServiceAccountAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
   /**
    *
@@ -504,9 +513,12 @@ public interface PolicyOrBuilder
    * map&lt;string, .google.cloud.binaryauthorization.v1beta1.AdmissionRule&gt; istio_service_identity_admission_rules = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule
       getIstioServiceIdentityAdmissionRulesOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
   /**
    *
