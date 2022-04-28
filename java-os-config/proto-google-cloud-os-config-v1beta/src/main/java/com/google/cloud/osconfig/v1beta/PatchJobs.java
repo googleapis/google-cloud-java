@@ -437,6 +437,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2649,6 +2651,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3401,6 +3405,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4614,6 +4620,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5985,6 +5993,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7327,6 +7337,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8505,6 +8517,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -10248,6 +10262,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -10882,6 +10898,8 @@ public final class PatchJobs {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -13324,7 +13342,7 @@ public final class PatchJobs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, errorMessage_);
       }
-      if (percentComplete_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(percentComplete_) != 0) {
         output.writeDouble(12, percentComplete_);
       }
       if (instanceFilter_ != null) {
@@ -13382,7 +13400,7 @@ public final class PatchJobs {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, errorMessage_);
       }
-      if (percentComplete_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(percentComplete_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(12, percentComplete_);
       }
       if (instanceFilter_ != null) {
@@ -16560,6 +16578,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -19327,6 +19347,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -20258,6 +20280,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -21062,6 +21086,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -22580,6 +22606,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -23788,6 +23816,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -24539,6 +24569,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -26513,6 +26545,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -28427,6 +28461,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -29621,6 +29657,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -30783,8 +30821,9 @@ public final class PatchJobs {
         } else {
           if (executableCase_ == 2) {
             gcsObjectBuilder_.mergeFrom(value);
+          } else {
+            gcsObjectBuilder_.setMessage(value);
           }
-          gcsObjectBuilder_.setMessage(value);
         }
         executableCase_ = 2;
         return this;
@@ -31329,6 +31368,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -32526,6 +32567,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -32612,7 +32655,12 @@ public final class PatchJobs {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
-      java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+      /* nullable */
+      java.lang.String getLabelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue);
       /**
        *
        *
@@ -32703,6 +32751,8 @@ public final class PatchJobs {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -32777,7 +32827,7 @@ public final class PatchJobs {
       @java.lang.Override
       public boolean containsLabels(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetLabels().getMap().containsKey(key);
       }
@@ -32815,7 +32865,7 @@ public final class PatchJobs {
       public java.lang.String getLabelsOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -32833,7 +32883,7 @@ public final class PatchJobs {
       @java.lang.Override
       public java.lang.String getLabelsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
         if (!map.containsKey(key)) {
@@ -33257,7 +33307,7 @@ public final class PatchJobs {
         @java.lang.Override
         public boolean containsLabels(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           return internalGetLabels().getMap().containsKey(key);
         }
@@ -33295,7 +33345,7 @@ public final class PatchJobs {
         public java.lang.String getLabelsOrDefault(
             java.lang.String key, java.lang.String defaultValue) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -33313,7 +33363,7 @@ public final class PatchJobs {
         @java.lang.Override
         public java.lang.String getLabelsOrThrow(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
           if (!map.containsKey(key)) {
@@ -33338,7 +33388,7 @@ public final class PatchJobs {
          */
         public Builder removeLabels(java.lang.String key) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           internalGetMutableLabels().getMutableMap().remove(key);
           return this;
@@ -33360,11 +33410,12 @@ public final class PatchJobs {
          */
         public Builder putLabels(java.lang.String key, java.lang.String value) {
           if (key == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map key");
           }
           if (value == null) {
-            throw new java.lang.NullPointerException();
+            throw new NullPointerException("map value");
           }
+
           internalGetMutableLabels().getMutableMap().put(key, value);
           return this;
         }
@@ -35555,6 +35606,8 @@ public final class PatchJobs {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

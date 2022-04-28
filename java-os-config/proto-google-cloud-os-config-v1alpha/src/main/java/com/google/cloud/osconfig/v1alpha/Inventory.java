@@ -141,6 +141,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -512,6 +514,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2664,6 +2668,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4639,8 +4645,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 6) {
             installedPackageBuilder_.mergeFrom(value);
+          } else {
+            installedPackageBuilder_.setMessage(value);
           }
-          installedPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 6;
         return this;
@@ -4864,8 +4871,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 7) {
             availablePackageBuilder_.mergeFrom(value);
+          } else {
+            availablePackageBuilder_.setMessage(value);
           }
-          availablePackageBuilder_.setMessage(value);
         }
         detailsCase_ = 7;
         return this;
@@ -5656,6 +5664,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6997,8 +7007,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 1) {
             yumPackageBuilder_.mergeFrom(value);
+          } else {
+            yumPackageBuilder_.setMessage(value);
           }
-          yumPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 1;
         return this;
@@ -7231,8 +7242,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 2) {
             aptPackageBuilder_.mergeFrom(value);
+          } else {
+            aptPackageBuilder_.setMessage(value);
           }
-          aptPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 2;
         return this;
@@ -7465,8 +7477,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 3) {
             zypperPackageBuilder_.mergeFrom(value);
+          } else {
+            zypperPackageBuilder_.setMessage(value);
           }
-          zypperPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 3;
         return this;
@@ -7699,8 +7712,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 4) {
             googetPackageBuilder_.mergeFrom(value);
+          } else {
+            googetPackageBuilder_.setMessage(value);
           }
-          googetPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 4;
         return this;
@@ -7931,8 +7945,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 5) {
             zypperPatchBuilder_.mergeFrom(value);
+          } else {
+            zypperPatchBuilder_.setMessage(value);
           }
-          zypperPatchBuilder_.setMessage(value);
         }
         detailsCase_ = 5;
         return this;
@@ -8167,8 +8182,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 6) {
             wuaPackageBuilder_.mergeFrom(value);
+          } else {
+            wuaPackageBuilder_.setMessage(value);
           }
-          wuaPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 6;
         return this;
@@ -8427,8 +8443,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 7) {
             qfePackageBuilder_.mergeFrom(value);
+          } else {
+            qfePackageBuilder_.setMessage(value);
           }
-          qfePackageBuilder_.setMessage(value);
         }
         detailsCase_ = 7;
         return this;
@@ -8670,8 +8687,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 8) {
             cosPackageBuilder_.mergeFrom(value);
+          } else {
+            cosPackageBuilder_.setMessage(value);
           }
-          cosPackageBuilder_.setMessage(value);
         }
         detailsCase_ = 8;
         return this;
@@ -8894,8 +8912,9 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (detailsCase_ == 9) {
             windowsApplicationBuilder_.mergeFrom(value);
+          } else {
+            windowsApplicationBuilder_.setMessage(value);
           }
-          windowsApplicationBuilder_.setMessage(value);
         }
         detailsCase_ = 9;
         return this;
@@ -9219,6 +9238,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -10320,6 +10341,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11878,6 +11901,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12044,6 +12069,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -15607,6 +15634,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -17051,6 +17080,8 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -18556,7 +18587,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsItems(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetItems().getMap().containsKey(key);
   }
@@ -18604,7 +18635,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
       java.lang.String key, com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> map =
         internalGetItems().getMap();
@@ -18627,7 +18658,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> map =
         internalGetItems().getMap();
@@ -19475,7 +19506,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetItems().getMap().containsKey(key);
     }
@@ -19523,7 +19554,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrDefault(
         java.lang.String key, com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> map =
           internalGetItems().getMap();
@@ -19546,7 +19577,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.osconfig.v1alpha.Inventory.Item getItemsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> map =
           internalGetItems().getMap();
@@ -19576,7 +19607,7 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
@@ -19604,11 +19635,12 @@ public final class Inventory extends com.google.protobuf.GeneratedMessageV3
     public Builder putItems(
         java.lang.String key, com.google.cloud.osconfig.v1alpha.Inventory.Item value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableItems().getMutableMap().put(key, value);
       return this;
     }

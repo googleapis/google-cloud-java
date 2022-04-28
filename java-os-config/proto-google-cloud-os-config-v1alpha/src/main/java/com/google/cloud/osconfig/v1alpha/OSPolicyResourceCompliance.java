@@ -140,6 +140,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -256,6 +258,8 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2240,8 +2244,9 @@ public final class OSPolicyResourceCompliance extends com.google.protobuf.Genera
       } else {
         if (outputCase_ == 4) {
           execResourceOutputBuilder_.mergeFrom(value);
+        } else {
+          execResourceOutputBuilder_.setMessage(value);
         }
-        execResourceOutputBuilder_.setMessage(value);
       }
       outputCase_ = 4;
       return this;

@@ -160,6 +160,8 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1655,13 +1657,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (baseScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(baseScore_) != 0) {
       output.writeFloat(1, baseScore_);
     }
-    if (exploitabilityScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(exploitabilityScore_) != 0) {
       output.writeFloat(2, exploitabilityScore_);
     }
-    if (impactScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(impactScore_) != 0) {
       output.writeFloat(3, impactScore_);
     }
     if (attackVector_
@@ -1707,13 +1709,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (baseScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(baseScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, baseScore_);
     }
-    if (exploitabilityScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(exploitabilityScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, exploitabilityScore_);
     }
-    if (impactScore_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(impactScore_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, impactScore_);
     }
     if (attackVector_

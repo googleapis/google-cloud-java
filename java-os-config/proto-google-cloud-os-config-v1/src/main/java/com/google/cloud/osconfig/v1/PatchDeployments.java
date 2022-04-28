@@ -750,6 +750,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3248,8 +3250,9 @@ public final class PatchDeployments {
         } else {
           if (scheduleCase_ == 6) {
             oneTimeScheduleBuilder_.mergeFrom(value);
+          } else {
+            oneTimeScheduleBuilder_.setMessage(value);
           }
-          oneTimeScheduleBuilder_.setMessage(value);
         }
         scheduleCase_ = 6;
         return this;
@@ -3485,8 +3488,9 @@ public final class PatchDeployments {
         } else {
           if (scheduleCase_ == 7) {
             recurringScheduleBuilder_.mergeFrom(value);
+          } else {
+            recurringScheduleBuilder_.setMessage(value);
           }
-          recurringScheduleBuilder_.setMessage(value);
         }
         scheduleCase_ = 7;
         return this;
@@ -4723,6 +4727,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5959,6 +5965,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8284,8 +8292,9 @@ public final class PatchDeployments {
         } else {
           if (scheduleConfigCase_ == 6) {
             weeklyBuilder_.mergeFrom(value);
+          } else {
+            weeklyBuilder_.setMessage(value);
           }
-          weeklyBuilder_.setMessage(value);
         }
         scheduleConfigCase_ = 6;
         return this;
@@ -8519,8 +8528,9 @@ public final class PatchDeployments {
         } else {
           if (scheduleConfigCase_ == 7) {
             monthlyBuilder_.mergeFrom(value);
+          } else {
+            monthlyBuilder_.setMessage(value);
           }
-          monthlyBuilder_.setMessage(value);
         }
         scheduleConfigCase_ = 7;
         return this;
@@ -9190,6 +9200,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9880,8 +9892,8 @@ public final class PatchDeployments {
               }
             case 16:
               {
-                dayOfMonthCase_ = 2;
                 dayOfMonth_ = input.readInt32();
+                dayOfMonthCase_ = 2;
                 break;
               }
             default:
@@ -9895,6 +9907,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -10585,8 +10599,9 @@ public final class PatchDeployments {
         } else {
           if (dayOfMonthCase_ == 1) {
             weekDayOfMonthBuilder_.mergeFrom(value);
+          } else {
+            weekDayOfMonthBuilder_.setMessage(value);
           }
-          weekDayOfMonthBuilder_.setMessage(value);
         }
         dayOfMonthCase_ = 1;
         return this;
@@ -10974,6 +10989,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11920,6 +11937,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -13129,6 +13148,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -13883,6 +13904,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -14922,6 +14945,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -16122,6 +16147,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -16904,6 +16931,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -17992,6 +18021,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -18698,6 +18729,8 @@ public final class PatchDeployments {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
