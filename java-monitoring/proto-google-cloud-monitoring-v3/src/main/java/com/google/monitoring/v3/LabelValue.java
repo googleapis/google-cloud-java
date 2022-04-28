@@ -70,14 +70,14 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              valueCase_ = 1;
               value_ = input.readBool();
+              valueCase_ = 1;
               break;
             }
           case 16:
             {
-              valueCase_ = 2;
               value_ = input.readInt64();
+              valueCase_ = 2;
               break;
             }
           case 26:
@@ -98,6 +98,8 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

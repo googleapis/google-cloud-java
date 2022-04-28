@@ -112,6 +112,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -799,8 +801,9 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       } else {
         if (methodCase_ == 1) {
           goodTotalRatioBuilder_.mergeFrom(value);
+        } else {
+          goodTotalRatioBuilder_.setMessage(value);
         }
-        goodTotalRatioBuilder_.setMessage(value);
       }
       methodCase_ = 1;
       return this;
@@ -1027,8 +1030,9 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       } else {
         if (methodCase_ == 3) {
           distributionCutBuilder_.mergeFrom(value);
+        } else {
+          distributionCutBuilder_.setMessage(value);
         }
-        distributionCutBuilder_.setMessage(value);
       }
       methodCase_ = 3;
       return this;

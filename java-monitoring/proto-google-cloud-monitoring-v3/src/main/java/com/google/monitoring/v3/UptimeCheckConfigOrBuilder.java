@@ -512,6 +512,8 @@ public interface UptimeCheckConfigOrBuilder
    *
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
+   * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
+   *     google/monitoring/v3/uptime.proto;l=359
    * @return The isInternal.
    */
   @java.lang.Deprecated

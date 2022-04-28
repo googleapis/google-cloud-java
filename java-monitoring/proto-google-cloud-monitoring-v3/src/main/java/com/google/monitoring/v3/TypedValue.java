@@ -70,20 +70,20 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              valueCase_ = 1;
               value_ = input.readBool();
+              valueCase_ = 1;
               break;
             }
           case 16:
             {
-              valueCase_ = 2;
               value_ = input.readInt64();
+              valueCase_ = 2;
               break;
             }
           case 25:
             {
-              valueCase_ = 3;
               value_ = input.readDouble();
+              valueCase_ = 3;
               break;
             }
           case 34:
@@ -118,6 +118,8 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1337,8 +1339,9 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 5) {
           distributionValueBuilder_.mergeFrom(value);
+        } else {
+          distributionValueBuilder_.setMessage(value);
         }
-        distributionValueBuilder_.setMessage(value);
       }
       valueCase_ = 5;
       return this;

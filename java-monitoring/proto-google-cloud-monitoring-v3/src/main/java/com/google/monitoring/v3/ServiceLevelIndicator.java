@@ -138,6 +138,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -899,8 +901,9 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       } else {
         if (typeCase_ == 4) {
           basicSliBuilder_.mergeFrom(value);
+        } else {
+          basicSliBuilder_.setMessage(value);
         }
-        basicSliBuilder_.setMessage(value);
       }
       typeCase_ = 4;
       return this;
@@ -1106,8 +1109,9 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       } else {
         if (typeCase_ == 1) {
           requestBasedBuilder_.mergeFrom(value);
+        } else {
+          requestBasedBuilder_.setMessage(value);
         }
-        requestBasedBuilder_.setMessage(value);
       }
       typeCase_ = 1;
       return this;
@@ -1315,8 +1319,9 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       } else {
         if (typeCase_ == 2) {
           windowsBasedBuilder_.mergeFrom(value);
+        } else {
+          windowsBasedBuilder_.setMessage(value);
         }
-        windowsBasedBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;

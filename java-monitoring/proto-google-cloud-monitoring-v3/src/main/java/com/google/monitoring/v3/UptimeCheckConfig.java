@@ -261,6 +261,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -431,6 +433,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1369,7 +1373,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-    java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+    /* nullable */
+    java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
     /**
      *
      *
@@ -1610,6 +1619,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2080,6 +2091,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3096,7 +3109,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
@@ -3146,7 +3159,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3170,7 +3183,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
@@ -4456,7 +4469,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public boolean containsHeaders(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetHeaders().getMap().containsKey(key);
       }
@@ -4506,7 +4519,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getHeadersOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -4530,7 +4543,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public java.lang.String getHeadersOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         if (!map.containsKey(key)) {
@@ -4561,7 +4574,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       public Builder removeHeaders(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
@@ -4589,11 +4602,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       public Builder putHeaders(java.lang.String key, java.lang.String value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
@@ -5027,6 +5041,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5647,6 +5663,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7394,6 +7412,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
+   * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
+   *     google/monitoring/v3/uptime.proto;l=359
    * @return The isInternal.
    */
   @java.lang.Override
@@ -8643,8 +8663,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (resourceCase_ == 3) {
           monitoredResourceBuilder_.mergeFrom(value);
+        } else {
+          monitoredResourceBuilder_.setMessage(value);
         }
-        monitoredResourceBuilder_.setMessage(value);
       }
       resourceCase_ = 3;
       return this;
@@ -8889,8 +8910,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (resourceCase_ == 4) {
           resourceGroupBuilder_.mergeFrom(value);
+        } else {
+          resourceGroupBuilder_.setMessage(value);
         }
-        resourceGroupBuilder_.setMessage(value);
       }
       resourceCase_ = 4;
       return this;
@@ -9101,8 +9123,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (checkRequestTypeCase_ == 5) {
           httpCheckBuilder_.mergeFrom(value);
+        } else {
+          httpCheckBuilder_.setMessage(value);
         }
-        httpCheckBuilder_.setMessage(value);
       }
       checkRequestTypeCase_ = 5;
       return this;
@@ -9312,8 +9335,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (checkRequestTypeCase_ == 6) {
           tcpCheckBuilder_.mergeFrom(value);
+        } else {
+          tcpCheckBuilder_.setMessage(value);
         }
-        tcpCheckBuilder_.setMessage(value);
       }
       checkRequestTypeCase_ = 6;
       return this;
@@ -10546,6 +10570,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
+     * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
+     *     google/monitoring/v3/uptime.proto;l=359
      * @return The isInternal.
      */
     @java.lang.Override
@@ -10565,6 +10591,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
+     * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
+     *     google/monitoring/v3/uptime.proto;l=359
      * @param value The isInternal to set.
      * @return This builder for chaining.
      */
@@ -10587,6 +10615,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>bool is_internal = 15 [deprecated = true];</code>
      *
+     * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
+     *     google/monitoring/v3/uptime.proto;l=359
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

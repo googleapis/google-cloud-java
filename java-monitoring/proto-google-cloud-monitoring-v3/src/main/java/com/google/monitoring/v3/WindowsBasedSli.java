@@ -166,6 +166,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -378,6 +380,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -585,7 +589,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (typeCase_ == 1) {
         output.writeMessage(1, (com.google.monitoring.v3.RequestBasedSli) type_);
       }
-      if (threshold_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(threshold_) != 0) {
         output.writeDouble(2, threshold_);
       }
       if (typeCase_ == 3) {
@@ -605,7 +609,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, (com.google.monitoring.v3.RequestBasedSli) type_);
       }
-      if (threshold_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(threshold_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, threshold_);
       }
       if (typeCase_ == 3) {
@@ -1097,8 +1101,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         } else {
           if (typeCase_ == 1) {
             performanceBuilder_.mergeFrom(value);
+          } else {
+            performanceBuilder_.setMessage(value);
           }
-          performanceBuilder_.setMessage(value);
         }
         typeCase_ = 1;
         return this;
@@ -1305,8 +1310,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         } else {
           if (typeCase_ == 3) {
             basicSliPerformanceBuilder_.mergeFrom(value);
+          } else {
+            basicSliPerformanceBuilder_.setMessage(value);
           }
-          basicSliPerformanceBuilder_.setMessage(value);
         }
         typeCase_ = 3;
         return this;
@@ -1665,6 +1671,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3584,8 +3592,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       } else {
         if (windowCriterionCase_ == 2) {
           goodTotalRatioThresholdBuilder_.mergeFrom(value);
+        } else {
+          goodTotalRatioThresholdBuilder_.setMessage(value);
         }
-        goodTotalRatioThresholdBuilder_.setMessage(value);
       }
       windowCriterionCase_ = 2;
       return this;
@@ -3812,8 +3821,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       } else {
         if (windowCriterionCase_ == 6) {
           metricMeanInRangeBuilder_.mergeFrom(value);
+        } else {
+          metricMeanInRangeBuilder_.setMessage(value);
         }
-        metricMeanInRangeBuilder_.setMessage(value);
       }
       windowCriterionCase_ = 6;
       return this;
@@ -4035,8 +4045,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       } else {
         if (windowCriterionCase_ == 7) {
           metricSumInRangeBuilder_.mergeFrom(value);
+        } else {
+          metricSumInRangeBuilder_.setMessage(value);
         }
-        metricSumInRangeBuilder_.setMessage(value);
       }
       windowCriterionCase_ = 7;
       return this;

@@ -234,6 +234,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -333,6 +335,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -816,6 +820,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1484,6 +1490,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2263,6 +2271,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3544,6 +3554,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4641,6 +4653,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5697,6 +5711,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6816,7 +6832,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsUserLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
@@ -6862,7 +6878,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUserLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -6884,7 +6900,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     if (!map.containsKey(key)) {
@@ -7820,8 +7836,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 6) {
           customBuilder_.mergeFrom(value);
+        } else {
+          customBuilder_.setMessage(value);
         }
-        customBuilder_.setMessage(value);
       }
       identifierCase_ = 6;
       return this;
@@ -8029,8 +8046,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 7) {
           appEngineBuilder_.mergeFrom(value);
+        } else {
+          appEngineBuilder_.setMessage(value);
         }
-        appEngineBuilder_.setMessage(value);
       }
       identifierCase_ = 7;
       return this;
@@ -8239,8 +8257,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 8) {
           cloudEndpointsBuilder_.mergeFrom(value);
+        } else {
+          cloudEndpointsBuilder_.setMessage(value);
         }
-        cloudEndpointsBuilder_.setMessage(value);
       }
       identifierCase_ = 8;
       return this;
@@ -8448,8 +8467,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 9) {
           clusterIstioBuilder_.mergeFrom(value);
+        } else {
+          clusterIstioBuilder_.setMessage(value);
         }
-        clusterIstioBuilder_.setMessage(value);
       }
       identifierCase_ = 9;
       return this;
@@ -8657,8 +8677,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 10) {
           meshIstioBuilder_.mergeFrom(value);
+        } else {
+          meshIstioBuilder_.setMessage(value);
         }
-        meshIstioBuilder_.setMessage(value);
       }
       identifierCase_ = 10;
       return this;
@@ -8884,8 +8905,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (identifierCase_ == 11) {
           istioCanonicalServiceBuilder_.mergeFrom(value);
+        } else {
+          istioCanonicalServiceBuilder_.setMessage(value);
         }
-        istioCanonicalServiceBuilder_.setMessage(value);
       }
       identifierCase_ = 11;
       return this;
@@ -9226,7 +9248,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
@@ -9272,7 +9294,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUserLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -9294,7 +9316,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       if (!map.containsKey(key)) {
@@ -9323,7 +9345,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
@@ -9349,11 +9371,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putUserLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableUserLabels().getMutableMap().put(key, value);
       return this;
     }

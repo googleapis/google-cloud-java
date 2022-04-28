@@ -213,6 +213,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
+   *     See google/monitoring/v3/notification.proto;l=75
    * @return A list containing the supportedTiers.
    */
   @java.lang.Deprecated
@@ -228,6 +230,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
+   *     See google/monitoring/v3/notification.proto;l=75
    * @return The count of supportedTiers.
    */
   @java.lang.Deprecated
@@ -243,6 +247,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
+   *     See google/monitoring/v3/notification.proto;l=75
    * @param index The index of the element to return.
    * @return The supportedTiers at the given index.
    */
@@ -259,6 +265,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
+   *     See google/monitoring/v3/notification.proto;l=75
    * @return A list containing the enum numeric values on the wire for supportedTiers.
    */
   @java.lang.Deprecated
@@ -274,6 +282,8 @@ public interface NotificationChannelDescriptorOrBuilder
    * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
+   *     See google/monitoring/v3/notification.proto;l=75
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of supportedTiers at the given index.
    */

@@ -159,6 +159,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -738,7 +740,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public boolean containsUserLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
@@ -784,7 +786,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   public java.lang.String getUserLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -806,7 +808,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     if (!map.containsKey(key)) {
@@ -835,7 +837,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     if (serviceLevelIndicator_ != null) {
       output.writeMessage(3, getServiceLevelIndicator());
     }
-    if (goal_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(goal_) != 0) {
       output.writeDouble(4, goal_);
     }
     if (periodCase_ == 5) {
@@ -865,7 +867,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getServiceLevelIndicator());
     }
-    if (goal_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(goal_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, goal_);
     }
     if (periodCase_ == 5) {
@@ -1917,8 +1919,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       } else {
         if (periodCase_ == 5) {
           rollingPeriodBuilder_.mergeFrom(value);
+        } else {
+          rollingPeriodBuilder_.setMessage(value);
         }
-        rollingPeriodBuilder_.setMessage(value);
       }
       periodCase_ = 5;
       return this;
@@ -2186,7 +2189,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public boolean containsUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
@@ -2232,7 +2235,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     public java.lang.String getUserLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2254,7 +2257,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2283,7 +2286,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      */
     public Builder removeUserLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
@@ -2309,11 +2312,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      */
     public Builder putUserLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableUserLabels().getMutableMap().put(key, value);
       return this;
     }

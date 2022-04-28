@@ -389,7 +389,12 @@ public interface ServiceOrBuilder
    *
    * <code>map&lt;string, string&gt; user_labels = 14;</code>
    */
-  java.lang.String getUserLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
