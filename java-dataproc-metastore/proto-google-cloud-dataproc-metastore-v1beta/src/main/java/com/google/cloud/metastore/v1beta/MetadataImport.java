@@ -155,6 +155,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -397,6 +399,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -412,6 +416,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -453,6 +459,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string source_database = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
      * @return The sourceDatabase.
      */
     @java.lang.Deprecated
@@ -466,6 +474,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string source_database = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Deprecated
@@ -597,6 +607,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -770,6 +782,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -788,6 +802,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
      * @return The databaseType.
      */
     @java.lang.Override
@@ -865,6 +881,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string source_database = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
      * @return The sourceDatabase.
      */
     @java.lang.Override
@@ -889,6 +907,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string source_database = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Override
@@ -1343,6 +1363,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1361,6 +1383,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1382,6 +1406,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1408,6 +1434,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1433,6 +1461,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.DatabaseType database_type = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1564,6 +1594,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string source_database = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
        * @return The sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1587,6 +1619,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string source_database = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
        * @return The bytes for sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1610,6 +1644,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string source_database = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
        * @param value The sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1632,6 +1668,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string source_database = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1650,6 +1688,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>string source_database = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
        * @param value The bytes for sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -2762,8 +2802,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (metadataCase_ == 6) {
           databaseDumpBuilder_.mergeFrom(value);
+        } else {
+          databaseDumpBuilder_.setMessage(value);
         }
-        databaseDumpBuilder_.setMessage(value);
       }
       metadataCase_ = 6;
       return this;

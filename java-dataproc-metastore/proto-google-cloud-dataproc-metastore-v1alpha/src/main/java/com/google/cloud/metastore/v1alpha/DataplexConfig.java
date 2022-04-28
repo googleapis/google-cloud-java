@@ -100,6 +100,8 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -179,7 +181,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLakeResources(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLakeResources().getMap().containsKey(key);
   }
@@ -221,7 +223,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
       java.lang.String key, com.google.cloud.metastore.v1alpha.Lake defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake> map =
         internalGetLakeResources().getMap();
@@ -241,7 +243,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake> map =
         internalGetLakeResources().getMap();
@@ -642,7 +644,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLakeResources(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLakeResources().getMap().containsKey(key);
     }
@@ -684,7 +686,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrDefault(
         java.lang.String key, com.google.cloud.metastore.v1alpha.Lake defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake> map =
           internalGetLakeResources().getMap();
@@ -704,7 +706,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.metastore.v1alpha.Lake getLakeResourcesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.Lake> map =
           internalGetLakeResources().getMap();
@@ -731,7 +733,7 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLakeResources(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLakeResources().getMutableMap().remove(key);
       return this;
@@ -756,11 +758,12 @@ public final class DataplexConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putLakeResources(
         java.lang.String key, com.google.cloud.metastore.v1alpha.Lake value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLakeResources().getMutableMap().put(key, value);
       return this;
     }

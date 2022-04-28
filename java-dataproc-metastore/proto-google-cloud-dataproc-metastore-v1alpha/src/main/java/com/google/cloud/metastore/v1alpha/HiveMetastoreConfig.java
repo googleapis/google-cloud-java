@@ -151,6 +151,8 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -440,7 +442,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsConfigOverrides(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetConfigOverrides().getMap().containsKey(key);
   }
@@ -484,7 +486,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getConfigOverridesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -505,7 +507,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public java.lang.String getConfigOverridesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
     if (!map.containsKey(key)) {
@@ -676,7 +678,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsAuxiliaryVersions(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAuxiliaryVersions().getMap().containsKey(key);
   }
@@ -733,7 +735,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
       java.lang.String key,
       com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig> map =
         internalGetAuxiliaryVersions().getMap();
@@ -761,7 +763,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
   public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig> map =
         internalGetAuxiliaryVersions().getMap();
@@ -1366,7 +1368,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsConfigOverrides(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetConfigOverrides().getMap().containsKey(key);
     }
@@ -1410,7 +1412,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getConfigOverridesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1431,7 +1433,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public java.lang.String getConfigOverridesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetConfigOverrides().getMap();
       if (!map.containsKey(key)) {
@@ -1459,7 +1461,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder removeConfigOverrides(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableConfigOverrides().getMutableMap().remove(key);
       return this;
@@ -1484,11 +1486,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder putConfigOverrides(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableConfigOverrides().getMutableMap().put(key, value);
       return this;
     }
@@ -1897,7 +1900,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsAuxiliaryVersions(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAuxiliaryVersions().getMap().containsKey(key);
     }
@@ -1956,7 +1959,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
         java.lang.String key,
         com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
           map = internalGetAuxiliaryVersions().getMap();
@@ -1984,7 +1987,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig>
           map = internalGetAuxiliaryVersions().getMap();
@@ -2018,7 +2021,7 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder removeAuxiliaryVersions(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAuxiliaryVersions().getMutableMap().remove(key);
       return this;
@@ -2051,11 +2054,12 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
     public Builder putAuxiliaryVersions(
         java.lang.String key, com.google.cloud.metastore.v1alpha.AuxiliaryVersionConfig value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAuxiliaryVersions().getMutableMap().put(key, value);
       return this;
     }
