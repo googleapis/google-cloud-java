@@ -118,6 +118,8 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -286,7 +288,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsSynthesizeSpeechConfigs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSynthesizeSpeechConfigs().getMap().containsKey(key);
   }
@@ -334,7 +336,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
           java.lang.String key,
           com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig>
         map = internalGetSynthesizeSpeechConfigs().getMap();
@@ -357,7 +359,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig
       getSynthesizeSpeechConfigsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig>
         map = internalGetSynthesizeSpeechConfigs().getMap();
@@ -1044,7 +1046,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsSynthesizeSpeechConfigs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSynthesizeSpeechConfigs().getMap().containsKey(key);
     }
@@ -1094,7 +1096,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
             java.lang.String key,
             com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig>
           map = internalGetSynthesizeSpeechConfigs().getMap();
@@ -1117,7 +1119,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig
         getSynthesizeSpeechConfigsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig>
           map = internalGetSynthesizeSpeechConfigs().getMap();
@@ -1146,7 +1148,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      */
     public Builder removeSynthesizeSpeechConfigs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSynthesizeSpeechConfigs().getMutableMap().remove(key);
       return this;
@@ -1174,11 +1176,12 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public Builder putSynthesizeSpeechConfigs(
         java.lang.String key, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableSynthesizeSpeechConfigs().getMutableMap().put(key, value);
       return this;
     }

@@ -143,8 +143,12 @@ public interface TextToSpeechSettingsOrBuilder
    * map&lt;string, .google.cloud.dialogflow.v2.SynthesizeSpeechConfig&gt; synthesize_speech_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig getSynthesizeSpeechConfigsOrDefault(
-      java.lang.String key, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig defaultValue);
   /**
    *
    *

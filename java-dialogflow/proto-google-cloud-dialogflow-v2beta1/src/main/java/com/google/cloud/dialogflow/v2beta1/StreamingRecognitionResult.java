@@ -196,6 +196,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -863,13 +865,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (isFinal_ != false) {
       output.writeBool(3, isFinal_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(4, confidence_);
     }
     if (dtmfDigits_ != null) {
       output.writeMessage(5, getDtmfDigits());
     }
-    if (stability_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(stability_) != 0) {
       output.writeFloat(6, stability_);
     }
     for (int i = 0; i < speechWordInfo_.size(); i++) {
@@ -902,13 +904,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (isFinal_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isFinal_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     if (dtmfDigits_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDtmfDigits());
     }
-    if (stability_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(stability_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, stability_);
     }
     for (int i = 0; i < speechWordInfo_.size(); i++) {

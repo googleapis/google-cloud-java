@@ -181,6 +181,8 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2854,8 +2856,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       } else {
         if (modelMetadataCase_ == 8) {
           articleSuggestionModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          articleSuggestionModelMetadataBuilder_.setMessage(value);
         }
-        articleSuggestionModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 8;
       return this;
@@ -3082,8 +3085,9 @@ public final class ConversationModel extends com.google.protobuf.GeneratedMessag
       } else {
         if (modelMetadataCase_ == 9) {
           smartReplyModelMetadataBuilder_.mergeFrom(value);
+        } else {
+          smartReplyModelMetadataBuilder_.setMessage(value);
         }
-        smartReplyModelMetadataBuilder_.setMessage(value);
       }
       modelMetadataCase_ = 9;
       return this;

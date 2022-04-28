@@ -133,6 +133,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -258,6 +260,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1043,6 +1047,8 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2871,8 +2877,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       } else {
         if (agentServiceCase_ == 1) {
           livePersonConfigBuilder_.mergeFrom(value);
+        } else {
+          livePersonConfigBuilder_.setMessage(value);
         }
-        livePersonConfigBuilder_.setMessage(value);
       }
       agentServiceCase_ = 1;
       return this;
@@ -3119,8 +3126,9 @@ public final class HumanAgentHandoffConfig extends com.google.protobuf.Generated
       } else {
         if (agentServiceCase_ == 2) {
           salesforceLiveAgentConfigBuilder_.mergeFrom(value);
+        } else {
+          salesforceLiveAgentConfigBuilder_.setMessage(value);
         }
-        salesforceLiveAgentConfigBuilder_.setMessage(value);
       }
       agentServiceCase_ = 2;
       return this;

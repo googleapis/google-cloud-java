@@ -244,6 +244,8 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1111,7 +1113,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryText_);
     }
-    if (speechRecognitionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(speechRecognitionConfidence_) != 0) {
       output.writeFloat(2, speechRecognitionConfidence_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
@@ -1141,7 +1143,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (intent_ != null) {
       output.writeMessage(11, getIntent());
     }
-    if (intentDetectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       output.writeFloat(12, intentDetectionConfidence_);
     }
     if (diagnosticInfo_ != null) {
@@ -1168,7 +1170,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queryText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryText_);
     }
-    if (speechRecognitionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(speechRecognitionConfidence_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(2, speechRecognitionConfidence_);
     }
@@ -1200,7 +1202,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (intent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getIntent());
     }
-    if (intentDetectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(intentDetectionConfidence_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(12, intentDetectionConfidence_);
     }

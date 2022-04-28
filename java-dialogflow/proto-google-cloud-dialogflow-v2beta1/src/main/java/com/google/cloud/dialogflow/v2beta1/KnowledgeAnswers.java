@@ -96,6 +96,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -370,6 +372,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -844,7 +848,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         output.writeEnum(4, matchConfidenceLevel_);
       }
-      if (matchConfidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
         output.writeFloat(5, matchConfidence_);
       }
       unknownFields.writeTo(output);
@@ -871,7 +875,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, matchConfidenceLevel_);
       }
-      if (matchConfidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, matchConfidence_);
       }
       size += unknownFields.getSerializedSize();

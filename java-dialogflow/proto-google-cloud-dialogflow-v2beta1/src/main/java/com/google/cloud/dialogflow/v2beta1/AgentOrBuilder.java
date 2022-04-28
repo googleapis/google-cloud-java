@@ -281,6 +281,8 @@ public interface AgentOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
    * @return The enum numeric value on the wire for matchMode.
    */
   @java.lang.Deprecated
@@ -295,6 +297,8 @@ public interface AgentOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
    * @return The matchMode.
    */
   @java.lang.Deprecated

@@ -136,6 +136,8 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -391,7 +393,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
@@ -429,7 +431,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -447,7 +449,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
@@ -532,7 +534,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < snippets_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, snippets_.getRaw(i));
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(4, confidence_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -563,7 +565,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getSnippetsList().size();
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1430,7 +1432,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
@@ -1468,7 +1470,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1486,7 +1488,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
@@ -1511,7 +1513,7 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
@@ -1533,11 +1535,12 @@ public final class ArticleAnswer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }

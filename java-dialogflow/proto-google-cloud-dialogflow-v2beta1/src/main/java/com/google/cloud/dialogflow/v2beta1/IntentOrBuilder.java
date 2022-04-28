@@ -163,6 +163,8 @@ public interface IntentOrBuilder
    *
    * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1142
    * @return The mlEnabled.
    */
   @java.lang.Deprecated

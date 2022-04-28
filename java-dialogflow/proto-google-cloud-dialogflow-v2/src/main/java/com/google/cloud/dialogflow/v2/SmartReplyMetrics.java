@@ -106,6 +106,8 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -239,6 +241,8 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -320,7 +324,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       if (n_ != 0) {
         output.writeInt32(1, n_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         output.writeFloat(2, recall_);
       }
       unknownFields.writeTo(output);
@@ -335,7 +339,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
       if (n_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, n_);
       }
-      if (recall_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(recall_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
       }
       size += unknownFields.getSerializedSize();
@@ -947,7 +951,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (allowlistCoverage_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(allowlistCoverage_) != 0) {
       output.writeFloat(1, allowlistCoverage_);
     }
     for (int i = 0; i < topNMetrics_.size(); i++) {
@@ -965,7 +969,7 @@ public final class SmartReplyMetrics extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (allowlistCoverage_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(allowlistCoverage_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, allowlistCoverage_);
     }
     for (int i = 0; i < topNMetrics_.size(); i++) {

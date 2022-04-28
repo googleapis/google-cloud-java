@@ -154,6 +154,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -281,6 +283,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1292,6 +1296,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3566,6 +3572,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5122,6 +5130,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5300,6 +5310,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6239,6 +6251,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7138,6 +7152,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7921,6 +7937,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -9045,7 +9063,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (maxResults_ != 0) {
         output.writeInt32(4, maxResults_);
       }
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         output.writeFloat(5, confidenceThreshold_);
       }
       if (contextFilterSettings_ != null) {
@@ -9087,7 +9105,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (maxResults_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxResults_);
       }
-      if (confidenceThreshold_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidenceThreshold_);
       }
       if (contextFilterSettings_ != null) {
@@ -9699,8 +9717,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           if (querySourceCase_ == 1) {
             knowledgeBaseQuerySourceBuilder_.mergeFrom(value);
+          } else {
+            knowledgeBaseQuerySourceBuilder_.setMessage(value);
           }
-          knowledgeBaseQuerySourceBuilder_.setMessage(value);
         }
         querySourceCase_ = 1;
         return this;
@@ -9974,8 +9993,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           if (querySourceCase_ == 2) {
             documentQuerySourceBuilder_.mergeFrom(value);
+          } else {
+            documentQuerySourceBuilder_.setMessage(value);
           }
-          documentQuerySourceBuilder_.setMessage(value);
         }
         querySourceCase_ = 2;
         return this;
@@ -10244,8 +10264,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           if (querySourceCase_ == 3) {
             dialogflowQuerySourceBuilder_.mergeFrom(value);
+          } else {
+            dialogflowQuerySourceBuilder_.setMessage(value);
           }
-          dialogflowQuerySourceBuilder_.setMessage(value);
         }
         querySourceCase_ = 3;
         return this;
@@ -10915,6 +10936,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11616,6 +11639,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12265,6 +12290,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

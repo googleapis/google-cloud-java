@@ -135,6 +135,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1366,8 +1368,9 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
       } else {
         if (intentBatchCase_ == 3) {
           intentBatchInlineBuilder_.mergeFrom(value);
+        } else {
+          intentBatchInlineBuilder_.setMessage(value);
         }
-        intentBatchInlineBuilder_.setMessage(value);
       }
       intentBatchCase_ = 3;
       return this;

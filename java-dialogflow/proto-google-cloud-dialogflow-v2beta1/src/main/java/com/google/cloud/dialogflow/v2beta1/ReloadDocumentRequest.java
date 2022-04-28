@@ -109,6 +109,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -942,8 +944,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       } else {
         if (sourceCase_ == 3) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;

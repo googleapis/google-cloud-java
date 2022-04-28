@@ -181,6 +181,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1148,6 +1150,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
    * @return The enum numeric value on the wire for matchMode.
    */
   @java.lang.Override
@@ -1165,6 +1169,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
    * @return The matchMode.
    */
   @java.lang.Override
@@ -1325,7 +1331,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, matchMode_);
     }
-    if (classificationThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(classificationThreshold_) != 0) {
       output.writeFloat(10, classificationThreshold_);
     }
     if (apiVersion_
@@ -1378,7 +1384,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.dialogflow.v2beta1.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, matchMode_);
     }
-    if (classificationThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(classificationThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(10, classificationThreshold_);
     }
     if (apiVersion_
@@ -2757,6 +2763,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+     *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
      * @return The enum numeric value on the wire for matchMode.
      */
     @java.lang.Override
@@ -2774,6 +2782,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+     *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
      * @param value The enum numeric value on the wire for matchMode to set.
      * @return This builder for chaining.
      */
@@ -2794,6 +2804,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+     *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
      * @return The matchMode.
      */
     @java.lang.Override
@@ -2816,6 +2828,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+     *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
      * @param value The matchMode to set.
      * @return This builder for chaining.
      */
@@ -2839,6 +2853,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.Agent.match_mode is deprecated. See
+     *     google/cloud/dialogflow/v2beta1/agent.proto;l=349
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

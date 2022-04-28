@@ -175,7 +175,12 @@ public interface ImportDocumentTemplateOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

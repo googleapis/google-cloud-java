@@ -139,6 +139,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -290,6 +292,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1090,6 +1094,8 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2971,8 +2977,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (modelSpecificConfigCase_ == 2) {
           smartReplyConfigBuilder_.mergeFrom(value);
+        } else {
+          smartReplyConfigBuilder_.setMessage(value);
         }
-        smartReplyConfigBuilder_.setMessage(value);
       }
       modelSpecificConfigCase_ = 2;
       return this;
@@ -3210,8 +3217,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (modelSpecificConfigCase_ == 4) {
           smartComposeConfigBuilder_.mergeFrom(value);
+        } else {
+          smartComposeConfigBuilder_.setMessage(value);
         }
-        smartComposeConfigBuilder_.setMessage(value);
       }
       modelSpecificConfigCase_ = 4;
       return this;

@@ -125,8 +125,12 @@ public interface AssistQueryParametersOrBuilder
    *
    * <code>map&lt;string, string&gt; documents_metadata_filters = 1;</code>
    */
+
+  /* nullable */
   java.lang.String getDocumentsMetadataFiltersOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

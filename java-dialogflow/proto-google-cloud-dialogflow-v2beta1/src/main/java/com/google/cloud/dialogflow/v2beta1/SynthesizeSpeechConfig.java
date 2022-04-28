@@ -124,6 +124,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -347,13 +349,13 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (speakingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       output.writeDouble(1, speakingRate_);
     }
-    if (pitch_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(pitch_) != 0) {
       output.writeDouble(2, pitch_);
     }
-    if (volumeGainDb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(volumeGainDb_) != 0) {
       output.writeDouble(3, volumeGainDb_);
     }
     if (voice_ != null) {
@@ -371,13 +373,13 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (speakingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, speakingRate_);
     }
-    if (pitch_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(pitch_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, pitch_);
     }
-    if (volumeGainDb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(volumeGainDb_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, volumeGainDb_);
     }
     if (voice_ != null) {

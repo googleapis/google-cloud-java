@@ -164,6 +164,8 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1024,8 +1026,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       } else {
         if (suggestionResponseCase_ == 1) {
           errorBuilder_.mergeFrom(value);
+        } else {
+          errorBuilder_.setMessage(value);
         }
-        errorBuilder_.setMessage(value);
       }
       suggestionResponseCase_ = 1;
       return this;
@@ -1240,8 +1243,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       } else {
         if (suggestionResponseCase_ == 2) {
           suggestArticlesResponseBuilder_.mergeFrom(value);
+        } else {
+          suggestArticlesResponseBuilder_.setMessage(value);
         }
-        suggestArticlesResponseBuilder_.setMessage(value);
       }
       suggestionResponseCase_ = 2;
       return this;
@@ -1473,8 +1477,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       } else {
         if (suggestionResponseCase_ == 3) {
           suggestFaqAnswersResponseBuilder_.mergeFrom(value);
+        } else {
+          suggestFaqAnswersResponseBuilder_.setMessage(value);
         }
-        suggestFaqAnswersResponseBuilder_.setMessage(value);
       }
       suggestionResponseCase_ = 3;
       return this;
@@ -1711,8 +1716,9 @@ public final class SuggestionResult extends com.google.protobuf.GeneratedMessage
       } else {
         if (suggestionResponseCase_ == 4) {
           suggestSmartRepliesResponseBuilder_.mergeFrom(value);
+        } else {
+          suggestSmartRepliesResponseBuilder_.setMessage(value);
         }
-        suggestSmartRepliesResponseBuilder_.setMessage(value);
       }
       suggestionResponseCase_ = 4;
       return this;

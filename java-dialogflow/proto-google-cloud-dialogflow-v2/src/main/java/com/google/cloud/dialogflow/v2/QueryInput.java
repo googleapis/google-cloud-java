@@ -131,6 +131,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -886,8 +888,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 1) {
           audioConfigBuilder_.mergeFrom(value);
+        } else {
+          audioConfigBuilder_.setMessage(value);
         }
-        audioConfigBuilder_.setMessage(value);
       }
       inputCase_ = 1;
       return this;
@@ -1094,8 +1097,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 2) {
           textBuilder_.mergeFrom(value);
+        } else {
+          textBuilder_.setMessage(value);
         }
-        textBuilder_.setMessage(value);
       }
       inputCase_ = 2;
       return this;
@@ -1302,8 +1306,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (inputCase_ == 3) {
           eventBuilder_.mergeFrom(value);
+        } else {
+          eventBuilder_.setMessage(value);
         }
-        eventBuilder_.setMessage(value);
       }
       inputCase_ = 3;
       return this;

@@ -194,6 +194,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1486,8 +1488,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         if (inputCase_ == 6) {
           textInputBuilder_.mergeFrom(value);
+        } else {
+          textInputBuilder_.setMessage(value);
         }
-        textInputBuilder_.setMessage(value);
       }
       inputCase_ = 6;
       return this;
@@ -1695,8 +1698,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         if (inputCase_ == 8) {
           eventInputBuilder_.mergeFrom(value);
+        } else {
+          eventInputBuilder_.setMessage(value);
         }
-        eventInputBuilder_.setMessage(value);
       }
       inputCase_ = 8;
       return this;

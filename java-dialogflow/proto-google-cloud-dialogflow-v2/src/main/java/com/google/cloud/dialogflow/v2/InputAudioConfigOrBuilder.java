@@ -130,6 +130,8 @@ public interface InputAudioConfigOrBuilder
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=216
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -150,6 +152,8 @@ public interface InputAudioConfigOrBuilder
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=216
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -170,6 +174,8 @@ public interface InputAudioConfigOrBuilder
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=216
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -191,6 +197,8 @@ public interface InputAudioConfigOrBuilder
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=216
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */

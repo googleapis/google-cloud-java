@@ -113,6 +113,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -811,8 +813,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       } else {
         if (answerCase_ == 5) {
           articleSuggestionAnswerBuilder_.mergeFrom(value);
+        } else {
+          articleSuggestionAnswerBuilder_.setMessage(value);
         }
-        articleSuggestionAnswerBuilder_.setMessage(value);
       }
       answerCase_ = 5;
       return this;
@@ -1040,8 +1043,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       } else {
         if (answerCase_ == 6) {
           faqAnswerBuilder_.mergeFrom(value);
+        } else {
+          faqAnswerBuilder_.setMessage(value);
         }
-        faqAnswerBuilder_.setMessage(value);
       }
       answerCase_ = 6;
       return this;

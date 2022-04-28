@@ -127,6 +127,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1563,8 +1565,9 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
       } else {
         if (payloadCase_ == 4) {
           newMessagePayloadBuilder_.mergeFrom(value);
+        } else {
+          newMessagePayloadBuilder_.setMessage(value);
         }
-        newMessagePayloadBuilder_.setMessage(value);
       }
       payloadCase_ = 4;
       return this;

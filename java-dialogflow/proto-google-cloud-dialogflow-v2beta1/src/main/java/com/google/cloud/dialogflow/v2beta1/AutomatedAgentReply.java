@@ -177,6 +177,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -818,6 +820,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=456
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Override
@@ -836,6 +840,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=456
    * @return The cxSessionParameters.
    */
   @java.lang.Override
@@ -965,7 +971,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (allowCancellation_ != false) {
       output.writeBool(8, allowCancellation_);
     }
-    if (matchConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
       output.writeFloat(9, matchConfidence_);
     }
     if (parameters_ != null) {
@@ -1006,7 +1012,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (allowCancellation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, allowCancellation_);
     }
-    if (matchConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, matchConfidence_);
     }
     if (parameters_ != null) {
@@ -1653,8 +1659,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       } else {
         if (responseCase_ == 1) {
           detectIntentResponseBuilder_.mergeFrom(value);
+        } else {
+          detectIntentResponseBuilder_.setMessage(value);
         }
-        detectIntentResponseBuilder_.setMessage(value);
       }
       responseCase_ = 1;
       return this;
@@ -2674,6 +2681,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=456
      * @return Whether the cxSessionParameters field is set.
      */
     @java.lang.Deprecated
@@ -2691,6 +2700,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=456
      * @return The cxSessionParameters.
      */
     @java.lang.Deprecated

@@ -181,6 +181,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -334,6 +336,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1111,6 +1115,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1843,6 +1849,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2397,6 +2405,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4270,8 +4280,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         if (messageCase_ == 1) {
           textBuilder_.mergeFrom(value);
+        } else {
+          textBuilder_.setMessage(value);
         }
-        textBuilder_.setMessage(value);
       }
       messageCase_ = 1;
       return this;
@@ -4476,8 +4487,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         if (messageCase_ == 2) {
           payloadBuilder_.mergeFrom(value);
+        } else {
+          payloadBuilder_.setMessage(value);
         }
-        payloadBuilder_.setMessage(value);
       }
       messageCase_ = 2;
       return this;
@@ -4702,8 +4714,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         if (messageCase_ == 3) {
           liveAgentHandoffBuilder_.mergeFrom(value);
+        } else {
+          liveAgentHandoffBuilder_.setMessage(value);
         }
-        liveAgentHandoffBuilder_.setMessage(value);
       }
       messageCase_ = 3;
       return this;
@@ -4941,8 +4954,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         if (messageCase_ == 4) {
           endInteractionBuilder_.mergeFrom(value);
+        } else {
+          endInteractionBuilder_.setMessage(value);
         }
-        endInteractionBuilder_.setMessage(value);
       }
       messageCase_ = 4;
       return this;
@@ -5188,8 +5202,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       } else {
         if (messageCase_ == 6) {
           telephonyTransferCallBuilder_.mergeFrom(value);
+        } else {
+          telephonyTransferCallBuilder_.setMessage(value);
         }
-        telephonyTransferCallBuilder_.setMessage(value);
       }
       messageCase_ = 6;
       return this;

@@ -188,6 +188,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -437,6 +439,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
+   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=557
    * @return The singleUtterance.
    */
   @java.lang.Override
@@ -1730,6 +1734,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=557
      * @return The singleUtterance.
      */
     @java.lang.Override
@@ -1754,6 +1760,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=557
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
@@ -1781,6 +1789,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=557
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

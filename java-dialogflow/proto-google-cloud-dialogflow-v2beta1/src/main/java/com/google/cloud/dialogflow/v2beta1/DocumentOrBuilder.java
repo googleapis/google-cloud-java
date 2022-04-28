@@ -247,6 +247,8 @@ public interface DocumentOrBuilder
    *
    * <code>string content = 6 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Document.content is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/document.proto;l=342
    * @return Whether the content field is set.
    */
   @java.lang.Deprecated
@@ -263,6 +265,8 @@ public interface DocumentOrBuilder
    *
    * <code>string content = 6 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Document.content is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/document.proto;l=342
    * @return The content.
    */
   @java.lang.Deprecated
@@ -279,6 +283,8 @@ public interface DocumentOrBuilder
    *
    * <code>string content = 6 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2beta1.Document.content is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/document.proto;l=342
    * @return The bytes for content.
    */
   @java.lang.Deprecated
@@ -438,7 +444,12 @@ public interface DocumentOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

@@ -86,8 +86,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
             }
           case 26:
             {
-              agentCase_ = 3;
               agent_ = input.readBytes();
+              agentCase_ = 3;
               break;
             }
           default:
@@ -101,6 +101,8 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
