@@ -155,6 +155,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -470,6 +472,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bytes etag = 7 [deprecated = true];</code>
    *
+   * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=504
    * @return The etag.
    */
   @java.lang.Override
@@ -1675,6 +1679,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
+     * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=504
      * @return The etag.
      */
     @java.lang.Override
@@ -1691,6 +1697,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
+     * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=504
      * @param value The etag to set.
      * @return This builder for chaining.
      */
@@ -1713,6 +1721,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bytes etag = 7 [deprecated = true];</code>
      *
+     * @deprecated google.iam.admin.v1.ServiceAccount.etag is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=504
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

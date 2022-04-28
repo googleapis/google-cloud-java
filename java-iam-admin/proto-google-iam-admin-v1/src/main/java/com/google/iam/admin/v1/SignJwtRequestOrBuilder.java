@@ -40,6 +40,8 @@ public interface SignJwtRequestOrBuilder
    * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=955
    * @return The name.
    */
   @java.lang.Deprecated
@@ -61,6 +63,8 @@ public interface SignJwtRequestOrBuilder
    * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=955
    * @return The bytes for name.
    */
   @java.lang.Deprecated
@@ -84,6 +88,8 @@ public interface SignJwtRequestOrBuilder
    *
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=976
    * @return The payload.
    */
   @java.lang.Deprecated
@@ -106,6 +112,8 @@ public interface SignJwtRequestOrBuilder
    *
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=976
    * @return The bytes for payload.
    */
   @java.lang.Deprecated

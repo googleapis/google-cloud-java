@@ -102,6 +102,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -899,8 +901,9 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       } else {
         if (lintObjectCase_ == 5) {
           conditionBuilder_.mergeFrom(value);
+        } else {
+          conditionBuilder_.setMessage(value);
         }
-        conditionBuilder_.setMessage(value);
       }
       lintObjectCase_ = 5;
       return this;

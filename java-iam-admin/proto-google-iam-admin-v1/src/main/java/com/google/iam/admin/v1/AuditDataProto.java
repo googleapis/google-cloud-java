@@ -45,23 +45,19 @@ public final class AuditDataProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/iam/admin/v1/audit_data.proto\022\023"
-          + "google.iam.admin.v1\032\034google/api/annotati"
-          + "ons.proto\"\240\001\n\tAuditData\022H\n\020permission_de"
-          + "lta\030\001 \001(\0132..google.iam.admin.v1.AuditDat"
-          + "a.PermissionDelta\032I\n\017PermissionDelta\022\031\n\021"
-          + "added_permissions\030\001 \003(\t\022\033\n\023removed_permi"
-          + "ssions\030\002 \003(\tB\235\001\n\027com.google.iam.admin.v1"
-          + "B\016AuditDataProtoP\001Z8google.golang.org/ge"
-          + "nproto/googleapis/iam/admin/v1;admin\252\002\031G"
-          + "oogle.Cloud.Iam.Admin.V1\312\002\031Google\\Cloud\\"
-          + "Iam\\Admin\\V1b\006proto3"
+          + "google.iam.admin.v1\"\240\001\n\tAuditData\022H\n\020per"
+          + "mission_delta\030\001 \001(\0132..google.iam.admin.v"
+          + "1.AuditData.PermissionDelta\032I\n\017Permissio"
+          + "nDelta\022\031\n\021added_permissions\030\001 \003(\t\022\033\n\023rem"
+          + "oved_permissions\030\002 \003(\tB\235\001\n\027com.google.ia"
+          + "m.admin.v1B\016AuditDataProtoP\001Z8google.gol"
+          + "ang.org/genproto/googleapis/iam/admin/v1"
+          + ";admin\252\002\031Google.Cloud.Iam.Admin.V1\312\002\031Goo"
+          + "gle\\Cloud\\Iam\\Admin\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_iam_admin_v1_AuditData_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_iam_admin_v1_AuditData_fieldAccessorTable =
@@ -78,7 +74,6 @@ public final class AuditDataProto {
             new java.lang.String[] {
               "AddedPermissions", "RemovedPermissions",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

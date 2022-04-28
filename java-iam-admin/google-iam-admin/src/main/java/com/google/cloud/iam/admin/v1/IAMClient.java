@@ -2087,6 +2087,7 @@ public class IAMClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = iAMClient.setIamPolicy(request);
    * }
@@ -2124,6 +2125,7 @@ public class IAMClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = iAMClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

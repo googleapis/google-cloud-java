@@ -98,6 +98,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -140,6 +142,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=955
    * @return The name.
    */
   @java.lang.Override
@@ -172,6 +176,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=955
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -208,6 +214,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=976
    * @return The payload.
    */
   @java.lang.Override
@@ -241,6 +249,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+   *     google/iam/admin/v1/iam.proto;l=976
    * @return The bytes for payload.
    */
   @java.lang.Override
@@ -608,6 +618,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=955
      * @return The name.
      */
     @java.lang.Deprecated
@@ -639,6 +651,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=955
      * @return The bytes for name.
      */
     @java.lang.Deprecated
@@ -670,6 +684,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=955
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -700,6 +716,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=955
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -726,6 +744,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      * string name = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.name is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=955
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -760,6 +780,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=976
      * @return The payload.
      */
     @java.lang.Deprecated
@@ -792,6 +814,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=976
      * @return The bytes for payload.
      */
     @java.lang.Deprecated
@@ -824,6 +848,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=976
      * @param value The payload to set.
      * @return This builder for chaining.
      */
@@ -855,6 +881,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=976
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -882,6 +910,8 @@ public final class SignJwtRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string payload = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.iam.admin.v1.SignJwtRequest.payload is deprecated. See
+     *     google/iam/admin/v1/iam.proto;l=976
      * @param value The bytes for payload to set.
      * @return This builder for chaining.
      */
