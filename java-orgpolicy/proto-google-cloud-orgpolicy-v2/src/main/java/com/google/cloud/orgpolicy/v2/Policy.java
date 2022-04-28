@@ -122,6 +122,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -269,6 +271,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
@@ -285,6 +289,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
    * @return The alternate.
    */
   @java.lang.Override
@@ -1031,6 +1037,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
      * @return Whether the alternate field is set.
      */
     @java.lang.Deprecated
@@ -1047,6 +1055,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
      * @return The alternate.
      */
     @java.lang.Deprecated

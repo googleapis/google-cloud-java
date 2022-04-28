@@ -110,6 +110,8 @@ public interface PolicyOrBuilder
    *
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
    * @return Whether the alternate field is set.
    */
   @java.lang.Deprecated
@@ -123,6 +125,8 @@ public interface PolicyOrBuilder
    *
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=217
    * @return The alternate.
    */
   @java.lang.Deprecated

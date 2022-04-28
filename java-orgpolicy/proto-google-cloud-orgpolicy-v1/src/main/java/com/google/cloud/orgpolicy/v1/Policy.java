@@ -170,6 +170,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -586,6 +588,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2597,6 +2601,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3291,6 +3297,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5108,8 +5116,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (policyTypeCase_ == 5) {
           listPolicyBuilder_.mergeFrom(value);
+        } else {
+          listPolicyBuilder_.setMessage(value);
         }
-        listPolicyBuilder_.setMessage(value);
       }
       policyTypeCase_ = 5;
       return this;
@@ -5318,8 +5327,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (policyTypeCase_ == 6) {
           booleanPolicyBuilder_.mergeFrom(value);
+        } else {
+          booleanPolicyBuilder_.setMessage(value);
         }
-        booleanPolicyBuilder_.setMessage(value);
       }
       policyTypeCase_ = 6;
       return this;
@@ -5533,8 +5543,9 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (policyTypeCase_ == 7) {
           restoreDefaultBuilder_.mergeFrom(value);
+        } else {
+          restoreDefaultBuilder_.setMessage(value);
         }
-        restoreDefaultBuilder_.setMessage(value);
       }
       policyTypeCase_ = 7;
       return this;

@@ -129,6 +129,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -424,20 +426,20 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
               }
             case 16:
               {
-                kindCase_ = 2;
                 kind_ = input.readBool();
+                kindCase_ = 2;
                 break;
               }
             case 24:
               {
-                kindCase_ = 3;
                 kind_ = input.readBool();
+                kindCase_ = 3;
                 break;
               }
             case 32:
               {
-                kindCase_ = 4;
                 kind_ = input.readBool();
+                kindCase_ = 4;
                 break;
               }
             case 42:
@@ -465,6 +467,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -694,6 +698,8 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2524,8 +2530,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (kindCase_ == 1) {
             valuesBuilder_.mergeFrom(value);
+          } else {
+            valuesBuilder_.setMessage(value);
           }
-          valuesBuilder_.setMessage(value);
         }
         kindCase_ = 1;
         return this;

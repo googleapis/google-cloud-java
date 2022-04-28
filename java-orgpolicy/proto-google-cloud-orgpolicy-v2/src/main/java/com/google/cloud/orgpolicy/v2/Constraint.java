@@ -164,6 +164,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -463,6 +465,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1104,6 +1108,8 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2877,8 +2883,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (constraintTypeCase_ == 5) {
           listConstraintBuilder_.mergeFrom(value);
+        } else {
+          listConstraintBuilder_.setMessage(value);
         }
-        listConstraintBuilder_.setMessage(value);
       }
       constraintTypeCase_ = 5;
       return this;
@@ -3093,8 +3100,9 @@ public final class Constraint extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (constraintTypeCase_ == 6) {
           booleanConstraintBuilder_.mergeFrom(value);
+        } else {
+          booleanConstraintBuilder_.setMessage(value);
         }
-        booleanConstraintBuilder_.setMessage(value);
       }
       constraintTypeCase_ = 6;
       return this;
