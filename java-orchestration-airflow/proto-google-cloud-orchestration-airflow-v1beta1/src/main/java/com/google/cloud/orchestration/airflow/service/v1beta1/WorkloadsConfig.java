@@ -141,6 +141,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -303,6 +305,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -414,13 +418,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         output.writeFloat(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         output.writeFloat(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         output.writeFloat(3, storageGb_);
       }
       if (count_ != 0) {
@@ -435,13 +439,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, storageGb_);
       }
       if (count_ != 0) {
@@ -1210,6 +1214,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1303,13 +1309,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         output.writeFloat(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         output.writeFloat(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         output.writeFloat(3, storageGb_);
       }
       unknownFields.writeTo(output);
@@ -1321,13 +1327,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, storageGb_);
       }
       size += unknownFields.getSerializedSize();
@@ -2068,6 +2074,8 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2197,13 +2205,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         output.writeFloat(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         output.writeFloat(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         output.writeFloat(3, storageGb_);
       }
       if (minCount_ != 0) {
@@ -2221,13 +2229,13 @@ public final class WorkloadsConfig extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      if (cpu_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(cpu_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, cpu_);
       }
-      if (memoryGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(memoryGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, memoryGb_);
       }
-      if (storageGb_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(storageGb_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, storageGb_);
       }
       if (minCount_ != 0) {

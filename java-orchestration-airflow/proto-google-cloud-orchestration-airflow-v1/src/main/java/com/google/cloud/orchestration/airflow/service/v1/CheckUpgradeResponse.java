@@ -131,6 +131,8 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -561,7 +563,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsPypiDependencies(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetPypiDependencies().getMap().containsKey(key);
   }
@@ -599,7 +601,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   public java.lang.String getPypiDependenciesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetPypiDependencies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -617,7 +619,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public java.lang.String getPypiDependenciesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetPypiDependencies().getMap();
     if (!map.containsKey(key)) {
@@ -1538,7 +1540,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsPypiDependencies(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPypiDependencies().getMap().containsKey(key);
     }
@@ -1576,7 +1578,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getPypiDependenciesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetPypiDependencies().getMap();
@@ -1595,7 +1597,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public java.lang.String getPypiDependenciesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetPypiDependencies().getMap();
@@ -1621,7 +1623,7 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder removePypiDependencies(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutablePypiDependencies().getMutableMap().remove(key);
       return this;
@@ -1643,11 +1645,12 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder putPypiDependencies(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutablePypiDependencies().getMutableMap().put(key, value);
       return this;
     }
