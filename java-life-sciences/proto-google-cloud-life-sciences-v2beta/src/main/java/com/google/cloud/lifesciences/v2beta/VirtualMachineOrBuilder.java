@@ -139,7 +139,12 @@ public interface VirtualMachineOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -445,6 +450,8 @@ public interface VirtualMachineOrBuilder
    *
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
    * @return The nvidiaDriverVersion.
    */
   @java.lang.Deprecated
@@ -461,6 +468,8 @@ public interface VirtualMachineOrBuilder
    *
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
    * @return The bytes for nvidiaDriverVersion.
    */
   @java.lang.Deprecated

@@ -143,6 +143,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1089,8 +1091,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (storageCase_ == 2) {
           persistentDiskBuilder_.mergeFrom(value);
+        } else {
+          persistentDiskBuilder_.setMessage(value);
         }
-        persistentDiskBuilder_.setMessage(value);
       }
       storageCase_ = 2;
       return this;
@@ -1299,8 +1302,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (storageCase_ == 3) {
           existingDiskBuilder_.mergeFrom(value);
+        } else {
+          existingDiskBuilder_.setMessage(value);
         }
-        existingDiskBuilder_.setMessage(value);
       }
       storageCase_ = 3;
       return this;
@@ -1508,8 +1512,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (storageCase_ == 4) {
           nfsMountBuilder_.mergeFrom(value);
+        } else {
+          nfsMountBuilder_.setMessage(value);
         }
-        nfsMountBuilder_.setMessage(value);
       }
       storageCase_ = 4;
       return this;

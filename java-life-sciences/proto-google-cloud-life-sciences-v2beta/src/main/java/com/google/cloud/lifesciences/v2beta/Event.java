@@ -297,6 +297,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2065,8 +2067,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 17) {
           delayedBuilder_.mergeFrom(value);
+        } else {
+          delayedBuilder_.setMessage(value);
         }
-        delayedBuilder_.setMessage(value);
       }
       detailsCase_ = 17;
       return this;
@@ -2277,8 +2280,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 18) {
           workerAssignedBuilder_.mergeFrom(value);
+        } else {
+          workerAssignedBuilder_.setMessage(value);
         }
-        workerAssignedBuilder_.setMessage(value);
       }
       detailsCase_ = 18;
       return this;
@@ -2491,8 +2495,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 19) {
           workerReleasedBuilder_.mergeFrom(value);
+        } else {
+          workerReleasedBuilder_.setMessage(value);
         }
-        workerReleasedBuilder_.setMessage(value);
       }
       detailsCase_ = 19;
       return this;
@@ -2703,8 +2708,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 20) {
           pullStartedBuilder_.mergeFrom(value);
+        } else {
+          pullStartedBuilder_.setMessage(value);
         }
-        pullStartedBuilder_.setMessage(value);
       }
       detailsCase_ = 20;
       return this;
@@ -2914,8 +2920,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 21) {
           pullStoppedBuilder_.mergeFrom(value);
+        } else {
+          pullStoppedBuilder_.setMessage(value);
         }
-        pullStoppedBuilder_.setMessage(value);
       }
       detailsCase_ = 21;
       return this;
@@ -3128,8 +3135,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 22) {
           containerStartedBuilder_.mergeFrom(value);
+        } else {
+          containerStartedBuilder_.setMessage(value);
         }
-        containerStartedBuilder_.setMessage(value);
       }
       detailsCase_ = 22;
       return this;
@@ -3344,8 +3352,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 23) {
           containerStoppedBuilder_.mergeFrom(value);
+        } else {
+          containerStoppedBuilder_.setMessage(value);
         }
-        containerStoppedBuilder_.setMessage(value);
       }
       detailsCase_ = 23;
       return this;
@@ -3559,8 +3568,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 24) {
           containerKilledBuilder_.mergeFrom(value);
+        } else {
+          containerKilledBuilder_.setMessage(value);
         }
-        containerKilledBuilder_.setMessage(value);
       }
       detailsCase_ = 24;
       return this;
@@ -3785,8 +3795,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 25) {
           unexpectedExitStatusBuilder_.mergeFrom(value);
+        } else {
+          unexpectedExitStatusBuilder_.setMessage(value);
         }
-        unexpectedExitStatusBuilder_.setMessage(value);
       }
       detailsCase_ = 25;
       return this;
@@ -4005,8 +4016,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 26) {
           failedBuilder_.mergeFrom(value);
+        } else {
+          failedBuilder_.setMessage(value);
         }
-        failedBuilder_.setMessage(value);
       }
       detailsCase_ = 26;
       return this;
