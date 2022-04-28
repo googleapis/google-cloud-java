@@ -119,6 +119,8 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -820,8 +822,9 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 2) {
           grpcEndpointBuilder_.mergeFrom(value);
+        } else {
+          grpcEndpointBuilder_.setMessage(value);
         }
-        grpcEndpointBuilder_.setMessage(value);
       }
       typeCase_ = 2;
       return this;
@@ -1062,8 +1065,9 @@ public final class ValidationCA extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (typeCase_ == 3) {
           certificateProviderInstanceBuilder_.mergeFrom(value);
+        } else {
+          certificateProviderInstanceBuilder_.setMessage(value);
         }
-        certificateProviderInstanceBuilder_.setMessage(value);
       }
       typeCase_ = 3;
       return this;
