@@ -102,6 +102,8 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -863,8 +865,9 @@ public final class GameServerConfigOverride extends com.google.protobuf.Generate
       } else {
         if (selectorCase_ == 1) {
           realmsSelectorBuilder_.mergeFrom(value);
+        } else {
+          realmsSelectorBuilder_.setMessage(value);
         }
-        realmsSelectorBuilder_.setMessage(value);
       }
       selectorCase_ = 1;
       return this;

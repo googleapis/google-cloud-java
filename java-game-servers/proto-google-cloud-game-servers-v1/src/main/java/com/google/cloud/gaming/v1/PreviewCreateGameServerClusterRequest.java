@@ -137,6 +137,8 @@ public final class PreviewCreateGameServerClusterRequest
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -381,6 +383,8 @@ public final class PreviewCreateGameServerClusterRequest
    * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+   *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Override
@@ -400,6 +404,8 @@ public final class PreviewCreateGameServerClusterRequest
    * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+   *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
    * @return The view.
    */
   @java.lang.Override
@@ -1463,6 +1469,8 @@ public final class PreviewCreateGameServerClusterRequest
      * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+     *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override
@@ -1482,6 +1490,8 @@ public final class PreviewCreateGameServerClusterRequest
      * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+     *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
      * @param value The enum numeric value on the wire for view to set.
      * @return This builder for chaining.
      */
@@ -1504,6 +1514,8 @@ public final class PreviewCreateGameServerClusterRequest
      * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+     *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
      * @return The view.
      */
     @java.lang.Override
@@ -1528,6 +1540,8 @@ public final class PreviewCreateGameServerClusterRequest
      * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+     *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
      * @param value The view to set.
      * @return This builder for chaining.
      */
@@ -1553,6 +1567,8 @@ public final class PreviewCreateGameServerClusterRequest
      * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+     *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

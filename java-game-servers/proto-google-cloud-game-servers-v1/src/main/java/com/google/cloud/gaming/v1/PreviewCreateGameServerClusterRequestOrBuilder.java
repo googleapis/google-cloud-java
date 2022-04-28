@@ -170,6 +170,8 @@ public interface PreviewCreateGameServerClusterRequestOrBuilder
    * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+   *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Deprecated
@@ -186,6 +188,8 @@ public interface PreviewCreateGameServerClusterRequestOrBuilder
    * .google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest.view is deprecated.
+   *     See google/cloud/gaming/v1/game_server_clusters.proto;l=153
    * @return The view.
    */
   @java.lang.Deprecated

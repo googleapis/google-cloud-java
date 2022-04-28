@@ -109,6 +109,8 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -778,8 +780,9 @@ public final class GameServerClusterConnectionInfo extends com.google.protobuf.G
       } else {
         if (clusterReferenceCase_ == 7) {
           gkeClusterReferenceBuilder_.mergeFrom(value);
+        } else {
+          gkeClusterReferenceBuilder_.setMessage(value);
         }
-        gkeClusterReferenceBuilder_.setMessage(value);
       }
       clusterReferenceCase_ = 7;
       return this;

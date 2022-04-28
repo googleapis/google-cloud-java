@@ -178,6 +178,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -642,7 +644,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsOperationStatus(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetOperationStatus().getMap().containsKey(key);
   }
@@ -690,7 +692,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.gaming.v1beta.OperationStatus getOperationStatusOrDefault(
       java.lang.String key, com.google.cloud.gaming.v1beta.OperationStatus defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.gaming.v1beta.OperationStatus> map =
         internalGetOperationStatus().getMap();
@@ -714,7 +716,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.gaming.v1beta.OperationStatus getOperationStatusOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.gaming.v1beta.OperationStatus> map =
         internalGetOperationStatus().getMap();
@@ -2330,7 +2332,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsOperationStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetOperationStatus().getMap().containsKey(key);
     }
@@ -2378,7 +2380,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gaming.v1beta.OperationStatus getOperationStatusOrDefault(
         java.lang.String key, com.google.cloud.gaming.v1beta.OperationStatus defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.gaming.v1beta.OperationStatus> map =
           internalGetOperationStatus().getMap();
@@ -2402,7 +2404,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gaming.v1beta.OperationStatus getOperationStatusOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.gaming.v1beta.OperationStatus> map =
           internalGetOperationStatus().getMap();
@@ -2432,7 +2434,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeOperationStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableOperationStatus().getMutableMap().remove(key);
       return this;
@@ -2460,11 +2462,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder putOperationStatus(
         java.lang.String key, com.google.cloud.gaming.v1beta.OperationStatus value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableOperationStatus().getMutableMap().put(key, value);
       return this;
     }
