@@ -127,6 +127,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -283,6 +285,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1168,6 +1172,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2622,8 +2628,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       } else {
         if (sourceIdentifierCase_ == 1) {
           oracleIdentifierBuilder_.mergeFrom(value);
+        } else {
+          oracleIdentifierBuilder_.setMessage(value);
         }
-        oracleIdentifierBuilder_.setMessage(value);
       }
       sourceIdentifierCase_ = 1;
       return this;
@@ -2869,8 +2876,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       } else {
         if (sourceIdentifierCase_ == 2) {
           mysqlIdentifierBuilder_.mergeFrom(value);
+        } else {
+          mysqlIdentifierBuilder_.setMessage(value);
         }
-        mysqlIdentifierBuilder_.setMessage(value);
       }
       sourceIdentifierCase_ = 2;
       return this;

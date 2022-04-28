@@ -154,6 +154,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -286,6 +288,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
    * <code>.google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
    * @return The enum numeric value on the wire for gcsFileFormat.
    */
   @java.lang.Override
@@ -304,6 +308,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
    * <code>.google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
    * @return The gcsFileFormat.
    */
   @java.lang.Override
@@ -1075,6 +1081,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * .google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
      * @return The enum numeric value on the wire for gcsFileFormat.
      */
     @java.lang.Override
@@ -1094,6 +1102,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * .google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
      * @param value The enum numeric value on the wire for gcsFileFormat to set.
      * @return This builder for chaining.
      */
@@ -1116,6 +1126,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * .google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
      * @return The gcsFileFormat.
      */
     @java.lang.Override
@@ -1140,6 +1152,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * .google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
      * @param value The gcsFileFormat to set.
      * @return This builder for chaining.
      */
@@ -1165,6 +1179,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
      * .google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+     *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1534,8 +1550,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (fileFormatCase_ == 100) {
           avroFileFormatBuilder_.mergeFrom(value);
+        } else {
+          avroFileFormatBuilder_.setMessage(value);
         }
-        avroFileFormatBuilder_.setMessage(value);
       }
       fileFormatCase_ = 100;
       return this;
@@ -1745,8 +1762,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (fileFormatCase_ == 101) {
           jsonFileFormatBuilder_.mergeFrom(value);
+        } else {
+          jsonFileFormatBuilder_.setMessage(value);
         }
-        jsonFileFormatBuilder_.setMessage(value);
       }
       fileFormatCase_ = 101;
       return this;

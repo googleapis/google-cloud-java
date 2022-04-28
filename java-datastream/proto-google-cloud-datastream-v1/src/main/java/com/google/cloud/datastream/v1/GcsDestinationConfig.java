@@ -142,6 +142,8 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1344,8 +1346,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (fileFormatCase_ == 100) {
           avroFileFormatBuilder_.mergeFrom(value);
+        } else {
+          avroFileFormatBuilder_.setMessage(value);
         }
-        avroFileFormatBuilder_.setMessage(value);
       }
       fileFormatCase_ = 100;
       return this;
@@ -1553,8 +1556,9 @@ public final class GcsDestinationConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (fileFormatCase_ == 101) {
           jsonFileFormatBuilder_.mergeFrom(value);
+        } else {
+          jsonFileFormatBuilder_.setMessage(value);
         }
-        jsonFileFormatBuilder_.setMessage(value);
       }
       fileFormatCase_ = 101;
       return this;

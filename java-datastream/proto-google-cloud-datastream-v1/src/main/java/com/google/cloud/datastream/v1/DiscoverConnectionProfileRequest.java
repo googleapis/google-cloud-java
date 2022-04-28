@@ -80,14 +80,14 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             }
           case 24:
             {
-              hierarchyCase_ = 3;
               hierarchy_ = input.readBool();
+              hierarchyCase_ = 3;
               break;
             }
           case 32:
             {
-              hierarchyCase_ = 4;
               hierarchy_ = input.readInt32();
+              hierarchyCase_ = 4;
               break;
             }
           case 802:
@@ -157,6 +157,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1473,8 +1475,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       } else {
         if (targetCase_ == 200) {
           connectionProfileBuilder_.mergeFrom(value);
+        } else {
+          connectionProfileBuilder_.setMessage(value);
         }
-        connectionProfileBuilder_.setMessage(value);
       }
       targetCase_ = 200;
       return this;
@@ -1959,8 +1962,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       } else {
         if (dataObjectCase_ == 100) {
           oracleRdbmsBuilder_.mergeFrom(value);
+        } else {
+          oracleRdbmsBuilder_.setMessage(value);
         }
-        oracleRdbmsBuilder_.setMessage(value);
       }
       dataObjectCase_ = 100;
       return this;
@@ -2168,8 +2172,9 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       } else {
         if (dataObjectCase_ == 101) {
           mysqlRdbmsBuilder_.mergeFrom(value);
+        } else {
+          mysqlRdbmsBuilder_.setMessage(value);
         }
-        mysqlRdbmsBuilder_.setMessage(value);
       }
       dataObjectCase_ = 101;
       return this;

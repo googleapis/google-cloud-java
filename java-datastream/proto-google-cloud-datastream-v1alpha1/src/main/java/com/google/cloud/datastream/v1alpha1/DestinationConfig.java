@@ -110,6 +110,8 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -860,8 +862,9 @@ public final class DestinationConfig extends com.google.protobuf.GeneratedMessag
       } else {
         if (destinationStreamConfigCase_ == 100) {
           gcsDestinationConfigBuilder_.mergeFrom(value);
+        } else {
+          gcsDestinationConfigBuilder_.setMessage(value);
         }
-        gcsDestinationConfigBuilder_.setMessage(value);
       }
       destinationStreamConfigCase_ = 100;
       return this;

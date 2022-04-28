@@ -112,6 +112,8 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -789,8 +791,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       } else {
         if (dataObjectCase_ == 100) {
           oracleRdbmsBuilder_.mergeFrom(value);
+        } else {
+          oracleRdbmsBuilder_.setMessage(value);
         }
-        oracleRdbmsBuilder_.setMessage(value);
       }
       dataObjectCase_ = 100;
       return this;
@@ -998,8 +1001,9 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       } else {
         if (dataObjectCase_ == 101) {
           mysqlRdbmsBuilder_.mergeFrom(value);
+        } else {
+          mysqlRdbmsBuilder_.setMessage(value);
         }
-        mysqlRdbmsBuilder_.setMessage(value);
       }
       dataObjectCase_ = 101;
       return this;

@@ -59,6 +59,8 @@ public interface GcsDestinationConfigOrBuilder
    * <code>.google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
    * @return The enum numeric value on the wire for gcsFileFormat.
    */
   @java.lang.Deprecated
@@ -74,6 +76,8 @@ public interface GcsDestinationConfigOrBuilder
    * <code>.google.cloud.datastream.v1alpha1.GcsFileFormat gcs_file_format = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1alpha1.GcsDestinationConfig.gcs_file_format is
+   *     deprecated. See google/cloud/datastream/v1alpha1/datastream_resources.proto;l=477
    * @return The gcsFileFormat.
    */
   @java.lang.Deprecated

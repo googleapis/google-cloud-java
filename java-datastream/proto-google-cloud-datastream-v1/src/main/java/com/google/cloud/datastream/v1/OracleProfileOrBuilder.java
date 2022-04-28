@@ -178,8 +178,12 @@ public interface OracleProfileOrBuilder
    *
    * <code>map&lt;string, string&gt; connection_attributes = 6;</code>
    */
+
+  /* nullable */
   java.lang.String getConnectionAttributesOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

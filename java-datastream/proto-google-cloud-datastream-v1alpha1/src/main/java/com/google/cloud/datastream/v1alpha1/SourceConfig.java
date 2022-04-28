@@ -128,6 +128,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -987,8 +989,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceStreamConfigCase_ == 100) {
           oracleSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          oracleSourceConfigBuilder_.setMessage(value);
         }
-        oracleSourceConfigBuilder_.setMessage(value);
       }
       sourceStreamConfigCase_ = 100;
       return this;
@@ -1202,8 +1205,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceStreamConfigCase_ == 101) {
           mysqlSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          mysqlSourceConfigBuilder_.setMessage(value);
         }
-        mysqlSourceConfigBuilder_.setMessage(value);
       }
       sourceStreamConfigCase_ = 101;
       return this;

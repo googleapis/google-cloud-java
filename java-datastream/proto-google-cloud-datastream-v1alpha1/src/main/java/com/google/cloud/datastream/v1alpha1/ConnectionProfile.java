@@ -271,6 +271,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -592,7 +594,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -627,7 +629,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -644,7 +646,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2309,7 +2311,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2345,7 +2347,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2362,7 +2364,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2386,7 +2388,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -2407,11 +2409,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -2648,8 +2651,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (profileCase_ == 100) {
           oracleProfileBuilder_.mergeFrom(value);
+        } else {
+          oracleProfileBuilder_.setMessage(value);
         }
-        oracleProfileBuilder_.setMessage(value);
       }
       profileCase_ = 100;
       return this;
@@ -2857,8 +2861,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (profileCase_ == 101) {
           gcsProfileBuilder_.mergeFrom(value);
+        } else {
+          gcsProfileBuilder_.setMessage(value);
         }
-        gcsProfileBuilder_.setMessage(value);
       }
       profileCase_ = 101;
       return this;
@@ -3066,8 +3071,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (profileCase_ == 102) {
           mysqlProfileBuilder_.mergeFrom(value);
+        } else {
+          mysqlProfileBuilder_.setMessage(value);
         }
-        mysqlProfileBuilder_.setMessage(value);
       }
       profileCase_ = 102;
       return this;
@@ -3279,8 +3285,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (connectivityCase_ == 200) {
           noConnectivityBuilder_.mergeFrom(value);
+        } else {
+          noConnectivityBuilder_.setMessage(value);
         }
-        noConnectivityBuilder_.setMessage(value);
       }
       connectivityCase_ = 200;
       return this;
@@ -3509,8 +3516,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (connectivityCase_ == 201) {
           staticServiceIpConnectivityBuilder_.mergeFrom(value);
+        } else {
+          staticServiceIpConnectivityBuilder_.setMessage(value);
         }
-        staticServiceIpConnectivityBuilder_.setMessage(value);
       }
       connectivityCase_ = 201;
       return this;
@@ -3748,8 +3756,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (connectivityCase_ == 202) {
           forwardSshConnectivityBuilder_.mergeFrom(value);
+        } else {
+          forwardSshConnectivityBuilder_.setMessage(value);
         }
-        forwardSshConnectivityBuilder_.setMessage(value);
       }
       connectivityCase_ = 202;
       return this;
@@ -3978,8 +3987,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       } else {
         if (connectivityCase_ == 203) {
           privateConnectivityBuilder_.mergeFrom(value);
+        } else {
+          privateConnectivityBuilder_.setMessage(value);
         }
-        privateConnectivityBuilder_.setMessage(value);
       }
       connectivityCase_ = 203;
       return this;
