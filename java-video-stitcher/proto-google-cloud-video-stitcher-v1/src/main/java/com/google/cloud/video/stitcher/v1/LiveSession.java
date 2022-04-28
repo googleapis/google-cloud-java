@@ -183,6 +183,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -648,7 +650,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsAdTagMap(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAdTagMap().getMap().containsKey(key);
   }
@@ -687,7 +689,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
       java.lang.String key, com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag> map =
         internalGetAdTagMap().getMap();
@@ -706,7 +708,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag> map =
         internalGetAdTagMap().getMap();
@@ -762,7 +764,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsAdTagMacros(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAdTagMacros().getMap().containsKey(key);
   }
@@ -814,7 +816,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAdTagMacrosOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAdTagMacros().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -839,7 +841,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getAdTagMacrosOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAdTagMacros().getMap();
     if (!map.containsKey(key)) {
@@ -2011,7 +2013,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAdTagMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAdTagMap().getMap().containsKey(key);
     }
@@ -2050,7 +2052,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
         java.lang.String key, com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag> map =
           internalGetAdTagMap().getMap();
@@ -2069,7 +2071,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag> map =
           internalGetAdTagMap().getMap();
@@ -2095,7 +2097,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeAdTagMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAdTagMap().getMutableMap().remove(key);
       return this;
@@ -2119,11 +2121,12 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public Builder putAdTagMap(
         java.lang.String key, com.google.cloud.video.stitcher.v1.AdTag value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAdTagMap().getMutableMap().put(key, value);
       return this;
     }
@@ -2191,7 +2194,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAdTagMacros(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAdTagMacros().getMap().containsKey(key);
     }
@@ -2243,7 +2246,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAdTagMacrosOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAdTagMacros().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2268,7 +2271,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getAdTagMacrosOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAdTagMacros().getMap();
       if (!map.containsKey(key)) {
@@ -2300,7 +2303,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeAdTagMacros(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAdTagMacros().getMutableMap().remove(key);
       return this;
@@ -2329,11 +2332,12 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAdTagMacros(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAdTagMacros().getMutableMap().put(key, value);
       return this;
     }

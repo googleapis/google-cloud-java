@@ -186,8 +186,12 @@ public interface AdStitchDetailOrBuilder
    * map&lt;string, .google.protobuf.Value&gt; media = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+
+  /* nullable */
   com.google.protobuf.Value getMediaOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue);
   /**
    *
    *

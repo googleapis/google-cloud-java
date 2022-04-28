@@ -134,6 +134,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -941,8 +943,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (cdnKeyConfigCase_ == 5) {
           googleCdnKeyBuilder_.mergeFrom(value);
+        } else {
+          googleCdnKeyBuilder_.setMessage(value);
         }
-        googleCdnKeyBuilder_.setMessage(value);
       }
       cdnKeyConfigCase_ = 5;
       return this;
@@ -1151,8 +1154,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (cdnKeyConfigCase_ == 6) {
           akamaiCdnKeyBuilder_.mergeFrom(value);
+        } else {
+          akamaiCdnKeyBuilder_.setMessage(value);
         }
-        akamaiCdnKeyBuilder_.setMessage(value);
       }
       cdnKeyConfigCase_ = 6;
       return this;

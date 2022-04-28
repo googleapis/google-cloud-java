@@ -196,6 +196,8 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1413,8 +1415,9 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (adResourceCase_ == 10) {
           iframeAdResourceBuilder_.mergeFrom(value);
+        } else {
+          iframeAdResourceBuilder_.setMessage(value);
         }
-        iframeAdResourceBuilder_.setMessage(value);
       }
       adResourceCase_ = 10;
       return this;
@@ -1626,8 +1629,9 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (adResourceCase_ == 11) {
           staticAdResourceBuilder_.mergeFrom(value);
+        } else {
+          staticAdResourceBuilder_.setMessage(value);
         }
-        staticAdResourceBuilder_.setMessage(value);
       }
       adResourceCase_ = 11;
       return this;
@@ -1838,8 +1842,9 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (adResourceCase_ == 12) {
           htmlAdResourceBuilder_.mergeFrom(value);
+        } else {
+          htmlAdResourceBuilder_.setMessage(value);
         }
-        htmlAdResourceBuilder_.setMessage(value);
       }
       adResourceCase_ = 12;
       return this;

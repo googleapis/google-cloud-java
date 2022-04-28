@@ -133,6 +133,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -407,7 +409,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsMedia(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMedia().getMap().containsKey(key);
   }
@@ -447,7 +449,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getMediaOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMedia().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -466,7 +468,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.Value getMediaOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMedia().getMap();
     if (!map.containsKey(key)) {
@@ -1449,7 +1451,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMedia(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMedia().getMap().containsKey(key);
     }
@@ -1489,7 +1491,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value getMediaOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMedia().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1508,7 +1510,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Value getMediaOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMedia().getMap();
       if (!map.containsKey(key)) {
@@ -1534,7 +1536,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeMedia(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMedia().getMutableMap().remove(key);
       return this;
@@ -1557,11 +1559,12 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putMedia(java.lang.String key, com.google.protobuf.Value value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMedia().getMutableMap().put(key, value);
       return this;
     }
