@@ -126,6 +126,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -327,6 +329,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -485,7 +489,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (product_ != null) {
         output.writeMessage(1, getProduct());
       }
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         output.writeFloat(2, score_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
@@ -503,7 +507,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (product_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProduct());
       }
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(image_)) {
@@ -1433,6 +1437,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1649,7 +1655,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         output.writeFloat(4, score_);
       }
       unknownFields.writeTo(output);
@@ -1670,7 +1676,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (score_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
       }
       size += unknownFields.getSerializedSize();
@@ -2719,6 +2725,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

@@ -141,6 +141,8 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -678,7 +680,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     if (blockType_ != com.google.cloud.vision.v1p2beta1.Block.BlockType.UNKNOWN.getNumber()) {
       output.writeEnum(4, blockType_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(5, confidence_);
     }
     unknownFields.writeTo(output);
@@ -702,7 +704,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
     if (blockType_ != com.google.cloud.vision.v1p2beta1.Block.BlockType.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, blockType_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
     size += unknownFields.getSerializedSize();

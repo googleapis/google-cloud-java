@@ -125,6 +125,8 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -388,7 +390,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(4, score_);
     }
     if (boundingPoly_ != null) {
@@ -412,7 +414,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
     }
     if (boundingPoly_ != null) {

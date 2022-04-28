@@ -105,6 +105,8 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -233,10 +235,10 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     if (boundingPoly_ != null) {
       output.writeMessage(1, getBoundingPoly());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(2, confidence_);
     }
-    if (importanceFraction_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(importanceFraction_) != 0) {
       output.writeFloat(3, importanceFraction_);
     }
     unknownFields.writeTo(output);
@@ -251,10 +253,10 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     if (boundingPoly_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBoundingPoly());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
-    if (importanceFraction_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(importanceFraction_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, importanceFraction_);
     }
     size += unknownFields.getSerializedSize();

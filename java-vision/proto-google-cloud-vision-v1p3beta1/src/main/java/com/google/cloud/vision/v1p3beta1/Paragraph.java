@@ -132,6 +132,8 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -407,7 +409,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < words_.size(); i++) {
       output.writeMessage(3, words_.get(i));
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(4, confidence_);
     }
     unknownFields.writeTo(output);
@@ -428,7 +430,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < words_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, words_.get(i));
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     size += unknownFields.getSerializedSize();

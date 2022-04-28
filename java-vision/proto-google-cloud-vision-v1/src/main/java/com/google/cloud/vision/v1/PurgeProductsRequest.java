@@ -96,8 +96,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
             }
           case 24:
             {
-              targetCase_ = 3;
               target_ = input.readBool();
+              targetCase_ = 3;
               break;
             }
           case 32:
@@ -116,6 +116,8 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -877,8 +879,9 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
       } else {
         if (targetCase_ == 2) {
           productSetPurgeConfigBuilder_.mergeFrom(value);
+        } else {
+          productSetPurgeConfigBuilder_.setMessage(value);
         }
-        productSetPurgeConfigBuilder_.setMessage(value);
       }
       targetCase_ = 2;
       return this;

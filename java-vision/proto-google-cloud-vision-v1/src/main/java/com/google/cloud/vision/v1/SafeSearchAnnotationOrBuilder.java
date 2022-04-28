@@ -172,6 +172,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float adult_confidence = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.adult_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=582
    * @return The adultConfidence.
    */
   @java.lang.Deprecated
@@ -187,6 +189,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float spoof_confidence = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.spoof_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=586
    * @return The spoofConfidence.
    */
   @java.lang.Deprecated
@@ -202,6 +206,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float medical_confidence = 20 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.medical_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=590
    * @return The medicalConfidence.
    */
   @java.lang.Deprecated
@@ -217,6 +223,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float violence_confidence = 22 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.violence_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=594
    * @return The violenceConfidence.
    */
   @java.lang.Deprecated
@@ -232,6 +240,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float racy_confidence = 24 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.racy_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=598
    * @return The racyConfidence.
    */
   @java.lang.Deprecated
@@ -247,6 +257,8 @@ public interface SafeSearchAnnotationOrBuilder
    *
    * <code>float nsfw_confidence = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.nsfw_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=602
    * @return The nsfwConfidence.
    */
   @java.lang.Deprecated

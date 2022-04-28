@@ -160,6 +160,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -375,6 +377,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>float confidence = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=509
    * @return The confidence.
    */
   @java.lang.Override
@@ -642,13 +646,13 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(4, score_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(5, confidence_);
     }
-    if (topicality_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(topicality_) != 0) {
       output.writeFloat(6, topicality_);
     }
     if (boundingPoly_ != null) {
@@ -678,13 +682,13 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
-    if (topicality_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(topicality_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, topicality_);
     }
     if (boundingPoly_ != null) {
@@ -1554,6 +1558,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <code>float confidence = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=509
      * @return The confidence.
      */
     @java.lang.Override
@@ -1574,6 +1580,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <code>float confidence = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=509
      * @param value The confidence to set.
      * @return This builder for chaining.
      */
@@ -1597,6 +1605,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <code>float confidence = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.EntityAnnotation.confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=509
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -208,6 +208,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -385,6 +387,8 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2654,19 +2658,19 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < landmarks_.size(); i++) {
       output.writeMessage(3, landmarks_.get(i));
     }
-    if (rollAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rollAngle_) != 0) {
       output.writeFloat(4, rollAngle_);
     }
-    if (panAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(panAngle_) != 0) {
       output.writeFloat(5, panAngle_);
     }
-    if (tiltAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(tiltAngle_) != 0) {
       output.writeFloat(6, tiltAngle_);
     }
-    if (detectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(detectionConfidence_) != 0) {
       output.writeFloat(7, detectionConfidence_);
     }
-    if (landmarkingConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(landmarkingConfidence_) != 0) {
       output.writeFloat(8, landmarkingConfidence_);
     }
     if (joyLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
@@ -2708,19 +2712,19 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < landmarks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, landmarks_.get(i));
     }
-    if (rollAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rollAngle_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, rollAngle_);
     }
-    if (panAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(panAngle_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, panAngle_);
     }
-    if (tiltAngle_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(tiltAngle_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, tiltAngle_);
     }
-    if (detectionConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(detectionConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, detectionConfidence_);
     }
-    if (landmarkingConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(landmarkingConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, landmarkingConfidence_);
     }
     if (joyLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {

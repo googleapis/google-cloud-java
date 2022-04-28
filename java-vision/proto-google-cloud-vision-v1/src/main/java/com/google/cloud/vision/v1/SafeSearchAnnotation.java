@@ -152,6 +152,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -381,6 +383,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float adult_confidence = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.adult_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=582
    * @return The adultConfidence.
    */
   @java.lang.Override
@@ -401,6 +405,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float spoof_confidence = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.spoof_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=586
    * @return The spoofConfidence.
    */
   @java.lang.Override
@@ -421,6 +427,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float medical_confidence = 20 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.medical_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=590
    * @return The medicalConfidence.
    */
   @java.lang.Override
@@ -441,6 +449,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float violence_confidence = 22 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.violence_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=594
    * @return The violenceConfidence.
    */
   @java.lang.Override
@@ -461,6 +471,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float racy_confidence = 24 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.racy_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=598
    * @return The racyConfidence.
    */
   @java.lang.Override
@@ -481,6 +493,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>float nsfw_confidence = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.nsfw_confidence is deprecated. See
+   *     google/cloud/vision/v1/image_annotator.proto;l=602
    * @return The nsfwConfidence.
    */
   @java.lang.Override
@@ -518,22 +532,22 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
       output.writeEnum(9, racy_);
     }
-    if (adultConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(adultConfidence_) != 0) {
       output.writeFloat(16, adultConfidence_);
     }
-    if (spoofConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(spoofConfidence_) != 0) {
       output.writeFloat(18, spoofConfidence_);
     }
-    if (medicalConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(medicalConfidence_) != 0) {
       output.writeFloat(20, medicalConfidence_);
     }
-    if (violenceConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(violenceConfidence_) != 0) {
       output.writeFloat(22, violenceConfidence_);
     }
-    if (racyConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(racyConfidence_) != 0) {
       output.writeFloat(24, racyConfidence_);
     }
-    if (nsfwConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(nsfwConfidence_) != 0) {
       output.writeFloat(26, nsfwConfidence_);
     }
     unknownFields.writeTo(output);
@@ -560,22 +574,22 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, racy_);
     }
-    if (adultConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(adultConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(16, adultConfidence_);
     }
-    if (spoofConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(spoofConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(18, spoofConfidence_);
     }
-    if (medicalConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(medicalConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(20, medicalConfidence_);
     }
-    if (violenceConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(violenceConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(22, violenceConfidence_);
     }
-    if (racyConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(racyConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(24, racyConfidence_);
     }
-    if (nsfwConfidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(nsfwConfidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(26, nsfwConfidence_);
     }
     size += unknownFields.getSerializedSize();
@@ -1464,6 +1478,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float adult_confidence = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.adult_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=582
      * @return The adultConfidence.
      */
     @java.lang.Override
@@ -1481,6 +1497,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float adult_confidence = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.adult_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=582
      * @param value The adultConfidence to set.
      * @return This builder for chaining.
      */
@@ -1501,6 +1519,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float adult_confidence = 16 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.adult_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=582
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1522,6 +1542,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float spoof_confidence = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.spoof_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=586
      * @return The spoofConfidence.
      */
     @java.lang.Override
@@ -1539,6 +1561,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float spoof_confidence = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.spoof_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=586
      * @param value The spoofConfidence to set.
      * @return This builder for chaining.
      */
@@ -1559,6 +1583,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float spoof_confidence = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.spoof_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=586
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1580,6 +1606,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float medical_confidence = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.medical_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=590
      * @return The medicalConfidence.
      */
     @java.lang.Override
@@ -1597,6 +1625,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float medical_confidence = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.medical_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=590
      * @param value The medicalConfidence to set.
      * @return This builder for chaining.
      */
@@ -1617,6 +1647,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float medical_confidence = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.medical_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=590
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1638,6 +1670,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float violence_confidence = 22 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.violence_confidence is deprecated.
+     *     See google/cloud/vision/v1/image_annotator.proto;l=594
      * @return The violenceConfidence.
      */
     @java.lang.Override
@@ -1655,6 +1689,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float violence_confidence = 22 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.violence_confidence is deprecated.
+     *     See google/cloud/vision/v1/image_annotator.proto;l=594
      * @param value The violenceConfidence to set.
      * @return This builder for chaining.
      */
@@ -1675,6 +1711,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float violence_confidence = 22 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.violence_confidence is deprecated.
+     *     See google/cloud/vision/v1/image_annotator.proto;l=594
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1696,6 +1734,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float racy_confidence = 24 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.racy_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=598
      * @return The racyConfidence.
      */
     @java.lang.Override
@@ -1713,6 +1753,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float racy_confidence = 24 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.racy_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=598
      * @param value The racyConfidence to set.
      * @return This builder for chaining.
      */
@@ -1733,6 +1775,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float racy_confidence = 24 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.racy_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=598
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1754,6 +1798,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.nsfw_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=602
      * @return The nsfwConfidence.
      */
     @java.lang.Override
@@ -1771,6 +1817,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.nsfw_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=602
      * @param value The nsfwConfidence to set.
      * @return This builder for chaining.
      */
@@ -1791,6 +1839,8 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * <code>float nsfw_confidence = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.vision.v1.SafeSearchAnnotation.nsfw_confidence is deprecated. See
+     *     google/cloud/vision/v1/image_annotator.proto;l=602
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
