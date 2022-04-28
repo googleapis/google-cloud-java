@@ -126,6 +126,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -326,6 +328,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=97
    * @return Whether the aliasName field is set.
    */
   @java.lang.Deprecated
@@ -341,6 +345,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=97
    * @return The aliasName.
    */
   @java.lang.Deprecated
@@ -369,6 +375,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=97
    * @return The bytes for aliasName.
    */
   @java.lang.Deprecated
@@ -1204,6 +1212,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @return Whether the aliasName field is set.
      */
     @java.lang.Override
@@ -1220,6 +1230,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @return The aliasName.
      */
     @java.lang.Override
@@ -1249,6 +1261,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @return The bytes for aliasName.
      */
     @java.lang.Override
@@ -1278,6 +1292,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @param value The aliasName to set.
      * @return This builder for chaining.
      */
@@ -1300,6 +1316,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1320,6 +1338,8 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>string alias_name = 3 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=97
      * @param value The bytes for aliasName to set.
      * @return This builder for chaining.
      */
@@ -1447,8 +1467,9 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       } else {
         if (revisionCase_ == 4) {
           aliasContextBuilder_.mergeFrom(value);
+        } else {
+          aliasContextBuilder_.setMessage(value);
         }
-        aliasContextBuilder_.setMessage(value);
       }
       revisionCase_ = 4;
       return this;

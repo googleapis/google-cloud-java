@@ -102,6 +102,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -784,8 +786,9 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (idCase_ == 1) {
           projectRepoIdBuilder_.mergeFrom(value);
+        } else {
+          projectRepoIdBuilder_.setMessage(value);
         }
-        projectRepoIdBuilder_.setMessage(value);
       }
       idCase_ = 1;
       return this;

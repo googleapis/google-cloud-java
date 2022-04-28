@@ -154,6 +154,8 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -989,8 +991,9 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contextCase_ == 1) {
           cloudRepoBuilder_.mergeFrom(value);
+        } else {
+          cloudRepoBuilder_.setMessage(value);
         }
-        cloudRepoBuilder_.setMessage(value);
       }
       contextCase_ = 1;
       return this;
@@ -1201,8 +1204,9 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contextCase_ == 2) {
           cloudWorkspaceBuilder_.mergeFrom(value);
+        } else {
+          cloudWorkspaceBuilder_.setMessage(value);
         }
-        cloudWorkspaceBuilder_.setMessage(value);
       }
       contextCase_ = 2;
       return this;
@@ -1412,8 +1416,9 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contextCase_ == 3) {
           gerritBuilder_.mergeFrom(value);
+        } else {
+          gerritBuilder_.setMessage(value);
         }
-        gerritBuilder_.setMessage(value);
       }
       contextCase_ = 3;
       return this;
@@ -1620,8 +1625,9 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (contextCase_ == 6) {
           gitBuilder_.mergeFrom(value);
+        } else {
+          gitBuilder_.setMessage(value);
         }
-        gitBuilder_.setMessage(value);
       }
       contextCase_ = 6;
       return this;

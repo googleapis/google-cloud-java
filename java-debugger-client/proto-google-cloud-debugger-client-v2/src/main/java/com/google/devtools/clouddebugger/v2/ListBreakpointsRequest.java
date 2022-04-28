@@ -139,6 +139,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -264,6 +266,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -983,6 +987,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
    *
    * <code>bool strip_results = 5 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.clouddebugger.v2.ListBreakpointsRequest.strip_results is
+   *     deprecated. See google/devtools/clouddebugger/v2/debugger.proto;l=172
    * @return The stripResults.
    */
   @java.lang.Override
@@ -1971,6 +1977,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
      *
      * <code>bool strip_results = 5 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.clouddebugger.v2.ListBreakpointsRequest.strip_results is
+     *     deprecated. See google/devtools/clouddebugger/v2/debugger.proto;l=172
      * @return The stripResults.
      */
     @java.lang.Override
@@ -1988,6 +1996,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
      *
      * <code>bool strip_results = 5 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.clouddebugger.v2.ListBreakpointsRequest.strip_results is
+     *     deprecated. See google/devtools/clouddebugger/v2/debugger.proto;l=172
      * @param value The stripResults to set.
      * @return This builder for chaining.
      */
@@ -2008,6 +2018,8 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
      *
      * <code>bool strip_results = 5 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.clouddebugger.v2.ListBreakpointsRequest.strip_results is
+     *     deprecated. See google/devtools/clouddebugger/v2/debugger.proto;l=172
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

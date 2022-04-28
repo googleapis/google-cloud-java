@@ -126,6 +126,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -382,6 +384,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=131
    * @return Whether the aliasName field is set.
    */
   @java.lang.Deprecated
@@ -397,6 +401,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=131
    * @return The aliasName.
    */
   @java.lang.Deprecated
@@ -425,6 +431,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+   *     google/devtools/source/v1/source_context.proto;l=131
    * @return The bytes for aliasName.
    */
   @java.lang.Deprecated
@@ -1300,6 +1308,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @return Whether the aliasName field is set.
      */
     @java.lang.Override
@@ -1316,6 +1326,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @return The aliasName.
      */
     @java.lang.Override
@@ -1345,6 +1357,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @return The bytes for aliasName.
      */
     @java.lang.Override
@@ -1374,6 +1388,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @param value The aliasName to set.
      * @return This builder for chaining.
      */
@@ -1396,6 +1412,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1416,6 +1434,8 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
+     * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
+     *     google/devtools/source/v1/source_context.proto;l=131
      * @param value The bytes for aliasName to set.
      * @return This builder for chaining.
      */
@@ -1543,8 +1563,9 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
       } else {
         if (revisionCase_ == 5) {
           aliasContextBuilder_.mergeFrom(value);
+        } else {
+          aliasContextBuilder_.setMessage(value);
         }
-        aliasContextBuilder_.setMessage(value);
       }
       revisionCase_ = 5;
       return this;

@@ -128,6 +128,8 @@ public interface ListBreakpointsRequestOrBuilder
    *
    * <code>bool strip_results = 5 [deprecated = true];</code>
    *
+   * @deprecated google.devtools.clouddebugger.v2.ListBreakpointsRequest.strip_results is
+   *     deprecated. See google/devtools/clouddebugger/v2/debugger.proto;l=172
    * @return The stripResults.
    */
   @java.lang.Deprecated
