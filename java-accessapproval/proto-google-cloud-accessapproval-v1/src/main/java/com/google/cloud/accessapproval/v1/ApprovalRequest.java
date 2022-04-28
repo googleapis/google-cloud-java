@@ -214,6 +214,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2621,8 +2623,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         if (decisionCase_ == 7) {
           approveBuilder_.mergeFrom(value);
+        } else {
+          approveBuilder_.setMessage(value);
         }
-        approveBuilder_.setMessage(value);
       }
       decisionCase_ = 7;
       return this;
@@ -2831,8 +2834,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         if (decisionCase_ == 8) {
           dismissBuilder_.mergeFrom(value);
+        } else {
+          dismissBuilder_.setMessage(value);
         }
-        dismissBuilder_.setMessage(value);
       }
       decisionCase_ = 8;
       return this;
