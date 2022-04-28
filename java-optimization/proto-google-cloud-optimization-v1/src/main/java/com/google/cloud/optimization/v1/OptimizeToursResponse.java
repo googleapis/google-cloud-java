@@ -155,6 +155,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -580,6 +582,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -851,7 +855,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCosts().getMap().containsKey(key);
     }
@@ -902,7 +906,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public double getCostsOrDefault(java.lang.String key, double defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -927,7 +931,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public double getCostsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       if (!map.containsKey(key)) {
@@ -983,7 +987,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       if (latestVehicleEndTime_ != null) {
         output.writeMessage(5, getLatestVehicleEndTime());
       }
-      if (totalCost_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
         output.writeDouble(6, totalCost_);
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1019,7 +1023,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLatestVehicleEndTime());
       }
-      if (totalCost_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, totalCost_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.Double> entry :
@@ -2196,7 +2200,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public boolean containsCosts(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetCosts().getMap().containsKey(key);
       }
@@ -2247,7 +2251,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public double getCostsOrDefault(java.lang.String key, double defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2272,7 +2276,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public double getCostsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
         if (!map.containsKey(key)) {
@@ -2304,7 +2308,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        */
       public Builder removeCosts(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableCosts().getMutableMap().remove(key);
         return this;
@@ -2333,7 +2337,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        */
       public Builder putCosts(java.lang.String key, double value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
 
         internalGetMutableCosts().getMutableMap().put(key, value);
@@ -2821,6 +2825,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=394
    * @return The totalCost.
    */
   @java.lang.Override
@@ -2846,7 +2852,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < routes_.size(); i++) {
       output.writeMessage(1, routes_.get(i));
     }
-    if (totalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
       output.writeDouble(2, totalCost_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestLabel_)) {
@@ -2873,7 +2879,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < routes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, routes_.get(i));
     }
-    if (totalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, totalCost_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestLabel_)) {
@@ -4849,6 +4855,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
      * @return The totalCost.
      */
     @java.lang.Override
@@ -4868,6 +4876,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -4890,6 +4900,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

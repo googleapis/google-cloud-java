@@ -218,6 +218,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -637,7 +639,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsMaxLoads(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMaxLoads().getMap().containsKey(key);
   }
@@ -688,7 +690,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       java.lang.String key,
       com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
         map = internalGetMaxLoads().getMap();
@@ -713,7 +715,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getMaxLoadsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
         map = internalGetMaxLoads().getMap();
@@ -762,7 +764,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsCosts(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetCosts().getMap().containsKey(key);
   }
@@ -799,7 +801,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   @java.lang.Deprecated
   public double getCostsOrDefault(java.lang.String key, double defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -817,7 +819,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   @java.lang.Deprecated
   public double getCostsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
     if (!map.containsKey(key)) {
@@ -837,6 +839,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
    * @return The totalCost.
    */
   @java.lang.Override
@@ -880,14 +884,14 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     if (totalDuration_ != null) {
       output.writeMessage(7, getTotalDuration());
     }
-    if (travelDistanceMeters_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
       output.writeDouble(8, travelDistanceMeters_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMaxLoads(), MaxLoadsDefaultEntryHolder.defaultEntry, 9);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetCosts(), CostsDefaultEntryHolder.defaultEntry, 10);
-    if (totalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
       output.writeDouble(11, totalCost_);
     }
     unknownFields.writeTo(output);
@@ -920,7 +924,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     if (totalDuration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTotalDuration());
     }
-    if (travelDistanceMeters_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, travelDistanceMeters_);
     }
     for (java.util.Map.Entry<
@@ -946,7 +950,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, costs__);
     }
-    if (totalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(totalCost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(11, totalCost_);
     }
     size += unknownFields.getSerializedSize();
@@ -2728,7 +2732,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsMaxLoads(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMaxLoads().getMap().containsKey(key);
     }
@@ -2783,7 +2787,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
           map = internalGetMaxLoads().getMap();
@@ -2809,7 +2813,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getMaxLoadsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
           map = internalGetMaxLoads().getMap();
@@ -2841,7 +2845,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeMaxLoads(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMaxLoads().getMutableMap().remove(key);
       return this;
@@ -2872,11 +2876,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public Builder putMaxLoads(
         java.lang.String key, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMaxLoads().getMutableMap().put(key, value);
       return this;
     }
@@ -2942,7 +2947,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetCosts().getMap().containsKey(key);
     }
@@ -2979,7 +2984,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public double getCostsOrDefault(java.lang.String key, double defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2997,7 +3002,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public double getCostsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       if (!map.containsKey(key)) {
@@ -3023,7 +3028,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public Builder removeCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
@@ -3045,7 +3050,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public Builder putCosts(java.lang.String key, double value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableCosts().getMutableMap().put(key, value);
@@ -3076,6 +3081,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
      * @return The totalCost.
      */
     @java.lang.Override
@@ -3092,6 +3099,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -3111,6 +3120,8 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

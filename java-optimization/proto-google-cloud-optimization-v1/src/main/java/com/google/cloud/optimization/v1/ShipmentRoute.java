@@ -365,6 +365,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -584,6 +586,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1631,8 +1635,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.optimization.v1.Shipment.Load&gt; load_demands = 11;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
-        java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.optimization.v1.Shipment.Load defaultValue);
     /**
      *
      *
@@ -1885,6 +1893,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Deprecated
@@ -1900,6 +1910,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
      * @return The delayBeforeStart.
      */
     @java.lang.Deprecated
@@ -2172,6 +2184,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2371,7 +2385,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLoadDemands(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLoadDemands().getMap().containsKey(key);
     }
@@ -2419,7 +2433,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
         java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -2443,7 +2457,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -2768,6 +2782,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Override
@@ -2786,6 +2802,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
      * @return The delayBeforeStart.
      */
     @java.lang.Override
@@ -3936,7 +3954,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsLoadDemands(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetLoadDemands().getMap().containsKey(key);
       }
@@ -3984,7 +4002,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
           java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
             internalGetLoadDemands().getMap();
@@ -4008,7 +4026,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
             internalGetLoadDemands().getMap();
@@ -4038,7 +4056,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeLoadDemands(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableLoadDemands().getMutableMap().remove(key);
         return this;
@@ -4066,11 +4084,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public Builder putLoadDemands(
           java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableLoadDemands().getMutableMap().put(key, value);
         return this;
       }
@@ -5149,6 +5168,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
        * @return Whether the delayBeforeStart field is set.
        */
       @java.lang.Deprecated
@@ -5166,6 +5187,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_start = 10 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
        * @return The delayBeforeStart.
        */
       @java.lang.Deprecated
@@ -6220,8 +6243,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.optimization.v1.ShipmentRoute.VehicleLoad&gt; vehicle_loads = 11;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getVehicleLoadsOrDefault(
         java.lang.String key,
+        /* nullable */
         com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue);
     /**
      *
@@ -6523,6 +6549,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7042,7 +7070,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsVehicleLoads(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetVehicleLoads().getMap().containsKey(key);
     }
@@ -7099,7 +7127,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
           map = internalGetVehicleLoads().getMap();
@@ -7126,7 +7154,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getVehicleLoadsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
           map = internalGetVehicleLoads().getMap();
@@ -7232,7 +7260,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (travelDuration_ != null) {
         output.writeMessage(1, getTravelDuration());
       }
-      if (travelDistanceMeters_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
         output.writeDouble(2, travelDistanceMeters_);
       }
       if (trafficInfoUnavailable_ != false) {
@@ -7273,7 +7301,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (travelDuration_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTravelDuration());
       }
-      if (travelDistanceMeters_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(travelDistanceMeters_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, travelDistanceMeters_);
       }
       if (trafficInfoUnavailable_ != false) {
@@ -9491,7 +9519,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsVehicleLoads(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetVehicleLoads().getMap().containsKey(key);
       }
@@ -9548,7 +9576,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
           java.lang.String key,
           com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
             map = internalGetVehicleLoads().getMap();
@@ -9575,7 +9603,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getVehicleLoadsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad>
             map = internalGetVehicleLoads().getMap();
@@ -9608,7 +9636,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeVehicleLoads(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableVehicleLoads().getMutableMap().remove(key);
         return this;
@@ -9640,11 +9668,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       public Builder putVehicleLoads(
           java.lang.String key, com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableVehicleLoads().getMutableMap().put(key, value);
         return this;
       }
@@ -10218,6 +10247,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -10796,6 +10827,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11525,6 +11558,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12653,6 +12688,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -12840,7 +12877,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (duration_ != null) {
         output.writeMessage(1, getDuration());
       }
-      if (distanceMeters_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(distanceMeters_) != 0) {
         output.writeDouble(2, distanceMeters_);
       }
       if (trafficInfoUnavailable_ != false) {
@@ -12861,7 +12898,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
       if (duration_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDuration());
       }
-      if (distanceMeters_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(distanceMeters_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, distanceMeters_);
       }
       if (trafficInfoUnavailable_ != false) {
@@ -14398,7 +14435,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsRouteCosts(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetRouteCosts().getMap().containsKey(key);
   }
@@ -14447,7 +14484,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getRouteCostsOrDefault(java.lang.String key, double defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetRouteCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -14471,7 +14508,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getRouteCostsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetRouteCosts().getMap();
     if (!map.containsKey(key)) {
@@ -14716,6 +14753,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
    * @return Whether the vehicleDetour field is set.
    */
   @java.lang.Override
@@ -14737,6 +14776,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
    * @return The vehicleDetour.
    */
   @java.lang.Override
@@ -14781,6 +14822,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_vehicle_end = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2057
    * @return Whether the delayBeforeVehicleEnd field is set.
    */
   @java.lang.Override
@@ -14801,6 +14844,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_vehicle_end = 16 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2057
    * @return The delayBeforeVehicleEnd.
    */
   @java.lang.Override
@@ -14888,7 +14933,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetRouteCosts(), RouteCostsDefaultEntryHolder.defaultEntry, 17);
-    if (routeTotalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(routeTotalCost_) != 0) {
       output.writeDouble(18, routeTotalCost_);
     }
     unknownFields.writeTo(output);
@@ -14953,7 +14998,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, routeCosts__);
     }
-    if (routeTotalCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(routeTotalCost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(18, routeTotalCost_);
     }
     size += unknownFields.getSerializedSize();
@@ -18004,7 +18049,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsRouteCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetRouteCosts().getMap().containsKey(key);
     }
@@ -18053,7 +18098,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getRouteCostsOrDefault(java.lang.String key, double defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetRouteCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -18077,7 +18122,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getRouteCostsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetRouteCosts().getMap();
       if (!map.containsKey(key)) {
@@ -18108,7 +18153,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeRouteCosts(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableRouteCosts().getMutableMap().remove(key);
       return this;
@@ -18136,7 +18181,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putRouteCosts(java.lang.String key, double value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableRouteCosts().getMutableMap().put(key, value);
@@ -19170,6 +19215,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
      * @return Whether the vehicleDetour field is set.
      */
     @java.lang.Deprecated
@@ -19190,6 +19237,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
      * @return The vehicleDetour.
      */
     @java.lang.Deprecated
@@ -19407,6 +19456,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_vehicle_end = 16 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2057
      * @return Whether the delayBeforeVehicleEnd field is set.
      */
     @java.lang.Deprecated
@@ -19426,6 +19477,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.optimization.v1.ShipmentRoute.Delay delay_before_vehicle_end = 16 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2057
      * @return The delayBeforeVehicleEnd.
      */
     @java.lang.Deprecated

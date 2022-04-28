@@ -680,8 +680,12 @@ public interface VehicleOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.Vehicle.LoadLimit&gt; load_limits = 30;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrDefault(
-      java.lang.String key, com.google.cloud.optimization.v1.Vehicle.LoadLimit defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.optimization.v1.Vehicle.LoadLimit defaultValue);
   /**
    *
    *
@@ -981,8 +985,12 @@ public interface VehicleOrBuilder
    * <code>map&lt;string, .google.protobuf.Duration&gt; extra_visit_duration_for_visit_type = 24;
    * </code>
    */
+
+  /* nullable */
   com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrDefault(
-      java.lang.String key, com.google.protobuf.Duration defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Duration defaultValue);
   /**
    *
    *
@@ -1102,6 +1110,8 @@ public interface VehicleOrBuilder
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1118,6 +1128,8 @@ public interface VehicleOrBuilder
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1134,6 +1146,8 @@ public interface VehicleOrBuilder
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */

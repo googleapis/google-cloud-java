@@ -424,6 +424,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1035,6 +1037,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1179,6 +1183,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1993,7 +1999,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (softMaxLoad_ != 0L) {
         output.writeInt64(2, softMaxLoad_);
       }
-      if (costPerUnitAboveSoftMax_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(costPerUnitAboveSoftMax_) != 0) {
         output.writeDouble(3, costPerUnitAboveSoftMax_);
       }
       if (startLoadInterval_ != null) {
@@ -2017,7 +2023,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (softMaxLoad_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, softMaxLoad_);
       }
-      if (costPerUnitAboveSoftMax_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(costPerUnitAboveSoftMax_) != 0) {
         size +=
             com.google.protobuf.CodedOutputStream.computeDoubleSize(3, costPerUnitAboveSoftMax_);
       }
@@ -3374,6 +3380,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5807,7 +5815,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLoadLimits(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLoadLimits().getMap().containsKey(key);
   }
@@ -5857,7 +5865,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrDefault(
       java.lang.String key, com.google.cloud.optimization.v1.Vehicle.LoadLimit defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit> map =
         internalGetLoadLimits().getMap();
@@ -5882,7 +5890,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit> map =
         internalGetLoadLimits().getMap();
@@ -6215,7 +6223,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsExtraVisitDurationForVisitType(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetExtraVisitDurationForVisitType().getMap().containsKey(key);
   }
@@ -6269,7 +6277,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrDefault(
       java.lang.String key, com.google.protobuf.Duration defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Duration> map =
         internalGetExtraVisitDurationForVisitType().getMap();
@@ -6296,7 +6304,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.Duration> map =
         internalGetExtraVisitDurationForVisitType().getMap();
@@ -6450,6 +6458,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Override
@@ -6469,6 +6479,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -6487,6 +6499,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */
@@ -6820,16 +6834,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < endLoadIntervals_.size(); i++) {
       output.writeMessage(15, endLoadIntervals_.get(i));
     }
-    if (costPerHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerHour_) != 0) {
       output.writeDouble(16, costPerHour_);
     }
-    if (costPerTraveledHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerTraveledHour_) != 0) {
       output.writeDouble(17, costPerTraveledHour_);
     }
-    if (costPerKilometer_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerKilometer_) != 0) {
       output.writeDouble(18, costPerKilometer_);
     }
-    if (fixedCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(fixedCost_) != 0) {
       output.writeDouble(19, fixedCost_);
     }
     if (usedIfRouteIsEmpty_ != false) {
@@ -6934,16 +6948,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(15, endLoadIntervals_.get(i));
     }
-    if (costPerHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerHour_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(16, costPerHour_);
     }
-    if (costPerTraveledHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerTraveledHour_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(17, costPerTraveledHour_);
     }
-    if (costPerKilometer_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerKilometer_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(18, costPerKilometer_);
     }
-    if (fixedCost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(fixedCost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(19, fixedCost_);
     }
     if (usedIfRouteIsEmpty_ != false) {
@@ -10547,7 +10561,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLoadLimits(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLoadLimits().getMap().containsKey(key);
     }
@@ -10597,7 +10611,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrDefault(
         java.lang.String key, com.google.cloud.optimization.v1.Vehicle.LoadLimit defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit> map =
           internalGetLoadLimits().getMap();
@@ -10622,7 +10636,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Vehicle.LoadLimit getLoadLimitsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit> map =
           internalGetLoadLimits().getMap();
@@ -10653,7 +10667,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLoadLimits(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLoadLimits().getMutableMap().remove(key);
       return this;
@@ -10682,11 +10696,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder putLoadLimits(
         java.lang.String key, com.google.cloud.optimization.v1.Vehicle.LoadLimit value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLoadLimits().getMutableMap().put(key, value);
       return this;
     }
@@ -11701,7 +11716,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsExtraVisitDurationForVisitType(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetExtraVisitDurationForVisitType().getMap().containsKey(key);
     }
@@ -11755,7 +11770,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrDefault(
         java.lang.String key, com.google.protobuf.Duration defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Duration> map =
           internalGetExtraVisitDurationForVisitType().getMap();
@@ -11782,7 +11797,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getExtraVisitDurationForVisitTypeOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Duration> map =
           internalGetExtraVisitDurationForVisitType().getMap();
@@ -11815,7 +11830,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeExtraVisitDurationForVisitType(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableExtraVisitDurationForVisitType().getMutableMap().remove(key);
       return this;
@@ -11846,11 +11861,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public Builder putExtraVisitDurationForVisitType(
         java.lang.String key, com.google.protobuf.Duration value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableExtraVisitDurationForVisitType().getMutableMap().put(key, value);
       return this;
     }
@@ -12285,6 +12301,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @return A list containing the breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12305,6 +12323,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @return The count of breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12323,6 +12343,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @param index The index of the element to return.
      * @return The breakRuleIndices at the given index.
      */
@@ -12342,6 +12364,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @param index The index to set the value at.
      * @param value The breakRuleIndices to set.
      * @return This builder for chaining.
@@ -12365,6 +12389,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @param value The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12387,6 +12413,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @param values The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12409,6 +12437,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

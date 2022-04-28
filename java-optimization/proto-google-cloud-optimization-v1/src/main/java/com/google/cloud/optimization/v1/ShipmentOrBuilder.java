@@ -200,8 +200,12 @@ public interface ShipmentOrBuilder
    *
    * <code>map&lt;string, .google.cloud.optimization.v1.Shipment.Load&gt; load_demands = 14;</code>
    */
+
+  /* nullable */
   com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
-      java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.optimization.v1.Shipment.Load defaultValue);
   /**
    *
    *

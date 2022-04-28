@@ -281,6 +281,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -786,8 +788,12 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.optimization.v1.Shipment.Load&gt; load_demands = 12;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
-        java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.optimization.v1.Shipment.Load defaultValue);
     /**
      *
      *
@@ -1183,6 +1189,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1759,7 +1767,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLoadDemands(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLoadDemands().getMap().containsKey(key);
     }
@@ -1807,7 +1815,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
         java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -1831,7 +1839,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -2085,7 +2093,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       if (duration_ != null) {
         output.writeMessage(7, getDuration());
       }
-      if (cost_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(cost_) != 0) {
         output.writeDouble(8, cost_);
       }
       for (int i = 0; i < demands_.size(); i++) {
@@ -2134,7 +2142,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       if (duration_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDuration());
       }
-      if (cost_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(cost_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(8, cost_);
       }
       for (int i = 0; i < demands_.size(); i++) {
@@ -4604,7 +4612,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsLoadDemands(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetLoadDemands().getMap().containsKey(key);
       }
@@ -4652,7 +4660,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
           java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
             internalGetLoadDemands().getMap();
@@ -4676,7 +4684,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
             internalGetLoadDemands().getMap();
@@ -4706,7 +4714,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeLoadDemands(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableLoadDemands().getMutableMap().remove(key);
         return this;
@@ -4734,11 +4742,12 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       public Builder putLoadDemands(
           java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableLoadDemands().getMutableMap().put(key, value);
         return this;
       }
@@ -5619,6 +5628,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6296,7 +6307,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLoadDemands(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLoadDemands().getMap().containsKey(key);
   }
@@ -6344,7 +6355,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
       java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
         internalGetLoadDemands().getMap();
@@ -6368,7 +6379,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
         internalGetLoadDemands().getMap();
@@ -8648,7 +8659,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLoadDemands(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLoadDemands().getMap().containsKey(key);
     }
@@ -8698,7 +8709,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrDefault(
         java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -8723,7 +8734,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.optimization.v1.Shipment.Load getLoadDemandsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> map =
           internalGetLoadDemands().getMap();
@@ -8754,7 +8765,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLoadDemands(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLoadDemands().getMutableMap().remove(key);
       return this;
@@ -8783,11 +8794,12 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public Builder putLoadDemands(
         java.lang.String key, com.google.cloud.optimization.v1.Shipment.Load value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLoadDemands().getMutableMap().put(key, value);
       return this;
     }

@@ -264,6 +264,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -522,6 +524,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -751,6 +755,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3299,6 +3305,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4631,6 +4639,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4895,6 +4905,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6373,6 +6385,8 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -10436,7 +10450,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     if (globalEndTime_ != null) {
       output.writeMessage(6, getGlobalEndTime());
     }
-    if (globalDurationCostPerHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(globalDurationCostPerHour_) != 0) {
       output.writeDouble(7, globalDurationCostPerHour_);
     }
     for (int i = 0; i < durationDistanceMatrices_.size(); i++) {
@@ -10489,7 +10503,7 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     if (globalEndTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGlobalEndTime());
     }
-    if (globalDurationCostPerHour_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(globalDurationCostPerHour_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(7, globalDurationCostPerHour_);
     }

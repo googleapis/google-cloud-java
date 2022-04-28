@@ -127,6 +127,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -360,8 +362,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
               }
             case 16:
               {
-                indexOrKeyCase_ = 2;
                 indexOrKey_ = input.readInt32();
+                indexOrKeyCase_ = 2;
                 break;
               }
             case 26:
@@ -401,6 +403,8 @@ public final class OptimizeToursValidationError extends com.google.protobuf.Gene
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

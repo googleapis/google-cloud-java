@@ -235,6 +235,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1539,6 +1541,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines is
+   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=327
    * @return The populateTravelStepPolylines.
    */
   @java.lang.Override
@@ -5407,6 +5411,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=327
      * @return The populateTravelStepPolylines.
      */
     @java.lang.Override
@@ -5426,6 +5432,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=327
      * @param value The populateTravelStepPolylines to set.
      * @return This builder for chaining.
      */
@@ -5448,6 +5456,8 @@ public final class OptimizeToursRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines
+     *     is deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=327
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -109,6 +109,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -840,8 +842,9 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (locationTypeCase_ == 1) {
           locationBuilder_.mergeFrom(value);
+        } else {
+          locationBuilder_.setMessage(value);
         }
-        locationBuilder_.setMessage(value);
       }
       locationTypeCase_ = 1;
       return this;

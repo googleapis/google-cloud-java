@@ -155,6 +155,8 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -566,10 +568,10 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(excludedDstTag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, excludedDstTag_);
     }
-    if (cost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cost_) != 0) {
       output.writeDouble(5, cost_);
     }
-    if (costPerKilometer_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerKilometer_) != 0) {
       output.writeDouble(6, costPerKilometer_);
     }
     if (distanceLimit_ != null) {
@@ -599,10 +601,10 @@ public final class TransitionAttributes extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(excludedDstTag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, excludedDstTag_);
     }
-    if (cost_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, cost_);
     }
-    if (costPerKilometer_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(costPerKilometer_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, costPerKilometer_);
     }
     if (distanceLimit_ != null) {

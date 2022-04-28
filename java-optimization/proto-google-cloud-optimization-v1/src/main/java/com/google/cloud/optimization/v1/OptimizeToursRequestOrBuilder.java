@@ -764,6 +764,8 @@ public interface OptimizeToursRequestOrBuilder
    *
    * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines is
+   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=327
    * @return The populateTravelStepPolylines.
    */
   @java.lang.Deprecated

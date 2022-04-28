@@ -334,8 +334,11 @@ public interface AggregatedMetricsOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.ShipmentRoute.VehicleLoad&gt; max_loads = 9;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad getMaxLoadsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.optimization.v1.ShipmentRoute.VehicleLoad defaultValue);
   /**
    *
@@ -423,6 +426,8 @@ public interface AggregatedMetricsOrBuilder
    *
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
    * @return The totalCost.
    */
   @java.lang.Deprecated
