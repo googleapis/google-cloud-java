@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-shared-config/compare/v1.3.3...v1.4.0) (2022-04-28)
+
+
+### Features
+
+* **java:** remove native image module ([#471](https://github.com/googleapis/java-shared-config/issues/471)) ([7fcba01](https://github.com/googleapis/java-shared-config/commit/7fcba016b3138d7beaa4e962853f9bc80f59438c))
+
 ### [1.3.3](https://github.com/googleapis/java-shared-config/compare/v1.3.2...v1.3.3) (2022-04-19)
 
 
