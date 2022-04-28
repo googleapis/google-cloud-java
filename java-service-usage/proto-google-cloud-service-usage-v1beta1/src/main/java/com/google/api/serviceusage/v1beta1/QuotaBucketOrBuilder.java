@@ -226,7 +226,12 @@ public interface QuotaBucketOrBuilder
    *
    * <code>map&lt;string, string&gt; dimensions = 6;</code>
    */
-  java.lang.String getDimensionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getDimensionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
