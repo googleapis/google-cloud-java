@@ -116,6 +116,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -295,7 +297,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     if (segment_ != null) {
       output.writeMessage(1, getSegment());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(2, confidence_);
     }
     for (int i = 0; i < frames_.size(); i++) {
@@ -313,7 +315,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     if (segment_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSegment());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
     for (int i = 0; i < frames_.size(); i++) {

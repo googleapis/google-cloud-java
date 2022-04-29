@@ -290,6 +290,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1663,8 +1665,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 2) {
           shotChangeDetectionConfigBuilder_.mergeFrom(value);
+        } else {
+          shotChangeDetectionConfigBuilder_.setMessage(value);
         }
-        shotChangeDetectionConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 2;
       return this;
@@ -1910,8 +1913,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 3) {
           labelDetectionConfigBuilder_.mergeFrom(value);
+        } else {
+          labelDetectionConfigBuilder_.setMessage(value);
         }
-        labelDetectionConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 3;
       return this;
@@ -2162,8 +2166,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 4) {
           explicitContentDetectionConfigBuilder_.mergeFrom(value);
+        } else {
+          explicitContentDetectionConfigBuilder_.setMessage(value);
         }
-        explicitContentDetectionConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 4;
       return this;
@@ -2415,8 +2420,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 5) {
           objectTrackingConfigBuilder_.mergeFrom(value);
+        } else {
+          objectTrackingConfigBuilder_.setMessage(value);
         }
-        objectTrackingConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 5;
       return this;
@@ -2665,8 +2671,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 23) {
           automlActionRecognitionConfigBuilder_.mergeFrom(value);
+        } else {
+          automlActionRecognitionConfigBuilder_.setMessage(value);
         }
-        automlActionRecognitionConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 23;
       return this;
@@ -2921,8 +2928,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 21) {
           automlClassificationConfigBuilder_.mergeFrom(value);
+        } else {
+          automlClassificationConfigBuilder_.setMessage(value);
         }
-        automlClassificationConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 21;
       return this;
@@ -3173,8 +3181,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (streamingConfigCase_ == 22) {
           automlObjectTrackingConfigBuilder_.mergeFrom(value);
+        } else {
+          automlObjectTrackingConfigBuilder_.setMessage(value);
         }
-        automlObjectTrackingConfigBuilder_.setMessage(value);
       }
       streamingConfigCase_ = 22;
       return this;

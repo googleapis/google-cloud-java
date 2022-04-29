@@ -116,6 +116,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -279,6 +281,8 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -386,7 +390,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (celebrity_ != null) {
         output.writeMessage(1, getCelebrity());
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(2, confidence_);
       }
       unknownFields.writeTo(output);
@@ -401,7 +405,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (celebrity_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCelebrity());
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
       }
       size += unknownFields.getSerializedSize();

@@ -112,6 +112,8 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -274,7 +276,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     if (point_ != null) {
       output.writeMessage(2, getPoint());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(3, confidence_);
     }
     unknownFields.writeTo(output);
@@ -292,7 +294,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     if (point_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPoint());
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, confidence_);
     }
     size += unknownFields.getSerializedSize();

@@ -101,6 +101,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -210,16 +212,16 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (left_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(left_) != 0) {
       output.writeFloat(1, left_);
     }
-    if (top_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top_) != 0) {
       output.writeFloat(2, top_);
     }
-    if (right_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(right_) != 0) {
       output.writeFloat(3, right_);
     }
-    if (bottom_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bottom_) != 0) {
       output.writeFloat(4, bottom_);
     }
     unknownFields.writeTo(output);
@@ -231,16 +233,16 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (left_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(left_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, left_);
     }
-    if (top_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, top_);
     }
-    if (right_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(right_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, right_);
     }
-    if (bottom_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bottom_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, bottom_);
     }
     size += unknownFields.getSerializedSize();

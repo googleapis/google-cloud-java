@@ -128,8 +128,8 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             }
           case 40:
             {
-              trackInfoCase_ = 5;
               trackInfo_ = input.readInt64();
+              trackInfoCase_ = 5;
               break;
             }
           case 50:
@@ -150,6 +150,8 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -546,7 +548,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     if (trackInfoCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.videointelligence.v1.VideoSegment) trackInfo_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(4, confidence_);
     }
     if (trackInfoCase_ == 5) {
@@ -575,7 +577,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.videointelligence.v1.VideoSegment) trackInfo_);
     }
-    if (confidence_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     if (trackInfoCase_ == 5) {
@@ -1147,8 +1149,9 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       } else {
         if (trackInfoCase_ == 3) {
           segmentBuilder_.mergeFrom(value);
+        } else {
+          segmentBuilder_.setMessage(value);
         }
-        segmentBuilder_.setMessage(value);
       }
       trackInfoCase_ = 3;
       return this;
