@@ -229,6 +229,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1780,8 +1782,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (taskDetailsCase_ == 12) {
           assessmentTaskDetailsBuilder_.mergeFrom(value);
+        } else {
+          assessmentTaskDetailsBuilder_.setMessage(value);
         }
-        assessmentTaskDetailsBuilder_.setMessage(value);
       }
       taskDetailsCase_ = 12;
       return this;
@@ -2021,8 +2024,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (taskDetailsCase_ == 13) {
           translationTaskDetailsBuilder_.mergeFrom(value);
+        } else {
+          translationTaskDetailsBuilder_.setMessage(value);
         }
-        translationTaskDetailsBuilder_.setMessage(value);
       }
       taskDetailsCase_ = 13;
       return this;

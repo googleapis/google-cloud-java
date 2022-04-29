@@ -108,6 +108,8 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -762,8 +764,9 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       } else {
         if (detailsCase_ == 1) {
           assessmentDetailsBuilder_.mergeFrom(value);
+        } else {
+          assessmentDetailsBuilder_.setMessage(value);
         }
-        assessmentDetailsBuilder_.setMessage(value);
       }
       detailsCase_ = 1;
       return this;

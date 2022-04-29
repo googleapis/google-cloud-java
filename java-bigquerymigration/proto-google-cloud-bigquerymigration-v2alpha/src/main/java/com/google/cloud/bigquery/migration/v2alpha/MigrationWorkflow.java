@@ -152,6 +152,8 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -554,7 +556,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsTasks(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTasks().getMap().containsKey(key);
   }
@@ -599,7 +601,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
       java.lang.String key,
       com.google.cloud.bigquery.migration.v2alpha.MigrationTask defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask> map =
         internalGetTasks().getMap();
@@ -621,7 +623,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.bigquery.migration.v2alpha.MigrationTask getTasksOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask> map =
         internalGetTasks().getMap();
@@ -1510,7 +1512,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsTasks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTasks().getMap().containsKey(key);
     }
@@ -1557,7 +1559,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         com.google.cloud.bigquery.migration.v2alpha.MigrationTask defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask>
           map = internalGetTasks().getMap();
@@ -1579,7 +1581,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.migration.v2alpha.MigrationTask getTasksOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2alpha.MigrationTask>
           map = internalGetTasks().getMap();
@@ -1607,7 +1609,7 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeTasks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTasks().getMutableMap().remove(key);
       return this;
@@ -1634,11 +1636,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
     public Builder putTasks(
         java.lang.String key, com.google.cloud.bigquery.migration.v2alpha.MigrationTask value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableTasks().getMutableMap().put(key, value);
       return this;
     }

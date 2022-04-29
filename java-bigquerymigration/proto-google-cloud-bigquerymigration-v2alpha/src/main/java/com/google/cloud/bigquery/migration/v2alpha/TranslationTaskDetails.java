@@ -229,6 +229,8 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1327,7 +1329,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public boolean containsSpecialTokenMap(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSpecialTokenMap().getMap().containsKey(key);
   }
@@ -1380,13 +1382,14 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
+  public /* nullable */ com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
       getSpecialTokenMapOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
               defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSpecialTokenMap().getMap();
     return map.containsKey(key)
@@ -1413,7 +1416,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
       getSpecialTokenMapOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSpecialTokenMap().getMap();
     if (!map.containsKey(key)) {
@@ -1466,7 +1469,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getSpecialTokenMapValueOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSpecialTokenMap().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1490,7 +1493,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public int getSpecialTokenMapValueOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSpecialTokenMap().getMap();
     if (!map.containsKey(key)) {
@@ -2360,8 +2363,9 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       } else {
         if (languageOptionsCase_ == 10) {
           teradataOptionsBuilder_.mergeFrom(value);
+        } else {
+          teradataOptionsBuilder_.setMessage(value);
         }
-        teradataOptionsBuilder_.setMessage(value);
       }
       languageOptionsCase_ = 10;
       return this;
@@ -2573,8 +2577,9 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       } else {
         if (languageOptionsCase_ == 11) {
           bteqOptionsBuilder_.mergeFrom(value);
+        } else {
+          bteqOptionsBuilder_.setMessage(value);
         }
-        bteqOptionsBuilder_.setMessage(value);
       }
       languageOptionsCase_ = 11;
       return this;
@@ -3761,7 +3766,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean containsSpecialTokenMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSpecialTokenMap().getMap().containsKey(key);
     }
@@ -3814,13 +3819,15 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
+    public /* nullable */ com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails
+            .TokenType
         getSpecialTokenMapOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSpecialTokenMap().getMap();
@@ -3848,7 +3855,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     public com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
         getSpecialTokenMapOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSpecialTokenMap().getMap();
@@ -3902,7 +3909,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getSpecialTokenMapValueOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSpecialTokenMap().getMap();
@@ -3927,7 +3934,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public int getSpecialTokenMapValueOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetSpecialTokenMap().getMap();
@@ -3959,7 +3966,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      */
     public Builder removeSpecialTokenMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSpecialTokenMap().getMutableMap().remove(key);
       return this;
@@ -3993,11 +4000,9 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         java.lang.String key,
         com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
-      if (value == null) {
-        throw new java.lang.NullPointerException();
-      }
+
       internalGetMutableSpecialTokenMap()
           .getMutableMap()
           .put(key, specialTokenMapValueConverter.doBackward(value));
@@ -4051,8 +4056,9 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
      */
     public Builder putSpecialTokenMapValue(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
+
       internalGetMutableSpecialTokenMap().getMutableMap().put(key, value);
       return this;
     }

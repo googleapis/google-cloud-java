@@ -375,9 +375,11 @@ public interface TranslationTaskDetailsOrBuilder
    * map&lt;string, .google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType&gt; special_token_map = 6;
    * </code>
    */
+  /* nullable */
   com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
       getSpecialTokenMapOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.TokenType
               defaultValue);
   /**

@@ -4,3 +4,5 @@
 google-cloud-bigquerymigration:0.2.4:0.2.5-SNAPSHOT
 grpc-google-cloud-bigquerymigration-v2alpha:0.2.4:0.2.5-SNAPSHOT
 proto-google-cloud-bigquerymigration-v2alpha:0.2.4:0.2.5-SNAPSHOT
+proto-google-cloud-bigquerymigration-v2:0.2.4:0.2.5-SNAPSHOT
+grpc-google-cloud-bigquerymigration-v2:0.2.4:0.2.5-SNAPSHOT
