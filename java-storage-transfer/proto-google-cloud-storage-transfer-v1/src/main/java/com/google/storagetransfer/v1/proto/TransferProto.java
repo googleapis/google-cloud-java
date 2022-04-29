@@ -36,8 +36,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that the
-     * Google service account is associated with.
+     * Required. The ID of the Google Cloud project that the Google service
+     * account is associated with.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49,8 +49,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that the
-     * Google service account is associated with.
+     * Required. The ID of the Google Cloud project that the Google service
+     * account is associated with.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -131,6 +131,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -162,8 +164,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that the
-     * Google service account is associated with.
+     * Required. The ID of the Google Cloud project that the Google service
+     * account is associated with.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -186,8 +188,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that the
-     * Google service account is associated with.
+     * Required. The ID of the Google Cloud project that the Google service
+     * account is associated with.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -561,8 +563,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that the
-       * Google service account is associated with.
+       * Required. The ID of the Google Cloud project that the Google service
+       * account is associated with.
        * </pre>
        *
        * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -584,8 +586,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that the
-       * Google service account is associated with.
+       * Required. The ID of the Google Cloud project that the Google service
+       * account is associated with.
        * </pre>
        *
        * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -607,8 +609,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that the
-       * Google service account is associated with.
+       * Required. The ID of the Google Cloud project that the Google service
+       * account is associated with.
        * </pre>
        *
        * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -629,8 +631,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that the
-       * Google service account is associated with.
+       * Required. The ID of the Google Cloud project that the Google service
+       * account is associated with.
        * </pre>
        *
        * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -647,8 +649,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that the
-       * Google service account is associated with.
+       * Required. The ID of the Google Cloud project that the Google service
+       * account is associated with.
        * </pre>
        *
        * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,6 +852,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1582,7 +1586,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -1595,7 +1599,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -1609,16 +1613,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -1633,16 +1636,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -1657,16 +1659,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -1686,10 +1687,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1707,10 +1708,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1728,10 +1729,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -1850,6 +1851,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1929,7 +1932,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -1953,7 +1956,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -1980,16 +1983,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -2007,16 +2009,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -2036,16 +2037,15 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The job to update. `transferJob` is expected to specify only
-     * four fields:
-     * [description][google.storagetransfer.v1.TransferJob.description],
+     * Required. The job to update. `transferJob` is expected to specify one or more of
+     * five fields: [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  An
-     * `UpdateTransferJobRequest` that specifies other fields are rejected with
-     * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-     * job status to
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+     * other fields are rejected with the error
+     * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+     * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
      * `storagetransfer.jobs.delete` permissions.
      * </pre>
      *
@@ -2070,10 +2070,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -2094,10 +2094,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -2120,10 +2120,10 @@ public final class TransferProto {
      * [description][google.storagetransfer.v1.TransferJob.description],
      * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
      * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-     * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-     * `transfer_spec` of the job, a complete transfer specification must be
-     * provided. An incomplete specification missing any required fields is
-     * rejected with the error
+     * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+     * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+     * complete transfer specification must be provided. An incomplete
+     * specification missing any required fields is rejected with the error
      * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
      * </pre>
      *
@@ -2662,7 +2662,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -2685,7 +2685,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -2708,7 +2708,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -2730,7 +2730,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -2748,7 +2748,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -2778,16 +2778,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2804,16 +2803,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2836,16 +2834,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2871,16 +2868,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2903,16 +2899,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2943,16 +2938,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -2975,16 +2969,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -3002,16 +2995,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -3033,16 +3025,15 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The job to update. `transferJob` is expected to specify only
-       * four fields:
-       * [description][google.storagetransfer.v1.TransferJob.description],
+       * Required. The job to update. `transferJob` is expected to specify one or more of
+       * five fields: [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  An
-       * `UpdateTransferJobRequest` that specifies other fields are rejected with
-       * the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
-       * job status to
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  An `UpdateTransferJobRequest` that specifies
+       * other fields are rejected with the error
+       * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a job status
+       * to [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
        * `storagetransfer.jobs.delete` permissions.
        * </pre>
        *
@@ -3082,10 +3073,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3105,10 +3096,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3134,10 +3125,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3165,10 +3156,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3194,10 +3185,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3229,10 +3220,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3258,10 +3249,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3281,10 +3272,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3308,10 +3299,10 @@ public final class TransferProto {
        * [description][google.storagetransfer.v1.TransferJob.description],
        * [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
        * [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-       * and [status][google.storagetransfer.v1.TransferJob.status].  To update the
-       * `transfer_spec` of the job, a complete transfer specification must be
-       * provided. An incomplete specification missing any required fields is
-       * rejected with the error
+       * [logging_config][google.storagetransfer.v1.TransferJob.logging_config], and
+       * [status][google.storagetransfer.v1.TransferJob.status].  To update the `transfer_spec` of the job, a
+       * complete transfer specification must be provided. An incomplete
+       * specification missing any required fields is rejected with the error
        * [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
        * </pre>
        *
@@ -3399,8 +3390,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required.
-     * The job to get.
+     * Required. The job to get.
      * </pre>
      *
      * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3412,8 +3402,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required.
-     * The job to get.
+     * Required. The job to get.
      * </pre>
      *
      * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3426,7 +3415,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -3439,7 +3428,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -3527,6 +3516,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3557,8 +3548,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required.
-     * The job to get.
+     * Required. The job to get.
      * </pre>
      *
      * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3581,8 +3571,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required.
-     * The job to get.
+     * Required. The job to get.
      * </pre>
      *
      * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3608,7 +3597,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -3632,7 +3621,7 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
+     * Required. The ID of the Google Cloud project that owns the
      * job.
      * </pre>
      *
@@ -4011,8 +4000,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required.
-       * The job to get.
+       * Required. The job to get.
        * </pre>
        *
        * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4034,8 +4022,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required.
-       * The job to get.
+       * Required. The job to get.
        * </pre>
        *
        * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4057,8 +4044,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required.
-       * The job to get.
+       * Required. The job to get.
        * </pre>
        *
        * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4079,8 +4065,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required.
-       * The job to get.
+       * Required. The job to get.
        * </pre>
        *
        * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4097,8 +4082,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required.
-       * The job to get.
+       * Required. The job to get.
        * </pre>
        *
        * <code>string job_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4122,7 +4106,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -4145,7 +4129,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -4168,7 +4152,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -4190,7 +4174,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -4208,7 +4192,7 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
+       * Required. The ID of the Google Cloud project that owns the
        * job.
        * </pre>
        *
@@ -4456,6 +4440,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5530,6 +5516,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6716,6 +6704,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7402,6 +7392,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8022,8 +8014,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
-     * transfer job.
+     * Required. The ID of the Google Cloud project that owns the transfer
+     * job.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8035,8 +8027,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
-     * transfer job.
+     * Required. The ID of the Google Cloud project that owns the transfer
+     * job.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8123,6 +8115,8 @@ public final class TransferProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -8202,8 +8196,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
-     * transfer job.
+     * Required. The ID of the Google Cloud project that owns the transfer
+     * job.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8226,8 +8220,8 @@ public final class TransferProto {
      *
      *
      * <pre>
-     * Required. The ID of the Google Cloud Platform Console project that owns the
-     * transfer job.
+     * Required. The ID of the Google Cloud project that owns the transfer
+     * job.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8711,8 +8705,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
-       * transfer job.
+       * Required. The ID of the Google Cloud project that owns the transfer
+       * job.
        * </pre>
        *
        * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8734,8 +8728,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
-       * transfer job.
+       * Required. The ID of the Google Cloud project that owns the transfer
+       * job.
        * </pre>
        *
        * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8757,8 +8751,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
-       * transfer job.
+       * Required. The ID of the Google Cloud project that owns the transfer
+       * job.
        * </pre>
        *
        * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8779,8 +8773,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
-       * transfer job.
+       * Required. The ID of the Google Cloud project that owns the transfer
+       * job.
        * </pre>
        *
        * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8797,8 +8791,8 @@ public final class TransferProto {
        *
        *
        * <pre>
-       * Required. The ID of the Google Cloud Platform Console project that owns the
-       * transfer job.
+       * Required. The ID of the Google Cloud project that owns the transfer
+       * job.
        * </pre>
        *
        * <code>string project_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8873,6 +8867,6454 @@ public final class TransferProto {
     }
   }
 
+  public interface CreateAgentPoolRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.CreateAgentPoolRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * agent pool.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * agent pool.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the agentPool field is set.
+     */
+    boolean hasAgentPool();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The agentPool.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder getAgentPoolOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the agent pool to create.
+     * The `agent_pool_id` must meet the following requirements:
+     * *   Length of 128 characters or less.
+     * *   Not start with the string `goog`.
+     * *   Start with a lowercase ASCII character, followed by:
+     *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+     *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+     *     *   One or more numerals or lowercase ASCII characters.
+     * As expressed by the regular expression:
+     * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The agentPoolId.
+     */
+    java.lang.String getAgentPoolId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the agent pool to create.
+     * The `agent_pool_id` must meet the following requirements:
+     * *   Length of 128 characters or less.
+     * *   Not start with the string `goog`.
+     * *   Start with a lowercase ASCII character, followed by:
+     *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+     *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+     *     *   One or more numerals or lowercase ASCII characters.
+     * As expressed by the regular expression:
+     * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for agentPoolId.
+     */
+    com.google.protobuf.ByteString getAgentPoolIdBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the request passed to CreateAgentPool.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.CreateAgentPoolRequest}
+   */
+  public static final class CreateAgentPoolRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.CreateAgentPoolRequest)
+      CreateAgentPoolRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CreateAgentPoolRequest.newBuilder() to construct.
+    private CreateAgentPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CreateAgentPoolRequest() {
+      projectId_ = "";
+      agentPoolId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CreateAgentPoolRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private CreateAgentPoolRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                projectId_ = s;
+                break;
+              }
+            case 18:
+              {
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder subBuilder =
+                    null;
+                if (agentPool_ != null) {
+                  subBuilder = agentPool_.toBuilder();
+                }
+                agentPool_ =
+                    input.readMessage(
+                        com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(agentPool_);
+                  agentPool_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                agentPoolId_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.Builder
+                  .class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object projectId_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * agent pool.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the
+     * agent pool.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGENT_POOL_FIELD_NUMBER = 2;
+    private com.google.storagetransfer.v1.proto.TransferTypes.AgentPool agentPool_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the agentPool field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentPool() {
+      return agentPool_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The agentPool.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool() {
+      return agentPool_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+          : agentPool_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to create.
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+        getAgentPoolOrBuilder() {
+      return getAgentPool();
+    }
+
+    public static final int AGENT_POOL_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object agentPoolId_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the agent pool to create.
+     * The `agent_pool_id` must meet the following requirements:
+     * *   Length of 128 characters or less.
+     * *   Not start with the string `goog`.
+     * *   Start with a lowercase ASCII character, followed by:
+     *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+     *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+     *     *   One or more numerals or lowercase ASCII characters.
+     * As expressed by the regular expression:
+     * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The agentPoolId.
+     */
+    @java.lang.Override
+    public java.lang.String getAgentPoolId() {
+      java.lang.Object ref = agentPoolId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agentPoolId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the agent pool to create.
+     * The `agent_pool_id` must meet the following requirements:
+     * *   Length of 128 characters or less.
+     * *   Not start with the string `goog`.
+     * *   Start with a lowercase ASCII character, followed by:
+     *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+     *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+     *     *   One or more numerals or lowercase ASCII characters.
+     * As expressed by the regular expression:
+     * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+     * </pre>
+     *
+     * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for agentPoolId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAgentPoolIdBytes() {
+      java.lang.Object ref = agentPoolId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        agentPoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      if (agentPool_ != null) {
+        output.writeMessage(2, getAgentPool());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentPoolId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agentPoolId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      if (agentPool_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAgentPool());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentPoolId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agentPoolId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest) obj;
+
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (hasAgentPool() != other.hasAgentPool()) return false;
+      if (hasAgentPool()) {
+        if (!getAgentPool().equals(other.getAgentPool())) return false;
+      }
+      if (!getAgentPoolId().equals(other.getAgentPoolId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      if (hasAgentPool()) {
+        hash = (37 * hash) + AGENT_POOL_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentPool().hashCode();
+      }
+      hash = (37 * hash) + AGENT_POOL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentPoolId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the request passed to CreateAgentPool.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.CreateAgentPoolRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.CreateAgentPoolRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        projectId_ = "";
+
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = null;
+        } else {
+          agentPool_ = null;
+          agentPoolBuilder_ = null;
+        }
+        agentPoolId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest(this);
+        result.projectId_ = projectId_;
+        if (agentPoolBuilder_ == null) {
+          result.agentPool_ = agentPool_;
+        } else {
+          result.agentPool_ = agentPoolBuilder_.build();
+        }
+        result.agentPoolId_ = agentPoolId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+                .getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        if (other.hasAgentPool()) {
+          mergeAgentPool(other.getAgentPool());
+        }
+        if (!other.getAgentPoolId().isEmpty()) {
+          agentPoolId_ = other.agentPoolId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * agent pool.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * agent pool.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * agent pool.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * agent pool.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the
+       * agent pool.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.storagetransfer.v1.proto.TransferTypes.AgentPool agentPool_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          agentPoolBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the agentPool field is set.
+       */
+      public boolean hasAgentPool() {
+        return agentPoolBuilder_ != null || agentPool_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The agentPool.
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool() {
+        if (agentPoolBuilder_ == null) {
+          return agentPool_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+              : agentPool_;
+        } else {
+          return agentPoolBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentPool_ = value;
+          onChanged();
+        } else {
+          agentPoolBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = builderForValue.build();
+          onChanged();
+        } else {
+          agentPoolBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolBuilder_ == null) {
+          if (agentPool_ != null) {
+            agentPool_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.newBuilder(agentPool_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            agentPool_ = value;
+          }
+          onChanged();
+        } else {
+          agentPoolBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearAgentPool() {
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = null;
+          onChanged();
+        } else {
+          agentPool_ = null;
+          agentPoolBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
+          getAgentPoolBuilder() {
+
+        onChanged();
+        return getAgentPoolFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+          getAgentPoolOrBuilder() {
+        if (agentPoolBuilder_ != null) {
+          return agentPoolBuilder_.getMessageOrBuilder();
+        } else {
+          return agentPool_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+              : agentPool_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to create.
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          getAgentPoolFieldBuilder() {
+        if (agentPoolBuilder_ == null) {
+          agentPoolBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>(
+                  getAgentPool(), getParentForChildren(), isClean());
+          agentPool_ = null;
+        }
+        return agentPoolBuilder_;
+      }
+
+      private java.lang.Object agentPoolId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the agent pool to create.
+       * The `agent_pool_id` must meet the following requirements:
+       * *   Length of 128 characters or less.
+       * *   Not start with the string `goog`.
+       * *   Start with a lowercase ASCII character, followed by:
+       *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+       *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+       *     *   One or more numerals or lowercase ASCII characters.
+       * As expressed by the regular expression:
+       * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+       * </pre>
+       *
+       * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The agentPoolId.
+       */
+      public java.lang.String getAgentPoolId() {
+        java.lang.Object ref = agentPoolId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agentPoolId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the agent pool to create.
+       * The `agent_pool_id` must meet the following requirements:
+       * *   Length of 128 characters or less.
+       * *   Not start with the string `goog`.
+       * *   Start with a lowercase ASCII character, followed by:
+       *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+       *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+       *     *   One or more numerals or lowercase ASCII characters.
+       * As expressed by the regular expression:
+       * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+       * </pre>
+       *
+       * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for agentPoolId.
+       */
+      public com.google.protobuf.ByteString getAgentPoolIdBytes() {
+        java.lang.Object ref = agentPoolId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          agentPoolId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the agent pool to create.
+       * The `agent_pool_id` must meet the following requirements:
+       * *   Length of 128 characters or less.
+       * *   Not start with the string `goog`.
+       * *   Start with a lowercase ASCII character, followed by:
+       *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+       *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+       *     *   One or more numerals or lowercase ASCII characters.
+       * As expressed by the regular expression:
+       * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+       * </pre>
+       *
+       * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The agentPoolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgentPoolId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        agentPoolId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the agent pool to create.
+       * The `agent_pool_id` must meet the following requirements:
+       * *   Length of 128 characters or less.
+       * *   Not start with the string `goog`.
+       * *   Start with a lowercase ASCII character, followed by:
+       *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+       *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+       *     *   One or more numerals or lowercase ASCII characters.
+       * As expressed by the regular expression:
+       * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+       * </pre>
+       *
+       * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAgentPoolId() {
+
+        agentPoolId_ = getDefaultInstance().getAgentPoolId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the agent pool to create.
+       * The `agent_pool_id` must meet the following requirements:
+       * *   Length of 128 characters or less.
+       * *   Not start with the string `goog`.
+       * *   Start with a lowercase ASCII character, followed by:
+       *     *   Zero or more: lowercase Latin alphabet characters, numerals,
+       *         hyphens (`-`), periods (`.`), underscores (`_`), or tildes (`~`).
+       *     *   One or more numerals or lowercase ASCII characters.
+       * As expressed by the regular expression:
+       * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+       * </pre>
+       *
+       * <code>string agent_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for agentPoolId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgentPoolIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        agentPoolId_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.CreateAgentPoolRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.CreateAgentPoolRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateAgentPoolRequest> PARSER =
+        new com.google.protobuf.AbstractParser<CreateAgentPoolRequest>() {
+          @java.lang.Override
+          public CreateAgentPoolRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new CreateAgentPoolRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<CreateAgentPoolRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateAgentPoolRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface UpdateAgentPoolRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.UpdateAgentPoolRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the agentPool field is set.
+     */
+    boolean hasAgentPool();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The agentPool.
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder getAgentPoolOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    boolean hasUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
+     */
+    com.google.protobuf.FieldMask getUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the request passed to UpdateAgentPool.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.UpdateAgentPoolRequest}
+   */
+  public static final class UpdateAgentPoolRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.UpdateAgentPoolRequest)
+      UpdateAgentPoolRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UpdateAgentPoolRequest.newBuilder() to construct.
+    private UpdateAgentPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpdateAgentPoolRequest() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdateAgentPoolRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private UpdateAgentPoolRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder subBuilder =
+                    null;
+                if (agentPool_ != null) {
+                  subBuilder = agentPool_.toBuilder();
+                }
+                agentPool_ =
+                    input.readMessage(
+                        com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(agentPool_);
+                  agentPool_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.protobuf.FieldMask.Builder subBuilder = null;
+                if (updateMask_ != null) {
+                  subBuilder = updateMask_.toBuilder();
+                }
+                updateMask_ =
+                    input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(updateMask_);
+                  updateMask_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.Builder
+                  .class);
+    }
+
+    public static final int AGENT_POOL_FIELD_NUMBER = 1;
+    private com.google.storagetransfer.v1.proto.TransferTypes.AgentPool agentPool_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the agentPool field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentPool() {
+      return agentPool_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The agentPool.
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool() {
+      return agentPool_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+          : agentPool_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The agent pool to update. `agent_pool` is expected to specify following
+     * fields:
+     * *  [name][google.storagetransfer.v1.AgentPool.name]
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * An `UpdateAgentPoolRequest` with any other fields is rejected
+     * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+        getAgentPoolOrBuilder() {
+      return getAgentPool();
+    }
+
+    public static final int UPDATE_MASK_FIELD_NUMBER = 2;
+    private com.google.protobuf.FieldMask updateMask_;
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateMask() {
+      return updateMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     *
+     * @return The updateMask.
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [field mask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+     * of the fields in `agentPool` to update in this request.
+     * The following `agentPool` fields can be updated:
+     * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+     * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      return getUpdateMask();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (agentPool_ != null) {
+        output.writeMessage(1, getAgentPool());
+      }
+      if (updateMask_ != null) {
+        output.writeMessage(2, getUpdateMask());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (agentPool_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAgentPool());
+      }
+      if (updateMask_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest) obj;
+
+      if (hasAgentPool() != other.hasAgentPool()) return false;
+      if (hasAgentPool()) {
+        if (!getAgentPool().equals(other.getAgentPool())) return false;
+      }
+      if (hasUpdateMask() != other.hasUpdateMask()) return false;
+      if (hasUpdateMask()) {
+        if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAgentPool()) {
+        hash = (37 * hash) + AGENT_POOL_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentPool().hashCode();
+      }
+      if (hasUpdateMask()) {
+        hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateMask().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the request passed to UpdateAgentPool.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.UpdateAgentPoolRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.UpdateAgentPoolRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = null;
+        } else {
+          agentPool_ = null;
+          agentPoolBuilder_ = null;
+        }
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = null;
+        } else {
+          updateMask_ = null;
+          updateMaskBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest(this);
+        if (agentPoolBuilder_ == null) {
+          result.agentPool_ = agentPool_;
+        } else {
+          result.agentPool_ = agentPoolBuilder_.build();
+        }
+        if (updateMaskBuilder_ == null) {
+          result.updateMask_ = updateMask_;
+        } else {
+          result.updateMask_ = updateMaskBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+                .getDefaultInstance()) return this;
+        if (other.hasAgentPool()) {
+          mergeAgentPool(other.getAgentPool());
+        }
+        if (other.hasUpdateMask()) {
+          mergeUpdateMask(other.getUpdateMask());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.storagetransfer.v1.proto.TransferTypes.AgentPool agentPool_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          agentPoolBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the agentPool field is set.
+       */
+      public boolean hasAgentPool() {
+        return agentPoolBuilder_ != null || agentPool_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The agentPool.
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool() {
+        if (agentPoolBuilder_ == null) {
+          return agentPool_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+              : agentPool_;
+        } else {
+          return agentPoolBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentPool_ = value;
+          onChanged();
+        } else {
+          agentPoolBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = builderForValue.build();
+          onChanged();
+        } else {
+          agentPoolBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeAgentPool(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolBuilder_ == null) {
+          if (agentPool_ != null) {
+            agentPool_ =
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.newBuilder(agentPool_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            agentPool_ = value;
+          }
+          onChanged();
+        } else {
+          agentPoolBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearAgentPool() {
+        if (agentPoolBuilder_ == null) {
+          agentPool_ = null;
+          onChanged();
+        } else {
+          agentPool_ = null;
+          agentPoolBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
+          getAgentPoolBuilder() {
+
+        onChanged();
+        return getAgentPoolFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+          getAgentPoolOrBuilder() {
+        if (agentPoolBuilder_ != null) {
+          return agentPoolBuilder_.getMessageOrBuilder();
+        } else {
+          return agentPool_ == null
+              ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance()
+              : agentPool_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The agent pool to update. `agent_pool` is expected to specify following
+       * fields:
+       * *  [name][google.storagetransfer.v1.AgentPool.name]
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * An `UpdateAgentPoolRequest` with any other fields is rejected
+       * with the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+       * </pre>
+       *
+       * <code>
+       * .google.storagetransfer.v1.AgentPool agent_pool = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          getAgentPoolFieldBuilder() {
+        if (agentPoolBuilder_ == null) {
+          agentPoolBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>(
+                  getAgentPool(), getParentForChildren(), isClean());
+          agentPool_ = null;
+        }
+        return agentPoolBuilder_;
+      }
+
+      private com.google.protobuf.FieldMask updateMask_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          updateMaskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       *
+       * @return Whether the updateMask field is set.
+       */
+      public boolean hasUpdateMask() {
+        return updateMaskBuilder_ != null || updateMask_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       *
+       * @return The updateMask.
+       */
+      public com.google.protobuf.FieldMask getUpdateMask() {
+        if (updateMaskBuilder_ == null) {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        } else {
+          return updateMaskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateMask_ = value;
+          onChanged();
+        } else {
+          updateMaskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = builderForValue.build();
+          onChanged();
+        } else {
+          updateMaskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (updateMask_ != null) {
+            updateMask_ =
+                com.google.protobuf.FieldMask.newBuilder(updateMask_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            updateMask_ = value;
+          }
+          onChanged();
+        } else {
+          updateMaskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public Builder clearUpdateMask() {
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = null;
+          onChanged();
+        } else {
+          updateMask_ = null;
+          updateMaskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+
+        onChanged();
+        return getUpdateMaskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+        if (updateMaskBuilder_ != null) {
+          return updateMaskBuilder_.getMessageOrBuilder();
+        } else {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The [field mask]
+       * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+       * of the fields in `agentPool` to update in this request.
+       * The following `agentPool` fields can be updated:
+       * *  [display_name][google.storagetransfer.v1.AgentPool.display_name]
+       * *  [bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          getUpdateMaskFieldBuilder() {
+        if (updateMaskBuilder_ == null) {
+          updateMaskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.FieldMask,
+                  com.google.protobuf.FieldMask.Builder,
+                  com.google.protobuf.FieldMaskOrBuilder>(
+                  getUpdateMask(), getParentForChildren(), isClean());
+          updateMask_ = null;
+        }
+        return updateMaskBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.UpdateAgentPoolRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.UpdateAgentPoolRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateAgentPoolRequest> PARSER =
+        new com.google.protobuf.AbstractParser<UpdateAgentPoolRequest>() {
+          @java.lang.Override
+          public UpdateAgentPoolRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new UpdateAgentPoolRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpdateAgentPoolRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateAgentPoolRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GetAgentPoolRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.GetAgentPoolRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to get.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to get.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the request passed to GetAgentPool.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.GetAgentPoolRequest}
+   */
+  public static final class GetAgentPoolRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.GetAgentPoolRequest)
+      GetAgentPoolRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GetAgentPoolRequest.newBuilder() to construct.
+    private GetAgentPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GetAgentPoolRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GetAgentPoolRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private GetAgentPoolRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_GetAgentPoolRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to get.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to get.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the request passed to GetAgentPool.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.GetAgentPoolRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.GetAgentPoolRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_GetAgentPoolRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to get.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to get.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to get.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to get.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to get.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.GetAgentPoolRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.GetAgentPoolRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetAgentPoolRequest> PARSER =
+        new com.google.protobuf.AbstractParser<GetAgentPoolRequest>() {
+          @java.lang.Override
+          public GetAgentPoolRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new GetAgentPoolRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<GetAgentPoolRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetAgentPoolRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DeleteAgentPoolRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.DeleteAgentPoolRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to delete.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to delete.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the request passed to DeleteAgentPool.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.DeleteAgentPoolRequest}
+   */
+  public static final class DeleteAgentPoolRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.DeleteAgentPoolRequest)
+      DeleteAgentPoolRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DeleteAgentPoolRequest.newBuilder() to construct.
+    private DeleteAgentPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DeleteAgentPoolRequest() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeleteAgentPoolRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private DeleteAgentPoolRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.Builder
+                  .class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to delete.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the agent pool to delete.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the request passed to DeleteAgentPool.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.DeleteAgentPoolRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.DeleteAgentPoolRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest(this);
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to delete.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to delete.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to delete.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to delete.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the agent pool to delete.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.DeleteAgentPoolRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.DeleteAgentPoolRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteAgentPoolRequest> PARSER =
+        new com.google.protobuf.AbstractParser<DeleteAgentPoolRequest>() {
+          @java.lang.Override
+          public DeleteAgentPoolRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DeleteAgentPoolRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<DeleteAgentPoolRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteAgentPoolRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ListAgentPoolsRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.ListAgentPoolsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the job.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the job.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString getProjectIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * An optional list of query parameters specified as JSON text in the
+     * form of:
+     * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     * Since `agentPoolNames` support multiple values, its values must be
+     * specified with array notation. When the filter is either empty or not
+     * provided, the list returns all agent pools for the project.
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The filter.
+     */
+    java.lang.String getFilter();
+    /**
+     *
+     *
+     * <pre>
+     * An optional list of query parameters specified as JSON text in the
+     * form of:
+     * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     * Since `agentPoolNames` support multiple values, its values must be
+     * specified with array notation. When the filter is either empty or not
+     * provided, the list returns all agent pools for the project.
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
+     */
+    com.google.protobuf.ByteString getFilterBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The list page size. The max allowed value is `256`.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     *
+     * @return The pageSize.
+     */
+    int getPageSize();
+
+    /**
+     *
+     *
+     * <pre>
+     * The list page token.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The pageToken.
+     */
+    java.lang.String getPageToken();
+    /**
+     *
+     *
+     * <pre>
+     * The list page token.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The bytes for pageToken.
+     */
+    com.google.protobuf.ByteString getPageTokenBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The request passed to ListAgentPools.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.ListAgentPoolsRequest}
+   */
+  public static final class ListAgentPoolsRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.ListAgentPoolsRequest)
+      ListAgentPoolsRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ListAgentPoolsRequest.newBuilder() to construct.
+    private ListAgentPoolsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ListAgentPoolsRequest() {
+      projectId_ = "";
+      filter_ = "";
+      pageToken_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ListAgentPoolsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ListAgentPoolsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                projectId_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                filter_ = s;
+                break;
+              }
+            case 24:
+              {
+                pageSize_ = input.readInt32();
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                pageToken_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.class,
+              com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.Builder
+                  .class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object projectId_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the job.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ID of the Google Cloud project that owns the job.
+     * </pre>
+     *
+     * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILTER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object filter_;
+    /**
+     *
+     *
+     * <pre>
+     * An optional list of query parameters specified as JSON text in the
+     * form of:
+     * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     * Since `agentPoolNames` support multiple values, its values must be
+     * specified with array notation. When the filter is either empty or not
+     * provided, the list returns all agent pools for the project.
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The filter.
+     */
+    @java.lang.Override
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An optional list of query parameters specified as JSON text in the
+     * form of:
+     * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+     * Since `agentPoolNames` support multiple values, its values must be
+     * specified with array notation. When the filter is either empty or not
+     * provided, the list returns all agent pools for the project.
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+    private int pageSize_;
+    /**
+     *
+     *
+     * <pre>
+     * The list page size. The max allowed value is `256`.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     *
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object pageToken_;
+    /**
+     *
+     *
+     * <pre>
+     * The list page token.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The pageToken.
+     */
+    @java.lang.Override
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list page token.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The bytes for pageToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+      }
+      if (pageSize_ != 0) {
+        output.writeInt32(3, pageSize_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+      }
+      if (pageSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest other =
+          (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest) obj;
+
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!getFilter().equals(other.getFilter())) return false;
+      if (getPageSize() != other.getPageSize()) return false;
+      if (!getPageToken().equals(other.getPageToken())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
+      hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getPageSize();
+      hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getPageToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The request passed to ListAgentPools.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.ListAgentPoolsRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.ListAgentPoolsRequest)
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.class,
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        projectId_ = "";
+
+        filter_ = "";
+
+        pageSize_ = 0;
+
+        pageToken_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest build() {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest result =
+            new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest(this);
+        result.projectId_ = projectId_;
+        result.filter_ = filter_;
+        result.pageSize_ = pageSize_;
+        result.pageToken_ = pageToken_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+                .getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
+        if (!other.getFilter().isEmpty()) {
+          filter_ = other.filter_;
+          onChanged();
+        }
+        if (other.getPageSize() != 0) {
+          setPageSize(other.getPageSize());
+        }
+        if (!other.getPageToken().isEmpty()) {
+          pageToken_ = other.pageToken_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the job.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the job.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the job.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the job.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ID of the Google Cloud project that owns the job.
+       * </pre>
+       *
+       * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filter_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An optional list of query parameters specified as JSON text in the
+       * form of:
+       * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       * Since `agentPoolNames` support multiple values, its values must be
+       * specified with array notation. When the filter is either empty or not
+       * provided, the list returns all agent pools for the project.
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return The filter.
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An optional list of query parameters specified as JSON text in the
+       * form of:
+       * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       * Since `agentPoolNames` support multiple values, its values must be
+       * specified with array notation. When the filter is either empty or not
+       * provided, the list returns all agent pools for the project.
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return The bytes for filter.
+       */
+      public com.google.protobuf.ByteString getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An optional list of query parameters specified as JSON text in the
+       * form of:
+       * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       * Since `agentPoolNames` support multiple values, its values must be
+       * specified with array notation. When the filter is either empty or not
+       * provided, the list returns all agent pools for the project.
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @param value The filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilter(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An optional list of query parameters specified as JSON text in the
+       * form of:
+       * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       * Since `agentPoolNames` support multiple values, its values must be
+       * specified with array notation. When the filter is either empty or not
+       * provided, the list returns all agent pools for the project.
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilter() {
+
+        filter_ = getDefaultInstance().getFilter();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An optional list of query parameters specified as JSON text in the
+       * form of:
+       * `{"agentPoolNames":["agentpool1","agentpool2",...]}`
+       * Since `agentPoolNames` support multiple values, its values must be
+       * specified with array notation. When the filter is either empty or not
+       * provided, the list returns all agent pools for the project.
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @param value The bytes for filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int pageSize_;
+      /**
+       *
+       *
+       * <pre>
+       * The list page size. The max allowed value is `256`.
+       * </pre>
+       *
+       * <code>int32 page_size = 3;</code>
+       *
+       * @return The pageSize.
+       */
+      @java.lang.Override
+      public int getPageSize() {
+        return pageSize_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page size. The max allowed value is `256`.
+       * </pre>
+       *
+       * <code>int32 page_size = 3;</code>
+       *
+       * @param value The pageSize to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageSize(int value) {
+
+        pageSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page size. The max allowed value is `256`.
+       * </pre>
+       *
+       * <code>int32 page_size = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPageSize() {
+
+        pageSize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pageToken_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The list page token.
+       * </pre>
+       *
+       * <code>string page_token = 4;</code>
+       *
+       * @return The pageToken.
+       */
+      public java.lang.String getPageToken() {
+        java.lang.Object ref = pageToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pageToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page token.
+       * </pre>
+       *
+       * <code>string page_token = 4;</code>
+       *
+       * @return The bytes for pageToken.
+       */
+      public com.google.protobuf.ByteString getPageTokenBytes() {
+        java.lang.Object ref = pageToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pageToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page token.
+       * </pre>
+       *
+       * <code>string page_token = 4;</code>
+       *
+       * @param value The pageToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageToken(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        pageToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page token.
+       * </pre>
+       *
+       * <code>string page_token = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPageToken() {
+
+        pageToken_ = getDefaultInstance().getPageToken();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list page token.
+       * </pre>
+       *
+       * <code>string page_token = 4;</code>
+       *
+       * @param value The bytes for pageToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        pageToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.ListAgentPoolsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.ListAgentPoolsRequest)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAgentPoolsRequest> PARSER =
+        new com.google.protobuf.AbstractParser<ListAgentPoolsRequest>() {
+          @java.lang.Override
+          public ListAgentPoolsRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ListAgentPoolsRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ListAgentPoolsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAgentPoolsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ListAgentPoolsResponseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.storagetransfer.v1.ListAgentPoolsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool> getAgentPoolsList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPools(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    int getAgentPoolsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    java.util.List<? extends com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+        getAgentPoolsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder getAgentPoolsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The list next page token.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
+     */
+    java.lang.String getNextPageToken();
+    /**
+     *
+     *
+     * <pre>
+     * The list next page token.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
+     */
+    com.google.protobuf.ByteString getNextPageTokenBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Response from ListAgentPools.
+   * </pre>
+   *
+   * Protobuf type {@code google.storagetransfer.v1.ListAgentPoolsResponse}
+   */
+  public static final class ListAgentPoolsResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.storagetransfer.v1.ListAgentPoolsResponse)
+      ListAgentPoolsResponseOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ListAgentPoolsResponse.newBuilder() to construct.
+    private ListAgentPoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ListAgentPoolsResponse() {
+      agentPools_ = java.util.Collections.emptyList();
+      nextPageToken_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ListAgentPoolsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ListAgentPoolsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  agentPools_ =
+                      new java.util.ArrayList<
+                          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                agentPools_.add(
+                    input.readMessage(
+                        com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.parser(),
+                        extensionRegistry));
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                nextPageToken_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          agentPools_ = java.util.Collections.unmodifiableList(agentPools_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.storagetransfer.v1.proto.TransferProto
+          .internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.class,
+              com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.Builder
+                  .class);
+    }
+
+    public static final int AGENT_POOLS_FIELD_NUMBER = 1;
+    private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool> agentPools_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        getAgentPoolsList() {
+      return agentPools_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+        getAgentPoolsOrBuilderList() {
+      return agentPools_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    @java.lang.Override
+    public int getAgentPoolsCount() {
+      return agentPools_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPools(int index) {
+      return agentPools_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of agent pools.
+     * </pre>
+     *
+     * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+        getAgentPoolsOrBuilder(int index) {
+      return agentPools_.get(index);
+    }
+
+    public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nextPageToken_;
+    /**
+     *
+     *
+     * <pre>
+     * The list next page token.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
+     */
+    @java.lang.Override
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list next page token.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < agentPools_.size(); i++) {
+        output.writeMessage(1, agentPools_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < agentPools_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, agentPools_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse)) {
+        return super.equals(obj);
+      }
+      com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse other =
+          (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse) obj;
+
+      if (!getAgentPoolsList().equals(other.getAgentPoolsList())) return false;
+      if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAgentPoolsCount() > 0) {
+        hash = (37 * hash) + AGENT_POOLS_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentPoolsList().hashCode();
+      }
+      hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextPageToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Response from ListAgentPools.
+     * </pre>
+     *
+     * Protobuf type {@code google.storagetransfer.v1.ListAgentPoolsResponse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.storagetransfer.v1.ListAgentPoolsResponse)
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.class,
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getAgentPoolsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (agentPoolsBuilder_ == null) {
+          agentPools_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          agentPoolsBuilder_.clear();
+        }
+        nextPageToken_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto
+            .internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+          getDefaultInstanceForType() {
+        return com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse build() {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+          buildPartial() {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse result =
+            new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (agentPoolsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            agentPools_ = java.util.Collections.unmodifiableList(agentPools_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.agentPools_ = agentPools_;
+        } else {
+          result.agentPools_ = agentPoolsBuilder_.build();
+        }
+        result.nextPageToken_ = nextPageToken_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse) {
+          return mergeFrom(
+              (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse other) {
+        if (other
+            == com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+                .getDefaultInstance()) return this;
+        if (agentPoolsBuilder_ == null) {
+          if (!other.agentPools_.isEmpty()) {
+            if (agentPools_.isEmpty()) {
+              agentPools_ = other.agentPools_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAgentPoolsIsMutable();
+              agentPools_.addAll(other.agentPools_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.agentPools_.isEmpty()) {
+            if (agentPoolsBuilder_.isEmpty()) {
+              agentPoolsBuilder_.dispose();
+              agentPoolsBuilder_ = null;
+              agentPools_ = other.agentPools_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              agentPoolsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAgentPoolsFieldBuilder()
+                      : null;
+            } else {
+              agentPoolsBuilder_.addAllMessages(other.agentPools_);
+            }
+          }
+        }
+        if (!other.getNextPageToken().isEmpty()) {
+          nextPageToken_ = other.nextPageToken_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+          agentPools_ = java.util.Collections.emptyList();
+
+      private void ensureAgentPoolsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          agentPools_ =
+              new java.util.ArrayList<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>(
+                  agentPools_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          agentPoolsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+          getAgentPoolsList() {
+        if (agentPoolsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(agentPools_);
+        } else {
+          return agentPoolsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public int getAgentPoolsCount() {
+        if (agentPoolsBuilder_ == null) {
+          return agentPools_.size();
+        } else {
+          return agentPoolsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPools(int index) {
+        if (agentPoolsBuilder_ == null) {
+          return agentPools_.get(index);
+        } else {
+          return agentPoolsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder setAgentPools(
+          int index, com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPoolsIsMutable();
+          agentPools_.set(index, value);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder setAgentPools(
+          int index,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
+        if (agentPoolsBuilder_ == null) {
+          ensureAgentPoolsIsMutable();
+          agentPools_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentPoolsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder addAgentPools(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPoolsIsMutable();
+          agentPools_.add(value);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder addAgentPools(
+          int index, com.google.storagetransfer.v1.proto.TransferTypes.AgentPool value) {
+        if (agentPoolsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPoolsIsMutable();
+          agentPools_.add(index, value);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder addAgentPools(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
+        if (agentPoolsBuilder_ == null) {
+          ensureAgentPoolsIsMutable();
+          agentPools_.add(builderForValue.build());
+          onChanged();
+        } else {
+          agentPoolsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder addAgentPools(
+          int index,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder builderForValue) {
+        if (agentPoolsBuilder_ == null) {
+          ensureAgentPoolsIsMutable();
+          agentPools_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentPoolsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder addAllAgentPools(
+          java.lang.Iterable<? extends com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+              values) {
+        if (agentPoolsBuilder_ == null) {
+          ensureAgentPoolsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, agentPools_);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder clearAgentPools() {
+        if (agentPoolsBuilder_ == null) {
+          agentPools_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public Builder removeAgentPools(int index) {
+        if (agentPoolsBuilder_ == null) {
+          ensureAgentPoolsIsMutable();
+          agentPools_.remove(index);
+          onChanged();
+        } else {
+          agentPoolsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
+          getAgentPoolsBuilder(int index) {
+        return getAgentPoolsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder
+          getAgentPoolsOrBuilder(int index) {
+        if (agentPoolsBuilder_ == null) {
+          return agentPools_.get(index);
+        } else {
+          return agentPoolsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public java.util.List<
+              ? extends com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          getAgentPoolsOrBuilderList() {
+        if (agentPoolsBuilder_ != null) {
+          return agentPoolsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(agentPools_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
+          addAgentPoolsBuilder() {
+        return getAgentPoolsFieldBuilder()
+            .addBuilder(
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder
+          addAgentPoolsBuilder(int index) {
+        return getAgentPoolsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of agent pools.
+       * </pre>
+       *
+       * <code>repeated .google.storagetransfer.v1.AgentPool agent_pools = 1;</code>
+       */
+      public java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder>
+          getAgentPoolsBuilderList() {
+        return getAgentPoolsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+              com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>
+          getAgentPoolsFieldBuilder() {
+        if (agentPoolsBuilder_ == null) {
+          agentPoolsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.Builder,
+                  com.google.storagetransfer.v1.proto.TransferTypes.AgentPoolOrBuilder>(
+                  agentPools_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          agentPools_ = null;
+        }
+        return agentPoolsBuilder_;
+      }
+
+      private java.lang.Object nextPageToken_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The list next page token.
+       * </pre>
+       *
+       * <code>string next_page_token = 2;</code>
+       *
+       * @return The nextPageToken.
+       */
+      public java.lang.String getNextPageToken() {
+        java.lang.Object ref = nextPageToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nextPageToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list next page token.
+       * </pre>
+       *
+       * <code>string next_page_token = 2;</code>
+       *
+       * @return The bytes for nextPageToken.
+       */
+      public com.google.protobuf.ByteString getNextPageTokenBytes() {
+        java.lang.Object ref = nextPageToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          nextPageToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list next page token.
+       * </pre>
+       *
+       * <code>string next_page_token = 2;</code>
+       *
+       * @param value The nextPageToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextPageToken(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        nextPageToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list next page token.
+       * </pre>
+       *
+       * <code>string next_page_token = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNextPageToken() {
+
+        nextPageToken_ = getDefaultInstance().getNextPageToken();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list next page token.
+       * </pre>
+       *
+       * <code>string next_page_token = 2;</code>
+       *
+       * @param value The bytes for nextPageToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        nextPageToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.storagetransfer.v1.ListAgentPoolsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.storagetransfer.v1.ListAgentPoolsResponse)
+    private static final com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse();
+    }
+
+    public static com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAgentPoolsResponse> PARSER =
+        new com.google.protobuf.AbstractParser<ListAgentPoolsResponse>() {
+          @java.lang.Override
+          public ListAgentPoolsResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ListAgentPoolsResponse(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ListAgentPoolsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAgentPoolsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_storagetransfer_v1_GetGoogleServiceAccountRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8909,6 +15351,30 @@ public final class TransferProto {
       internal_static_google_storagetransfer_v1_RunTransferJobRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_storagetransfer_v1_RunTransferJobRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_GetAgentPoolRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -8922,73 +15388,109 @@ public final class TransferProto {
           + "to\022\031google.storagetransfer.v1\032\034google/ap"
           + "i/annotations.proto\032\027google/api/client.p"
           + "roto\032\037google/api/field_behavior.proto\032#g"
-          + "oogle/longrunning/operations.proto\032\036goog"
-          + "le/protobuf/duration.proto\032\033google/proto"
-          + "buf/empty.proto\032 google/protobuf/field_m"
-          + "ask.proto\032.google/storagetransfer/v1/tra"
-          + "nsfer_types.proto\"9\n\036GetGoogleServiceAcc"
-          + "ountRequest\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\"]\n\030"
-          + "CreateTransferJobRequest\022A\n\014transfer_job"
-          + "\030\001 \001(\0132&.google.storagetransfer.v1.Trans"
-          + "ferJobB\003\340A\002\"\321\001\n\030UpdateTransferJobRequest"
-          + "\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 "
-          + "\001(\tB\003\340A\002\022A\n\014transfer_job\030\003 \001(\0132&.google."
-          + "storagetransfer.v1.TransferJobB\003\340A\002\022B\n\036u"
-          + "pdate_transfer_job_field_mask\030\004 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMask\"G\n\025GetTransferJo"
+          + "oogle/longrunning/operations.proto\032\033goog"
+          + "le/protobuf/empty.proto\032 google/protobuf"
+          + "/field_mask.proto\032.google/storagetransfe"
+          + "r/v1/transfer_types.proto\"9\n\036GetGoogleSe"
+          + "rviceAccountRequest\022\027\n\nproject_id\030\001 \001(\tB"
+          + "\003\340A\002\"]\n\030CreateTransferJobRequest\022A\n\014tran"
+          + "sfer_job\030\001 \001(\0132&.google.storagetransfer."
+          + "v1.TransferJobB\003\340A\002\"\321\001\n\030UpdateTransferJo"
           + "bRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\nproje"
-          + "ct_id\030\002 \001(\tB\003\340A\002\"U\n\027ListTransferJobsRequ"
-          + "est\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\004 "
-          + "\001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n\030ListTransferJ"
-          + "obsResponse\022=\n\rtransfer_jobs\030\001 \003(\0132&.goo"
-          + "gle.storagetransfer.v1.TransferJob\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t\"2\n\035PauseTransferOper"
-          + "ationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"3\n\036Resum"
-          + "eTransferOperationRequest\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\"G\n\025RunTransferJobRequest\022\025\n\010job_nam"
-          + "e\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 \001(\tB\003\340A\0022\215\013"
-          + "\n\026StorageTransferService\022\265\001\n\027GetGoogleSe"
-          + "rviceAccount\0229.google.storagetransfer.v1"
-          + ".GetGoogleServiceAccountRequest\032/.google"
-          + ".storagetransfer.v1.GoogleServiceAccount"
-          + "\".\202\323\344\223\002(\022&/v1/googleServiceAccounts/{pro"
-          + "ject_id}\022\230\001\n\021CreateTransferJob\0223.google."
-          + "storagetransfer.v1.CreateTransferJobRequ"
-          + "est\032&.google.storagetransfer.v1.Transfer"
-          + "Job\"&\202\323\344\223\002 \"\020/v1/transferJobs:\014transfer_"
-          + "job\022\233\001\n\021UpdateTransferJob\0223.google.stora"
-          + "getransfer.v1.UpdateTransferJobRequest\032&"
-          + ".google.storagetransfer.v1.TransferJob\")"
-          + "\202\323\344\223\002#2\036/v1/{job_name=transferJobs/**}:\001"
-          + "*\022\222\001\n\016GetTransferJob\0220.google.storagetra"
-          + "nsfer.v1.GetTransferJobRequest\032&.google."
-          + "storagetransfer.v1.TransferJob\"&\202\323\344\223\002 \022\036"
-          + "/v1/{job_name=transferJobs/**}\022\225\001\n\020ListT"
-          + "ransferJobs\0222.google.storagetransfer.v1."
-          + "ListTransferJobsRequest\0323.google.storage"
-          + "transfer.v1.ListTransferJobsResponse\"\030\202\323"
-          + "\344\223\002\022\022\020/v1/transferJobs\022\235\001\n\026PauseTransfer"
-          + "Operation\0228.google.storagetransfer.v1.Pa"
-          + "useTransferOperationRequest\032\026.google.pro"
-          + "tobuf.Empty\"1\202\323\344\223\002+\"&/v1/{name=transferO"
-          + "perations/**}:pause:\001*\022\240\001\n\027ResumeTransfe"
-          + "rOperation\0229.google.storagetransfer.v1.R"
-          + "esumeTransferOperationRequest\032\026.google.p"
-          + "rotobuf.Empty\"2\202\323\344\223\002,\"\'/v1/{name=transfe"
-          + "rOperations/**}:resume:\001*\022\275\001\n\016RunTransfe"
-          + "rJob\0220.google.storagetransfer.v1.RunTran"
-          + "sferJobRequest\032\035.google.longrunning.Oper"
-          + "ation\"Z\202\323\344\223\002\'\"\"/v1/{job_name=transferJob"
-          + "s/**}:run:\001*\312A*\n\025google.protobuf.Empty\022\021"
-          + "TransferOperation\032R\312A\036storagetransfer.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\352\001\n#com.google.sto"
-          + "ragetransfer.v1.protoB\rTransferProtoZHgo"
-          + "ogle.golang.org/genproto/googleapis/stor"
-          + "agetransfer/v1;storagetransfer\370\001\001\252\002\037Goog"
-          + "le.Cloud.StorageTransfer.V1\312\002\037Google\\Clo"
-          + "ud\\StorageTransfer\\V1\352\002\"Google::Cloud::S"
-          + "torageTransfer::V1b\006proto3"
+          + "ct_id\030\002 \001(\tB\003\340A\002\022A\n\014transfer_job\030\003 \001(\0132&"
+          + ".google.storagetransfer.v1.TransferJobB\003"
+          + "\340A\002\022B\n\036update_transfer_job_field_mask\030\004 "
+          + "\001(\0132\032.google.protobuf.FieldMask\"G\n\025GetTr"
+          + "ansferJobRequest\022\025\n\010job_name\030\001 \001(\tB\003\340A\002\022"
+          + "\027\n\nproject_id\030\002 \001(\tB\003\340A\002\"U\n\027ListTransfer"
+          + "JobsRequest\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022\021\n\tpage"
+          + "_size\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"r\n\030ListT"
+          + "ransferJobsResponse\022=\n\rtransfer_jobs\030\001 \003"
+          + "(\0132&.google.storagetransfer.v1.TransferJ"
+          + "ob\022\027\n\017next_page_token\030\002 \001(\t\"2\n\035PauseTran"
+          + "sferOperationRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\""
+          + "3\n\036ResumeTransferOperationRequest\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\002\"G\n\025RunTransferJobRequest\022\025\n"
+          + "\010job_name\030\001 \001(\tB\003\340A\002\022\027\n\nproject_id\030\002 \001(\t"
+          + "B\003\340A\002\"\214\001\n\026CreateAgentPoolRequest\022\027\n\nproj"
+          + "ect_id\030\001 \001(\tB\003\340A\002\022=\n\nagent_pool\030\002 \001(\0132$."
+          + "google.storagetransfer.v1.AgentPoolB\003\340A\002"
+          + "\022\032\n\ragent_pool_id\030\003 \001(\tB\003\340A\002\"\210\001\n\026UpdateA"
+          + "gentPoolRequest\022=\n\nagent_pool\030\001 \001(\0132$.go"
+          + "ogle.storagetransfer.v1.AgentPoolB\003\340A\002\022/"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\"(\n\023GetAgentPoolRequest\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\002\"+\n\026DeleteAgentPoolRequest\022\021\n\004n"
+          + "ame\030\001 \001(\tB\003\340A\002\"g\n\025ListAgentPoolsRequest\022"
+          + "\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\016\n\006filter\030\002 \001(\t"
+          + "\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\""
+          + "l\n\026ListAgentPoolsResponse\0229\n\013agent_pools"
+          + "\030\001 \003(\0132$.google.storagetransfer.v1.Agent"
+          + "Pool\022\027\n\017next_page_token\030\002 \001(\t2\206\022\n\026Storag"
+          + "eTransferService\022\265\001\n\027GetGoogleServiceAcc"
+          + "ount\0229.google.storagetransfer.v1.GetGoog"
+          + "leServiceAccountRequest\032/.google.storage"
+          + "transfer.v1.GoogleServiceAccount\".\202\323\344\223\002("
+          + "\022&/v1/googleServiceAccounts/{project_id}"
+          + "\022\230\001\n\021CreateTransferJob\0223.google.storaget"
+          + "ransfer.v1.CreateTransferJobRequest\032&.go"
+          + "ogle.storagetransfer.v1.TransferJob\"&\202\323\344"
+          + "\223\002 \"\020/v1/transferJobs:\014transfer_job\022\233\001\n\021"
+          + "UpdateTransferJob\0223.google.storagetransf"
+          + "er.v1.UpdateTransferJobRequest\032&.google."
+          + "storagetransfer.v1.TransferJob\")\202\323\344\223\002#2\036"
+          + "/v1/{job_name=transferJobs/**}:\001*\022\222\001\n\016Ge"
+          + "tTransferJob\0220.google.storagetransfer.v1"
+          + ".GetTransferJobRequest\032&.google.storaget"
+          + "ransfer.v1.TransferJob\"&\202\323\344\223\002 \022\036/v1/{job"
+          + "_name=transferJobs/**}\022\225\001\n\020ListTransferJ"
+          + "obs\0222.google.storagetransfer.v1.ListTran"
+          + "sferJobsRequest\0323.google.storagetransfer"
+          + ".v1.ListTransferJobsResponse\"\030\202\323\344\223\002\022\022\020/v"
+          + "1/transferJobs\022\235\001\n\026PauseTransferOperatio"
+          + "n\0228.google.storagetransfer.v1.PauseTrans"
+          + "ferOperationRequest\032\026.google.protobuf.Em"
+          + "pty\"1\202\323\344\223\002+\"&/v1/{name=transferOperation"
+          + "s/**}:pause:\001*\022\240\001\n\027ResumeTransferOperati"
+          + "on\0229.google.storagetransfer.v1.ResumeTra"
+          + "nsferOperationRequest\032\026.google.protobuf."
+          + "Empty\"2\202\323\344\223\002,\"\'/v1/{name=transferOperati"
+          + "ons/**}:resume:\001*\022\275\001\n\016RunTransferJob\0220.g"
+          + "oogle.storagetransfer.v1.RunTransferJobR"
+          + "equest\032\035.google.longrunning.Operation\"Z\202"
+          + "\323\344\223\002\'\"\"/v1/{job_name=transferJobs/**}:ru"
+          + "n:\001*\312A*\n\025google.protobuf.Empty\022\021Transfer"
+          + "Operation\022\314\001\n\017CreateAgentPool\0221.google.s"
+          + "toragetransfer.v1.CreateAgentPoolRequest"
+          + "\032$.google.storagetransfer.v1.AgentPool\"`"
+          + "\202\323\344\223\0024\"&/v1/projects/{project_id=*}/agen"
+          + "tPools:\nagent_pool\332A#project_id,agent_po"
+          + "ol,agent_pool_id\022\306\001\n\017UpdateAgentPool\0221.g"
+          + "oogle.storagetransfer.v1.UpdateAgentPool"
+          + "Request\032$.google.storagetransfer.v1.Agen"
+          + "tPool\"Z\202\323\344\223\002;2-/v1/{agent_pool.name=proj"
+          + "ects/*/agentPools/*}:\nagent_pool\332A\026agent"
+          + "_pool,update_mask\022\227\001\n\014GetAgentPool\022..goo"
+          + "gle.storagetransfer.v1.GetAgentPoolReque"
+          + "st\032$.google.storagetransfer.v1.AgentPool"
+          + "\"1\202\323\344\223\002$\022\"/v1/{name=projects/*/agentPool"
+          + "s/*}\332A\004name\022\262\001\n\016ListAgentPools\0220.google."
+          + "storagetransfer.v1.ListAgentPoolsRequest"
+          + "\0321.google.storagetransfer.v1.ListAgentPo"
+          + "olsResponse\";\202\323\344\223\002(\022&/v1/projects/{proje"
+          + "ct_id=*}/agentPools\332A\nproject_id\022\217\001\n\017Del"
+          + "eteAgentPool\0221.google.storagetransfer.v1"
+          + ".DeleteAgentPoolRequest\032\026.google.protobu"
+          + "f.Empty\"1\202\323\344\223\002$*\"/v1/{name=projects/*/ag"
+          + "entPools/*}\332A\004name\032R\312A\036storagetransfer.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformB\352\001\n#com.google.st"
+          + "oragetransfer.v1.protoB\rTransferProtoZHg"
+          + "oogle.golang.org/genproto/googleapis/sto"
+          + "ragetransfer/v1;storagetransfer\370\001\001\252\002\037Goo"
+          + "gle.Cloud.StorageTransfer.V1\312\002\037Google\\Cl"
+          + "oud\\StorageTransfer\\V1\352\002\"Google::Cloud::"
+          + "StorageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -8998,7 +15500,6 @@ public final class TransferProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.storagetransfer.v1.proto.TransferTypes.getDescriptor(),
@@ -9075,11 +15576,60 @@ public final class TransferProto {
             new java.lang.String[] {
               "JobName", "ProjectId",
             });
+    internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_CreateAgentPoolRequest_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "AgentPool", "AgentPoolId",
+            });
+    internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_UpdateAgentPoolRequest_descriptor,
+            new java.lang.String[] {
+              "AgentPool", "UpdateMask",
+            });
+    internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_storagetransfer_v1_GetAgentPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_GetAgentPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_DeleteAgentPoolRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_ListAgentPoolsRequest_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_storagetransfer_v1_ListAgentPoolsResponse_descriptor,
+            new java.lang.String[] {
+              "AgentPools", "NextPageToken",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
@@ -9088,7 +15638,6 @@ public final class TransferProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.storagetransfer.v1.proto.TransferTypes.getDescriptor();

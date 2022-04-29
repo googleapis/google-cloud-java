@@ -233,4 +233,113 @@ public class MockStorageTransferServiceImpl extends StorageTransferServiceImplBa
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createAgentPool(
+      TransferProto.CreateAgentPoolRequest request,
+      StreamObserver<TransferTypes.AgentPool> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TransferTypes.AgentPool) {
+      requests.add(request);
+      responseObserver.onNext(((TransferTypes.AgentPool) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAgentPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TransferTypes.AgentPool.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAgentPool(
+      TransferProto.UpdateAgentPoolRequest request,
+      StreamObserver<TransferTypes.AgentPool> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TransferTypes.AgentPool) {
+      requests.add(request);
+      responseObserver.onNext(((TransferTypes.AgentPool) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAgentPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TransferTypes.AgentPool.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAgentPool(
+      TransferProto.GetAgentPoolRequest request,
+      StreamObserver<TransferTypes.AgentPool> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TransferTypes.AgentPool) {
+      requests.add(request);
+      responseObserver.onNext(((TransferTypes.AgentPool) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAgentPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TransferTypes.AgentPool.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAgentPools(
+      TransferProto.ListAgentPoolsRequest request,
+      StreamObserver<TransferProto.ListAgentPoolsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TransferProto.ListAgentPoolsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TransferProto.ListAgentPoolsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAgentPools, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TransferProto.ListAgentPoolsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAgentPool(
+      TransferProto.DeleteAgentPoolRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAgentPool, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

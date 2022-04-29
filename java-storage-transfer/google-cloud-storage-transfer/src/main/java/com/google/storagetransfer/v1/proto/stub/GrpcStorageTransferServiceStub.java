@@ -16,6 +16,7 @@
 
 package com.google.storagetransfer.v1.proto.stub;
 
+import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListAgentPoolsPagedResponse;
 import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListTransferJobsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -154,6 +155,67 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolMethodDescriptor =
+          MethodDescriptor
+              .<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storagetransfer.v1.StorageTransferService/CreateAgentPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferProto.CreateAgentPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolMethodDescriptor =
+          MethodDescriptor
+              .<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storagetransfer.v1.StorageTransferService/UpdateAgentPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferProto.UpdateAgentPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolMethodDescriptor =
+          MethodDescriptor.<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storagetransfer.v1.StorageTransferService/GetAgentPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferProto.GetAgentPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TransferTypes.AgentPool.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+      listAgentPoolsMethodDescriptor =
+          MethodDescriptor
+              .<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storagetransfer.v1.StorageTransferService/ListAgentPools")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferProto.ListAgentPoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TransferProto.ListAgentPoolsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<TransferProto.DeleteAgentPoolRequest, Empty>
+      deleteAgentPoolMethodDescriptor =
+          MethodDescriptor.<TransferProto.DeleteAgentPoolRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storagetransfer.v1.StorageTransferService/DeleteAgentPool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TransferProto.DeleteAgentPoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<
           TransferProto.GetGoogleServiceAccountRequest, TransferTypes.GoogleServiceAccount>
       getGoogleServiceAccountCallable;
@@ -177,6 +239,18 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
   private final OperationCallable<
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable;
+  private final UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolCallable;
+  private final UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolCallable;
+  private final UnaryCallable<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolCallable;
+  private final UnaryCallable<
+          TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+      listAgentPoolsCallable;
+  private final UnaryCallable<TransferProto.ListAgentPoolsRequest, ListAgentPoolsPagedResponse>
+      listAgentPoolsPagedCallable;
+  private final UnaryCallable<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -306,6 +380,66 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+        createAgentPoolTransportSettings =
+            GrpcCallSettings
+                .<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+                .setMethodDescriptor(createAgentPoolMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+        updateAgentPoolTransportSettings =
+            GrpcCallSettings
+                .<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+                .setMethodDescriptor(updateAgentPoolMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "agent_pool.name", String.valueOf(request.getAgentPool().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+        getAgentPoolTransportSettings =
+            GrpcCallSettings
+                .<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>newBuilder()
+                .setMethodDescriptor(getAgentPoolMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+        listAgentPoolsTransportSettings =
+            GrpcCallSettings
+                .<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listAgentPoolsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolTransportSettings =
+        GrpcCallSettings.<TransferProto.DeleteAgentPoolRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAgentPoolMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.getGoogleServiceAccountCallable =
         callableFactory.createUnaryCallable(
@@ -350,6 +484,24 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
             settings.runTransferJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.createAgentPoolCallable =
+        callableFactory.createUnaryCallable(
+            createAgentPoolTransportSettings, settings.createAgentPoolSettings(), clientContext);
+    this.updateAgentPoolCallable =
+        callableFactory.createUnaryCallable(
+            updateAgentPoolTransportSettings, settings.updateAgentPoolSettings(), clientContext);
+    this.getAgentPoolCallable =
+        callableFactory.createUnaryCallable(
+            getAgentPoolTransportSettings, settings.getAgentPoolSettings(), clientContext);
+    this.listAgentPoolsCallable =
+        callableFactory.createUnaryCallable(
+            listAgentPoolsTransportSettings, settings.listAgentPoolsSettings(), clientContext);
+    this.listAgentPoolsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAgentPoolsTransportSettings, settings.listAgentPoolsSettings(), clientContext);
+    this.deleteAgentPoolCallable =
+        callableFactory.createUnaryCallable(
+            deleteAgentPoolTransportSettings, settings.deleteAgentPoolSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -419,6 +571,41 @@ public class GrpcStorageTransferServiceStub extends StorageTransferServiceStub {
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationCallable() {
     return runTransferJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolCallable() {
+    return createAgentPoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolCallable() {
+    return updateAgentPoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolCallable() {
+    return getAgentPoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+      listAgentPoolsCallable() {
+    return listAgentPoolsCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.ListAgentPoolsRequest, ListAgentPoolsPagedResponse>
+      listAgentPoolsPagedCallable() {
+    return listAgentPoolsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolCallable() {
+    return deleteAgentPoolCallable;
   }
 
   @Override

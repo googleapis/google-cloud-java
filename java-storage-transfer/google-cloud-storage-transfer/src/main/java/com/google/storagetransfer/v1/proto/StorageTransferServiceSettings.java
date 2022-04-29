@@ -16,6 +16,7 @@
 
 package com.google.storagetransfer.v1.proto;
 
+import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListAgentPoolsPagedResponse;
 import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListTransferJobsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -135,6 +136,38 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
       runTransferJobOperationSettings() {
     return ((StorageTransferServiceStubSettings) getStubSettings())
         .runTransferJobOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAgentPool. */
+  public UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).createAgentPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentPool. */
+  public UnaryCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).updateAgentPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAgentPool. */
+  public UnaryCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).getAgentPoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAgentPools. */
+  public PagedCallSettings<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          ListAgentPoolsPagedResponse>
+      listAgentPoolsSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).listAgentPoolsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentPool. */
+  public UnaryCallSettings<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolSettings() {
+    return ((StorageTransferServiceStubSettings) getStubSettings()).deleteAgentPoolSettings();
   }
 
   public static final StorageTransferServiceSettings create(StorageTransferServiceStubSettings stub)
@@ -294,6 +327,39 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings() {
       return getStubSettingsBuilder().runTransferJobOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+        createAgentPoolSettings() {
+      return getStubSettingsBuilder().createAgentPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+        updateAgentPoolSettings() {
+      return getStubSettingsBuilder().updateAgentPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+        getAgentPoolSettings() {
+      return getStubSettingsBuilder().getAgentPoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAgentPools. */
+    public PagedCallSettings.Builder<
+            TransferProto.ListAgentPoolsRequest,
+            TransferProto.ListAgentPoolsResponse,
+            ListAgentPoolsPagedResponse>
+        listAgentPoolsSettings() {
+      return getStubSettingsBuilder().listAgentPoolsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.DeleteAgentPoolRequest, Empty>
+        deleteAgentPoolSettings() {
+      return getStubSettingsBuilder().deleteAgentPoolSettings();
     }
 
     @Override

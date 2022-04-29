@@ -16,6 +16,7 @@
 
 package com.google.storagetransfer.v1.proto.stub;
 
+import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListAgentPoolsPagedResponse;
 import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListTransferJobsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -91,6 +92,35 @@ public abstract class StorageTransferServiceStub implements BackgroundResource {
 
   public UnaryCallable<TransferProto.RunTransferJobRequest, Operation> runTransferJobCallable() {
     throw new UnsupportedOperationException("Not implemented: runTransferJobCallable()");
+  }
+
+  public UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAgentPoolCallable()");
+  }
+
+  public UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAgentPoolCallable()");
+  }
+
+  public UnaryCallable<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAgentPoolCallable()");
+  }
+
+  public UnaryCallable<TransferProto.ListAgentPoolsRequest, ListAgentPoolsPagedResponse>
+      listAgentPoolsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAgentPoolsPagedCallable()");
+  }
+
+  public UnaryCallable<TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+      listAgentPoolsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAgentPoolsCallable()");
+  }
+
+  public UnaryCallable<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAgentPoolCallable()");
   }
 
   @Override

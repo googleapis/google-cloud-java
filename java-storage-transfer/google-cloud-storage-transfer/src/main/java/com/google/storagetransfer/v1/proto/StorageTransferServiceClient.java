@@ -31,6 +31,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.storagetransfer.v1.proto.stub.StorageTransferServiceStub;
 import com.google.storagetransfer.v1.proto.stub.StorageTransferServiceStubSettings;
 import java.io.IOException;
@@ -176,10 +177,9 @@ public class StorageTransferServiceClient implements BackgroundResource {
   /**
    * Returns the Google service account that is used by Storage Transfer Service to access buckets
    * in the project where transfers run or in other projects. Each Google service account is
-   * associated with one Google Cloud Platform Console project. Users should add this service
-   * account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service.
-   * This service account is created and owned by Storage Transfer Service and can only be used by
-   * Storage Transfer Service.
+   * associated with one Google Cloud project. Users should add this service account to the Google
+   * Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is
+   * created and owned by Storage Transfer Service and can only be used by Storage Transfer Service.
    *
    * <p>Sample code:
    *
@@ -207,10 +207,9 @@ public class StorageTransferServiceClient implements BackgroundResource {
   /**
    * Returns the Google service account that is used by Storage Transfer Service to access buckets
    * in the project where transfers run or in other projects. Each Google service account is
-   * associated with one Google Cloud Platform Console project. Users should add this service
-   * account to the Google Cloud Storage bucket ACLs to grant access to Storage Transfer Service.
-   * This service account is created and owned by Storage Transfer Service and can only be used by
-   * Storage Transfer Service.
+   * associated with one Google Cloud project. Users should add this service account to the Google
+   * Cloud Storage bucket ACLs to grant access to Storage Transfer Service. This service account is
+   * created and owned by Storage Transfer Service and can only be used by Storage Transfer Service.
    *
    * <p>Sample code:
    *
@@ -596,7 +595,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
   /**
    * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
    * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error wil be returned.
+   * active, an error will be returned.
    *
    * <p>Sample code:
    *
@@ -624,7 +623,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
   /**
    * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
    * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error wil be returned.
+   * active, an error will be returned.
    *
    * <p>Sample code:
    *
@@ -653,7 +652,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
   /**
    * Attempts to start a new TransferOperation for the current TransferJob. A TransferJob has a
    * maximum of one active TransferOperation. If this method is called while a TransferOperation is
-   * active, an error wil be returned.
+   * active, an error will be returned.
    *
    * <p>Sample code:
    *
@@ -675,6 +674,468 @@ public class StorageTransferServiceClient implements BackgroundResource {
   public final UnaryCallable<TransferProto.RunTransferJobRequest, Operation>
       runTransferJobCallable() {
     return stub.runTransferJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+   *   String agentPoolId = "agentPoolId1562124732";
+   *   TransferTypes.AgentPool response =
+   *       storageTransferServiceClient.createAgentPool(projectId, agentPool, agentPoolId);
+   * }
+   * }</pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud project that owns the agent pool.
+   * @param agentPool Required. The agent pool to create.
+   * @param agentPoolId Required. The ID of the agent pool to create.
+   *     <p>The `agent_pool_id` must meet the following requirements:
+   *     <ul>
+   *       <li>Length of 128 characters or less.
+   *       <li>Not start with the string `goog`.
+   *       <li>Start with a lowercase ASCII character, followed by: &#42; Zero or more: lowercase
+   *           Latin alphabet characters, numerals, hyphens (`-`), periods (`.`), underscores (`_`),
+   *           or tildes (`~`). &#42; One or more numerals or lowercase ASCII characters.
+   *     </ul>
+   *     <p>As expressed by the regular expression: `^(?!goog)[a-z]([a-z0-9-._~]&#42;[a-z0-9])?$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool createAgentPool(
+      String projectId, TransferTypes.AgentPool agentPool, String agentPoolId) {
+    TransferProto.CreateAgentPoolRequest request =
+        TransferProto.CreateAgentPoolRequest.newBuilder()
+            .setProjectId(projectId)
+            .setAgentPool(agentPool)
+            .setAgentPoolId(agentPoolId)
+            .build();
+    return createAgentPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.CreateAgentPoolRequest request =
+   *       TransferProto.CreateAgentPoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setAgentPool(TransferTypes.AgentPool.newBuilder().build())
+   *           .setAgentPoolId("agentPoolId1562124732")
+   *           .build();
+   *   TransferTypes.AgentPool response = storageTransferServiceClient.createAgentPool(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool createAgentPool(
+      TransferProto.CreateAgentPoolRequest request) {
+    return createAgentPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.CreateAgentPoolRequest request =
+   *       TransferProto.CreateAgentPoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setAgentPool(TransferTypes.AgentPool.newBuilder().build())
+   *           .setAgentPoolId("agentPoolId1562124732")
+   *           .build();
+   *   ApiFuture<TransferTypes.AgentPool> future =
+   *       storageTransferServiceClient.createAgentPoolCallable().futureCall(request);
+   *   // Do something.
+   *   TransferTypes.AgentPool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolCallable() {
+    return stub.createAgentPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   TransferTypes.AgentPool response =
+   *       storageTransferServiceClient.updateAgentPool(agentPool, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param agentPool Required. The agent pool to update. `agent_pool` is expected to specify
+   *     following fields:
+   *     <ul>
+   *       <li>[name][google.storagetransfer.v1.AgentPool.name]
+   *     </ul>
+   *     <ul>
+   *       <li>[display_name][google.storagetransfer.v1.AgentPool.display_name]
+   *     </ul>
+   *     <ul>
+   *       <li>[bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit] An
+   *           `UpdateAgentPoolRequest` with any other fields is rejected with the error
+   *           [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   *     </ul>
+   *
+   * @param updateMask The [field mask]
+   *     (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) of the
+   *     fields in `agentPool` to update in this request. The following `agentPool` fields can be
+   *     updated:
+   *     <ul>
+   *       <li>[display_name][google.storagetransfer.v1.AgentPool.display_name]
+   *     </ul>
+   *     <ul>
+   *       <li>[bandwidth_limit][google.storagetransfer.v1.AgentPool.bandwidth_limit]
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool updateAgentPool(
+      TransferTypes.AgentPool agentPool, FieldMask updateMask) {
+    TransferProto.UpdateAgentPoolRequest request =
+        TransferProto.UpdateAgentPoolRequest.newBuilder()
+            .setAgentPool(agentPool)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAgentPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.UpdateAgentPoolRequest request =
+   *       TransferProto.UpdateAgentPoolRequest.newBuilder()
+   *           .setAgentPool(TransferTypes.AgentPool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   TransferTypes.AgentPool response = storageTransferServiceClient.updateAgentPool(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool updateAgentPool(
+      TransferProto.UpdateAgentPoolRequest request) {
+    return updateAgentPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing agent pool resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.UpdateAgentPoolRequest request =
+   *       TransferProto.UpdateAgentPoolRequest.newBuilder()
+   *           .setAgentPool(TransferTypes.AgentPool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TransferTypes.AgentPool> future =
+   *       storageTransferServiceClient.updateAgentPoolCallable().futureCall(request);
+   *   // Do something.
+   *   TransferTypes.AgentPool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolCallable() {
+    return stub.updateAgentPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   String name = "name3373707";
+   *   TransferTypes.AgentPool response = storageTransferServiceClient.getAgentPool(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the agent pool to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool getAgentPool(String name) {
+    TransferProto.GetAgentPoolRequest request =
+        TransferProto.GetAgentPoolRequest.newBuilder().setName(name).build();
+    return getAgentPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.GetAgentPoolRequest request =
+   *       TransferProto.GetAgentPoolRequest.newBuilder().setName("name3373707").build();
+   *   TransferTypes.AgentPool response = storageTransferServiceClient.getAgentPool(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TransferTypes.AgentPool getAgentPool(TransferProto.GetAgentPoolRequest request) {
+    return getAgentPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.GetAgentPoolRequest request =
+   *       TransferProto.GetAgentPoolRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<TransferTypes.AgentPool> future =
+   *       storageTransferServiceClient.getAgentPoolCallable().futureCall(request);
+   *   // Do something.
+   *   TransferTypes.AgentPool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolCallable() {
+    return stub.getAgentPoolCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists agent pools.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   for (TransferTypes.AgentPool element :
+   *       storageTransferServiceClient.listAgentPools(projectId).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud project that owns the job.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAgentPoolsPagedResponse listAgentPools(String projectId) {
+    TransferProto.ListAgentPoolsRequest request =
+        TransferProto.ListAgentPoolsRequest.newBuilder().setProjectId(projectId).build();
+    return listAgentPools(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists agent pools.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.ListAgentPoolsRequest request =
+   *       TransferProto.ListAgentPoolsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (TransferTypes.AgentPool element :
+   *       storageTransferServiceClient.listAgentPools(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAgentPoolsPagedResponse listAgentPools(
+      TransferProto.ListAgentPoolsRequest request) {
+    return listAgentPoolsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists agent pools.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.ListAgentPoolsRequest request =
+   *       TransferProto.ListAgentPoolsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<TransferTypes.AgentPool> future =
+   *       storageTransferServiceClient.listAgentPoolsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TransferTypes.AgentPool element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.ListAgentPoolsRequest, ListAgentPoolsPagedResponse>
+      listAgentPoolsPagedCallable() {
+    return stub.listAgentPoolsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists agent pools.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.ListAgentPoolsRequest request =
+   *       TransferProto.ListAgentPoolsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     TransferProto.ListAgentPoolsResponse response =
+   *         storageTransferServiceClient.listAgentPoolsCallable().call(request);
+   *     for (TransferTypes.AgentPool element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+      listAgentPoolsCallable() {
+    return stub.listAgentPoolsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   String name = "name3373707";
+   *   storageTransferServiceClient.deleteAgentPool(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the agent pool to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgentPool(String name) {
+    TransferProto.DeleteAgentPoolRequest request =
+        TransferProto.DeleteAgentPoolRequest.newBuilder().setName(name).build();
+    deleteAgentPool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteAgentPoolRequest request =
+   *       TransferProto.DeleteAgentPoolRequest.newBuilder().setName("name3373707").build();
+   *   storageTransferServiceClient.deleteAgentPool(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAgentPool(TransferProto.DeleteAgentPoolRequest request) {
+    deleteAgentPoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an agent pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (StorageTransferServiceClient storageTransferServiceClient =
+   *     StorageTransferServiceClient.create()) {
+   *   TransferProto.DeleteAgentPoolRequest request =
+   *       TransferProto.DeleteAgentPoolRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future =
+   *       storageTransferServiceClient.deleteAgentPoolCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TransferProto.DeleteAgentPoolRequest, Empty>
+      deleteAgentPoolCallable() {
+    return stub.deleteAgentPoolCallable();
   }
 
   @Override
@@ -800,6 +1261,101 @@ public class StorageTransferServiceClient implements BackgroundResource {
     protected ListTransferJobsFixedSizeCollection createCollection(
         List<ListTransferJobsPage> pages, int collectionSize) {
       return new ListTransferJobsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAgentPoolsPagedResponse
+      extends AbstractPagedListResponse<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          TransferTypes.AgentPool,
+          ListAgentPoolsPage,
+          ListAgentPoolsFixedSizeCollection> {
+
+    public static ApiFuture<ListAgentPoolsPagedResponse> createAsync(
+        PageContext<
+                TransferProto.ListAgentPoolsRequest,
+                TransferProto.ListAgentPoolsResponse,
+                TransferTypes.AgentPool>
+            context,
+        ApiFuture<TransferProto.ListAgentPoolsResponse> futureResponse) {
+      ApiFuture<ListAgentPoolsPage> futurePage =
+          ListAgentPoolsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAgentPoolsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAgentPoolsPagedResponse(ListAgentPoolsPage page) {
+      super(page, ListAgentPoolsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAgentPoolsPage
+      extends AbstractPage<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          TransferTypes.AgentPool,
+          ListAgentPoolsPage> {
+
+    private ListAgentPoolsPage(
+        PageContext<
+                TransferProto.ListAgentPoolsRequest,
+                TransferProto.ListAgentPoolsResponse,
+                TransferTypes.AgentPool>
+            context,
+        TransferProto.ListAgentPoolsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAgentPoolsPage createEmptyPage() {
+      return new ListAgentPoolsPage(null, null);
+    }
+
+    @Override
+    protected ListAgentPoolsPage createPage(
+        PageContext<
+                TransferProto.ListAgentPoolsRequest,
+                TransferProto.ListAgentPoolsResponse,
+                TransferTypes.AgentPool>
+            context,
+        TransferProto.ListAgentPoolsResponse response) {
+      return new ListAgentPoolsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAgentPoolsPage> createPageAsync(
+        PageContext<
+                TransferProto.ListAgentPoolsRequest,
+                TransferProto.ListAgentPoolsResponse,
+                TransferTypes.AgentPool>
+            context,
+        ApiFuture<TransferProto.ListAgentPoolsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAgentPoolsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          TransferTypes.AgentPool,
+          ListAgentPoolsPage,
+          ListAgentPoolsFixedSizeCollection> {
+
+    private ListAgentPoolsFixedSizeCollection(List<ListAgentPoolsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAgentPoolsFixedSizeCollection createEmptyCollection() {
+      return new ListAgentPoolsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAgentPoolsFixedSizeCollection createCollection(
+        List<ListAgentPoolsPage> pages, int collectionSize) {
+      return new ListAgentPoolsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

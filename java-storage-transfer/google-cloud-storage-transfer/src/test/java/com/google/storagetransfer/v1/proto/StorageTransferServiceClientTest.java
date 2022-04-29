@@ -16,6 +16,7 @@
 
 package com.google.storagetransfer.v1.proto;
 
+import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListAgentPoolsPagedResponse;
 import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListTransferJobsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -141,6 +142,7 @@ public class StorageTransferServiceClientTest {
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
+            .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
@@ -195,6 +197,7 @@ public class StorageTransferServiceClientTest {
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
+            .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
@@ -259,6 +262,7 @@ public class StorageTransferServiceClientTest {
             .setProjectId("projectId-894832108")
             .setTransferSpec(TransferTypes.TransferSpec.newBuilder().build())
             .setNotificationConfig(TransferTypes.NotificationConfig.newBuilder().build())
+            .setLoggingConfig(TransferTypes.LoggingConfig.newBuilder().build())
             .setSchedule(TransferTypes.Schedule.newBuilder().build())
             .setCreationTime(Timestamp.newBuilder().build())
             .setLastModificationTime(Timestamp.newBuilder().build())
@@ -487,6 +491,219 @@ public class StorageTransferServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAgentPoolTest() throws Exception {
+    TransferTypes.AgentPool expectedResponse =
+        TransferTypes.AgentPool.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setBandwidthLimit(TransferTypes.AgentPool.BandwidthLimit.newBuilder().build())
+            .build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    String projectId = "projectId-894832108";
+    TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+    String agentPoolId = "agentPoolId1562124732";
+
+    TransferTypes.AgentPool actualResponse =
+        client.createAgentPool(projectId, agentPool, agentPoolId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.CreateAgentPoolRequest actualRequest =
+        ((TransferProto.CreateAgentPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(agentPool, actualRequest.getAgentPool());
+    Assert.assertEquals(agentPoolId, actualRequest.getAgentPoolId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAgentPoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      String projectId = "projectId-894832108";
+      TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+      String agentPoolId = "agentPoolId1562124732";
+      client.createAgentPool(projectId, agentPool, agentPoolId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAgentPoolTest() throws Exception {
+    TransferTypes.AgentPool expectedResponse =
+        TransferTypes.AgentPool.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setBandwidthLimit(TransferTypes.AgentPool.BandwidthLimit.newBuilder().build())
+            .build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TransferTypes.AgentPool actualResponse = client.updateAgentPool(agentPool, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.UpdateAgentPoolRequest actualRequest =
+        ((TransferProto.UpdateAgentPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(agentPool, actualRequest.getAgentPool());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAgentPoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      TransferTypes.AgentPool agentPool = TransferTypes.AgentPool.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAgentPool(agentPool, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAgentPoolTest() throws Exception {
+    TransferTypes.AgentPool expectedResponse =
+        TransferTypes.AgentPool.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setBandwidthLimit(TransferTypes.AgentPool.BandwidthLimit.newBuilder().build())
+            .build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TransferTypes.AgentPool actualResponse = client.getAgentPool(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.GetAgentPoolRequest actualRequest =
+        ((TransferProto.GetAgentPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAgentPoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAgentPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAgentPoolsTest() throws Exception {
+    TransferTypes.AgentPool responsesElement = TransferTypes.AgentPool.newBuilder().build();
+    TransferProto.ListAgentPoolsResponse expectedResponse =
+        TransferProto.ListAgentPoolsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAgentPools(Arrays.asList(responsesElement))
+            .build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    String projectId = "projectId-894832108";
+
+    ListAgentPoolsPagedResponse pagedListResponse = client.listAgentPools(projectId);
+
+    List<TransferTypes.AgentPool> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAgentPoolsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.ListAgentPoolsRequest actualRequest =
+        ((TransferProto.ListAgentPoolsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAgentPoolsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      String projectId = "projectId-894832108";
+      client.listAgentPools(projectId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAgentPoolTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockStorageTransferService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAgentPool(name);
+
+    List<AbstractMessage> actualRequests = mockStorageTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TransferProto.DeleteAgentPoolRequest actualRequest =
+        ((TransferProto.DeleteAgentPoolRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAgentPoolExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageTransferService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAgentPool(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

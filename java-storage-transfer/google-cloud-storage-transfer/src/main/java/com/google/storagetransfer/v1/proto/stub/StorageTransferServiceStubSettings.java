@@ -16,6 +16,7 @@
 
 package com.google.storagetransfer.v1.proto.stub;
 
+import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListAgentPoolsPagedResponse;
 import static com.google.storagetransfer.v1.proto.StorageTransferServiceClient.ListTransferJobsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -121,6 +122,19 @@ public class StorageTransferServiceStubSettings
   private final OperationCallSettings<
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationSettings;
+  private final UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolSettings;
+  private final UnaryCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolSettings;
+  private final UnaryCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolSettings;
+  private final PagedCallSettings<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          ListAgentPoolsPagedResponse>
+      listAgentPoolsSettings;
+  private final UnaryCallSettings<TransferProto.DeleteAgentPoolRequest, Empty>
+      deleteAgentPoolSettings;
 
   private static final PagedListDescriptor<
           TransferProto.ListTransferJobsRequest,
@@ -171,6 +185,55 @@ public class StorageTransferServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          TransferTypes.AgentPool>
+      LIST_AGENT_POOLS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              TransferProto.ListAgentPoolsRequest,
+              TransferProto.ListAgentPoolsResponse,
+              TransferTypes.AgentPool>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public TransferProto.ListAgentPoolsRequest injectToken(
+                TransferProto.ListAgentPoolsRequest payload, String token) {
+              return TransferProto.ListAgentPoolsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public TransferProto.ListAgentPoolsRequest injectPageSize(
+                TransferProto.ListAgentPoolsRequest payload, int pageSize) {
+              return TransferProto.ListAgentPoolsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(TransferProto.ListAgentPoolsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(TransferProto.ListAgentPoolsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TransferTypes.AgentPool> extractResources(
+                TransferProto.ListAgentPoolsResponse payload) {
+              return payload.getAgentPoolsList() == null
+                  ? ImmutableList.<TransferTypes.AgentPool>of()
+                  : payload.getAgentPoolsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           TransferProto.ListTransferJobsRequest,
           TransferProto.ListTransferJobsResponse,
@@ -197,6 +260,34 @@ public class StorageTransferServiceStubSettings
                       PageContext.create(
                           callable, LIST_TRANSFER_JOBS_PAGE_STR_DESC, request, context);
               return ListTransferJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          ListAgentPoolsPagedResponse>
+      LIST_AGENT_POOLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              TransferProto.ListAgentPoolsRequest,
+              TransferProto.ListAgentPoolsResponse,
+              ListAgentPoolsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAgentPoolsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        TransferProto.ListAgentPoolsRequest, TransferProto.ListAgentPoolsResponse>
+                    callable,
+                TransferProto.ListAgentPoolsRequest request,
+                ApiCallContext context,
+                ApiFuture<TransferProto.ListAgentPoolsResponse> futureResponse) {
+              PageContext<
+                      TransferProto.ListAgentPoolsRequest,
+                      TransferProto.ListAgentPoolsResponse,
+                      TransferTypes.AgentPool>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AGENT_POOLS_PAGE_STR_DESC, request, context);
+              return ListAgentPoolsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -257,6 +348,38 @@ public class StorageTransferServiceStubSettings
           TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
       runTransferJobOperationSettings() {
     return runTransferJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAgentPool. */
+  public UnaryCallSettings<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+      createAgentPoolSettings() {
+    return createAgentPoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentPool. */
+  public UnaryCallSettings<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+      updateAgentPoolSettings() {
+    return updateAgentPoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAgentPool. */
+  public UnaryCallSettings<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+      getAgentPoolSettings() {
+    return getAgentPoolSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAgentPools. */
+  public PagedCallSettings<
+          TransferProto.ListAgentPoolsRequest,
+          TransferProto.ListAgentPoolsResponse,
+          ListAgentPoolsPagedResponse>
+      listAgentPoolsSettings() {
+    return listAgentPoolsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentPool. */
+  public UnaryCallSettings<TransferProto.DeleteAgentPoolRequest, Empty> deleteAgentPoolSettings() {
+    return deleteAgentPoolSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -344,6 +467,11 @@ public class StorageTransferServiceStubSettings
     resumeTransferOperationSettings = settingsBuilder.resumeTransferOperationSettings().build();
     runTransferJobSettings = settingsBuilder.runTransferJobSettings().build();
     runTransferJobOperationSettings = settingsBuilder.runTransferJobOperationSettings().build();
+    createAgentPoolSettings = settingsBuilder.createAgentPoolSettings().build();
+    updateAgentPoolSettings = settingsBuilder.updateAgentPoolSettings().build();
+    getAgentPoolSettings = settingsBuilder.getAgentPoolSettings().build();
+    listAgentPoolsSettings = settingsBuilder.listAgentPoolsSettings().build();
+    deleteAgentPoolSettings = settingsBuilder.deleteAgentPoolSettings().build();
   }
 
   /** Builder for StorageTransferServiceStubSettings. */
@@ -376,6 +504,22 @@ public class StorageTransferServiceStubSettings
     private final OperationCallSettings.Builder<
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+        createAgentPoolSettings;
+    private final UnaryCallSettings.Builder<
+            TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+        updateAgentPoolSettings;
+    private final UnaryCallSettings.Builder<
+            TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+        getAgentPoolSettings;
+    private final PagedCallSettings.Builder<
+            TransferProto.ListAgentPoolsRequest,
+            TransferProto.ListAgentPoolsResponse,
+            ListAgentPoolsPagedResponse>
+        listAgentPoolsSettings;
+    private final UnaryCallSettings.Builder<TransferProto.DeleteAgentPoolRequest, Empty>
+        deleteAgentPoolSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -394,10 +538,10 @@ public class StorageTransferServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -419,6 +563,11 @@ public class StorageTransferServiceStubSettings
       resumeTransferOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTransferJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runTransferJobOperationSettings = OperationCallSettings.newBuilder();
+      createAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAgentPoolsSettings = PagedCallSettings.newBuilder(LIST_AGENT_POOLS_PAGE_STR_FACT);
+      deleteAgentPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -429,7 +578,12 @@ public class StorageTransferServiceStubSettings
               listTransferJobsSettings,
               pauseTransferOperationSettings,
               resumeTransferOperationSettings,
-              runTransferJobSettings);
+              runTransferJobSettings,
+              createAgentPoolSettings,
+              updateAgentPoolSettings,
+              getAgentPoolSettings,
+              listAgentPoolsSettings,
+              deleteAgentPoolSettings);
       initDefaults(this);
     }
 
@@ -445,6 +599,11 @@ public class StorageTransferServiceStubSettings
       resumeTransferOperationSettings = settings.resumeTransferOperationSettings.toBuilder();
       runTransferJobSettings = settings.runTransferJobSettings.toBuilder();
       runTransferJobOperationSettings = settings.runTransferJobOperationSettings.toBuilder();
+      createAgentPoolSettings = settings.createAgentPoolSettings.toBuilder();
+      updateAgentPoolSettings = settings.updateAgentPoolSettings.toBuilder();
+      getAgentPoolSettings = settings.getAgentPoolSettings.toBuilder();
+      listAgentPoolsSettings = settings.listAgentPoolsSettings.toBuilder();
+      deleteAgentPoolSettings = settings.deleteAgentPoolSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -455,7 +614,12 @@ public class StorageTransferServiceStubSettings
               listTransferJobsSettings,
               pauseTransferOperationSettings,
               resumeTransferOperationSettings,
-              runTransferJobSettings);
+              runTransferJobSettings,
+              createAgentPoolSettings,
+              updateAgentPoolSettings,
+              getAgentPoolSettings,
+              listAgentPoolsSettings,
+              deleteAgentPoolSettings);
     }
 
     private static Builder createDefault() {
@@ -509,6 +673,31 @@ public class StorageTransferServiceStubSettings
 
       builder
           .runTransferJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAgentPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAgentPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAgentPoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listAgentPoolsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteAgentPoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -617,6 +806,39 @@ public class StorageTransferServiceStubSettings
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings() {
       return runTransferJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.CreateAgentPoolRequest, TransferTypes.AgentPool>
+        createAgentPoolSettings() {
+      return createAgentPoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.UpdateAgentPoolRequest, TransferTypes.AgentPool>
+        updateAgentPoolSettings() {
+      return updateAgentPoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.GetAgentPoolRequest, TransferTypes.AgentPool>
+        getAgentPoolSettings() {
+      return getAgentPoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAgentPools. */
+    public PagedCallSettings.Builder<
+            TransferProto.ListAgentPoolsRequest,
+            TransferProto.ListAgentPoolsResponse,
+            ListAgentPoolsPagedResponse>
+        listAgentPoolsSettings() {
+      return listAgentPoolsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentPool. */
+    public UnaryCallSettings.Builder<TransferProto.DeleteAgentPoolRequest, Empty>
+        deleteAgentPoolSettings() {
+      return deleteAgentPoolSettings;
     }
 
     @Override

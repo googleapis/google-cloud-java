@@ -446,6 +446,244 @@ public final class StorageTransferServiceGrpc {
     return getRunTransferJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getCreateAgentPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAgentPool",
+      requestType = com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest.class,
+      responseType = com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getCreateAgentPoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        getCreateAgentPoolMethod;
+    if ((getCreateAgentPoolMethod = StorageTransferServiceGrpc.getCreateAgentPoolMethod) == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getCreateAgentPoolMethod = StorageTransferServiceGrpc.getCreateAgentPoolMethod)
+            == null) {
+          StorageTransferServiceGrpc.getCreateAgentPoolMethod =
+              getCreateAgentPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
+                          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAgentPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .CreateAgentPoolRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("CreateAgentPool"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAgentPoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getUpdateAgentPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAgentPool",
+      requestType = com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest.class,
+      responseType = com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getUpdateAgentPoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest,
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        getUpdateAgentPoolMethod;
+    if ((getUpdateAgentPoolMethod = StorageTransferServiceGrpc.getUpdateAgentPoolMethod) == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getUpdateAgentPoolMethod = StorageTransferServiceGrpc.getUpdateAgentPoolMethod)
+            == null) {
+          StorageTransferServiceGrpc.getUpdateAgentPoolMethod =
+              getUpdateAgentPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest,
+                          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAgentPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .UpdateAgentPoolRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("UpdateAgentPool"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAgentPoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getGetAgentPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAgentPool",
+      requestType = com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest.class,
+      responseType = com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest,
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+      getGetAgentPoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest,
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        getGetAgentPoolMethod;
+    if ((getGetAgentPoolMethod = StorageTransferServiceGrpc.getGetAgentPoolMethod) == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getGetAgentPoolMethod = StorageTransferServiceGrpc.getGetAgentPoolMethod) == null) {
+          StorageTransferServiceGrpc.getGetAgentPoolMethod =
+              getGetAgentPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest,
+                          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAgentPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferTypes.AgentPool
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("GetAgentPool"))
+                      .build();
+        }
+      }
+    }
+    return getGetAgentPoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest,
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+      getListAgentPoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAgentPools",
+      requestType = com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest.class,
+      responseType = com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest,
+          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+      getListAgentPoolsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest,
+            com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+        getListAgentPoolsMethod;
+    if ((getListAgentPoolsMethod = StorageTransferServiceGrpc.getListAgentPoolsMethod) == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getListAgentPoolsMethod = StorageTransferServiceGrpc.getListAgentPoolsMethod)
+            == null) {
+          StorageTransferServiceGrpc.getListAgentPoolsMethod =
+              getListAgentPoolsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest,
+                          com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAgentPools"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .ListAgentPoolsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .ListAgentPoolsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("ListAgentPools"))
+                      .build();
+        }
+      }
+    }
+    return getListAgentPoolsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest,
+          com.google.protobuf.Empty>
+      getDeleteAgentPoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAgentPool",
+      requestType = com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest,
+          com.google.protobuf.Empty>
+      getDeleteAgentPoolMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest,
+            com.google.protobuf.Empty>
+        getDeleteAgentPoolMethod;
+    if ((getDeleteAgentPoolMethod = StorageTransferServiceGrpc.getDeleteAgentPoolMethod) == null) {
+      synchronized (StorageTransferServiceGrpc.class) {
+        if ((getDeleteAgentPoolMethod = StorageTransferServiceGrpc.getDeleteAgentPoolMethod)
+            == null) {
+          StorageTransferServiceGrpc.getDeleteAgentPoolMethod =
+              getDeleteAgentPoolMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAgentPool"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storagetransfer.v1.proto.TransferProto
+                                  .DeleteAgentPoolRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageTransferServiceMethodDescriptorSupplier("DeleteAgentPool"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAgentPoolMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static StorageTransferServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StorageTransferServiceStub> factory =
@@ -505,7 +743,7 @@ public final class StorageTransferServiceGrpc {
      * Returns the Google service account that is used by Storage Transfer
      * Service to access buckets in the project where transfers
      * run or in other projects. Each Google service account is associated
-     * with one Google Cloud Platform Console project. Users
+     * with one Google Cloud project. Users
      * should add this service account to the Google Cloud Storage bucket
      * ACLs to grant access to Storage Transfer Service. This service
      * account is created and owned by Storage Transfer Service and can
@@ -542,8 +780,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
-     * field can be modified using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
+     * using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -622,7 +860,7 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Attempts to start a new TransferOperation for the current TransferJob. A
      * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error wil be returned.
+     * is called while a TransferOperation is active, an error will be returned.
      * </pre>
      */
     public void runTransferJob(
@@ -630,6 +868,81 @@ public final class StorageTransferServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRunTransferJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent pool resource.
+     * </pre>
+     */
+    public void createAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAgentPoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing agent pool resource.
+     * </pre>
+     */
+    public void updateAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAgentPoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an agent pool.
+     * </pre>
+     */
+    public void getAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAgentPoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists agent pools.
+     * </pre>
+     */
+    public void listAgentPools(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAgentPoolsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an agent pool.
+     * </pre>
+     */
+    public void deleteAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAgentPoolMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -691,6 +1004,40 @@ public final class StorageTransferServiceGrpc {
                   new MethodHandlers<
                       com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest,
                       com.google.longrunning.Operation>(this, METHODID_RUN_TRANSFER_JOB)))
+          .addMethod(
+              getCreateAgentPoolMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest,
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>(
+                      this, METHODID_CREATE_AGENT_POOL)))
+          .addMethod(
+              getUpdateAgentPoolMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest,
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>(
+                      this, METHODID_UPDATE_AGENT_POOL)))
+          .addMethod(
+              getGetAgentPoolMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest,
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>(
+                      this, METHODID_GET_AGENT_POOL)))
+          .addMethod(
+              getListAgentPoolsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest,
+                      com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>(
+                      this, METHODID_LIST_AGENT_POOLS)))
+          .addMethod(
+              getDeleteAgentPoolMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_AGENT_POOL)))
           .build();
     }
   }
@@ -723,7 +1070,7 @@ public final class StorageTransferServiceGrpc {
      * Returns the Google service account that is used by Storage Transfer
      * Service to access buckets in the project where transfers
      * run or in other projects. Each Google service account is associated
-     * with one Google Cloud Platform Console project. Users
+     * with one Google Cloud project. Users
      * should add this service account to the Google Cloud Storage bucket
      * ACLs to grant access to Storage Transfer Service. This service
      * account is created and owned by Storage Transfer Service and can
@@ -764,8 +1111,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
-     * field can be modified using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
+     * using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -854,7 +1201,7 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Attempts to start a new TransferOperation for the current TransferJob. A
      * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error wil be returned.
+     * is called while a TransferOperation is active, an error will be returned.
      * </pre>
      */
     public void runTransferJob(
@@ -862,6 +1209,91 @@ public final class StorageTransferServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTransferJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent pool resource.
+     * </pre>
+     */
+    public void createAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAgentPoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing agent pool resource.
+     * </pre>
+     */
+    public void updateAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAgentPoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an agent pool.
+     * </pre>
+     */
+    public void getAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAgentPoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists agent pools.
+     * </pre>
+     */
+    public void listAgentPools(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAgentPoolsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an agent pool.
+     * </pre>
+     */
+    public void deleteAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAgentPoolMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -896,7 +1328,7 @@ public final class StorageTransferServiceGrpc {
      * Returns the Google service account that is used by Storage Transfer
      * Service to access buckets in the project where transfers
      * run or in other projects. Each Google service account is associated
-     * with one Google Cloud Platform Console project. Users
+     * with one Google Cloud project. Users
      * should add this service account to the Google Cloud Storage bucket
      * ACLs to grant access to Storage Transfer Service. This service
      * account is created and owned by Storage Transfer Service and can
@@ -930,8 +1362,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
-     * field can be modified using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
+     * using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -1002,13 +1434,78 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Attempts to start a new TransferOperation for the current TransferJob. A
      * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error wil be returned.
+     * is called while a TransferOperation is active, an error will be returned.
      * </pre>
      */
     public com.google.longrunning.Operation runTransferJob(
         com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent pool resource.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool createAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing agent pool resource.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool updateAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an agent pool.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists agent pools.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse listAgentPools(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAgentPoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an agent pool.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentPoolMethod(), getCallOptions(), request);
     }
   }
 
@@ -1041,7 +1538,7 @@ public final class StorageTransferServiceGrpc {
      * Returns the Google service account that is used by Storage Transfer
      * Service to access buckets in the project where transfers
      * run or in other projects. Each Google service account is associated
-     * with one Google Cloud Platform Console project. Users
+     * with one Google Cloud project. Users
      * should add this service account to the Google Cloud Storage bucket
      * ACLs to grant access to Storage Transfer Service. This service
      * account is created and owned by Storage Transfer Service and can
@@ -1078,8 +1575,8 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Updates a transfer job. Updating a job's transfer spec does not affect
      * transfer operations that are running already.
-     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
-     * field can be modified using this RPC (for example, to set a job's status to
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status] field can be modified
+     * using this RPC (for example, to set a job's status to
      * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
      * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
      * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
@@ -1159,7 +1656,7 @@ public final class StorageTransferServiceGrpc {
      * <pre>
      * Attempts to start a new TransferOperation for the current TransferJob. A
      * TransferJob has a maximum of one active TransferOperation. If this method
-     * is called while a TransferOperation is active, an error wil be returned.
+     * is called while a TransferOperation is active, an error will be returned.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1167,6 +1664,80 @@ public final class StorageTransferServiceGrpc {
             com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTransferJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent pool resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        createAgentPool(
+            com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAgentPoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing agent pool resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        updateAgentPool(
+            com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAgentPoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an agent pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>
+        getAgentPool(
+            com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAgentPoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists agent pools.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>
+        listAgentPools(
+            com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAgentPoolsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an agent pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAgentPool(
+            com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAgentPoolMethod(), getCallOptions()), request);
     }
   }
 
@@ -1178,6 +1749,11 @@ public final class StorageTransferServiceGrpc {
   private static final int METHODID_PAUSE_TRANSFER_OPERATION = 5;
   private static final int METHODID_RESUME_TRANSFER_OPERATION = 6;
   private static final int METHODID_RUN_TRANSFER_JOB = 7;
+  private static final int METHODID_CREATE_AGENT_POOL = 8;
+  private static final int METHODID_UPDATE_AGENT_POOL = 9;
+  private static final int METHODID_GET_AGENT_POOL = 10;
+  private static final int METHODID_LIST_AGENT_POOLS = 11;
+  private static final int METHODID_DELETE_AGENT_POOL = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1248,6 +1824,39 @@ public final class StorageTransferServiceGrpc {
           serviceImpl.runTransferJob(
               (com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_AGENT_POOL:
+          serviceImpl.createAgentPool(
+              (com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AGENT_POOL:
+          serviceImpl.updateAgentPool(
+              (com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AGENT_POOL:
+          serviceImpl.getAgentPool(
+              (com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storagetransfer.v1.proto.TransferTypes.AgentPool>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AGENT_POOLS:
+          serviceImpl.listAgentPools(
+              (com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_AGENT_POOL:
+          serviceImpl.deleteAgentPool(
+              (com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1321,6 +1930,11 @@ public final class StorageTransferServiceGrpc {
                       .addMethod(getPauseTransferOperationMethod())
                       .addMethod(getResumeTransferOperationMethod())
                       .addMethod(getRunTransferJobMethod())
+                      .addMethod(getCreateAgentPoolMethod())
+                      .addMethod(getUpdateAgentPoolMethod())
+                      .addMethod(getGetAgentPoolMethod())
+                      .addMethod(getListAgentPoolsMethod())
+                      .addMethod(getDeleteAgentPoolMethod())
                       .build();
         }
       }

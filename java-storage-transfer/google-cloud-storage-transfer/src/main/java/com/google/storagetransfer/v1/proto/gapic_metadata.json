@@ -10,14 +10,26 @@
         "grpc": {
           "libraryClient": "StorageTransferServiceClient",
           "rpcs": {
+            "CreateAgentPool": {
+              "methods": ["createAgentPool", "createAgentPool", "createAgentPoolCallable"]
+            },
             "CreateTransferJob": {
               "methods": ["createTransferJob", "createTransferJobCallable"]
+            },
+            "DeleteAgentPool": {
+              "methods": ["deleteAgentPool", "deleteAgentPool", "deleteAgentPoolCallable"]
+            },
+            "GetAgentPool": {
+              "methods": ["getAgentPool", "getAgentPool", "getAgentPoolCallable"]
             },
             "GetGoogleServiceAccount": {
               "methods": ["getGoogleServiceAccount", "getGoogleServiceAccountCallable"]
             },
             "GetTransferJob": {
               "methods": ["getTransferJob", "getTransferJobCallable"]
+            },
+            "ListAgentPools": {
+              "methods": ["listAgentPools", "listAgentPools", "listAgentPoolsPagedCallable", "listAgentPoolsCallable"]
             },
             "ListTransferJobs": {
               "methods": ["listTransferJobs", "listTransferJobsPagedCallable", "listTransferJobsCallable"]
@@ -30,6 +42,9 @@
             },
             "RunTransferJob": {
               "methods": ["runTransferJobAsync", "runTransferJobOperationCallable", "runTransferJobCallable"]
+            },
+            "UpdateAgentPool": {
+              "methods": ["updateAgentPool", "updateAgentPool", "updateAgentPoolCallable"]
             },
             "UpdateTransferJob": {
               "methods": ["updateTransferJob", "updateTransferJobCallable"]
