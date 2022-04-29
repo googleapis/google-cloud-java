@@ -35,6 +35,14 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
     </dependency>
+
+    <!-- gax-grpc brings in Protobuf reflection configurations which are needed
+    for native image compilation. -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
