@@ -465,7 +465,7 @@ public class StreamWriter implements AutoCloseable {
     // We can close the stream connection and handle the remaining inflight requests.
     if (streamConnection != null) {
       this.streamConnection.close();
-      waitForDoneCallback();
+      waitForDoneCallback(1, TimeUnit.MINUTES);
     }
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.
@@ -491,9 +491,10 @@ public class StreamWriter implements AutoCloseable {
     }
   }
 
-  private void waitForDoneCallback() {
+  private void waitForDoneCallback(long duration, TimeUnit timeUnit) {
     log.fine("Waiting for done callback from stream connection. Stream: " + streamName);
-    while (true) {
+    long deadline = System.nanoTime() + timeUnit.toNanos(duration);
+    while (System.nanoTime() <= deadline) {
       this.lock.lock();
       try {
         if (connectionFinalStatus != null) {
@@ -505,6 +506,19 @@ public class StreamWriter implements AutoCloseable {
       }
       Uninterruptibles.sleepUninterruptibly(100, TimeUnit.MILLISECONDS);
     }
+    this.lock.lock();
+    try {
+      if (connectionFinalStatus == null) {
+        connectionFinalStatus =
+            new StatusRuntimeException(
+                Status.fromCode(Code.CANCELLED)
+                    .withDescription("Timeout waiting for DoneCallback."));
+      }
+    } finally {
+      this.lock.unlock();
+    }
+
+    return;
   }
 
   private AppendRowsRequest prepareRequestBasedOnPosition(
