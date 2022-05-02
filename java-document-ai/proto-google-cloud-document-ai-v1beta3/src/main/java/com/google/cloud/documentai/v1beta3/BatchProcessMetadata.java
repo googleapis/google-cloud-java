@@ -144,6 +144,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -528,6 +530,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
      * @return The humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -544,6 +549,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -702,6 +710,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -893,6 +903,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
      * @return The humanReviewOperation.
      */
     @java.lang.Override
@@ -920,6 +933,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Override
@@ -1841,6 +1857,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+       *     is deprecated. See
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
        * @return The humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1867,6 +1887,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+       *     is deprecated. See
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
        * @return The bytes for humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1893,6 +1917,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+       *     is deprecated. See
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
        * @param value The humanReviewOperation to set.
        * @return This builder for chaining.
        */
@@ -1918,6 +1946,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+       *     is deprecated. See
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1939,6 +1971,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
+       *     is deprecated. See
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=315
        * @param value The bytes for humanReviewOperation to set.
        * @return This builder for chaining.
        */

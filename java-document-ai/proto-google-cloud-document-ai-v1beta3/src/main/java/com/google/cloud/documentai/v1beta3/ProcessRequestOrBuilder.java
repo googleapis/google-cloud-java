@@ -131,6 +131,8 @@ public interface ProcessRequestOrBuilder
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=182
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -144,6 +146,8 @@ public interface ProcessRequestOrBuilder
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=182
    * @return The document.
    */
   @java.lang.Deprecated

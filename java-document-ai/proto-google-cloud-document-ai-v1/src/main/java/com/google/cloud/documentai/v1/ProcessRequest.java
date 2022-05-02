@@ -125,6 +125,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -898,8 +900,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 4) {
           inlineDocumentBuilder_.mergeFrom(value);
+        } else {
+          inlineDocumentBuilder_.setMessage(value);
         }
-        inlineDocumentBuilder_.setMessage(value);
       }
       sourceCase_ = 4;
       return this;
@@ -1107,8 +1110,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 5) {
           rawDocumentBuilder_.mergeFrom(value);
+        } else {
+          rawDocumentBuilder_.setMessage(value);
         }
-        rawDocumentBuilder_.setMessage(value);
       }
       sourceCase_ = 5;
       return this;

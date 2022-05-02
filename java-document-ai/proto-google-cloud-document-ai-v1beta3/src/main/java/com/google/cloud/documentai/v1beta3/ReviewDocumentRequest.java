@@ -134,6 +134,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -457,6 +459,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=518
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -473,6 +477,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=518
    * @return The document.
    */
   @java.lang.Override
@@ -1104,8 +1110,9 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       } else {
         if (sourceCase_ == 4) {
           inlineDocumentBuilder_.mergeFrom(value);
+        } else {
+          inlineDocumentBuilder_.setMessage(value);
         }
-        inlineDocumentBuilder_.setMessage(value);
       }
       sourceCase_ = 4;
       return this;
@@ -1337,6 +1344,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=518
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1352,6 +1361,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=518
      * @return The document.
      */
     @java.lang.Deprecated

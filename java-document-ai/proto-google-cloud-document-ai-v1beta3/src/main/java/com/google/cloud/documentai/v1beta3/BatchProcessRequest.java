@@ -164,6 +164,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -329,6 +331,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1193,6 +1197,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1926,6 +1932,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1944,6 +1952,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -3131,6 +3141,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
@@ -3148,6 +3160,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=276
      * @return The outputConfig.
      */
     @java.lang.Deprecated

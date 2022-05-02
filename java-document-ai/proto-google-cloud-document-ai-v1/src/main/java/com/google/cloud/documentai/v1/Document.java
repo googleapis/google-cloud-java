@@ -91,8 +91,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              sourceCase_ = 2;
               source_ = input.readBytes();
+              sourceCase_ = 2;
               break;
             }
           case 26:
@@ -226,6 +226,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -391,6 +393,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1418,6 +1422,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1559,6 +1565,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1664,7 +1672,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (size_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(size_) != 0) {
           output.writeFloat(1, size_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -1679,7 +1687,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (size_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(size_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, size_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -5158,6 +5166,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5347,6 +5357,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5470,10 +5482,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (width_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(width_) != 0) {
           output.writeFloat(1, width_);
         }
-        if (height_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(height_) != 0) {
           output.writeFloat(2, height_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -5488,10 +5500,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (width_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(width_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, width_);
         }
-        if (height_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(height_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, height_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -6228,6 +6240,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7184,6 +7198,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -8156,6 +8172,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -8573,7 +8591,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (textAnchor_ != null) {
           output.writeMessage(1, getTextAnchor());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
         if (boundingPoly_ != null) {
@@ -8597,7 +8615,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (textAnchor_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTextAnchor());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
         if (boundingPoly_ != null) {
@@ -9823,6 +9841,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -11557,6 +11577,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -13291,6 +13313,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -15085,6 +15109,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -15213,6 +15239,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -17902,6 +17930,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -19356,6 +19386,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -21106,6 +21138,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -21281,6 +21315,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -22446,6 +22482,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -26512,6 +26550,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -29158,6 +29198,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -29270,7 +29312,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
         unknownFields.writeTo(output);
@@ -29285,7 +29327,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
         size += unknownFields.getSerializedSize();
@@ -36483,10 +36525,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The type.
      */
@@ -36495,10 +36537,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for type.
      */
@@ -37003,6 +37045,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -37378,8 +37422,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 }
               case 48:
                 {
-                  structuredValueCase_ = 6;
                   structuredValue_ = input.readBool();
+                  structuredValueCase_ = 6;
                   break;
                 }
               default:
@@ -37393,6 +37437,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -38401,8 +38447,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (structuredValueCase_ == 2) {
               moneyValueBuilder_.mergeFrom(value);
+            } else {
+              moneyValueBuilder_.setMessage(value);
             }
-            moneyValueBuilder_.setMessage(value);
           }
           structuredValueCase_ = 2;
           return this;
@@ -38613,8 +38660,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (structuredValueCase_ == 3) {
               dateValueBuilder_.mergeFrom(value);
+            } else {
+              dateValueBuilder_.setMessage(value);
             }
-            dateValueBuilder_.setMessage(value);
           }
           structuredValueCase_ = 3;
           return this;
@@ -38825,8 +38873,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (structuredValueCase_ == 4) {
               datetimeValueBuilder_.mergeFrom(value);
+            } else {
+              datetimeValueBuilder_.setMessage(value);
             }
-            datetimeValueBuilder_.setMessage(value);
           }
           structuredValueCase_ = 4;
           return this;
@@ -39040,8 +39089,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (structuredValueCase_ == 5) {
               addressValueBuilder_.mergeFrom(value);
+            } else {
+              addressValueBuilder_.setMessage(value);
             }
-            addressValueBuilder_.setMessage(value);
           }
           structuredValueCase_ = 5;
           return this;
@@ -39481,10 +39531,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The type.
      */
@@ -39504,10 +39554,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for type.
      */
@@ -39998,7 +40048,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mentionId_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(5, confidence_);
       }
       if (pageAnchor_ != null) {
@@ -40040,7 +40090,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mentionId_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
       }
       if (pageAnchor_ != null) {
@@ -40771,10 +40821,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The type.
        */
@@ -40793,10 +40843,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for type.
        */
@@ -40815,10 +40865,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The type to set.
        * @return This builder for chaining.
@@ -40836,10 +40886,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -40853,10 +40903,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for type to set.
        * @return This builder for chaining.
@@ -42589,6 +42639,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -43671,6 +43723,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -43807,6 +43861,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -45645,6 +45701,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -45737,6 +45795,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
+       *     See google/cloud/documentai/v1/document.proto;l=623
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -45753,6 +45813,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
+       *     See google/cloud/documentai/v1/document.proto;l=623
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -45920,6 +45982,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -46322,6 +46386,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
+       *     See google/cloud/documentai/v1/document.proto;l=623
        * @return The layoutId.
        */
       @java.lang.Override
@@ -46349,6 +46415,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
+       *     See google/cloud/documentai/v1/document.proto;l=623
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -46470,7 +46538,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (boundingPoly_ != null) {
           output.writeMessage(4, getBoundingPoly());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(5, confidence_);
         }
         unknownFields.writeTo(output);
@@ -46497,7 +46565,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (boundingPoly_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBoundingPoly());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
         }
         size += unknownFields.getSerializedSize();
@@ -47038,6 +47106,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=623
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -47064,6 +47134,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=623
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -47090,6 +47162,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=623
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -47115,6 +47189,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=623
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -47136,6 +47212,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=623
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -48377,6 +48455,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
+     *     google/cloud/documentai/v1/document.proto;l=687
      * @return The id.
      */
     @java.lang.Deprecated
@@ -48557,6 +48637,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -48877,6 +48959,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=653
        * @return The id.
        */
       @java.lang.Deprecated
@@ -48959,6 +49043,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -49031,6 +49117,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=653
        * @return The id.
        */
       @java.lang.Override
@@ -49512,6 +49600,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
+         *     google/cloud/documentai/v1/document.proto;l=653
          * @return The id.
          */
         @java.lang.Override
@@ -49528,6 +49618,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
+         *     google/cloud/documentai/v1/document.proto;l=653
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -49547,6 +49639,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
+         * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
+         *     google/cloud/documentai/v1/document.proto;l=653
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -49640,6 +49734,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
+     *     google/cloud/documentai/v1/document.proto;l=687
      * @return The id.
      */
     @java.lang.Override
@@ -50237,6 +50333,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=687
        * @return The id.
        */
       @java.lang.Override
@@ -50254,6 +50352,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=687
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -50274,6 +50374,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
+       *     google/cloud/documentai/v1/document.proto;l=687
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -51163,6 +51265,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -51324,6 +51428,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -54145,6 +54251,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

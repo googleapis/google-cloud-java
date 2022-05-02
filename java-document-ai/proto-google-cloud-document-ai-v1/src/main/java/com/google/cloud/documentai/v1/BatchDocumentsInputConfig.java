@@ -111,6 +111,8 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -783,8 +785,9 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       } else {
         if (sourceCase_ == 1) {
           gcsPrefixBuilder_.mergeFrom(value);
+        } else {
+          gcsPrefixBuilder_.setMessage(value);
         }
-        gcsPrefixBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;
@@ -992,8 +995,9 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       } else {
         if (sourceCase_ == 2) {
           gcsDocumentsBuilder_.mergeFrom(value);
+        } else {
+          gcsDocumentsBuilder_.setMessage(value);
         }
-        gcsDocumentsBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;

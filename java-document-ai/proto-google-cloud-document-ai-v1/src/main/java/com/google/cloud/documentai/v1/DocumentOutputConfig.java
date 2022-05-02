@@ -103,6 +103,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -226,6 +228,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1379,8 +1383,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (destinationCase_ == 1) {
           gcsOutputConfigBuilder_.mergeFrom(value);
+        } else {
+          gcsOutputConfigBuilder_.setMessage(value);
         }
-        gcsOutputConfigBuilder_.setMessage(value);
       }
       destinationCase_ = 1;
       return this;

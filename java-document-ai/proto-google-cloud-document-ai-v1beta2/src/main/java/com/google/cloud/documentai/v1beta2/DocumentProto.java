@@ -142,7 +142,7 @@ public final class DocumentProto {
           + "le/cloud/documentai/v1beta2/geometry.pro"
           + "to\032\027google/rpc/status.proto\032\027google/type"
           + "/color.proto\032\034google/api/annotations.pro"
-          + "to\"\323+\n\010Document\022\r\n\003uri\030\001 \001(\tH\000\022\021\n\007conten"
+          + "to\"\373*\n\010Document\022\r\n\003uri\030\001 \001(\tH\000\022\021\n\007conten"
           + "t\030\002 \001(\014H\000\022\021\n\tmime_type\030\003 \001(\t\022\014\n\004text\030\004 \001"
           + "(\t\022D\n\013text_styles\030\005 \003(\0132/.google.cloud.d"
           + "ocumentai.v1beta2.Document.Style\022=\n\005page"
@@ -256,38 +256,36 @@ public final class DocumentProto {
           + "guage\022\022\n\nvalue_type\030\005 \001(\t\022\032\n\022corrected_k"
           + "ey_text\030\006 \001(\t\022\034\n\024corrected_value_text\030\007 "
           + "\001(\t\032=\n\020DetectedLanguage\022\025\n\rlanguage_code"
-          + "\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\032\342\002\n\006Entity\022I\n"
+          + "\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\032\212\002\n\006Entity\022I\n"
           + "\013text_anchor\030\001 \001(\01324.google.cloud.docume"
-          + "ntai.v1beta2.Document.TextAnchor\022\014\n\004type"
-          + "\030\002 \001(\t\022\024\n\014mention_text\030\003 \001(\t\022\022\n\nmention_"
-          + "id\030\004 \001(\t\022\027\n\nconfidence\030\005 \001(\002B\003\340A\001\022N\n\013pag"
-          + "e_anchor\030\006 \001(\01324.google.cloud.documentai"
-          + ".v1beta2.Document.PageAnchorB\003\340A\001\022\017\n\002id\030"
-          + "\007 \001(\tB\003\340A\001\022[\n\037bounding_poly_for_demo_fro"
-          + "ntend\030\010 \001(\0132-.google.cloud.documentai.v1"
-          + "beta2.BoundingPolyB\003\340A\001\032I\n\016EntityRelatio"
-          + "n\022\022\n\nsubject_id\030\001 \001(\t\022\021\n\tobject_id\030\002 \001(\t"
-          + "\022\020\n\010relation\030\003 \001(\t\032\255\001\n\nTextAnchor\022W\n\rtex"
-          + "t_segments\030\001 \003(\0132@.google.cloud.document"
-          + "ai.v1beta2.Document.TextAnchor.TextSegme"
-          + "nt\022\017\n\007content\030\002 \001(\t\0325\n\013TextSegment\022\023\n\013st"
-          + "art_index\030\001 \001(\003\022\021\n\tend_index\030\002 \001(\003\032\201\003\n\nP"
-          + "ageAnchor\022O\n\tpage_refs\030\001 \003(\0132<.google.cl"
-          + "oud.documentai.v1beta2.Document.PageAnch"
-          + "or.PageRef\032\241\002\n\007PageRef\022\021\n\004page\030\001 \001(\003B\003\340A"
-          + "\002\022a\n\013layout_type\030\002 \001(\0162G.google.cloud.do"
-          + "cumentai.v1beta2.Document.PageAnchor.Pag"
-          + "eRef.LayoutTypeB\003\340A\001\022\026\n\tlayout_id\030\003 \001(\tB"
-          + "\003\340A\001\"\207\001\n\nLayoutType\022\033\n\027LAYOUT_TYPE_UNSPE"
-          + "CIFIED\020\000\022\t\n\005BLOCK\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LI"
-          + "NE\020\003\022\t\n\005TOKEN\020\004\022\022\n\016VISUAL_ELEMENT\020\005\022\t\n\005T"
-          + "ABLE\020\006\022\016\n\nFORM_FIELD\020\007B\010\n\006sourceB\352\001\n#com"
-          + ".google.cloud.documentai.v1beta2B\rDocume"
-          + "ntProtoP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/documentai/v1beta2;docume"
-          + "ntai\252\002\037Google.Cloud.DocumentAI.V1Beta2\312\002"
-          + "\037Google\\Cloud\\DocumentAI\\V1beta2\352\002\"Googl"
-          + "e::Cloud::DocumentAI::V1beta2b\006proto3"
+          + "ntai.v1beta2.Document.TextAnchor\022\021\n\004type"
+          + "\030\002 \001(\tB\003\340A\002\022\024\n\014mention_text\030\003 \001(\t\022\022\n\nmen"
+          + "tion_id\030\004 \001(\t\022\027\n\nconfidence\030\005 \001(\002B\003\340A\001\022N"
+          + "\n\013page_anchor\030\006 \001(\01324.google.cloud.docum"
+          + "entai.v1beta2.Document.PageAnchorB\003\340A\001\022\017"
+          + "\n\002id\030\007 \001(\tB\003\340A\001\032I\n\016EntityRelation\022\022\n\nsub"
+          + "ject_id\030\001 \001(\t\022\021\n\tobject_id\030\002 \001(\t\022\020\n\010rela"
+          + "tion\030\003 \001(\t\032\255\001\n\nTextAnchor\022W\n\rtext_segmen"
+          + "ts\030\001 \003(\0132@.google.cloud.documentai.v1bet"
+          + "a2.Document.TextAnchor.TextSegment\022\017\n\007co"
+          + "ntent\030\002 \001(\t\0325\n\013TextSegment\022\023\n\013start_inde"
+          + "x\030\001 \001(\003\022\021\n\tend_index\030\002 \001(\003\032\201\003\n\nPageAncho"
+          + "r\022O\n\tpage_refs\030\001 \003(\0132<.google.cloud.docu"
+          + "mentai.v1beta2.Document.PageAnchor.PageR"
+          + "ef\032\241\002\n\007PageRef\022\021\n\004page\030\001 \001(\003B\003\340A\002\022a\n\013lay"
+          + "out_type\030\002 \001(\0162G.google.cloud.documentai"
+          + ".v1beta2.Document.PageAnchor.PageRef.Lay"
+          + "outTypeB\003\340A\001\022\026\n\tlayout_id\030\003 \001(\tB\003\340A\001\"\207\001\n"
+          + "\nLayoutType\022\033\n\027LAYOUT_TYPE_UNSPECIFIED\020\000"
+          + "\022\t\n\005BLOCK\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005"
+          + "TOKEN\020\004\022\022\n\016VISUAL_ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016"
+          + "\n\nFORM_FIELD\020\007B\010\n\006sourceB\352\001\n#com.google."
+          + "cloud.documentai.v1beta2B\rDocumentProtoP"
+          + "\001ZIgoogle.golang.org/genproto/googleapis"
+          + "/cloud/documentai/v1beta2;documentai\252\002\037G"
+          + "oogle.Cloud.DocumentAI.V1Beta2\312\002\037Google\\"
+          + "Cloud\\DocumentAI\\V1beta2\352\002\"Google::Cloud"
+          + "::DocumentAI::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -518,14 +516,7 @@ public final class DocumentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta2_Document_Entity_descriptor,
             new java.lang.String[] {
-              "TextAnchor",
-              "Type",
-              "MentionText",
-              "MentionId",
-              "Confidence",
-              "PageAnchor",
-              "Id",
-              "BoundingPolyForDemoFrontend",
+              "TextAnchor", "Type", "MentionText", "MentionId", "Confidence", "PageAnchor", "Id",
             });
     internal_static_google_cloud_documentai_v1beta2_Document_EntityRelation_descriptor =
         internal_static_google_cloud_documentai_v1beta2_Document_descriptor.getNestedTypes().get(5);

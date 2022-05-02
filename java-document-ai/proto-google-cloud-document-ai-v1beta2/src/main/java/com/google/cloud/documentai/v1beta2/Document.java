@@ -90,8 +90,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              sourceCase_ = 2;
               source_ = input.readBytes();
+              sourceCase_ = 2;
               break;
             }
           case 26:
@@ -216,6 +216,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -377,6 +379,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1200,6 +1204,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1437,7 +1443,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(3, confidence_);
       }
       unknownFields.writeTo(output);
@@ -1455,7 +1461,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (sourceCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, confidence_);
       }
       size += unknownFields.getSerializedSize();
@@ -2564,6 +2570,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2705,6 +2713,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2810,7 +2820,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (size_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(size_) != 0) {
           output.writeFloat(1, size_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -2825,7 +2835,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (size_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(size_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, size_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -6080,6 +6090,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6263,6 +6275,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6386,10 +6400,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (width_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(width_) != 0) {
           output.writeFloat(1, width_);
         }
-        if (height_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(height_) != 0) {
           output.writeFloat(2, height_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -6404,10 +6418,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (width_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(width_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, width_);
         }
-        if (height_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(height_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, height_);
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
@@ -7255,6 +7269,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7715,7 +7731,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (textAnchor_ != null) {
           output.writeMessage(1, getTextAnchor());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
         if (boundingPoly_ != null) {
@@ -7742,7 +7758,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (textAnchor_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTextAnchor());
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
         if (boundingPoly_ != null) {
@@ -9015,6 +9031,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -10429,6 +10447,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -11850,6 +11870,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -13325,6 +13347,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -13454,6 +13478,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -15935,6 +15961,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -17687,6 +17715,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -17865,6 +17895,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -19056,6 +19088,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -23184,6 +23218,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -25910,6 +25946,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -26022,7 +26060,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
         unknownFields.writeTo(output);
@@ -26037,7 +26075,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
         }
-        if (confidence_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
         size += unknownFields.getSerializedSize();
@@ -31815,10 +31853,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The type.
      */
@@ -31827,10 +31865,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for type.
      */
@@ -31969,51 +32007,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString getIdBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the boundingPolyForDemoFrontend field is set.
-     */
-    boolean hasBoundingPolyForDemoFrontend();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The boundingPolyForDemoFrontend.
-     */
-    com.google.cloud.documentai.v1beta2.BoundingPoly getBoundingPolyForDemoFrontend();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder
-        getBoundingPolyForDemoFrontendOrBuilder();
   }
   /**
    *
@@ -32138,23 +32131,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 id_ = s;
                 break;
               }
-            case 66:
-              {
-                com.google.cloud.documentai.v1beta2.BoundingPoly.Builder subBuilder = null;
-                if (boundingPolyForDemoFrontend_ != null) {
-                  subBuilder = boundingPolyForDemoFrontend_.toBuilder();
-                }
-                boundingPolyForDemoFrontend_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta2.BoundingPoly.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(boundingPolyForDemoFrontend_);
-                  boundingPolyForDemoFrontend_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -32166,6 +32142,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -32247,10 +32225,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The type.
      */
@@ -32270,10 +32248,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema e.g. `Address`.
      * </pre>
      *
-     * <code>string type = 2;</code>
+     * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for type.
      */
@@ -32515,64 +32493,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    public static final int BOUNDING_POLY_FOR_DEMO_FRONTEND_FIELD_NUMBER = 8;
-    private com.google.cloud.documentai.v1beta2.BoundingPoly boundingPolyForDemoFrontend_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the boundingPolyForDemoFrontend field is set.
-     */
-    @java.lang.Override
-    public boolean hasBoundingPolyForDemoFrontend() {
-      return boundingPolyForDemoFrontend_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The boundingPolyForDemoFrontend.
-     */
-    @java.lang.Override
-    public com.google.cloud.documentai.v1beta2.BoundingPoly getBoundingPolyForDemoFrontend() {
-      return boundingPolyForDemoFrontend_ == null
-          ? com.google.cloud.documentai.v1beta2.BoundingPoly.getDefaultInstance()
-          : boundingPolyForDemoFrontend_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-     * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder
-        getBoundingPolyForDemoFrontendOrBuilder() {
-      return getBoundingPolyForDemoFrontend();
-    }
-
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -32599,7 +32519,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mentionId_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(5, confidence_);
       }
       if (pageAnchor_ != null) {
@@ -32607,9 +32527,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, id_);
-      }
-      if (boundingPolyForDemoFrontend_ != null) {
-        output.writeMessage(8, getBoundingPolyForDemoFrontend());
       }
       unknownFields.writeTo(output);
     }
@@ -32632,7 +32549,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mentionId_);
       }
-      if (confidence_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
       }
       if (pageAnchor_ != null) {
@@ -32640,11 +32557,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, id_);
-      }
-      if (boundingPolyForDemoFrontend_ != null) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                8, getBoundingPolyForDemoFrontend());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -32676,11 +32588,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getPageAnchor().equals(other.getPageAnchor())) return false;
       }
       if (!getId().equals(other.getId())) return false;
-      if (hasBoundingPolyForDemoFrontend() != other.hasBoundingPolyForDemoFrontend()) return false;
-      if (hasBoundingPolyForDemoFrontend()) {
-        if (!getBoundingPolyForDemoFrontend().equals(other.getBoundingPolyForDemoFrontend()))
-          return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -32710,10 +32617,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      if (hasBoundingPolyForDemoFrontend()) {
-        hash = (37 * hash) + BOUNDING_POLY_FOR_DEMO_FRONTEND_FIELD_NUMBER;
-        hash = (53 * hash) + getBoundingPolyForDemoFrontend().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -32885,12 +32788,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         id_ = "";
 
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          boundingPolyForDemoFrontend_ = null;
-        } else {
-          boundingPolyForDemoFrontend_ = null;
-          boundingPolyForDemoFrontendBuilder_ = null;
-        }
         return this;
       }
 
@@ -32933,11 +32830,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           result.pageAnchor_ = pageAnchorBuilder_.build();
         }
         result.id_ = id_;
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          result.boundingPolyForDemoFrontend_ = boundingPolyForDemoFrontend_;
-        } else {
-          result.boundingPolyForDemoFrontend_ = boundingPolyForDemoFrontendBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -33014,9 +32906,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
-        }
-        if (other.hasBoundingPolyForDemoFrontend()) {
-          mergeBoundingPolyForDemoFrontend(other.getBoundingPolyForDemoFrontend());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -33251,10 +33140,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The type.
        */
@@ -33273,10 +33162,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for type.
        */
@@ -33295,10 +33184,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The type to set.
        * @return This builder for chaining.
@@ -33316,10 +33205,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -33333,10 +33222,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema e.g. `Address`.
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for type to set.
        * @return This builder for chaining.
@@ -33943,224 +33832,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.cloud.documentai.v1beta2.BoundingPoly boundingPolyForDemoFrontend_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.documentai.v1beta2.BoundingPoly,
-              com.google.cloud.documentai.v1beta2.BoundingPoly.Builder,
-              com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder>
-          boundingPolyForDemoFrontendBuilder_;
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       *
-       * @return Whether the boundingPolyForDemoFrontend field is set.
-       */
-      public boolean hasBoundingPolyForDemoFrontend() {
-        return boundingPolyForDemoFrontendBuilder_ != null || boundingPolyForDemoFrontend_ != null;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       *
-       * @return The boundingPolyForDemoFrontend.
-       */
-      public com.google.cloud.documentai.v1beta2.BoundingPoly getBoundingPolyForDemoFrontend() {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          return boundingPolyForDemoFrontend_ == null
-              ? com.google.cloud.documentai.v1beta2.BoundingPoly.getDefaultInstance()
-              : boundingPolyForDemoFrontend_;
-        } else {
-          return boundingPolyForDemoFrontendBuilder_.getMessage();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public Builder setBoundingPolyForDemoFrontend(
-          com.google.cloud.documentai.v1beta2.BoundingPoly value) {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          boundingPolyForDemoFrontend_ = value;
-          onChanged();
-        } else {
-          boundingPolyForDemoFrontendBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public Builder setBoundingPolyForDemoFrontend(
-          com.google.cloud.documentai.v1beta2.BoundingPoly.Builder builderForValue) {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          boundingPolyForDemoFrontend_ = builderForValue.build();
-          onChanged();
-        } else {
-          boundingPolyForDemoFrontendBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public Builder mergeBoundingPolyForDemoFrontend(
-          com.google.cloud.documentai.v1beta2.BoundingPoly value) {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          if (boundingPolyForDemoFrontend_ != null) {
-            boundingPolyForDemoFrontend_ =
-                com.google.cloud.documentai.v1beta2.BoundingPoly.newBuilder(
-                        boundingPolyForDemoFrontend_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            boundingPolyForDemoFrontend_ = value;
-          }
-          onChanged();
-        } else {
-          boundingPolyForDemoFrontendBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public Builder clearBoundingPolyForDemoFrontend() {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          boundingPolyForDemoFrontend_ = null;
-          onChanged();
-        } else {
-          boundingPolyForDemoFrontend_ = null;
-          boundingPolyForDemoFrontendBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public com.google.cloud.documentai.v1beta2.BoundingPoly.Builder
-          getBoundingPolyForDemoFrontendBuilder() {
-
-        onChanged();
-        return getBoundingPolyForDemoFrontendFieldBuilder().getBuilder();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      public com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder
-          getBoundingPolyForDemoFrontendOrBuilder() {
-        if (boundingPolyForDemoFrontendBuilder_ != null) {
-          return boundingPolyForDemoFrontendBuilder_.getMessageOrBuilder();
-        } else {
-          return boundingPolyForDemoFrontend_ == null
-              ? com.google.cloud.documentai.v1beta2.BoundingPoly.getDefaultInstance()
-              : boundingPolyForDemoFrontend_;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Temporary field to store the bounding poly for short-term POCs. Used by
-       * the frontend only. Do not use before you talk to ybo&#64; and lukasr&#64;.
-       * </pre>
-       *
-       * <code>
-       * .google.cloud.documentai.v1beta2.BoundingPoly bounding_poly_for_demo_frontend = 8 [(.google.api.field_behavior) = OPTIONAL];
-       * </code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.documentai.v1beta2.BoundingPoly,
-              com.google.cloud.documentai.v1beta2.BoundingPoly.Builder,
-              com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder>
-          getBoundingPolyForDemoFrontendFieldBuilder() {
-        if (boundingPolyForDemoFrontendBuilder_ == null) {
-          boundingPolyForDemoFrontendBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.cloud.documentai.v1beta2.BoundingPoly,
-                  com.google.cloud.documentai.v1beta2.BoundingPoly.Builder,
-                  com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder>(
-                  getBoundingPolyForDemoFrontend(), getParentForChildren(), isClean());
-          boundingPolyForDemoFrontend_ = null;
-        }
-        return boundingPolyForDemoFrontendBuilder_;
-      }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -34379,6 +34050,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -35462,6 +35135,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -35593,6 +35268,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -37406,6 +37083,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -37593,6 +37272,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);

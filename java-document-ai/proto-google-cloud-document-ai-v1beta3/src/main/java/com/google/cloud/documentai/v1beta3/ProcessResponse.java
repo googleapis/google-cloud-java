@@ -121,6 +121,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -209,6 +211,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
    * @return The humanReviewOperation.
    */
   @java.lang.Override
@@ -236,6 +240,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
    * @return The bytes for humanReviewOperation.
    */
   @java.lang.Override
@@ -883,6 +889,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
      * @return The humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -909,6 +917,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -935,6 +945,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
      * @param value The humanReviewOperation to set.
      * @return This builder for chaining.
      */
@@ -960,6 +972,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -981,6 +995,8 @@ public final class ProcessResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>string human_review_operation = 2 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
+     *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=235
      * @param value The bytes for humanReviewOperation to set.
      * @return This builder for chaining.
      */
