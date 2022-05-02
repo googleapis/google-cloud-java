@@ -1,0 +1,10 @@
+[
+  {
+    "name":"io.netty.buffer.AbstractByteBufAllocator",
+    "queryAllDeclaredMethods":true
+  },
+  {
+    "name":"org.apache.arrow.memory.DefaultAllocationManagerFactory",
+    "fields":[{"name":"FACTORY"}]
+  }
+]
