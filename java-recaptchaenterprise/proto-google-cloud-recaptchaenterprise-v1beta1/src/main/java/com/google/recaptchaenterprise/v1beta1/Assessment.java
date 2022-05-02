@@ -142,6 +142,42 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
               input.popLimit(oldLimit);
               break;
             }
+          case 58:
+            {
+              com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder subBuilder =
+                  null;
+              if (passwordLeakVerification_ != null) {
+                subBuilder = passwordLeakVerification_.toBuilder();
+              }
+              passwordLeakVerification_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(passwordLeakVerification_);
+                passwordLeakVerification_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 66:
+            {
+              com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder subBuilder =
+                  null;
+              if (accountDefenderAssessment_ != null) {
+                subBuilder = accountDefenderAssessment_.toBuilder();
+              }
+              accountDefenderAssessment_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(accountDefenderAssessment_);
+                accountDefenderAssessment_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -185,7 +221,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * LINT.IfChange(classification_reason)
    * Reasons contributing to the risk analysis verdict.
    * </pre>
    *
@@ -702,6 +737,131 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   private int reasonsMemoizedSerializedSize;
 
+  public static final int PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 7;
+  private com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification passwordLeakVerification_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   *
+   * @return Whether the passwordLeakVerification field is set.
+   */
+  @java.lang.Override
+  public boolean hasPasswordLeakVerification() {
+    return passwordLeakVerification_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   *
+   * @return The passwordLeakVerification.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification
+      getPasswordLeakVerification() {
+    return passwordLeakVerification_ == null
+        ? com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.getDefaultInstance()
+        : passwordLeakVerification_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder
+      getPasswordLeakVerificationOrBuilder() {
+    return getPasswordLeakVerification();
+  }
+
+  public static final int ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER = 8;
+  private com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
+      accountDefenderAssessment_;
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   *
+   * @return Whether the accountDefenderAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccountDefenderAssessment() {
+    return accountDefenderAssessment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   *
+   * @return The accountDefenderAssessment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
+      getAccountDefenderAssessment() {
+    return accountDefenderAssessment_ == null
+        ? com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.getDefaultInstance()
+        : accountDefenderAssessment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder
+      getAccountDefenderAssessmentOrBuilder() {
+    return getAccountDefenderAssessment();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -736,6 +896,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reasons_.size(); i++) {
       output.writeEnumNoTag(reasons_.get(i));
     }
+    if (passwordLeakVerification_ != null) {
+      output.writeMessage(7, getPasswordLeakVerification());
+    }
+    if (accountDefenderAssessment_ != null) {
+      output.writeMessage(8, getAccountDefenderAssessment());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -769,6 +935,16 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       reasonsMemoizedSerializedSize = dataSize;
     }
+    if (passwordLeakVerification_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getPasswordLeakVerification());
+    }
+    if (accountDefenderAssessment_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getAccountDefenderAssessment());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -797,6 +973,15 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!getTokenProperties().equals(other.getTokenProperties())) return false;
     }
     if (!reasons_.equals(other.reasons_)) return false;
+    if (hasPasswordLeakVerification() != other.hasPasswordLeakVerification()) return false;
+    if (hasPasswordLeakVerification()) {
+      if (!getPasswordLeakVerification().equals(other.getPasswordLeakVerification())) return false;
+    }
+    if (hasAccountDefenderAssessment() != other.hasAccountDefenderAssessment()) return false;
+    if (hasAccountDefenderAssessment()) {
+      if (!getAccountDefenderAssessment().equals(other.getAccountDefenderAssessment()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -823,6 +1008,14 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (getReasonsCount() > 0) {
       hash = (37 * hash) + REASONS_FIELD_NUMBER;
       hash = (53 * hash) + reasons_.hashCode();
+    }
+    if (hasPasswordLeakVerification()) {
+      hash = (37 * hash) + PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPasswordLeakVerification().hashCode();
+    }
+    if (hasAccountDefenderAssessment()) {
+      hash = (37 * hash) + ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountDefenderAssessment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -987,6 +1180,18 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (passwordLeakVerificationBuilder_ == null) {
+        passwordLeakVerification_ = null;
+      } else {
+        passwordLeakVerification_ = null;
+        passwordLeakVerificationBuilder_ = null;
+      }
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = null;
+      } else {
+        accountDefenderAssessment_ = null;
+        accountDefenderAssessmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -1032,6 +1237,16 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.reasons_ = reasons_;
+      if (passwordLeakVerificationBuilder_ == null) {
+        result.passwordLeakVerification_ = passwordLeakVerification_;
+      } else {
+        result.passwordLeakVerification_ = passwordLeakVerificationBuilder_.build();
+      }
+      if (accountDefenderAssessmentBuilder_ == null) {
+        result.accountDefenderAssessment_ = accountDefenderAssessment_;
+      } else {
+        result.accountDefenderAssessment_ = accountDefenderAssessmentBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1104,6 +1319,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           reasons_.addAll(other.reasons_);
         }
         onChanged();
+      }
+      if (other.hasPasswordLeakVerification()) {
+        mergePasswordLeakVerification(other.getPasswordLeakVerification());
+      }
+      if (other.hasAccountDefenderAssessment()) {
+        mergeAccountDefenderAssessment(other.getAccountDefenderAssessment());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1949,6 +2170,464 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification
+        passwordLeakVerification_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification,
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder,
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder>
+        passwordLeakVerificationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     *
+     * @return Whether the passwordLeakVerification field is set.
+     */
+    public boolean hasPasswordLeakVerification() {
+      return passwordLeakVerificationBuilder_ != null || passwordLeakVerification_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     *
+     * @return The passwordLeakVerification.
+     */
+    public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification
+        getPasswordLeakVerification() {
+      if (passwordLeakVerificationBuilder_ == null) {
+        return passwordLeakVerification_ == null
+            ? com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.getDefaultInstance()
+            : passwordLeakVerification_;
+      } else {
+        return passwordLeakVerificationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public Builder setPasswordLeakVerification(
+        com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification value) {
+      if (passwordLeakVerificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        passwordLeakVerification_ = value;
+        onChanged();
+      } else {
+        passwordLeakVerificationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public Builder setPasswordLeakVerification(
+        com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder builderForValue) {
+      if (passwordLeakVerificationBuilder_ == null) {
+        passwordLeakVerification_ = builderForValue.build();
+        onChanged();
+      } else {
+        passwordLeakVerificationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public Builder mergePasswordLeakVerification(
+        com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification value) {
+      if (passwordLeakVerificationBuilder_ == null) {
+        if (passwordLeakVerification_ != null) {
+          passwordLeakVerification_ =
+              com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.newBuilder(
+                      passwordLeakVerification_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          passwordLeakVerification_ = value;
+        }
+        onChanged();
+      } else {
+        passwordLeakVerificationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public Builder clearPasswordLeakVerification() {
+      if (passwordLeakVerificationBuilder_ == null) {
+        passwordLeakVerification_ = null;
+        onChanged();
+      } else {
+        passwordLeakVerification_ = null;
+        passwordLeakVerificationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder
+        getPasswordLeakVerificationBuilder() {
+
+      onChanged();
+      return getPasswordLeakVerificationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder
+        getPasswordLeakVerificationOrBuilder() {
+      if (passwordLeakVerificationBuilder_ != null) {
+        return passwordLeakVerificationBuilder_.getMessageOrBuilder();
+      } else {
+        return passwordLeakVerification_ == null
+            ? com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.getDefaultInstance()
+            : passwordLeakVerification_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the user's credentials used to check for leaks.
+     * This feature is part of the Early Access Program (EAP). Exercise caution,
+     * and do not deploy integrations based on this feature in a production
+     * environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification,
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder,
+            com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder>
+        getPasswordLeakVerificationFieldBuilder() {
+      if (passwordLeakVerificationBuilder_ == null) {
+        passwordLeakVerificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification,
+                com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification.Builder,
+                com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder>(
+                getPasswordLeakVerification(), getParentForChildren(), isClean());
+        passwordLeakVerification_ = null;
+      }
+      return passwordLeakVerificationBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
+        accountDefenderAssessment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment,
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder,
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder>
+        accountDefenderAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     *
+     * @return Whether the accountDefenderAssessment field is set.
+     */
+    public boolean hasAccountDefenderAssessment() {
+      return accountDefenderAssessmentBuilder_ != null || accountDefenderAssessment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     *
+     * @return The accountDefenderAssessment.
+     */
+    public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment
+        getAccountDefenderAssessment() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        return accountDefenderAssessment_ == null
+            ? com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.getDefaultInstance()
+            : accountDefenderAssessment_;
+      } else {
+        return accountDefenderAssessmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public Builder setAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment value) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accountDefenderAssessment_ = value;
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public Builder setAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder builderForValue) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = builderForValue.build();
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public Builder mergeAccountDefenderAssessment(
+        com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment value) {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        if (accountDefenderAssessment_ != null) {
+          accountDefenderAssessment_ =
+              com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.newBuilder(
+                      accountDefenderAssessment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accountDefenderAssessment_ = value;
+        }
+        onChanged();
+      } else {
+        accountDefenderAssessmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public Builder clearAccountDefenderAssessment() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessment_ = null;
+        onChanged();
+      } else {
+        accountDefenderAssessment_ = null;
+        accountDefenderAssessmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder
+        getAccountDefenderAssessmentBuilder() {
+
+      onChanged();
+      return getAccountDefenderAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder
+        getAccountDefenderAssessmentOrBuilder() {
+      if (accountDefenderAssessmentBuilder_ != null) {
+        return accountDefenderAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        return accountDefenderAssessment_ == null
+            ? com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.getDefaultInstance()
+            : accountDefenderAssessment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned by Account Defender when a hashed_account_id is
+     * provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment,
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder,
+            com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder>
+        getAccountDefenderAssessmentFieldBuilder() {
+      if (accountDefenderAssessmentBuilder_ == null) {
+        accountDefenderAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment,
+                com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment.Builder,
+                com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder>(
+                getAccountDefenderAssessment(), getParentForChildren(), isClean());
+        accountDefenderAssessment_ = null;
+      }
+      return accountDefenderAssessmentBuilder_;
     }
 
     @java.lang.Override

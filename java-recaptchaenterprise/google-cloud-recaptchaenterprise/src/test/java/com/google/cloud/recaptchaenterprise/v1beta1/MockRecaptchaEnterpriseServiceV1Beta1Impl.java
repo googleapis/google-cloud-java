@@ -18,19 +18,11 @@ package com.google.cloud.recaptchaenterprise.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
-import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1beta1.Assessment;
 import com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest;
-import com.google.recaptchaenterprise.v1beta1.CreateKeyRequest;
-import com.google.recaptchaenterprise.v1beta1.DeleteKeyRequest;
-import com.google.recaptchaenterprise.v1beta1.GetKeyRequest;
-import com.google.recaptchaenterprise.v1beta1.Key;
-import com.google.recaptchaenterprise.v1beta1.ListKeysRequest;
-import com.google.recaptchaenterprise.v1beta1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Grpc.RecaptchaEnterpriseServiceV1Beta1ImplBase;
-import com.google.recaptchaenterprise.v1beta1.UpdateKeyRequest;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -110,106 +102,6 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
                   "Unrecognized response type %s for method AnnotateAssessment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnnotateAssessmentResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createKey(CreateKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Key) {
-      requests.add(request);
-      responseObserver.onNext(((Key) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateKey, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Key.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void listKeys(ListKeysRequest request, StreamObserver<ListKeysResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListKeysResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListKeysResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListKeys, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListKeysResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void getKey(GetKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Key) {
-      requests.add(request);
-      responseObserver.onNext(((Key) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetKey, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Key.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void updateKey(UpdateKeyRequest request, StreamObserver<Key> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Key) {
-      requests.add(request);
-      responseObserver.onNext(((Key) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateKey, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Key.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteKey(DeleteKeyRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteKey, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

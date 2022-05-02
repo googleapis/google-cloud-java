@@ -35,6 +35,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     userAgent_ = "";
     userIpAddress_ = "";
     expectedAction_ = "";
+    hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -99,6 +100,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               expectedAction_ = s;
+              break;
+            }
+          case 50:
+            {
+              hashedAccountId_ = input.readBytes();
               break;
             }
           default:
@@ -392,6 +398,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 6;
+  private com.google.protobuf.ByteString hashedAccountId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional unique stable hashed user identifier for the request. The
+   * identifier should ideally be hashed using sha256 with stable secret.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hashedAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHashedAccountId() {
+    return hashedAccountId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -421,6 +446,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expectedAction_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, expectedAction_);
     }
+    if (!hashedAccountId_.isEmpty()) {
+      output.writeBytes(6, hashedAccountId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -445,6 +473,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(expectedAction_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, expectedAction_);
     }
+    if (!hashedAccountId_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(6, hashedAccountId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -466,6 +497,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!getUserAgent().equals(other.getUserAgent())) return false;
     if (!getUserIpAddress().equals(other.getUserIpAddress())) return false;
     if (!getExpectedAction().equals(other.getExpectedAction())) return false;
+    if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,6 +519,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUserIpAddress().hashCode();
     hash = (37 * hash) + EXPECTED_ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getExpectedAction().hashCode();
+    hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getHashedAccountId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -634,6 +668,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
       expectedAction_ = "";
 
+      hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -666,6 +702,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       result.userAgent_ = userAgent_;
       result.userIpAddress_ = userIpAddress_;
       result.expectedAction_ = expectedAction_;
+      result.hashedAccountId_ = hashedAccountId_;
       onBuilt();
       return result;
     }
@@ -734,6 +771,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (!other.getExpectedAction().isEmpty()) {
         expectedAction_ = other.expectedAction_;
         onChanged();
+      }
+      if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
+        setHashedAccountId(other.getHashedAccountId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1315,6 +1355,64 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       expectedAction_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier for the request. The
+     * identifier should ideally be hashed using sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hashedAccountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHashedAccountId() {
+      return hashedAccountId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier for the request. The
+     * identifier should ideally be hashed using sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The hashedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHashedAccountId(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      hashedAccountId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier for the request. The
+     * identifier should ideally be hashed using sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHashedAccountId() {
+
+      hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
     }

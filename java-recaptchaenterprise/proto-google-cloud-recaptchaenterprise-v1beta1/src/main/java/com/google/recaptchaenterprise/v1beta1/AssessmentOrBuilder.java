@@ -214,4 +214,100 @@ public interface AssessmentOrBuilder
    * @return The enum numeric value on the wire of reasons at the given index.
    */
   int getReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   *
+   * @return Whether the passwordLeakVerification field is set.
+   */
+  boolean hasPasswordLeakVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   *
+   * @return The passwordLeakVerification.
+   */
+  com.google.recaptchaenterprise.v1beta1.PasswordLeakVerification getPasswordLeakVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the user's credentials used to check for leaks.
+   * This feature is part of the Early Access Program (EAP). Exercise caution,
+   * and do not deploy integrations based on this feature in a production
+   * environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.PasswordLeakVerification password_leak_verification = 7;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1beta1.PasswordLeakVerificationOrBuilder
+      getPasswordLeakVerificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   *
+   * @return Whether the accountDefenderAssessment field is set.
+   */
+  boolean hasAccountDefenderAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   *
+   * @return The accountDefenderAssessment.
+   */
+  com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessment getAccountDefenderAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned by Account Defender when a hashed_account_id is
+   * provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.AccountDefenderAssessment account_defender_assessment = 8;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1beta1.AccountDefenderAssessmentOrBuilder
+      getAccountDefenderAssessmentOrBuilder();
 }

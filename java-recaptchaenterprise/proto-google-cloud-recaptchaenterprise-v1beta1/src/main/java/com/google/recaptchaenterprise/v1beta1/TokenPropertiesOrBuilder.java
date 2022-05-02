@@ -27,7 +27,11 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * Whether the provided user response token is valid.
+   * Whether the provided user response token is valid. When valid = false, the
+   * reason could be specified in invalid_reason or it could also be due to
+   * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
+   * used to generate the token was different than the one specified in the
+   * assessment).
    * </pre>
    *
    * <code>bool valid = 1;</code>

@@ -145,7 +145,6 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * LINT.IfChange
    * Enum that represents the types of invalid token reasons.
    * </pre>
    *
@@ -212,8 +211,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * sites.
      * </pre>
      *
-     * <code>SITE_MISMATCH = 5;</code>
+     * <code>SITE_MISMATCH = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SITE_MISMATCH(5),
     /**
      *
@@ -225,6 +225,17 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MISSING = 6;</code>
      */
     MISSING(6),
+    /**
+     *
+     *
+     * <pre>
+     * A retriable error (such as network failure) occurred on the browser.
+     * Could easily be simulated by an attacker.
+     * </pre>
+     *
+     * <code>BROWSER_ERROR = 7;</code>
+     */
+    BROWSER_ERROR(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -288,9 +299,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * sites.
      * </pre>
      *
-     * <code>SITE_MISMATCH = 5;</code>
+     * <code>SITE_MISMATCH = 5 [deprecated = true];</code>
      */
-    public static final int SITE_MISMATCH_VALUE = 5;
+    @java.lang.Deprecated public static final int SITE_MISMATCH_VALUE = 5;
     /**
      *
      *
@@ -301,6 +312,17 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>MISSING = 6;</code>
      */
     public static final int MISSING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * A retriable error (such as network failure) occurred on the browser.
+     * Could easily be simulated by an attacker.
+     * </pre>
+     *
+     * <code>BROWSER_ERROR = 7;</code>
+     */
+    public static final int BROWSER_ERROR_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -340,6 +362,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
           return SITE_MISMATCH;
         case 6:
           return MISSING;
+        case 7:
+          return BROWSER_ERROR;
         default:
           return null;
       }
@@ -401,7 +425,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Whether the provided user response token is valid.
+   * Whether the provided user response token is valid. When valid = false, the
+   * reason could be specified in invalid_reason or it could also be due to
+   * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
+   * used to generate the token was different than the one specified in the
+   * assessment).
    * </pre>
    *
    * <code>bool valid = 1;</code>
@@ -996,7 +1024,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid.
+     * Whether the provided user response token is valid. When valid = false, the
+     * reason could be specified in invalid_reason or it could also be due to
+     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
+     * used to generate the token was different than the one specified in the
+     * assessment).
      * </pre>
      *
      * <code>bool valid = 1;</code>
@@ -1011,7 +1043,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid.
+     * Whether the provided user response token is valid. When valid = false, the
+     * reason could be specified in invalid_reason or it could also be due to
+     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
+     * used to generate the token was different than the one specified in the
+     * assessment).
      * </pre>
      *
      * <code>bool valid = 1;</code>
@@ -1029,7 +1065,11 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Whether the provided user response token is valid.
+     * Whether the provided user response token is valid. When valid = false, the
+     * reason could be specified in invalid_reason or it could also be due to
+     * a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey
+     * used to generate the token was different than the one specified in the
+     * assessment).
      * </pre>
      *
      * <code>bool valid = 1;</code>

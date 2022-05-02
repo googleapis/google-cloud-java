@@ -40,6 +40,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
   private AnnotateAssessmentRequest() {
     name_ = "";
     annotation_ = 0;
+    reasons_ = java.util.Collections.emptyList();
+    hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -61,6 +63,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -85,6 +88,36 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
               annotation_ = rawValue;
               break;
             }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                reasons_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              reasons_.add(rawValue);
+              break;
+            }
+          case 26:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  reasons_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                reasons_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+          case 34:
+            {
+              hashedAccountId_ = input.readBytes();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +134,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        reasons_ = java.util.Collections.unmodifiableList(reasons_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -125,7 +161,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Enum that reprensents the types of annotations.
+   * Enum that represents the types of annotations.
    * </pre>
    *
    * Protobuf enum {@code
@@ -162,6 +198,32 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>FRAUDULENT = 2;</code>
      */
     FRAUDULENT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Provides information that the event was related to a login event in which
+     * the user typed the correct password. Deprecated, prefer indicating
+     * CORRECT_PASSWORD through the reasons field instead.
+     * </pre>
+     *
+     * <code>PASSWORD_CORRECT = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    PASSWORD_CORRECT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Provides information that the event was related to a login event in which
+     * the user typed the incorrect password. Deprecated, prefer indicating
+     * INCORRECT_PASSWORD through the reasons field instead.
+     * </pre>
+     *
+     * <code>PASSWORD_INCORRECT = 4 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    PASSWORD_INCORRECT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -195,6 +257,30 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>FRAUDULENT = 2;</code>
      */
     public static final int FRAUDULENT_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Provides information that the event was related to a login event in which
+     * the user typed the correct password. Deprecated, prefer indicating
+     * CORRECT_PASSWORD through the reasons field instead.
+     * </pre>
+     *
+     * <code>PASSWORD_CORRECT = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int PASSWORD_CORRECT_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Provides information that the event was related to a login event in which
+     * the user typed the incorrect password. Deprecated, prefer indicating
+     * INCORRECT_PASSWORD through the reasons field instead.
+     * </pre>
+     *
+     * <code>PASSWORD_INCORRECT = 4 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int PASSWORD_INCORRECT_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -226,6 +312,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           return LEGITIMATE;
         case 2:
           return FRAUDULENT;
+        case 3:
+          return PASSWORD_CORRECT;
+        case 4:
+          return PASSWORD_INCORRECT;
         default:
           return null;
       }
@@ -279,6 +369,341 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum that represents potential reasons for annotating an assessment.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason}
+   */
+  public enum Reason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified reason.
+     * </pre>
+     *
+     * <code>REASON_UNSPECIFIED = 0;</code>
+     */
+    REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback issued for the transaction with no other details.
+     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * CHARGEBACK_DISPUTE instead.
+     * </pre>
+     *
+     * <code>CHARGEBACK = 1;</code>
+     */
+    CHARGEBACK(1),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback related to an alleged unauthorized transaction
+     * from the cardholder's perspective (for example, the card number was
+     * stolen).
+     * </pre>
+     *
+     * <code>CHARGEBACK_FRAUD = 8;</code>
+     */
+    CHARGEBACK_FRAUD(8),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback related to the cardholder having provided their
+     * card details but allegedly not being satisfied with the purchase
+     * (for example, misrepresentation, attempted cancellation).
+     * </pre>
+     *
+     * <code>CHARGEBACK_DISPUTE = 9;</code>
+     */
+    CHARGEBACK_DISPUTE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the transaction associated with the assessment is suspected of
+     * being fraudulent based on the payment method, billing details, shipping
+     * address or other transaction information.
+     * </pre>
+     *
+     * <code>PAYMENT_HEURISTICS = 2;</code>
+     */
+    PAYMENT_HEURISTICS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user was served a 2FA challenge. An old assessment
+     * with `ENUM_VALUES.INITIATED_TWO_FACTOR` reason that has not been
+     * overwritten with `PASSED_TWO_FACTOR` is treated as an abandoned 2FA flow.
+     * This is equivalent to `FAILED_TWO_FACTOR`.
+     * </pre>
+     *
+     * <code>INITIATED_TWO_FACTOR = 7;</code>
+     */
+    INITIATED_TWO_FACTOR(7),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user passed a 2FA challenge.
+     * </pre>
+     *
+     * <code>PASSED_TWO_FACTOR = 3;</code>
+     */
+    PASSED_TWO_FACTOR(3),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user failed a 2FA challenge.
+     * </pre>
+     *
+     * <code>FAILED_TWO_FACTOR = 4;</code>
+     */
+    FAILED_TWO_FACTOR(4),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user provided the correct password.
+     * </pre>
+     *
+     * <code>CORRECT_PASSWORD = 5;</code>
+     */
+    CORRECT_PASSWORD(5),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user provided an incorrect password.
+     * </pre>
+     *
+     * <code>INCORRECT_PASSWORD = 6;</code>
+     */
+    INCORRECT_PASSWORD(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified reason.
+     * </pre>
+     *
+     * <code>REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback issued for the transaction with no other details.
+     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * CHARGEBACK_DISPUTE instead.
+     * </pre>
+     *
+     * <code>CHARGEBACK = 1;</code>
+     */
+    public static final int CHARGEBACK_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback related to an alleged unauthorized transaction
+     * from the cardholder's perspective (for example, the card number was
+     * stolen).
+     * </pre>
+     *
+     * <code>CHARGEBACK_FRAUD = 8;</code>
+     */
+    public static final int CHARGEBACK_FRAUD_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a chargeback related to the cardholder having provided their
+     * card details but allegedly not being satisfied with the purchase
+     * (for example, misrepresentation, attempted cancellation).
+     * </pre>
+     *
+     * <code>CHARGEBACK_DISPUTE = 9;</code>
+     */
+    public static final int CHARGEBACK_DISPUTE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the transaction associated with the assessment is suspected of
+     * being fraudulent based on the payment method, billing details, shipping
+     * address or other transaction information.
+     * </pre>
+     *
+     * <code>PAYMENT_HEURISTICS = 2;</code>
+     */
+    public static final int PAYMENT_HEURISTICS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user was served a 2FA challenge. An old assessment
+     * with `ENUM_VALUES.INITIATED_TWO_FACTOR` reason that has not been
+     * overwritten with `PASSED_TWO_FACTOR` is treated as an abandoned 2FA flow.
+     * This is equivalent to `FAILED_TWO_FACTOR`.
+     * </pre>
+     *
+     * <code>INITIATED_TWO_FACTOR = 7;</code>
+     */
+    public static final int INITIATED_TWO_FACTOR_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user passed a 2FA challenge.
+     * </pre>
+     *
+     * <code>PASSED_TWO_FACTOR = 3;</code>
+     */
+    public static final int PASSED_TWO_FACTOR_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user failed a 2FA challenge.
+     * </pre>
+     *
+     * <code>FAILED_TWO_FACTOR = 4;</code>
+     */
+    public static final int FAILED_TWO_FACTOR_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user provided the correct password.
+     * </pre>
+     *
+     * <code>CORRECT_PASSWORD = 5;</code>
+     */
+    public static final int CORRECT_PASSWORD_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user provided an incorrect password.
+     * </pre>
+     *
+     * <code>INCORRECT_PASSWORD = 6;</code>
+     */
+    public static final int INCORRECT_PASSWORD_VALUE = 6;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Reason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Reason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return REASON_UNSPECIFIED;
+        case 1:
+          return CHARGEBACK;
+        case 8:
+          return CHARGEBACK_FRAUD;
+        case 9:
+          return CHARGEBACK_DISPUTE;
+        case 2:
+          return PAYMENT_HEURISTICS;
+        case 7:
+          return INITIATED_TWO_FACTOR;
+        case 3:
+          return PASSED_TWO_FACTOR;
+        case 4:
+          return FAILED_TWO_FACTOR;
+        case 5:
+          return CORRECT_PASSWORD;
+        case 6:
+          return INCORRECT_PASSWORD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Reason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Reason> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Reason>() {
+          public Reason findValueByNumber(int number) {
+            return Reason.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Reason[] VALUES = values();
+
+    public static Reason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Reason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -342,11 +767,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The annotation that will be assigned to the Event.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for annotation.
@@ -359,11 +786,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The annotation that will be assigned to the Event.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The annotation.
@@ -380,6 +809,143 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int REASONS_FIELD_NUMBER = 3;
+  private java.util.List<java.lang.Integer> reasons_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer,
+          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>
+      reasons_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer,
+              com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>() {
+            public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason result =
+                  com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason.valueOf(
+                      from);
+              return result == null
+                  ? com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the reasons.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>
+      getReasonsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>(
+        reasons_, reasons_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of reasons.
+   */
+  @java.lang.Override
+  public int getReasonsCount() {
+    return reasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reasons at the given index.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason getReasons(
+      int index) {
+    return reasons_converter_.convert(reasons_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reasons.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getReasonsValueList() {
+    return reasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reasons at the given index.
+   */
+  @java.lang.Override
+  public int getReasonsValue(int index) {
+    return reasons_.get(index);
+  }
+
+  private int reasonsMemoizedSerializedSize;
+
+  public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString hashedAccountId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+   * This is an alternative to setting the hashed_account_id in
+   * CreateAssessment, for example when the account identifier is not yet known
+   * in the initial request. It is recommended that the identifier is hashed
+   * using hmac-sha256 with stable secret.
+   * </pre>
+   *
+   * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hashedAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHashedAccountId() {
+    return hashedAccountId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -394,6 +960,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -402,6 +969,16 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             .ANNOTATION_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(2, annotation_);
+    }
+    if (getReasonsList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(reasonsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < reasons_.size(); i++) {
+      output.writeEnumNoTag(reasons_.get(i));
+    }
+    if (!hashedAccountId_.isEmpty()) {
+      output.writeBytes(4, hashedAccountId_);
     }
     unknownFields.writeTo(output);
   }
@@ -421,6 +998,21 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, annotation_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < reasons_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(reasons_.get(i));
+      }
+      size += dataSize;
+      if (!getReasonsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      reasonsMemoizedSerializedSize = dataSize;
+    }
+    if (!hashedAccountId_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, hashedAccountId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -439,6 +1031,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
     if (!getName().equals(other.getName())) return false;
     if (annotation_ != other.annotation_) return false;
+    if (!reasons_.equals(other.reasons_)) return false;
+    if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -454,6 +1048,12 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
     hash = (53 * hash) + annotation_;
+    if (getReasonsCount() > 0) {
+      hash = (37 * hash) + REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + reasons_.hashCode();
+    }
+    hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getHashedAccountId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -604,6 +1204,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
 
       annotation_ = 0;
 
+      reasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -632,8 +1236,15 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest buildPartial() {
       com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest result =
           new com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.annotation_ = annotation_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        reasons_ = java.util.Collections.unmodifiableList(reasons_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.reasons_ = reasons_;
+      result.hashedAccountId_ = hashedAccountId_;
       onBuilt();
       return result;
     }
@@ -693,6 +1304,19 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (other.annotation_ != 0) {
         setAnnotationValue(other.getAnnotationValue());
       }
+      if (!other.reasons_.isEmpty()) {
+        if (reasons_.isEmpty()) {
+          reasons_ = other.reasons_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureReasonsIsMutable();
+          reasons_.addAll(other.reasons_);
+        }
+        onChanged();
+      }
+      if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
+        setHashedAccountId(other.getHashedAccountId());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -723,6 +1347,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -850,11 +1476,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The annotation that will be assigned to the Event.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for annotation.
@@ -867,11 +1495,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The annotation that will be assigned to the Event.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for annotation to set.
@@ -887,11 +1517,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The annotation that will be assigned to the Event.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The annotation.
@@ -911,11 +1543,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The annotation that will be assigned to the Event.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The annotation to set.
@@ -935,11 +1569,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The annotation that will be assigned to the Event.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation annotation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -947,6 +1583,325 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     public Builder clearAnnotation() {
 
       annotation_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> reasons_ = java.util.Collections.emptyList();
+
+    private void ensureReasonsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        reasons_ = new java.util.ArrayList<java.lang.Integer>(reasons_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the reasons.
+     */
+    public java.util.List<com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>
+        getReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>(
+          reasons_, reasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of reasons.
+     */
+    public int getReasonsCount() {
+      return reasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The reasons at the given index.
+     */
+    public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason getReasons(
+        int index) {
+      return reasons_converter_.convert(reasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReasons(
+        int index, com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReasonsIsMutable();
+      reasons_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The reasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReasons(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReasonsIsMutable();
+      reasons_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The reasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReasons(
+        java.lang.Iterable<
+                ? extends com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason>
+            values) {
+      ensureReasonsIsMutable();
+      for (com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason value : values) {
+        reasons_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReasons() {
+      reasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for reasons.
+     */
+    public java.util.List<java.lang.Integer> getReasonsValueList() {
+      return java.util.Collections.unmodifiableList(reasons_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of reasons at the given index.
+     */
+    public int getReasonsValue(int index) {
+      return reasons_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of reasons at the given index.
+     * @return This builder for chaining.
+     */
+    public Builder setReasonsValue(int index, int value) {
+      ensureReasonsIsMutable();
+      reasons_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReasonsValue(int value) {
+      ensureReasonsIsMutable();
+      reasons_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for reasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureReasonsIsMutable();
+      for (int value : values) {
+        reasons_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The hashedAccountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHashedAccountId() {
+      return hashedAccountId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The hashedAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHashedAccountId(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      hashedAccountId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
+     * CreateAssessment, for example when the account identifier is not yet known
+     * in the initial request. It is recommended that the identifier is hashed
+     * using hmac-sha256 with stable secret.
+     * </pre>
+     *
+     * <code>bytes hashed_account_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHashedAccountId() {
+
+      hashedAccountId_ = getDefaultInstance().getHashedAccountId();
       onChanged();
       return this;
     }

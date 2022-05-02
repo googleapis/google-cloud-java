@@ -15,21 +15,6 @@
             },
             "CreateAssessment": {
               "methods": ["createAssessment", "createAssessment", "createAssessment", "createAssessmentCallable"]
-            },
-            "CreateKey": {
-              "methods": ["createKey", "createKeyCallable"]
-            },
-            "DeleteKey": {
-              "methods": ["deleteKey", "deleteKeyCallable"]
-            },
-            "GetKey": {
-              "methods": ["getKey", "getKeyCallable"]
-            },
-            "ListKeys": {
-              "methods": ["listKeys", "listKeysPagedCallable", "listKeysCallable"]
-            },
-            "UpdateKey": {
-              "methods": ["updateKey", "updateKeyCallable"]
             }
           }
         }
