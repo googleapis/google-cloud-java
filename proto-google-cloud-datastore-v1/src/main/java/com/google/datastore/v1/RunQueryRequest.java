@@ -150,6 +150,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1546,8 +1548,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         if (queryTypeCase_ == 3) {
           queryBuilder_.mergeFrom(value);
+        } else {
+          queryBuilder_.setMessage(value);
         }
-        queryBuilder_.setMessage(value);
       }
       queryTypeCase_ = 3;
       return this;
@@ -1752,8 +1755,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         if (queryTypeCase_ == 7) {
           gqlQueryBuilder_.mergeFrom(value);
+        } else {
+          gqlQueryBuilder_.setMessage(value);
         }
-        gqlQueryBuilder_.setMessage(value);
       }
       queryTypeCase_ = 7;
       return this;

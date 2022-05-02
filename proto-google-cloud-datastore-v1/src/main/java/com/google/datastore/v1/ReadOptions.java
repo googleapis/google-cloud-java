@@ -77,8 +77,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              consistencyTypeCase_ = 2;
               consistencyType_ = input.readBytes();
+              consistencyTypeCase_ = 2;
               break;
             }
           case 34:
@@ -107,6 +107,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1219,8 +1221,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (consistencyTypeCase_ == 4) {
           readTimeBuilder_.mergeFrom(value);
+        } else {
+          readTimeBuilder_.setMessage(value);
         }
-        readTimeBuilder_.setMessage(value);
       }
       consistencyTypeCase_ = 4;
       return this;

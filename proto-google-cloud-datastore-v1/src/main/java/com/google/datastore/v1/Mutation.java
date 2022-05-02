@@ -130,8 +130,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
             }
           case 64:
             {
-              conflictDetectionStrategyCase_ = 8;
               conflictDetectionStrategy_ = input.readInt64();
+              conflictDetectionStrategyCase_ = 8;
               break;
             }
           case 90:
@@ -161,6 +161,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1230,8 +1232,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (operationCase_ == 4) {
           insertBuilder_.mergeFrom(value);
+        } else {
+          insertBuilder_.setMessage(value);
         }
-        insertBuilder_.setMessage(value);
       }
       operationCase_ = 4;
       return this;
@@ -1444,8 +1447,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (operationCase_ == 5) {
           updateBuilder_.mergeFrom(value);
+        } else {
+          updateBuilder_.setMessage(value);
         }
-        updateBuilder_.setMessage(value);
       }
       operationCase_ = 5;
       return this;
@@ -1658,8 +1662,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (operationCase_ == 6) {
           upsertBuilder_.mergeFrom(value);
+        } else {
+          upsertBuilder_.setMessage(value);
         }
-        upsertBuilder_.setMessage(value);
       }
       operationCase_ = 6;
       return this;
@@ -1871,8 +1876,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (operationCase_ == 7) {
           deleteBuilder_.mergeFrom(value);
+        } else {
+          deleteBuilder_.setMessage(value);
         }
-        deleteBuilder_.setMessage(value);
       }
       operationCase_ = 7;
       return this;
@@ -2168,8 +2174,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (conflictDetectionStrategyCase_ == 11) {
           updateTimeBuilder_.mergeFrom(value);
+        } else {
+          updateTimeBuilder_.setMessage(value);
         }
-        updateTimeBuilder_.setMessage(value);
       }
       conflictDetectionStrategyCase_ = 11;
       return this;

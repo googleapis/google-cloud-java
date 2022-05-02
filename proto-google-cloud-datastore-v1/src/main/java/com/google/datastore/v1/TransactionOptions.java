@@ -118,6 +118,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -227,6 +229,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -817,6 +821,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2114,8 +2120,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       } else {
         if (modeCase_ == 1) {
           readWriteBuilder_.mergeFrom(value);
+        } else {
+          readWriteBuilder_.setMessage(value);
         }
-        readWriteBuilder_.setMessage(value);
       }
       modeCase_ = 1;
       return this;
@@ -2323,8 +2330,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       } else {
         if (modeCase_ == 2) {
           readOnlyBuilder_.mergeFrom(value);
+        } else {
+          readOnlyBuilder_.setMessage(value);
         }
-        readOnlyBuilder_.setMessage(value);
       }
       modeCase_ = 2;
       return this;

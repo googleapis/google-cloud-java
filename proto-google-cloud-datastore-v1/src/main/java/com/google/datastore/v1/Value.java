@@ -71,20 +71,20 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              valueTypeCase_ = 1;
               valueType_ = input.readBool();
+              valueTypeCase_ = 1;
               break;
             }
           case 16:
             {
-              valueTypeCase_ = 2;
               valueType_ = input.readInt64();
+              valueTypeCase_ = 2;
               break;
             }
           case 25:
             {
-              valueTypeCase_ = 3;
               valueType_ = input.readDouble();
+              valueTypeCase_ = 3;
               break;
             }
           case 42:
@@ -182,8 +182,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              valueTypeCase_ = 18;
               valueType_ = input.readBytes();
+              valueTypeCase_ = 18;
               break;
             }
           case 152:
@@ -202,6 +202,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1964,8 +1966,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueTypeCase_ == 10) {
           timestampValueBuilder_.mergeFrom(value);
+        } else {
+          timestampValueBuilder_.setMessage(value);
         }
-        timestampValueBuilder_.setMessage(value);
       }
       valueTypeCase_ = 10;
       return this;
@@ -2176,8 +2179,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueTypeCase_ == 5) {
           keyValueBuilder_.mergeFrom(value);
+        } else {
+          keyValueBuilder_.setMessage(value);
         }
-        keyValueBuilder_.setMessage(value);
       }
       valueTypeCase_ = 5;
       return this;
@@ -2608,8 +2612,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueTypeCase_ == 8) {
           geoPointValueBuilder_.mergeFrom(value);
+        } else {
+          geoPointValueBuilder_.setMessage(value);
         }
-        geoPointValueBuilder_.setMessage(value);
       }
       valueTypeCase_ = 8;
       return this;
@@ -2826,8 +2831,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueTypeCase_ == 6) {
           entityValueBuilder_.mergeFrom(value);
+        } else {
+          entityValueBuilder_.setMessage(value);
         }
-        entityValueBuilder_.setMessage(value);
       }
       valueTypeCase_ = 6;
       return this;
@@ -3059,8 +3065,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueTypeCase_ == 9) {
           arrayValueBuilder_.mergeFrom(value);
+        } else {
+          arrayValueBuilder_.setMessage(value);
         }
-        arrayValueBuilder_.setMessage(value);
       }
       valueTypeCase_ = 9;
       return this;

@@ -75,8 +75,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              transactionSelectorCase_ = 1;
               transactionSelector_ = input.readBytes();
+              transactionSelectorCase_ = 1;
               break;
             }
           case 40:
@@ -114,6 +114,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
