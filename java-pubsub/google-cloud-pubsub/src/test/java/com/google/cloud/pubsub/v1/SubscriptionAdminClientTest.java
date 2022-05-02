@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -1679,6 +1680,7 @@ public class SubscriptionAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockIAMPolicy.addResponse(expectedResponse);
@@ -1687,6 +1689,7 @@ public class SubscriptionAdminClientTest {
         SetIamPolicyRequest.newBuilder()
             .setResource(ProjectName.of("[PROJECT]").toString())
             .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     Policy actualResponse = client.setIamPolicy(request);
@@ -1698,6 +1701,7 @@ public class SubscriptionAdminClientTest {
 
     Assert.assertEquals(request.getResource(), actualRequest.getResource());
     Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1714,6 +1718,7 @@ public class SubscriptionAdminClientTest {
           SetIamPolicyRequest.newBuilder()
               .setResource(ProjectName.of("[PROJECT]").toString())
               .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.setIamPolicy(request);
       Assert.fail("No exception raised");
@@ -1728,6 +1733,7 @@ public class SubscriptionAdminClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockIAMPolicy.addResponse(expectedResponse);

@@ -2984,6 +2984,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = subscriptionAdminClient.setIamPolicy(request);
    * }
@@ -3041,6 +3042,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = subscriptionAdminClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

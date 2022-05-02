@@ -87,7 +87,12 @@ public interface PubsubMessageOrBuilder
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  java.lang.String getAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

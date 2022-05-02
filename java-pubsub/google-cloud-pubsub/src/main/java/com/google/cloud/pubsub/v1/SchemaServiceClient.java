@@ -777,6 +777,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = schemaServiceClient.setIamPolicy(request);
    * }
@@ -803,6 +804,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = schemaServiceClient.setIamPolicyCallable().futureCall(request);
    *   // Do something.

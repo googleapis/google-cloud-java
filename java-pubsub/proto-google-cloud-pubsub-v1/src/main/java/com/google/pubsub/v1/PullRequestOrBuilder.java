@@ -70,6 +70,8 @@ public interface PullRequestOrBuilder
    * <code>bool return_immediately = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
+   *     google/pubsub/v1/pubsub.proto;l=1035
    * @return The returnImmediately.
    */
   @java.lang.Deprecated
