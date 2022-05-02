@@ -97,6 +97,8 @@ public final class VideoObjectTrackingPredictionParams
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -196,13 +198,13 @@ public final class VideoObjectTrackingPredictionParams
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (confidenceThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
       output.writeFloat(1, confidenceThreshold_);
     }
     if (maxPredictions_ != 0) {
       output.writeInt32(2, maxPredictions_);
     }
-    if (minBoundingBoxSize_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minBoundingBoxSize_) != 0) {
       output.writeFloat(3, minBoundingBoxSize_);
     }
     unknownFields.writeTo(output);
@@ -214,13 +216,13 @@ public final class VideoObjectTrackingPredictionParams
     if (size != -1) return size;
 
     size = 0;
-    if (confidenceThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(confidenceThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
     }
     if (maxPredictions_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxPredictions_);
     }
-    if (minBoundingBoxSize_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minBoundingBoxSize_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, minBoundingBoxSize_);
     }
     size += unknownFields.getSerializedSize();

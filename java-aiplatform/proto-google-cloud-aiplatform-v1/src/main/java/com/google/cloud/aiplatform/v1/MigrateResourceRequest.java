@@ -186,6 +186,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -398,6 +400,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1565,6 +1569,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2502,6 +2508,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3546,6 +3554,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3687,6 +3697,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6737,8 +6749,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       } else {
         if (requestCase_ == 1) {
           migrateMlEngineModelVersionConfigBuilder_.mergeFrom(value);
+        } else {
+          migrateMlEngineModelVersionConfigBuilder_.setMessage(value);
         }
-        migrateMlEngineModelVersionConfigBuilder_.setMessage(value);
       }
       requestCase_ = 1;
       return this;
@@ -6997,8 +7010,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       } else {
         if (requestCase_ == 2) {
           migrateAutomlModelConfigBuilder_.mergeFrom(value);
+        } else {
+          migrateAutomlModelConfigBuilder_.setMessage(value);
         }
-        migrateAutomlModelConfigBuilder_.setMessage(value);
       }
       requestCase_ = 2;
       return this;
@@ -7256,8 +7270,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       } else {
         if (requestCase_ == 3) {
           migrateAutomlDatasetConfigBuilder_.mergeFrom(value);
+        } else {
+          migrateAutomlDatasetConfigBuilder_.setMessage(value);
         }
-        migrateAutomlDatasetConfigBuilder_.setMessage(value);
       }
       requestCase_ = 3;
       return this;
@@ -7521,8 +7536,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       } else {
         if (requestCase_ == 4) {
           migrateDataLabelingDatasetConfigBuilder_.mergeFrom(value);
+        } else {
+          migrateDataLabelingDatasetConfigBuilder_.setMessage(value);
         }
-        migrateDataLabelingDatasetConfigBuilder_.setMessage(value);
       }
       requestCase_ = 4;
       return this;

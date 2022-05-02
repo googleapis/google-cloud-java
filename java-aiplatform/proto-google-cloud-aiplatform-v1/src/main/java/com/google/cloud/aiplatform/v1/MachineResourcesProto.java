@@ -52,6 +52,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_DiskSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_NfsMount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_fieldAccessorTable;
@@ -87,14 +91,16 @@ public final class MachineResourcesProto {
           + "ount\030\003 \001(\005B\003\340A\005\"/\n\021ResourcesConsumed\022\032\n\r"
           + "replica_hours\030\001 \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016"
           + "boot_disk_type\030\001 \001(\t\022\031\n\021boot_disk_size_g"
-          + "b\030\002 \001(\005\"A\n\025AutoscalingMetricSpec\022\030\n\013metr"
-          + "ic_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\331\001\n\036c"
-          + "om.google.cloud.aiplatform.v1B\025MachineRe"
-          + "sourcesProtoP\001ZDgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1;aiplat"
-          + "form\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
-          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::"
-          + "AIPlatform::V1b\006proto3"
+          + "b\030\002 \001(\005\"L\n\010NfsMount\022\023\n\006server\030\001 \001(\tB\003\340A\002"
+          + "\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_point\030\003 \001(\t"
+          + "B\003\340A\002\"A\n\025AutoscalingMetricSpec\022\030\n\013metric"
+          + "_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\331\001\n\036com"
+          + ".google.cloud.aiplatform.v1B\025MachineReso"
+          + "urcesProtoP\001ZDgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
+          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
+          + "Platform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,8 +157,16 @@ public final class MachineResourcesProto {
             new java.lang.String[] {
               "BootDiskType", "BootDiskSizeGb",
             });
-    internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor =
+    internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_NfsMount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_NfsMount_descriptor,
+            new java.lang.String[] {
+              "Server", "Path", "MountPoint",
+            });
+    internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor,

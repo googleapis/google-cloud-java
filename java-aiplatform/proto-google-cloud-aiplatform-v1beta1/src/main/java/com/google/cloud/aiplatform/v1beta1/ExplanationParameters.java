@@ -150,15 +150,15 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             }
           case 58:
             {
-              com.google.cloud.aiplatform.v1beta1.Similarity.Builder subBuilder = null;
+              com.google.cloud.aiplatform.v1beta1.Examples.Builder subBuilder = null;
               if (methodCase_ == 7) {
-                subBuilder = ((com.google.cloud.aiplatform.v1beta1.Similarity) method_).toBuilder();
+                subBuilder = ((com.google.cloud.aiplatform.v1beta1.Examples) method_).toBuilder();
               }
               method_ =
                   input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.Similarity.parser(), extensionRegistry);
+                      com.google.cloud.aiplatform.v1beta1.Examples.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.Similarity) method_);
+                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.Examples) method_);
                 method_ = subBuilder.buildPartial();
               }
               methodCase_ = 7;
@@ -175,6 +175,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -208,7 +210,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     SAMPLED_SHAPLEY_ATTRIBUTION(1),
     INTEGRATED_GRADIENTS_ATTRIBUTION(2),
     XRAI_ATTRIBUTION(3),
-    SIMILARITY(7),
+    EXAMPLES(7),
     METHOD_NOT_SET(0);
     private final int value;
 
@@ -234,7 +236,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         case 3:
           return XRAI_ATTRIBUTION;
         case 7:
-          return SIMILARITY;
+          return EXAMPLES;
         case 0:
           return METHOD_NOT_SET;
         default:
@@ -457,58 +459,58 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
   }
 
-  public static final int SIMILARITY_FIELD_NUMBER = 7;
+  public static final int EXAMPLES_FIELD_NUMBER = 7;
   /**
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    *
-   * @return Whether the similarity field is set.
+   * @return Whether the examples field is set.
    */
   @java.lang.Override
-  public boolean hasSimilarity() {
+  public boolean hasExamples() {
     return methodCase_ == 7;
   }
   /**
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    *
-   * @return The similarity.
+   * @return The examples.
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity() {
+  public com.google.cloud.aiplatform.v1beta1.Examples getExamples() {
     if (methodCase_ == 7) {
-      return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+      return (com.google.cloud.aiplatform.v1beta1.Examples) method_;
     }
-    return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+    return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder() {
+  public com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder getExamplesOrBuilder() {
     if (methodCase_ == 7) {
-      return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+      return (com.google.cloud.aiplatform.v1beta1.Examples) method_;
     }
-    return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+    return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
   }
 
   public static final int TOP_K_FIELD_NUMBER = 4;
@@ -636,7 +638,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       output.writeMessage(5, getOutputIndices());
     }
     if (methodCase_ == 7) {
-      output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.Similarity) method_);
+      output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.Examples) method_);
     }
     unknownFields.writeTo(output);
   }
@@ -671,7 +673,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     if (methodCase_ == 7) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, (com.google.cloud.aiplatform.v1beta1.Similarity) method_);
+              7, (com.google.cloud.aiplatform.v1beta1.Examples) method_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -708,7 +710,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         if (!getXraiAttribution().equals(other.getXraiAttribution())) return false;
         break;
       case 7:
-        if (!getSimilarity().equals(other.getSimilarity())) return false;
+        if (!getExamples().equals(other.getExamples())) return false;
         break;
       case 0:
       default:
@@ -744,8 +746,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         hash = (53 * hash) + getXraiAttribution().hashCode();
         break;
       case 7:
-        hash = (37 * hash) + SIMILARITY_FIELD_NUMBER;
-        hash = (53 * hash) + getSimilarity().hashCode();
+        hash = (37 * hash) + EXAMPLES_FIELD_NUMBER;
+        hash = (53 * hash) + getExamples().hashCode();
         break;
       case 0:
       default:
@@ -955,10 +957,10 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         }
       }
       if (methodCase_ == 7) {
-        if (similarityBuilder_ == null) {
+        if (examplesBuilder_ == null) {
           result.method_ = method_;
         } else {
-          result.method_ = similarityBuilder_.build();
+          result.method_ = examplesBuilder_.build();
         }
       }
       result.topK_ = topK_;
@@ -1040,9 +1042,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             mergeXraiAttribution(other.getXraiAttribution());
             break;
           }
-        case SIMILARITY:
+        case EXAMPLES:
           {
-            mergeSimilarity(other.getSimilarity());
+            mergeExamples(other.getExamples());
             break;
           }
         case METHOD_NOT_SET:
@@ -1236,8 +1238,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 1) {
           sampledShapleyAttributionBuilder_.mergeFrom(value);
+        } else {
+          sampledShapleyAttributionBuilder_.setMessage(value);
         }
-        sampledShapleyAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 1;
       return this;
@@ -1496,8 +1499,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 2) {
           integratedGradientsAttributionBuilder_.mergeFrom(value);
+        } else {
+          integratedGradientsAttributionBuilder_.setMessage(value);
         }
-        integratedGradientsAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 2;
       return this;
@@ -1762,8 +1766,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 3) {
           xraiAttributionBuilder_.mergeFrom(value);
+        } else {
+          xraiAttributionBuilder_.setMessage(value);
         }
-        xraiAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 3;
       return this;
@@ -1889,71 +1894,71 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.Similarity,
-            com.google.cloud.aiplatform.v1beta1.Similarity.Builder,
-            com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder>
-        similarityBuilder_;
+            com.google.cloud.aiplatform.v1beta1.Examples,
+            com.google.cloud.aiplatform.v1beta1.Examples.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder>
+        examplesBuilder_;
     /**
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      *
-     * @return Whether the similarity field is set.
+     * @return Whether the examples field is set.
      */
     @java.lang.Override
-    public boolean hasSimilarity() {
+    public boolean hasExamples() {
       return methodCase_ == 7;
     }
     /**
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      *
-     * @return The similarity.
+     * @return The examples.
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity() {
-      if (similarityBuilder_ == null) {
+    public com.google.cloud.aiplatform.v1beta1.Examples getExamples() {
+      if (examplesBuilder_ == null) {
         if (methodCase_ == 7) {
-          return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+          return (com.google.cloud.aiplatform.v1beta1.Examples) method_;
         }
-        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+        return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
       } else {
         if (methodCase_ == 7) {
-          return similarityBuilder_.getMessage();
+          return examplesBuilder_.getMessage();
         }
-        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+        return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
-    public Builder setSimilarity(com.google.cloud.aiplatform.v1beta1.Similarity value) {
-      if (similarityBuilder_ == null) {
+    public Builder setExamples(com.google.cloud.aiplatform.v1beta1.Examples value) {
+      if (examplesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         method_ = value;
         onChanged();
       } else {
-        similarityBuilder_.setMessage(value);
+        examplesBuilder_.setMessage(value);
       }
       methodCase_ = 7;
       return this;
@@ -1962,19 +1967,19 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
-    public Builder setSimilarity(
-        com.google.cloud.aiplatform.v1beta1.Similarity.Builder builderForValue) {
-      if (similarityBuilder_ == null) {
+    public Builder setExamples(
+        com.google.cloud.aiplatform.v1beta1.Examples.Builder builderForValue) {
+      if (examplesBuilder_ == null) {
         method_ = builderForValue.build();
         onChanged();
       } else {
-        similarityBuilder_.setMessage(builderForValue.build());
+        examplesBuilder_.setMessage(builderForValue.build());
       }
       methodCase_ = 7;
       return this;
@@ -1983,19 +1988,19 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
-    public Builder mergeSimilarity(com.google.cloud.aiplatform.v1beta1.Similarity value) {
-      if (similarityBuilder_ == null) {
+    public Builder mergeExamples(com.google.cloud.aiplatform.v1beta1.Examples value) {
+      if (examplesBuilder_ == null) {
         if (methodCase_ == 7
-            && method_ != com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance()) {
+            && method_ != com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance()) {
           method_ =
-              com.google.cloud.aiplatform.v1beta1.Similarity.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.Similarity) method_)
+              com.google.cloud.aiplatform.v1beta1.Examples.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Examples) method_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -2004,9 +2009,10 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
         onChanged();
       } else {
         if (methodCase_ == 7) {
-          similarityBuilder_.mergeFrom(value);
+          examplesBuilder_.mergeFrom(value);
+        } else {
+          examplesBuilder_.setMessage(value);
         }
-        similarityBuilder_.setMessage(value);
       }
       methodCase_ = 7;
       return this;
@@ -2015,14 +2021,14 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
-    public Builder clearSimilarity() {
-      if (similarityBuilder_ == null) {
+    public Builder clearExamples() {
+      if (examplesBuilder_ == null) {
         if (methodCase_ == 7) {
           methodCase_ = 0;
           method_ = null;
@@ -2033,7 +2039,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
           methodCase_ = 0;
           method_ = null;
         }
-        similarityBuilder_.clear();
+        examplesBuilder_.clear();
       }
       return this;
     }
@@ -2041,61 +2047,61 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
-    public com.google.cloud.aiplatform.v1beta1.Similarity.Builder getSimilarityBuilder() {
-      return getSimilarityFieldBuilder().getBuilder();
+    public com.google.cloud.aiplatform.v1beta1.Examples.Builder getExamplesBuilder() {
+      return getExamplesFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder() {
-      if ((methodCase_ == 7) && (similarityBuilder_ != null)) {
-        return similarityBuilder_.getMessageOrBuilder();
+    public com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder getExamplesOrBuilder() {
+      if ((methodCase_ == 7) && (examplesBuilder_ != null)) {
+        return examplesBuilder_.getMessageOrBuilder();
       } else {
         if (methodCase_ == 7) {
-          return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+          return (com.google.cloud.aiplatform.v1beta1.Examples) method_;
         }
-        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+        return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Similarity explainability that returns the nearest neighbors from the
+     * Example-based explanations that returns the nearest neighbors from the
      * provided dataset.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.Similarity,
-            com.google.cloud.aiplatform.v1beta1.Similarity.Builder,
-            com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder>
-        getSimilarityFieldBuilder() {
-      if (similarityBuilder_ == null) {
+            com.google.cloud.aiplatform.v1beta1.Examples,
+            com.google.cloud.aiplatform.v1beta1.Examples.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder>
+        getExamplesFieldBuilder() {
+      if (examplesBuilder_ == null) {
         if (!(methodCase_ == 7)) {
-          method_ = com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+          method_ = com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
         }
-        similarityBuilder_ =
+        examplesBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.Similarity,
-                com.google.cloud.aiplatform.v1beta1.Similarity.Builder,
-                com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.Similarity) method_,
+                com.google.cloud.aiplatform.v1beta1.Examples,
+                com.google.cloud.aiplatform.v1beta1.Examples.Builder,
+                com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Examples) method_,
                 getParentForChildren(),
                 isClean());
         method_ = null;
@@ -2103,7 +2109,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       methodCase_ = 7;
       onChanged();
       ;
-      return similarityBuilder_;
+      return examplesBuilder_;
     }
 
     private int topK_;

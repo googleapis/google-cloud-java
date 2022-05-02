@@ -540,7 +540,12 @@ public interface TrialOrBuilder
    * map&lt;string, string&gt; web_access_uris = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  java.lang.String getWebAccessUrisOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getWebAccessUrisOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

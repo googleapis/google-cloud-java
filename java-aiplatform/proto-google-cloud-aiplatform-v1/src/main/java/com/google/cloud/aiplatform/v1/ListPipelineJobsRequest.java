@@ -117,6 +117,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -216,6 +218,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality and key presence.
+   * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+   * wildcard.
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -264,6 +269,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `labels`: Supports key-value equality and key presence.
+   * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+   * wildcard.
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -961,6 +969,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality and key presence.
+     * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+     * wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1008,6 +1019,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality and key presence.
+     * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+     * wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1055,6 +1069,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality and key presence.
+     * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+     * wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1101,6 +1118,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality and key presence.
+     * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+     * wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1143,6 +1163,9 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `end_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `labels`: Supports key-value equality and key presence.
+     * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `template_metadata.version_name`: Supports `=`, `!=` comparisons, and `:`
+     * wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.

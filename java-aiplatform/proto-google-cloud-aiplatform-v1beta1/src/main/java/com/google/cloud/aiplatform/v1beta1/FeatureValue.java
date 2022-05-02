@@ -71,20 +71,20 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              valueCase_ = 1;
               value_ = input.readBool();
+              valueCase_ = 1;
               break;
             }
           case 17:
             {
-              valueCase_ = 2;
               value_ = input.readDouble();
+              valueCase_ = 2;
               break;
             }
           case 40:
             {
-              valueCase_ = 5;
               value_ = input.readInt64();
+              valueCase_ = 5;
               break;
             }
           case 50:
@@ -160,8 +160,8 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              valueCase_ = 13;
               value_ = input.readBytes();
+              valueCase_ = 13;
               break;
             }
           case 114:
@@ -192,6 +192,8 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -346,6 +348,8 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2621,8 +2625,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 7) {
           boolArrayValueBuilder_.mergeFrom(value);
+        } else {
+          boolArrayValueBuilder_.setMessage(value);
         }
-        boolArrayValueBuilder_.setMessage(value);
       }
       valueCase_ = 7;
       return this;
@@ -2830,8 +2835,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 8) {
           doubleArrayValueBuilder_.mergeFrom(value);
+        } else {
+          doubleArrayValueBuilder_.setMessage(value);
         }
-        doubleArrayValueBuilder_.setMessage(value);
       }
       valueCase_ = 8;
       return this;
@@ -3039,8 +3045,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 11) {
           int64ArrayValueBuilder_.mergeFrom(value);
+        } else {
+          int64ArrayValueBuilder_.setMessage(value);
         }
-        int64ArrayValueBuilder_.setMessage(value);
       }
       valueCase_ = 11;
       return this;
@@ -3248,8 +3255,9 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (valueCase_ == 12) {
           stringArrayValueBuilder_.mergeFrom(value);
+        } else {
+          stringArrayValueBuilder_.setMessage(value);
         }
-        stringArrayValueBuilder_.setMessage(value);
       }
       valueCase_ = 12;
       return this;

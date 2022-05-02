@@ -46,39 +46,37 @@ public final class AnnotationProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1beta1/annota"
           + "tion.proto\022\037google.cloud.aiplatform.v1be"
-          + "ta1\032\034google/api/annotations.proto\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\032;google/cloud/aiplatform/v"
-          + "1beta1/user_action_reference.proto\032\034goog"
-          + "le/protobuf/struct.proto\032\037google/protobu"
-          + "f/timestamp.proto\"\330\004\n\nAnnotation\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\037\n\022payload_schema_uri\030\002 \001(\tB"
-          + "\003\340A\002\022,\n\007payload\030\003 \001(\0132\026.google.protobuf."
-          + "ValueB\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\0224\n\013update_time\030"
-          + "\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021"
-          + "\n\004etag\030\010 \001(\tB\003\340A\001\022T\n\021annotation_source\030\005"
-          + " \001(\01324.google.cloud.aiplatform.v1beta1.U"
-          + "serActionReferenceB\003\340A\003\022L\n\006labels\030\006 \003(\0132"
-          + "7.google.cloud.aiplatform.v1beta1.Annota"
-          + "tion.LabelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\225\001\352A\221\001\n$aip"
-          + "latform.googleapis.com/Annotation\022iproje"
-          + "cts/{project}/locations/{location}/datas"
-          + "ets/{dataset}/dataItems/{data_item}/anno"
-          + "tations/{annotation}B\354\001\n#com.google.clou"
-          + "d.aiplatform.v1beta1B\017AnnotationProtoP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1beta1;aiplatform\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "ta1\032\037google/api/field_behavior.proto\032\031go"
+          + "ogle/api/resource.proto\032;google/cloud/ai"
+          + "platform/v1beta1/user_action_reference.p"
+          + "roto\032\034google/protobuf/struct.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\"\330\004\n\nAnnotati"
+          + "on\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\037\n\022payload_schema_"
+          + "uri\030\002 \001(\tB\003\340A\002\022,\n\007payload\030\003 \001(\0132\026.google"
+          + ".protobuf.ValueB\003\340A\002\0224\n\013create_time\030\004 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
+          + "date_time\030\007 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022\021\n\004etag\030\010 \001(\tB\003\340A\001\022T\n\021annotatio"
+          + "n_source\030\005 \001(\01324.google.cloud.aiplatform"
+          + ".v1beta1.UserActionReferenceB\003\340A\003\022L\n\006lab"
+          + "els\030\006 \003(\01327.google.cloud.aiplatform.v1be"
+          + "ta1.Annotation.LabelsEntryB\003\340A\001\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\225"
+          + "\001\352A\221\001\n$aiplatform.googleapis.com/Annotat"
+          + "ion\022iprojects/{project}/locations/{locat"
+          + "ion}/datasets/{dataset}/dataItems/{data_"
+          + "item}/annotations/{annotation}B\354\001\n#com.g"
+          + "oogle.cloud.aiplatform.v1beta1B\017Annotati"
+          + "onProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
+          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.UserActionReferenceProto.getDescriptor(),
@@ -116,7 +114,6 @@ public final class AnnotationProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.UserActionReferenceProto.getDescriptor();

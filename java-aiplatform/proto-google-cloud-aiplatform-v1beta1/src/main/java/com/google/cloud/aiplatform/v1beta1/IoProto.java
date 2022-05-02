@@ -73,36 +73,34 @@ public final class IoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/cloud/aiplatform/v1beta1/io.pro"
-          + "to\022\037google.cloud.aiplatform.v1beta1\032\034goo"
-          + "gle/api/annotations.proto\032\037google/api/fi"
-          + "eld_behavior.proto\"Q\n\nAvroSource\022C\n\ngcs_"
-          + "source\030\001 \001(\0132*.google.cloud.aiplatform.v"
-          + "1beta1.GcsSourceB\003\340A\002\"P\n\tCsvSource\022C\n\ngc"
-          + "s_source\030\001 \001(\0132*.google.cloud.aiplatform"
-          + ".v1beta1.GcsSourceB\003\340A\002\"\036\n\tGcsSource\022\021\n\004"
-          + "uris\030\001 \003(\tB\003\340A\002\"0\n\016GcsDestination\022\036\n\021out"
-          + "put_uri_prefix\030\001 \001(\tB\003\340A\002\"(\n\016BigQuerySou"
-          + "rce\022\026\n\tinput_uri\030\001 \001(\tB\003\340A\002\".\n\023BigQueryD"
-          + "estination\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002\"_\n\016C"
-          + "svDestination\022M\n\017gcs_destination\030\001 \001(\0132/"
-          + ".google.cloud.aiplatform.v1beta1.GcsDest"
-          + "inationB\003\340A\002\"d\n\023TFRecordDestination\022M\n\017g"
-          + "cs_destination\030\001 \001(\0132/.google.cloud.aipl"
-          + "atform.v1beta1.GcsDestinationB\003\340A\002\"7\n\034Co"
-          + "ntainerRegistryDestination\022\027\n\noutput_uri"
-          + "\030\001 \001(\tB\003\340A\002B\344\001\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\007IoProtoP\001ZIgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "to\022\037google.cloud.aiplatform.v1beta1\032\037goo"
+          + "gle/api/field_behavior.proto\"Q\n\nAvroSour"
+          + "ce\022C\n\ngcs_source\030\001 \001(\0132*.google.cloud.ai"
+          + "platform.v1beta1.GcsSourceB\003\340A\002\"P\n\tCsvSo"
+          + "urce\022C\n\ngcs_source\030\001 \001(\0132*.google.cloud."
+          + "aiplatform.v1beta1.GcsSourceB\003\340A\002\"\036\n\tGcs"
+          + "Source\022\021\n\004uris\030\001 \003(\tB\003\340A\002\"0\n\016GcsDestinat"
+          + "ion\022\036\n\021output_uri_prefix\030\001 \001(\tB\003\340A\002\"(\n\016B"
+          + "igQuerySource\022\026\n\tinput_uri\030\001 \001(\tB\003\340A\002\".\n"
+          + "\023BigQueryDestination\022\027\n\noutput_uri\030\001 \001(\t"
+          + "B\003\340A\002\"_\n\016CsvDestination\022M\n\017gcs_destinati"
+          + "on\030\001 \001(\0132/.google.cloud.aiplatform.v1bet"
+          + "a1.GcsDestinationB\003\340A\002\"d\n\023TFRecordDestin"
+          + "ation\022M\n\017gcs_destination\030\001 \001(\0132/.google."
+          + "cloud.aiplatform.v1beta1.GcsDestinationB"
+          + "\003\340A\002\"7\n\034ContainerRegistryDestination\022\027\n\n"
+          + "output_uri\030\001 \001(\tB\003\340A\002B\344\001\n#com.google.clo"
+          + "ud.aiplatform.v1beta1B\007IoProtoP\001ZIgoogle"
+          + ".golang.org/genproto/googleapis/cloud/ai"
+          + "platform/v1beta1;aiplatform\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
+          + "orm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_AvroSource_descriptor =
@@ -182,7 +180,6 @@ public final class IoProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

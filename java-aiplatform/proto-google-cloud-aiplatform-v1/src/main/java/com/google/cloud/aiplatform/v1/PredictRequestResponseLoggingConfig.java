@@ -108,6 +108,8 @@ public final class PredictRequestResponseLoggingConfig
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -175,7 +177,7 @@ public final class PredictRequestResponseLoggingConfig
    *
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -195,7 +197,7 @@ public final class PredictRequestResponseLoggingConfig
    *
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -217,7 +219,7 @@ public final class PredictRequestResponseLoggingConfig
    *
    * <pre>
    * BigQuery table for logging.
-   * If only given project, a new dataset will be created with name
+   * If only given a project, a new dataset will be created with name
    * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
    * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
    * most special characters will become underscores). If no table name is
@@ -249,7 +251,7 @@ public final class PredictRequestResponseLoggingConfig
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
-    if (samplingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(samplingRate_) != 0) {
       output.writeDouble(2, samplingRate_);
     }
     if (bigqueryDestination_ != null) {
@@ -267,7 +269,7 @@ public final class PredictRequestResponseLoggingConfig
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
     }
-    if (samplingRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(samplingRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, samplingRate_);
     }
     if (bigqueryDestination_ != null) {
@@ -723,7 +725,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -742,7 +744,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -767,7 +769,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -795,7 +797,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -820,7 +822,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -852,7 +854,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -877,7 +879,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -897,7 +899,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is
@@ -921,7 +923,7 @@ public final class PredictRequestResponseLoggingConfig
      *
      * <pre>
      * BigQuery table for logging.
-     * If only given project, a new dataset will be created with name
+     * If only given a project, a new dataset will be created with name
      * `logging_&lt;endpoint-display-name&gt;_&lt;endpoint-id&gt;` where
      * &lt;endpoint-display-name&gt; will be made BigQuery-dataset-name compatible (e.g.
      * most special characters will become underscores). If no table name is

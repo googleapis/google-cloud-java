@@ -123,6 +123,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -301,7 +303,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsDataItemLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDataItemLabels().getMap().containsKey(key);
   }
@@ -357,7 +359,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getDataItemLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -384,7 +386,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getDataItemLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
     if (!map.containsKey(key)) {
@@ -980,8 +982,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (sourceCase_ == 1) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;
@@ -1127,7 +1130,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsDataItemLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDataItemLabels().getMap().containsKey(key);
     }
@@ -1183,7 +1186,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getDataItemLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1210,7 +1213,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getDataItemLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
       if (!map.containsKey(key)) {
@@ -1244,7 +1247,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeDataItemLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDataItemLabels().getMutableMap().remove(key);
       return this;
@@ -1275,11 +1278,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putDataItemLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDataItemLabels().getMutableMap().put(key, value);
       return this;
     }

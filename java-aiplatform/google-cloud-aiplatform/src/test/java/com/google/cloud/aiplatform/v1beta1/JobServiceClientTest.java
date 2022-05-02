@@ -1525,6 +1525,7 @@ public class JobServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().build())
@@ -1592,6 +1593,7 @@ public class JobServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().build())
@@ -1659,6 +1661,7 @@ public class JobServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().build())
@@ -1725,6 +1728,7 @@ public class JobServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().build())
@@ -2041,6 +2045,8 @@ public class JobServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
             .setState(JobState.forNumber(0))
+            .setLatestMonitoringPipelineMetadata(
+                ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
             .addAllModelDeploymentMonitoringObjectiveConfigs(
                 new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
             .setModelDeploymentMonitoringScheduleConfig(
@@ -2112,6 +2118,8 @@ public class JobServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
             .setState(JobState.forNumber(0))
+            .setLatestMonitoringPipelineMetadata(
+                ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
             .addAllModelDeploymentMonitoringObjectiveConfigs(
                 new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
             .setModelDeploymentMonitoringScheduleConfig(
@@ -2295,6 +2303,8 @@ public class JobServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
             .setState(JobState.forNumber(0))
+            .setLatestMonitoringPipelineMetadata(
+                ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
             .addAllModelDeploymentMonitoringObjectiveConfigs(
                 new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
             .setModelDeploymentMonitoringScheduleConfig(
@@ -2363,6 +2373,8 @@ public class JobServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
             .setState(JobState.forNumber(0))
+            .setLatestMonitoringPipelineMetadata(
+                ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
             .addAllModelDeploymentMonitoringObjectiveConfigs(
                 new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
             .setModelDeploymentMonitoringScheduleConfig(
@@ -2525,6 +2537,8 @@ public class JobServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
             .setState(JobState.forNumber(0))
+            .setLatestMonitoringPipelineMetadata(
+                ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
             .addAllModelDeploymentMonitoringObjectiveConfigs(
                 new ArrayList<ModelDeploymentMonitoringObjectiveConfig>())
             .setModelDeploymentMonitoringScheduleConfig(

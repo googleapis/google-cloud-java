@@ -42,30 +42,29 @@ public final class AnnotationSpecProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1beta1/annota"
           + "tion_spec.proto\022\037google.cloud.aiplatform"
-          + ".v1beta1\032\034google/api/annotations.proto\032\037"
-          + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\314\002\n\016AnnotationSpec\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\0224\n\013"
-          + "create_time\030\003 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022\021\n\004etag\030\005 \001(\tB\003"
-          + "\340A\001:\214\001\352A\210\001\n(aiplatform.googleapis.com/An"
-          + "notationSpec\022\\projects/{project}/locatio"
-          + "ns/{location}/datasets/{dataset}/annotat"
-          + "ionSpecs/{annotation_spec}B\360\001\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\023AnnotationSp"
-          + "ecProtoP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
-          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + ".v1beta1\032\037google/api/field_behavior.prot"
+          + "o\032\031google/api/resource.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\"\314\002\n\016AnnotationSpec"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001("
+          + "\tB\003\340A\002\0224\n\013create_time\030\003 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004et"
+          + "ag\030\005 \001(\tB\003\340A\001:\214\001\352A\210\001\n(aiplatform.googlea"
+          + "pis.com/AnnotationSpec\022\\projects/{projec"
+          + "t}/locations/{location}/datasets/{datase"
+          + "t}/annotationSpecs/{annotation_spec}B\360\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\023An"
+          + "notationSpecProtoP\001ZIgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/aiplatform/v1be"
+          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -84,7 +83,6 @@ public final class AnnotationSpecProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -37,7 +37,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private WorkerPoolSpec() {}
+  private WorkerPoolSpec() {
+    nfsMounts_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -58,6 +60,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -87,6 +90,17 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           case 16:
             {
               replicaCount_ = input.readInt64();
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                nfsMounts_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.NfsMount>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nfsMounts_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.NfsMount.parser(), extensionRegistry));
               break;
             }
           case 42:
@@ -148,9 +162,14 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        nfsMounts_ = java.util.Collections.unmodifiableList(nfsMounts_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -392,6 +411,85 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     return replicaCount_;
   }
 
+  public static final int NFS_MOUNTS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.cloud.aiplatform.v1.NfsMount> nfsMounts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.NfsMount> getNfsMountsList() {
+    return nfsMounts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
+      getNfsMountsOrBuilderList() {
+    return nfsMounts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getNfsMountsCount() {
+    return nfsMounts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NfsMount getNfsMounts(int index) {
+    return nfsMounts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NfsMountOrBuilder getNfsMountsOrBuilder(int index) {
+    return nfsMounts_.get(index);
+  }
+
   public static final int DISK_SPEC_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.DiskSpec diskSpec_;
   /**
@@ -460,6 +558,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     if (replicaCount_ != 0L) {
       output.writeInt64(2, replicaCount_);
     }
+    for (int i = 0; i < nfsMounts_.size(); i++) {
+      output.writeMessage(4, nfsMounts_.get(i));
+    }
     if (diskSpec_ != null) {
       output.writeMessage(5, getDiskSpec());
     }
@@ -483,6 +584,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (replicaCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, replicaCount_);
+    }
+    for (int i = 0; i < nfsMounts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, nfsMounts_.get(i));
     }
     if (diskSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDiskSpec());
@@ -518,6 +622,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getMachineSpec().equals(other.getMachineSpec())) return false;
     }
     if (getReplicaCount() != other.getReplicaCount()) return false;
+    if (!getNfsMountsList().equals(other.getNfsMountsList())) return false;
     if (hasDiskSpec() != other.hasDiskSpec()) return false;
     if (hasDiskSpec()) {
       if (!getDiskSpec().equals(other.getDiskSpec())) return false;
@@ -550,6 +655,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReplicaCount());
+    if (getNfsMountsCount() > 0) {
+      hash = (37 * hash) + NFS_MOUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNfsMountsList().hashCode();
+    }
     if (hasDiskSpec()) {
       hash = (37 * hash) + DISK_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getDiskSpec().hashCode();
@@ -705,7 +814,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getNfsMountsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -719,6 +830,12 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       replicaCount_ = 0L;
 
+      if (nfsMountsBuilder_ == null) {
+        nfsMounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        nfsMountsBuilder_.clear();
+      }
       if (diskSpecBuilder_ == null) {
         diskSpec_ = null;
       } else {
@@ -754,6 +871,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.WorkerPoolSpec buildPartial() {
       com.google.cloud.aiplatform.v1.WorkerPoolSpec result =
           new com.google.cloud.aiplatform.v1.WorkerPoolSpec(this);
+      int from_bitField0_ = bitField0_;
       if (taskCase_ == 6) {
         if (containerSpecBuilder_ == null) {
           result.task_ = task_;
@@ -774,6 +892,15 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         result.machineSpec_ = machineSpecBuilder_.build();
       }
       result.replicaCount_ = replicaCount_;
+      if (nfsMountsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          nfsMounts_ = java.util.Collections.unmodifiableList(nfsMounts_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.nfsMounts_ = nfsMounts_;
+      } else {
+        result.nfsMounts_ = nfsMountsBuilder_.build();
+      }
       if (diskSpecBuilder_ == null) {
         result.diskSpec_ = diskSpec_;
       } else {
@@ -834,6 +961,33 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getReplicaCount() != 0L) {
         setReplicaCount(other.getReplicaCount());
+      }
+      if (nfsMountsBuilder_ == null) {
+        if (!other.nfsMounts_.isEmpty()) {
+          if (nfsMounts_.isEmpty()) {
+            nfsMounts_ = other.nfsMounts_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNfsMountsIsMutable();
+            nfsMounts_.addAll(other.nfsMounts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.nfsMounts_.isEmpty()) {
+          if (nfsMountsBuilder_.isEmpty()) {
+            nfsMountsBuilder_.dispose();
+            nfsMountsBuilder_ = null;
+            nfsMounts_ = other.nfsMounts_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            nfsMountsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNfsMountsFieldBuilder()
+                    : null;
+          } else {
+            nfsMountsBuilder_.addAllMessages(other.nfsMounts_);
+          }
+        }
       }
       if (other.hasDiskSpec()) {
         mergeDiskSpec(other.getDiskSpec());
@@ -896,6 +1050,8 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.ContainerSpec,
@@ -1009,8 +1165,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (taskCase_ == 6) {
           containerSpecBuilder_.mergeFrom(value);
+        } else {
+          containerSpecBuilder_.setMessage(value);
         }
-        containerSpecBuilder_.setMessage(value);
       }
       taskCase_ = 6;
       return this;
@@ -1218,8 +1375,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (taskCase_ == 7) {
           pythonPackageSpecBuilder_.mergeFrom(value);
+        } else {
+          pythonPackageSpecBuilder_.setMessage(value);
         }
-        pythonPackageSpecBuilder_.setMessage(value);
       }
       taskCase_ = 7;
       return this;
@@ -1570,6 +1728,391 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       replicaCount_ = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.NfsMount> nfsMounts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNfsMountsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        nfsMounts_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.NfsMount>(nfsMounts_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NfsMount,
+            com.google.cloud.aiplatform.v1.NfsMount.Builder,
+            com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
+        nfsMountsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.NfsMount> getNfsMountsList() {
+      if (nfsMountsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(nfsMounts_);
+      } else {
+        return nfsMountsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getNfsMountsCount() {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.size();
+      } else {
+        return nfsMountsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NfsMount getNfsMounts(int index) {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.get(index);
+      } else {
+        return nfsMountsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNfsMounts(int index, com.google.cloud.aiplatform.v1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.set(index, value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNfsMounts(
+        int index, com.google.cloud.aiplatform.v1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(com.google.cloud.aiplatform.v1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(int index, com.google.cloud.aiplatform.v1.NfsMount value) {
+      if (nfsMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(index, value);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(com.google.cloud.aiplatform.v1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNfsMounts(
+        int index, com.google.cloud.aiplatform.v1.NfsMount.Builder builderForValue) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllNfsMounts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.NfsMount> values) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nfsMounts_);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNfsMounts() {
+      if (nfsMountsBuilder_ == null) {
+        nfsMounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeNfsMounts(int index) {
+      if (nfsMountsBuilder_ == null) {
+        ensureNfsMountsIsMutable();
+        nfsMounts_.remove(index);
+        onChanged();
+      } else {
+        nfsMountsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NfsMount.Builder getNfsMountsBuilder(int index) {
+      return getNfsMountsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NfsMountOrBuilder getNfsMountsOrBuilder(int index) {
+      if (nfsMountsBuilder_ == null) {
+        return nfsMounts_.get(index);
+      } else {
+        return nfsMountsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
+        getNfsMountsOrBuilderList() {
+      if (nfsMountsBuilder_ != null) {
+        return nfsMountsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(nfsMounts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NfsMount.Builder addNfsMountsBuilder() {
+      return getNfsMountsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.NfsMount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NfsMount.Builder addNfsMountsBuilder(int index) {
+      return getNfsMountsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1.NfsMount.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of NFS mount spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.NfsMount.Builder>
+        getNfsMountsBuilderList() {
+      return getNfsMountsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NfsMount,
+            com.google.cloud.aiplatform.v1.NfsMount.Builder,
+            com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
+        getNfsMountsFieldBuilder() {
+      if (nfsMountsBuilder_ == null) {
+        nfsMountsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.NfsMount,
+                com.google.cloud.aiplatform.v1.NfsMount.Builder,
+                com.google.cloud.aiplatform.v1.NfsMountOrBuilder>(
+                nfsMounts_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        nfsMounts_ = null;
+      }
+      return nfsMountsBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1.DiskSpec diskSpec_;

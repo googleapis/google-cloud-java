@@ -42,27 +42,25 @@ public final class FeatureMonitoringStatsProto {
     java.lang.String[] descriptorData = {
       "\n>google/cloud/aiplatform/v1beta1/featur"
           + "e_monitoring_stats.proto\022\037google.cloud.a"
-          + "iplatform.v1beta1\032\034google/api/annotation"
-          + "s.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\357\001\n\023FeatureStatsAnomaly\022\r\n\005score\030\001 \001(\001\022"
-          + "\021\n\tstats_uri\030\003 \001(\t\022\023\n\013anomaly_uri\030\004 \001(\t\022"
-          + "\036\n\026distribution_deviation\030\005 \001(\001\022#\n\033anoma"
-          + "ly_detection_threshold\030\t \001(\001\022.\n\nstart_ti"
-          + "me\030\007 \001(\0132\032.google.protobuf.Timestamp\022,\n\010"
-          + "end_time\030\010 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\370\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\033FeatureMonitoringStatsProtoP\001ZIgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
-          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
-          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
-          + "form::V1beta1b\006proto3"
+          + "iplatform.v1beta1\032\037google/protobuf/times"
+          + "tamp.proto\"\357\001\n\023FeatureStatsAnomaly\022\r\n\005sc"
+          + "ore\030\001 \001(\001\022\021\n\tstats_uri\030\003 \001(\t\022\023\n\013anomaly_"
+          + "uri\030\004 \001(\t\022\036\n\026distribution_deviation\030\005 \001("
+          + "\001\022#\n\033anomaly_detection_threshold\030\t \001(\001\022."
+          + "\n\nstart_time\030\007 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022,\n\010end_time\030\010 \001(\0132\032.google.protob"
+          + "uf.TimestampB\370\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\033FeatureMonitoringStatsProt"
+          + "oP\001ZIgoogle.golang.org/genproto/googleap"
+          + "is/cloud/aiplatform/v1beta1;aiplatform\252\002"
+          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
+          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
+          + "ud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeatureStatsAnomaly_descriptor =
@@ -79,7 +77,6 @@ public final class FeatureMonitoringStatsProto {
               "StartTime",
               "EndTime",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

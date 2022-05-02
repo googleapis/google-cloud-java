@@ -61,7 +61,7 @@ public final class FeaturestoreProto {
           + "google.cloud.aiplatform.v1.Featurestore."
           + "LabelsEntryB\003\340A\001\022`\n\025online_serving_confi"
           + "g\030\007 \001(\0132<.google.cloud.aiplatform.v1.Fea"
-          + "turestore.OnlineServingConfigB\003\340A\002\022B\n\005st"
+          + "turestore.OnlineServingConfigB\003\340A\001\022B\n\005st"
           + "ate\030\010 \001(\0162..google.cloud.aiplatform.v1.F"
           + "eaturestore.StateB\003\340A\003\022H\n\017encryption_spe"
           + "c\030\n \001(\0132*.google.cloud.aiplatform.v1.Enc"

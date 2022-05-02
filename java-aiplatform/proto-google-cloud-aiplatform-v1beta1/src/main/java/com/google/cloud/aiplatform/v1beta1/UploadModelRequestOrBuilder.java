@@ -58,6 +58,64 @@ public interface UploadModelRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The resource name of the model into which to upload the version. Only
+   * specify this field when uploading a new version.
+   * </pre>
+   *
+   * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parentModel.
+   */
+  java.lang.String getParentModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the model into which to upload the version. Only
+   * specify this field when uploading a new version.
+   * </pre>
+   *
+   * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for parentModel.
+   */
+  com.google.protobuf.ByteString getParentModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelId.
+   */
+  java.lang.String getModelId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelId.
+   */
+  com.google.protobuf.ByteString getModelIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The Model to create.
    * </pre>
    *

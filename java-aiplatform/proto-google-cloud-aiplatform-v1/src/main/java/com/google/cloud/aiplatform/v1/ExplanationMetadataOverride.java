@@ -99,6 +99,8 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -285,6 +287,8 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1332,7 +1336,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean containsInputs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetInputs().getMap().containsKey(key);
   }
@@ -1389,7 +1393,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
           com.google.cloud.aiplatform.v1.ExplanationMetadataOverride.InputMetadataOverride
               defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -1416,7 +1420,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
   public com.google.cloud.aiplatform.v1.ExplanationMetadataOverride.InputMetadataOverride
       getInputsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -1832,7 +1836,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean containsInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetInputs().getMap().containsKey(key);
     }
@@ -1889,7 +1893,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1.ExplanationMetadataOverride.InputMetadataOverride
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1916,7 +1920,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1.ExplanationMetadataOverride.InputMetadataOverride
         getInputsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1949,7 +1953,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      */
     public Builder removeInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableInputs().getMutableMap().remove(key);
       return this;
@@ -1981,11 +1985,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         java.lang.String key,
         com.google.cloud.aiplatform.v1.ExplanationMetadataOverride.InputMetadataOverride value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableInputs().getMutableMap().put(key, value);
       return this;
     }

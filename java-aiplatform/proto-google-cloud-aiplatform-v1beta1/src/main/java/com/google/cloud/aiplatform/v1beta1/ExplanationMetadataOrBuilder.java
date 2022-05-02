@@ -117,8 +117,11 @@ public interface ExplanationMetadataOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata&gt; inputs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata getInputsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue);
   /**
    *
@@ -218,8 +221,11 @@ public interface ExplanationMetadataOrBuilder
    * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata&gt; outputs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata getOutputsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue);
   /**
    *

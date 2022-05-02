@@ -110,6 +110,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -140,6 +142,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The Model which replaces the resource on the server.
+   * When Model Versioning is enabled, the model.name will be used to determine
+   * whether to update the model or model version.
+   * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+   * specific update.
+   * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+   * update.
+   * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+   * 4. Supported model fields: display_name, description; supported
+   * version-specific fields: version_description. Labels are supported in both
+   * scenarios. Both the model labels and the version labels are merged when a
+   * model is returned. When updating labels, if the request is for
+   * model-specific update, model label gets updated. Otherwise, version labels
+   * get updated.
+   * 5. A model name or model version name fields update mismatch will cause a
+   * precondition error.
+   * 6. One request cannot update both the model and the version fields. You
+   * must update them separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -156,6 +175,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The Model which replaces the resource on the server.
+   * When Model Versioning is enabled, the model.name will be used to determine
+   * whether to update the model or model version.
+   * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+   * specific update.
+   * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+   * update.
+   * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+   * 4. Supported model fields: display_name, description; supported
+   * version-specific fields: version_description. Labels are supported in both
+   * scenarios. Both the model labels and the version labels are merged when a
+   * model is returned. When updating labels, if the request is for
+   * model-specific update, model label gets updated. Otherwise, version labels
+   * get updated.
+   * 5. A model name or model version name fields update mismatch will cause a
+   * precondition error.
+   * 6. One request cannot update both the model and the version fields. You
+   * must update them separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -172,6 +208,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The Model which replaces the resource on the server.
+   * When Model Versioning is enabled, the model.name will be used to determine
+   * whether to update the model or model version.
+   * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+   * specific update.
+   * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+   * update.
+   * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+   * 4. Supported model fields: display_name, description; supported
+   * version-specific fields: version_description. Labels are supported in both
+   * scenarios. Both the model labels and the version labels are merged when a
+   * model is returned. When updating labels, if the request is for
+   * model-specific update, model label gets updated. Otherwise, version labels
+   * get updated.
+   * 5. A model name or model version name fields update mismatch will cause a
+   * precondition error.
+   * 6. One request cannot update both the model and the version fields. You
+   * must update them separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -603,6 +656,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -618,6 +688,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -637,6 +724,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -660,6 +764,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -680,6 +801,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -707,6 +845,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -728,6 +883,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -743,6 +915,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -760,6 +949,23 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The Model which replaces the resource on the server.
+     * When Model Versioning is enabled, the model.name will be used to determine
+     * whether to update the model or model version.
+     * 1. model.name with the &#64; value, e.g. models/123&#64;1, refers to a version
+     * specific update.
+     * 2. model.name without the &#64; value, e.g. models/123, refers to a model
+     * update.
+     * 3. model.name with &#64;-, e.g. models/123&#64;-, refers to a model update.
+     * 4. Supported model fields: display_name, description; supported
+     * version-specific fields: version_description. Labels are supported in both
+     * scenarios. Both the model labels and the version labels are merged when a
+     * model is returned. When updating labels, if the request is for
+     * model-specific update, model label gets updated. Otherwise, version labels
+     * get updated.
+     * 5. A model name or model version name fields update mismatch will cause a
+     * precondition error.
+     * 6. One request cannot update both the model and the version fields. You
+     * must update them separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];

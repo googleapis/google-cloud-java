@@ -183,39 +183,39 @@ public interface ExplanationParametersOrBuilder
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    *
-   * @return Whether the similarity field is set.
+   * @return Whether the examples field is set.
    */
-  boolean hasSimilarity();
+  boolean hasExamples();
   /**
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    *
-   * @return The similarity.
+   * @return The examples.
    */
-  com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity();
+  com.google.cloud.aiplatform.v1beta1.Examples getExamples();
   /**
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explanations that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.Examples examples = 7;</code>
    */
-  com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder();
+  com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder getExamplesOrBuilder();
 
   /**
    *

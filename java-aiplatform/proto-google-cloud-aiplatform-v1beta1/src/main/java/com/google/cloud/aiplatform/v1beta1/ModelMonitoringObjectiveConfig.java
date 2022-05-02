@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Next ID: 6
+ * Next ID: 8
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig}
@@ -160,6 +160,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -550,6 +552,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1729,8 +1733,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         } else {
           if (dataSourceCase_ == 4) {
             gcsSourceBuilder_.mergeFrom(value);
+          } else {
+            gcsSourceBuilder_.setMessage(value);
           }
-          gcsSourceBuilder_.setMessage(value);
         }
         dataSourceCase_ = 4;
         return this;
@@ -1948,8 +1953,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         } else {
           if (dataSourceCase_ == 5) {
             bigquerySourceBuilder_.mergeFrom(value);
+          } else {
+            bigquerySourceBuilder_.setMessage(value);
           }
-          bigquerySourceBuilder_.setMessage(value);
         }
         dataSourceCase_ = 5;
         return this;
@@ -2637,8 +2643,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; skew_thresholds = 1;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
     /**
      *
      *
@@ -2716,8 +2726,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
     /**
      *
      *
@@ -2841,6 +2855,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2930,7 +2946,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public boolean containsSkewThresholds(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSkewThresholds().getMap().containsKey(key);
     }
@@ -2978,7 +2994,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrDefault(
         java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetSkewThresholds().getMap();
@@ -3002,7 +3018,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetSkewThresholds().getMap();
@@ -3062,7 +3078,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public boolean containsAttributionScoreSkewThresholds(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAttributionScoreSkewThresholds().getMap().containsKey(key);
     }
@@ -3110,7 +3126,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             java.lang.String key,
             com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetAttributionScoreSkewThresholds().getMap();
@@ -3133,7 +3149,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig
         getAttributionScoreSkewThresholdsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetAttributionScoreSkewThresholds().getMap();
@@ -3641,7 +3657,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public boolean containsSkewThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetSkewThresholds().getMap().containsKey(key);
       }
@@ -3689,7 +3705,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrDefault(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetSkewThresholds().getMap();
@@ -3713,7 +3729,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetSkewThresholds().getMap();
@@ -3743,7 +3759,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public Builder removeSkewThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableSkewThresholds().getMutableMap().remove(key);
         return this;
@@ -3771,11 +3787,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putSkewThresholds(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableSkewThresholds().getMutableMap().put(key, value);
         return this;
       }
@@ -3849,7 +3866,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public boolean containsAttributionScoreSkewThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetAttributionScoreSkewThresholds().getMap().containsKey(key);
       }
@@ -3897,7 +3914,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               java.lang.String key,
               com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetAttributionScoreSkewThresholds().getMap();
@@ -3920,7 +3937,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig
           getAttributionScoreSkewThresholdsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetAttributionScoreSkewThresholds().getMap();
@@ -3949,7 +3966,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public Builder removeAttributionScoreSkewThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableAttributionScoreSkewThresholds().getMutableMap().remove(key);
         return this;
@@ -3976,11 +3993,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAttributionScoreSkewThresholds(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableAttributionScoreSkewThresholds().getMutableMap().put(key, value);
         return this;
       }
@@ -4133,8 +4151,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; drift_thresholds = 1;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
     /**
      *
      *
@@ -4208,8 +4230,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;
      * </code>
      */
+
+    /* nullable */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
     /**
      *
      *
@@ -4331,6 +4357,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4420,7 +4448,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public boolean containsDriftThresholds(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDriftThresholds().getMap().containsKey(key);
     }
@@ -4468,7 +4496,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrDefault(
         java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetDriftThresholds().getMap();
@@ -4492,7 +4520,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetDriftThresholds().getMap();
@@ -4551,7 +4579,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public boolean containsAttributionScoreDriftThresholds(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAttributionScoreDriftThresholds().getMap().containsKey(key);
     }
@@ -4597,7 +4625,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             java.lang.String key,
             com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetAttributionScoreDriftThresholds().getMap();
@@ -4619,7 +4647,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
     public com.google.cloud.aiplatform.v1beta1.ThresholdConfig
         getAttributionScoreDriftThresholdsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
           internalGetAttributionScoreDriftThresholds().getMap();
@@ -5126,7 +5154,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public boolean containsDriftThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetDriftThresholds().getMap().containsKey(key);
       }
@@ -5174,7 +5202,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrDefault(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetDriftThresholds().getMap();
@@ -5198,7 +5226,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrThrow(
           java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetDriftThresholds().getMap();
@@ -5228,7 +5256,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public Builder removeDriftThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableDriftThresholds().getMutableMap().remove(key);
         return this;
@@ -5256,11 +5284,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putDriftThresholds(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableDriftThresholds().getMutableMap().put(key, value);
         return this;
       }
@@ -5333,7 +5362,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public boolean containsAttributionScoreDriftThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetAttributionScoreDriftThresholds().getMap().containsKey(key);
       }
@@ -5379,7 +5408,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               java.lang.String key,
               com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetAttributionScoreDriftThresholds().getMap();
@@ -5401,7 +5430,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public com.google.cloud.aiplatform.v1beta1.ThresholdConfig
           getAttributionScoreDriftThresholdsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
             internalGetAttributionScoreDriftThresholds().getMap();
@@ -5429,7 +5458,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        */
       public Builder removeAttributionScoreDriftThresholds(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().remove(key);
         return this;
@@ -5455,11 +5484,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       public Builder putAttributionScoreDriftThresholds(
           java.lang.String key, com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().put(key, value);
         return this;
       }
@@ -5695,6 +5725,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5942,6 +5974,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6920,8 +6954,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           } else {
             if (destinationCase_ == 2) {
               gcsBuilder_.mergeFrom(value);
+            } else {
+              gcsBuilder_.setMessage(value);
             }
-            gcsBuilder_.setMessage(value);
           }
           destinationCase_ = 2;
           return this;
@@ -7133,8 +7168,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           } else {
             if (destinationCase_ == 3) {
               bigqueryBuilder_.mergeFrom(value);
+            } else {
+              bigqueryBuilder_.setMessage(value);
             }
-            bigqueryBuilder_.setMessage(value);
           }
           destinationCase_ = 3;
           return this;
@@ -8693,7 +8729,7 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Next ID: 6
+   * Next ID: 8
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig}

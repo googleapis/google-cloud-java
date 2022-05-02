@@ -108,6 +108,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -172,6 +174,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -236,6 +240,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -303,6 +309,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -370,6 +378,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -423,6 +433,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -564,6 +576,8 @@ public class EndpointServiceClientTest {
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 

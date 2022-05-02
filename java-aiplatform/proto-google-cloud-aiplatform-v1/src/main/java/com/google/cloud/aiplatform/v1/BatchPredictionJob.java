@@ -403,6 +403,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -663,6 +665,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1427,8 +1431,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         } else {
           if (sourceCase_ == 2) {
             gcsSourceBuilder_.mergeFrom(value);
+          } else {
+            gcsSourceBuilder_.setMessage(value);
           }
-          gcsSourceBuilder_.setMessage(value);
         }
         sourceCase_ = 2;
         return this;
@@ -1656,8 +1661,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         } else {
           if (sourceCase_ == 3) {
             bigquerySourceBuilder_.mergeFrom(value);
+          } else {
+            bigquerySourceBuilder_.setMessage(value);
           }
-          bigquerySourceBuilder_.setMessage(value);
         }
         sourceCase_ = 3;
         return this;
@@ -2265,6 +2271,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3222,8 +3230,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         } else {
           if (destinationCase_ == 2) {
             gcsDestinationBuilder_.mergeFrom(value);
+          } else {
+            gcsDestinationBuilder_.setMessage(value);
           }
-          gcsDestinationBuilder_.setMessage(value);
         }
         destinationCase_ = 2;
         return this;
@@ -3595,8 +3604,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         } else {
           if (destinationCase_ == 3) {
             bigqueryDestinationBuilder_.mergeFrom(value);
+          } else {
+            bigqueryDestinationBuilder_.setMessage(value);
           }
-          bigqueryDestinationBuilder_.setMessage(value);
         }
         destinationCase_ = 3;
         return this;
@@ -4140,6 +4150,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6516,7 +6528,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -6559,7 +6571,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -6580,7 +6592,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -11849,7 +11861,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -11893,7 +11905,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -11914,7 +11926,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -11942,7 +11954,7 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -11967,11 +11979,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }

@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -29,6 +30,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.DeleteModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportModelRequest;
@@ -41,8 +43,11 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelsResponse;
+import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
@@ -94,6 +99,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsMethodDescriptor =
+          MethodDescriptor.<ListModelVersionsRequest, ListModelVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/ListModelVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
       MethodDescriptor.<UpdateModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -109,6 +125,26 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<DeleteModelVersionRequest, Operation>
+      deleteModelVersionMethodDescriptor =
+          MethodDescriptor.<DeleteModelVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/DeleteModelVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteModelVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MergeVersionAliasesRequest, Model>
+      mergeVersionAliasesMethodDescriptor =
+          MethodDescriptor.<MergeVersionAliasesRequest, Model>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/MergeVersionAliases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MergeVersionAliasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
       MethodDescriptor.<ExportModelRequest, Operation>newBuilder()
@@ -184,10 +220,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<GetModelRequest, Model> getModelCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable;
+  private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable;
+  private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable;
   private final UnaryCallable<UpdateModelRequest, Model> updateModelCallable;
   private final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable;
   private final OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable;
+  private final UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable;
+  private final OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable;
+  private final UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable;
   private final UnaryCallable<ExportModelRequest, Operation> exportModelCallable;
   private final OperationCallable<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
@@ -280,6 +324,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListModelVersionsRequest, ListModelVersionsResponse>
+        listModelVersionsTransportSettings =
+            GrpcCallSettings.<ListModelVersionsRequest, ListModelVersionsResponse>newBuilder()
+                .setMethodDescriptor(listModelVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
             .setMethodDescriptor(updateModelMethodDescriptor)
@@ -293,6 +348,26 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionTransportSettings =
+        GrpcCallSettings.<DeleteModelVersionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteModelVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesTransportSettings =
+        GrpcCallSettings.<MergeVersionAliasesRequest, Model>newBuilder()
+            .setMethodDescriptor(mergeVersionAliasesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -385,6 +460,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     this.listModelsPagedCallable =
         callableFactory.createPagedCallable(
             listModelsTransportSettings, settings.listModelsSettings(), clientContext);
+    this.listModelVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listModelVersionsTransportSettings,
+            settings.listModelVersionsSettings(),
+            clientContext);
+    this.listModelVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelVersionsTransportSettings,
+            settings.listModelVersionsSettings(),
+            clientContext);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
             updateModelTransportSettings, settings.updateModelSettings(), clientContext);
@@ -397,6 +482,22 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.deleteModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteModelVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteModelVersionTransportSettings,
+            settings.deleteModelVersionSettings(),
+            clientContext);
+    this.deleteModelVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteModelVersionTransportSettings,
+            settings.deleteModelVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.mergeVersionAliasesCallable =
+        callableFactory.createUnaryCallable(
+            mergeVersionAliasesTransportSettings,
+            settings.mergeVersionAliasesSettings(),
+            clientContext);
     this.exportModelCallable =
         callableFactory.createUnaryCallable(
             exportModelTransportSettings, settings.exportModelSettings(), clientContext);
@@ -477,6 +578,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable() {
+    return listModelVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable() {
+    return listModelVersionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     return updateModelCallable;
   }
@@ -490,6 +603,22 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable() {
     return deleteModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable() {
+    return deleteModelVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable() {
+    return deleteModelVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable() {
+    return mergeVersionAliasesCallable;
   }
 
   @Override

@@ -46,35 +46,33 @@ public final class TensorboardExperimentProto {
     java.lang.String[] descriptorData = {
       "\n<google/cloud/aiplatform/v1beta1/tensor"
           + "board_experiment.proto\022\037google.cloud.aip"
-          + "latform.v1beta1\032\034google/api/annotations."
-          + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\374\003\n\025TensorboardExperi"
-          + "ment\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030"
-          + "\002 \001(\t\022\023\n\013description\030\003 \001(\t\0224\n\013create_tim"
-          + "e\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\0224\n\013update_time\030\005 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022R\n\006labels\030\006 \003(\0132B.google."
-          + "cloud.aiplatform.v1beta1.TensorboardExpe"
-          + "riment.LabelsEntry\022\014\n\004etag\030\007 \001(\t\022\023\n\006sour"
-          + "ce\030\010 \001(\tB\003\340A\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:\222\001\352A\216\001\n/aiplatform."
-          + "googleapis.com/TensorboardExperiment\022[pr"
-          + "ojects/{project}/locations/{location}/te"
-          + "nsorboards/{tensorboard}/experiments/{ex"
-          + "periment}B\367\001\n#com.google.cloud.aiplatfor"
-          + "m.v1beta1B\032TensorboardExperimentProtoP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/aiplatform/v1beta1;aiplatform\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "latform.v1beta1\032\037google/api/field_behavi"
+          + "or.proto\032\031google/api/resource.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\"\374\003\n\025Tensorb"
+          + "oardExperiment\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014dis"
+          + "play_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\0224\n\013"
+          + "create_time\030\004 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\022R\n\006labels\030\006 \003(\013"
+          + "2B.google.cloud.aiplatform.v1beta1.Tenso"
+          + "rboardExperiment.LabelsEntry\022\014\n\004etag\030\007 \001"
+          + "(\t\022\023\n\006source\030\010 \001(\tB\003\340A\005\032-\n\013LabelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\222\001\352A\216\001\n/a"
+          + "iplatform.googleapis.com/TensorboardExpe"
+          + "riment\022[projects/{project}/locations/{lo"
+          + "cation}/tensorboards/{tensorboard}/exper"
+          + "iments/{experiment}B\367\001\n#com.google.cloud"
+          + ".aiplatform.v1beta1B\032TensorboardExperime"
+          + "ntProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
+          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
+          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
+          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -110,7 +108,6 @@ public final class TensorboardExperimentProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

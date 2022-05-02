@@ -249,6 +249,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -829,6 +831,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2119,6 +2123,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3605,7 +3611,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsInputs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetInputs().getMap().containsKey(key);
   }
@@ -3650,7 +3656,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       java.lang.String key,
       com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
         map = internalGetInputs().getMap();
@@ -3671,7 +3677,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getInputsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
         map = internalGetInputs().getMap();
@@ -3729,7 +3735,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsOutputs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetOutputs().getMap().containsKey(key);
   }
@@ -3774,7 +3780,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
       java.lang.String key,
       com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
         map = internalGetOutputs().getMap();
@@ -3795,7 +3801,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getOutputsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
         map = internalGetOutputs().getMap();
@@ -6437,7 +6443,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetInputs().getMap().containsKey(key);
     }
@@ -6482,7 +6488,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         java.lang.String key,
         com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
@@ -6504,7 +6510,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getInputsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
@@ -6532,7 +6538,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableInputs().getMutableMap().remove(key);
       return this;
@@ -6559,11 +6565,12 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         java.lang.String key,
         com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableInputs().getMutableMap().put(key, value);
       return this;
     }
@@ -6630,7 +6637,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsOutputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetOutputs().getMap().containsKey(key);
     }
@@ -6675,7 +6682,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         java.lang.String key,
         com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
@@ -6697,7 +6704,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList getOutputsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList>
@@ -6725,7 +6732,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeOutputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableOutputs().getMutableMap().remove(key);
       return this;
@@ -6752,11 +6759,12 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
         java.lang.String key,
         com.google.cloud.aiplatform.v1.PipelineTaskDetail.ArtifactList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableOutputs().getMutableMap().put(key, value);
       return this;
     }

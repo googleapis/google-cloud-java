@@ -46,41 +46,37 @@ public final class EntityTypeProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1beta1/entity"
           + "_type.proto\022\037google.cloud.aiplatform.v1b"
-          + "eta1\032\034google/api/annotations.proto\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\032-google/cloud/aiplatform/"
-          + "v1beta1/feature.proto\032=google/cloud/aipl"
-          + "atform/v1beta1/featurestore_monitoring.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\241\004"
-          + "\n\nEntityType\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\013descr"
-          + "iption\030\002 \001(\tB\003\340A\001\0224\n\013create_time\030\003 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
-          + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\022L\n\006labels\030\006 \003(\01327.google.cloud.aip"
-          + "latform.v1beta1.EntityType.LabelsEntryB\003"
-          + "\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001\022]\n\021monitoring_con"
-          + "fig\030\010 \001(\0132=.google.cloud.aiplatform.v1be"
-          + "ta1.FeaturestoreMonitoringConfigB\003\340A\001\032-\n"
-          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.com/E"
-          + "ntityType\022^projects/{project}/locations/"
-          + "{location}/featurestores/{featurestore}/"
-          + "entityTypes/{entity_type}B\354\001\n#com.google"
-          + ".cloud.aiplatform.v1beta1B\017EntityTypePro"
-          + "toP\001ZIgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/aiplatform/v1beta1;aiplatform\252"
-          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
-          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
-          + "oud::AIPlatform::V1beta1b\006proto3"
+          + "eta1\032\037google/api/field_behavior.proto\032\031g"
+          + "oogle/api/resource.proto\032=google/cloud/a"
+          + "iplatform/v1beta1/featurestore_monitorin"
+          + "g.proto\032\037google/protobuf/timestamp.proto"
+          + "\"\241\004\n\nEntityType\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\013de"
+          + "scription\030\002 \001(\tB\003\340A\001\0224\n\013create_time\030\003 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
+          + "date_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022L\n\006labels\030\006 \003(\01327.google.cloud."
+          + "aiplatform.v1beta1.EntityType.LabelsEntr"
+          + "yB\003\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001\022]\n\021monitoring_"
+          + "config\030\010 \001(\0132=.google.cloud.aiplatform.v"
+          + "1beta1.FeaturestoreMonitoringConfigB\003\340A\001"
+          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\t:\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.co"
+          + "m/EntityType\022^projects/{project}/locatio"
+          + "ns/{location}/featurestores/{featurestor"
+          + "e}/entityTypes/{entity_type}B\354\001\n#com.goo"
+          + "gle.cloud.aiplatform.v1beta1B\017EntityType"
+          + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/aiplatform/v1beta1;aiplatfo"
+          + "rm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1beta1.FeatureProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -114,10 +110,8 @@ public final class EntityTypeProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.aiplatform.v1beta1.FeatureProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

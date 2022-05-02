@@ -46,43 +46,40 @@ public final class ArtifactProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/aiplatform/v1beta1/artifa"
           + "ct.proto\022\037google.cloud.aiplatform.v1beta"
-          + "1\032\034google/api/annotations.proto\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032+google/cloud/aiplatform/v1b"
-          + "eta1/value.proto\032\034google/protobuf/struct"
-          + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\236\005\n\010Artifact\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014displ"
-          + "ay_name\030\002 \001(\t\022\013\n\003uri\030\006 \001(\t\022\014\n\004etag\030\t \001(\t"
-          + "\022E\n\006labels\030\n \003(\01325.google.cloud.aiplatfo"
-          + "rm.v1beta1.Artifact.LabelsEntry\0224\n\013creat"
-          + "e_time\030\013 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0224\n\013update_time\030\014 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022>\n\005state\030\r \001(\0162/.goo"
-          + "gle.cloud.aiplatform.v1beta1.Artifact.St"
-          + "ate\022\024\n\014schema_title\030\016 \001(\t\022\026\n\016schema_vers"
-          + "ion\030\017 \001(\t\022)\n\010metadata\030\020 \001(\0132\027.google.pro"
-          + "tobuf.Struct\022\023\n\013description\030\021 \001(\t\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"5\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007PEND"
-          + "ING\020\001\022\010\n\004LIVE\020\002:\206\001\352A\202\001\n\"aiplatform.googl"
-          + "eapis.com/Artifact\022\\projects/{project}/l"
-          + "ocations/{location}/metadataStores/{meta"
-          + "data_store}/artifacts/{artifact}B\352\001\n#com"
-          + ".google.cloud.aiplatform.v1beta1B\rArtifa"
-          + "ctProtoP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
-          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "1\032\037google/api/field_behavior.proto\032\031goog"
+          + "le/api/resource.proto\032\034google/protobuf/s"
+          + "truct.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\236\005\n\010Artifact\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014"
+          + "display_name\030\002 \001(\t\022\013\n\003uri\030\006 \001(\t\022\014\n\004etag\030"
+          + "\t \001(\t\022E\n\006labels\030\n \003(\01325.google.cloud.aip"
+          + "latform.v1beta1.Artifact.LabelsEntry\0224\n\013"
+          + "create_time\030\013 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\0224\n\013update_time\030\014 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\022>\n\005state\030\r \001(\0162"
+          + "/.google.cloud.aiplatform.v1beta1.Artifa"
+          + "ct.State\022\024\n\014schema_title\030\016 \001(\t\022\026\n\016schema"
+          + "_version\030\017 \001(\t\022)\n\010metadata\030\020 \001(\0132\027.googl"
+          + "e.protobuf.Struct\022\023\n\013description\030\021 \001(\t\032-"
+          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001\"5\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007PENDING\020\001\022\010\n\004LIVE\020\002:\206\001\352A\202\001\n\"aiplatform."
+          + "googleapis.com/Artifact\022\\projects/{proje"
+          + "ct}/locations/{location}/metadataStores/"
+          + "{metadata_store}/artifacts/{artifact}B\352\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\rA"
+          + "rtifactProtoP\001ZIgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/aiplatform/v1beta1;a"
+          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1beta1.ValueProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -119,10 +116,8 @@ public final class ArtifactProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.aiplatform.v1beta1.ValueProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

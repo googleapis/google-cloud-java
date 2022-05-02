@@ -110,6 +110,31 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
+   * Output only. The version ID of the Model that produces the predictions via this job.
+   * </pre>
+   *
+   * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersionId.
+   */
+  java.lang.String getModelVersionId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the Model that produces the predictions via this job.
+   * </pre>
+   *
+   * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersionId.
+   */
+  com.google.protobuf.ByteString getModelVersionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Contains model information necessary to perform batch prediction without
    * requiring uploading to model registry.
    * Exactly one of model and unmanaged_container_model must be set.
@@ -1012,7 +1037,12 @@ public interface BatchPredictionJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 19;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

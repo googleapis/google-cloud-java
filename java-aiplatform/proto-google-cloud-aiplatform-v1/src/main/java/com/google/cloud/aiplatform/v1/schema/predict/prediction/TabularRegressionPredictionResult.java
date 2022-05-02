@@ -96,6 +96,8 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -191,13 +193,13 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(1, value_);
     }
-    if (lowerBound_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(lowerBound_) != 0) {
       output.writeFloat(2, lowerBound_);
     }
-    if (upperBound_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(upperBound_) != 0) {
       output.writeFloat(3, upperBound_);
     }
     unknownFields.writeTo(output);
@@ -209,13 +211,13 @@ public final class TabularRegressionPredictionResult extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, value_);
     }
-    if (lowerBound_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(lowerBound_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, lowerBound_);
     }
-    if (upperBound_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(upperBound_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, upperBound_);
     }
     size += unknownFields.getSerializedSize();

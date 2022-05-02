@@ -338,7 +338,12 @@ public interface EndpointOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -522,7 +527,7 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * If true, expose the Endpoint via private service connect.
+   * Deprecated: If true, expose the Endpoint via private service connect.
    * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.
@@ -530,6 +535,8 @@ public interface EndpointOrBuilder
    *
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Deprecated

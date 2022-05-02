@@ -22,28 +22,28 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Similarity explainability that returns the nearest neighbors from the
+ * Example-based explainability that returns the nearest neighbors from the
  * provided dataset.
  * </pre>
  *
- * Protobuf type {@code google.cloud.aiplatform.v1beta1.Similarity}
+ * Protobuf type {@code google.cloud.aiplatform.v1beta1.Examples}
  */
-public final class Similarity extends com.google.protobuf.GeneratedMessageV3
+public final class Examples extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Similarity)
-    SimilarityOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Examples)
+    ExamplesOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Similarity.newBuilder() to construct.
-  private Similarity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Examples.newBuilder() to construct.
+  private Examples(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Similarity() {}
+  private Examples() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Similarity();
+    return new Examples();
   }
 
   @java.lang.Override
@@ -51,7 +51,7 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Similarity(
+  private Examples(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -100,6 +100,11 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 24:
+            {
+              neighborCount_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -111,6 +116,8 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -121,17 +128,17 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
-        .internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor;
+        .internal_static_google_cloud_aiplatform_v1beta1_Examples_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
-        .internal_static_google_cloud_aiplatform_v1beta1_Similarity_fieldAccessorTable
+        .internal_static_google_cloud_aiplatform_v1beta1_Examples_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.aiplatform.v1beta1.Similarity.class,
-            com.google.cloud.aiplatform.v1beta1.Similarity.Builder.class);
+            com.google.cloud.aiplatform.v1beta1.Examples.class,
+            com.google.cloud.aiplatform.v1beta1.Examples.Builder.class);
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
@@ -233,6 +240,24 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     return getNearestNeighborSearchConfig();
   }
 
+  public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 3;
+  private int neighborCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of neighbors to return.
+   * </pre>
+   *
+   * <code>int32 neighbor_count = 3;</code>
+   *
+   * @return The neighborCount.
+   */
+  @java.lang.Override
+  public int getNeighborCount() {
+    return neighborCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -253,6 +278,9 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     if (nearestNeighborSearchConfig_ != null) {
       output.writeMessage(2, getNearestNeighborSearchConfig());
     }
+    if (neighborCount_ != 0) {
+      output.writeInt32(3, neighborCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -270,6 +298,9 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getNearestNeighborSearchConfig());
     }
+    if (neighborCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, neighborCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -280,11 +311,11 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Similarity)) {
+    if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Examples)) {
       return super.equals(obj);
     }
-    com.google.cloud.aiplatform.v1beta1.Similarity other =
-        (com.google.cloud.aiplatform.v1beta1.Similarity) obj;
+    com.google.cloud.aiplatform.v1beta1.Examples other =
+        (com.google.cloud.aiplatform.v1beta1.Examples) obj;
 
     if (hasGcsSource() != other.hasGcsSource()) return false;
     if (hasGcsSource()) {
@@ -295,6 +326,7 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       if (!getNearestNeighborSearchConfig().equals(other.getNearestNeighborSearchConfig()))
         return false;
     }
+    if (getNeighborCount() != other.getNeighborCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -314,76 +346,78 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNearestNeighborSearchConfig().hashCode();
     }
+    hash = (37 * hash) + NEIGHBOR_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getNeighborCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(byte[] data)
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(java.io.InputStream input)
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseDelimitedFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseDelimitedFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity parseFrom(
+  public static com.google.cloud.aiplatform.v1beta1.Examples parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -400,7 +434,7 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.aiplatform.v1beta1.Similarity prototype) {
+  public static Builder newBuilder(com.google.cloud.aiplatform.v1beta1.Examples prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -418,32 +452,32 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Similarity explainability that returns the nearest neighbors from the
+   * Example-based explainability that returns the nearest neighbors from the
    * provided dataset.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Similarity}
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Examples}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Similarity)
-      com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Examples)
+      com.google.cloud.aiplatform.v1beta1.ExamplesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.ExplanationProto
-          .internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor;
+          .internal_static_google_cloud_aiplatform_v1beta1_Examples_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.ExplanationProto
-          .internal_static_google_cloud_aiplatform_v1beta1_Similarity_fieldAccessorTable
+          .internal_static_google_cloud_aiplatform_v1beta1_Examples_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.aiplatform.v1beta1.Similarity.class,
-              com.google.cloud.aiplatform.v1beta1.Similarity.Builder.class);
+              com.google.cloud.aiplatform.v1beta1.Examples.class,
+              com.google.cloud.aiplatform.v1beta1.Examples.Builder.class);
     }
 
-    // Construct using com.google.cloud.aiplatform.v1beta1.Similarity.newBuilder()
+    // Construct using com.google.cloud.aiplatform.v1beta1.Examples.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -472,23 +506,25 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
         nearestNeighborSearchConfig_ = null;
         nearestNeighborSearchConfigBuilder_ = null;
       }
+      neighborCount_ = 0;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.aiplatform.v1beta1.ExplanationProto
-          .internal_static_google_cloud_aiplatform_v1beta1_Similarity_descriptor;
+          .internal_static_google_cloud_aiplatform_v1beta1_Examples_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.Similarity getDefaultInstanceForType() {
-      return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+    public com.google.cloud.aiplatform.v1beta1.Examples getDefaultInstanceForType() {
+      return com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.Similarity build() {
-      com.google.cloud.aiplatform.v1beta1.Similarity result = buildPartial();
+    public com.google.cloud.aiplatform.v1beta1.Examples build() {
+      com.google.cloud.aiplatform.v1beta1.Examples result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -496,9 +532,9 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.Similarity buildPartial() {
-      com.google.cloud.aiplatform.v1beta1.Similarity result =
-          new com.google.cloud.aiplatform.v1beta1.Similarity(this);
+    public com.google.cloud.aiplatform.v1beta1.Examples buildPartial() {
+      com.google.cloud.aiplatform.v1beta1.Examples result =
+          new com.google.cloud.aiplatform.v1beta1.Examples(this);
       if (gcsSourceBuilder_ == null) {
         result.gcsSource_ = gcsSource_;
       } else {
@@ -509,6 +545,7 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nearestNeighborSearchConfig_ = nearestNeighborSearchConfigBuilder_.build();
       }
+      result.neighborCount_ = neighborCount_;
       onBuilt();
       return result;
     }
@@ -548,21 +585,24 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.aiplatform.v1beta1.Similarity) {
-        return mergeFrom((com.google.cloud.aiplatform.v1beta1.Similarity) other);
+      if (other instanceof com.google.cloud.aiplatform.v1beta1.Examples) {
+        return mergeFrom((com.google.cloud.aiplatform.v1beta1.Examples) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Similarity other) {
-      if (other == com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Examples other) {
+      if (other == com.google.cloud.aiplatform.v1beta1.Examples.getDefaultInstance()) return this;
       if (other.hasGcsSource()) {
         mergeGcsSource(other.getGcsSource());
       }
       if (other.hasNearestNeighborSearchConfig()) {
         mergeNearestNeighborSearchConfig(other.getNearestNeighborSearchConfig());
+      }
+      if (other.getNeighborCount() != 0) {
+        setNeighborCount(other.getNeighborCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -579,11 +619,11 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.Similarity parsedMessage = null;
+      com.google.cloud.aiplatform.v1beta1.Examples parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1beta1.Similarity) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.aiplatform.v1beta1.Examples) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -974,6 +1014,58 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       return nearestNeighborSearchConfigBuilder_;
     }
 
+    private int neighborCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of neighbors to return.
+     * </pre>
+     *
+     * <code>int32 neighbor_count = 3;</code>
+     *
+     * @return The neighborCount.
+     */
+    @java.lang.Override
+    public int getNeighborCount() {
+      return neighborCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of neighbors to return.
+     * </pre>
+     *
+     * <code>int32 neighbor_count = 3;</code>
+     *
+     * @param value The neighborCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNeighborCount(int value) {
+
+      neighborCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of neighbors to return.
+     * </pre>
+     *
+     * <code>int32 neighbor_count = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNeighborCount() {
+
+      neighborCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -985,42 +1077,42 @@ public final class Similarity extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Similarity)
+    // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Examples)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Similarity)
-  private static final com.google.cloud.aiplatform.v1beta1.Similarity DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Examples)
+  private static final com.google.cloud.aiplatform.v1beta1.Examples DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Similarity();
+    DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Examples();
   }
 
-  public static com.google.cloud.aiplatform.v1beta1.Similarity getDefaultInstance() {
+  public static com.google.cloud.aiplatform.v1beta1.Examples getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Similarity> PARSER =
-      new com.google.protobuf.AbstractParser<Similarity>() {
+  private static final com.google.protobuf.Parser<Examples> PARSER =
+      new com.google.protobuf.AbstractParser<Examples>() {
         @java.lang.Override
-        public Similarity parsePartialFrom(
+        public Examples parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Similarity(input, extensionRegistry);
+          return new Examples(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<Similarity> parser() {
+  public static com.google.protobuf.Parser<Examples> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Similarity> getParserForType() {
+  public com.google.protobuf.Parser<Examples> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.Similarity getDefaultInstanceForType() {
+  public com.google.cloud.aiplatform.v1beta1.Examples getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

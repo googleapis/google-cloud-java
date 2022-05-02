@@ -99,6 +99,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -250,6 +252,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -364,7 +368,7 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (sigma_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(sigma_) != 0) {
         output.writeFloat(2, sigma_);
       }
       unknownFields.writeTo(output);
@@ -379,7 +383,7 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (sigma_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(sigma_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, sigma_);
       }
       size += unknownFields.getSerializedSize();

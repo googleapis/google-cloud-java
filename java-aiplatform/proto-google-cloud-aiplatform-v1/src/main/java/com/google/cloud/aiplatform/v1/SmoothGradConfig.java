@@ -74,8 +74,8 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
             break;
           case 13:
             {
-              gradientNoiseSigmaCase_ = 1;
               gradientNoiseSigma_ = input.readFloat();
+              gradientNoiseSigmaCase_ = 1;
               break;
             }
           case 18:
@@ -113,6 +113,8 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -976,8 +978,9 @@ public final class SmoothGradConfig extends com.google.protobuf.GeneratedMessage
       } else {
         if (gradientNoiseSigmaCase_ == 2) {
           featureNoiseSigmaBuilder_.mergeFrom(value);
+        } else {
+          featureNoiseSigmaBuilder_.setMessage(value);
         }
-        featureNoiseSigmaBuilder_.setMessage(value);
       }
       gradientNoiseSigmaCase_ = 2;
       return this;

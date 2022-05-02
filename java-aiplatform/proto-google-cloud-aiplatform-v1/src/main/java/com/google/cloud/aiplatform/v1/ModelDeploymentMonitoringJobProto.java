@@ -32,6 +32,10 @@ public final class ModelDeploymentMonitoringJobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_fieldAccessorTable;
@@ -76,7 +80,7 @@ public final class ModelDeploymentMonitoringJobProto {
           + "iplatform/v1/model_monitoring.proto\032\036goo"
           + "gle/protobuf/duration.proto\032\034google/prot"
           + "obuf/struct.proto\032\037google/protobuf/times"
-          + "tamp.proto\032\027google/rpc/status.proto\"\251\016\n\034"
+          + "tamp.proto\032\027google/rpc/status.proto\"\255\020\n\034"
           + "ModelDeploymentMonitoringJob\022\021\n\004name\030\001 \001"
           + "(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022<\n\010en"
           + "dpoint\030\003 \001(\tB*\340A\002\372A$\n\"aiplatform.googlea"
@@ -84,87 +88,93 @@ public final class ModelDeploymentMonitoringJobProto {
           + ".cloud.aiplatform.v1.JobStateB\003\340A\003\022m\n\016sc"
           + "hedule_state\030\005 \001(\0162P.google.cloud.aiplat"
           + "form.v1.ModelDeploymentMonitoringJob.Mon"
-          + "itoringScheduleStateB\003\340A\003\022\200\001\n-model_depl"
-          + "oyment_monitoring_objective_configs\030\006 \003("
-          + "\0132D.google.cloud.aiplatform.v1.ModelDepl"
-          + "oymentMonitoringObjectiveConfigB\003\340A\002\022}\n+"
-          + "model_deployment_monitoring_schedule_con"
-          + "fig\030\007 \001(\0132C.google.cloud.aiplatform.v1.M"
-          + "odelDeploymentMonitoringScheduleConfigB\003"
-          + "\340A\002\022T\n\031logging_sampling_strategy\030\010 \001(\0132,"
-          + ".google.cloud.aiplatform.v1.SamplingStra"
-          + "tegyB\003\340A\002\022]\n\035model_monitoring_alert_conf"
-          + "ig\030\017 \001(\01326.google.cloud.aiplatform.v1.Mo"
-          + "delMonitoringAlertConfig\022#\n\033predict_inst"
-          + "ance_schema_uri\030\t \001(\t\0227\n\027sample_predict_"
-          + "instance\030\023 \001(\0132\026.google.protobuf.Value\022$"
-          + "\n\034analysis_instance_schema_uri\030\020 \001(\t\022`\n\017"
-          + "bigquery_tables\030\n \003(\0132B.google.cloud.aip"
-          + "latform.v1.ModelDeploymentMonitoringBigQ"
-          + "ueryTableB\003\340A\003\022*\n\007log_ttl\030\021 \001(\0132\031.google"
-          + ".protobuf.Duration\022T\n\006labels\030\013 \003(\0132D.goo"
+          + "itoringScheduleStateB\003\340A\003\022\213\001\n#latest_mon"
+          + "itoring_pipeline_metadata\030\031 \001(\0132Y.google"
+          + ".cloud.aiplatform.v1.ModelDeploymentMoni"
+          + "toringJob.LatestMonitoringPipelineMetada"
+          + "taB\003\340A\003\022\200\001\n-model_deployment_monitoring_"
+          + "objective_configs\030\006 \003(\0132D.google.cloud.a"
+          + "iplatform.v1.ModelDeploymentMonitoringOb"
+          + "jectiveConfigB\003\340A\002\022}\n+model_deployment_m"
+          + "onitoring_schedule_config\030\007 \001(\0132C.google"
+          + ".cloud.aiplatform.v1.ModelDeploymentMoni"
+          + "toringScheduleConfigB\003\340A\002\022T\n\031logging_sam"
+          + "pling_strategy\030\010 \001(\0132,.google.cloud.aipl"
+          + "atform.v1.SamplingStrategyB\003\340A\002\022]\n\035model"
+          + "_monitoring_alert_config\030\017 \001(\01326.google."
+          + "cloud.aiplatform.v1.ModelMonitoringAlert"
+          + "Config\022#\n\033predict_instance_schema_uri\030\t "
+          + "\001(\t\0227\n\027sample_predict_instance\030\023 \001(\0132\026.g"
+          + "oogle.protobuf.Value\022$\n\034analysis_instanc"
+          + "e_schema_uri\030\020 \001(\t\022`\n\017bigquery_tables\030\n "
+          + "\003(\0132B.google.cloud.aiplatform.v1.ModelDe"
+          + "ploymentMonitoringBigQueryTableB\003\340A\003\022*\n\007"
+          + "log_ttl\030\021 \001(\0132\031.google.protobuf.Duration"
+          + "\022T\n\006labels\030\013 \003(\0132D.google.cloud.aiplatfo"
+          + "rm.v1.ModelDeploymentMonitoringJob.Label"
+          + "sEntry\0224\n\013create_time\030\014 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\r \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022;\n\022ne"
+          + "xt_schedule_time\030\016 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022R\n\036stats_anomalies_base_"
+          + "directory\030\024 \001(\0132*.google.cloud.aiplatfor"
+          + "m.v1.GcsDestination\022C\n\017encryption_spec\030\025"
+          + " \001(\0132*.google.cloud.aiplatform.v1.Encryp"
+          + "tionSpec\022\'\n\037enable_monitoring_pipeline_l"
+          + "ogs\030\026 \001(\010\022&\n\005error\030\027 \001(\0132\022.google.rpc.St"
+          + "atusB\003\340A\003\032t\n LatestMonitoringPipelineMet"
+          + "adata\022,\n\010run_time\030\001 \001(\0132\032.google.protobu"
+          + "f.Timestamp\022\"\n\006status\030\002 \001(\0132\022.google.rpc"
+          + ".Status\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\"k\n\027MonitoringScheduleStat"
+          + "e\022)\n%MONITORING_SCHEDULE_STATE_UNSPECIFI"
+          + "ED\020\000\022\013\n\007PENDING\020\001\022\013\n\007OFFLINE\020\002\022\013\n\007RUNNIN"
+          + "G\020\003:\245\001\352A\241\001\n6aiplatform.googleapis.com/Mo"
+          + "delDeploymentMonitoringJob\022gprojects/{pr"
+          + "oject}/locations/{location}/modelDeploym"
+          + "entMonitoringJobs/{model_deployment_moni"
+          + "toring_job}\"\210\003\n&ModelDeploymentMonitorin"
+          + "gBigQueryTable\022`\n\nlog_source\030\001 \001(\0162L.goo"
           + "gle.cloud.aiplatform.v1.ModelDeploymentM"
-          + "onitoringJob.LabelsEntry\0224\n\013create_time\030"
-          + "\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224"
-          + "\n\013update_time\030\r \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022;\n\022next_schedule_time\030\016 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022R\n\036sta"
-          + "ts_anomalies_base_directory\030\024 \001(\0132*.goog"
-          + "le.cloud.aiplatform.v1.GcsDestination\022C\n"
-          + "\017encryption_spec\030\025 \001(\0132*.google.cloud.ai"
-          + "platform.v1.EncryptionSpec\022\'\n\037enable_mon"
-          + "itoring_pipeline_logs\030\026 \001(\010\022&\n\005error\030\027 \001"
-          + "(\0132\022.google.rpc.StatusB\003\340A\003\032-\n\013LabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"k\n\027Mo"
-          + "nitoringScheduleState\022)\n%MONITORING_SCHE"
-          + "DULE_STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\013\n"
-          + "\007OFFLINE\020\002\022\013\n\007RUNNING\020\003:\245\001\352A\241\001\n6aiplatfo"
-          + "rm.googleapis.com/ModelDeploymentMonitor"
-          + "ingJob\022gprojects/{project}/locations/{lo"
-          + "cation}/modelDeploymentMonitoringJobs/{m"
-          + "odel_deployment_monitoring_job}\"\210\003\n&Mode"
-          + "lDeploymentMonitoringBigQueryTable\022`\n\nlo"
-          + "g_source\030\001 \001(\0162L.google.cloud.aiplatform"
-          + ".v1.ModelDeploymentMonitoringBigQueryTab"
-          + "le.LogSource\022\\\n\010log_type\030\002 \001(\0162J.google."
-          + "cloud.aiplatform.v1.ModelDeploymentMonit"
-          + "oringBigQueryTable.LogType\022\033\n\023bigquery_t"
-          + "able_path\030\003 \001(\t\"B\n\tLogSource\022\032\n\026LOG_SOUR"
-          + "CE_UNSPECIFIED\020\000\022\014\n\010TRAINING\020\001\022\013\n\007SERVIN"
-          + "G\020\002\"=\n\007LogType\022\030\n\024LOG_TYPE_UNSPECIFIED\020\000"
-          + "\022\013\n\007PREDICT\020\001\022\013\n\007EXPLAIN\020\002\"\233\001\n(ModelDepl"
-          + "oymentMonitoringObjectiveConfig\022\031\n\021deplo"
-          + "yed_model_id\030\001 \001(\t\022T\n\020objective_config\030\002"
-          + " \001(\0132:.google.cloud.aiplatform.v1.ModelM"
-          + "onitoringObjectiveConfig\"c\n\'ModelDeploym"
-          + "entMonitoringScheduleConfig\0228\n\020monitor_i"
-          + "nterval\030\001 \001(\0132\031.google.protobuf.Duration"
-          + "B\003\340A\002\"\254\004\n\035ModelMonitoringStatsAnomalies\022"
-          + "U\n\tobjective\030\001 \001(\0162B.google.cloud.aiplat"
-          + "form.v1.ModelDeploymentMonitoringObjecti"
-          + "veType\022\031\n\021deployed_model_id\030\002 \001(\t\022\025\n\rano"
-          + "maly_count\030\003 \001(\005\022n\n\rfeature_stats\030\004 \003(\0132"
-          + "W.google.cloud.aiplatform.v1.ModelMonito"
-          + "ringStatsAnomalies.FeatureHistoricStatsA"
-          + "nomalies\032\221\002\n\035FeatureHistoricStatsAnomali"
-          + "es\022\034\n\024feature_display_name\030\001 \001(\t\022>\n\tthre"
-          + "shold\030\003 \001(\0132+.google.cloud.aiplatform.v1"
-          + ".ThresholdConfig\022G\n\016training_stats\030\004 \001(\013"
-          + "2/.google.cloud.aiplatform.v1.FeatureSta"
-          + "tsAnomaly\022I\n\020prediction_stats\030\005 \003(\0132/.go"
-          + "ogle.cloud.aiplatform.v1.FeatureStatsAno"
-          + "maly*\316\001\n&ModelDeploymentMonitoringObject"
-          + "iveType\022:\n6MODEL_DEPLOYMENT_MONITORING_O"
-          + "BJECTIVE_TYPE_UNSPECIFIED\020\000\022\024\n\020RAW_FEATU"
-          + "RE_SKEW\020\001\022\025\n\021RAW_FEATURE_DRIFT\020\002\022\034\n\030FEAT"
-          + "URE_ATTRIBUTION_SKEW\020\003\022\035\n\031FEATURE_ATTRIB"
-          + "UTION_DRIFT\020\004B\345\001\n\036com.google.cloud.aipla"
-          + "tform.v1B!ModelDeploymentMonitoringJobPr"
-          + "otoP\001ZDgoogle.golang.org/genproto/google"
-          + "apis/cloud/aiplatform/v1;aiplatform\252\002\032Go"
-          + "ogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\"
-          + "AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfor"
-          + "m::V1b\006proto3"
+          + "onitoringBigQueryTable.LogSource\022\\\n\010log_"
+          + "type\030\002 \001(\0162J.google.cloud.aiplatform.v1."
+          + "ModelDeploymentMonitoringBigQueryTable.L"
+          + "ogType\022\033\n\023bigquery_table_path\030\003 \001(\t\"B\n\tL"
+          + "ogSource\022\032\n\026LOG_SOURCE_UNSPECIFIED\020\000\022\014\n\010"
+          + "TRAINING\020\001\022\013\n\007SERVING\020\002\"=\n\007LogType\022\030\n\024LO"
+          + "G_TYPE_UNSPECIFIED\020\000\022\013\n\007PREDICT\020\001\022\013\n\007EXP"
+          + "LAIN\020\002\"\233\001\n(ModelDeploymentMonitoringObje"
+          + "ctiveConfig\022\031\n\021deployed_model_id\030\001 \001(\t\022T"
+          + "\n\020objective_config\030\002 \001(\0132:.google.cloud."
+          + "aiplatform.v1.ModelMonitoringObjectiveCo"
+          + "nfig\"c\n\'ModelDeploymentMonitoringSchedul"
+          + "eConfig\0228\n\020monitor_interval\030\001 \001(\0132\031.goog"
+          + "le.protobuf.DurationB\003\340A\002\"\254\004\n\035ModelMonit"
+          + "oringStatsAnomalies\022U\n\tobjective\030\001 \001(\0162B"
+          + ".google.cloud.aiplatform.v1.ModelDeploym"
+          + "entMonitoringObjectiveType\022\031\n\021deployed_m"
+          + "odel_id\030\002 \001(\t\022\025\n\ranomaly_count\030\003 \001(\005\022n\n\r"
+          + "feature_stats\030\004 \003(\0132W.google.cloud.aipla"
+          + "tform.v1.ModelMonitoringStatsAnomalies.F"
+          + "eatureHistoricStatsAnomalies\032\221\002\n\035Feature"
+          + "HistoricStatsAnomalies\022\034\n\024feature_displa"
+          + "y_name\030\001 \001(\t\022>\n\tthreshold\030\003 \001(\0132+.google"
+          + ".cloud.aiplatform.v1.ThresholdConfig\022G\n\016"
+          + "training_stats\030\004 \001(\0132/.google.cloud.aipl"
+          + "atform.v1.FeatureStatsAnomaly\022I\n\020predict"
+          + "ion_stats\030\005 \003(\0132/.google.cloud.aiplatfor"
+          + "m.v1.FeatureStatsAnomaly*\316\001\n&ModelDeploy"
+          + "mentMonitoringObjectiveType\022:\n6MODEL_DEP"
+          + "LOYMENT_MONITORING_OBJECTIVE_TYPE_UNSPEC"
+          + "IFIED\020\000\022\024\n\020RAW_FEATURE_SKEW\020\001\022\025\n\021RAW_FEA"
+          + "TURE_DRIFT\020\002\022\034\n\030FEATURE_ATTRIBUTION_SKEW"
+          + "\020\003\022\035\n\031FEATURE_ATTRIBUTION_DRIFT\020\004B\345\001\n\036co"
+          + "m.google.cloud.aiplatform.v1B!ModelDeplo"
+          + "ymentMonitoringJobProtoP\001ZDgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1;aiplatform\252\002\032Google.Cloud.AIPlatfor"
+          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
+          + "le::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,6 +203,7 @@ public final class ModelDeploymentMonitoringJobProto {
               "Endpoint",
               "State",
               "ScheduleState",
+              "LatestMonitoringPipelineMetadata",
               "ModelDeploymentMonitoringObjectiveConfigs",
               "ModelDeploymentMonitoringScheduleConfig",
               "LoggingSamplingStrategy",
@@ -211,10 +222,20 @@ public final class ModelDeploymentMonitoringJobProto {
               "EnableMonitoringPipelineLogs",
               "Error",
             });
-    internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor =
         internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_descriptor
             .getNestedTypes()
             .get(0);
+    internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor,
+            new java.lang.String[] {
+              "RunTime", "Status",
+            });
+    internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_descriptor
+            .getNestedTypes()
+            .get(1);
     internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LabelsEntry_descriptor,

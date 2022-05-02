@@ -272,6 +272,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -385,8 +387,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Deprecated
+    /* nullable */
     com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
-        java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1.Value defaultValue);
     /**
      *
      *
@@ -501,8 +506,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
      */
+
+    /* nullable */
     com.google.protobuf.Value getParameterValuesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue);
     /**
      *
      *
@@ -623,6 +632,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -711,7 +722,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParameters().getMap().containsKey(key);
     }
@@ -764,7 +775,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
         java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> map =
           internalGetParameters().getMap();
@@ -790,7 +801,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1.Value getParametersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> map =
           internalGetParameters().getMap();
@@ -907,7 +918,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsParameterValues(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParameterValues().getMap().containsKey(key);
     }
@@ -951,7 +962,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value getParameterValuesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetParameterValues().getMap();
@@ -973,7 +984,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetParameterValues().getMap();
@@ -1427,7 +1438,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsParameters(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetParameters().getMap().containsKey(key);
       }
@@ -1480,7 +1491,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.Value getParametersOrDefault(
           java.lang.String key, com.google.cloud.aiplatform.v1.Value defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> map =
             internalGetParameters().getMap();
@@ -1506,7 +1517,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public com.google.cloud.aiplatform.v1.Value getParametersOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1.Value> map =
             internalGetParameters().getMap();
@@ -1540,7 +1551,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public Builder removeParameters(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableParameters().getMutableMap().remove(key);
         return this;
@@ -1571,11 +1582,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       public Builder putParameters(
           java.lang.String key, com.google.cloud.aiplatform.v1.Value value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableParameters().getMutableMap().put(key, value);
         return this;
       }
@@ -1784,7 +1796,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsParameterValues(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetParameterValues().getMap().containsKey(key);
       }
@@ -1828,7 +1840,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Value getParameterValuesOrDefault(
           java.lang.String key, com.google.protobuf.Value defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetParameterValues().getMap();
@@ -1850,7 +1862,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetParameterValues().getMap();
@@ -1879,7 +1891,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeParameterValues(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableParameterValues().getMutableMap().remove(key);
         return this;
@@ -1905,11 +1917,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putParameterValues(java.lang.String key, com.google.protobuf.Value value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableParameterValues().getMutableMap().put(key, value);
         return this;
       }
@@ -2288,11 +2301,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    *
    * @return Whether the pipelineSpec field is set.
    */
@@ -2304,11 +2316,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    *
    * @return The pipelineSpec.
    */
@@ -2320,11 +2331,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder() {
@@ -2515,7 +2525,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -2558,7 +2568,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2579,7 +2589,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -4509,11 +4519,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      *
      * @return Whether the pipelineSpec field is set.
      */
@@ -4524,11 +4533,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      *
      * @return The pipelineSpec.
      */
@@ -4545,11 +4553,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder setPipelineSpec(com.google.protobuf.Struct value) {
       if (pipelineSpecBuilder_ == null) {
@@ -4568,11 +4575,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder setPipelineSpec(com.google.protobuf.Struct.Builder builderForValue) {
       if (pipelineSpecBuilder_ == null) {
@@ -4588,11 +4594,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder mergePipelineSpec(com.google.protobuf.Struct value) {
       if (pipelineSpecBuilder_ == null) {
@@ -4613,11 +4618,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public Builder clearPipelineSpec() {
       if (pipelineSpecBuilder_ == null) {
@@ -4634,11 +4638,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public com.google.protobuf.Struct.Builder getPipelineSpecBuilder() {
 
@@ -4649,11 +4652,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     public com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder() {
       if (pipelineSpecBuilder_ != null) {
@@ -4668,11 +4670,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the pipeline.
+     * The spec of the pipeline.
      * </pre>
      *
-     * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
@@ -5219,7 +5220,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -5263,7 +5264,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -5284,7 +5285,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -5312,7 +5313,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -5337,11 +5338,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }

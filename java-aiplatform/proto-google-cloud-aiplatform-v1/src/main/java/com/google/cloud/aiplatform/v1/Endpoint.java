@@ -240,6 +240,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -564,7 +566,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsTrafficSplit(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTrafficSplit().getMap().containsKey(key);
   }
@@ -609,7 +611,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getTrafficSplitOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -631,7 +633,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getTrafficSplitOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
     if (!map.containsKey(key)) {
@@ -732,7 +734,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -775,7 +777,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -796,7 +798,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1034,7 +1036,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, expose the Endpoint via private service connect.
+   * Deprecated: If true, expose the Endpoint via private service connect.
    * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.
@@ -1042,6 +1044,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -2626,7 +2630,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsTrafficSplit(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTrafficSplit().getMap().containsKey(key);
     }
@@ -2671,7 +2675,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public int getTrafficSplitOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2693,7 +2697,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public int getTrafficSplitOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
       if (!map.containsKey(key)) {
@@ -2722,7 +2726,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeTrafficSplit(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTrafficSplit().getMutableMap().remove(key);
       return this;
@@ -2748,7 +2752,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putTrafficSplit(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableTrafficSplit().getMutableMap().put(key, value);
@@ -2925,7 +2929,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2969,7 +2973,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2990,7 +2994,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -3018,7 +3022,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -3043,11 +3047,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3841,7 +3846,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, expose the Endpoint via private service connect.
+     * Deprecated: If true, expose the Endpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
@@ -3849,6 +3854,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -3860,7 +3867,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, expose the Endpoint via private service connect.
+     * Deprecated: If true, expose the Endpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
@@ -3868,6 +3875,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -3882,7 +3891,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, expose the Endpoint via private service connect.
+     * Deprecated: If true, expose the Endpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
@@ -3890,6 +3899,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

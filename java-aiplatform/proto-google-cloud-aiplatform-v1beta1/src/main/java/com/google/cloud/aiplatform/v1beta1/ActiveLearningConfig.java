@@ -72,14 +72,14 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
             break;
           case 8:
             {
-              humanLabelingBudgetCase_ = 1;
               humanLabelingBudget_ = input.readInt64();
+              humanLabelingBudgetCase_ = 1;
               break;
             }
           case 16:
             {
-              humanLabelingBudgetCase_ = 2;
               humanLabelingBudget_ = input.readInt32();
+              humanLabelingBudgetCase_ = 2;
               break;
             }
           case 26:
@@ -126,6 +126,8 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

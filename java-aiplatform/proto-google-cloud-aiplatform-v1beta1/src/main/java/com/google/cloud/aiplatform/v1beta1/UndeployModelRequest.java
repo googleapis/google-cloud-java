@@ -112,6 +112,8 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -297,7 +299,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean containsTrafficSplit(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetTrafficSplit().getMap().containsKey(key);
   }
@@ -344,7 +346,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public int getTrafficSplitOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -367,7 +369,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public int getTrafficSplitOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
     if (!map.containsKey(key)) {
@@ -1033,7 +1035,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public boolean containsTrafficSplit(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetTrafficSplit().getMap().containsKey(key);
     }
@@ -1080,7 +1082,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public int getTrafficSplitOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1103,7 +1105,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public int getTrafficSplitOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
       if (!map.containsKey(key)) {
@@ -1133,7 +1135,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder removeTrafficSplit(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableTrafficSplit().getMutableMap().remove(key);
       return this;
@@ -1160,7 +1162,7 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder putTrafficSplit(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableTrafficSplit().getMutableMap().put(key, value);

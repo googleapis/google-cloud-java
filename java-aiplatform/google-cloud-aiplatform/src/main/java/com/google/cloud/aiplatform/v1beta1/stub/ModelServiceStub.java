@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -25,6 +26,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.DeleteModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportModelRequest;
@@ -37,8 +39,11 @@ import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListModelsResponse;
+import com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice;
@@ -86,6 +91,16 @@ public abstract class ModelServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listModelsCallable()");
   }
 
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelVersionsCallable()");
+  }
+
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
   }
@@ -97,6 +112,20 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  }
+
+  public OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteModelVersionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelVersionCallable()");
+  }
+
+  public UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: mergeVersionAliasesCallable()");
   }
 
   public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>

@@ -72,4 +72,43 @@
     <className>com/google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <field>SIMILARITY*</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <field>SIMILARITY*</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <method>* getSimilarity*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <method>boolean hasSimilarity*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <method>* clearSimilarity*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <method>* mergeSimilarity*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/ExplanationParameters*</className>
+    <method>* setSimilarity*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/aiplatform/v1beta1/Similarity*</className>
+  </difference>
 </differences>

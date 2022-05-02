@@ -140,7 +140,12 @@ public interface ImportDataConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
    */
-  java.lang.String getDataItemLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getDataItemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

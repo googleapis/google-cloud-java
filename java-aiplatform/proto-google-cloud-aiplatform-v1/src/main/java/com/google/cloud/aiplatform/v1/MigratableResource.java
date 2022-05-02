@@ -200,6 +200,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -370,6 +372,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1296,6 +1300,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2178,6 +2184,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3157,6 +3165,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3324,6 +3334,8 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6535,8 +6547,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       } else {
         if (resourceCase_ == 1) {
           mlEngineModelVersionBuilder_.mergeFrom(value);
+        } else {
+          mlEngineModelVersionBuilder_.setMessage(value);
         }
-        mlEngineModelVersionBuilder_.setMessage(value);
       }
       resourceCase_ = 1;
       return this;
@@ -6771,8 +6784,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       } else {
         if (resourceCase_ == 2) {
           automlModelBuilder_.mergeFrom(value);
+        } else {
+          automlModelBuilder_.setMessage(value);
         }
-        automlModelBuilder_.setMessage(value);
       }
       resourceCase_ = 2;
       return this;
@@ -7005,8 +7019,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       } else {
         if (resourceCase_ == 3) {
           automlDatasetBuilder_.mergeFrom(value);
+        } else {
+          automlDatasetBuilder_.setMessage(value);
         }
-        automlDatasetBuilder_.setMessage(value);
       }
       resourceCase_ = 3;
       return this;
@@ -7244,8 +7259,9 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       } else {
         if (resourceCase_ == 4) {
           dataLabelingDatasetBuilder_.mergeFrom(value);
+        } else {
+          dataLabelingDatasetBuilder_.setMessage(value);
         }
-        dataLabelingDatasetBuilder_.setMessage(value);
       }
       resourceCase_ = 4;
       return this;

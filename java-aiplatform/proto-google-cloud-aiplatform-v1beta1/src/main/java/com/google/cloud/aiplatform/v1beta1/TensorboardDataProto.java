@@ -62,42 +62,40 @@ public final class TensorboardDataProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/tensor"
           + "board_data.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\034google/api/annotations.proto\032"
-          + "\037google/api/field_behavior.proto\032=google"
-          + "/cloud/aiplatform/v1beta1/tensorboard_ti"
-          + "me_series.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\342\001\n\016TimeSeriesData\022\'\n\032tensorboa"
-          + "rd_time_series_id\030\001 \001(\tB\003\340A\002\022\\\n\nvalue_ty"
-          + "pe\030\002 \001(\0162@.google.cloud.aiplatform.v1bet"
-          + "a1.TensorboardTimeSeries.ValueTypeB\006\340A\002\340"
-          + "A\005\022I\n\006values\030\003 \003(\01324.google.cloud.aiplat"
-          + "form.v1beta1.TimeSeriesDataPointB\003\340A\002\"\247\002"
-          + "\n\023TimeSeriesDataPoint\0229\n\006scalar\030\003 \001(\0132\'."
-          + "google.cloud.aiplatform.v1beta1.ScalarH\000"
-          + "\022D\n\006tensor\030\004 \001(\01322.google.cloud.aiplatfo"
-          + "rm.v1beta1.TensorboardTensorH\000\022I\n\005blobs\030"
-          + "\005 \001(\01328.google.cloud.aiplatform.v1beta1."
-          + "TensorboardBlobSequenceH\000\022-\n\twall_time\030\001"
-          + " \001(\0132\032.google.protobuf.Timestamp\022\014\n\004step"
-          + "\030\002 \001(\003B\007\n\005value\"\027\n\006Scalar\022\r\n\005value\030\001 \001(\001"
-          + "\"D\n\021TensorboardTensor\022\022\n\005value\030\001 \001(\014B\003\340A"
-          + "\002\022\033\n\016version_number\030\002 \001(\005B\003\340A\001\"[\n\027Tensor"
-          + "boardBlobSequence\022@\n\006values\030\001 \003(\01320.goog"
-          + "le.cloud.aiplatform.v1beta1.TensorboardB"
-          + "lob\"5\n\017TensorboardBlob\022\017\n\002id\030\001 \001(\tB\003\340A\003\022"
-          + "\021\n\004data\030\002 \001(\014B\003\340A\001B\361\001\n#com.google.cloud."
-          + "aiplatform.v1beta1B\024TensorboardDataProto"
-          + "P\001ZIgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/aiplatform/v1beta1;aiplatform\252\002\037"
-          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
-          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clou"
-          + "d::AIPlatform::V1beta1b\006proto3"
+          + "m.v1beta1\032\037google/api/field_behavior.pro"
+          + "to\032=google/cloud/aiplatform/v1beta1/tens"
+          + "orboard_time_series.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\342\001\n\016TimeSeriesData\022\'\n"
+          + "\032tensorboard_time_series_id\030\001 \001(\tB\003\340A\002\022\\"
+          + "\n\nvalue_type\030\002 \001(\0162@.google.cloud.aiplat"
+          + "form.v1beta1.TensorboardTimeSeries.Value"
+          + "TypeB\006\340A\002\340A\005\022I\n\006values\030\003 \003(\01324.google.cl"
+          + "oud.aiplatform.v1beta1.TimeSeriesDataPoi"
+          + "ntB\003\340A\002\"\247\002\n\023TimeSeriesDataPoint\0229\n\006scala"
+          + "r\030\003 \001(\0132\'.google.cloud.aiplatform.v1beta"
+          + "1.ScalarH\000\022D\n\006tensor\030\004 \001(\01322.google.clou"
+          + "d.aiplatform.v1beta1.TensorboardTensorH\000"
+          + "\022I\n\005blobs\030\005 \001(\01328.google.cloud.aiplatfor"
+          + "m.v1beta1.TensorboardBlobSequenceH\000\022-\n\tw"
+          + "all_time\030\001 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022\014\n\004step\030\002 \001(\003B\007\n\005value\"\027\n\006Scalar\022\r\n\005v"
+          + "alue\030\001 \001(\001\"D\n\021TensorboardTensor\022\022\n\005value"
+          + "\030\001 \001(\014B\003\340A\002\022\033\n\016version_number\030\002 \001(\005B\003\340A\001"
+          + "\"[\n\027TensorboardBlobSequence\022@\n\006values\030\001 "
+          + "\003(\01320.google.cloud.aiplatform.v1beta1.Te"
+          + "nsorboardBlob\"5\n\017TensorboardBlob\022\017\n\002id\030\001"
+          + " \001(\tB\003\340A\003\022\021\n\004data\030\002 \001(\014B\003\340A\001B\361\001\n#com.goo"
+          + "gle.cloud.aiplatform.v1beta1B\024Tensorboar"
+          + "dDataProtoP\001ZIgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1beta1;aip"
+          + "latform\252\002\037Google.Cloud.AIPlatform.V1Beta"
+          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
+          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -155,7 +153,6 @@ public final class TensorboardDataProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

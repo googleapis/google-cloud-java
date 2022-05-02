@@ -151,6 +151,8 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1010,8 +1012,9 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       } else {
         if (valueCase_ == 3) {
           scalarBuilder_.mergeFrom(value);
+        } else {
+          scalarBuilder_.setMessage(value);
         }
-        scalarBuilder_.setMessage(value);
       }
       valueCase_ = 3;
       return this;
@@ -1217,8 +1220,9 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       } else {
         if (valueCase_ == 4) {
           tensorBuilder_.mergeFrom(value);
+        } else {
+          tensorBuilder_.setMessage(value);
         }
-        tensorBuilder_.setMessage(value);
       }
       valueCase_ = 4;
       return this;
@@ -1427,8 +1431,9 @@ public final class TimeSeriesDataPoint extends com.google.protobuf.GeneratedMess
       } else {
         if (valueCase_ == 5) {
           blobsBuilder_.mergeFrom(value);
+        } else {
+          blobsBuilder_.setMessage(value);
         }
-        blobsBuilder_.setMessage(value);
       }
       valueCase_ = 5;
       return this;

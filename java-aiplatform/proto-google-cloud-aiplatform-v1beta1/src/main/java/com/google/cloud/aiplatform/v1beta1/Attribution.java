@@ -151,6 +151,8 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -555,10 +557,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (baselineOutputValue_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baselineOutputValue_) != 0) {
       output.writeDouble(1, baselineOutputValue_);
     }
-    if (instanceOutputValue_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(instanceOutputValue_) != 0) {
       output.writeDouble(2, instanceOutputValue_);
     }
     if (featureAttributions_ != null) {
@@ -574,7 +576,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, outputDisplayName_);
     }
-    if (approximationError_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(approximationError_) != 0) {
       output.writeDouble(6, approximationError_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputName_)) {
@@ -589,10 +591,10 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (baselineOutputValue_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(baselineOutputValue_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, baselineOutputValue_);
     }
-    if (instanceOutputValue_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(instanceOutputValue_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, instanceOutputValue_);
     }
     if (featureAttributions_ != null) {
@@ -614,7 +616,7 @@ public final class Attribution extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, outputDisplayName_);
     }
-    if (approximationError_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(approximationError_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, approximationError_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputName_)) {

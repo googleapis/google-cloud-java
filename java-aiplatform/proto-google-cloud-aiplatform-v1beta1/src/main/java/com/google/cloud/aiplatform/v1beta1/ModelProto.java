@@ -61,84 +61,85 @@ public final class ModelProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/aiplatform/v1beta1/model."
-          + "proto\022\037google.cloud.aiplatform.v1beta1\032\034"
-          + "google/api/annotations.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\032-google/cloud/aiplatform/v1beta"
-          + "1/dataset.proto\0328google/cloud/aiplatform"
-          + "/v1beta1/deployed_model_ref.proto\0325googl"
-          + "e/cloud/aiplatform/v1beta1/encryption_sp"
-          + "ec.proto\032-google/cloud/aiplatform/v1beta"
-          + "1/env_var.proto\0321google/cloud/aiplatform"
-          + "/v1beta1/explanation.proto\032\034google/proto"
-          + "buf/struct.proto\032\037google/protobuf/timest"
-          + "amp.proto\"\321\014\n\005Model\022\014\n\004name\030\001 \001(\t\022\031\n\014dis"
-          + "play_name\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001("
-          + "\t\022J\n\020predict_schemata\030\004 \001(\01320.google.clo"
-          + "ud.aiplatform.v1beta1.PredictSchemata\022 \n"
-          + "\023metadata_schema_uri\030\005 \001(\tB\003\340A\005\022-\n\010metad"
-          + "ata\030\006 \001(\0132\026.google.protobuf.ValueB\003\340A\005\022Z"
-          + "\n\030supported_export_formats\030\024 \003(\01323.googl"
-          + "e.cloud.aiplatform.v1beta1.Model.ExportF"
-          + "ormatB\003\340A\003\022M\n\021training_pipeline\030\007 \001(\tB2\340"
-          + "A\003\372A,\n*aiplatform.googleapis.com/Trainin"
-          + "gPipeline\022P\n\016container_spec\030\t \001(\01323.goog"
-          + "le.cloud.aiplatform.v1beta1.ModelContain"
-          + "erSpecB\003\340A\004\022\031\n\014artifact_uri\030\032 \001(\tB\003\340A\005\022q"
-          + "\n$supported_deployment_resources_types\030\n"
-          + " \003(\0162>.google.cloud.aiplatform.v1beta1.M"
-          + "odel.DeploymentResourcesTypeB\003\340A\003\022,\n\037sup"
-          + "ported_input_storage_formats\030\013 \003(\tB\003\340A\003\022"
-          + "-\n supported_output_storage_formats\030\014 \003("
-          + "\tB\003\340A\003\0224\n\013create_time\030\r \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\016 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022O\n\017de"
-          + "ployed_models\030\017 \003(\01321.google.cloud.aipla"
-          + "tform.v1beta1.DeployedModelRefB\003\340A\003\022J\n\020e"
-          + "xplanation_spec\030\027 \001(\01320.google.cloud.aip"
-          + "latform.v1beta1.ExplanationSpec\022\014\n\004etag\030"
-          + "\020 \001(\t\022B\n\006labels\030\021 \003(\01322.google.cloud.aip"
-          + "latform.v1beta1.Model.LabelsEntry\022H\n\017enc"
-          + "ryption_spec\030\030 \001(\0132/.google.cloud.aiplat"
-          + "form.v1beta1.EncryptionSpec\032\332\001\n\014ExportFo"
-          + "rmat\022\017\n\002id\030\001 \001(\tB\003\340A\003\022g\n\023exportable_cont"
-          + "ents\030\002 \003(\0162E.google.cloud.aiplatform.v1b"
-          + "eta1.Model.ExportFormat.ExportableConten"
-          + "tB\003\340A\003\"P\n\021ExportableContent\022\"\n\036EXPORTABL"
-          + "E_CONTENT_UNSPECIFIED\020\000\022\014\n\010ARTIFACT\020\001\022\t\n"
-          + "\005IMAGE\020\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"v\n\027DeploymentResourcesTy"
-          + "pe\022)\n%DEPLOYMENT_RESOURCES_TYPE_UNSPECIF"
-          + "IED\020\000\022\027\n\023DEDICATED_RESOURCES\020\001\022\027\n\023AUTOMA"
-          + "TIC_RESOURCES\020\002:\\\352AY\n\037aiplatform.googlea"
-          + "pis.com/Model\0226projects/{project}/locati"
-          + "ons/{location}/models/{model}\"{\n\017Predict"
-          + "Schemata\022 \n\023instance_schema_uri\030\001 \001(\tB\003\340"
-          + "A\005\022\"\n\025parameters_schema_uri\030\002 \001(\tB\003\340A\005\022\""
-          + "\n\025prediction_schema_uri\030\003 \001(\tB\003\340A\005\"\205\002\n\022M"
-          + "odelContainerSpec\022\031\n\timage_uri\030\001 \001(\tB\006\340A"
-          + "\002\340A\005\022\024\n\007command\030\002 \003(\tB\003\340A\005\022\021\n\004args\030\003 \003(\t"
-          + "B\003\340A\005\0229\n\003env\030\004 \003(\0132\'.google.cloud.aiplat"
-          + "form.v1beta1.EnvVarB\003\340A\005\0229\n\005ports\030\005 \003(\0132"
-          + "%.google.cloud.aiplatform.v1beta1.PortB\003"
-          + "\340A\005\022\032\n\rpredict_route\030\006 \001(\tB\003\340A\005\022\031\n\014healt"
-          + "h_route\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_"
-          + "port\030\003 \001(\005B\347\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\nModelProtoP\001ZIgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1beta1;aiplatform\252\002\037Google.Cloud.AIPla"
-          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
-          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
-          + "eta1b\006proto3"
+          + "proto\022\037google.cloud.aiplatform.v1beta1\032\037"
+          + "google/api/field_behavior.proto\032\031google/"
+          + "api/resource.proto\0328google/cloud/aiplatf"
+          + "orm/v1beta1/deployed_model_ref.proto\0325go"
+          + "ogle/cloud/aiplatform/v1beta1/encryption"
+          + "_spec.proto\032-google/cloud/aiplatform/v1b"
+          + "eta1/env_var.proto\0321google/cloud/aiplatf"
+          + "orm/v1beta1/explanation.proto\032\034google/pr"
+          + "otobuf/struct.proto\032\037google/protobuf/tim"
+          + "estamp.proto\"\237\016\n\005Model\022\014\n\004name\030\001 \001(\t\022\032\n\n"
+          + "version_id\030\034 \001(\tB\006\340A\005\340A\003\022\027\n\017version_alia"
+          + "ses\030\035 \003(\t\022<\n\023version_create_time\030\037 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022<\n\023versi"
+          + "on_update_time\030  \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002"
+          + "\022\023\n\013description\030\003 \001(\t\022\033\n\023version_descrip"
+          + "tion\030\036 \001(\t\022J\n\020predict_schemata\030\004 \001(\01320.g"
+          + "oogle.cloud.aiplatform.v1beta1.PredictSc"
+          + "hemata\022 \n\023metadata_schema_uri\030\005 \001(\tB\003\340A\005"
+          + "\022-\n\010metadata\030\006 \001(\0132\026.google.protobuf.Val"
+          + "ueB\003\340A\005\022Z\n\030supported_export_formats\030\024 \003("
+          + "\01323.google.cloud.aiplatform.v1beta1.Mode"
+          + "l.ExportFormatB\003\340A\003\022M\n\021training_pipeline"
+          + "\030\007 \001(\tB2\340A\003\372A,\n*aiplatform.googleapis.co"
+          + "m/TrainingPipeline\022P\n\016container_spec\030\t \001"
+          + "(\01323.google.cloud.aiplatform.v1beta1.Mod"
+          + "elContainerSpecB\003\340A\004\022\031\n\014artifact_uri\030\032 \001"
+          + "(\tB\003\340A\005\022q\n$supported_deployment_resource"
+          + "s_types\030\n \003(\0162>.google.cloud.aiplatform."
+          + "v1beta1.Model.DeploymentResourcesTypeB\003\340"
+          + "A\003\022,\n\037supported_input_storage_formats\030\013 "
+          + "\003(\tB\003\340A\003\022-\n supported_output_storage_for"
+          + "mats\030\014 \003(\tB\003\340A\003\0224\n\013create_time\030\r \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
+          + "time\030\016 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\022O\n\017deployed_models\030\017 \003(\01321.google.cl"
+          + "oud.aiplatform.v1beta1.DeployedModelRefB"
+          + "\003\340A\003\022J\n\020explanation_spec\030\027 \001(\01320.google."
+          + "cloud.aiplatform.v1beta1.ExplanationSpec"
+          + "\022\014\n\004etag\030\020 \001(\t\022B\n\006labels\030\021 \003(\01322.google."
+          + "cloud.aiplatform.v1beta1.Model.LabelsEnt"
+          + "ry\022H\n\017encryption_spec\030\030 \001(\0132/.google.clo"
+          + "ud.aiplatform.v1beta1.EncryptionSpec\032\332\001\n"
+          + "\014ExportFormat\022\017\n\002id\030\001 \001(\tB\003\340A\003\022g\n\023export"
+          + "able_contents\030\002 \003(\0162E.google.cloud.aipla"
+          + "tform.v1beta1.Model.ExportFormat.Exporta"
+          + "bleContentB\003\340A\003\"P\n\021ExportableContent\022\"\n\036"
+          + "EXPORTABLE_CONTENT_UNSPECIFIED\020\000\022\014\n\010ARTI"
+          + "FACT\020\001\022\t\n\005IMAGE\020\002\032-\n\013LabelsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"v\n\027DeploymentRe"
+          + "sourcesType\022)\n%DEPLOYMENT_RESOURCES_TYPE"
+          + "_UNSPECIFIED\020\000\022\027\n\023DEDICATED_RESOURCES\020\001\022"
+          + "\027\n\023AUTOMATIC_RESOURCES\020\002:\\\352AY\n\037aiplatfor"
+          + "m.googleapis.com/Model\0226projects/{projec"
+          + "t}/locations/{location}/models/{model}\"{"
+          + "\n\017PredictSchemata\022 \n\023instance_schema_uri"
+          + "\030\001 \001(\tB\003\340A\005\022\"\n\025parameters_schema_uri\030\002 \001"
+          + "(\tB\003\340A\005\022\"\n\025prediction_schema_uri\030\003 \001(\tB\003"
+          + "\340A\005\"\205\002\n\022ModelContainerSpec\022\031\n\timage_uri\030"
+          + "\001 \001(\tB\006\340A\002\340A\005\022\024\n\007command\030\002 \003(\tB\003\340A\005\022\021\n\004a"
+          + "rgs\030\003 \003(\tB\003\340A\005\0229\n\003env\030\004 \003(\0132\'.google.clo"
+          + "ud.aiplatform.v1beta1.EnvVarB\003\340A\005\0229\n\005por"
+          + "ts\030\005 \003(\0132%.google.cloud.aiplatform.v1bet"
+          + "a1.PortB\003\340A\005\022\032\n\rpredict_route\030\006 \001(\tB\003\340A\005"
+          + "\022\031\n\014health_route\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016c"
+          + "ontainer_port\030\003 \001(\005B\347\001\n#com.google.cloud"
+          + ".aiplatform.v1beta1B\nModelProtoP\001ZIgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DeployedModelNameProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor(),
@@ -153,8 +154,13 @@ public final class ModelProto {
             internal_static_google_cloud_aiplatform_v1beta1_Model_descriptor,
             new java.lang.String[] {
               "Name",
+              "VersionId",
+              "VersionAliases",
+              "VersionCreateTime",
+              "VersionUpdateTime",
               "DisplayName",
               "Description",
+              "VersionDescription",
               "PredictSchemata",
               "MetadataSchemaUri",
               "Metadata",
@@ -220,10 +226,8 @@ public final class ModelProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.cloud.aiplatform.v1beta1.DatasetProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DeployedModelNameProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor();

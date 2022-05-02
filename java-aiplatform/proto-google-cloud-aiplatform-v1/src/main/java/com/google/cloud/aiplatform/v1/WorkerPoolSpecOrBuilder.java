@@ -151,6 +151,68 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.NfsMount> getNfsMountsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.NfsMount getNfsMounts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNfsMountsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.NfsMountOrBuilder>
+      getNfsMountsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of NFS mount spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.NfsMount nfs_mounts = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.NfsMountOrBuilder getNfsMountsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Disk spec.
    * </pre>
    *

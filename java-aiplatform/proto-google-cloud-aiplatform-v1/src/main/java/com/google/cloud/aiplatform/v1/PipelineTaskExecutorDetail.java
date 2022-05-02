@@ -127,6 +127,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -298,6 +300,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1202,6 +1206,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1914,6 +1920,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
    * @return Whether the customJobDetail field is set.
    */
   @java.lang.Override
@@ -1932,6 +1940,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
    * @return The customJobDetail.
    */
   @java.lang.Override
@@ -2491,8 +2501,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       } else {
         if (detailsCase_ == 1) {
           containerDetailBuilder_.mergeFrom(value);
+        } else {
+          containerDetailBuilder_.setMessage(value);
         }
-        containerDetailBuilder_.setMessage(value);
       }
       detailsCase_ = 1;
       return this;
@@ -2619,6 +2630,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
      * @return Whether the customJobDetail field is set.
      */
     @java.lang.Override
@@ -2637,6 +2650,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
      * @return The customJobDetail.
      */
     @java.lang.Override
@@ -2740,8 +2755,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       } else {
         if (detailsCase_ == 2) {
           customJobDetailBuilder_.mergeFrom(value);
+        } else {
+          customJobDetailBuilder_.setMessage(value);
         }
-        customJobDetailBuilder_.setMessage(value);
       }
       detailsCase_ = 2;
       return this;

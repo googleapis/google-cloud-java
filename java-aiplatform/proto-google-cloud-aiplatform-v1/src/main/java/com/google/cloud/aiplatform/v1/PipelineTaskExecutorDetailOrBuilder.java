@@ -76,6 +76,8 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
    * @return Whether the customJobDetail field is set.
    */
   @java.lang.Deprecated
@@ -91,6 +93,8 @@ public interface PipelineTaskExecutorDetailOrBuilder
    * .google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.CustomJobDetail custom_job_detail = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=313
    * @return The customJobDetail.
    */
   @java.lang.Deprecated

@@ -111,6 +111,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -265,6 +267,8 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1595,8 +1599,9 @@ public final class ModelMonitoringAlertConfig extends com.google.protobuf.Genera
       } else {
         if (alertCase_ == 1) {
           emailAlertConfigBuilder_.mergeFrom(value);
+        } else {
+          emailAlertConfigBuilder_.setMessage(value);
         }
-        emailAlertConfigBuilder_.setMessage(value);
       }
       alertCase_ = 1;
       return this;

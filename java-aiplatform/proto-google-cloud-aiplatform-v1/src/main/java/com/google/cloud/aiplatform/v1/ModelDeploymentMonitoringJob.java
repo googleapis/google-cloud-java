@@ -350,6 +350,26 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
 
               break;
             }
+          case 202:
+            {
+              com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                      .LatestMonitoringPipelineMetadata.Builder
+                  subBuilder = null;
+              if (latestMonitoringPipelineMetadata_ != null) {
+                subBuilder = latestMonitoringPipelineMetadata_.toBuilder();
+              }
+              latestMonitoringPipelineMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                          .LatestMonitoringPipelineMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(latestMonitoringPipelineMetadata_);
+                latestMonitoringPipelineMetadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -361,6 +381,8 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -585,6 +607,1136 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.MonitoringScheduleState)
+  }
+
+  public interface LatestMonitoringPipelineMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     *
+     * @return Whether the runTime field is set.
+     */
+    boolean hasRunTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     *
+     * @return The runTime.
+     */
+    com.google.protobuf.Timestamp getRunTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getRunTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    boolean hasStatus();
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
+     */
+    com.google.rpc.Status getStatus();
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     */
+    com.google.rpc.StatusOrBuilder getStatusOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * All metadata of most recent monitoring pipelines.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata}
+   */
+  public static final class LatestMonitoringPipelineMetadata
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata)
+      LatestMonitoringPipelineMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use LatestMonitoringPipelineMetadata.newBuilder() to construct.
+    private LatestMonitoringPipelineMetadata(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private LatestMonitoringPipelineMetadata() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new LatestMonitoringPipelineMetadata();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private LatestMonitoringPipelineMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (runTime_ != null) {
+                  subBuilder = runTime_.toBuilder();
+                }
+                runTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(runTime_);
+                  runTime_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.rpc.Status.Builder subBuilder = null;
+                if (status_ != null) {
+                  subBuilder = status_.toBuilder();
+                }
+                status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(status_);
+                  status_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
+          .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
+          .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                  .LatestMonitoringPipelineMetadata.class,
+              com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                  .LatestMonitoringPipelineMetadata.Builder.class);
+    }
+
+    public static final int RUN_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp runTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     *
+     * @return Whether the runTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasRunTime() {
+      return runTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     *
+     * @return The runTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getRunTime() {
+      return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time that most recent monitoring pipelines that is related to this
+     * run.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp run_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getRunTimeOrBuilder() {
+      return getRunTime();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private com.google.rpc.Status status_;
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getStatus() {
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the most recent monitoring pipeline.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (runTime_ != null) {
+        output.writeMessage(1, getRunTime());
+      }
+      if (status_ != null) {
+        output.writeMessage(2, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (runTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRunTime());
+      }
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+              .LatestMonitoringPipelineMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+          other =
+              (com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                      .LatestMonitoringPipelineMetadata)
+                  obj;
+
+      if (hasRunTime() != other.hasRunTime()) return false;
+      if (hasRunTime()) {
+        if (!getRunTime().equals(other.getRunTime())) return false;
+      }
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus().equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRunTime()) {
+        hash = (37 * hash) + RUN_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getRunTime().hashCode();
+      }
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All metadata of most recent monitoring pipelines.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata)
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
+            .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
+            .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadata.class,
+                com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadata.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (runTimeBuilder_ == null) {
+          runTime_ = null;
+        } else {
+          runTime_ = null;
+          runTimeBuilder_ = null;
+        }
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJobProto
+            .internal_static_google_cloud_aiplatform_v1_ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+              .LatestMonitoringPipelineMetadata
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+              .LatestMonitoringPipelineMetadata
+          build() {
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+              .LatestMonitoringPipelineMetadata
+          buildPartial() {
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            result =
+                new com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadata(this);
+        if (runTimeBuilder_ == null) {
+          result.runTime_ = runTime_;
+        } else {
+          result.runTime_ = runTimeBuilder_.build();
+        }
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                      .LatestMonitoringPipelineMetadata)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                  .LatestMonitoringPipelineMetadata
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata.getDefaultInstance()) return this;
+        if (other.hasRunTime()) {
+          mergeRunTime(other.getRunTime());
+        }
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                      .LatestMonitoringPipelineMetadata)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp runTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          runTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       *
+       * @return Whether the runTime field is set.
+       */
+      public boolean hasRunTime() {
+        return runTimeBuilder_ != null || runTime_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       *
+       * @return The runTime.
+       */
+      public com.google.protobuf.Timestamp getRunTime() {
+        if (runTimeBuilder_ == null) {
+          return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
+        } else {
+          return runTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public Builder setRunTime(com.google.protobuf.Timestamp value) {
+        if (runTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          runTime_ = value;
+          onChanged();
+        } else {
+          runTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public Builder setRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (runTimeBuilder_ == null) {
+          runTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          runTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public Builder mergeRunTime(com.google.protobuf.Timestamp value) {
+        if (runTimeBuilder_ == null) {
+          if (runTime_ != null) {
+            runTime_ =
+                com.google.protobuf.Timestamp.newBuilder(runTime_).mergeFrom(value).buildPartial();
+          } else {
+            runTime_ = value;
+          }
+          onChanged();
+        } else {
+          runTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public Builder clearRunTime() {
+        if (runTimeBuilder_ == null) {
+          runTime_ = null;
+          onChanged();
+        } else {
+          runTime_ = null;
+          runTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getRunTimeBuilder() {
+
+        onChanged();
+        return getRunTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getRunTimeOrBuilder() {
+        if (runTimeBuilder_ != null) {
+          return runTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time that most recent monitoring pipelines that is related to this
+       * run.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp run_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getRunTimeFieldBuilder() {
+        if (runTimeBuilder_ == null) {
+          runTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getRunTime(), getParentForChildren(), isClean());
+          runTime_ = null;
+        }
+        return runTimeBuilder_;
+      }
+
+      private com.google.rpc.Status status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          statusBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return Whether the status field is set.
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return The status.
+       */
+      public com.google.rpc.Status getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder setStatus(com.google.rpc.Status value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder mergeStatus(com.google.rpc.Status value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public com.google.rpc.Status.Builder getStatusBuilder() {
+
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of the most recent monitoring pipeline.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(getStatus(), getParentForChildren(), isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata)
+    private static final com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+              .LatestMonitoringPipelineMetadata();
+    }
+
+    public static com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LatestMonitoringPipelineMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<LatestMonitoringPipelineMetadata>() {
+          @java.lang.Override
+          public LatestMonitoringPipelineMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new LatestMonitoringPipelineMetadata(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<LatestMonitoringPipelineMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LatestMonitoringPipelineMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -837,6 +1989,67 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.MonitoringScheduleState
             .UNRECOGNIZED
         : result;
+  }
+
+  public static final int LATEST_MONITORING_PIPELINE_METADATA_FIELD_NUMBER = 25;
+  private com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+          .LatestMonitoringPipelineMetadata
+      latestMonitoringPipelineMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestMonitoringPipelineMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatestMonitoringPipelineMetadata() {
+    return latestMonitoringPipelineMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestMonitoringPipelineMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+          .LatestMonitoringPipelineMetadata
+      getLatestMonitoringPipelineMetadata() {
+    return latestMonitoringPipelineMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata.getDefaultInstance()
+        : latestMonitoringPipelineMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+          .LatestMonitoringPipelineMetadataOrBuilder
+      getLatestMonitoringPipelineMetadataOrBuilder() {
+    return getLatestMonitoringPipelineMetadata();
   }
 
   public static final int MODEL_DEPLOYMENT_MONITORING_OBJECTIVE_CONFIGS_FIELD_NUMBER = 6;
@@ -1474,7 +2687,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -1519,7 +2732,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1541,7 +2754,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1960,6 +3173,9 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (error_ != null) {
       output.writeMessage(23, getError());
     }
+    if (latestMonitoringPipelineMetadata_ != null) {
+      output.writeMessage(25, getLatestMonitoringPipelineMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2058,6 +3274,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getError());
     }
+    if (latestMonitoringPipelineMetadata_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, getLatestMonitoringPipelineMetadata());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2079,6 +3300,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     if (!getEndpoint().equals(other.getEndpoint())) return false;
     if (state_ != other.state_) return false;
     if (scheduleState_ != other.scheduleState_) return false;
+    if (hasLatestMonitoringPipelineMetadata() != other.hasLatestMonitoringPipelineMetadata())
+      return false;
+    if (hasLatestMonitoringPipelineMetadata()) {
+      if (!getLatestMonitoringPipelineMetadata()
+          .equals(other.getLatestMonitoringPipelineMetadata())) return false;
+    }
     if (!getModelDeploymentMonitoringObjectiveConfigsList()
         .equals(other.getModelDeploymentMonitoringObjectiveConfigsList())) return false;
     if (hasModelDeploymentMonitoringScheduleConfig()
@@ -2155,6 +3382,10 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     hash = (53 * hash) + state_;
     hash = (37 * hash) + SCHEDULE_STATE_FIELD_NUMBER;
     hash = (53 * hash) + scheduleState_;
+    if (hasLatestMonitoringPipelineMetadata()) {
+      hash = (37 * hash) + LATEST_MONITORING_PIPELINE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestMonitoringPipelineMetadata().hashCode();
+    }
     if (getModelDeploymentMonitoringObjectiveConfigsCount() > 0) {
       hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_OBJECTIVE_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getModelDeploymentMonitoringObjectiveConfigsList().hashCode();
@@ -2399,6 +3630,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
 
       scheduleState_ = 0;
 
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        latestMonitoringPipelineMetadata_ = null;
+      } else {
+        latestMonitoringPipelineMetadata_ = null;
+        latestMonitoringPipelineMetadataBuilder_ = null;
+      }
       if (modelDeploymentMonitoringObjectiveConfigsBuilder_ == null) {
         modelDeploymentMonitoringObjectiveConfigs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2517,6 +3754,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       result.endpoint_ = endpoint_;
       result.state_ = state_;
       result.scheduleState_ = scheduleState_;
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        result.latestMonitoringPipelineMetadata_ = latestMonitoringPipelineMetadata_;
+      } else {
+        result.latestMonitoringPipelineMetadata_ = latestMonitoringPipelineMetadataBuilder_.build();
+      }
       if (modelDeploymentMonitoringObjectiveConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           modelDeploymentMonitoringObjectiveConfigs_ =
@@ -2666,6 +3908,9 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       }
       if (other.scheduleState_ != 0) {
         setScheduleStateValue(other.getScheduleStateValue());
+      }
+      if (other.hasLatestMonitoringPipelineMetadata()) {
+        mergeLatestMonitoringPipelineMetadata(other.getLatestMonitoringPipelineMetadata());
       }
       if (modelDeploymentMonitoringObjectiveConfigsBuilder_ == null) {
         if (!other.modelDeploymentMonitoringObjectiveConfigs_.isEmpty()) {
@@ -3377,6 +4622,237 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
       scheduleState_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        latestMonitoringPipelineMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata,
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata.Builder,
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadataOrBuilder>
+        latestMonitoringPipelineMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the latestMonitoringPipelineMetadata field is set.
+     */
+    public boolean hasLatestMonitoringPipelineMetadata() {
+      return latestMonitoringPipelineMetadataBuilder_ != null
+          || latestMonitoringPipelineMetadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The latestMonitoringPipelineMetadata.
+     */
+    public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata
+        getLatestMonitoringPipelineMetadata() {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        return latestMonitoringPipelineMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata.getDefaultInstance()
+            : latestMonitoringPipelineMetadata_;
+      } else {
+        return latestMonitoringPipelineMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestMonitoringPipelineMetadata(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            value) {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestMonitoringPipelineMetadata_ = value;
+        onChanged();
+      } else {
+        latestMonitoringPipelineMetadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestMonitoringPipelineMetadata(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+                .Builder
+            builderForValue) {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        latestMonitoringPipelineMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        latestMonitoringPipelineMetadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLatestMonitoringPipelineMetadata(
+        com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+            value) {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        if (latestMonitoringPipelineMetadata_ != null) {
+          latestMonitoringPipelineMetadata_ =
+              com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                  .LatestMonitoringPipelineMetadata.newBuilder(latestMonitoringPipelineMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          latestMonitoringPipelineMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        latestMonitoringPipelineMetadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLatestMonitoringPipelineMetadata() {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        latestMonitoringPipelineMetadata_ = null;
+        onChanged();
+      } else {
+        latestMonitoringPipelineMetadata_ = null;
+        latestMonitoringPipelineMetadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadata.Builder
+        getLatestMonitoringPipelineMetadataBuilder() {
+
+      onChanged();
+      return getLatestMonitoringPipelineMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+            .LatestMonitoringPipelineMetadataOrBuilder
+        getLatestMonitoringPipelineMetadataOrBuilder() {
+      if (latestMonitoringPipelineMetadataBuilder_ != null) {
+        return latestMonitoringPipelineMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return latestMonitoringPipelineMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata.getDefaultInstance()
+            : latestMonitoringPipelineMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest triggered monitoring pipeline metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata,
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadata.Builder,
+            com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                .LatestMonitoringPipelineMetadataOrBuilder>
+        getLatestMonitoringPipelineMetadataFieldBuilder() {
+      if (latestMonitoringPipelineMetadataBuilder_ == null) {
+        latestMonitoringPipelineMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadata,
+                com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadata.Builder,
+                com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+                    .LatestMonitoringPipelineMetadataOrBuilder>(
+                getLatestMonitoringPipelineMetadata(), getParentForChildren(), isClean());
+        latestMonitoringPipelineMetadata_ = null;
+      }
+      return latestMonitoringPipelineMetadataBuilder_;
     }
 
     private java.util.List<com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveConfig>
@@ -5660,7 +7136,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -5706,7 +7182,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -5728,7 +7204,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -5757,7 +7233,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -5783,11 +7259,12 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }

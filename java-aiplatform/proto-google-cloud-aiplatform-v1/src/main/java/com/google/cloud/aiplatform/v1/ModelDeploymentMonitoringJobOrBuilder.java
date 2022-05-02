@@ -181,6 +181,50 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    *
    *
    * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestMonitoringPipelineMetadata field is set.
+   */
+  boolean hasLatestMonitoringPipelineMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestMonitoringPipelineMetadata.
+   */
+  com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
+      getLatestMonitoringPipelineMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest triggered monitoring pipeline metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
+          .LatestMonitoringPipelineMetadataOrBuilder
+      getLatestMonitoringPipelineMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
    * Each DeployedModel needs to be configured separately.
    * </pre>
@@ -682,7 +726,12 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

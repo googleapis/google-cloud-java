@@ -178,6 +178,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -609,9 +611,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * A list of historical [Snapshot
    * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
    * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by
-   * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
-   * descending.
+   * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -694,6 +694,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1166,9 +1168,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * A list of historical [Snapshot
      * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
      * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by
-     * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
-     * descending.
+     * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -2005,7 +2005,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -2056,7 +2056,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2081,7 +2081,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2147,10 +2147,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType
-   * this Feature belongs to. Only Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType this
+   * Feature belongs to.
+   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+   * INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -2171,8 +2171,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2188,8 +2187,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2206,8 +2204,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2222,8 +2219,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2239,8 +2235,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -3585,7 +3580,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -3637,7 +3632,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3662,7 +3657,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -3694,7 +3689,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -3723,11 +3718,12 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3869,10 +3865,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3889,10 +3885,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3912,10 +3908,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-     * STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3953,8 +3949,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -3973,8 +3968,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -3992,8 +3986,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4012,8 +4005,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4038,8 +4030,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4062,8 +4053,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4088,8 +4078,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4114,8 +4103,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4137,8 +4125,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4161,8 +4148,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4185,8 +4171,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4207,8 +4192,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4229,8 +4213,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4245,8 +4228,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4265,8 +4247,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4286,8 +4267,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4304,8 +4284,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -4323,8 +4302,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>

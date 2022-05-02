@@ -71,8 +71,8 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
             break;
           case 9:
             {
-              thresholdCase_ = 1;
               threshold_ = input.readDouble();
+              thresholdCase_ = 1;
               break;
             }
           default:
@@ -86,6 +86,8 @@ public final class ThresholdConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

@@ -115,6 +115,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -210,11 +212,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -227,11 +229,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -244,11 +246,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. A FieldMask indicating which fields should be updated.
+   * Optional. A FieldMask indicating which fields should be updated.
    * Functionality of this field is not yet supported.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -897,11 +899,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -913,11 +915,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -935,11 +937,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -959,11 +961,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -980,11 +982,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -1006,11 +1008,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -1028,11 +1030,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -1044,11 +1046,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -1064,11 +1066,11 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. A FieldMask indicating which fields should be updated.
+     * Optional. A FieldMask indicating which fields should be updated.
      * Functionality of this field is not yet supported.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -176,6 +176,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -308,6 +310,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1142,6 +1146,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3833,8 +3839,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       } else {
         if (readOptionCase_ == 3) {
           csvReadInstancesBuilder_.mergeFrom(value);
+        } else {
+          csvReadInstancesBuilder_.setMessage(value);
         }
-        csvReadInstancesBuilder_.setMessage(value);
       }
       readOptionCase_ = 3;
       return this;
@@ -4109,8 +4116,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       } else {
         if (readOptionCase_ == 5) {
           bigqueryReadInstancesBuilder_.mergeFrom(value);
+        } else {
+          bigqueryReadInstancesBuilder_.setMessage(value);
         }
-        bigqueryReadInstancesBuilder_.setMessage(value);
       }
       readOptionCase_ = 5;
       return this;

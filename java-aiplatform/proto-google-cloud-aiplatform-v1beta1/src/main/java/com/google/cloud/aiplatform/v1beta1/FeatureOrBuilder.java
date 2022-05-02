@@ -264,7 +264,12 @@ public interface FeatureOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -315,8 +320,9 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -328,18 +334,22 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
    * @return Whether the monitoringConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasMonitoringConfig();
   /**
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -351,18 +361,22 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
    * @return The monitoringConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig getMonitoringConfig();
   /**
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -374,9 +388,10 @@ public interface FeatureOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfigOrBuilder
       getMonitoringConfigOrBuilder();
 
@@ -384,10 +399,10 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType
-   * this Feature belongs to. Only Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
-   * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType this
+   * Feature belongs to.
+   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+   * INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -480,8 +495,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -494,8 +508,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -508,8 +521,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -521,8 +533,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -536,8 +547,7 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>

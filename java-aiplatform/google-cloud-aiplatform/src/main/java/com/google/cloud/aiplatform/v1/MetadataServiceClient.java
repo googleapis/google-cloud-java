@@ -1083,7 +1083,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     [Artifact.name][google.cloud.aiplatform.v1.Artifact.name] field is used to identify the
    *     Artifact to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
-   * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   * @param updateMask Optional. A FieldMask indicating which fields should be updated.
    *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1788,7 +1788,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the
    *     Context to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
-   * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   * @param updateMask Optional. A FieldMask indicating which fields should be updated.
    *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2880,7 +2880,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     [Execution.name][google.cloud.aiplatform.v1.Execution.name] field is used to identify the
    *     Execution to be updated. Format:
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
-   * @param updateMask Required. A FieldMask indicating which fields should be updated.
+   * @param updateMask Optional. A FieldMask indicating which fields should be updated.
    *     Functionality of this field is not yet supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

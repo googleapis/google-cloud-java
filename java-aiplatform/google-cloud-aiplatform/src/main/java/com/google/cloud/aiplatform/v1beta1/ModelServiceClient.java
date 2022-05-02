@@ -229,6 +229,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   UploadModelRequest request =
    *       UploadModelRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParentModel("parentModel998431903")
+   *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
    *           .build();
    *   UploadModelResponse response = modelServiceClient.uploadModelAsync(request).get();
@@ -254,6 +256,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   UploadModelRequest request =
    *       UploadModelRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParentModel("parentModel998431903")
+   *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
    *           .build();
    *   OperationFuture<UploadModelResponse, UploadModelOperationMetadata> future =
@@ -280,6 +284,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   UploadModelRequest request =
    *       UploadModelRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParentModel("parentModel998431903")
+   *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = modelServiceClient.uploadModelCallable().futureCall(request);
@@ -525,6 +531,151 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists versions of the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   for (Model element : modelServiceClient.listModelVersions(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model to list versions for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionsPagedResponse listModelVersions(ModelName name) {
+    ListModelVersionsRequest request =
+        ListModelVersionsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listModelVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists versions of the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   for (Model element : modelServiceClient.listModelVersions(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model to list versions for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionsPagedResponse listModelVersions(String name) {
+    ListModelVersionsRequest request = ListModelVersionsRequest.newBuilder().setName(name).build();
+    return listModelVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists versions of the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionsRequest request =
+   *       ListModelVersionsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (Model element : modelServiceClient.listModelVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionsPagedResponse listModelVersions(ListModelVersionsRequest request) {
+    return listModelVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists versions of the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionsRequest request =
+   *       ListModelVersionsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Model> future =
+   *       modelServiceClient.listModelVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Model element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable() {
+    return stub.listModelVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists versions of the specified model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionsRequest request =
+   *       ListModelVersionsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     ListModelVersionsResponse response =
+   *         modelServiceClient.listModelVersionsCallable().call(request);
+   *     for (Model element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable() {
+    return stub.listModelVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a Model.
    *
    * <p>Sample code:
@@ -537,7 +688,18 @@ public class ModelServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param model Required. The Model which replaces the resource on the server.
+   * @param model Required. The Model which replaces the resource on the server. When Model
+   *     Versioning is enabled, the model.name will be used to determine whether to update the model
+   *     or model version. 1. model.name with the {@literal @} value, e.g. models/123{@literal @}1,
+   *     refers to a version specific update. 2. model.name without the {@literal @} value, e.g.
+   *     models/123, refers to a model update. 3. model.name with {@literal @}-, e.g.
+   *     models/123{@literal @}-, refers to a model update. 4. Supported model fields: display_name,
+   *     description; supported version-specific fields: version_description. Labels are supported
+   *     in both scenarios. Both the model labels and the version labels are merged when a model is
+   *     returned. When updating labels, if the request is for model-specific update, model label
+   *     gets updated. Otherwise, version labels get updated. 5. A model name or model version name
+   *     fields update mismatch will cause a precondition error. 6. One request cannot update both
+   *     the model and the version fields. You must update them separately.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -728,6 +890,274 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return stub.deleteModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Model version.
+   *
+   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
+   * Deleting the only version in the Model is not allowed. Use
+   * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
+   * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   modelServiceClient.deleteModelVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to be deleted, with a version ID explicitly
+   *     included.
+   *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelVersionAsync(
+      ModelName name) {
+    DeleteModelVersionRequest request =
+        DeleteModelVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteModelVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Model version.
+   *
+   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
+   * Deleting the only version in the Model is not allowed. Use
+   * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
+   * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   modelServiceClient.deleteModelVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to be deleted, with a version ID explicitly
+   *     included.
+   *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelVersionAsync(
+      String name) {
+    DeleteModelVersionRequest request =
+        DeleteModelVersionRequest.newBuilder().setName(name).build();
+    return deleteModelVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Model version.
+   *
+   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
+   * Deleting the only version in the Model is not allowed. Use
+   * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
+   * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   DeleteModelVersionRequest request =
+   *       DeleteModelVersionRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .build();
+   *   modelServiceClient.deleteModelVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelVersionAsync(
+      DeleteModelVersionRequest request) {
+    return deleteModelVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Model version.
+   *
+   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
+   * Deleting the only version in the Model is not allowed. Use
+   * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
+   * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   DeleteModelVersionRequest request =
+   *       DeleteModelVersionRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       modelServiceClient.deleteModelVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable() {
+    return stub.deleteModelVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Model version.
+   *
+   * <p>Model version can only be deleted if there are no [DeployedModels][] created from it.
+   * Deleting the only version in the Model is not allowed. Use
+   * [DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel] for deleting the Model
+   * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   DeleteModelVersionRequest request =
+   *       DeleteModelVersionRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelServiceClient.deleteModelVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable() {
+    return stub.deleteModelVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a set of aliases for a Model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   List<String> versionAliases = new ArrayList<>();
+   *   Model response = modelServiceClient.mergeVersionAliases(name, versionAliases);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to merge aliases, with a version ID
+   *     explicitly included.
+   *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
+   * @param versionAliases Required. The set of version aliases to merge. The alias should be at
+   *     most 128 characters, and match `[a-z][a-z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to an
+   *     alias means removing that alias from the version. `-` is NOT counted in the 128 characters.
+   *     Example: `-golden` means removing the `golden` alias from the version.
+   *     <p>There is NO ordering in aliases, which means 1) The aliases returned from GetModel API
+   *     might not have the exactly same order from this MergeVersionAliases API. 2) Adding and
+   *     deleting the same alias in the request is not recommended, and the 2 operations will be
+   *     cancelled out.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model mergeVersionAliases(ModelName name, List<String> versionAliases) {
+    MergeVersionAliasesRequest request =
+        MergeVersionAliasesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllVersionAliases(versionAliases)
+            .build();
+    return mergeVersionAliases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a set of aliases for a Model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   List<String> versionAliases = new ArrayList<>();
+   *   Model response = modelServiceClient.mergeVersionAliases(name, versionAliases);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to merge aliases, with a version ID
+   *     explicitly included.
+   *     <p>Example: `projects/{project}/locations/{location}/models/{model}{@literal @}1234`
+   * @param versionAliases Required. The set of version aliases to merge. The alias should be at
+   *     most 128 characters, and match `[a-z][a-z0-9-]{0,126}[a-z-0-9]`. Add the `-` prefix to an
+   *     alias means removing that alias from the version. `-` is NOT counted in the 128 characters.
+   *     Example: `-golden` means removing the `golden` alias from the version.
+   *     <p>There is NO ordering in aliases, which means 1) The aliases returned from GetModel API
+   *     might not have the exactly same order from this MergeVersionAliases API. 2) Adding and
+   *     deleting the same alias in the request is not recommended, and the 2 operations will be
+   *     cancelled out.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model mergeVersionAliases(String name, List<String> versionAliases) {
+    MergeVersionAliasesRequest request =
+        MergeVersionAliasesRequest.newBuilder()
+            .setName(name)
+            .addAllVersionAliases(versionAliases)
+            .build();
+    return mergeVersionAliases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a set of aliases for a Model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   MergeVersionAliasesRequest request =
+   *       MergeVersionAliasesRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .addAllVersionAliases(new ArrayList<String>())
+   *           .build();
+   *   Model response = modelServiceClient.mergeVersionAliases(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model mergeVersionAliases(MergeVersionAliasesRequest request) {
+    return mergeVersionAliasesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Merges a set of aliases for a Model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   MergeVersionAliasesRequest request =
+   *       MergeVersionAliasesRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .addAllVersionAliases(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Model> future =
+   *       modelServiceClient.mergeVersionAliasesCallable().futureCall(request);
+   *   // Do something.
+   *   Model response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable() {
+    return stub.mergeVersionAliasesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1598,6 +2028,83 @@ public class ModelServiceClient implements BackgroundResource {
     protected ListModelsFixedSizeCollection createCollection(
         List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListModelVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListModelVersionsRequest,
+          ListModelVersionsResponse,
+          Model,
+          ListModelVersionsPage,
+          ListModelVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListModelVersionsPagedResponse> createAsync(
+        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        ApiFuture<ListModelVersionsResponse> futureResponse) {
+      ApiFuture<ListModelVersionsPage> futurePage =
+          ListModelVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListModelVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListModelVersionsPagedResponse(ListModelVersionsPage page) {
+      super(page, ListModelVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListModelVersionsPage
+      extends AbstractPage<
+          ListModelVersionsRequest, ListModelVersionsResponse, Model, ListModelVersionsPage> {
+
+    private ListModelVersionsPage(
+        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        ListModelVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListModelVersionsPage createEmptyPage() {
+      return new ListModelVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListModelVersionsPage createPage(
+        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        ListModelVersionsResponse response) {
+      return new ListModelVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListModelVersionsPage> createPageAsync(
+        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        ApiFuture<ListModelVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListModelVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListModelVersionsRequest,
+          ListModelVersionsResponse,
+          Model,
+          ListModelVersionsPage,
+          ListModelVersionsFixedSizeCollection> {
+
+    private ListModelVersionsFixedSizeCollection(
+        List<ListModelVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListModelVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListModelVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListModelVersionsFixedSizeCollection createCollection(
+        List<ListModelVersionsPage> pages, int collectionSize) {
+      return new ListModelVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -46,29 +46,27 @@ public final class OperationProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/aiplatform/v1beta1/operat"
           + "ion.proto\022\037google.cloud.aiplatform.v1bet"
-          + "a1\032\034google/api/annotations.proto\032\037google"
-          + "/api/field_behavior.proto\032\037google/protob"
-          + "uf/timestamp.proto\032\027google/rpc/status.pr"
-          + "oto\"\271\001\n\030GenericOperationMetadata\0221\n\020part"
-          + "ial_failures\030\001 \003(\0132\022.google.rpc.StatusB\003"
-          + "\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\"n\n\027Delet"
-          + "eOperationMetadata\022S\n\020generic_metadata\030\001"
-          + " \001(\01329.google.cloud.aiplatform.v1beta1.G"
-          + "enericOperationMetadataB\353\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\016OperationProtoP"
-          + "\001ZIgoogle.golang.org/genproto/googleapis"
-          + "/cloud/aiplatform/v1beta1;aiplatform\252\002\037G"
-          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
-          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
-          + "::AIPlatform::V1beta1b\006proto3"
+          + "a1\032\037google/api/field_behavior.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc"
+          + "/status.proto\"\271\001\n\030GenericOperationMetada"
+          + "ta\0221\n\020partial_failures\030\001 \003(\0132\022.google.rp"
+          + "c.StatusB\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\"n\n\027DeleteOperationMetadata\022S\n\020generic_"
+          + "metadata\030\001 \001(\01329.google.cloud.aiplatform"
+          + ".v1beta1.GenericOperationMetadataB\353\001\n#co"
+          + "m.google.cloud.aiplatform.v1beta1B\016Opera"
+          + "tionProtoP\001ZIgoogle.golang.org/genproto/"
+          + "googleapis/cloud/aiplatform/v1beta1;aipl"
+          + "atform\252\002\037Google.Cloud.AIPlatform.V1Beta1"
+          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
+          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -94,7 +92,6 @@ public final class OperationProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

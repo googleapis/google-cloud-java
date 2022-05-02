@@ -233,11 +233,10 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    *
    * @return Whether the pipelineSpec field is set.
    */
@@ -246,11 +245,10 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    *
    * @return The pipelineSpec.
    */
@@ -259,11 +257,10 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
-   * Required. The spec of the pipeline.
+   * The spec of the pipeline.
    * </pre>
    *
-   * <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.protobuf.Struct pipeline_spec = 7;</code>
    */
   com.google.protobuf.StructOrBuilder getPipelineSpecOrBuilder();
 
@@ -433,7 +430,12 @@ public interface PipelineJobOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

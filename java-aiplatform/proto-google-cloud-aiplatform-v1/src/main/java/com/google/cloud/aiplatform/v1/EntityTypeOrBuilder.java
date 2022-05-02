@@ -235,7 +235,12 @@ public interface EntityTypeOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -286,10 +291,9 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -307,10 +311,9 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -328,10 +331,9 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value
-   * type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
-   * STRING, DOUBLE or INT64 under this EntityType.
+   * Optional. The default monitoring configuration for all Features with value type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
+   * EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is

@@ -37,28 +37,24 @@ public final class JobStateProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/aiplatform/v1beta1/job_st"
           + "ate.proto\022\037google.cloud.aiplatform.v1bet"
-          + "a1\032\034google/api/annotations.proto*\370\001\n\010Job"
-          + "State\022\031\n\025JOB_STATE_UNSPECIFIED\020\000\022\024\n\020JOB_"
-          + "STATE_QUEUED\020\001\022\025\n\021JOB_STATE_PENDING\020\002\022\025\n"
-          + "\021JOB_STATE_RUNNING\020\003\022\027\n\023JOB_STATE_SUCCEE"
-          + "DED\020\004\022\024\n\020JOB_STATE_FAILED\020\005\022\030\n\024JOB_STATE"
-          + "_CANCELLING\020\006\022\027\n\023JOB_STATE_CANCELLED\020\007\022\024"
-          + "\n\020JOB_STATE_PAUSED\020\010\022\025\n\021JOB_STATE_EXPIRE"
-          + "D\020\tB\352\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\rJobStateProtoP\001ZIgoogle.golang.org/"
-          + "genproto/googleapis/cloud/aiplatform/v1b"
-          + "eta1;aiplatform\252\002\037Google.Cloud.AIPlatfor"
-          + "m.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1be"
-          + "ta1\352\002\"Google::Cloud::AIPlatform::V1beta1"
-          + "b\006proto3"
+          + "a1*\220\002\n\010JobState\022\031\n\025JOB_STATE_UNSPECIFIED"
+          + "\020\000\022\024\n\020JOB_STATE_QUEUED\020\001\022\025\n\021JOB_STATE_PE"
+          + "NDING\020\002\022\025\n\021JOB_STATE_RUNNING\020\003\022\027\n\023JOB_ST"
+          + "ATE_SUCCEEDED\020\004\022\024\n\020JOB_STATE_FAILED\020\005\022\030\n"
+          + "\024JOB_STATE_CANCELLING\020\006\022\027\n\023JOB_STATE_CAN"
+          + "CELLED\020\007\022\024\n\020JOB_STATE_PAUSED\020\010\022\025\n\021JOB_ST"
+          + "ATE_EXPIRED\020\t\022\026\n\022JOB_STATE_UPDATING\020\nB\352\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\rJ"
+          + "obStateProtoP\001ZIgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/aiplatform/v1beta1;a"
+          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
-    com.google.api.AnnotationsProto.getDescriptor();
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
   }
 
   // @@protoc_insertion_point(outer_class_scope)

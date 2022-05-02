@@ -110,14 +110,14 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             }
           case 45:
             {
-              additionalOptimizationObjectiveConfigCase_ = 5;
               additionalOptimizationObjectiveConfig_ = input.readFloat();
+              additionalOptimizationObjectiveConfigCase_ = 5;
               break;
             }
           case 53:
             {
-              additionalOptimizationObjectiveConfigCase_ = 6;
               additionalOptimizationObjectiveConfig_ = input.readFloat();
+              additionalOptimizationObjectiveConfigCase_ = 6;
               break;
             }
           case 56:
@@ -178,6 +178,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -707,6 +709,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -822,6 +826,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1525,6 +1531,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2312,6 +2320,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3072,6 +3082,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4098,6 +4110,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4807,6 +4821,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5589,6 +5605,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6276,6 +6294,8 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -8099,8 +8119,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 1) {
             autoBuilder_.mergeFrom(value);
+          } else {
+            autoBuilder_.setMessage(value);
           }
-          autoBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 1;
         return this;
@@ -8312,8 +8333,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 2) {
             numericBuilder_.mergeFrom(value);
+          } else {
+            numericBuilder_.setMessage(value);
           }
-          numericBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 2;
         return this;
@@ -8525,8 +8547,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 3) {
             categoricalBuilder_.mergeFrom(value);
+          } else {
+            categoricalBuilder_.setMessage(value);
           }
-          categoricalBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 3;
         return this;
@@ -8738,8 +8761,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 4) {
             timestampBuilder_.mergeFrom(value);
+          } else {
+            timestampBuilder_.setMessage(value);
           }
-          timestampBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 4;
         return this;
@@ -8950,8 +8974,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 5) {
             textBuilder_.mergeFrom(value);
+          } else {
+            textBuilder_.setMessage(value);
           }
-          textBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 5;
         return this;
@@ -9163,8 +9188,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 6) {
             repeatedNumericBuilder_.mergeFrom(value);
+          } else {
+            repeatedNumericBuilder_.setMessage(value);
           }
-          repeatedNumericBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 6;
         return this;
@@ -9378,8 +9404,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 7) {
             repeatedCategoricalBuilder_.mergeFrom(value);
+          } else {
+            repeatedCategoricalBuilder_.setMessage(value);
           }
-          repeatedCategoricalBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 7;
         return this;
@@ -9592,8 +9619,9 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         } else {
           if (transformationDetailCase_ == 8) {
             repeatedTextBuilder_.mergeFrom(value);
+          } else {
+            repeatedTextBuilder_.setMessage(value);
           }
-          repeatedTextBuilder_.setMessage(value);
         }
         transformationDetailCase_ = 8;
         return this;

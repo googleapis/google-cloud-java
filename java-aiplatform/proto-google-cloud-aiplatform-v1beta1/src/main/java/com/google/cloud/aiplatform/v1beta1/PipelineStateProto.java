@@ -37,29 +37,24 @@ public final class PipelineStateProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/aiplatform/v1beta1/pipeli"
           + "ne_state.proto\022\037google.cloud.aiplatform."
-          + "v1beta1\032\034google/api/annotations.proto*\223\002"
-          + "\n\rPipelineState\022\036\n\032PIPELINE_STATE_UNSPEC"
-          + "IFIED\020\000\022\031\n\025PIPELINE_STATE_QUEUED\020\001\022\032\n\026PI"
-          + "PELINE_STATE_PENDING\020\002\022\032\n\026PIPELINE_STATE"
-          + "_RUNNING\020\003\022\034\n\030PIPELINE_STATE_SUCCEEDED\020\004"
-          + "\022\031\n\025PIPELINE_STATE_FAILED\020\005\022\035\n\031PIPELINE_"
-          + "STATE_CANCELLING\020\006\022\034\n\030PIPELINE_STATE_CAN"
-          + "CELLED\020\007\022\031\n\025PIPELINE_STATE_PAUSED\020\010B\357\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\022Pip"
-          + "elineStateProtoP\001ZIgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "v1beta1*\223\002\n\rPipelineState\022\036\n\032PIPELINE_ST"
+          + "ATE_UNSPECIFIED\020\000\022\031\n\025PIPELINE_STATE_QUEU"
+          + "ED\020\001\022\032\n\026PIPELINE_STATE_PENDING\020\002\022\032\n\026PIPE"
+          + "LINE_STATE_RUNNING\020\003\022\034\n\030PIPELINE_STATE_S"
+          + "UCCEEDED\020\004\022\031\n\025PIPELINE_STATE_FAILED\020\005\022\035\n"
+          + "\031PIPELINE_STATE_CANCELLING\020\006\022\034\n\030PIPELINE"
+          + "_STATE_CANCELLED\020\007\022\031\n\025PIPELINE_STATE_PAU"
+          + "SED\020\010B\357\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\022PipelineStateProtoP\001ZIgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/aiplatf"
+          + "orm/v1beta1;aiplatform\252\002\037Google.Cloud.AI"
+          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\352\002\"Google::Cloud::AIPlatform::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
-    com.google.api.AnnotationsProto.getDescriptor();
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
   }
 
   // @@protoc_insertion_point(outer_class_scope)

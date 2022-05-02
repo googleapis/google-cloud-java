@@ -184,6 +184,8 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -545,7 +547,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -588,7 +590,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -609,7 +611,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -736,9 +738,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-   * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-   * can be set.
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -770,9 +772,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-   * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-   * can be set.
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+   * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+   * are mutually exclusive.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
@@ -802,18 +804,22 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If true, expose the IndexEndpoint via private service connect.
+   * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
    * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
    * can be set.
    * </pre>
    *
-   * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnablePrivateServiceConnect() {
     return enablePrivateServiceConnect_;
   }
@@ -2250,7 +2256,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2294,7 +2300,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2315,7 +2321,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2343,7 +2349,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -2368,11 +2374,12 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -2833,9 +2840,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2866,9 +2873,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2899,9 +2906,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2931,9 +2938,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2959,9 +2966,9 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
-     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
-     * can be set.
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] and
+     * [private_service_connect_config][google.cloud.aiplatform.v1beta1.IndexEndpoint.private_service_connect_config]
+     * are mutually exclusive.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
@@ -2989,18 +2996,22 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnablePrivateServiceConnect() {
       return enablePrivateServiceConnect_;
     }
@@ -3008,18 +3019,22 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnablePrivateServiceConnect(boolean value) {
 
       enablePrivateServiceConnect_ = value;
@@ -3030,17 +3045,21 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
      * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
      *
-     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool enable_private_service_connect = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnablePrivateServiceConnect() {
 
       enablePrivateServiceConnect_ = false;

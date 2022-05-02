@@ -211,6 +211,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -646,9 +648,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * A list of historical [Snapshot
    * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
    * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by
-   * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
-   * descending.
+   * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time] descending.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly}
@@ -731,6 +731,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1207,9 +1209,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * A list of historical [Snapshot
      * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
      * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by
-     * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
-     * descending.
+     * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time] descending.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.Feature.MonitoringStatsAnomaly}
@@ -2053,7 +2053,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -2104,7 +2104,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2129,7 +2129,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2195,8 +2195,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -2208,12 +2209,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasMonitoringConfig() {
     return monitoringConfig_ != null;
   }
@@ -2221,8 +2225,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -2234,12 +2239,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
    * @return The monitoringConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig getMonitoringConfig() {
     return monitoringConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.getDefaultInstance()
@@ -2249,8 +2257,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The custom monitoring configuration for this Feature, if not set, use the
-   * monitoring_config defined for the EntityType this Feature belongs to.
+   * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+   * set, use the monitoring_config defined for the EntityType this Feature
+   * belongs to.
    * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
    * INT64 can enable monitoring.
    * If this is populated with
@@ -2262,10 +2271,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfigOrBuilder
       getMonitoringConfigOrBuilder() {
     return getMonitoringConfig();
@@ -2277,10 +2287,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType
-   * this Feature belongs to. Only Features with type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
-   * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType this
+   * Feature belongs to.
+   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+   * INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -2397,8 +2407,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2414,8 +2423,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2432,8 +2440,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2448,8 +2455,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -2465,8 +2471,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified
-   * objectives.
+   * Output only. The list of historical stats and anomalies with specified objectives.
    * </pre>
    *
    * <code>
@@ -3896,7 +3901,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -3948,7 +3953,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3973,7 +3978,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -4005,7 +4010,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -4034,11 +4039,12 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -4185,8 +4191,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4198,11 +4205,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
      * @return Whether the monitoringConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasMonitoringConfig() {
       return monitoringConfigBuilder_ != null || monitoringConfig_ != null;
     }
@@ -4210,8 +4220,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4223,11 +4234,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=155
      * @return The monitoringConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig getMonitoringConfig() {
       if (monitoringConfigBuilder_ == null) {
         return monitoringConfig_ == null
@@ -4241,8 +4255,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4254,9 +4269,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMonitoringConfig(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig value) {
       if (monitoringConfigBuilder_ == null) {
@@ -4275,8 +4291,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4288,9 +4305,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMonitoringConfig(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.Builder builderForValue) {
       if (monitoringConfigBuilder_ == null) {
@@ -4306,8 +4324,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4319,9 +4338,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeMonitoringConfig(
         com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig value) {
       if (monitoringConfigBuilder_ == null) {
@@ -4345,8 +4365,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4358,9 +4379,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearMonitoringConfig() {
       if (monitoringConfigBuilder_ == null) {
         monitoringConfig_ = null;
@@ -4376,8 +4398,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4389,9 +4412,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.Builder
         getMonitoringConfigBuilder() {
 
@@ -4402,8 +4426,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4415,9 +4440,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfigOrBuilder
         getMonitoringConfigOrBuilder() {
       if (monitoringConfigBuilder_ != null) {
@@ -4432,8 +4458,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The custom monitoring configuration for this Feature, if not set, use the
-     * monitoring_config defined for the EntityType this Feature belongs to.
+     * Optional. Deprecated: The custom monitoring configuration for this Feature, if not
+     * set, use the monitoring_config defined for the EntityType this Feature
+     * belongs to.
      * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
      * INT64 can enable monitoring.
      * If this is populated with
@@ -4445,7 +4472,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig monitoring_config = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4470,10 +4497,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
-     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -4490,10 +4517,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
-     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -4513,10 +4540,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType
-     * this Feature belongs to. Only Features with type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
-     * BOOL, STRING, DOUBLE or INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType this
+     * Feature belongs to.
+     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or
+     * INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -5013,8 +5040,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5033,8 +5059,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5052,8 +5077,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5072,8 +5096,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5098,8 +5121,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5123,8 +5145,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5149,8 +5170,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5175,8 +5195,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5199,8 +5218,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5224,8 +5242,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5249,8 +5266,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5271,8 +5287,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5293,8 +5308,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5309,8 +5323,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5329,8 +5342,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5350,8 +5362,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5369,8 +5380,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>
@@ -5389,8 +5399,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified
-     * objectives.
+     * Output only. The list of historical stats and anomalies with specified objectives.
      * </pre>
      *
      * <code>

@@ -124,6 +124,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -905,6 +907,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1409,6 +1413,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -1525,16 +1531,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (minValue_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(minValue_) != 0) {
           output.writeFloat(1, minValue_);
         }
-        if (maxValue_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(maxValue_) != 0) {
           output.writeFloat(2, maxValue_);
         }
-        if (originalMean_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(originalMean_) != 0) {
           output.writeFloat(3, originalMean_);
         }
-        if (originalStddev_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(originalStddev_) != 0) {
           output.writeFloat(4, originalStddev_);
         }
         unknownFields.writeTo(output);
@@ -1546,16 +1552,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (size != -1) return size;
 
         size = 0;
-        if (minValue_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(minValue_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, minValue_);
         }
-        if (maxValue_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(maxValue_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, maxValue_);
         }
-        if (originalMean_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(originalMean_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, originalMean_);
         }
-        if (originalStddev_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(originalStddev_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, originalStddev_);
         }
         size += unknownFields.getSerializedSize();
@@ -2511,6 +2517,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3645,10 +3653,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 .getNumber()) {
           output.writeEnum(3, colorMap_);
         }
-        if (clipPercentUpperbound_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(clipPercentUpperbound_) != 0) {
           output.writeFloat(4, clipPercentUpperbound_);
         }
-        if (clipPercentLowerbound_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(clipPercentLowerbound_) != 0) {
           output.writeFloat(5, clipPercentLowerbound_);
         }
         if (overlayType_
@@ -3684,10 +3692,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, colorMap_);
         }
-        if (clipPercentUpperbound_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(clipPercentUpperbound_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, clipPercentUpperbound_);
         }
-        if (clipPercentLowerbound_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(clipPercentLowerbound_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, clipPercentLowerbound_);
         }
         if (overlayType_
@@ -8965,6 +8973,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9820,8 +9830,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         } else {
           if (displayNameMappingCase_ == 1) {
             indexDisplayNameMappingBuilder_.mergeFrom(value);
+          } else {
+            indexDisplayNameMappingBuilder_.setMessage(value);
           }
-          indexDisplayNameMappingBuilder_.setMessage(value);
         }
         displayNameMappingCase_ = 1;
         return this;
@@ -10337,7 +10348,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsInputs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetInputs().getMap().containsKey(key);
   }
@@ -10402,7 +10413,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       java.lang.String key,
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
@@ -10434,7 +10445,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata getInputsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata>
@@ -10500,7 +10511,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsOutputs(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetOutputs().getMap().containsKey(key);
   }
@@ -10555,7 +10566,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       java.lang.String key,
       com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -10583,7 +10594,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
   public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata getOutputsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -11112,7 +11123,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetInputs().getMap().containsKey(key);
     }
@@ -11177,7 +11188,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         java.lang.String key,
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -11210,7 +11221,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata getInputsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -11249,7 +11260,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      */
     public Builder removeInputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableInputs().getMutableMap().remove(key);
       return this;
@@ -11286,11 +11297,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         java.lang.String key,
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableInputs().getMutableMap().put(key, value);
       return this;
     }
@@ -11376,7 +11388,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsOutputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetOutputs().getMap().containsKey(key);
     }
@@ -11434,7 +11446,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
             java.lang.String key,
             com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -11462,7 +11474,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata getOutputsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -11496,7 +11508,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      */
     public Builder removeOutputs(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableOutputs().getMutableMap().remove(key);
       return this;
@@ -11529,11 +11541,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         java.lang.String key,
         com.google.cloud.aiplatform.v1beta1.ExplanationMetadata.OutputMetadata value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableOutputs().getMutableMap().put(key, value);
       return this;
     }

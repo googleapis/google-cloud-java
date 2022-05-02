@@ -73,14 +73,14 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              initialBatchSampleSizeCase_ = 1;
               initialBatchSampleSize_ = input.readInt32();
+              initialBatchSampleSizeCase_ = 1;
               break;
             }
           case 24:
             {
-              followingBatchSampleSizeCase_ = 3;
               followingBatchSampleSize_ = input.readInt32();
+              followingBatchSampleSizeCase_ = 3;
               break;
             }
           case 40:
@@ -101,6 +101,8 @@ public final class SampleConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

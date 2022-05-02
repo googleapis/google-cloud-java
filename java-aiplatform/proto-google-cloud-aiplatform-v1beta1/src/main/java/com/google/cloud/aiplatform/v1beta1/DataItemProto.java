@@ -46,34 +46,32 @@ public final class DataItemProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/aiplatform/v1beta1/data_i"
           + "tem.proto\022\037google.cloud.aiplatform.v1bet"
-          + "a1\032\034google/api/annotations.proto\032\037google"
-          + "/api/field_behavior.proto\032\031google/api/re"
-          + "source.proto\032\034google/protobuf/struct.pro"
-          + "to\032\037google/protobuf/timestamp.proto\"\300\003\n\010"
-          + "DataItem\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022J\n\006labels\030\003 \003(\01325.google"
-          + ".cloud.aiplatform.v1beta1.DataItem.Label"
-          + "sEntryB\003\340A\001\022,\n\007payload\030\004 \001(\0132\026.google.pr"
-          + "otobuf.ValueB\003\340A\002\022\021\n\004etag\030\007 \001(\tB\003\340A\001\032-\n\013"
-          + "LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001:y\352Av\n\"aiplatform.googleapis.com/Data"
-          + "Item\022Pprojects/{project}/locations/{loca"
-          + "tion}/datasets/{dataset}/dataItems/{data"
-          + "_item}B\352\001\n#com.google.cloud.aiplatform.v"
-          + "1beta1B\rDataItemProtoP\001ZIgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/aiplatform/"
-          + "v1beta1;aiplatform\252\002\037Google.Cloud.AIPlat"
-          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
-          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1be"
-          + "ta1b\006proto3"
+          + "a1\032\037google/api/field_behavior.proto\032\031goo"
+          + "gle/api/resource.proto\032\034google/protobuf/"
+          + "struct.proto\032\037google/protobuf/timestamp."
+          + "proto\"\300\003\n\010DataItem\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\022J\n\006labels\030\003 \003("
+          + "\01325.google.cloud.aiplatform.v1beta1.Data"
+          + "Item.LabelsEntryB\003\340A\001\022,\n\007payload\030\004 \001(\0132\026"
+          + ".google.protobuf.ValueB\003\340A\002\022\021\n\004etag\030\007 \001("
+          + "\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001:y\352Av\n\"aiplatform.googleapi"
+          + "s.com/DataItem\022Pprojects/{project}/locat"
+          + "ions/{location}/datasets/{dataset}/dataI"
+          + "tems/{data_item}B\352\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\rDataItemProtoP\001ZIgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -101,7 +99,6 @@ public final class DataItemProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

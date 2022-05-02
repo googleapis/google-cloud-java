@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -95,6 +96,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -144,6 +146,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -193,8 +196,13 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
@@ -252,8 +260,13 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
@@ -395,12 +408,105 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void listModelVersionsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelVersionsResponse expectedResponse =
+        ListModelVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    ListModelVersionsPagedResponse pagedListResponse = client.listModelVersions(name);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionsRequest actualRequest = ((ListModelVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.listModelVersions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelVersionsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelVersionsResponse expectedResponse =
+        ListModelVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ListModelVersionsPagedResponse pagedListResponse = client.listModelVersions(name);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionsRequest actualRequest = ((ListModelVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.listModelVersions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().build())
@@ -537,6 +643,224 @@ public class ModelServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    client.deleteModelVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelVersionRequest actualRequest = ((DeleteModelVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.deleteModelVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteModelVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelVersionRequest actualRequest = ((DeleteModelVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteModelVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mergeVersionAliasesTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    List<String> versionAliases = new ArrayList<>();
+
+    Model actualResponse = client.mergeVersionAliases(name, versionAliases);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MergeVersionAliasesRequest actualRequest = ((MergeVersionAliasesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(versionAliases, actualRequest.getVersionAliasesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mergeVersionAliasesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      List<String> versionAliases = new ArrayList<>();
+      client.mergeVersionAliases(name, versionAliases);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void mergeVersionAliasesTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    List<String> versionAliases = new ArrayList<>();
+
+    Model actualResponse = client.mergeVersionAliases(name, versionAliases);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MergeVersionAliasesRequest actualRequest = ((MergeVersionAliasesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(versionAliases, actualRequest.getVersionAliasesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mergeVersionAliasesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<String> versionAliases = new ArrayList<>();
+      client.mergeVersionAliases(name, versionAliases);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

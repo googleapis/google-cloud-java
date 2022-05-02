@@ -65,6 +65,8 @@ public interface DeleteMetadataStoreRequestOrBuilder
    *
    * <code>bool force = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1.DeleteMetadataStoreRequest.force is deprecated. See
+   *     google/cloud/aiplatform/v1/metadata_service.proto;l=451
    * @return The force.
    */
   @java.lang.Deprecated

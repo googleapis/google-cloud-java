@@ -42,27 +42,26 @@ public final class UnmanagedContainerModelProto {
     java.lang.String[] descriptorData = {
       "\n?google/cloud/aiplatform/v1beta1/unmana"
           + "ged_container_model.proto\022\037google.cloud."
-          + "aiplatform.v1beta1\032\034google/api/annotatio"
-          + "ns.proto\032\037google/api/field_behavior.prot"
-          + "o\032+google/cloud/aiplatform/v1beta1/model"
-          + ".proto\"\315\001\n\027UnmanagedContainerModel\022\024\n\014ar"
-          + "tifact_uri\030\001 \001(\t\022J\n\020predict_schemata\030\002 \001"
-          + "(\01320.google.cloud.aiplatform.v1beta1.Pre"
-          + "dictSchemata\022P\n\016container_spec\030\003 \001(\01323.g"
-          + "oogle.cloud.aiplatform.v1beta1.ModelCont"
-          + "ainerSpecB\003\340A\004B\371\001\n#com.google.cloud.aipl"
-          + "atform.v1beta1B\034UnmanagedContainerModelP"
-          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
-          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
-          + "m\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
-          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
-          + "Cloud::AIPlatform::V1beta1b\006proto3"
+          + "aiplatform.v1beta1\032\037google/api/field_beh"
+          + "avior.proto\032+google/cloud/aiplatform/v1b"
+          + "eta1/model.proto\"\315\001\n\027UnmanagedContainerM"
+          + "odel\022\024\n\014artifact_uri\030\001 \001(\t\022J\n\020predict_sc"
+          + "hemata\030\002 \001(\01320.google.cloud.aiplatform.v"
+          + "1beta1.PredictSchemata\022P\n\016container_spec"
+          + "\030\003 \001(\01323.google.cloud.aiplatform.v1beta1"
+          + ".ModelContainerSpecB\003\340A\004B\371\001\n#com.google."
+          + "cloud.aiplatform.v1beta1B\034UnmanagedConta"
+          + "inerModelProtoP\001ZIgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/aiplatform/v1beta1"
+          + ";aiplatform\252\002\037Google.Cloud.AIPlatform.V1"
+          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
+          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor(),
             });
@@ -79,7 +78,6 @@ public final class UnmanagedContainerModelProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor();
   }

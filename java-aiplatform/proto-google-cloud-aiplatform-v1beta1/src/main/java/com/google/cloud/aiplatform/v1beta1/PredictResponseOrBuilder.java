@@ -154,6 +154,33 @@ public interface PredictResponseOrBuilder
    *
    *
    * <pre>
+   * Output only. The version ID of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersionId.
+   */
+  java.lang.String getModelVersionId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersionId.
+   */
+  com.google.protobuf.ByteString getModelVersionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
    * the DeployedModel that this prediction hits.
    * </pre>

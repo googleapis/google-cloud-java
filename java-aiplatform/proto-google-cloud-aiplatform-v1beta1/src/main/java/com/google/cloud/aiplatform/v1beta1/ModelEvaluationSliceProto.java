@@ -46,35 +46,33 @@ public final class ModelEvaluationSliceProto {
     java.lang.String[] descriptorData = {
       "\n<google/cloud/aiplatform/v1beta1/model_"
           + "evaluation_slice.proto\022\037google.cloud.aip"
-          + "latform.v1beta1\032\034google/api/annotations."
-          + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032\034google/protob"
-          + "uf/struct.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\313\003\n\024ModelEvaluationSlice\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022O\n\005slice\030\002 \001(\0132;.google.clo"
-          + "ud.aiplatform.v1beta1.ModelEvaluationSli"
-          + "ce.SliceB\003\340A\003\022\037\n\022metrics_schema_uri\030\003 \001("
-          + "\tB\003\340A\003\022,\n\007metrics\030\004 \001(\0132\026.google.protobu"
-          + "f.ValueB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0323\n\005Slice\022\026\n\td"
-          + "imension\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001(\tB\003\340A\003:"
-          + "\224\001\352A\220\001\n.aiplatform.googleapis.com/ModelE"
-          + "valuationSlice\022^projects/{project}/locat"
-          + "ions/{location}/models/{model}/evaluatio"
-          + "ns/{evaluation}/slices/{slice}B\366\001\n#com.g"
-          + "oogle.cloud.aiplatform.v1beta1B\031ModelEva"
-          + "luationSliceProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "latform.v1beta1\032\037google/api/field_behavi"
+          + "or.proto\032\031google/api/resource.proto\032\034goo"
+          + "gle/protobuf/struct.proto\032\037google/protob"
+          + "uf/timestamp.proto\"\313\003\n\024ModelEvaluationSl"
+          + "ice\022\021\n\004name\030\001 \001(\tB\003\340A\003\022O\n\005slice\030\002 \001(\0132;."
+          + "google.cloud.aiplatform.v1beta1.ModelEva"
+          + "luationSlice.SliceB\003\340A\003\022\037\n\022metrics_schem"
+          + "a_uri\030\003 \001(\tB\003\340A\003\022,\n\007metrics\030\004 \001(\0132\026.goog"
+          + "le.protobuf.ValueB\003\340A\003\0224\n\013create_time\030\005 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0323\n\005"
+          + "Slice\022\026\n\tdimension\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002"
+          + " \001(\tB\003\340A\003:\224\001\352A\220\001\n.aiplatform.googleapis."
+          + "com/ModelEvaluationSlice\022^projects/{proj"
+          + "ect}/locations/{location}/models/{model}"
+          + "/evaluations/{evaluation}/slices/{slice}"
+          + "B\366\001\n#com.google.cloud.aiplatform.v1beta1"
+          + "B\031ModelEvaluationSliceProtoP\001ZIgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/aipla"
+          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -104,7 +102,6 @@ public final class ModelEvaluationSliceProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

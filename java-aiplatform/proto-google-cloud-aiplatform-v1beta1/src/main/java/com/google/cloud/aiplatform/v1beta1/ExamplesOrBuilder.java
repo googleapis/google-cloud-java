@@ -18,9 +18,9 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-public interface SimilarityOrBuilder
+public interface ExamplesOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Similarity)
+    // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Examples)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -95,4 +95,17 @@ public interface SimilarityOrBuilder
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
    */
   com.google.protobuf.ValueOrBuilder getNearestNeighborSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of neighbors to return.
+   * </pre>
+   *
+   * <code>int32 neighbor_count = 3;</code>
+   *
+   * @return The neighborCount.
+   */
+  int getNeighborCount();
 }

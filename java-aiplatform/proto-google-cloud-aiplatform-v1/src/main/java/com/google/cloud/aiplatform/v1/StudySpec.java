@@ -170,6 +170,29 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               measurementSelectionType_ = rawValue;
               break;
             }
+          case 74:
+            {
+              com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder
+                  subBuilder = null;
+              if (automatedStoppingSpecCase_ == 9) {
+                subBuilder =
+                    ((com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                            automatedStoppingSpec_)
+                        .toBuilder();
+              }
+              automatedStoppingSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                        automatedStoppingSpec_);
+                automatedStoppingSpec_ = subBuilder.buildPartial();
+              }
+              automatedStoppingSpecCase_ = 9;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -181,6 +204,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -851,6 +876,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2240,6 +2267,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2598,6 +2627,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -2715,10 +2746,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (minValue_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(minValue_) != 0) {
           output.writeDouble(1, minValue_);
         }
-        if (maxValue_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(maxValue_) != 0) {
           output.writeDouble(2, maxValue_);
         }
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -2733,10 +2764,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        if (minValue_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(minValue_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, minValue_);
         }
-        if (maxValue_ != 0D) {
+        if (java.lang.Double.doubleToRawLongBits(maxValue_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, maxValue_);
         }
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -3484,6 +3515,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4403,6 +4436,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5513,6 +5548,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6688,6 +6725,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -6853,6 +6892,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -7685,6 +7726,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -8516,6 +8559,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
             throw new com.google.protobuf.InvalidProtocolBufferException(e)
                 .setUnfinishedMessage(this);
@@ -10230,8 +10275,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (parentValueConditionCase_ == 2) {
               parentDiscreteValuesBuilder_.mergeFrom(value);
+            } else {
+              parentDiscreteValuesBuilder_.setMessage(value);
             }
-            parentDiscreteValuesBuilder_.setMessage(value);
           }
           parentValueConditionCase_ = 2;
           return this;
@@ -10505,8 +10551,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (parentValueConditionCase_ == 3) {
               parentIntValuesBuilder_.mergeFrom(value);
+            } else {
+              parentIntValuesBuilder_.setMessage(value);
             }
-            parentIntValuesBuilder_.setMessage(value);
           }
           parentValueConditionCase_ = 3;
           return this;
@@ -10780,8 +10827,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (parentValueConditionCase_ == 4) {
               parentCategoricalValuesBuilder_.mergeFrom(value);
+            } else {
+              parentCategoricalValuesBuilder_.setMessage(value);
             }
-            parentCategoricalValuesBuilder_.setMessage(value);
           }
           parentValueConditionCase_ = 4;
           return this;
@@ -12366,8 +12414,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (parameterValueSpecCase_ == 2) {
             doubleValueSpecBuilder_.mergeFrom(value);
+          } else {
+            doubleValueSpecBuilder_.setMessage(value);
           }
-          doubleValueSpecBuilder_.setMessage(value);
         }
         parameterValueSpecCase_ = 2;
         return this;
@@ -12610,8 +12659,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (parameterValueSpecCase_ == 3) {
             integerValueSpecBuilder_.mergeFrom(value);
+          } else {
+            integerValueSpecBuilder_.setMessage(value);
           }
-          integerValueSpecBuilder_.setMessage(value);
         }
         parameterValueSpecCase_ = 3;
         return this;
@@ -12856,8 +12906,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (parameterValueSpecCase_ == 4) {
             categoricalValueSpecBuilder_.mergeFrom(value);
+          } else {
+            categoricalValueSpecBuilder_.setMessage(value);
           }
-          categoricalValueSpecBuilder_.setMessage(value);
         }
         parameterValueSpecCase_ = 4;
         return this;
@@ -13102,8 +13153,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (parameterValueSpecCase_ == 5) {
             discreteValueSpecBuilder_.mergeFrom(value);
+          } else {
+            discreteValueSpecBuilder_.setMessage(value);
           }
-          discreteValueSpecBuilder_.setMessage(value);
         }
         parameterValueSpecCase_ = 5;
         return this;
@@ -14055,6 +14107,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -14650,6 +14704,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -15145,6 +15201,1223 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ConvexAutomatedStoppingSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Steps used in predicting the final objective for early stopped trials. In
+     * general, it's set to be the same as the defined steps in training /
+     * tuning. If not defined, it will learn it from the completed trials. When
+     * use_steps is false, this field is set to the maximum elapsed seconds.
+     * </pre>
+     *
+     * <code>int64 max_step_count = 1;</code>
+     *
+     * @return The maxStepCount.
+     */
+    long getMaxStepCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of steps for a trial to complete. Trials which do not have
+     * a measurement with step_count &gt; min_step_count won't be considered for
+     * early stopping. It's ok to set it to 0, and a trial can be early stopped
+     * at any stage. By default, min_step_count is set to be one-tenth of the
+     * max_step_count.
+     * When use_elapsed_duration is true, this field is set to the minimum
+     * elapsed seconds.
+     * </pre>
+     *
+     * <code>int64 min_step_count = 2;</code>
+     *
+     * @return The minStepCount.
+     */
+    long getMinStepCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimal number of measurements in a Trial.  Early-stopping checks
+     * will not trigger if less than min_measurement_count+1 completed trials or
+     * pending trials with less than min_measurement_count measurements. If not
+     * defined, the default value is 5.
+     * </pre>
+     *
+     * <code>int64 min_measurement_count = 3;</code>
+     *
+     * @return The minMeasurementCount.
+     */
+    long getMinMeasurementCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The hyper-parameter name used in the tuning job that stands for learning
+     * rate. Leave it blank if learning rate is not in a parameter in tuning.
+     * The learning_rate is used to estimate the objective value of the ongoing
+     * trial.
+     * </pre>
+     *
+     * <code>string learning_rate_parameter_name = 4;</code>
+     *
+     * @return The learningRateParameterName.
+     */
+    java.lang.String getLearningRateParameterName();
+    /**
+     *
+     *
+     * <pre>
+     * The hyper-parameter name used in the tuning job that stands for learning
+     * rate. Leave it blank if learning rate is not in a parameter in tuning.
+     * The learning_rate is used to estimate the objective value of the ongoing
+     * trial.
+     * </pre>
+     *
+     * <code>string learning_rate_parameter_name = 4;</code>
+     *
+     * @return The bytes for learningRateParameterName.
+     */
+    com.google.protobuf.ByteString getLearningRateParameterNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * This bool determines whether or not the rule is applied based on
+     * elapsed_secs or steps. If use_elapsed_duration==false, the early stopping
+     * decision is made according to the predicted objective values according to
+     * the target steps. If use_elapsed_duration==true, elapsed_secs is used
+     * instead of steps. Also, in this case, the parameters max_num_steps and
+     * min_num_steps are overloaded to contain max_elapsed_seconds and
+     * min_elapsed_seconds.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 5;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    boolean getUseElapsedDuration();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for ConvexAutomatedStoppingSpec.
+   * When there are enough completed trials (configured by
+   * min_measurement_count), for pending trials with enough measurements and
+   * steps, the policy first computes an overestimate of the objective value at
+   * max_num_steps according to the slope of the incomplete objective value
+   * curve. No prediction can be made if the curve is completely flat. If the
+   * overestimation is worse than the best objective value of the completed
+   * trials, this pending trial will be early-stopped, but a last measurement
+   * will be added to the pending trial with max_num_steps and predicted
+   * objective value from the autoregression model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec}
+   */
+  public static final class ConvexAutomatedStoppingSpec
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+      ConvexAutomatedStoppingSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ConvexAutomatedStoppingSpec.newBuilder() to construct.
+    private ConvexAutomatedStoppingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConvexAutomatedStoppingSpec() {
+      learningRateParameterName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConvexAutomatedStoppingSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ConvexAutomatedStoppingSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                maxStepCount_ = input.readInt64();
+                break;
+              }
+            case 16:
+              {
+                minStepCount_ = input.readInt64();
+                break;
+              }
+            case 24:
+              {
+                minMeasurementCount_ = input.readInt64();
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                learningRateParameterName_ = s;
+                break;
+              }
+            case 40:
+              {
+                useElapsedDuration_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_ConvexAutomatedStoppingSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1_StudySpec_ConvexAutomatedStoppingSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.class,
+              com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder.class);
+    }
+
+    public static final int MAX_STEP_COUNT_FIELD_NUMBER = 1;
+    private long maxStepCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Steps used in predicting the final objective for early stopped trials. In
+     * general, it's set to be the same as the defined steps in training /
+     * tuning. If not defined, it will learn it from the completed trials. When
+     * use_steps is false, this field is set to the maximum elapsed seconds.
+     * </pre>
+     *
+     * <code>int64 max_step_count = 1;</code>
+     *
+     * @return The maxStepCount.
+     */
+    @java.lang.Override
+    public long getMaxStepCount() {
+      return maxStepCount_;
+    }
+
+    public static final int MIN_STEP_COUNT_FIELD_NUMBER = 2;
+    private long minStepCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of steps for a trial to complete. Trials which do not have
+     * a measurement with step_count &gt; min_step_count won't be considered for
+     * early stopping. It's ok to set it to 0, and a trial can be early stopped
+     * at any stage. By default, min_step_count is set to be one-tenth of the
+     * max_step_count.
+     * When use_elapsed_duration is true, this field is set to the minimum
+     * elapsed seconds.
+     * </pre>
+     *
+     * <code>int64 min_step_count = 2;</code>
+     *
+     * @return The minStepCount.
+     */
+    @java.lang.Override
+    public long getMinStepCount() {
+      return minStepCount_;
+    }
+
+    public static final int MIN_MEASUREMENT_COUNT_FIELD_NUMBER = 3;
+    private long minMeasurementCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The minimal number of measurements in a Trial.  Early-stopping checks
+     * will not trigger if less than min_measurement_count+1 completed trials or
+     * pending trials with less than min_measurement_count measurements. If not
+     * defined, the default value is 5.
+     * </pre>
+     *
+     * <code>int64 min_measurement_count = 3;</code>
+     *
+     * @return The minMeasurementCount.
+     */
+    @java.lang.Override
+    public long getMinMeasurementCount() {
+      return minMeasurementCount_;
+    }
+
+    public static final int LEARNING_RATE_PARAMETER_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object learningRateParameterName_;
+    /**
+     *
+     *
+     * <pre>
+     * The hyper-parameter name used in the tuning job that stands for learning
+     * rate. Leave it blank if learning rate is not in a parameter in tuning.
+     * The learning_rate is used to estimate the objective value of the ongoing
+     * trial.
+     * </pre>
+     *
+     * <code>string learning_rate_parameter_name = 4;</code>
+     *
+     * @return The learningRateParameterName.
+     */
+    @java.lang.Override
+    public java.lang.String getLearningRateParameterName() {
+      java.lang.Object ref = learningRateParameterName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        learningRateParameterName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hyper-parameter name used in the tuning job that stands for learning
+     * rate. Leave it blank if learning rate is not in a parameter in tuning.
+     * The learning_rate is used to estimate the objective value of the ongoing
+     * trial.
+     * </pre>
+     *
+     * <code>string learning_rate_parameter_name = 4;</code>
+     *
+     * @return The bytes for learningRateParameterName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLearningRateParameterNameBytes() {
+      java.lang.Object ref = learningRateParameterName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        learningRateParameterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USE_ELAPSED_DURATION_FIELD_NUMBER = 5;
+    private boolean useElapsedDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * This bool determines whether or not the rule is applied based on
+     * elapsed_secs or steps. If use_elapsed_duration==false, the early stopping
+     * decision is made according to the predicted objective values according to
+     * the target steps. If use_elapsed_duration==true, elapsed_secs is used
+     * instead of steps. Also, in this case, the parameters max_num_steps and
+     * min_num_steps are overloaded to contain max_elapsed_seconds and
+     * min_elapsed_seconds.
+     * </pre>
+     *
+     * <code>bool use_elapsed_duration = 5;</code>
+     *
+     * @return The useElapsedDuration.
+     */
+    @java.lang.Override
+    public boolean getUseElapsedDuration() {
+      return useElapsedDuration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxStepCount_ != 0L) {
+        output.writeInt64(1, maxStepCount_);
+      }
+      if (minStepCount_ != 0L) {
+        output.writeInt64(2, minStepCount_);
+      }
+      if (minMeasurementCount_ != 0L) {
+        output.writeInt64(3, minMeasurementCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(learningRateParameterName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, learningRateParameterName_);
+      }
+      if (useElapsedDuration_ != false) {
+        output.writeBool(5, useElapsedDuration_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxStepCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, maxStepCount_);
+      }
+      if (minStepCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, minStepCount_);
+      }
+      if (minMeasurementCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, minMeasurementCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(learningRateParameterName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(4, learningRateParameterName_);
+      }
+      if (useElapsedDuration_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, useElapsedDuration_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec other =
+          (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec) obj;
+
+      if (getMaxStepCount() != other.getMaxStepCount()) return false;
+      if (getMinStepCount() != other.getMinStepCount()) return false;
+      if (getMinMeasurementCount() != other.getMinMeasurementCount()) return false;
+      if (!getLearningRateParameterName().equals(other.getLearningRateParameterName()))
+        return false;
+      if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_STEP_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxStepCount());
+      hash = (37 * hash) + MIN_STEP_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinStepCount());
+      hash = (37 * hash) + MIN_MEASUREMENT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinMeasurementCount());
+      hash = (37 * hash) + LEARNING_RATE_PARAMETER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getLearningRateParameterName().hashCode();
+      hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for ConvexAutomatedStoppingSpec.
+     * When there are enough completed trials (configured by
+     * min_measurement_count), for pending trials with enough measurements and
+     * steps, the policy first computes an overestimate of the objective value at
+     * max_num_steps according to the slope of the incomplete objective value
+     * curve. No prediction can be made if the curve is completely flat. If the
+     * overestimation is worse than the best objective value of the completed
+     * trials, this pending trial will be early-stopped, but a last measurement
+     * will be added to the pending trial with max_num_steps and predicted
+     * objective value from the autoregression model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_ConvexAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_ConvexAutomatedStoppingSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.class,
+                com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        maxStepCount_ = 0L;
+
+        minStepCount_ = 0L;
+
+        minMeasurementCount_ = 0L;
+
+        learningRateParameterName_ = "";
+
+        useElapsedDuration_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1_StudySpec_ConvexAutomatedStoppingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec build() {
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec buildPartial() {
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec result =
+            new com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec(this);
+        result.maxStepCount_ = maxStepCount_;
+        result.minStepCount_ = minStepCount_;
+        result.minMeasurementCount_ = minMeasurementCount_;
+        result.learningRateParameterName_ = learningRateParameterName_;
+        result.useElapsedDuration_ = useElapsedDuration_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+                .getDefaultInstance()) return this;
+        if (other.getMaxStepCount() != 0L) {
+          setMaxStepCount(other.getMaxStepCount());
+        }
+        if (other.getMinStepCount() != 0L) {
+          setMinStepCount(other.getMinStepCount());
+        }
+        if (other.getMinMeasurementCount() != 0L) {
+          setMinMeasurementCount(other.getMinMeasurementCount());
+        }
+        if (!other.getLearningRateParameterName().isEmpty()) {
+          learningRateParameterName_ = other.learningRateParameterName_;
+          onChanged();
+        }
+        if (other.getUseElapsedDuration() != false) {
+          setUseElapsedDuration(other.getUseElapsedDuration());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long maxStepCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Steps used in predicting the final objective for early stopped trials. In
+       * general, it's set to be the same as the defined steps in training /
+       * tuning. If not defined, it will learn it from the completed trials. When
+       * use_steps is false, this field is set to the maximum elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 max_step_count = 1;</code>
+       *
+       * @return The maxStepCount.
+       */
+      @java.lang.Override
+      public long getMaxStepCount() {
+        return maxStepCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Steps used in predicting the final objective for early stopped trials. In
+       * general, it's set to be the same as the defined steps in training /
+       * tuning. If not defined, it will learn it from the completed trials. When
+       * use_steps is false, this field is set to the maximum elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 max_step_count = 1;</code>
+       *
+       * @param value The maxStepCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxStepCount(long value) {
+
+        maxStepCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Steps used in predicting the final objective for early stopped trials. In
+       * general, it's set to be the same as the defined steps in training /
+       * tuning. If not defined, it will learn it from the completed trials. When
+       * use_steps is false, this field is set to the maximum elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 max_step_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxStepCount() {
+
+        maxStepCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long minStepCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Minimum number of steps for a trial to complete. Trials which do not have
+       * a measurement with step_count &gt; min_step_count won't be considered for
+       * early stopping. It's ok to set it to 0, and a trial can be early stopped
+       * at any stage. By default, min_step_count is set to be one-tenth of the
+       * max_step_count.
+       * When use_elapsed_duration is true, this field is set to the minimum
+       * elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 min_step_count = 2;</code>
+       *
+       * @return The minStepCount.
+       */
+      @java.lang.Override
+      public long getMinStepCount() {
+        return minStepCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Minimum number of steps for a trial to complete. Trials which do not have
+       * a measurement with step_count &gt; min_step_count won't be considered for
+       * early stopping. It's ok to set it to 0, and a trial can be early stopped
+       * at any stage. By default, min_step_count is set to be one-tenth of the
+       * max_step_count.
+       * When use_elapsed_duration is true, this field is set to the minimum
+       * elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 min_step_count = 2;</code>
+       *
+       * @param value The minStepCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinStepCount(long value) {
+
+        minStepCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Minimum number of steps for a trial to complete. Trials which do not have
+       * a measurement with step_count &gt; min_step_count won't be considered for
+       * early stopping. It's ok to set it to 0, and a trial can be early stopped
+       * at any stage. By default, min_step_count is set to be one-tenth of the
+       * max_step_count.
+       * When use_elapsed_duration is true, this field is set to the minimum
+       * elapsed seconds.
+       * </pre>
+       *
+       * <code>int64 min_step_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinStepCount() {
+
+        minStepCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long minMeasurementCount_;
+      /**
+       *
+       *
+       * <pre>
+       * The minimal number of measurements in a Trial.  Early-stopping checks
+       * will not trigger if less than min_measurement_count+1 completed trials or
+       * pending trials with less than min_measurement_count measurements. If not
+       * defined, the default value is 5.
+       * </pre>
+       *
+       * <code>int64 min_measurement_count = 3;</code>
+       *
+       * @return The minMeasurementCount.
+       */
+      @java.lang.Override
+      public long getMinMeasurementCount() {
+        return minMeasurementCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The minimal number of measurements in a Trial.  Early-stopping checks
+       * will not trigger if less than min_measurement_count+1 completed trials or
+       * pending trials with less than min_measurement_count measurements. If not
+       * defined, the default value is 5.
+       * </pre>
+       *
+       * <code>int64 min_measurement_count = 3;</code>
+       *
+       * @param value The minMeasurementCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinMeasurementCount(long value) {
+
+        minMeasurementCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The minimal number of measurements in a Trial.  Early-stopping checks
+       * will not trigger if less than min_measurement_count+1 completed trials or
+       * pending trials with less than min_measurement_count measurements. If not
+       * defined, the default value is 5.
+       * </pre>
+       *
+       * <code>int64 min_measurement_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinMeasurementCount() {
+
+        minMeasurementCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object learningRateParameterName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The hyper-parameter name used in the tuning job that stands for learning
+       * rate. Leave it blank if learning rate is not in a parameter in tuning.
+       * The learning_rate is used to estimate the objective value of the ongoing
+       * trial.
+       * </pre>
+       *
+       * <code>string learning_rate_parameter_name = 4;</code>
+       *
+       * @return The learningRateParameterName.
+       */
+      public java.lang.String getLearningRateParameterName() {
+        java.lang.Object ref = learningRateParameterName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          learningRateParameterName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hyper-parameter name used in the tuning job that stands for learning
+       * rate. Leave it blank if learning rate is not in a parameter in tuning.
+       * The learning_rate is used to estimate the objective value of the ongoing
+       * trial.
+       * </pre>
+       *
+       * <code>string learning_rate_parameter_name = 4;</code>
+       *
+       * @return The bytes for learningRateParameterName.
+       */
+      public com.google.protobuf.ByteString getLearningRateParameterNameBytes() {
+        java.lang.Object ref = learningRateParameterName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          learningRateParameterName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hyper-parameter name used in the tuning job that stands for learning
+       * rate. Leave it blank if learning rate is not in a parameter in tuning.
+       * The learning_rate is used to estimate the objective value of the ongoing
+       * trial.
+       * </pre>
+       *
+       * <code>string learning_rate_parameter_name = 4;</code>
+       *
+       * @param value The learningRateParameterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLearningRateParameterName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        learningRateParameterName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hyper-parameter name used in the tuning job that stands for learning
+       * rate. Leave it blank if learning rate is not in a parameter in tuning.
+       * The learning_rate is used to estimate the objective value of the ongoing
+       * trial.
+       * </pre>
+       *
+       * <code>string learning_rate_parameter_name = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLearningRateParameterName() {
+
+        learningRateParameterName_ = getDefaultInstance().getLearningRateParameterName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The hyper-parameter name used in the tuning job that stands for learning
+       * rate. Leave it blank if learning rate is not in a parameter in tuning.
+       * The learning_rate is used to estimate the objective value of the ongoing
+       * trial.
+       * </pre>
+       *
+       * <code>string learning_rate_parameter_name = 4;</code>
+       *
+       * @param value The bytes for learningRateParameterName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLearningRateParameterNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        learningRateParameterName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean useElapsedDuration_;
+      /**
+       *
+       *
+       * <pre>
+       * This bool determines whether or not the rule is applied based on
+       * elapsed_secs or steps. If use_elapsed_duration==false, the early stopping
+       * decision is made according to the predicted objective values according to
+       * the target steps. If use_elapsed_duration==true, elapsed_secs is used
+       * instead of steps. Also, in this case, the parameters max_num_steps and
+       * min_num_steps are overloaded to contain max_elapsed_seconds and
+       * min_elapsed_seconds.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 5;</code>
+       *
+       * @return The useElapsedDuration.
+       */
+      @java.lang.Override
+      public boolean getUseElapsedDuration() {
+        return useElapsedDuration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This bool determines whether or not the rule is applied based on
+       * elapsed_secs or steps. If use_elapsed_duration==false, the early stopping
+       * decision is made according to the predicted objective values according to
+       * the target steps. If use_elapsed_duration==true, elapsed_secs is used
+       * instead of steps. Also, in this case, the parameters max_num_steps and
+       * min_num_steps are overloaded to contain max_elapsed_seconds and
+       * min_elapsed_seconds.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 5;</code>
+       *
+       * @param value The useElapsedDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseElapsedDuration(boolean value) {
+
+        useElapsedDuration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This bool determines whether or not the rule is applied based on
+       * elapsed_secs or steps. If use_elapsed_duration==false, the early stopping
+       * decision is made according to the predicted objective values according to
+       * the target steps. If use_elapsed_duration==true, elapsed_secs is used
+       * instead of steps. Also, in this case, the parameters max_num_steps and
+       * min_num_steps are overloaded to contain max_elapsed_seconds and
+       * min_elapsed_seconds.
+       * </pre>
+       *
+       * <code>bool use_elapsed_duration = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseElapsedDuration() {
+
+        useElapsedDuration_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+    private static final com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConvexAutomatedStoppingSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ConvexAutomatedStoppingSpec>() {
+          @java.lang.Override
+          public ConvexAutomatedStoppingSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ConvexAutomatedStoppingSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConvexAutomatedStoppingSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConvexAutomatedStoppingSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int automatedStoppingSpecCase_ = 0;
   private java.lang.Object automatedStoppingSpec_;
 
@@ -15154,6 +16427,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DECAY_CURVE_STOPPING_SPEC(4),
     MEDIAN_AUTOMATED_STOPPING_SPEC(5),
+    CONVEX_AUTOMATED_STOPPING_SPEC(9),
     AUTOMATEDSTOPPINGSPEC_NOT_SET(0);
     private final int value;
 
@@ -15176,6 +16450,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return DECAY_CURVE_STOPPING_SPEC;
         case 5:
           return MEDIAN_AUTOMATED_STOPPING_SPEC;
+        case 9:
+          return CONVEX_AUTOMATED_STOPPING_SPEC;
         case 0:
           return AUTOMATEDSTOPPINGSPEC_NOT_SET;
         default:
@@ -15315,6 +16591,69 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           automatedStoppingSpec_;
     }
     return com.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+
+  public static final int CONVEX_AUTOMATED_STOPPING_SPEC_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   *
+   * @return Whether the convexAutomatedStoppingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasConvexAutomatedStoppingSpec() {
+    return automatedStoppingSpecCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   *
+   * @return The convexAutomatedStoppingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+      getConvexAutomatedStoppingSpec() {
+    if (automatedStoppingSpecCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder
+      getConvexAutomatedStoppingSpecOrBuilder() {
+    if (automatedStoppingSpecCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+          automatedStoppingSpec_;
+    }
+    return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
         .getDefaultInstance();
   }
 
@@ -15650,6 +16989,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(7, measurementSelectionType_);
     }
+    if (automatedStoppingSpecCase_ == 9) {
+      output.writeMessage(
+          9,
+          (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+              automatedStoppingSpec_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -15694,6 +17039,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, measurementSelectionType_);
     }
+    if (automatedStoppingSpecCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                  automatedStoppingSpec_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -15721,6 +17073,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getMedianAutomatedStoppingSpec().equals(other.getMedianAutomatedStoppingSpec()))
+          return false;
+        break;
+      case 9:
+        if (!getConvexAutomatedStoppingSpec().equals(other.getConvexAutomatedStoppingSpec()))
           return false;
         break;
       case 0:
@@ -15759,6 +17115,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + MEDIAN_AUTOMATED_STOPPING_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getMedianAutomatedStoppingSpec().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + CONVEX_AUTOMATED_STOPPING_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getConvexAutomatedStoppingSpec().hashCode();
         break;
       case 0:
       default:
@@ -15973,6 +17333,13 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           result.automatedStoppingSpec_ = medianAutomatedStoppingSpecBuilder_.build();
         }
       }
+      if (automatedStoppingSpecCase_ == 9) {
+        if (convexAutomatedStoppingSpecBuilder_ == null) {
+          result.automatedStoppingSpec_ = automatedStoppingSpec_;
+        } else {
+          result.automatedStoppingSpec_ = convexAutomatedStoppingSpecBuilder_.build();
+        }
+      }
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -16116,6 +17483,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         case MEDIAN_AUTOMATED_STOPPING_SPEC:
           {
             mergeMedianAutomatedStoppingSpec(other.getMedianAutomatedStoppingSpec());
+            break;
+          }
+        case CONVEX_AUTOMATED_STOPPING_SPEC:
+          {
+            mergeConvexAutomatedStoppingSpec(other.getConvexAutomatedStoppingSpec());
             break;
           }
         case AUTOMATEDSTOPPINGSPEC_NOT_SET:
@@ -16300,8 +17672,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (automatedStoppingSpecCase_ == 4) {
           decayCurveStoppingSpecBuilder_.mergeFrom(value);
+        } else {
+          decayCurveStoppingSpecBuilder_.setMessage(value);
         }
-        decayCurveStoppingSpecBuilder_.setMessage(value);
       }
       automatedStoppingSpecCase_ = 4;
       return this;
@@ -16544,8 +17917,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (automatedStoppingSpecCase_ == 5) {
           medianAutomatedStoppingSpecBuilder_.mergeFrom(value);
+        } else {
+          medianAutomatedStoppingSpecBuilder_.setMessage(value);
         }
-        medianAutomatedStoppingSpecBuilder_.setMessage(value);
       }
       automatedStoppingSpecCase_ = 5;
       return this;
@@ -16654,6 +18028,251 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return medianAutomatedStoppingSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder>
+        convexAutomatedStoppingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     *
+     * @return Whether the convexAutomatedStoppingSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasConvexAutomatedStoppingSpec() {
+      return automatedStoppingSpecCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     *
+     * @return The convexAutomatedStoppingSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+        getConvexAutomatedStoppingSpec() {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+            .getDefaultInstance();
+      } else {
+        if (automatedStoppingSpecCase_ == 9) {
+          return convexAutomatedStoppingSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    public Builder setConvexAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec value) {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        automatedStoppingSpec_ = value;
+        onChanged();
+      } else {
+        convexAutomatedStoppingSpecBuilder_.setMessage(value);
+      }
+      automatedStoppingSpecCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    public Builder setConvexAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder
+            builderForValue) {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        automatedStoppingSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        convexAutomatedStoppingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      automatedStoppingSpecCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    public Builder mergeConvexAutomatedStoppingSpec(
+        com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec value) {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 9
+            && automatedStoppingSpec_
+                != com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+                    .getDefaultInstance()) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                          automatedStoppingSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          automatedStoppingSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (automatedStoppingSpecCase_ == 9) {
+          convexAutomatedStoppingSpecBuilder_.mergeFrom(value);
+        } else {
+          convexAutomatedStoppingSpecBuilder_.setMessage(value);
+        }
+      }
+      automatedStoppingSpecCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    public Builder clearConvexAutomatedStoppingSpec() {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        if (automatedStoppingSpecCase_ == 9) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (automatedStoppingSpecCase_ == 9) {
+          automatedStoppingSpecCase_ = 0;
+          automatedStoppingSpec_ = null;
+        }
+        convexAutomatedStoppingSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder
+        getConvexAutomatedStoppingSpecBuilder() {
+      return getConvexAutomatedStoppingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder
+        getConvexAutomatedStoppingSpecOrBuilder() {
+      if ((automatedStoppingSpecCase_ == 9) && (convexAutomatedStoppingSpecBuilder_ != null)) {
+        return convexAutomatedStoppingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (automatedStoppingSpecCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+              automatedStoppingSpec_;
+        }
+        return com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The automated early stopping spec using convex stopping rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec,
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder,
+            com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder>
+        getConvexAutomatedStoppingSpecFieldBuilder() {
+      if (convexAutomatedStoppingSpecBuilder_ == null) {
+        if (!(automatedStoppingSpecCase_ == 9)) {
+          automatedStoppingSpec_ =
+              com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec
+                  .getDefaultInstance();
+        }
+        convexAutomatedStoppingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec,
+                com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec.Builder,
+                com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1.StudySpec.ConvexAutomatedStoppingSpec)
+                    automatedStoppingSpec_,
+                getParentForChildren(),
+                isClean());
+        automatedStoppingSpec_ = null;
+      }
+      automatedStoppingSpecCase_ = 9;
+      onChanged();
+      ;
+      return convexAutomatedStoppingSpecBuilder_;
     }
 
     private java.util.List<com.google.cloud.aiplatform.v1.StudySpec.MetricSpec> metrics_ =

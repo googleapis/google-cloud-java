@@ -213,6 +213,77 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the reservedIpRanges.
+   */
+  java.util.List<java.lang.String> getReservedIpRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of reservedIpRanges.
+   */
+  int getReservedIpRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The reservedIpRanges at the given index.
+   */
+  java.lang.String getReservedIpRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the reservedIpRanges at the given index.
+   */
+  com.google.protobuf.ByteString getReservedIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * the baseOutputDirectory of

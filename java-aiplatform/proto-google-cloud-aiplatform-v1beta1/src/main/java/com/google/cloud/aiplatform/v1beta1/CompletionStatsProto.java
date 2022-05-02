@@ -42,26 +42,23 @@ public final class CompletionStatsProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/comple"
           + "tion_stats.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\034google/api/annotations.proto\032"
-          + "\037google/api/field_behavior.proto\032\027google"
-          + "/rpc/status.proto\"j\n\017CompletionStats\022\035\n\020"
-          + "successful_count\030\001 \001(\003B\003\340A\003\022\031\n\014failed_co"
-          + "unt\030\002 \001(\003B\003\340A\003\022\035\n\020incomplete_count\030\003 \001(\003"
-          + "B\003\340A\003B\361\001\n#com.google.cloud.aiplatform.v1"
-          + "beta1B\024CompletionStatsProtoP\001ZIgoogle.go"
-          + "lang.org/genproto/googleapis/cloud/aipla"
-          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
-          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
-          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
-          + "::V1beta1b\006proto3"
+          + "m.v1beta1\032\037google/api/field_behavior.pro"
+          + "to\"j\n\017CompletionStats\022\035\n\020successful_coun"
+          + "t\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003\022"
+          + "\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003B\361\001\n#com.g"
+          + "oogle.cloud.aiplatform.v1beta1B\024Completi"
+          + "onStatsProtoP\001ZIgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/aiplatform/v1beta1;a"
+          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_CompletionStats_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -76,9 +73,7 @@ public final class CompletionStatsProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

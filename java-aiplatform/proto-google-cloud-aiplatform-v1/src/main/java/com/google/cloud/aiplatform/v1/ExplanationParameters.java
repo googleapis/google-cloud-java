@@ -156,6 +156,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1119,8 +1121,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 1) {
           sampledShapleyAttributionBuilder_.mergeFrom(value);
+        } else {
+          sampledShapleyAttributionBuilder_.setMessage(value);
         }
-        sampledShapleyAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 1;
       return this;
@@ -1371,8 +1374,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 2) {
           integratedGradientsAttributionBuilder_.mergeFrom(value);
+        } else {
+          integratedGradientsAttributionBuilder_.setMessage(value);
         }
-        integratedGradientsAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 2;
       return this;
@@ -1634,8 +1638,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         if (methodCase_ == 3) {
           xraiAttributionBuilder_.mergeFrom(value);
+        } else {
+          xraiAttributionBuilder_.setMessage(value);
         }
-        xraiAttributionBuilder_.setMessage(value);
       }
       methodCase_ = 3;
       return this;

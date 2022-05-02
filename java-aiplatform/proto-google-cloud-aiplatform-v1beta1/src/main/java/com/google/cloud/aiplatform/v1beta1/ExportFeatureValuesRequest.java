@@ -186,6 +186,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -391,6 +393,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1550,6 +1554,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3592,8 +3598,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (modeCase_ == 3) {
           snapshotExportBuilder_.mergeFrom(value);
+        } else {
+          snapshotExportBuilder_.setMessage(value);
         }
-        snapshotExportBuilder_.setMessage(value);
       }
       modeCase_ = 3;
       return this;
@@ -3841,8 +3848,9 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (modeCase_ == 7) {
           fullExportBuilder_.mergeFrom(value);
+        } else {
+          fullExportBuilder_.setMessage(value);
         }
-        fullExportBuilder_.setMessage(value);
       }
       modeCase_ = 7;
       return this;

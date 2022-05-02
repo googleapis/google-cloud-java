@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -97,6 +98,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).listModelsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listModelVersions. */
+  public PagedCallSettings<
+          ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+      listModelVersionsSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).listModelVersionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateModel. */
   public UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).updateModelSettings();
@@ -111,6 +119,22 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
   public OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).deleteModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public UnaryCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).deleteModelVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public OperationCallSettings<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).deleteModelVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mergeVersionAliases. */
+  public UnaryCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).mergeVersionAliasesSettings();
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
@@ -281,6 +305,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
       return getStubSettingsBuilder().listModelsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listModelVersions. */
+    public PagedCallSettings.Builder<
+            ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+        listModelVersionsSettings() {
+      return getStubSettingsBuilder().listModelVersionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateModel. */
     public UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings() {
       return getStubSettingsBuilder().updateModelSettings();
@@ -295,6 +326,24 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings() {
       return getStubSettingsBuilder().deleteModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    public UnaryCallSettings.Builder<DeleteModelVersionRequest, Operation>
+        deleteModelVersionSettings() {
+      return getStubSettingsBuilder().deleteModelVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    public OperationCallSettings.Builder<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+        deleteModelVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteModelVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mergeVersionAliases. */
+    public UnaryCallSettings.Builder<MergeVersionAliasesRequest, Model>
+        mergeVersionAliasesSettings() {
+      return getStubSettingsBuilder().mergeVersionAliasesSettings();
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */

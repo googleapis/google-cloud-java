@@ -70,82 +70,81 @@ public final class CustomJobProto {
     java.lang.String[] descriptorData = {
       "\n0google/cloud/aiplatform/v1beta1/custom"
           + "_job.proto\022\037google.cloud.aiplatform.v1be"
-          + "ta1\032\034google/api/annotations.proto\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\0325google/cloud/aiplatform/v"
-          + "1beta1/encryption_spec.proto\032-google/clo"
-          + "ud/aiplatform/v1beta1/env_var.proto\032(goo"
-          + "gle/cloud/aiplatform/v1beta1/io.proto\032/g"
-          + "oogle/cloud/aiplatform/v1beta1/job_state"
-          + ".proto\0327google/cloud/aiplatform/v1beta1/"
-          + "machine_resources.proto\032\036google/protobuf"
-          + "/duration.proto\032\037google/protobuf/timesta"
-          + "mp.proto\032\027google/rpc/status.proto\"\372\006\n\tCu"
-          + "stomJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_na"
-          + "me\030\002 \001(\tB\003\340A\002\022E\n\010job_spec\030\004 \001(\0132..google"
-          + ".cloud.aiplatform.v1beta1.CustomJobSpecB"
-          + "\003\340A\002\022=\n\005state\030\005 \001(\0162).google.cloud.aipla"
-          + "tform.v1beta1.JobStateB\003\340A\003\0224\n\013create_ti"
-          + "me\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0223\n\nstart_time\030\007 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\0221\n\010end_time\030\010 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
-          + "\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "&\n\005error\030\n \001(\0132\022.google.rpc.StatusB\003\340A\003\022"
-          + "F\n\006labels\030\013 \003(\01326.google.cloud.aiplatfor"
-          + "m.v1beta1.CustomJob.LabelsEntry\022H\n\017encry"
-          + "ption_spec\030\014 \001(\0132/.google.cloud.aiplatfo"
-          + "rm.v1beta1.EncryptionSpec\022[\n\017web_access_"
-          + "uris\030\020 \003(\0132=.google.cloud.aiplatform.v1b"
-          + "eta1.CustomJob.WebAccessUrisEntryB\003\340A\003\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001\0324\n\022WebAccessUrisEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001:i\352Af\n#aiplatform.goo"
-          + "gleapis.com/CustomJob\022?projects/{project"
-          + "}/locations/{location}/customJobs/{custo"
-          + "m_job}\"\244\003\n\rCustomJobSpec\022O\n\021worker_pool_"
-          + "specs\030\001 \003(\0132/.google.cloud.aiplatform.v1"
-          + "beta1.WorkerPoolSpecB\003\340A\002\022?\n\nscheduling\030"
-          + "\003 \001(\0132+.google.cloud.aiplatform.v1beta1."
-          + "Scheduling\022\027\n\017service_account\030\004 \001(\t\0224\n\007n"
-          + "etwork\030\005 \001(\tB#\372A \n\036compute.googleapis.co"
-          + "m/Network\022N\n\025base_output_directory\030\006 \001(\013"
-          + "2/.google.cloud.aiplatform.v1beta1.GcsDe"
-          + "stination\022B\n\013tensorboard\030\007 \001(\tB-\340A\001\372A\'\n%"
-          + "aiplatform.googleapis.com/Tensorboard\022\036\n"
-          + "\021enable_web_access\030\n \001(\010B\003\340A\001\"\333\002\n\016Worker"
-          + "PoolSpec\022H\n\016container_spec\030\006 \001(\0132..googl"
-          + "e.cloud.aiplatform.v1beta1.ContainerSpec"
-          + "H\000\022Q\n\023python_package_spec\030\007 \001(\01322.google"
-          + ".cloud.aiplatform.v1beta1.PythonPackageS"
-          + "pecH\000\022J\n\014machine_spec\030\001 \001(\0132,.google.clo"
-          + "ud.aiplatform.v1beta1.MachineSpecB\006\340A\001\340A"
-          + "\005\022\032\n\rreplica_count\030\002 \001(\003B\003\340A\001\022<\n\tdisk_sp"
-          + "ec\030\005 \001(\0132).google.cloud.aiplatform.v1bet"
-          + "a1.DiskSpecB\006\n\004task\"F\n\rContainerSpec\022\026\n\t"
-          + "image_uri\030\001 \001(\tB\003\340A\002\022\017\n\007command\030\002 \003(\t\022\014\n"
-          + "\004args\030\003 \003(\t\"y\n\021PythonPackageSpec\022\037\n\022exec"
-          + "utor_image_uri\030\001 \001(\tB\003\340A\002\022\031\n\014package_uri"
-          + "s\030\002 \003(\tB\003\340A\002\022\032\n\rpython_module\030\003 \001(\tB\003\340A\002"
-          + "\022\014\n\004args\030\004 \003(\t\"_\n\nScheduling\022*\n\007timeout\030"
-          + "\001 \001(\0132\031.google.protobuf.Duration\022%\n\035rest"
-          + "art_job_on_worker_restart\030\003 \001(\010B\353\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\016CustomJ"
-          + "obProtoP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
-          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ta1\032\037google/api/field_behavior.proto\032\031go"
+          + "ogle/api/resource.proto\0325google/cloud/ai"
+          + "platform/v1beta1/encryption_spec.proto\032("
+          + "google/cloud/aiplatform/v1beta1/io.proto"
+          + "\032/google/cloud/aiplatform/v1beta1/job_st"
+          + "ate.proto\0327google/cloud/aiplatform/v1bet"
+          + "a1/machine_resources.proto\032\036google/proto"
+          + "buf/duration.proto\032\037google/protobuf/time"
+          + "stamp.proto\032\027google/rpc/status.proto\"\372\006\n"
+          + "\tCustomJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display"
+          + "_name\030\002 \001(\tB\003\340A\002\022E\n\010job_spec\030\004 \001(\0132..goo"
+          + "gle.cloud.aiplatform.v1beta1.CustomJobSp"
+          + "ecB\003\340A\002\022=\n\005state\030\005 \001(\0162).google.cloud.ai"
+          + "platform.v1beta1.JobStateB\003\340A\003\0224\n\013create"
+          + "_time\030\006 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0223\n\nstart_time\030\007 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0221\n\010end_time\030\010 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\022&\n\005error\030\n \001(\0132\022.google.rpc.StatusB\003\340"
+          + "A\003\022F\n\006labels\030\013 \003(\01326.google.cloud.aiplat"
+          + "form.v1beta1.CustomJob.LabelsEntry\022H\n\017en"
+          + "cryption_spec\030\014 \001(\0132/.google.cloud.aipla"
+          + "tform.v1beta1.EncryptionSpec\022[\n\017web_acce"
+          + "ss_uris\030\020 \003(\0132=.google.cloud.aiplatform."
+          + "v1beta1.CustomJob.WebAccessUrisEntryB\003\340A"
+          + "\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\0324\n\022WebAccessUrisEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:i\352Af\n#aiplatform."
+          + "googleapis.com/CustomJob\022?projects/{proj"
+          + "ect}/locations/{location}/customJobs/{cu"
+          + "stom_job}\"\305\003\n\rCustomJobSpec\022O\n\021worker_po"
+          + "ol_specs\030\001 \003(\0132/.google.cloud.aiplatform"
+          + ".v1beta1.WorkerPoolSpecB\003\340A\002\022?\n\nscheduli"
+          + "ng\030\003 \001(\0132+.google.cloud.aiplatform.v1bet"
+          + "a1.Scheduling\022\027\n\017service_account\030\004 \001(\t\0224"
+          + "\n\007network\030\005 \001(\tB#\372A \n\036compute.googleapis"
+          + ".com/Network\022\037\n\022reserved_ip_ranges\030\r \003(\t"
+          + "B\003\340A\001\022N\n\025base_output_directory\030\006 \001(\0132/.g"
+          + "oogle.cloud.aiplatform.v1beta1.GcsDestin"
+          + "ation\022B\n\013tensorboard\030\007 \001(\tB-\340A\001\372A\'\n%aipl"
+          + "atform.googleapis.com/Tensorboard\022\036\n\021ena"
+          + "ble_web_access\030\n \001(\010B\003\340A\001\"\237\003\n\016WorkerPool"
+          + "Spec\022H\n\016container_spec\030\006 \001(\0132..google.cl"
+          + "oud.aiplatform.v1beta1.ContainerSpecH\000\022Q"
+          + "\n\023python_package_spec\030\007 \001(\01322.google.clo"
+          + "ud.aiplatform.v1beta1.PythonPackageSpecH"
+          + "\000\022J\n\014machine_spec\030\001 \001(\0132,.google.cloud.a"
+          + "iplatform.v1beta1.MachineSpecB\006\340A\001\340A\005\022\032\n"
+          + "\rreplica_count\030\002 \001(\003B\003\340A\001\022B\n\nnfs_mounts\030"
+          + "\004 \003(\0132).google.cloud.aiplatform.v1beta1."
+          + "NfsMountB\003\340A\001\022<\n\tdisk_spec\030\005 \001(\0132).googl"
+          + "e.cloud.aiplatform.v1beta1.DiskSpecB\006\n\004t"
+          + "ask\"F\n\rContainerSpec\022\026\n\timage_uri\030\001 \001(\tB"
+          + "\003\340A\002\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\"y\n\021P"
+          + "ythonPackageSpec\022\037\n\022executor_image_uri\030\001"
+          + " \001(\tB\003\340A\002\022\031\n\014package_uris\030\002 \003(\tB\003\340A\002\022\032\n\r"
+          + "python_module\030\003 \001(\tB\003\340A\002\022\014\n\004args\030\004 \003(\t\"_"
+          + "\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.google.p"
+          + "rotobuf.Duration\022%\n\035restart_job_on_worke"
+          + "r_restart\030\003 \001(\010B\353\001\n#com.google.cloud.aip"
+          + "latform.v1beta1B\016CustomJobProtoP\001ZIgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "iplatform/v1beta1;aiplatform\252\002\037Google.Cl"
+          + "oud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AI"
+          + "Platform\\V1beta1\352\002\"Google::Cloud::AIPlat"
+          + "form::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
-              com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor(),
@@ -202,6 +201,7 @@ public final class CustomJobProto {
               "Scheduling",
               "ServiceAccount",
               "Network",
+              "ReservedIpRanges",
               "BaseOutputDirectory",
               "Tensorboard",
               "EnableWebAccess",
@@ -216,6 +216,7 @@ public final class CustomJobProto {
               "PythonPackageSpec",
               "MachineSpec",
               "ReplicaCount",
+              "NfsMounts",
               "DiskSpec",
               "Task",
             });
@@ -250,11 +251,9 @@ public final class CustomJobProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
-    com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor();

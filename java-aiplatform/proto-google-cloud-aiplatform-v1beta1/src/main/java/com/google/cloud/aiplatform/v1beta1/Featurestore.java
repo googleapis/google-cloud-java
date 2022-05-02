@@ -185,6 +185,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -223,7 +225,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Possible states a Featurestore can have.
+   * Possible states a featurestore can have.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.aiplatform.v1beta1.Featurestore.State}
@@ -243,9 +245,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * State when the Featurestore configuration is not being updated and the
-     * fields reflect the current configuration of the Featurestore. The
-     * Featurestore is usable in this state.
+     * State when the featurestore configuration is not being updated and the
+     * fields reflect the current configuration of the featurestore. The
+     * featurestore is usable in this state.
      * </pre>
      *
      * <code>STABLE = 1;</code>
@@ -255,14 +257,16 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * State when the Featurestore configuration is being updated and the fields
-     * reflect the updated configuration of the Featurestore, not the current
-     * one. For example, `online_serving_config.fixed_node_count` can take
-     * minutes to update. While the update is in progress, the Featurestore
-     * will be in the UPDATING state and the value of `fixed_node_count` will be
-     * the updated value. Until the update completes, the actual number of nodes
-     * can still be the original value of `fixed_node_count`. The Featurestore
-     * is still usable in this state.
+     * The state of the featurestore configuration when it is being updated.
+     * During an update, the fields reflect either the original configuration
+     * or the updated configuration of the featurestore. For example,
+     * `online_serving_config.fixed_node_count` can take minutes to update.
+     * While the update is in progress, the featurestore is in the UPDATING
+     * state, and the value of `fixed_node_count` can be the original value or
+     * the updated value, depending on the progress of the operation. Until the
+     * update completes, the actual number of nodes can still be the original
+     * value of `fixed_node_count`. The featurestore is still usable in this
+     * state.
      * </pre>
      *
      * <code>UPDATING = 2;</code>
@@ -285,9 +289,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * State when the Featurestore configuration is not being updated and the
-     * fields reflect the current configuration of the Featurestore. The
-     * Featurestore is usable in this state.
+     * State when the featurestore configuration is not being updated and the
+     * fields reflect the current configuration of the featurestore. The
+     * featurestore is usable in this state.
      * </pre>
      *
      * <code>STABLE = 1;</code>
@@ -297,14 +301,16 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * State when the Featurestore configuration is being updated and the fields
-     * reflect the updated configuration of the Featurestore, not the current
-     * one. For example, `online_serving_config.fixed_node_count` can take
-     * minutes to update. While the update is in progress, the Featurestore
-     * will be in the UPDATING state and the value of `fixed_node_count` will be
-     * the updated value. Until the update completes, the actual number of nodes
-     * can still be the original value of `fixed_node_count`. The Featurestore
-     * is still usable in this state.
+     * The state of the featurestore configuration when it is being updated.
+     * During an update, the fields reflect either the original configuration
+     * or the updated configuration of the featurestore. For example,
+     * `online_serving_config.fixed_node_count` can take minutes to update.
+     * While the update is in progress, the featurestore is in the UPDATING
+     * state, and the value of `fixed_node_count` can be the original value or
+     * the updated value, depending on the progress of the operation. Until the
+     * update completes, the actual number of nodes can still be the original
+     * value of `fixed_node_count`. The featurestore is still usable in this
+     * state.
      * </pre>
      *
      * <code>UPDATING = 2;</code>
@@ -403,11 +409,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes for each cluster. The number of nodes will not
-     * scale automatically but can be scaled manually by providing different
-     * values when updating.
-     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-     * reset the other.
+     * The number of nodes for the online store. The number of nodes doesn't
+     * scale automatically, but you can manually update the number of
+     * nodes. If set to 0, the featurestore will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -547,6 +552,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -593,8 +600,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The maximum number of nodes to scale up to. Must be greater or equal to
-       * min_node_count.
+       * The maximum number of nodes to scale up to. Must be greater than
+       * min_node_count, and less than or equal to 10 times of 'min_node_count'.
        * </pre>
        *
        * <code>int32 max_node_count = 2;</code>
@@ -677,6 +684,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -727,8 +736,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The maximum number of nodes to scale up to. Must be greater or equal to
-       * min_node_count.
+       * The maximum number of nodes to scale up to. Must be greater than
+       * min_node_count, and less than or equal to 10 times of 'min_node_count'.
        * </pre>
        *
        * <code>int32 max_node_count = 2;</code>
@@ -1167,8 +1176,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The maximum number of nodes to scale up to. Must be greater or equal to
-         * min_node_count.
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
          * </pre>
          *
          * <code>int32 max_node_count = 2;</code>
@@ -1183,8 +1192,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The maximum number of nodes to scale up to. Must be greater or equal to
-         * min_node_count.
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
          * </pre>
          *
          * <code>int32 max_node_count = 2;</code>
@@ -1202,8 +1211,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The maximum number of nodes to scale up to. Must be greater or equal to
-         * min_node_count.
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
          * </pre>
          *
          * <code>int32 max_node_count = 2;</code>
@@ -1280,11 +1289,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of nodes for each cluster. The number of nodes will not
-     * scale automatically but can be scaled manually by providing different
-     * values when updating.
-     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-     * reset the other.
+     * The number of nodes for the online store. The number of nodes doesn't
+     * scale automatically, but you can manually update the number of
+     * nodes. If set to 0, the featurestore will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>int32 fixed_node_count = 2;</code>
@@ -1721,11 +1729,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -1740,11 +1747,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -1762,11 +1768,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The number of nodes for each cluster. The number of nodes will not
-       * scale automatically but can be scaled manually by providing different
-       * values when updating.
-       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
-       * reset the other.
+       * The number of nodes for the online store. The number of nodes doesn't
+       * scale automatically, but you can manually update the number of
+       * nodes. If set to 0, the featurestore will not have an
+       * online store and cannot be used for online serving.
        * </pre>
        *
        * <code>int32 fixed_node_count = 2;</code>
@@ -2312,7 +2317,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -2363,7 +2368,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2388,7 +2393,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2403,11 +2408,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the onlineServingConfig field is set.
@@ -2420,11 +2426,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The onlineServingConfig.
@@ -2440,11 +2447,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3729,7 +3737,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -3781,7 +3789,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -3806,7 +3814,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -3838,7 +3846,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -3867,11 +3875,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3908,11 +3917,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the onlineServingConfig field is set.
@@ -3924,11 +3934,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The onlineServingConfig.
@@ -3948,11 +3959,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setOnlineServingConfig(
@@ -3973,11 +3985,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setOnlineServingConfig(
@@ -3996,11 +4009,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeOnlineServingConfig(
@@ -4026,11 +4040,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearOnlineServingConfig() {
@@ -4048,11 +4063,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig.Builder
@@ -4065,11 +4081,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfigOrBuilder
@@ -4087,11 +4104,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Config for online serving resources.
+     * Optional. Config for online storage resources. If unset, the featurestore will
+     * not have an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1beta1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

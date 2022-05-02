@@ -121,6 +121,8 @@ public interface StudySpecOrBuilder
    * .google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Deprecated
@@ -137,6 +139,8 @@ public interface StudySpecOrBuilder
    * .google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
    * @return The convexStopConfig.
    */
   @java.lang.Deprecated
@@ -156,6 +160,49 @@ public interface StudySpecOrBuilder
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder
       getConvexStopConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   *
+   * @return Whether the convexAutomatedStoppingSpec field is set.
+   */
+  boolean hasConvexAutomatedStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   *
+   * @return The convexAutomatedStoppingSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec
+      getConvexAutomatedStoppingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The automated early stopping spec using convex stopping rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec convex_automated_stopping_spec = 9;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpecOrBuilder
+      getConvexAutomatedStoppingSpecOrBuilder();
 
   /**
    *

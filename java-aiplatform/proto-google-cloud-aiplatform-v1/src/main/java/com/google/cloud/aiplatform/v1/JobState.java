@@ -129,6 +129,20 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_EXPIRED = 9;</code>
    */
   JOB_STATE_EXPIRED(9),
+  /**
+   *
+   *
+   * <pre>
+   * The job is being updated. The job is only able to be updated at RUNNING
+   * state; if the update operation succeeds, job goes back to RUNNING state; if
+   * the update operation fails, the job goes back to RUNNING state with error
+   * messages written to [ModelDeploymentMonitoringJob.partial_errors][] field
+   * if it is a ModelDeploymentMonitoringJob.
+   * </pre>
+   *
+   * <code>JOB_STATE_UPDATING = 10;</code>
+   */
+  JOB_STATE_UPDATING(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -233,6 +247,20 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_EXPIRED = 9;</code>
    */
   public static final int JOB_STATE_EXPIRED_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The job is being updated. The job is only able to be updated at RUNNING
+   * state; if the update operation succeeds, job goes back to RUNNING state; if
+   * the update operation fails, the job goes back to RUNNING state with error
+   * messages written to [ModelDeploymentMonitoringJob.partial_errors][] field
+   * if it is a ModelDeploymentMonitoringJob.
+   * </pre>
+   *
+   * <code>JOB_STATE_UPDATING = 10;</code>
+   */
+  public static final int JOB_STATE_UPDATING_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -278,6 +306,8 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
         return JOB_STATE_PAUSED;
       case 9:
         return JOB_STATE_EXPIRED;
+      case 10:
+        return JOB_STATE_UPDATING;
       default:
         return null;
     }

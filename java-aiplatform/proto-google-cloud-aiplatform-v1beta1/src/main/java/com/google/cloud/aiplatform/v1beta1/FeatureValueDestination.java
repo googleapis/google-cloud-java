@@ -138,6 +138,8 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -942,8 +944,9 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 1) {
           bigqueryDestinationBuilder_.mergeFrom(value);
+        } else {
+          bigqueryDestinationBuilder_.setMessage(value);
         }
-        bigqueryDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 1;
       return this;
@@ -1205,8 +1208,9 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 2) {
           tfrecordDestinationBuilder_.mergeFrom(value);
+        } else {
+          tfrecordDestinationBuilder_.setMessage(value);
         }
-        tfrecordDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 2;
       return this;
@@ -1455,8 +1459,9 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
       } else {
         if (destinationCase_ == 3) {
           csvDestinationBuilder_.mergeFrom(value);
+        } else {
+          csvDestinationBuilder_.setMessage(value);
         }
-        csvDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 3;
       return this;

@@ -46,24 +46,22 @@ public final class FeatureSelectorProto {
     java.lang.String[] descriptorData = {
       "\n6google/cloud/aiplatform/v1beta1/featur"
           + "e_selector.proto\022\037google.cloud.aiplatfor"
-          + "m.v1beta1\032\034google/api/annotations.proto\032"
-          + "\037google/api/field_behavior.proto\"\035\n\tIdMa"
-          + "tcher\022\020\n\003ids\030\001 \003(\tB\003\340A\002\"V\n\017FeatureSelect"
-          + "or\022C\n\nid_matcher\030\001 \001(\0132*.google.cloud.ai"
-          + "platform.v1beta1.IdMatcherB\003\340A\002B\361\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\024Feature"
-          + "SelectorProtoP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "m.v1beta1\032\037google/api/field_behavior.pro"
+          + "to\"\035\n\tIdMatcher\022\020\n\003ids\030\001 \003(\tB\003\340A\002\"V\n\017Fea"
+          + "tureSelector\022C\n\nid_matcher\030\001 \001(\0132*.googl"
+          + "e.cloud.aiplatform.v1beta1.IdMatcherB\003\340A"
+          + "\002B\361\001\n#com.google.cloud.aiplatform.v1beta"
+          + "1B\024FeatureSelectorProtoP\001ZIgoogle.golang"
+          + ".org/genproto/googleapis/cloud/aiplatfor"
+          + "m/v1beta1;aiplatform\252\002\037Google.Cloud.AIPl"
+          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_IdMatcher_descriptor =
@@ -87,7 +85,6 @@ public final class FeatureSelectorProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

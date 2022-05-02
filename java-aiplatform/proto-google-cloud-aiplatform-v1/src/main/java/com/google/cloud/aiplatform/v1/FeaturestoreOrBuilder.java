@@ -227,7 +227,12 @@ public interface FeaturestoreOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -251,11 +256,12 @@ public interface FeaturestoreOrBuilder
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the onlineServingConfig field is set.
@@ -265,11 +271,12 @@ public interface FeaturestoreOrBuilder
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The onlineServingConfig.
@@ -279,11 +286,12 @@ public interface FeaturestoreOrBuilder
    *
    *
    * <pre>
-   * Required. Config for online serving resources.
+   * Optional. Config for online storage resources. If unset, the featurestore will
+   * not have an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig online_serving_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfigOrBuilder

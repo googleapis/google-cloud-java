@@ -117,6 +117,8 @@ public final class BatchMigrateResourcesOperationMetadata
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -407,6 +409,8 @@ public final class BatchMigrateResourcesOperationMetadata
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1313,8 +1317,9 @@ public final class BatchMigrateResourcesOperationMetadata
         } else {
           if (resultCase_ == 2) {
             errorBuilder_.mergeFrom(value);
+          } else {
+            errorBuilder_.setMessage(value);
           }
-          errorBuilder_.setMessage(value);
         }
         resultCase_ = 2;
         return this;

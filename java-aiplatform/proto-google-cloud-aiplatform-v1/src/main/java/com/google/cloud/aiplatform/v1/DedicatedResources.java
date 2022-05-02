@@ -122,6 +122,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -240,6 +242,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
    * replicas at maximum may handle, a portion of the traffic will be dropped.
    * If this value is not provided, will use [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count] as the
    * default value.
+   * The value of this field impacts the charge against Vertex CPU and GPU
+   * quotas. Specifically, you will be charged for (max_replica_count *
+   * number of cores in the selected machine type) and (max_replica_count *
+   * number of GPUs per replica in the selected machine type).
    * </pre>
    *
    * <code>int32 max_replica_count = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1122,6 +1128,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, will use [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count] as the
      * default value.
+     * The value of this field impacts the charge against Vertex CPU and GPU
+     * quotas. Specifically, you will be charged for (max_replica_count *
+     * number of cores in the selected machine type) and (max_replica_count *
+     * number of GPUs per replica in the selected machine type).
      * </pre>
      *
      * <code>int32 max_replica_count = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1144,6 +1154,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, will use [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count] as the
      * default value.
+     * The value of this field impacts the charge against Vertex CPU and GPU
+     * quotas. Specifically, you will be charged for (max_replica_count *
+     * number of cores in the selected machine type) and (max_replica_count *
+     * number of GPUs per replica in the selected machine type).
      * </pre>
      *
      * <code>int32 max_replica_count = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1169,6 +1183,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, will use [min_replica_count][google.cloud.aiplatform.v1.DedicatedResources.min_replica_count] as the
      * default value.
+     * The value of this field impacts the charge against Vertex CPU and GPU
+     * quotas. Specifically, you will be charged for (max_replica_count *
+     * number of cores in the selected machine type) and (max_replica_count *
+     * number of GPUs per replica in the selected machine type).
      * </pre>
      *
      * <code>int32 max_replica_count = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>

@@ -46,38 +46,36 @@ public final class TensorboardProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1beta1/tensor"
           + "board.proto\022\037google.cloud.aiplatform.v1b"
-          + "eta1\032\034google/api/annotations.proto\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/"
-          + "resource.proto\0325google/cloud/aiplatform/"
-          + "v1beta1/encryption_spec.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\274\004\n\013Tensorboard\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB"
-          + "\003\340A\002\022\023\n\013description\030\003 \001(\t\022H\n\017encryption_"
-          + "spec\030\013 \001(\0132/.google.cloud.aiplatform.v1b"
-          + "eta1.EncryptionSpec\022%\n\030blob_storage_path"
-          + "_prefix\030\n \001(\tB\003\340A\003\022\026\n\trun_count\030\005 \001(\005B\003\340"
-          + "A\003\0224\n\013create_time\030\006 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022H\n\006labels"
-          + "\030\010 \003(\01328.google.cloud.aiplatform.v1beta1"
-          + ".Tensorboard.LabelsEntry\022\014\n\004etag\030\t \001(\t\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001:n\352Ak\n%aiplatform.googleapis.com/Te"
-          + "nsorboard\022Bprojects/{project}/locations/"
-          + "{location}/tensorboards/{tensorboard}B\355\001"
-          + "\n#com.google.cloud.aiplatform.v1beta1B\020T"
-          + "ensorboardProtoP\001ZIgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
-          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
-          + "\352\002\"Google::Cloud::AIPlatform::V1beta1b\006p"
-          + "roto3"
+          + "eta1\032\037google/api/field_behavior.proto\032\031g"
+          + "oogle/api/resource.proto\0325google/cloud/a"
+          + "iplatform/v1beta1/encryption_spec.proto\032"
+          + "\037google/protobuf/timestamp.proto\"\274\004\n\013Ten"
+          + "sorboard\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_n"
+          + "ame\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022H\n\017e"
+          + "ncryption_spec\030\013 \001(\0132/.google.cloud.aipl"
+          + "atform.v1beta1.EncryptionSpec\022%\n\030blob_st"
+          + "orage_path_prefix\030\n \001(\tB\003\340A\003\022\026\n\trun_coun"
+          + "t\030\005 \001(\005B\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0224\n\013update_tim"
+          + "e\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\022H\n\006labels\030\010 \003(\01328.google.cloud.aiplatfo"
+          + "rm.v1beta1.Tensorboard.LabelsEntry\022\014\n\004et"
+          + "ag\030\t \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001:n\352Ak\n%aiplatform.googlea"
+          + "pis.com/Tensorboard\022Bprojects/{project}/"
+          + "locations/{location}/tensorboards/{tenso"
+          + "rboard}B\355\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\020TensorboardProtoP\001ZIgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/aiplatf"
+          + "orm/v1beta1;aiplatform\252\002\037Google.Cloud.AI"
+          + "Platform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\352\002\"Google::Cloud::AIPlatform::"
+          + "V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
@@ -116,7 +114,6 @@ public final class TensorboardProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();

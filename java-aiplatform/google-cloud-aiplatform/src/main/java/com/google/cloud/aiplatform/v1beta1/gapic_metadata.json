@@ -433,6 +433,9 @@
             "DeleteModel": {
               "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
             },
+            "DeleteModelVersion": {
+              "methods": ["deleteModelVersionAsync", "deleteModelVersionAsync", "deleteModelVersionAsync", "deleteModelVersionOperationCallable", "deleteModelVersionCallable"]
+            },
             "ExportModel": {
               "methods": ["exportModelAsync", "exportModelAsync", "exportModelAsync", "exportModelOperationCallable", "exportModelCallable"]
             },
@@ -454,8 +457,14 @@
             "ListModelEvaluations": {
               "methods": ["listModelEvaluations", "listModelEvaluations", "listModelEvaluations", "listModelEvaluationsPagedCallable", "listModelEvaluationsCallable"]
             },
+            "ListModelVersions": {
+              "methods": ["listModelVersions", "listModelVersions", "listModelVersions", "listModelVersionsPagedCallable", "listModelVersionsCallable"]
+            },
             "ListModels": {
               "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
+            "MergeVersionAliases": {
+              "methods": ["mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliasesCallable"]
             },
             "UpdateModel": {
               "methods": ["updateModel", "updateModel", "updateModelCallable"]

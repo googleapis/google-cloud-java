@@ -46,36 +46,34 @@ public final class MetadataProto {
     java.lang.String[] descriptorData = {
       "\n4google/cloud/aiplatform/v1beta1/metada"
           + "ta_store.proto\022\037google.cloud.aiplatform."
-          + "v1beta1\032\034google/api/annotations.proto\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\0325google/cloud/aiplatfo"
-          + "rm/v1beta1/encryption_spec.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\361\003\n\rMetadataSt"
-          + "ore\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
-          + "update_time\030\004 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022H\n\017encryption_spec\030\005 \001(\0132/.go"
-          + "ogle.cloud.aiplatform.v1beta1.Encryption"
-          + "Spec\022\023\n\013description\030\006 \001(\t\022U\n\005state\030\007 \001(\013"
-          + "2A.google.cloud.aiplatform.v1beta1.Metad"
-          + "ataStore.MetadataStoreStateB\003\340A\003\0324\n\022Meta"
-          + "dataStoreState\022\036\n\026disk_utilization_bytes"
-          + "\030\001 \001(\003:u\352Ar\n\'aiplatform.googleapis.com/M"
-          + "etadataStore\022Gprojects/{project}/locatio"
-          + "ns/{location}/metadataStores/{metadata_s"
-          + "tore}B\352\001\n#com.google.cloud.aiplatform.v1"
-          + "beta1B\rMetadataProtoP\001ZIgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
-          + "a1b\006proto3"
+          + "v1beta1\032\037google/api/field_behavior.proto"
+          + "\032\031google/api/resource.proto\0325google/clou"
+          + "d/aiplatform/v1beta1/encryption_spec.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\361\003\n\r"
+          + "MetadataStore\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013crea"
+          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022H\n\017encryption_spec\030"
+          + "\005 \001(\0132/.google.cloud.aiplatform.v1beta1."
+          + "EncryptionSpec\022\023\n\013description\030\006 \001(\t\022U\n\005s"
+          + "tate\030\007 \001(\0132A.google.cloud.aiplatform.v1b"
+          + "eta1.MetadataStore.MetadataStoreStateB\003\340"
+          + "A\003\0324\n\022MetadataStoreState\022\036\n\026disk_utiliza"
+          + "tion_bytes\030\001 \001(\003:u\352Ar\n\'aiplatform.google"
+          + "apis.com/MetadataStore\022Gprojects/{projec"
+          + "t}/locations/{location}/metadataStores/{"
+          + "metadata_store}B\352\001\n#com.google.cloud.aip"
+          + "latform.v1beta1B\rMetadataProtoP\001ZIgoogle"
+          + ".golang.org/genproto/googleapis/cloud/ai"
+          + "platform/v1beta1;aiplatform\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
+          + "orm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
@@ -105,7 +103,6 @@ public final class MetadataProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();

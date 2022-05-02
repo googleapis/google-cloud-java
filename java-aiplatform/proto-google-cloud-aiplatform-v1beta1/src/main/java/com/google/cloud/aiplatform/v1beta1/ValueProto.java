@@ -41,23 +41,20 @@ public final class ValueProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/aiplatform/v1beta1/value."
-          + "proto\022\037google.cloud.aiplatform.v1beta1\032\034"
-          + "google/api/annotations.proto\"U\n\005Value\022\023\n"
-          + "\tint_value\030\001 \001(\003H\000\022\026\n\014double_value\030\002 \001(\001"
-          + "H\000\022\026\n\014string_value\030\003 \001(\tH\000B\007\n\005valueB\347\001\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\nVal"
-          + "ueProtoP\001ZIgoogle.golang.org/genproto/go"
-          + "ogleapis/cloud/aiplatform/v1beta1;aiplat"
-          + "form\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "proto\022\037google.cloud.aiplatform.v1beta1\"U"
+          + "\n\005Value\022\023\n\tint_value\030\001 \001(\003H\000\022\026\n\014double_v"
+          + "alue\030\002 \001(\001H\000\022\026\n\014string_value\030\003 \001(\tH\000B\007\n\005"
+          + "valueB\347\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\nValueProtoP\001ZIgoogle.golang.org/g"
+          + "enproto/googleapis/cloud/aiplatform/v1be"
+          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_aiplatform_v1beta1_Value_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_aiplatform_v1beta1_Value_fieldAccessorTable =
@@ -66,7 +63,6 @@ public final class ValueProto {
             new java.lang.String[] {
               "IntValue", "DoubleValue", "StringValue", "Value",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

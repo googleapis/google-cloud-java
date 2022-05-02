@@ -42,6 +42,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     workerPoolSpecs_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     network_ = "";
+    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tensorboard_ = "";
   }
 
@@ -145,6 +146,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
               enableWebAccess_ = input.readBool();
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              reservedIpRanges_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,11 +167,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         workerPoolSpecs_ = java.util.Collections.unmodifiableList(workerPoolSpecs_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -446,6 +462,87 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList reservedIpRanges_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the reservedIpRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
+    return reservedIpRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of reservedIpRanges.
+   */
+  public int getReservedIpRangesCount() {
+    return reservedIpRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The reservedIpRanges at the given index.
+   */
+  public java.lang.String getReservedIpRanges(int index) {
+    return reservedIpRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * that can be used for this job.
+   * If set, we will deploy the job within the provided ip ranges. Otherwise,
+   * the job will be deployed to any ip ranges under the provided VPC
+   * network.
+   * Example: ['vertex-ai-ip-range'].
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the reservedIpRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getReservedIpRangesBytes(int index) {
+    return reservedIpRanges_.getByteString(index);
+  }
+
   public static final int BASE_OUTPUT_DIRECTORY_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.GcsDestination baseOutputDirectory_;
   /**
@@ -656,6 +753,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (enableWebAccess_ != false) {
       output.writeBool(10, enableWebAccess_);
     }
+    for (int i = 0; i < reservedIpRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, reservedIpRanges_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -686,6 +786,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     if (enableWebAccess_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableWebAccess_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < reservedIpRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(reservedIpRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getReservedIpRangesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -709,6 +817,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (hasBaseOutputDirectory() != other.hasBaseOutputDirectory()) return false;
     if (hasBaseOutputDirectory()) {
       if (!getBaseOutputDirectory().equals(other.getBaseOutputDirectory())) return false;
@@ -738,6 +847,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    if (getReservedIpRangesCount() > 0) {
+      hash = (37 * hash) + RESERVED_IP_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getReservedIpRangesList().hashCode();
+    }
     if (hasBaseOutputDirectory()) {
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
@@ -910,6 +1023,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
 
       network_ = "";
 
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (baseOutputDirectoryBuilder_ == null) {
         baseOutputDirectory_ = null;
       } else {
@@ -964,6 +1079,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       result.serviceAccount_ = serviceAccount_;
       result.network_ = network_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.reservedIpRanges_ = reservedIpRanges_;
       if (baseOutputDirectoryBuilder_ == null) {
         result.baseOutputDirectory_ = baseOutputDirectory_;
       } else {
@@ -1056,6 +1176,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        onChanged();
+      }
+      if (!other.reservedIpRanges_.isEmpty()) {
+        if (reservedIpRanges_.isEmpty()) {
+          reservedIpRanges_ = other.reservedIpRanges_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureReservedIpRangesIsMutable();
+          reservedIpRanges_.addAll(other.reservedIpRanges_);
+        }
         onChanged();
       }
       if (other.hasBaseOutputDirectory()) {
@@ -1995,6 +2125,228 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       network_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList reservedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureReservedIpRangesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the reservedIpRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
+      return reservedIpRanges_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of reservedIpRanges.
+     */
+    public int getReservedIpRangesCount() {
+      return reservedIpRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The reservedIpRanges at the given index.
+     */
+    public java.lang.String getReservedIpRanges(int index) {
+      return reservedIpRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the reservedIpRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getReservedIpRangesBytes(int index) {
+      return reservedIpRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reservedIpRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservedIpRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservedIpRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureReservedIpRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservedIpRanges() {
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * that can be used for this job.
+     * If set, we will deploy the job within the provided ip ranges. Otherwise,
+     * the job will be deployed to any ip ranges under the provided VPC
+     * network.
+     * Example: ['vertex-ai-ip-range'].
+     * </pre>
+     *
+     * <code>repeated string reserved_ip_ranges = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the reservedIpRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservedIpRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReservedIpRangesIsMutable();
+      reservedIpRanges_.add(value);
       onChanged();
       return this;
     }

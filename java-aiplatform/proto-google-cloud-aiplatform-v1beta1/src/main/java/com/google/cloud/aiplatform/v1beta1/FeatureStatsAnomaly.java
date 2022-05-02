@@ -149,6 +149,8 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -480,7 +482,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (score_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       output.writeDouble(1, score_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statsUri_)) {
@@ -489,7 +491,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(anomalyUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, anomalyUri_);
     }
-    if (distributionDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(distributionDeviation_) != 0) {
       output.writeDouble(5, distributionDeviation_);
     }
     if (startTime_ != null) {
@@ -498,7 +500,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (endTime_ != null) {
       output.writeMessage(8, getEndTime());
     }
-    if (anomalyDetectionThreshold_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(anomalyDetectionThreshold_) != 0) {
       output.writeDouble(9, anomalyDetectionThreshold_);
     }
     unknownFields.writeTo(output);
@@ -510,7 +512,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (score_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, score_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statsUri_)) {
@@ -519,7 +521,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(anomalyUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, anomalyUri_);
     }
-    if (distributionDeviation_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(distributionDeviation_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, distributionDeviation_);
     }
     if (startTime_ != null) {
@@ -528,7 +530,7 @@ public final class FeatureStatsAnomaly extends com.google.protobuf.GeneratedMess
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEndTime());
     }
-    if (anomalyDetectionThreshold_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(anomalyDetectionThreshold_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(9, anomalyDetectionThreshold_);
     }

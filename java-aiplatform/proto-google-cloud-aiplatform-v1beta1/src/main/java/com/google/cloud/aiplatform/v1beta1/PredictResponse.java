@@ -41,6 +41,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     predictions_ = java.util.Collections.emptyList();
     deployedModelId_ = "";
     model_ = "";
+    modelVersionId_ = "";
     modelDisplayName_ = "";
   }
 
@@ -105,6 +106,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
               modelDisplayName_ = s;
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelVersionId_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -116,6 +124,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -335,6 +345,57 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object modelVersionId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the Model which is deployed as the DeployedModel that
+   * this prediction hits.
+   * </pre>
+   *
+   * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MODEL_DISPLAY_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object modelDisplayName_;
   /**
@@ -412,6 +473,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelDisplayName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelVersionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -433,6 +497,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelDisplayName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modelVersionId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -452,6 +519,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!getPredictionsList().equals(other.getPredictionsList())) return false;
     if (!getDeployedModelId().equals(other.getDeployedModelId())) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (!getModelVersionId().equals(other.getModelVersionId())) return false;
     if (!getModelDisplayName().equals(other.getModelDisplayName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -472,6 +540,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getDeployedModelId().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + MODEL_DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getModelDisplayName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -631,6 +701,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
       model_ = "";
 
+      modelVersionId_ = "";
+
       modelDisplayName_ = "";
 
       return this;
@@ -672,6 +744,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       result.deployedModelId_ = deployedModelId_;
       result.model_ = model_;
+      result.modelVersionId_ = modelVersionId_;
       result.modelDisplayName_ = modelDisplayName_;
       onBuilt();
       return result;
@@ -756,6 +829,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        onChanged();
+      }
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
         onChanged();
       }
       if (!other.getModelDisplayName().isEmpty()) {
@@ -1435,6 +1512,117 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelVersionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
+     * </pre>
+     *
+     * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelVersionId.
+     */
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
+     * </pre>
+     *
+     * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelVersionId.
+     */
+    public com.google.protobuf.ByteString getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
+     * </pre>
+     *
+     * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
+     * </pre>
+     *
+     * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionId() {
+
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
+     * </pre>
+     *
+     * <code>string model_version_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelVersionId_ = value;
       onChanged();
       return this;
     }

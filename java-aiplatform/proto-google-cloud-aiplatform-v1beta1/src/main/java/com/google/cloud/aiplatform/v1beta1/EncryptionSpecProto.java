@@ -42,22 +42,20 @@ public final class EncryptionSpecProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/aiplatform/v1beta1/encryp"
           + "tion_spec.proto\022\037google.cloud.aiplatform"
-          + ".v1beta1\032\034google/api/annotations.proto\032\037"
-          + "google/api/field_behavior.proto\"+\n\016Encry"
-          + "ptionSpec\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\002B\360\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\023En"
-          + "cryptionSpecProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + ".v1beta1\032\037google/api/field_behavior.prot"
+          + "o\"+\n\016EncryptionSpec\022\031\n\014kms_key_name\030\001 \001("
+          + "\tB\003\340A\002B\360\001\n#com.google.cloud.aiplatform.v"
+          + "1beta1B\023EncryptionSpecProtoP\001ZIgoogle.go"
+          + "lang.org/genproto/googleapis/cloud/aipla"
+          + "tform/v1beta1;aiplatform\252\002\037Google.Cloud."
+          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
+          + "::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1beta1_EncryptionSpec_descriptor =
@@ -73,7 +71,6 @@ public final class EncryptionSpecProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

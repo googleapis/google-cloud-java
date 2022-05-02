@@ -209,6 +209,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1515,8 +1517,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (predictionResourcesCase_ == 7) {
           dedicatedResourcesBuilder_.mergeFrom(value);
+        } else {
+          dedicatedResourcesBuilder_.setMessage(value);
         }
-        dedicatedResourcesBuilder_.setMessage(value);
       }
       predictionResourcesCase_ = 7;
       return this;
@@ -1738,8 +1741,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (predictionResourcesCase_ == 8) {
           automaticResourcesBuilder_.mergeFrom(value);
+        } else {
+          automaticResourcesBuilder_.setMessage(value);
         }
-        automaticResourcesBuilder_.setMessage(value);
       }
       predictionResourcesCase_ = 8;
       return this;

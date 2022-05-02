@@ -201,6 +201,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -364,6 +366,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2419,8 +2423,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (sourceCase_ == 2) {
           avroSourceBuilder_.mergeFrom(value);
+        } else {
+          avroSourceBuilder_.setMessage(value);
         }
-        avroSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -2560,8 +2565,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (sourceCase_ == 3) {
           bigquerySourceBuilder_.mergeFrom(value);
+        } else {
+          bigquerySourceBuilder_.setMessage(value);
         }
-        bigquerySourceBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;
@@ -2702,8 +2708,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (sourceCase_ == 4) {
           csvSourceBuilder_.mergeFrom(value);
+        } else {
+          csvSourceBuilder_.setMessage(value);
         }
-        csvSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 4;
       return this;
@@ -3023,8 +3030,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
       } else {
         if (featureTimeSourceCase_ == 7) {
           featureTimeBuilder_.mergeFrom(value);
+        } else {
+          featureTimeBuilder_.setMessage(value);
         }
-        featureTimeBuilder_.setMessage(value);
       }
       featureTimeSourceCase_ = 7;
       return this;

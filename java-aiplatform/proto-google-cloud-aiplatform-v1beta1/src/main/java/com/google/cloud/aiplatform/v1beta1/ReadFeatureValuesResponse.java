@@ -116,6 +116,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -240,6 +242,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1021,6 +1025,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2411,6 +2417,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2625,6 +2633,8 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3342,8 +3352,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           } else {
             if (dataCase_ == 1) {
               valueBuilder_.mergeFrom(value);
+            } else {
+              valueBuilder_.setMessage(value);
             }
-            valueBuilder_.setMessage(value);
           }
           dataCase_ = 1;
           return this;
@@ -3567,8 +3578,9 @@ public final class ReadFeatureValuesResponse extends com.google.protobuf.Generat
           } else {
             if (dataCase_ == 2) {
               valuesBuilder_.mergeFrom(value);
+            } else {
+              valuesBuilder_.setMessage(value);
             }
-            valuesBuilder_.setMessage(value);
           }
           dataCase_ = 2;
           return this;

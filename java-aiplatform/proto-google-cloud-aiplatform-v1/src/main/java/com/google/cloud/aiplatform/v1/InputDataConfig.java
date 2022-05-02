@@ -221,6 +221,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1720,8 +1722,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (splitCase_ == 2) {
           fractionSplitBuilder_.mergeFrom(value);
+        } else {
+          fractionSplitBuilder_.setMessage(value);
         }
-        fractionSplitBuilder_.setMessage(value);
       }
       splitCase_ = 2;
       return this;
@@ -1929,8 +1932,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (splitCase_ == 3) {
           filterSplitBuilder_.mergeFrom(value);
+        } else {
+          filterSplitBuilder_.setMessage(value);
         }
-        filterSplitBuilder_.setMessage(value);
       }
       splitCase_ = 3;
       return this;
@@ -2143,8 +2147,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (splitCase_ == 4) {
           predefinedSplitBuilder_.mergeFrom(value);
+        } else {
+          predefinedSplitBuilder_.setMessage(value);
         }
-        predefinedSplitBuilder_.setMessage(value);
       }
       splitCase_ = 4;
       return this;
@@ -2361,8 +2366,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (splitCase_ == 5) {
           timestampSplitBuilder_.mergeFrom(value);
+        } else {
+          timestampSplitBuilder_.setMessage(value);
         }
-        timestampSplitBuilder_.setMessage(value);
       }
       splitCase_ = 5;
       return this;
@@ -2579,8 +2585,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (splitCase_ == 12) {
           stratifiedSplitBuilder_.mergeFrom(value);
+        } else {
+          stratifiedSplitBuilder_.setMessage(value);
         }
-        stratifiedSplitBuilder_.setMessage(value);
       }
       splitCase_ = 12;
       return this;
@@ -2867,8 +2874,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (destinationCase_ == 8) {
           gcsDestinationBuilder_.mergeFrom(value);
+        } else {
+          gcsDestinationBuilder_.setMessage(value);
         }
-        gcsDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 8;
       return this;
@@ -3209,8 +3217,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (destinationCase_ == 10) {
           bigqueryDestinationBuilder_.mergeFrom(value);
+        } else {
+          bigqueryDestinationBuilder_.setMessage(value);
         }
-        bigqueryDestinationBuilder_.setMessage(value);
       }
       destinationCase_ = 10;
       return this;
