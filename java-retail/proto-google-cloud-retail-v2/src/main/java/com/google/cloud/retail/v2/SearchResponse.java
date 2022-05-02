@@ -192,6 +192,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -421,8 +423,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.FieldMask&gt; matching_variant_fields = 4;</code>
      */
+
+    /* nullable */
     com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
-        java.lang.String key, com.google.protobuf.FieldMask defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.FieldMask defaultValue);
     /**
      *
      *
@@ -593,8 +599,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; variant_rollup_values = 5;</code>
      */
+
+    /* nullable */
     com.google.protobuf.Value getVariantRollupValuesOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue);
     /**
      *
      *
@@ -761,6 +771,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -998,7 +1010,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMatchingVariantFields(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMatchingVariantFields().getMap().containsKey(key);
     }
@@ -1054,7 +1066,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
         java.lang.String key, com.google.protobuf.FieldMask defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.FieldMask> map =
           internalGetMatchingVariantFields().getMap();
@@ -1081,7 +1093,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.FieldMask getMatchingVariantFieldsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.FieldMask> map =
           internalGetMatchingVariantFields().getMap();
@@ -1160,7 +1172,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsVariantRollupValues(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetVariantRollupValues().getMap().containsKey(key);
     }
@@ -1250,7 +1262,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value getVariantRollupValuesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetVariantRollupValues().getMap();
@@ -1295,7 +1307,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Value getVariantRollupValuesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetVariantRollupValues().getMap();
@@ -2256,7 +2268,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsMatchingVariantFields(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetMatchingVariantFields().getMap().containsKey(key);
       }
@@ -2312,7 +2324,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.FieldMask getMatchingVariantFieldsOrDefault(
           java.lang.String key, com.google.protobuf.FieldMask defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.FieldMask> map =
             internalGetMatchingVariantFields().getMap();
@@ -2339,7 +2351,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.protobuf.FieldMask getMatchingVariantFieldsOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.FieldMask> map =
             internalGetMatchingVariantFields().getMap();
@@ -2373,7 +2385,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeMatchingVariantFields(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableMatchingVariantFields().getMutableMap().remove(key);
         return this;
@@ -2405,11 +2417,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder putMatchingVariantFields(
           java.lang.String key, com.google.protobuf.FieldMask value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableMatchingVariantFields().getMutableMap().put(key, value);
         return this;
       }
@@ -2506,7 +2519,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public boolean containsVariantRollupValues(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetVariantRollupValues().getMap().containsKey(key);
       }
@@ -2597,7 +2610,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Value getVariantRollupValuesOrDefault(
           java.lang.String key, com.google.protobuf.Value defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetVariantRollupValues().getMap();
@@ -2642,7 +2655,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.protobuf.Value getVariantRollupValuesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.protobuf.Value> map =
             internalGetVariantRollupValues().getMap();
@@ -2694,7 +2707,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder removeVariantRollupValues(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableVariantRollupValues().getMutableMap().remove(key);
         return this;
@@ -2743,11 +2756,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putVariantRollupValues(java.lang.String key, com.google.protobuf.Value value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableVariantRollupValues().getMutableMap().put(key, value);
         return this;
       }
@@ -3034,6 +3048,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3242,6 +3258,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -4104,8 +4122,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           } else {
             if (facetValueCase_ == 2) {
               intervalBuilder_.mergeFrom(value);
+            } else {
+              intervalBuilder_.setMessage(value);
             }
-            intervalBuilder_.setMessage(value);
           }
           facetValueCase_ = 2;
           return this;
@@ -5530,6 +5549,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

@@ -149,6 +149,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -367,6 +369,8 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1750,13 +1754,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, currencyCode_);
     }
-    if (price_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(price_) != 0) {
       output.writeFloat(2, price_);
     }
-    if (originalPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
       output.writeFloat(3, originalPrice_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       output.writeFloat(4, cost_);
     }
     if (priceEffectiveTime_ != null) {
@@ -1780,13 +1784,13 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, currencyCode_);
     }
-    if (price_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(price_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, price_);
     }
-    if (originalPrice_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, originalPrice_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, cost_);
     }
     if (priceEffectiveTime_ != null) {

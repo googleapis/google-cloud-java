@@ -285,6 +285,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -805,6 +807,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1480,6 +1484,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -5918,6 +5924,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -6837,6 +6845,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -7012,6 +7022,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -7152,7 +7164,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, condition_);
         }
-        if (boost_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
           output.writeFloat(2, boost_);
         }
         unknownFields.writeTo(output);
@@ -7167,7 +7179,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condition_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, condition_);
         }
-        if (boost_ != 0F) {
+        if (java.lang.Float.floatToRawIntBits(boost_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boost_);
         }
         size += unknownFields.getSerializedSize();
@@ -9056,6 +9068,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -9971,6 +9985,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -11334,6 +11350,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+   *     google/cloud/retail/v2/search_service.proto;l=511
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -11355,6 +11373,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+   *     google/cloud/retail/v2/search_service.proto;l=511
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -14527,6 +14547,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+     *     google/cloud/retail/v2/search_service.proto;l=511
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -14547,6 +14569,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+     *     google/cloud/retail/v2/search_service.proto;l=511
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated

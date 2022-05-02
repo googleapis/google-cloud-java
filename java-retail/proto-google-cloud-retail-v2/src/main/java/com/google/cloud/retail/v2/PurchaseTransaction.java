@@ -111,6 +111,8 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -311,13 +313,13 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (revenue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(revenue_) != 0) {
       output.writeFloat(2, revenue_);
     }
-    if (tax_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(tax_) != 0) {
       output.writeFloat(3, tax_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       output.writeFloat(4, cost_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
@@ -335,13 +337,13 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (revenue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(revenue_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, revenue_);
     }
-    if (tax_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(tax_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, tax_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, cost_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {

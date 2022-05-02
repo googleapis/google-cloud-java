@@ -137,6 +137,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -302,6 +304,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string request_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+   *     google/cloud/retail/v2/import_config.proto;l=338
    * @return The requestId.
    */
   @java.lang.Override
@@ -326,6 +330,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>string request_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+   *     google/cloud/retail/v2/import_config.proto;l=338
    * @return The bytes for requestId.
    */
   @java.lang.Override
@@ -1307,6 +1313,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string request_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+     *     google/cloud/retail/v2/import_config.proto;l=338
      * @return The requestId.
      */
     @java.lang.Deprecated
@@ -1330,6 +1338,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string request_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+     *     google/cloud/retail/v2/import_config.proto;l=338
      * @return The bytes for requestId.
      */
     @java.lang.Deprecated
@@ -1353,6 +1363,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string request_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+     *     google/cloud/retail/v2/import_config.proto;l=338
      * @param value The requestId to set.
      * @return This builder for chaining.
      */
@@ -1375,6 +1387,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string request_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+     *     google/cloud/retail/v2/import_config.proto;l=338
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1393,6 +1407,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>string request_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.ImportMetadata.request_id is deprecated. See
+     *     google/cloud/retail/v2/import_config.proto;l=338
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
      */

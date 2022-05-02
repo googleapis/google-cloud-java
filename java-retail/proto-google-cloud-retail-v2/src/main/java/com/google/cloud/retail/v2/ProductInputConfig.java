@@ -127,6 +127,8 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -878,8 +880,9 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       } else {
         if (sourceCase_ == 1) {
           productInlineSourceBuilder_.mergeFrom(value);
+        } else {
+          productInlineSourceBuilder_.setMessage(value);
         }
-        productInlineSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 1;
       return this;
@@ -1087,8 +1090,9 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       } else {
         if (sourceCase_ == 2) {
           gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
         }
-        gcsSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -1294,8 +1298,9 @@ public final class ProductInputConfig extends com.google.protobuf.GeneratedMessa
       } else {
         if (sourceCase_ == 3) {
           bigQuerySourceBuilder_.mergeFrom(value);
+        } else {
+          bigQuerySourceBuilder_.setMessage(value);
         }
-        bigQuerySourceBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;

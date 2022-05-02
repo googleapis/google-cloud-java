@@ -446,6 +446,8 @@ public interface SearchRequestOrBuilder
    * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+   *     google/cloud/retail/v2/search_service.proto;l=511
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -464,6 +466,8 @@ public interface SearchRequestOrBuilder
    * .google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamic_facet_spec = 21 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
+   *     google/cloud/retail/v2/search_service.proto;l=511
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated

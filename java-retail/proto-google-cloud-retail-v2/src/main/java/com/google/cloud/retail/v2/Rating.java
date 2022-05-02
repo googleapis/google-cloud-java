@@ -115,6 +115,8 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -264,7 +266,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     if (ratingCount_ != 0) {
       output.writeInt32(1, ratingCount_);
     }
-    if (averageRating_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(averageRating_) != 0) {
       output.writeFloat(2, averageRating_);
     }
     if (getRatingHistogramList().size() > 0) {
@@ -286,7 +288,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     if (ratingCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, ratingCount_);
     }
-    if (averageRating_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(averageRating_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, averageRating_);
     }
     {

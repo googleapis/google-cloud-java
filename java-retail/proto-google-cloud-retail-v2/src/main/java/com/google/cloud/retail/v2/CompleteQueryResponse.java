@@ -119,6 +119,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -236,8 +238,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
      */
+
+    /* nullable */
     com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
-        java.lang.String key, com.google.cloud.retail.v2.CustomAttribute defaultValue);
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.retail.v2.CustomAttribute defaultValue);
     /**
      *
      *
@@ -341,6 +347,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -473,7 +481,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAttributes().getMap().containsKey(key);
     }
@@ -519,7 +527,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
         java.lang.String key, com.google.cloud.retail.v2.CustomAttribute defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> map =
           internalGetAttributes().getMap();
@@ -541,7 +549,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.cloud.retail.v2.CustomAttribute getAttributesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> map =
           internalGetAttributes().getMap();
@@ -1081,7 +1089,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public boolean containsAttributes(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         return internalGetAttributes().getMap().containsKey(key);
       }
@@ -1127,7 +1135,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.cloud.retail.v2.CustomAttribute getAttributesOrDefault(
           java.lang.String key, com.google.cloud.retail.v2.CustomAttribute defaultValue) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> map =
             internalGetAttributes().getMap();
@@ -1149,7 +1157,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public com.google.cloud.retail.v2.CustomAttribute getAttributesOrThrow(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         java.util.Map<java.lang.String, com.google.cloud.retail.v2.CustomAttribute> map =
             internalGetAttributes().getMap();
@@ -1178,7 +1186,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        */
       public Builder removeAttributes(java.lang.String key) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         internalGetMutableAttributes().getMutableMap().remove(key);
         return this;
@@ -1205,11 +1213,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public Builder putAttributes(
           java.lang.String key, com.google.cloud.retail.v2.CustomAttribute value) {
         if (key == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map key");
         }
         if (value == null) {
-          throw new java.lang.NullPointerException();
+          throw new NullPointerException("map value");
         }
+
         internalGetMutableAttributes().getMutableMap().put(key, value);
         return this;
       }
@@ -1387,6 +1396,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {

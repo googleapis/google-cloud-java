@@ -70,26 +70,26 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
             break;
           case 9:
             {
-              minCase_ = 1;
               min_ = input.readDouble();
+              minCase_ = 1;
               break;
             }
           case 17:
             {
-              minCase_ = 2;
               min_ = input.readDouble();
+              minCase_ = 2;
               break;
             }
           case 25:
             {
-              maxCase_ = 3;
               max_ = input.readDouble();
+              maxCase_ = 3;
               break;
             }
           case 33:
             {
-              maxCase_ = 4;
               max_ = input.readDouble();
+              maxCase_ = 4;
               break;
             }
           default:
@@ -103,6 +103,8 @@ public final class Interval extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
