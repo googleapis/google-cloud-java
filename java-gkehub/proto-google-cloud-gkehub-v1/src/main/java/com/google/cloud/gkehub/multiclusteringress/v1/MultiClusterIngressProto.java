@@ -42,24 +42,20 @@ public final class MultiClusterIngressProto {
     java.lang.String[] descriptorData = {
       "\nDgoogle/cloud/gkehub/v1/multiclustering"
           + "ress/multiclusteringress.proto\022*google.c"
-          + "loud.gkehub.multiclusteringress.v1\032\034goog"
-          + "le/api/annotations.proto\"(\n\013FeatureSpec\022"
-          + "\031\n\021config_membership\030\001 \001(\tB\266\002\n.com.googl"
-          + "e.cloud.gkehub.multiclusteringress.v1B\030M"
-          + "ultiClusterIngressProtoP\001Z]google.golang"
-          + ".org/genproto/googleapis/cloud/gkehub/mu"
-          + "lticlusteringress/v1;multiclusteringress"
-          + "\252\002*Google.Cloud.GkeHub.MultiClusterIngre"
-          + "ss.V1\312\002*Google\\Cloud\\GkeHub\\MultiCluster"
-          + "Ingress\\V1\352\002.Google::Cloud::GkeHub::Mult"
-          + "iClusterIngress::V1b\006proto3"
+          + "loud.gkehub.multiclusteringress.v1\"(\n\013Fe"
+          + "atureSpec\022\031\n\021config_membership\030\001 \001(\tB\266\002\n"
+          + ".com.google.cloud.gkehub.multiclustering"
+          + "ress.v1B\030MultiClusterIngressProtoP\001Z]goo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/gkehub/multiclusteringress/v1;multiclus"
+          + "teringress\252\002*Google.Cloud.GkeHub.MultiCl"
+          + "usterIngress.V1\312\002*Google\\Cloud\\GkeHub\\Mu"
+          + "ltiClusterIngress\\V1\352\002.Google::Cloud::Gk"
+          + "eHub::MultiClusterIngress::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_gkehub_multiclusteringress_v1_FeatureSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_gkehub_multiclusteringress_v1_FeatureSpec_fieldAccessorTable =
@@ -68,7 +64,6 @@ public final class MultiClusterIngressProto {
             new java.lang.String[] {
               "ConfigMembership",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
