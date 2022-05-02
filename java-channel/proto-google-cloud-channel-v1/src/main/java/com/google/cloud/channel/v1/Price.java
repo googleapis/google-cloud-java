@@ -122,6 +122,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -322,7 +324,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     if (basePrice_ != null) {
       output.writeMessage(1, getBasePrice());
     }
-    if (discount_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(discount_) != 0) {
       output.writeDouble(2, discount_);
     }
     if (effectivePrice_ != null) {
@@ -343,7 +345,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     if (basePrice_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBasePrice());
     }
-    if (discount_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(discount_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, discount_);
     }
     if (effectivePrice_ != null) {

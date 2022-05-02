@@ -17,6 +17,8 @@
 package com.google.cloud.channel.v1.stub;
 
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerLinksPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
@@ -60,20 +62,32 @@ import com.google.cloud.channel.v1.ChangeOfferRequest;
 import com.google.cloud.channel.v1.ChangeParametersRequest;
 import com.google.cloud.channel.v1.ChangeRenewalSettingsRequest;
 import com.google.cloud.channel.v1.ChannelPartnerLink;
+import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse;
 import com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.CreateCustomerRequest;
 import com.google.cloud.channel.v1.CreateEntitlementRequest;
 import com.google.cloud.channel.v1.Customer;
+import com.google.cloud.channel.v1.CustomerRepricingConfig;
+import com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.DeleteCustomerRequest;
 import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
 import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
@@ -114,6 +128,8 @@ import com.google.cloud.channel.v1.TransferableSku;
 import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -240,6 +256,35 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       createChannelPartnerLinkSettings;
   private final UnaryCallSettings<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkSettings;
+  private final UnaryCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigSettings;
+  private final PagedCallSettings<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsSettings;
+  private final UnaryCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigSettings;
+  private final UnaryCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigSettings;
+  private final UnaryCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigSettings;
+  private final UnaryCallSettings<
+          GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigSettings;
+  private final PagedCallSettings<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsSettings;
+  private final UnaryCallSettings<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigSettings;
+  private final UnaryCallSettings<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigSettings;
+  private final UnaryCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigSettings;
   private final UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings;
   private final PagedCallSettings<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
@@ -466,6 +511,104 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               return payload.getChannelPartnerLinksList() == null
                   ? ImmutableList.<ChannelPartnerLink>of()
                   : payload.getChannelPartnerLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          CustomerRepricingConfig>
+      LIST_CUSTOMER_REPRICING_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomerRepricingConfigsRequest,
+              ListCustomerRepricingConfigsResponse,
+              CustomerRepricingConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomerRepricingConfigsRequest injectToken(
+                ListCustomerRepricingConfigsRequest payload, String token) {
+              return ListCustomerRepricingConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListCustomerRepricingConfigsRequest injectPageSize(
+                ListCustomerRepricingConfigsRequest payload, int pageSize) {
+              return ListCustomerRepricingConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomerRepricingConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomerRepricingConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomerRepricingConfig> extractResources(
+                ListCustomerRepricingConfigsResponse payload) {
+              return payload.getCustomerRepricingConfigsList() == null
+                  ? ImmutableList.<CustomerRepricingConfig>of()
+                  : payload.getCustomerRepricingConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ChannelPartnerRepricingConfig>
+      LIST_CHANNEL_PARTNER_REPRICING_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListChannelPartnerRepricingConfigsRequest,
+              ListChannelPartnerRepricingConfigsResponse,
+              ChannelPartnerRepricingConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListChannelPartnerRepricingConfigsRequest injectToken(
+                ListChannelPartnerRepricingConfigsRequest payload, String token) {
+              return ListChannelPartnerRepricingConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListChannelPartnerRepricingConfigsRequest injectPageSize(
+                ListChannelPartnerRepricingConfigsRequest payload, int pageSize) {
+              return ListChannelPartnerRepricingConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListChannelPartnerRepricingConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListChannelPartnerRepricingConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ChannelPartnerRepricingConfig> extractResources(
+                ListChannelPartnerRepricingConfigsResponse payload) {
+              return payload.getChannelPartnerRepricingConfigsList() == null
+                  ? ImmutableList.<ChannelPartnerRepricingConfig>of()
+                  : payload.getChannelPartnerRepricingConfigsList();
             }
           };
 
@@ -811,6 +954,72 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          ListCustomerRepricingConfigsPagedResponse>
+      LIST_CUSTOMER_REPRICING_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomerRepricingConfigsRequest,
+              ListCustomerRepricingConfigsResponse,
+              ListCustomerRepricingConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomerRepricingConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+                    callable,
+                ListCustomerRepricingConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomerRepricingConfigsResponse> futureResponse) {
+              PageContext<
+                      ListCustomerRepricingConfigsRequest,
+                      ListCustomerRepricingConfigsResponse,
+                      CustomerRepricingConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_CUSTOMER_REPRICING_CONFIGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListCustomerRepricingConfigsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      LIST_CHANNEL_PARTNER_REPRICING_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListChannelPartnerRepricingConfigsRequest,
+              ListChannelPartnerRepricingConfigsResponse,
+              ListChannelPartnerRepricingConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListChannelPartnerRepricingConfigsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListChannelPartnerRepricingConfigsRequest,
+                            ListChannelPartnerRepricingConfigsResponse>
+                        callable,
+                    ListChannelPartnerRepricingConfigsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListChannelPartnerRepricingConfigsResponse> futureResponse) {
+              PageContext<
+                      ListChannelPartnerRepricingConfigsRequest,
+                      ListChannelPartnerRepricingConfigsResponse,
+                      ChannelPartnerRepricingConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_CHANNEL_PARTNER_REPRICING_CONFIGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListChannelPartnerRepricingConfigsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       LIST_PRODUCTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1142,6 +1351,74 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return updateChannelPartnerLinkSettings;
   }
 
+  /** Returns the object with the settings used for calls to getCustomerRepricingConfig. */
+  public UnaryCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigSettings() {
+    return getCustomerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomerRepricingConfigs. */
+  public PagedCallSettings<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsSettings() {
+    return listCustomerRepricingConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomerRepricingConfig. */
+  public UnaryCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigSettings() {
+    return createCustomerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomerRepricingConfig. */
+  public UnaryCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigSettings() {
+    return updateCustomerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomerRepricingConfig. */
+  public UnaryCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigSettings() {
+    return deleteCustomerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigSettings() {
+    return getChannelPartnerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listChannelPartnerRepricingConfigs. */
+  public PagedCallSettings<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsSettings() {
+    return listChannelPartnerRepricingConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigSettings() {
+    return createChannelPartnerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigSettings() {
+    return updateChannelPartnerRepricingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigSettings() {
+    return deleteChannelPartnerRepricingConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to lookupOffer. */
   public UnaryCallSettings<LookupOfferRequest, Offer> lookupOfferSettings() {
     return lookupOfferSettings;
@@ -1323,6 +1600,26 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     getChannelPartnerLinkSettings = settingsBuilder.getChannelPartnerLinkSettings().build();
     createChannelPartnerLinkSettings = settingsBuilder.createChannelPartnerLinkSettings().build();
     updateChannelPartnerLinkSettings = settingsBuilder.updateChannelPartnerLinkSettings().build();
+    getCustomerRepricingConfigSettings =
+        settingsBuilder.getCustomerRepricingConfigSettings().build();
+    listCustomerRepricingConfigsSettings =
+        settingsBuilder.listCustomerRepricingConfigsSettings().build();
+    createCustomerRepricingConfigSettings =
+        settingsBuilder.createCustomerRepricingConfigSettings().build();
+    updateCustomerRepricingConfigSettings =
+        settingsBuilder.updateCustomerRepricingConfigSettings().build();
+    deleteCustomerRepricingConfigSettings =
+        settingsBuilder.deleteCustomerRepricingConfigSettings().build();
+    getChannelPartnerRepricingConfigSettings =
+        settingsBuilder.getChannelPartnerRepricingConfigSettings().build();
+    listChannelPartnerRepricingConfigsSettings =
+        settingsBuilder.listChannelPartnerRepricingConfigsSettings().build();
+    createChannelPartnerRepricingConfigSettings =
+        settingsBuilder.createChannelPartnerRepricingConfigSettings().build();
+    updateChannelPartnerRepricingConfigSettings =
+        settingsBuilder.updateChannelPartnerRepricingConfigSettings().build();
+    deleteChannelPartnerRepricingConfigSettings =
+        settingsBuilder.deleteChannelPartnerRepricingConfigSettings().build();
     lookupOfferSettings = settingsBuilder.lookupOfferSettings().build();
     listProductsSettings = settingsBuilder.listProductsSettings().build();
     listSkusSettings = settingsBuilder.listSkusSettings().build();
@@ -1427,6 +1724,38 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
         createChannelPartnerLinkSettings;
     private final UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings;
+    private final UnaryCallSettings.Builder<
+            GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        getCustomerRepricingConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomerRepricingConfigsRequest,
+            ListCustomerRepricingConfigsResponse,
+            ListCustomerRepricingConfigsPagedResponse>
+        listCustomerRepricingConfigsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        createCustomerRepricingConfigSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        updateCustomerRepricingConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteCustomerRepricingConfigRequest, Empty>
+        deleteCustomerRepricingConfigSettings;
+    private final UnaryCallSettings.Builder<
+            GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        getChannelPartnerRepricingConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListChannelPartnerRepricingConfigsRequest,
+            ListChannelPartnerRepricingConfigsResponse,
+            ListChannelPartnerRepricingConfigsPagedResponse>
+        listChannelPartnerRepricingConfigsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        createChannelPartnerRepricingConfigSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        updateChannelPartnerRepricingConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
+        deleteChannelPartnerRepricingConfigSettings;
     private final UnaryCallSettings.Builder<LookupOfferRequest, Offer> lookupOfferSettings;
     private final PagedCallSettings.Builder<
             ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
@@ -1543,6 +1872,18 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       getChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateChannelPartnerLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomerRepricingConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_CUSTOMER_REPRICING_CONFIGS_PAGE_STR_FACT);
+      createCustomerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCustomerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listChannelPartnerRepricingConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_CHANNEL_PARTNER_REPRICING_CONFIGS_PAGE_STR_FACT);
+      createChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteChannelPartnerRepricingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProductsSettings = PagedCallSettings.newBuilder(LIST_PRODUCTS_PAGE_STR_FACT);
       listSkusSettings = PagedCallSettings.newBuilder(LIST_SKUS_PAGE_STR_FACT);
@@ -1583,6 +1924,16 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               getChannelPartnerLinkSettings,
               createChannelPartnerLinkSettings,
               updateChannelPartnerLinkSettings,
+              getCustomerRepricingConfigSettings,
+              listCustomerRepricingConfigsSettings,
+              createCustomerRepricingConfigSettings,
+              updateCustomerRepricingConfigSettings,
+              deleteCustomerRepricingConfigSettings,
+              getChannelPartnerRepricingConfigSettings,
+              listChannelPartnerRepricingConfigsSettings,
+              createChannelPartnerRepricingConfigSettings,
+              updateChannelPartnerRepricingConfigSettings,
+              deleteChannelPartnerRepricingConfigSettings,
               lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
@@ -1643,6 +1994,25 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       getChannelPartnerLinkSettings = settings.getChannelPartnerLinkSettings.toBuilder();
       createChannelPartnerLinkSettings = settings.createChannelPartnerLinkSettings.toBuilder();
       updateChannelPartnerLinkSettings = settings.updateChannelPartnerLinkSettings.toBuilder();
+      getCustomerRepricingConfigSettings = settings.getCustomerRepricingConfigSettings.toBuilder();
+      listCustomerRepricingConfigsSettings =
+          settings.listCustomerRepricingConfigsSettings.toBuilder();
+      createCustomerRepricingConfigSettings =
+          settings.createCustomerRepricingConfigSettings.toBuilder();
+      updateCustomerRepricingConfigSettings =
+          settings.updateCustomerRepricingConfigSettings.toBuilder();
+      deleteCustomerRepricingConfigSettings =
+          settings.deleteCustomerRepricingConfigSettings.toBuilder();
+      getChannelPartnerRepricingConfigSettings =
+          settings.getChannelPartnerRepricingConfigSettings.toBuilder();
+      listChannelPartnerRepricingConfigsSettings =
+          settings.listChannelPartnerRepricingConfigsSettings.toBuilder();
+      createChannelPartnerRepricingConfigSettings =
+          settings.createChannelPartnerRepricingConfigSettings.toBuilder();
+      updateChannelPartnerRepricingConfigSettings =
+          settings.updateChannelPartnerRepricingConfigSettings.toBuilder();
+      deleteChannelPartnerRepricingConfigSettings =
+          settings.deleteChannelPartnerRepricingConfigSettings.toBuilder();
       lookupOfferSettings = settings.lookupOfferSettings.toBuilder();
       listProductsSettings = settings.listProductsSettings.toBuilder();
       listSkusSettings = settings.listSkusSettings.toBuilder();
@@ -1681,6 +2051,16 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               getChannelPartnerLinkSettings,
               createChannelPartnerLinkSettings,
               updateChannelPartnerLinkSettings,
+              getCustomerRepricingConfigSettings,
+              listCustomerRepricingConfigsSettings,
+              createCustomerRepricingConfigSettings,
+              updateCustomerRepricingConfigSettings,
+              deleteCustomerRepricingConfigSettings,
+              getChannelPartnerRepricingConfigSettings,
+              listChannelPartnerRepricingConfigsSettings,
+              createChannelPartnerRepricingConfigSettings,
+              updateChannelPartnerRepricingConfigSettings,
+              deleteChannelPartnerRepricingConfigSettings,
               lookupOfferSettings,
               listProductsSettings,
               listSkusSettings,
@@ -1833,6 +2213,56 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .updateChannelPartnerLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomerRepricingConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCustomerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCustomerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getChannelPartnerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listChannelPartnerRepricingConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createChannelPartnerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateChannelPartnerRepricingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteChannelPartnerRepricingConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2414,6 +2844,83 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     public UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings() {
       return updateChannelPartnerLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        getCustomerRepricingConfigSettings() {
+      return getCustomerRepricingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomerRepricingConfigs. */
+    public PagedCallSettings.Builder<
+            ListCustomerRepricingConfigsRequest,
+            ListCustomerRepricingConfigsResponse,
+            ListCustomerRepricingConfigsPagedResponse>
+        listCustomerRepricingConfigsSettings() {
+      return listCustomerRepricingConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        createCustomerRepricingConfigSettings() {
+      return createCustomerRepricingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        updateCustomerRepricingConfigSettings() {
+      return updateCustomerRepricingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<DeleteCustomerRepricingConfigRequest, Empty>
+        deleteCustomerRepricingConfigSettings() {
+      return deleteCustomerRepricingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getChannelPartnerRepricingConfig. */
+    public UnaryCallSettings.Builder<
+            GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        getChannelPartnerRepricingConfigSettings() {
+      return getChannelPartnerRepricingConfigSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listChannelPartnerRepricingConfigs.
+     */
+    public PagedCallSettings.Builder<
+            ListChannelPartnerRepricingConfigsRequest,
+            ListChannelPartnerRepricingConfigsResponse,
+            ListChannelPartnerRepricingConfigsPagedResponse>
+        listChannelPartnerRepricingConfigsSettings() {
+      return listChannelPartnerRepricingConfigsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<
+            CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        createChannelPartnerRepricingConfigSettings() {
+      return createChannelPartnerRepricingConfigSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        updateChannelPartnerRepricingConfigSettings() {
+      return updateChannelPartnerRepricingConfigSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
+        deleteChannelPartnerRepricingConfigSettings() {
+      return deleteChannelPartnerRepricingConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to lookupOffer. */

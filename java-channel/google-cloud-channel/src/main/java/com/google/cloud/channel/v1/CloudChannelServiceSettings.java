@@ -17,6 +17,8 @@
 package com.google.cloud.channel.v1;
 
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerLinksPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
@@ -313,6 +315,84 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
   public UnaryCallSettings<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).updateChannelPartnerLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomerRepricingConfig. */
+  public UnaryCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .getCustomerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomerRepricingConfigs. */
+  public PagedCallSettings<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .listCustomerRepricingConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCustomerRepricingConfig. */
+  public UnaryCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .createCustomerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomerRepricingConfig. */
+  public UnaryCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .updateCustomerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomerRepricingConfig. */
+  public UnaryCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .deleteCustomerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .getChannelPartnerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listChannelPartnerRepricingConfigs. */
+  public PagedCallSettings<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .listChannelPartnerRepricingConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .createChannelPartnerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .updateChannelPartnerRepricingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelPartnerRepricingConfig. */
+  public UnaryCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .deleteChannelPartnerRepricingConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to lookupOffer. */
@@ -698,6 +778,83 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     public UnaryCallSettings.Builder<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
         updateChannelPartnerLinkSettings() {
       return getStubSettingsBuilder().updateChannelPartnerLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        getCustomerRepricingConfigSettings() {
+      return getStubSettingsBuilder().getCustomerRepricingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomerRepricingConfigs. */
+    public PagedCallSettings.Builder<
+            ListCustomerRepricingConfigsRequest,
+            ListCustomerRepricingConfigsResponse,
+            ListCustomerRepricingConfigsPagedResponse>
+        listCustomerRepricingConfigsSettings() {
+      return getStubSettingsBuilder().listCustomerRepricingConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        createCustomerRepricingConfigSettings() {
+      return getStubSettingsBuilder().createCustomerRepricingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        updateCustomerRepricingConfigSettings() {
+      return getStubSettingsBuilder().updateCustomerRepricingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomerRepricingConfig. */
+    public UnaryCallSettings.Builder<DeleteCustomerRepricingConfigRequest, Empty>
+        deleteCustomerRepricingConfigSettings() {
+      return getStubSettingsBuilder().deleteCustomerRepricingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getChannelPartnerRepricingConfig. */
+    public UnaryCallSettings.Builder<
+            GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        getChannelPartnerRepricingConfigSettings() {
+      return getStubSettingsBuilder().getChannelPartnerRepricingConfigSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listChannelPartnerRepricingConfigs.
+     */
+    public PagedCallSettings.Builder<
+            ListChannelPartnerRepricingConfigsRequest,
+            ListChannelPartnerRepricingConfigsResponse,
+            ListChannelPartnerRepricingConfigsPagedResponse>
+        listChannelPartnerRepricingConfigsSettings() {
+      return getStubSettingsBuilder().listChannelPartnerRepricingConfigsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<
+            CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        createChannelPartnerRepricingConfigSettings() {
+      return getStubSettingsBuilder().createChannelPartnerRepricingConfigSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        updateChannelPartnerRepricingConfigSettings() {
+      return getStubSettingsBuilder().updateChannelPartnerRepricingConfigSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteChannelPartnerRepricingConfig.
+     */
+    public UnaryCallSettings.Builder<DeleteChannelPartnerRepricingConfigRequest, Empty>
+        deleteChannelPartnerRepricingConfigSettings() {
+      return getStubSettingsBuilder().deleteChannelPartnerRepricingConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to lookupOffer. */

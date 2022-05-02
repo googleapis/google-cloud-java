@@ -160,6 +160,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -289,6 +291,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1034,6 +1038,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2911,8 +2917,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       } else {
         if (purchaseOptionCase_ == 2) {
           createEntitlementPurchaseBuilder_.mergeFrom(value);
+        } else {
+          createEntitlementPurchaseBuilder_.setMessage(value);
         }
-        createEntitlementPurchaseBuilder_.setMessage(value);
       }
       purchaseOptionCase_ = 2;
       return this;
@@ -3159,8 +3166,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
       } else {
         if (purchaseOptionCase_ == 3) {
           changeOfferPurchaseBuilder_.mergeFrom(value);
+        } else {
+          changeOfferPurchaseBuilder_.setMessage(value);
         }
-        changeOfferPurchaseBuilder_.setMessage(value);
       }
       purchaseOptionCase_ = 3;
       return this;

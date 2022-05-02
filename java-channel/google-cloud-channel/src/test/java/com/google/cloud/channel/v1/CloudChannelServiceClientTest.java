@@ -17,6 +17,8 @@
 package com.google.cloud.channel.v1;
 
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerLinksPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
@@ -1579,7 +1581,7 @@ public class CloudChannelServiceClientTest {
   public void getChannelPartnerLinkTest() throws Exception {
     ChannelPartnerLink expectedResponse =
         ChannelPartnerLink.newBuilder()
-            .setName("name3373707")
+            .setName(ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
             .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
@@ -1634,7 +1636,7 @@ public class CloudChannelServiceClientTest {
   public void createChannelPartnerLinkTest() throws Exception {
     ChannelPartnerLink expectedResponse =
         ChannelPartnerLink.newBuilder()
-            .setName("name3373707")
+            .setName(ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
             .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
@@ -1689,7 +1691,7 @@ public class CloudChannelServiceClientTest {
   public void updateChannelPartnerLinkTest() throws Exception {
     ChannelPartnerLink expectedResponse =
         ChannelPartnerLink.newBuilder()
-            .setName("name3373707")
+            .setName(ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
             .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
@@ -1737,6 +1739,824 @@ public class CloudChannelServiceClientTest {
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.updateChannelPartnerLink(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomerRepricingConfigTest() throws Exception {
+    CustomerRepricingConfig expectedResponse =
+        CustomerRepricingConfig.newBuilder()
+            .setName(
+                CustomerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    CustomerRepricingConfigName name =
+        CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+
+    CustomerRepricingConfig actualResponse = client.getCustomerRepricingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomerRepricingConfigRequest actualRequest =
+        ((GetCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      CustomerRepricingConfigName name =
+          CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+      client.getCustomerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomerRepricingConfigTest2() throws Exception {
+    CustomerRepricingConfig expectedResponse =
+        CustomerRepricingConfig.newBuilder()
+            .setName(
+                CustomerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CustomerRepricingConfig actualResponse = client.getCustomerRepricingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomerRepricingConfigRequest actualRequest =
+        ((GetCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCustomerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomerRepricingConfigsTest() throws Exception {
+    CustomerRepricingConfig responsesElement = CustomerRepricingConfig.newBuilder().build();
+    ListCustomerRepricingConfigsResponse expectedResponse =
+        ListCustomerRepricingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomerRepricingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+
+    ListCustomerRepricingConfigsPagedResponse pagedListResponse =
+        client.listCustomerRepricingConfigs(parent);
+
+    List<CustomerRepricingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getCustomerRepricingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomerRepricingConfigsRequest actualRequest =
+        ((ListCustomerRepricingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomerRepricingConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+      client.listCustomerRepricingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomerRepricingConfigsTest2() throws Exception {
+    CustomerRepricingConfig responsesElement = CustomerRepricingConfig.newBuilder().build();
+    ListCustomerRepricingConfigsResponse expectedResponse =
+        ListCustomerRepricingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomerRepricingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListCustomerRepricingConfigsPagedResponse pagedListResponse =
+        client.listCustomerRepricingConfigs(parent);
+
+    List<CustomerRepricingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getCustomerRepricingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomerRepricingConfigsRequest actualRequest =
+        ((ListCustomerRepricingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomerRepricingConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listCustomerRepricingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomerRepricingConfigTest() throws Exception {
+    CustomerRepricingConfig expectedResponse =
+        CustomerRepricingConfig.newBuilder()
+            .setName(
+                CustomerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+    CustomerRepricingConfig customerRepricingConfig = CustomerRepricingConfig.newBuilder().build();
+
+    CustomerRepricingConfig actualResponse =
+        client.createCustomerRepricingConfig(parent, customerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCustomerRepricingConfigRequest actualRequest =
+        ((CreateCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(customerRepricingConfig, actualRequest.getCustomerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCustomerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+      CustomerRepricingConfig customerRepricingConfig =
+          CustomerRepricingConfig.newBuilder().build();
+      client.createCustomerRepricingConfig(parent, customerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomerRepricingConfigTest2() throws Exception {
+    CustomerRepricingConfig expectedResponse =
+        CustomerRepricingConfig.newBuilder()
+            .setName(
+                CustomerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    CustomerRepricingConfig customerRepricingConfig = CustomerRepricingConfig.newBuilder().build();
+
+    CustomerRepricingConfig actualResponse =
+        client.createCustomerRepricingConfig(parent, customerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCustomerRepricingConfigRequest actualRequest =
+        ((CreateCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(customerRepricingConfig, actualRequest.getCustomerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCustomerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CustomerRepricingConfig customerRepricingConfig =
+          CustomerRepricingConfig.newBuilder().build();
+      client.createCustomerRepricingConfig(parent, customerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCustomerRepricingConfigTest() throws Exception {
+    CustomerRepricingConfig expectedResponse =
+        CustomerRepricingConfig.newBuilder()
+            .setName(
+                CustomerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    CustomerRepricingConfig customerRepricingConfig = CustomerRepricingConfig.newBuilder().build();
+
+    CustomerRepricingConfig actualResponse =
+        client.updateCustomerRepricingConfig(customerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCustomerRepricingConfigRequest actualRequest =
+        ((UpdateCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(customerRepricingConfig, actualRequest.getCustomerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCustomerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      CustomerRepricingConfig customerRepricingConfig =
+          CustomerRepricingConfig.newBuilder().build();
+      client.updateCustomerRepricingConfig(customerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomerRepricingConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    CustomerRepricingConfigName name =
+        CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+
+    client.deleteCustomerRepricingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomerRepricingConfigRequest actualRequest =
+        ((DeleteCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      CustomerRepricingConfigName name =
+          CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+      client.deleteCustomerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomerRepricingConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteCustomerRepricingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomerRepricingConfigRequest actualRequest =
+        ((DeleteCustomerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCustomerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getChannelPartnerRepricingConfigTest() throws Exception {
+    ChannelPartnerRepricingConfig expectedResponse =
+        ChannelPartnerRepricingConfig.newBuilder()
+            .setName(
+                ChannelPartnerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ChannelPartnerRepricingConfigName name =
+        ChannelPartnerRepricingConfigName.of(
+            "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+
+    ChannelPartnerRepricingConfig actualResponse = client.getChannelPartnerRepricingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChannelPartnerRepricingConfigRequest actualRequest =
+        ((GetChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChannelPartnerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ChannelPartnerRepricingConfigName name =
+          ChannelPartnerRepricingConfigName.of(
+              "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+      client.getChannelPartnerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getChannelPartnerRepricingConfigTest2() throws Exception {
+    ChannelPartnerRepricingConfig expectedResponse =
+        ChannelPartnerRepricingConfig.newBuilder()
+            .setName(
+                ChannelPartnerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ChannelPartnerRepricingConfig actualResponse = client.getChannelPartnerRepricingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChannelPartnerRepricingConfigRequest actualRequest =
+        ((GetChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChannelPartnerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getChannelPartnerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listChannelPartnerRepricingConfigsTest() throws Exception {
+    ChannelPartnerRepricingConfig responsesElement =
+        ChannelPartnerRepricingConfig.newBuilder().build();
+    ListChannelPartnerRepricingConfigsResponse expectedResponse =
+        ListChannelPartnerRepricingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllChannelPartnerRepricingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ChannelPartnerLinkName parent =
+        ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+
+    ListChannelPartnerRepricingConfigsPagedResponse pagedListResponse =
+        client.listChannelPartnerRepricingConfigs(parent);
+
+    List<ChannelPartnerRepricingConfig> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getChannelPartnerRepricingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListChannelPartnerRepricingConfigsRequest actualRequest =
+        ((ListChannelPartnerRepricingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listChannelPartnerRepricingConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ChannelPartnerLinkName parent =
+          ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+      client.listChannelPartnerRepricingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listChannelPartnerRepricingConfigsTest2() throws Exception {
+    ChannelPartnerRepricingConfig responsesElement =
+        ChannelPartnerRepricingConfig.newBuilder().build();
+    ListChannelPartnerRepricingConfigsResponse expectedResponse =
+        ListChannelPartnerRepricingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllChannelPartnerRepricingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListChannelPartnerRepricingConfigsPagedResponse pagedListResponse =
+        client.listChannelPartnerRepricingConfigs(parent);
+
+    List<ChannelPartnerRepricingConfig> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getChannelPartnerRepricingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListChannelPartnerRepricingConfigsRequest actualRequest =
+        ((ListChannelPartnerRepricingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listChannelPartnerRepricingConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listChannelPartnerRepricingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createChannelPartnerRepricingConfigTest() throws Exception {
+    ChannelPartnerRepricingConfig expectedResponse =
+        ChannelPartnerRepricingConfig.newBuilder()
+            .setName(
+                ChannelPartnerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ChannelPartnerLinkName parent =
+        ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+    ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+        ChannelPartnerRepricingConfig.newBuilder().build();
+
+    ChannelPartnerRepricingConfig actualResponse =
+        client.createChannelPartnerRepricingConfig(parent, channelPartnerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateChannelPartnerRepricingConfigRequest actualRequest =
+        ((CreateChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        channelPartnerRepricingConfig, actualRequest.getChannelPartnerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createChannelPartnerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ChannelPartnerLinkName parent =
+          ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+      ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+          ChannelPartnerRepricingConfig.newBuilder().build();
+      client.createChannelPartnerRepricingConfig(parent, channelPartnerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createChannelPartnerRepricingConfigTest2() throws Exception {
+    ChannelPartnerRepricingConfig expectedResponse =
+        ChannelPartnerRepricingConfig.newBuilder()
+            .setName(
+                ChannelPartnerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+        ChannelPartnerRepricingConfig.newBuilder().build();
+
+    ChannelPartnerRepricingConfig actualResponse =
+        client.createChannelPartnerRepricingConfig(parent, channelPartnerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateChannelPartnerRepricingConfigRequest actualRequest =
+        ((CreateChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        channelPartnerRepricingConfig, actualRequest.getChannelPartnerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createChannelPartnerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+          ChannelPartnerRepricingConfig.newBuilder().build();
+      client.createChannelPartnerRepricingConfig(parent, channelPartnerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateChannelPartnerRepricingConfigTest() throws Exception {
+    ChannelPartnerRepricingConfig expectedResponse =
+        ChannelPartnerRepricingConfig.newBuilder()
+            .setName(
+                ChannelPartnerRepricingConfigName.of(
+                        "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+                    .toString())
+            .setRepricingConfig(RepricingConfig.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+        ChannelPartnerRepricingConfig.newBuilder().build();
+
+    ChannelPartnerRepricingConfig actualResponse =
+        client.updateChannelPartnerRepricingConfig(channelPartnerRepricingConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateChannelPartnerRepricingConfigRequest actualRequest =
+        ((UpdateChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        channelPartnerRepricingConfig, actualRequest.getChannelPartnerRepricingConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateChannelPartnerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+          ChannelPartnerRepricingConfig.newBuilder().build();
+      client.updateChannelPartnerRepricingConfig(channelPartnerRepricingConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteChannelPartnerRepricingConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ChannelPartnerRepricingConfigName name =
+        ChannelPartnerRepricingConfigName.of(
+            "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+
+    client.deleteChannelPartnerRepricingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteChannelPartnerRepricingConfigRequest actualRequest =
+        ((DeleteChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteChannelPartnerRepricingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ChannelPartnerRepricingConfigName name =
+          ChannelPartnerRepricingConfigName.of(
+              "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+      client.deleteChannelPartnerRepricingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteChannelPartnerRepricingConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteChannelPartnerRepricingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteChannelPartnerRepricingConfigRequest actualRequest =
+        ((DeleteChannelPartnerRepricingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteChannelPartnerRepricingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteChannelPartnerRepricingConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

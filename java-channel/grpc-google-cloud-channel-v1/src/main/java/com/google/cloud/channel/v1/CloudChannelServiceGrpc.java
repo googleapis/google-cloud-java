@@ -1275,6 +1275,538 @@ public final class CloudChannelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getGetCustomerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCustomerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.CustomerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getGetCustomerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        getGetCustomerRepricingConfigMethod;
+    if ((getGetCustomerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getGetCustomerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getGetCustomerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getGetCustomerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getGetCustomerRepricingConfigMethod =
+              getGetCustomerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.CustomerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetCustomerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.CustomerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "GetCustomerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetCustomerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+          com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+      getListCustomerRepricingConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomerRepricingConfigs",
+      requestType = com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.class,
+      responseType = com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+          com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+      getListCustomerRepricingConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+            com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+        getListCustomerRepricingConfigsMethod;
+    if ((getListCustomerRepricingConfigsMethod =
+            CloudChannelServiceGrpc.getListCustomerRepricingConfigsMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListCustomerRepricingConfigsMethod =
+                CloudChannelServiceGrpc.getListCustomerRepricingConfigsMethod)
+            == null) {
+          CloudChannelServiceGrpc.getListCustomerRepricingConfigsMethod =
+              getListCustomerRepricingConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+                          com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCustomerRepricingConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "ListCustomerRepricingConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomerRepricingConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getCreateCustomerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.CustomerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getCreateCustomerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        getCreateCustomerRepricingConfigMethod;
+    if ((getCreateCustomerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getCreateCustomerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getCreateCustomerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getCreateCustomerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getCreateCustomerRepricingConfigMethod =
+              getCreateCustomerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.CustomerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCustomerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.CustomerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "CreateCustomerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getUpdateCustomerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCustomerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.CustomerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+          com.google.cloud.channel.v1.CustomerRepricingConfig>
+      getUpdateCustomerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        getUpdateCustomerRepricingConfigMethod;
+    if ((getUpdateCustomerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getUpdateCustomerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getUpdateCustomerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getUpdateCustomerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getUpdateCustomerRepricingConfigMethod =
+              getUpdateCustomerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.CustomerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCustomerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.CustomerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "UpdateCustomerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCustomerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteCustomerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCustomerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteCustomerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+            com.google.protobuf.Empty>
+        getDeleteCustomerRepricingConfigMethod;
+    if ((getDeleteCustomerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getDeleteCustomerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getDeleteCustomerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getDeleteCustomerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getDeleteCustomerRepricingConfigMethod =
+              getDeleteCustomerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteCustomerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "DeleteCustomerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCustomerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getGetChannelPartnerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChannelPartnerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getGetChannelPartnerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        getGetChannelPartnerRepricingConfigMethod;
+    if ((getGetChannelPartnerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getGetChannelPartnerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getGetChannelPartnerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getGetChannelPartnerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getGetChannelPartnerRepricingConfigMethod =
+              getGetChannelPartnerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetChannelPartnerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "GetChannelPartnerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetChannelPartnerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+          com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+      getListChannelPartnerRepricingConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListChannelPartnerRepricingConfigs",
+      requestType = com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest.class,
+      responseType = com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+          com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+      getListChannelPartnerRepricingConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+            com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+        getListChannelPartnerRepricingConfigsMethod;
+    if ((getListChannelPartnerRepricingConfigsMethod =
+            CloudChannelServiceGrpc.getListChannelPartnerRepricingConfigsMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListChannelPartnerRepricingConfigsMethod =
+                CloudChannelServiceGrpc.getListChannelPartnerRepricingConfigsMethod)
+            == null) {
+          CloudChannelServiceGrpc.getListChannelPartnerRepricingConfigsMethod =
+              getListChannelPartnerRepricingConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+                          com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListChannelPartnerRepricingConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "ListChannelPartnerRepricingConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListChannelPartnerRepricingConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getCreateChannelPartnerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateChannelPartnerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getCreateChannelPartnerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        getCreateChannelPartnerRepricingConfigMethod;
+    if ((getCreateChannelPartnerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getCreateChannelPartnerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getCreateChannelPartnerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getCreateChannelPartnerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getCreateChannelPartnerRepricingConfigMethod =
+              getCreateChannelPartnerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateChannelPartnerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "CreateChannelPartnerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateChannelPartnerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getUpdateChannelPartnerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateChannelPartnerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest.class,
+      responseType = com.google.cloud.channel.v1.ChannelPartnerRepricingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+      getUpdateChannelPartnerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        getUpdateChannelPartnerRepricingConfigMethod;
+    if ((getUpdateChannelPartnerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getUpdateChannelPartnerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getUpdateChannelPartnerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getUpdateChannelPartnerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getUpdateChannelPartnerRepricingConfigMethod =
+              getUpdateChannelPartnerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+                          com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateChannelPartnerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "UpdateChannelPartnerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateChannelPartnerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteChannelPartnerRepricingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteChannelPartnerRepricingConfig",
+      requestType = com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+          com.google.protobuf.Empty>
+      getDeleteChannelPartnerRepricingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+            com.google.protobuf.Empty>
+        getDeleteChannelPartnerRepricingConfigMethod;
+    if ((getDeleteChannelPartnerRepricingConfigMethod =
+            CloudChannelServiceGrpc.getDeleteChannelPartnerRepricingConfigMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getDeleteChannelPartnerRepricingConfigMethod =
+                CloudChannelServiceGrpc.getDeleteChannelPartnerRepricingConfigMethod)
+            == null) {
+          CloudChannelServiceGrpc.getDeleteChannelPartnerRepricingConfigMethod =
+              getDeleteChannelPartnerRepricingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteChannelPartnerRepricingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier(
+                              "DeleteChannelPartnerRepricingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteChannelPartnerRepricingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.channel.v1.LookupOfferRequest, com.google.cloud.channel.v1.Offer>
       getLookupOfferMethod;
 
@@ -2506,6 +3038,332 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Gets information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns
+     * an error.
+     * </pre>
+     */
+    public void getCustomerRepricingConfig(
+        com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The
+     * data for each resource is displayed in the ascending order of:
+     * * customer ID
+     * * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listCustomerRepricingConfigs(
+        com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomerRepricingConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. You can only create configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. If needed, you can create a config for the current month,
+     * with some restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * or [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config] vaule must be
+     * different from the value used in the current config for a
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void createCustomerRepricingConfig(
+        com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. This method overwrites the existing
+     * CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You
+     * cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void updateCustomerRepricingConfig(
+        com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCustomerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only
+     * delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set
+     * to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or in the
+     * past.
+     * * NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public void deleteCustomerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCustomerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about how a Distributor modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void getChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetChannelPartnerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resources.
+     * The data for each resource is displayed in the ascending order of:
+     * * channel partner ID
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listChannelPartnerRepricingConfigs(
+        com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListChannelPartnerRepricingConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. You can only create
+     * configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future
+     * month. If needed, you can create a config for the current month, with some
+     * restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any ChannelPartner or
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config] vaule
+     * must be different from the value used in the current config for a
+     * ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public void createChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateChannelPartnerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. This method overwrites
+     * the existing CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions.
+     * You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public void updateChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateChannelPartnerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can
+     * only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is
+     * set to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is active or
+     * in the past.
+     * * NOT_FOUND: No [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public void deleteChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteChannelPartnerRepricingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -2868,6 +3726,75 @@ public final class CloudChannelServiceGrpc {
                       com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest,
                       com.google.cloud.channel.v1.ChannelPartnerLink>(
                       this, METHODID_UPDATE_CHANNEL_PARTNER_LINK)))
+          .addMethod(
+              getGetCustomerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                      this, METHODID_GET_CUSTOMER_REPRICING_CONFIG)))
+          .addMethod(
+              getListCustomerRepricingConfigsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+                      com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>(
+                      this, METHODID_LIST_CUSTOMER_REPRICING_CONFIGS)))
+          .addMethod(
+              getCreateCustomerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                      this, METHODID_CREATE_CUSTOMER_REPRICING_CONFIG)))
+          .addMethod(
+              getUpdateCustomerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                      this, METHODID_UPDATE_CUSTOMER_REPRICING_CONFIG)))
+          .addMethod(
+              getDeleteCustomerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_CUSTOMER_REPRICING_CONFIG)))
+          .addMethod(
+              getGetChannelPartnerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                      this, METHODID_GET_CHANNEL_PARTNER_REPRICING_CONFIG)))
+          .addMethod(
+              getListChannelPartnerRepricingConfigsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+                      com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>(
+                      this, METHODID_LIST_CHANNEL_PARTNER_REPRICING_CONFIGS)))
+          .addMethod(
+              getCreateChannelPartnerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                      this, METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
+          .addMethod(
+              getUpdateChannelPartnerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                      this, METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
+          .addMethod(
+              getDeleteChannelPartnerRepricingConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+                      com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG)))
           .addMethod(
               getLookupOfferMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3754,6 +4681,352 @@ public final class CloudChannelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateChannelPartnerLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns
+     * an error.
+     * </pre>
+     */
+    public void getCustomerRepricingConfig(
+        com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCustomerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The
+     * data for each resource is displayed in the ascending order of:
+     * * customer ID
+     * * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listCustomerRepricingConfigs(
+        com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomerRepricingConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. You can only create configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. If needed, you can create a config for the current month,
+     * with some restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * or [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config] vaule must be
+     * different from the value used in the current config for a
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void createCustomerRepricingConfig(
+        com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. This method overwrites the existing
+     * CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You
+     * cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void updateCustomerRepricingConfig(
+        com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCustomerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only
+     * delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set
+     * to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or in the
+     * past.
+     * * NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public void deleteCustomerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCustomerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about how a Distributor modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public void getChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resources.
+     * The data for each resource is displayed in the ascending order of:
+     * * channel partner ID
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public void listChannelPartnerRepricingConfigs(
+        com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListChannelPartnerRepricingConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. You can only create
+     * configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future
+     * month. If needed, you can create a config for the current month, with some
+     * restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any ChannelPartner or
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config] vaule
+     * must be different from the value used in the current config for a
+     * ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public void createChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. This method overwrites
+     * the existing CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions.
+     * You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public void updateChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can
+     * only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is
+     * set to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is active or
+     * in the past.
+     * * NOT_FOUND: No [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public void deleteChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteChannelPartnerRepricingConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4716,6 +5989,317 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Gets information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns
+     * an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.CustomerRepricingConfig getCustomerRepricingConfig(
+        com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The
+     * data for each resource is displayed in the ascending order of:
+     * * customer ID
+     * * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse
+        listCustomerRepricingConfigs(
+            com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomerRepricingConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. You can only create configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. If needed, you can create a config for the current month,
+     * with some restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * or [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config] vaule must be
+     * different from the value used in the current config for a
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.CustomerRepricingConfig createCustomerRepricingConfig(
+        com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. This method overwrites the existing
+     * CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You
+     * cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.CustomerRepricingConfig updateCustomerRepricingConfig(
+        com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only
+     * delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set
+     * to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or in the
+     * past.
+     * * NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about how a Distributor modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+        getChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelPartnerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resources.
+     * The data for each resource is displayed in the ascending order of:
+     * * channel partner ID
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse
+        listChannelPartnerRepricingConfigs(
+            com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelPartnerRepricingConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. You can only create
+     * configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future
+     * month. If needed, you can create a config for the current month, with some
+     * restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any ChannelPartner or
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config] vaule
+     * must be different from the value used in the current config for a
+     * ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+        createChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelPartnerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. This method overwrites
+     * the existing CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions.
+     * You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ChannelPartnerRepricingConfig
+        updateChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelPartnerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can
+     * only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is
+     * set to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is active or
+     * in the past.
+     * * NOT_FOUND: No [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteChannelPartnerRepricingConfig(
+        com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelPartnerRepricingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -5654,6 +7238,338 @@ public final class CloudChannelServiceGrpc {
      *
      *
      * <pre>
+     * Gets information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise returns
+     * an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        getCustomerRepricingConfig(
+            com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCustomerRepricingConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a Customer.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The
+     * data for each resource is displayed in the ascending order of:
+     * * customer ID
+     * * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
+        listCustomerRepricingConfigs(
+            com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomerRepricingConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. You can only create configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. If needed, you can create a config for the current month,
+     * with some restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+     * or [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config] vaule must be
+     * different from the value used in the current config for a
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        createCustomerRepricingConfig(
+            com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomerRepricingConfig. Call this method to set modifications
+     * for a specific customer's bill. This method overwrites the existing
+     * CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig], taking note of its restrictions. You
+     * cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] specified does not exist or is
+     * not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.CustomerRepricingConfig>
+        updateCustomerRepricingConfig(
+            com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCustomerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] permanently. You can only
+     * delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is set
+     * to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or in the
+     * past.
+     * * NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteCustomerRepricingConfig(
+            com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCustomerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about how a Distributor modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] was not found.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource, otherwise
+     * returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        getChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about how a Reseller modifies their bill before sending
+     * it to a ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resources.
+     * The data for each resource is displayed in the ascending order of:
+     * * channel partner ID
+     * * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * * [ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+     * If unsuccessful, returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
+        listChannelPartnerRepricingConfigs(
+            com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListChannelPartnerRepricingConfigsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. You can only create
+     * configs if the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a future
+     * month. If needed, you can create a config for the current month, with some
+     * restrictions.
+     * When creating a config for a future month, make sure there are no existing
+     * configs for that
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * The following restrictions are for creating configs in the current month.
+     * * This functionality is reserved for recovering from an erroneous config,
+     * and should not be used for regular business cases.
+     * * The new config will not modify exports used with other configs.
+     * Changes to the config may be immediate, but may take up to 24 hours.
+     * * There is a limit of ten configs for any ChannelPartner or
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * * The contained [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config] vaule
+     * must be different from the value used in the current config for a
+     * ChannelPartner.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        createChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelPartnerRepricingConfig. Call this method to set
+     * modifications for a specific ChannelPartner's bill. This method overwrites
+     * the existing CustomerRepricingConfig.
+     * You can only update configs if the
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is a
+     * future month. To make changes to configs for the current month, use
+     * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig], taking note of its restrictions.
+     * You cannot update the [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+     * When updating a config in the future:
+     * * This config must already exist.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the account making the request and the account
+     * being queried are different.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request. Also displays if the updated config is for the current month or
+     * past months.
+     * * NOT_FOUND: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] specified does not exist
+     * or is not associated with the given account.
+     * * INTERNAL: Any non-user error related to technical issues in the
+     * backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * If successful, the updated [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] resource,
+     * otherwise returns an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
+        updateChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the given [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] permanently. You can
+     * only delete configs if their [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] is
+     * set to a date after the current month.
+     * Possible error codes:
+     * * PERMISSION_DENIED: The account making the request does not own
+     * this customer.
+     * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
+     * * FAILED_PRECONDITION: The [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is active or
+     * in the past.
+     * * NOT_FOUND: No [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] found for the name in the
+     * request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteChannelPartnerRepricingConfig(
+            com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteChannelPartnerRepricingConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
      * Possible error codes:
      * * PERMISSION_DENIED: The entitlement doesn't belong to the reseller.
@@ -5867,15 +7783,25 @@ public final class CloudChannelServiceGrpc {
   private static final int METHODID_GET_CHANNEL_PARTNER_LINK = 23;
   private static final int METHODID_CREATE_CHANNEL_PARTNER_LINK = 24;
   private static final int METHODID_UPDATE_CHANNEL_PARTNER_LINK = 25;
-  private static final int METHODID_LOOKUP_OFFER = 26;
-  private static final int METHODID_LIST_PRODUCTS = 27;
-  private static final int METHODID_LIST_SKUS = 28;
-  private static final int METHODID_LIST_OFFERS = 29;
-  private static final int METHODID_LIST_PURCHASABLE_SKUS = 30;
-  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 31;
-  private static final int METHODID_REGISTER_SUBSCRIBER = 32;
-  private static final int METHODID_UNREGISTER_SUBSCRIBER = 33;
-  private static final int METHODID_LIST_SUBSCRIBERS = 34;
+  private static final int METHODID_GET_CUSTOMER_REPRICING_CONFIG = 26;
+  private static final int METHODID_LIST_CUSTOMER_REPRICING_CONFIGS = 27;
+  private static final int METHODID_CREATE_CUSTOMER_REPRICING_CONFIG = 28;
+  private static final int METHODID_UPDATE_CUSTOMER_REPRICING_CONFIG = 29;
+  private static final int METHODID_DELETE_CUSTOMER_REPRICING_CONFIG = 30;
+  private static final int METHODID_GET_CHANNEL_PARTNER_REPRICING_CONFIG = 31;
+  private static final int METHODID_LIST_CHANNEL_PARTNER_REPRICING_CONFIGS = 32;
+  private static final int METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG = 33;
+  private static final int METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG = 34;
+  private static final int METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG = 35;
+  private static final int METHODID_LOOKUP_OFFER = 36;
+  private static final int METHODID_LIST_PRODUCTS = 37;
+  private static final int METHODID_LIST_SKUS = 38;
+  private static final int METHODID_LIST_OFFERS = 39;
+  private static final int METHODID_LIST_PURCHASABLE_SKUS = 40;
+  private static final int METHODID_LIST_PURCHASABLE_OFFERS = 41;
+  private static final int METHODID_REGISTER_SUBSCRIBER = 42;
+  private static final int METHODID_UNREGISTER_SUBSCRIBER = 43;
+  private static final int METHODID_LIST_SUBSCRIBERS = 44;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6038,6 +7964,69 @@ public final class CloudChannelServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink>)
                   responseObserver);
           break;
+        case METHODID_GET_CUSTOMER_REPRICING_CONFIG:
+          serviceImpl.getCustomerRepricingConfig(
+              (com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CUSTOMER_REPRICING_CONFIGS:
+          serviceImpl.listCustomerRepricingConfigs(
+              (com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOMER_REPRICING_CONFIG:
+          serviceImpl.createCustomerRepricingConfig(
+              (com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CUSTOMER_REPRICING_CONFIG:
+          serviceImpl.updateCustomerRepricingConfig(
+              (com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CUSTOMER_REPRICING_CONFIG:
+          serviceImpl.deleteCustomerRepricingConfig(
+              (com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_CHANNEL_PARTNER_REPRICING_CONFIG:
+          serviceImpl.getChannelPartnerRepricingConfig(
+              (com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CHANNEL_PARTNER_REPRICING_CONFIGS:
+          serviceImpl.listChannelPartnerRepricingConfigs(
+              (com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG:
+          serviceImpl.createChannelPartnerRepricingConfig(
+              (com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG:
+          serviceImpl.updateChannelPartnerRepricingConfig(
+              (com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG:
+          serviceImpl.deleteChannelPartnerRepricingConfig(
+              (com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_LOOKUP_OFFER:
           serviceImpl.lookupOffer(
               (com.google.cloud.channel.v1.LookupOfferRequest) request,
@@ -6183,6 +8172,16 @@ public final class CloudChannelServiceGrpc {
                       .addMethod(getGetChannelPartnerLinkMethod())
                       .addMethod(getCreateChannelPartnerLinkMethod())
                       .addMethod(getUpdateChannelPartnerLinkMethod())
+                      .addMethod(getGetCustomerRepricingConfigMethod())
+                      .addMethod(getListCustomerRepricingConfigsMethod())
+                      .addMethod(getCreateCustomerRepricingConfigMethod())
+                      .addMethod(getUpdateCustomerRepricingConfigMethod())
+                      .addMethod(getDeleteCustomerRepricingConfigMethod())
+                      .addMethod(getGetChannelPartnerRepricingConfigMethod())
+                      .addMethod(getListChannelPartnerRepricingConfigsMethod())
+                      .addMethod(getCreateChannelPartnerRepricingConfigMethod())
+                      .addMethod(getUpdateChannelPartnerRepricingConfigMethod())
+                      .addMethod(getDeleteChannelPartnerRepricingConfigMethod())
                       .addMethod(getLookupOfferMethod())
                       .addMethod(getListProductsMethod())
                       .addMethod(getListSkusMethod())

@@ -611,6 +611,224 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
   }
 
   @Override
+  public void getCustomerRepricingConfig(
+      GetCustomerRepricingConfigRequest request,
+      StreamObserver<CustomerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CustomerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomerRepricingConfigs(
+      ListCustomerRepricingConfigsRequest request,
+      StreamObserver<ListCustomerRepricingConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomerRepricingConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomerRepricingConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomerRepricingConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomerRepricingConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCustomerRepricingConfig(
+      CreateCustomerRepricingConfigRequest request,
+      StreamObserver<CustomerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CustomerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCustomerRepricingConfig(
+      UpdateCustomerRepricingConfigRequest request,
+      StreamObserver<CustomerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CustomerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCustomerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCustomerRepricingConfig(
+      DeleteCustomerRepricingConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getChannelPartnerRepricingConfig(
+      GetChannelPartnerRepricingConfigRequest request,
+      StreamObserver<ChannelPartnerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelPartnerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelPartnerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChannelPartnerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelPartnerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listChannelPartnerRepricingConfigs(
+      ListChannelPartnerRepricingConfigsRequest request,
+      StreamObserver<ListChannelPartnerRepricingConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListChannelPartnerRepricingConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListChannelPartnerRepricingConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannelPartnerRepricingConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListChannelPartnerRepricingConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createChannelPartnerRepricingConfig(
+      CreateChannelPartnerRepricingConfigRequest request,
+      StreamObserver<ChannelPartnerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelPartnerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelPartnerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateChannelPartnerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelPartnerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateChannelPartnerRepricingConfig(
+      UpdateChannelPartnerRepricingConfigRequest request,
+      StreamObserver<ChannelPartnerRepricingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChannelPartnerRepricingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ChannelPartnerRepricingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateChannelPartnerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChannelPartnerRepricingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteChannelPartnerRepricingConfig(
+      DeleteChannelPartnerRepricingConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteChannelPartnerRepricingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void lookupOffer(LookupOfferRequest request, StreamObserver<Offer> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Offer) {

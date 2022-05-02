@@ -17,6 +17,8 @@
 package com.google.cloud.channel.v1.stub;
 
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerLinksPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
@@ -41,20 +43,32 @@ import com.google.cloud.channel.v1.ChangeOfferRequest;
 import com.google.cloud.channel.v1.ChangeParametersRequest;
 import com.google.cloud.channel.v1.ChangeRenewalSettingsRequest;
 import com.google.cloud.channel.v1.ChannelPartnerLink;
+import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse;
 import com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.CreateCustomerRequest;
 import com.google.cloud.channel.v1.CreateEntitlementRequest;
 import com.google.cloud.channel.v1.Customer;
+import com.google.cloud.channel.v1.CustomerRepricingConfig;
+import com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.DeleteCustomerRequest;
 import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
 import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
@@ -89,6 +103,8 @@ import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -388,6 +404,149 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ChannelPartnerLink.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigMethodDescriptor =
+          MethodDescriptor.<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/GetCustomerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+      listCustomerRepricingConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListCustomerRepricingConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomerRepricingConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomerRepricingConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigMethodDescriptor =
+          MethodDescriptor
+              .<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/CreateCustomerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigMethodDescriptor =
+          MethodDescriptor
+              .<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/UpdateCustomerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCustomerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CustomerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigMethodDescriptor =
+          MethodDescriptor.<DeleteCustomerRepricingConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/DeleteCustomerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCustomerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigMethodDescriptor =
+          MethodDescriptor
+              .<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/GetChannelPartnerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetChannelPartnerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+      listChannelPartnerRepricingConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ListChannelPartnerRepricingConfigsRequest,
+                  ListChannelPartnerRepricingConfigsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/ListChannelPartnerRepricingConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListChannelPartnerRepricingConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListChannelPartnerRepricingConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigMethodDescriptor =
+          MethodDescriptor
+              .<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/CreateChannelPartnerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateChannelPartnerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigMethodDescriptor =
+          MethodDescriptor
+              .<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/UpdateChannelPartnerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateChannelPartnerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ChannelPartnerRepricingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigMethodDescriptor =
+          MethodDescriptor.<DeleteChannelPartnerRepricingConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/DeleteChannelPartnerRepricingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteChannelPartnerRepricingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<LookupOfferRequest, Offer> lookupOfferMethodDescriptor =
       MethodDescriptor.<LookupOfferRequest, Offer>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -551,6 +710,38 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       createChannelPartnerLinkCallable;
   private final UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable;
+  private final UnaryCallable<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigCallable;
+  private final UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+      listCustomerRepricingConfigsCallable;
+  private final UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsPagedCallable;
+  private final UnaryCallable<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigCallable;
+  private final UnaryCallable<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigCallable;
+  private final UnaryCallable<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigCallable;
+  private final UnaryCallable<
+          GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigCallable;
+  private final UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+      listChannelPartnerRepricingConfigsCallable;
+  private final UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsPagedCallable;
+  private final UnaryCallable<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigCallable;
+  private final UnaryCallable<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigCallable;
+  private final UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigCallable;
   private final UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
@@ -896,6 +1087,135 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        getCustomerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+                .setMethodDescriptor(getCustomerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+        listCustomerRepricingConfigsTransportSettings =
+            GrpcCallSettings
+                .<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listCustomerRepricingConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        createCustomerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+                .setMethodDescriptor(createCustomerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+        updateCustomerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>newBuilder()
+                .setMethodDescriptor(updateCustomerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "customer_repricing_config.name",
+                          String.valueOf(request.getCustomerRepricingConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteCustomerRepricingConfigRequest, Empty>
+        deleteCustomerRepricingConfigTransportSettings =
+            GrpcCallSettings.<DeleteCustomerRepricingConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteCustomerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        getChannelPartnerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+                    newBuilder()
+                .setMethodDescriptor(getChannelPartnerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+        listChannelPartnerRepricingConfigsTransportSettings =
+            GrpcCallSettings
+                .<ListChannelPartnerRepricingConfigsRequest,
+                    ListChannelPartnerRepricingConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listChannelPartnerRepricingConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        createChannelPartnerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+                    newBuilder()
+                .setMethodDescriptor(createChannelPartnerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+        updateChannelPartnerRepricingConfigTransportSettings =
+            GrpcCallSettings
+                .<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+                    newBuilder()
+                .setMethodDescriptor(updateChannelPartnerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "channel_partner_repricing_config.name",
+                          String.valueOf(request.getChannelPartnerRepricingConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteChannelPartnerRepricingConfigRequest, Empty>
+        deleteChannelPartnerRepricingConfigTransportSettings =
+            GrpcCallSettings.<DeleteChannelPartnerRepricingConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteChannelPartnerRepricingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<LookupOfferRequest, Offer> lookupOfferTransportSettings =
         GrpcCallSettings.<LookupOfferRequest, Offer>newBuilder()
             .setMethodDescriptor(lookupOfferMethodDescriptor)
@@ -1181,6 +1501,66 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
         callableFactory.createUnaryCallable(
             updateChannelPartnerLinkTransportSettings,
             settings.updateChannelPartnerLinkSettings(),
+            clientContext);
+    this.getCustomerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCustomerRepricingConfigTransportSettings,
+            settings.getCustomerRepricingConfigSettings(),
+            clientContext);
+    this.listCustomerRepricingConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listCustomerRepricingConfigsTransportSettings,
+            settings.listCustomerRepricingConfigsSettings(),
+            clientContext);
+    this.listCustomerRepricingConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomerRepricingConfigsTransportSettings,
+            settings.listCustomerRepricingConfigsSettings(),
+            clientContext);
+    this.createCustomerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            createCustomerRepricingConfigTransportSettings,
+            settings.createCustomerRepricingConfigSettings(),
+            clientContext);
+    this.updateCustomerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomerRepricingConfigTransportSettings,
+            settings.updateCustomerRepricingConfigSettings(),
+            clientContext);
+    this.deleteCustomerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomerRepricingConfigTransportSettings,
+            settings.deleteCustomerRepricingConfigSettings(),
+            clientContext);
+    this.getChannelPartnerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            getChannelPartnerRepricingConfigTransportSettings,
+            settings.getChannelPartnerRepricingConfigSettings(),
+            clientContext);
+    this.listChannelPartnerRepricingConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listChannelPartnerRepricingConfigsTransportSettings,
+            settings.listChannelPartnerRepricingConfigsSettings(),
+            clientContext);
+    this.listChannelPartnerRepricingConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listChannelPartnerRepricingConfigsTransportSettings,
+            settings.listChannelPartnerRepricingConfigsSettings(),
+            clientContext);
+    this.createChannelPartnerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            createChannelPartnerRepricingConfigTransportSettings,
+            settings.createChannelPartnerRepricingConfigSettings(),
+            clientContext);
+    this.updateChannelPartnerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateChannelPartnerRepricingConfigTransportSettings,
+            settings.updateChannelPartnerRepricingConfigSettings(),
+            clientContext);
+    this.deleteChannelPartnerRepricingConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteChannelPartnerRepricingConfigTransportSettings,
+            settings.deleteChannelPartnerRepricingConfigSettings(),
             clientContext);
     this.lookupOfferCallable =
         callableFactory.createUnaryCallable(
@@ -1483,6 +1863,82 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     return updateChannelPartnerLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigCallable() {
+    return getCustomerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+      listCustomerRepricingConfigsCallable() {
+    return listCustomerRepricingConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsPagedCallable() {
+    return listCustomerRepricingConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigCallable() {
+    return createCustomerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigCallable() {
+    return updateCustomerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigCallable() {
+    return deleteCustomerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigCallable() {
+    return getChannelPartnerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+      listChannelPartnerRepricingConfigsCallable() {
+    return listChannelPartnerRepricingConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsPagedCallable() {
+    return listChannelPartnerRepricingConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigCallable() {
+    return createChannelPartnerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigCallable() {
+    return updateChannelPartnerRepricingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigCallable() {
+    return deleteChannelPartnerRepricingConfigCallable;
   }
 
   @Override

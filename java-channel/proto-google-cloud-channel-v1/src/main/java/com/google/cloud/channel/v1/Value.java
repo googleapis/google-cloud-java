@@ -70,8 +70,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              kindCase_ = 1;
               kind_ = input.readInt64();
+              kindCase_ = 1;
               break;
             }
           case 18:
@@ -83,8 +83,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             }
           case 25:
             {
-              kindCase_ = 3;
               kind_ = input.readDouble();
+              kindCase_ = 3;
               break;
             }
           case 34:
@@ -103,8 +103,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             }
           case 40:
             {
-              kindCase_ = 5;
               kind_ = input.readBool();
+              kindCase_ = 5;
               break;
             }
           default:
@@ -118,6 +118,8 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1256,8 +1258,9 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (kindCase_ == 4) {
           protoValueBuilder_.mergeFrom(value);
+        } else {
+          protoValueBuilder_.setMessage(value);
         }
-        protoValueBuilder_.setMessage(value);
       }
       kindCase_ = 4;
       return this;

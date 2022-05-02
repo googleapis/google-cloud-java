@@ -17,6 +17,8 @@
 package com.google.cloud.channel.v1.stub;
 
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerLinksPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListChannelPartnerRepricingConfigsPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomerRepricingConfigsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListCustomersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPagedResponse;
@@ -37,20 +39,32 @@ import com.google.cloud.channel.v1.ChangeOfferRequest;
 import com.google.cloud.channel.v1.ChangeParametersRequest;
 import com.google.cloud.channel.v1.ChangeRenewalSettingsRequest;
 import com.google.cloud.channel.v1.ChannelPartnerLink;
+import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse;
 import com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.CreateCustomerRequest;
 import com.google.cloud.channel.v1.CreateEntitlementRequest;
 import com.google.cloud.channel.v1.Customer;
+import com.google.cloud.channel.v1.CustomerRepricingConfig;
+import com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.DeleteCustomerRequest;
 import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
 import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest;
+import com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
 import com.google.cloud.channel.v1.ListCustomersResponse;
 import com.google.cloud.channel.v1.ListEntitlementsRequest;
@@ -85,6 +99,8 @@ import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
+import com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest;
+import com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -309,6 +325,82 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: updateChannelPartnerLinkCallable()");
+  }
+
+  public UnaryCallable<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getCustomerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCustomerRepricingConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+      listCustomerRepricingConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCustomerRepricingConfigsCallable()");
+  }
+
+  public UnaryCallable<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCustomerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCustomerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteCustomerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getChannelPartnerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listChannelPartnerRepricingConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+      listChannelPartnerRepricingConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listChannelPartnerRepricingConfigsCallable()");
+  }
+
+  public UnaryCallable<CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createChannelPartnerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateChannelPartnerRepricingConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteChannelPartnerRepricingConfigCallable()");
   }
 
   public UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {

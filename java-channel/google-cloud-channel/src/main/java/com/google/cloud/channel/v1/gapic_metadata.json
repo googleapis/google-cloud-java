@@ -31,20 +31,38 @@
             "CreateChannelPartnerLink": {
               "methods": ["createChannelPartnerLink", "createChannelPartnerLinkCallable"]
             },
+            "CreateChannelPartnerRepricingConfig": {
+              "methods": ["createChannelPartnerRepricingConfig", "createChannelPartnerRepricingConfig", "createChannelPartnerRepricingConfig", "createChannelPartnerRepricingConfigCallable"]
+            },
             "CreateCustomer": {
               "methods": ["createCustomer", "createCustomerCallable"]
+            },
+            "CreateCustomerRepricingConfig": {
+              "methods": ["createCustomerRepricingConfig", "createCustomerRepricingConfig", "createCustomerRepricingConfig", "createCustomerRepricingConfigCallable"]
             },
             "CreateEntitlement": {
               "methods": ["createEntitlementAsync", "createEntitlementOperationCallable", "createEntitlementCallable"]
             },
+            "DeleteChannelPartnerRepricingConfig": {
+              "methods": ["deleteChannelPartnerRepricingConfig", "deleteChannelPartnerRepricingConfig", "deleteChannelPartnerRepricingConfig", "deleteChannelPartnerRepricingConfigCallable"]
+            },
             "DeleteCustomer": {
               "methods": ["deleteCustomer", "deleteCustomer", "deleteCustomer", "deleteCustomerCallable"]
+            },
+            "DeleteCustomerRepricingConfig": {
+              "methods": ["deleteCustomerRepricingConfig", "deleteCustomerRepricingConfig", "deleteCustomerRepricingConfig", "deleteCustomerRepricingConfigCallable"]
             },
             "GetChannelPartnerLink": {
               "methods": ["getChannelPartnerLink", "getChannelPartnerLinkCallable"]
             },
+            "GetChannelPartnerRepricingConfig": {
+              "methods": ["getChannelPartnerRepricingConfig", "getChannelPartnerRepricingConfig", "getChannelPartnerRepricingConfig", "getChannelPartnerRepricingConfigCallable"]
+            },
             "GetCustomer": {
               "methods": ["getCustomer", "getCustomer", "getCustomer", "getCustomerCallable"]
+            },
+            "GetCustomerRepricingConfig": {
+              "methods": ["getCustomerRepricingConfig", "getCustomerRepricingConfig", "getCustomerRepricingConfig", "getCustomerRepricingConfigCallable"]
             },
             "GetEntitlement": {
               "methods": ["getEntitlement", "getEntitlementCallable"]
@@ -54,6 +72,12 @@
             },
             "ListChannelPartnerLinks": {
               "methods": ["listChannelPartnerLinks", "listChannelPartnerLinksPagedCallable", "listChannelPartnerLinksCallable"]
+            },
+            "ListChannelPartnerRepricingConfigs": {
+              "methods": ["listChannelPartnerRepricingConfigs", "listChannelPartnerRepricingConfigs", "listChannelPartnerRepricingConfigs", "listChannelPartnerRepricingConfigsPagedCallable", "listChannelPartnerRepricingConfigsCallable"]
+            },
+            "ListCustomerRepricingConfigs": {
+              "methods": ["listCustomerRepricingConfigs", "listCustomerRepricingConfigs", "listCustomerRepricingConfigs", "listCustomerRepricingConfigsPagedCallable", "listCustomerRepricingConfigsCallable"]
             },
             "ListCustomers": {
               "methods": ["listCustomers", "listCustomersPagedCallable", "listCustomersCallable"]
@@ -112,8 +136,14 @@
             "UpdateChannelPartnerLink": {
               "methods": ["updateChannelPartnerLink", "updateChannelPartnerLinkCallable"]
             },
+            "UpdateChannelPartnerRepricingConfig": {
+              "methods": ["updateChannelPartnerRepricingConfig", "updateChannelPartnerRepricingConfig", "updateChannelPartnerRepricingConfigCallable"]
+            },
             "UpdateCustomer": {
               "methods": ["updateCustomer", "updateCustomerCallable"]
+            },
+            "UpdateCustomerRepricingConfig": {
+              "methods": ["updateCustomerRepricingConfig", "updateCustomerRepricingConfig", "updateCustomerRepricingConfigCallable"]
             }
           }
         }

@@ -3407,6 +3407,2159 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerRepricingConfigName name =
+   *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+   *   CustomerRepricingConfig response = cloudChannelServiceClient.getCustomerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the CustomerRepricingConfig. Format:
+   *     accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig getCustomerRepricingConfig(
+      CustomerRepricingConfigName name) {
+    GetCustomerRepricingConfigRequest request =
+        GetCustomerRepricingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name =
+   *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *           .toString();
+   *   CustomerRepricingConfig response = cloudChannelServiceClient.getCustomerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the CustomerRepricingConfig. Format:
+   *     accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig getCustomerRepricingConfig(String name) {
+    GetCustomerRepricingConfigRequest request =
+        GetCustomerRepricingConfigRequest.newBuilder().setName(name).build();
+    return getCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetCustomerRepricingConfigRequest request =
+   *       GetCustomerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               CustomerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.getCustomerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig getCustomerRepricingConfig(
+      GetCustomerRepricingConfigRequest request) {
+    return getCustomerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetCustomerRepricingConfigRequest request =
+   *       GetCustomerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               CustomerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CustomerRepricingConfig> future =
+   *       cloudChannelServiceClient.getCustomerRepricingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      getCustomerRepricingConfigCallable() {
+    return stub.getCustomerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data
+   * for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>customer ID
+   *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+   *   for (CustomerRepricingConfig element :
+   *       cloudChannelServiceClient.listCustomerRepricingConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the customer. Parent uses the format:
+   *     accounts/{account_id}/customers/{customer_id}. Supports accounts/{account_id}/customers/-
+   *     to retrieve configs for all customers.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomerRepricingConfigsPagedResponse listCustomerRepricingConfigs(
+      CustomerName parent) {
+    ListCustomerRepricingConfigsRequest request =
+        ListCustomerRepricingConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCustomerRepricingConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data
+   * for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>customer ID
+   *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
+   *   for (CustomerRepricingConfig element :
+   *       cloudChannelServiceClient.listCustomerRepricingConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the customer. Parent uses the format:
+   *     accounts/{account_id}/customers/{customer_id}. Supports accounts/{account_id}/customers/-
+   *     to retrieve configs for all customers.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomerRepricingConfigsPagedResponse listCustomerRepricingConfigs(
+      String parent) {
+    ListCustomerRepricingConfigsRequest request =
+        ListCustomerRepricingConfigsRequest.newBuilder().setParent(parent).build();
+    return listCustomerRepricingConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data
+   * for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>customer ID
+   *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomerRepricingConfigsRequest request =
+   *       ListCustomerRepricingConfigsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (CustomerRepricingConfig element :
+   *       cloudChannelServiceClient.listCustomerRepricingConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomerRepricingConfigsPagedResponse listCustomerRepricingConfigs(
+      ListCustomerRepricingConfigsRequest request) {
+    return listCustomerRepricingConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data
+   * for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>customer ID
+   *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomerRepricingConfigsRequest request =
+   *       ListCustomerRepricingConfigsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<CustomerRepricingConfig> future =
+   *       cloudChannelServiceClient.listCustomerRepricingConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomerRepricingConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsPagedResponse>
+      listCustomerRepricingConfigsPagedCallable() {
+    return stub.listCustomerRepricingConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a Customer.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resources. The data
+   * for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>customer ID
+   *   <li>[RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[CustomerRepricingConfig.update_time][google.cloud.channel.v1.CustomerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomerRepricingConfigsRequest request =
+   *       ListCustomerRepricingConfigsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListCustomerRepricingConfigsResponse response =
+   *         cloudChannelServiceClient.listCustomerRepricingConfigsCallable().call(request);
+   *     for (CustomerRepricingConfig element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListCustomerRepricingConfigsRequest, ListCustomerRepricingConfigsResponse>
+      listCustomerRepricingConfigsCallable() {
+    return stub.listCustomerRepricingConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *       or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+   *   CustomerRepricingConfig customerRepricingConfig =
+   *       CustomerRepricingConfig.newBuilder().build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.createCustomerRepricingConfig(parent, customerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the customer that will receive this repricing
+   *     config. Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * @param customerRepricingConfig Required. The CustomerRepricingConfig object to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig createCustomerRepricingConfig(
+      CustomerName parent, CustomerRepricingConfig customerRepricingConfig) {
+    CreateCustomerRepricingConfigRequest request =
+        CreateCustomerRepricingConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomerRepricingConfig(customerRepricingConfig)
+            .build();
+    return createCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *       or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
+   *   CustomerRepricingConfig customerRepricingConfig =
+   *       CustomerRepricingConfig.newBuilder().build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.createCustomerRepricingConfig(parent, customerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the customer that will receive this repricing
+   *     config. Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * @param customerRepricingConfig Required. The CustomerRepricingConfig object to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig createCustomerRepricingConfig(
+      String parent, CustomerRepricingConfig customerRepricingConfig) {
+    CreateCustomerRepricingConfigRequest request =
+        CreateCustomerRepricingConfigRequest.newBuilder()
+            .setParent(parent)
+            .setCustomerRepricingConfig(customerRepricingConfig)
+            .build();
+    return createCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *       or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateCustomerRepricingConfigRequest request =
+   *       CreateCustomerRepricingConfigRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setCustomerRepricingConfig(CustomerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.createCustomerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig createCustomerRepricingConfig(
+      CreateCustomerRepricingConfigRequest request) {
+    return createCustomerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
+   *       or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateCustomerRepricingConfigRequest request =
+   *       CreateCustomerRepricingConfigRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setCustomerRepricingConfig(CustomerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomerRepricingConfig> future =
+   *       cloudChannelServiceClient.createCustomerRepricingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      createCustomerRepricingConfigCallable() {
+    return stub.createCustomerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerRepricingConfig customerRepricingConfig =
+   *       CustomerRepricingConfig.newBuilder().build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.updateCustomerRepricingConfig(customerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param customerRepricingConfig Required. The CustomerRepricingConfig object to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig updateCustomerRepricingConfig(
+      CustomerRepricingConfig customerRepricingConfig) {
+    UpdateCustomerRepricingConfigRequest request =
+        UpdateCustomerRepricingConfigRequest.newBuilder()
+            .setCustomerRepricingConfig(customerRepricingConfig)
+            .build();
+    return updateCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateCustomerRepricingConfigRequest request =
+   *       UpdateCustomerRepricingConfigRequest.newBuilder()
+   *           .setCustomerRepricingConfig(CustomerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   CustomerRepricingConfig response =
+   *       cloudChannelServiceClient.updateCustomerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomerRepricingConfig updateCustomerRepricingConfig(
+      UpdateCustomerRepricingConfigRequest request) {
+    return updateCustomerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CustomerRepricingConfig. Call this method to set modifications for a specific
+   * customer's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] resource, otherwise
+   * returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateCustomerRepricingConfigRequest request =
+   *       UpdateCustomerRepricingConfigRequest.newBuilder()
+   *           .setCustomerRepricingConfig(CustomerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomerRepricingConfig> future =
+   *       cloudChannelServiceClient.updateCustomerRepricingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CustomerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomerRepricingConfigRequest, CustomerRepricingConfig>
+      updateCustomerRepricingConfigCallable() {
+    return stub.updateCustomerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or
+   *       in the past.
+   *   <li>NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerRepricingConfigName name =
+   *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
+   *   cloudChannelServiceClient.deleteCustomerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the customer repricing config rule to delete.
+   *     Format: accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomerRepricingConfig(CustomerRepricingConfigName name) {
+    DeleteCustomerRepricingConfigRequest request =
+        DeleteCustomerRepricingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or
+   *       in the past.
+   *   <li>NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name =
+   *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *           .toString();
+   *   cloudChannelServiceClient.deleteCustomerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the customer repricing config rule to delete.
+   *     Format: accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomerRepricingConfig(String name) {
+    DeleteCustomerRepricingConfigRequest request =
+        DeleteCustomerRepricingConfigRequest.newBuilder().setName(name).build();
+    deleteCustomerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or
+   *       in the past.
+   *   <li>NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteCustomerRepricingConfigRequest request =
+   *       DeleteCustomerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               CustomerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   cloudChannelServiceClient.deleteCustomerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomerRepricingConfig(DeleteCustomerRepricingConfigRequest request) {
+    deleteCustomerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig] is active or
+   *       in the past.
+   *   <li>NOT_FOUND: No [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteCustomerRepricingConfigRequest request =
+   *       DeleteCustomerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               CustomerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       cloudChannelServiceClient.deleteCustomerRepricingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomerRepricingConfigRequest, Empty>
+      deleteCustomerRepricingConfigCallable() {
+    return stub.deleteCustomerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Distributor modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChannelPartnerRepricingConfigName name =
+   *       ChannelPartnerRepricingConfigName.of(
+   *           "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.getChannelPartnerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ChannelPartnerRepricingConfig Format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}/channelPartnerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig(
+      ChannelPartnerRepricingConfigName name) {
+    GetChannelPartnerRepricingConfigRequest request =
+        GetChannelPartnerRepricingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Distributor modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name =
+   *       ChannelPartnerRepricingConfigName.of(
+   *               "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *           .toString();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.getChannelPartnerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ChannelPartnerRepricingConfig Format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}/channelPartnerRepricingConfigs/{id}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig(String name) {
+    GetChannelPartnerRepricingConfigRequest request =
+        GetChannelPartnerRepricingConfigRequest.newBuilder().setName(name).build();
+    return getChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Distributor modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetChannelPartnerRepricingConfigRequest request =
+   *       GetChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               ChannelPartnerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.getChannelPartnerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig getChannelPartnerRepricingConfig(
+      GetChannelPartnerRepricingConfigRequest request) {
+    return getChannelPartnerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about how a Distributor modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       was not found.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetChannelPartnerRepricingConfigRequest request =
+   *       GetChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               ChannelPartnerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ChannelPartnerRepricingConfig> future =
+   *       cloudChannelServiceClient.getChannelPartnerRepricingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      getChannelPartnerRepricingConfigCallable() {
+    return stub.getChannelPartnerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>channel partner ID
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChannelPartnerLinkName parent =
+   *       ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+   *   for (ChannelPartnerRepricingConfig element :
+   *       cloudChannelServiceClient.listChannelPartnerRepricingConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the account's
+   *     [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent uses the format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}. Supports
+   *     accounts/{account_id}/channelPartnerLinks/- to retrieve configs for all channel partners.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelPartnerRepricingConfigsPagedResponse listChannelPartnerRepricingConfigs(
+      ChannelPartnerLinkName parent) {
+    ListChannelPartnerRepricingConfigsRequest request =
+        ListChannelPartnerRepricingConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listChannelPartnerRepricingConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>channel partner ID
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString();
+   *   for (ChannelPartnerRepricingConfig element :
+   *       cloudChannelServiceClient.listChannelPartnerRepricingConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the account's
+   *     [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent uses the format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}. Supports
+   *     accounts/{account_id}/channelPartnerLinks/- to retrieve configs for all channel partners.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelPartnerRepricingConfigsPagedResponse listChannelPartnerRepricingConfigs(
+      String parent) {
+    ListChannelPartnerRepricingConfigsRequest request =
+        ListChannelPartnerRepricingConfigsRequest.newBuilder().setParent(parent).build();
+    return listChannelPartnerRepricingConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>channel partner ID
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerRepricingConfigsRequest request =
+   *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
+   *           .setParent(
+   *               ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (ChannelPartnerRepricingConfig element :
+   *       cloudChannelServiceClient.listChannelPartnerRepricingConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelPartnerRepricingConfigsPagedResponse listChannelPartnerRepricingConfigs(
+      ListChannelPartnerRepricingConfigsRequest request) {
+    return listChannelPartnerRepricingConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>channel partner ID
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerRepricingConfigsRequest request =
+   *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
+   *           .setParent(
+   *               ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<ChannelPartnerRepricingConfig> future =
+   *       cloudChannelServiceClient
+   *           .listChannelPartnerRepricingConfigsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (ChannelPartnerRepricingConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsPagedResponse>
+      listChannelPartnerRepricingConfigsPagedCallable() {
+    return stub.listChannelPartnerRepricingConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about how a Reseller modifies their bill before sending it to a
+   * ChannelPartner.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>channel partner ID
+   *   <li>[RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   *   <li>[ChannelPartnerRepricingConfig.update_time][google.cloud.channel.v1.ChannelPartnerRepricingConfig.update_time]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerRepricingConfigsRequest request =
+   *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
+   *           .setParent(
+   *               ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListChannelPartnerRepricingConfigsResponse response =
+   *         cloudChannelServiceClient.listChannelPartnerRepricingConfigsCallable().call(request);
+   *     for (ChannelPartnerRepricingConfig element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListChannelPartnerRepricingConfigsRequest, ListChannelPartnerRepricingConfigsResponse>
+      listChannelPartnerRepricingConfigsCallable() {
+    return stub.listChannelPartnerRepricingConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChannelPartnerLinkName parent =
+   *       ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
+   *   ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+   *       ChannelPartnerRepricingConfig.newBuilder().build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.createChannelPartnerRepricingConfig(
+   *           parent, channelPartnerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ChannelPartner that will receive the repricing
+   *     config. Parent uses the format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}
+   * @param channelPartnerRepricingConfig Required. The ChannelPartnerRepricingConfig object to
+   *     update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig createChannelPartnerRepricingConfig(
+      ChannelPartnerLinkName parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig) {
+    CreateChannelPartnerRepricingConfigRequest request =
+        CreateChannelPartnerRepricingConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setChannelPartnerRepricingConfig(channelPartnerRepricingConfig)
+            .build();
+    return createChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString();
+   *   ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+   *       ChannelPartnerRepricingConfig.newBuilder().build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.createChannelPartnerRepricingConfig(
+   *           parent, channelPartnerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ChannelPartner that will receive the repricing
+   *     config. Parent uses the format:
+   *     accounts/{account_id}/channelPartnerLinks/{channel_partner_id}
+   * @param channelPartnerRepricingConfig Required. The ChannelPartnerRepricingConfig object to
+   *     update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig createChannelPartnerRepricingConfig(
+      String parent, ChannelPartnerRepricingConfig channelPartnerRepricingConfig) {
+    CreateChannelPartnerRepricingConfigRequest request =
+        CreateChannelPartnerRepricingConfigRequest.newBuilder()
+            .setParent(parent)
+            .setChannelPartnerRepricingConfig(channelPartnerRepricingConfig)
+            .build();
+    return createChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateChannelPartnerRepricingConfigRequest request =
+   *       CreateChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setParent(
+   *               ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
+   *           .setChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.createChannelPartnerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig createChannelPartnerRepricingConfig(
+      CreateChannelPartnerRepricingConfigRequest request) {
+    return createChannelPartnerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. You can only create configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. If needed, you can create a config for the current month, with some
+   * restrictions.
+   *
+   * <p>When creating a config for a future month, make sure there are no existing configs for that
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>The following restrictions are for creating configs in the current month.
+   *
+   * <ul>
+   *   <li>This functionality is reserved for recovering from an erroneous config, and should not be
+   *       used for regular business cases.
+   *   <li>The new config will not modify exports used with other configs. Changes to the config may
+   *       be immediate, but may take up to 24 hours.
+   *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *   <li>The contained
+   *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
+   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateChannelPartnerRepricingConfigRequest request =
+   *       CreateChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setParent(
+   *               ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString())
+   *           .setChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChannelPartnerRepricingConfig> future =
+   *       cloudChannelServiceClient
+   *           .createChannelPartnerRepricingConfigCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      createChannelPartnerRepricingConfigCallable() {
+    return stub.createChannelPartnerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
+   *       ChannelPartnerRepricingConfig.newBuilder().build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.updateChannelPartnerRepricingConfig(
+   *           channelPartnerRepricingConfig);
+   * }
+   * }</pre>
+   *
+   * @param channelPartnerRepricingConfig Required. The ChannelPartnerRepricingConfig object to
+   *     update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig updateChannelPartnerRepricingConfig(
+      ChannelPartnerRepricingConfig channelPartnerRepricingConfig) {
+    UpdateChannelPartnerRepricingConfigRequest request =
+        UpdateChannelPartnerRepricingConfigRequest.newBuilder()
+            .setChannelPartnerRepricingConfig(channelPartnerRepricingConfig)
+            .build();
+    return updateChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateChannelPartnerRepricingConfigRequest request =
+   *       UpdateChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ChannelPartnerRepricingConfig response =
+   *       cloudChannelServiceClient.updateChannelPartnerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelPartnerRepricingConfig updateChannelPartnerRepricingConfig(
+      UpdateChannelPartnerRepricingConfigRequest request) {
+    return updateChannelPartnerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelPartnerRepricingConfig. Call this method to set modifications for a specific
+   * ChannelPartner's bill. This method overwrites the existing CustomerRepricingConfig.
+   *
+   * <p>You can only update configs if the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is a future month. To make changes to configs for the current month, use
+   * [CreateChannelPartnerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerRepricingConfig],
+   * taking note of its restrictions. You cannot update the
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
+   *
+   * <p>When updating a config in the future:
+   *
+   * <ul>
+   *   <li>This config must already exist.
+   * </ul>
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request. Also displays if
+   *       the updated config is for the current month or past months.
+   *   <li>NOT_FOUND: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       specified does not exist or is not associated with the given account.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the updated
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateChannelPartnerRepricingConfigRequest request =
+   *       UpdateChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setChannelPartnerRepricingConfig(ChannelPartnerRepricingConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChannelPartnerRepricingConfig> future =
+   *       cloudChannelServiceClient
+   *           .updateChannelPartnerRepricingConfigCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerRepricingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          UpdateChannelPartnerRepricingConfigRequest, ChannelPartnerRepricingConfig>
+      updateChannelPartnerRepricingConfigCallable() {
+    return stub.updateChannelPartnerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is
+   *       active or in the past.
+   *   <li>NOT_FOUND: No
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChannelPartnerRepricingConfigName name =
+   *       ChannelPartnerRepricingConfigName.of(
+   *           "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]");
+   *   cloudChannelServiceClient.deleteChannelPartnerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the channel partner repricing config rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelPartnerRepricingConfig(ChannelPartnerRepricingConfigName name) {
+    DeleteChannelPartnerRepricingConfigRequest request =
+        DeleteChannelPartnerRepricingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is
+   *       active or in the past.
+   *   <li>NOT_FOUND: No
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name =
+   *       ChannelPartnerRepricingConfigName.of(
+   *               "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *           .toString();
+   *   cloudChannelServiceClient.deleteChannelPartnerRepricingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the channel partner repricing config rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelPartnerRepricingConfig(String name) {
+    DeleteChannelPartnerRepricingConfigRequest request =
+        DeleteChannelPartnerRepricingConfigRequest.newBuilder().setName(name).build();
+    deleteChannelPartnerRepricingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is
+   *       active or in the past.
+   *   <li>NOT_FOUND: No
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteChannelPartnerRepricingConfigRequest request =
+   *       DeleteChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               ChannelPartnerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   cloudChannelServiceClient.deleteChannelPartnerRepricingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelPartnerRepricingConfig(
+      DeleteChannelPartnerRepricingConfigRequest request) {
+    deleteChannelPartnerRepricingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the given
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * permanently. You can only delete configs if their
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * is set to a date after the current month.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The account making the request does not own this customer.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   *   <li>FAILED_PRECONDITION: The
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig] is
+   *       active or in the past.
+   *   <li>NOT_FOUND: No
+   *       [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   *       found for the name in the request.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteChannelPartnerRepricingConfigRequest request =
+   *       DeleteChannelPartnerRepricingConfigRequest.newBuilder()
+   *           .setName(
+   *               ChannelPartnerRepricingConfigName.of(
+   *                       "[ACCOUNT]", "[CHANNEL_PARTNER]", "[CHANNEL_PARTNER_REPRICING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       cloudChannelServiceClient
+   *           .deleteChannelPartnerRepricingConfigCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
+      deleteChannelPartnerRepricingConfigCallable() {
+    return stub.deleteChannelPartnerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the requested [Offer][google.cloud.channel.v1.Offer] resource.
    *
    * <p>Possible error codes:
@@ -4811,6 +6964,201 @@ public class CloudChannelServiceClient implements BackgroundResource {
     protected ListChannelPartnerLinksFixedSizeCollection createCollection(
         List<ListChannelPartnerLinksPage> pages, int collectionSize) {
       return new ListChannelPartnerLinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomerRepricingConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          CustomerRepricingConfig,
+          ListCustomerRepricingConfigsPage,
+          ListCustomerRepricingConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomerRepricingConfigsPagedResponse> createAsync(
+        PageContext<
+                ListCustomerRepricingConfigsRequest,
+                ListCustomerRepricingConfigsResponse,
+                CustomerRepricingConfig>
+            context,
+        ApiFuture<ListCustomerRepricingConfigsResponse> futureResponse) {
+      ApiFuture<ListCustomerRepricingConfigsPage> futurePage =
+          ListCustomerRepricingConfigsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCustomerRepricingConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomerRepricingConfigsPagedResponse(ListCustomerRepricingConfigsPage page) {
+      super(page, ListCustomerRepricingConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomerRepricingConfigsPage
+      extends AbstractPage<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          CustomerRepricingConfig,
+          ListCustomerRepricingConfigsPage> {
+
+    private ListCustomerRepricingConfigsPage(
+        PageContext<
+                ListCustomerRepricingConfigsRequest,
+                ListCustomerRepricingConfigsResponse,
+                CustomerRepricingConfig>
+            context,
+        ListCustomerRepricingConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomerRepricingConfigsPage createEmptyPage() {
+      return new ListCustomerRepricingConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListCustomerRepricingConfigsPage createPage(
+        PageContext<
+                ListCustomerRepricingConfigsRequest,
+                ListCustomerRepricingConfigsResponse,
+                CustomerRepricingConfig>
+            context,
+        ListCustomerRepricingConfigsResponse response) {
+      return new ListCustomerRepricingConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomerRepricingConfigsPage> createPageAsync(
+        PageContext<
+                ListCustomerRepricingConfigsRequest,
+                ListCustomerRepricingConfigsResponse,
+                CustomerRepricingConfig>
+            context,
+        ApiFuture<ListCustomerRepricingConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomerRepricingConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomerRepricingConfigsRequest,
+          ListCustomerRepricingConfigsResponse,
+          CustomerRepricingConfig,
+          ListCustomerRepricingConfigsPage,
+          ListCustomerRepricingConfigsFixedSizeCollection> {
+
+    private ListCustomerRepricingConfigsFixedSizeCollection(
+        List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomerRepricingConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListCustomerRepricingConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomerRepricingConfigsFixedSizeCollection createCollection(
+        List<ListCustomerRepricingConfigsPage> pages, int collectionSize) {
+      return new ListCustomerRepricingConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListChannelPartnerRepricingConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ChannelPartnerRepricingConfig,
+          ListChannelPartnerRepricingConfigsPage,
+          ListChannelPartnerRepricingConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListChannelPartnerRepricingConfigsPagedResponse> createAsync(
+        PageContext<
+                ListChannelPartnerRepricingConfigsRequest,
+                ListChannelPartnerRepricingConfigsResponse,
+                ChannelPartnerRepricingConfig>
+            context,
+        ApiFuture<ListChannelPartnerRepricingConfigsResponse> futureResponse) {
+      ApiFuture<ListChannelPartnerRepricingConfigsPage> futurePage =
+          ListChannelPartnerRepricingConfigsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListChannelPartnerRepricingConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListChannelPartnerRepricingConfigsPagedResponse(
+        ListChannelPartnerRepricingConfigsPage page) {
+      super(page, ListChannelPartnerRepricingConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListChannelPartnerRepricingConfigsPage
+      extends AbstractPage<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ChannelPartnerRepricingConfig,
+          ListChannelPartnerRepricingConfigsPage> {
+
+    private ListChannelPartnerRepricingConfigsPage(
+        PageContext<
+                ListChannelPartnerRepricingConfigsRequest,
+                ListChannelPartnerRepricingConfigsResponse,
+                ChannelPartnerRepricingConfig>
+            context,
+        ListChannelPartnerRepricingConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListChannelPartnerRepricingConfigsPage createEmptyPage() {
+      return new ListChannelPartnerRepricingConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListChannelPartnerRepricingConfigsPage createPage(
+        PageContext<
+                ListChannelPartnerRepricingConfigsRequest,
+                ListChannelPartnerRepricingConfigsResponse,
+                ChannelPartnerRepricingConfig>
+            context,
+        ListChannelPartnerRepricingConfigsResponse response) {
+      return new ListChannelPartnerRepricingConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListChannelPartnerRepricingConfigsPage> createPageAsync(
+        PageContext<
+                ListChannelPartnerRepricingConfigsRequest,
+                ListChannelPartnerRepricingConfigsResponse,
+                ChannelPartnerRepricingConfig>
+            context,
+        ApiFuture<ListChannelPartnerRepricingConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListChannelPartnerRepricingConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListChannelPartnerRepricingConfigsRequest,
+          ListChannelPartnerRepricingConfigsResponse,
+          ChannelPartnerRepricingConfig,
+          ListChannelPartnerRepricingConfigsPage,
+          ListChannelPartnerRepricingConfigsFixedSizeCollection> {
+
+    private ListChannelPartnerRepricingConfigsFixedSizeCollection(
+        List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListChannelPartnerRepricingConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListChannelPartnerRepricingConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListChannelPartnerRepricingConfigsFixedSizeCollection createCollection(
+        List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
+      return new ListChannelPartnerRepricingConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 
