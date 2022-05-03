@@ -19,6 +19,7 @@ deep-remove-regex:
 - "/grpc-google-.*/src"
 - "/proto-google-.*/src"
 - "/google-.*/src"
+- "/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
@@ -30,3 +31,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-accessapproval-$1/src"
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-accessapproval/src"
+- source: "/google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/$1/google-cloud-accessapproval/samples/snippets/generated"
