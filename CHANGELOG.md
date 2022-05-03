@@ -1,5 +1,14 @@
 # Changelog
 
+### [3.7.6](https://github.com/googleapis/java-logging/compare/v3.7.5...v3.7.6) (2022-05-03)
+
+
+### Documentation
+
+* Add link to interactive tutorial ([#952](https://github.com/googleapis/java-logging/issues/952)) ([934df5a](https://github.com/googleapis/java-logging/commit/934df5ad5b29f11e781b8b8a4660f89198bb06d1))
+* Add link to interactive walkthrough ([#950](https://github.com/googleapis/java-logging/issues/950)) ([33ae197](https://github.com/googleapis/java-logging/commit/33ae197627d63d6c153f9bbb0076a071029cf686))
+* **sample:** removing unnecessary native-image-support dependency ([#947](https://github.com/googleapis/java-logging/issues/947)) ([75331a6](https://github.com/googleapis/java-logging/commit/75331a6aa754ed93171832f59a5c0012e7cb7e05))
+
 ### [3.7.5](https://github.com/googleapis/java-logging/compare/v3.7.4...v3.7.5) (2022-04-15)
 
 
