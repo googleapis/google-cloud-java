@@ -23,7 +23,7 @@ cat ../../repos.txt | while read service
 do
   cd ..
   echo "    <module>${service}</module>" >> repo-modules.txt
-  git clone git@github.com:googleapis/${service}.git
+  git clone https://github.com/googleapis/${service}.git
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
   cd ../google-cloud-java
