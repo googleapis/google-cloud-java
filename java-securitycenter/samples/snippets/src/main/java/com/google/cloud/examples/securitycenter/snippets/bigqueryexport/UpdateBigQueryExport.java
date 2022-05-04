@@ -23,7 +23,6 @@ import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
-import java.util.UUID;
 
 public class UpdateBigQueryExport {
 
