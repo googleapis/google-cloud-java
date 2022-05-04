@@ -38,6 +38,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.concurrent.GuardedBy;
 
@@ -104,6 +105,12 @@ public class StreamWriter implements AutoCloseable {
    */
   @GuardedBy("lock")
   private boolean streamConnectionIsConnected = false;
+
+  /*
+   * A boolean to track if we cleaned up inflight queue.
+   */
+  @GuardedBy("lock")
+  private boolean inflightCleanuped = false;
 
   /*
    * Retry threshold, limits how often the connection is retried before processing halts.
@@ -376,7 +383,8 @@ public class StreamWriter implements AutoCloseable {
     if (this.ownsBigQueryWriteClient) {
       this.client.close();
       try {
-        this.client.awaitTermination(1, TimeUnit.MINUTES);
+        // Backend request has a 2 minute timeout, so wait a little longer than that.
+        this.client.awaitTermination(150, TimeUnit.SECONDS);
       } catch (InterruptedException ignored) {
       }
     }
@@ -465,7 +473,7 @@ public class StreamWriter implements AutoCloseable {
     // We can close the stream connection and handle the remaining inflight requests.
     if (streamConnection != null) {
       this.streamConnection.close();
-      waitForDoneCallback(1, TimeUnit.MINUTES);
+      waitForDoneCallback(2, TimeUnit.MINUTES);
     }
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.
@@ -550,6 +558,7 @@ public class StreamWriter implements AutoCloseable {
       while (!this.inflightRequestQueue.isEmpty()) {
         localQueue.addLast(pollInflightRequestQueue());
       }
+      this.inflightCleanuped = true;
     } finally {
       this.lock.unlock();
     }
@@ -572,7 +581,21 @@ public class StreamWriter implements AutoCloseable {
       if (conectionRetryCountWithoutCallback != 0) {
         conectionRetryCountWithoutCallback = 0;
       }
-      requestWrapper = pollInflightRequestQueue();
+      if (!this.inflightRequestQueue.isEmpty()) {
+        requestWrapper = pollInflightRequestQueue();
+      } else if (inflightCleanuped) {
+        // It is possible when requestCallback is called, the inflight queue is already drained
+        // because we timed out waiting for done.
+        return;
+      } else {
+        // This is something not expected, we shouldn't have an empty inflight queue otherwise.
+        log.log(Level.WARNING, "Unexpected: request callback called on an empty inflight queue.");
+        connectionFinalStatus =
+            new StatusRuntimeException(
+                Status.fromCode(Code.FAILED_PRECONDITION)
+                    .withDescription("Request callback called on an empty inflight queue."));
+        return;
+      }
     } finally {
       this.lock.unlock();
     }
