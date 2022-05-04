@@ -4,6 +4,9 @@
 
 set -xe
 
+[ -z "`git config user.email`" ] && git config --global user.email "script@google.com"
+[ -z "`git config user.name`" ] && git config --global user.name "Monorepo Script"
+
 rm -rf monorepo
 mkdir monorepo
 
@@ -53,6 +56,6 @@ exec:exec -q | grep -v 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\
 # insert processed modules into aggregator pom.xml
 awk -v MODULES="`awk -v ORS='\\\\n' '1' ../coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' ../../coverage.pom.xml > CoverageAggregator/pom.xml
 
-mvn install
-mvn jacoco:report-aggregate
+mvn install -T C1
+mvn jacoco:report-aggregate -T C1
 
