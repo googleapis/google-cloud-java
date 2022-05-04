@@ -12,7 +12,7 @@ cp repos.txt monorepo
 
 cd monorepo
 
-git clone git@github.com:newren/git-filter-repo.git
+git clone https://github.com/newren/git-filter-repo.git
 export PATH=$PATH:~/projects/monorepo/git-filter-repo
 
 mkdir google-cloud-java
