@@ -24,6 +24,10 @@ s.remove_staging_dirs()
 java.common_templates(
     excludes=[
         ".kokoro/build.sh",
-        ".github/CODEOWNERS"
+        ".github/CODEOWNERS",
+        ".kokoro/presubmit/samples.cfg",
+        ".kokoro/nightly/samples.cfg",
+        ".kokoro/nightly/tutorials-samples.cfg"
+        
     ]
 )
