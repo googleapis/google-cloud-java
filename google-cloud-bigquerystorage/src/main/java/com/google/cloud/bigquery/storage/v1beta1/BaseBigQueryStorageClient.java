@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
  *   TableReferenceProto.TableReference tableReference =
  *       TableReferenceProto.TableReference.newBuilder().build();
@@ -77,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BaseBigQueryStorageSettings baseBigQueryStorageSettings =
  *     BaseBigQueryStorageSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BaseBigQueryStorageSettings baseBigQueryStorageSettings =
  *     BaseBigQueryStorageSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BaseBigQueryStorageClient baseBigQueryStorageClient =
@@ -166,6 +172,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   TableReferenceProto.TableReference tableReference =
    *       TableReferenceProto.TableReference.newBuilder().build();
@@ -213,6 +221,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   TableReferenceProto.TableReference tableReference =
    *       TableReferenceProto.TableReference.newBuilder().build();
@@ -260,6 +270,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.CreateReadSessionRequest request =
    *       Storage.CreateReadSessionRequest.newBuilder()
@@ -298,6 +310,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.CreateReadSessionRequest request =
    *       Storage.CreateReadSessionRequest.newBuilder()
@@ -335,6 +349,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.ReadRowsRequest request =
    *       Storage.ReadRowsRequest.newBuilder()
@@ -361,6 +377,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.ReadSession session = Storage.ReadSession.newBuilder().build();
    *   int requestedStreams = 1017221410;
@@ -393,6 +411,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.BatchCreateReadSessionStreamsRequest request =
    *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
@@ -420,6 +440,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.BatchCreateReadSessionStreamsRequest request =
    *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
@@ -457,6 +479,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.Stream stream = Storage.Stream.newBuilder().build();
    *   baseBigQueryStorageClient.finalizeStream(stream);
@@ -489,6 +513,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.FinalizeStreamRequest request =
    *       Storage.FinalizeStreamRequest.newBuilder()
@@ -522,6 +548,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.FinalizeStreamRequest request =
    *       Storage.FinalizeStreamRequest.newBuilder()
@@ -555,6 +583,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.Stream originalStream = Storage.Stream.newBuilder().build();
    *   Storage.SplitReadStreamResponse response =
@@ -588,6 +618,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.SplitReadStreamRequest request =
    *       Storage.SplitReadStreamRequest.newBuilder()
@@ -623,6 +655,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
    *   Storage.SplitReadStreamRequest request =
    *       Storage.SplitReadStreamRequest.newBuilder()

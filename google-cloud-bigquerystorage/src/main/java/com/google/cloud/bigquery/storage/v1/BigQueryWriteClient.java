@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
  *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
  *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -75,6 +77,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BigQueryWriteSettings bigQueryWriteSettings =
  *     BigQueryWriteSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -85,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BigQueryWriteSettings bigQueryWriteSettings =
  *     BigQueryWriteSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create(bigQueryWriteSettings);
@@ -155,6 +161,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
    *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -186,6 +194,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString();
    *   WriteStream writeStream = WriteStream.newBuilder().build();
@@ -214,6 +224,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   CreateWriteStreamRequest request =
    *       CreateWriteStreamRequest.newBuilder()
@@ -241,6 +253,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   CreateWriteStreamRequest request =
    *       CreateWriteStreamRequest.newBuilder()
@@ -303,6 +317,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BidiStream<AppendRowsRequest, AppendRowsResponse> bidiStream =
    *       bigQueryWriteClient.appendRowsCallable().call();
@@ -331,6 +347,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
    *   WriteStream response = bigQueryWriteClient.getWriteStream(name);
@@ -354,6 +372,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
    *   WriteStream response = bigQueryWriteClient.getWriteStream(name);
@@ -376,6 +396,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   GetWriteStreamRequest request =
    *       GetWriteStreamRequest.newBuilder()
@@ -400,6 +422,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   GetWriteStreamRequest request =
    *       GetWriteStreamRequest.newBuilder()
@@ -425,6 +449,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
    *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name);
@@ -451,6 +477,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
    *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name);
@@ -475,6 +503,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FinalizeWriteStreamRequest request =
    *       FinalizeWriteStreamRequest.newBuilder()
@@ -500,6 +530,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FinalizeWriteStreamRequest request =
    *       FinalizeWriteStreamRequest.newBuilder()
@@ -528,6 +560,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
    *   BatchCommitWriteStreamsResponse response =
@@ -557,6 +591,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]").toString();
    *   BatchCommitWriteStreamsResponse response =
@@ -584,6 +620,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
@@ -613,6 +651,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   BatchCommitWriteStreamsRequest request =
    *       BatchCommitWriteStreamsRequest.newBuilder()
@@ -644,6 +684,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   WriteStreamName writeStream =
    *       WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
@@ -675,6 +717,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   String writeStream =
    *       WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString();
@@ -703,6 +747,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FlushRowsRequest request =
    *       FlushRowsRequest.newBuilder()
@@ -734,6 +780,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
    *   FlushRowsRequest request =
    *       FlushRowsRequest.newBuilder()
