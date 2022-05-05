@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
  *     CloudFilestoreManagerClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
@@ -109,6 +111,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudFilestoreManagerSettings cloudFilestoreManagerSettings =
  *     CloudFilestoreManagerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -120,6 +124,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudFilestoreManagerSettings cloudFilestoreManagerSettings =
  *     CloudFilestoreManagerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudFilestoreManagerClient cloudFilestoreManagerClient =
@@ -200,6 +206,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -230,6 +238,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -257,6 +267,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListInstancesRequest request =
@@ -287,6 +299,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListInstancesRequest request =
@@ -318,6 +332,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListInstancesRequest request =
@@ -355,6 +371,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
@@ -379,6 +397,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
@@ -402,6 +422,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   GetInstanceRequest request =
@@ -426,6 +448,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   GetInstanceRequest request =
@@ -452,6 +476,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -492,6 +518,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -532,6 +560,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateInstanceRequest request =
@@ -561,6 +591,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateInstanceRequest request =
@@ -590,6 +622,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateInstanceRequest request =
@@ -616,6 +650,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
@@ -650,6 +686,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateInstanceRequest request =
@@ -676,6 +714,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateInstanceRequest request =
@@ -702,6 +742,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateInstanceRequest request =
@@ -730,6 +772,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   RestoreInstanceRequest request =
@@ -759,6 +803,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   RestoreInstanceRequest request =
@@ -788,6 +834,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   RestoreInstanceRequest request =
@@ -813,6 +861,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
@@ -837,6 +887,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
@@ -860,6 +912,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteInstanceRequest request =
@@ -885,6 +939,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteInstanceRequest request =
@@ -910,6 +966,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteInstanceRequest request =
@@ -934,6 +992,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -964,6 +1024,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -991,6 +1053,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListBackupsRequest request =
@@ -1021,6 +1085,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListBackupsRequest request =
@@ -1052,6 +1118,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   ListBackupsRequest request =
@@ -1089,6 +1157,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]");
@@ -1113,6 +1183,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString();
@@ -1136,6 +1208,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   GetBackupRequest request =
@@ -1160,6 +1234,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   GetBackupRequest request =
@@ -1184,6 +1260,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1222,6 +1300,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -1260,6 +1340,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateBackupRequest request =
@@ -1287,6 +1369,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateBackupRequest request =
@@ -1314,6 +1398,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   CreateBackupRequest request =
@@ -1340,6 +1426,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]");
@@ -1364,6 +1452,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   String name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]").toString();
@@ -1387,6 +1477,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteBackupRequest request =
@@ -1412,6 +1504,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteBackupRequest request =
@@ -1437,6 +1531,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   DeleteBackupRequest request =
@@ -1461,6 +1557,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   Backup backup = Backup.newBuilder().build();
@@ -1488,6 +1586,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateBackupRequest request =
@@ -1514,6 +1614,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateBackupRequest request =
@@ -1540,6 +1642,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
    *     CloudFilestoreManagerClient.create()) {
    *   UpdateBackupRequest request =
