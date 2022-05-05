@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Namespace namespace = Namespace.newBuilder().build();
@@ -98,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegistrationServiceSettings registrationServiceSettings =
  *     RegistrationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,6 +113,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegistrationServiceSettings registrationServiceSettings =
  *     RegistrationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegistrationServiceClient registrationServiceClient =
@@ -177,6 +183,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Namespace namespace = Namespace.newBuilder().build();
@@ -215,6 +223,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Namespace namespace = Namespace.newBuilder().build();
@@ -252,6 +262,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateNamespaceRequest request =
    *       CreateNamespaceRequest.newBuilder()
@@ -277,6 +289,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateNamespaceRequest request =
    *       CreateNamespaceRequest.newBuilder()
@@ -302,6 +316,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Namespace element : registrationServiceClient.listNamespaces(parent).iterateAll()) {
@@ -329,6 +345,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Namespace element : registrationServiceClient.listNamespaces(parent).iterateAll()) {
@@ -353,6 +371,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListNamespacesRequest request =
    *       ListNamespacesRequest.newBuilder()
@@ -382,6 +402,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListNamespacesRequest request =
    *       ListNamespacesRequest.newBuilder()
@@ -412,6 +434,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListNamespacesRequest request =
    *       ListNamespacesRequest.newBuilder()
@@ -449,6 +473,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   NamespaceName name = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]");
    *   Namespace response = registrationServiceClient.getNamespace(name);
@@ -471,6 +497,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString();
    *   Namespace response = registrationServiceClient.getNamespace(name);
@@ -492,6 +520,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetNamespaceRequest request =
    *       GetNamespaceRequest.newBuilder()
@@ -515,6 +545,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetNamespaceRequest request =
    *       GetNamespaceRequest.newBuilder()
@@ -538,6 +570,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   Namespace namespace = Namespace.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -565,6 +599,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateNamespaceRequest request =
    *       UpdateNamespaceRequest.newBuilder()
@@ -589,6 +625,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateNamespaceRequest request =
    *       UpdateNamespaceRequest.newBuilder()
@@ -613,6 +651,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   NamespaceName name = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]");
    *   registrationServiceClient.deleteNamespace(name);
@@ -635,6 +675,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString();
    *   registrationServiceClient.deleteNamespace(name);
@@ -656,6 +698,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteNamespaceRequest request =
    *       DeleteNamespaceRequest.newBuilder()
@@ -679,6 +723,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteNamespaceRequest request =
    *       DeleteNamespaceRequest.newBuilder()
@@ -702,6 +748,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   NamespaceName parent = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]");
    *   Service service = Service.newBuilder().build();
@@ -737,6 +785,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString();
    *   Service service = Service.newBuilder().build();
@@ -772,6 +822,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -797,6 +849,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -822,6 +876,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   NamespaceName parent = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]");
    *   for (Service element : registrationServiceClient.listServices(parent).iterateAll()) {
@@ -848,6 +904,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent = NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString();
    *   for (Service element : registrationServiceClient.listServices(parent).iterateAll()) {
@@ -871,6 +929,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -900,6 +960,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -930,6 +992,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -966,6 +1030,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]");
    *   Service response = registrationServiceClient.getService(name);
@@ -988,6 +1054,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name =
    *       ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString();
@@ -1010,6 +1078,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -1034,6 +1104,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -1058,6 +1130,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   Service service = Service.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1082,6 +1156,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -1106,6 +1182,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -1130,6 +1208,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]");
    *   registrationServiceClient.deleteService(name);
@@ -1152,6 +1232,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name =
    *       ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString();
@@ -1174,6 +1256,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -1198,6 +1282,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -1222,6 +1308,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]");
    *   Endpoint endpoint = Endpoint.newBuilder().build();
@@ -1257,6 +1345,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent =
    *       ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString();
@@ -1293,6 +1383,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
@@ -1319,6 +1411,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
@@ -1345,6 +1439,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]");
    *   for (Endpoint element : registrationServiceClient.listEndpoints(parent).iterateAll()) {
@@ -1371,6 +1467,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String parent =
    *       ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString();
@@ -1395,6 +1493,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
@@ -1425,6 +1525,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
@@ -1456,6 +1558,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
@@ -1493,6 +1597,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   EndpointName name =
    *       EndpointName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]", "[ENDPOINT]");
@@ -1516,6 +1622,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name =
    *       EndpointName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]", "[ENDPOINT]")
@@ -1539,6 +1647,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
@@ -1565,6 +1675,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
@@ -1591,6 +1703,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   Endpoint endpoint = Endpoint.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1615,6 +1729,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateEndpointRequest request =
    *       UpdateEndpointRequest.newBuilder()
@@ -1639,6 +1755,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   UpdateEndpointRequest request =
    *       UpdateEndpointRequest.newBuilder()
@@ -1663,6 +1781,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   EndpointName name =
    *       EndpointName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]", "[ENDPOINT]");
@@ -1686,6 +1806,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   String name =
    *       EndpointName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]", "[ENDPOINT]")
@@ -1709,6 +1831,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteEndpointRequest request =
    *       DeleteEndpointRequest.newBuilder()
@@ -1735,6 +1859,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   DeleteEndpointRequest request =
    *       DeleteEndpointRequest.newBuilder()
@@ -1761,6 +1887,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1785,6 +1913,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1809,6 +1939,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1834,6 +1966,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1859,6 +1993,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1883,6 +2019,8 @@ public class RegistrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
