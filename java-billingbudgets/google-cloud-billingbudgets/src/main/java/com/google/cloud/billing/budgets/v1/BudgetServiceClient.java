@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
  *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
  *   Budget budget = Budget.newBuilder().build();
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BudgetServiceSettings budgetServiceSettings =
  *     BudgetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BudgetServiceSettings budgetServiceSettings =
  *     BudgetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BudgetServiceClient budgetServiceClient = BudgetServiceClient.create(budgetServiceSettings);
@@ -158,6 +164,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   Budget budget = Budget.newBuilder().build();
@@ -187,6 +195,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   String parent = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   Budget budget = Budget.newBuilder().build();
@@ -213,6 +223,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   CreateBudgetRequest request =
    *       CreateBudgetRequest.newBuilder()
@@ -238,6 +250,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   CreateBudgetRequest request =
    *       CreateBudgetRequest.newBuilder()
@@ -264,6 +278,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   Budget budget = Budget.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -296,6 +312,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   UpdateBudgetRequest request =
    *       UpdateBudgetRequest.newBuilder()
@@ -323,6 +341,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   UpdateBudgetRequest request =
    *       UpdateBudgetRequest.newBuilder()
@@ -350,6 +370,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   BudgetName name = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]");
    *   Budget response = budgetServiceClient.getBudget(name);
@@ -377,6 +399,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   String name = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString();
    *   Budget response = budgetServiceClient.getBudget(name);
@@ -403,6 +427,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   GetBudgetRequest request =
    *       GetBudgetRequest.newBuilder()
@@ -430,6 +456,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   GetBudgetRequest request =
    *       GetBudgetRequest.newBuilder()
@@ -456,6 +484,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   BillingAccountName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   for (Budget element : budgetServiceClient.listBudgets(parent).iterateAll()) {
@@ -487,6 +517,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   String parent = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   for (Budget element : budgetServiceClient.listBudgets(parent).iterateAll()) {
@@ -515,6 +547,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
@@ -546,6 +580,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
@@ -577,6 +613,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   ListBudgetsRequest request =
    *       ListBudgetsRequest.newBuilder()
@@ -610,6 +648,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   BudgetName name = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]");
    *   budgetServiceClient.deleteBudget(name);
@@ -633,6 +673,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   String name = BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString();
    *   budgetServiceClient.deleteBudget(name);
@@ -655,6 +697,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   DeleteBudgetRequest request =
    *       DeleteBudgetRequest.newBuilder()
@@ -678,6 +722,8 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
    *   DeleteBudgetRequest request =
    *       DeleteBudgetRequest.newBuilder()
