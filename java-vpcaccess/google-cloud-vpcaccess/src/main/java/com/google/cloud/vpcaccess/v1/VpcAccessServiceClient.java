@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
  *   ConnectorName name = ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]");
  *   Connector response = vpcAccessServiceClient.getConnector(name);
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpcAccessServiceSettings vpcAccessServiceSettings =
  *     VpcAccessServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpcAccessServiceSettings vpcAccessServiceSettings =
  *     VpcAccessServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VpcAccessServiceClient vpcAccessServiceClient =
@@ -174,6 +180,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String connectorId = "connectorId1724784200";
@@ -207,6 +215,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String connectorId = "connectorId1724784200";
@@ -240,6 +250,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   CreateConnectorRequest request =
    *       CreateConnectorRequest.newBuilder()
@@ -266,6 +278,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   CreateConnectorRequest request =
    *       CreateConnectorRequest.newBuilder()
@@ -292,6 +306,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   CreateConnectorRequest request =
    *       CreateConnectorRequest.newBuilder()
@@ -317,6 +333,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   ConnectorName name = ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]");
    *   Connector response = vpcAccessServiceClient.getConnector(name);
@@ -339,6 +357,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   String name = ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]").toString();
    *   Connector response = vpcAccessServiceClient.getConnector(name);
@@ -360,6 +380,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   GetConnectorRequest request =
    *       GetConnectorRequest.newBuilder()
@@ -383,6 +405,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   GetConnectorRequest request =
    *       GetConnectorRequest.newBuilder()
@@ -406,6 +430,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Connector element : vpcAccessServiceClient.listConnectors(parent).iterateAll()) {
@@ -432,6 +458,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Connector element : vpcAccessServiceClient.listConnectors(parent).iterateAll()) {
@@ -455,6 +483,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   ListConnectorsRequest request =
    *       ListConnectorsRequest.newBuilder()
@@ -482,6 +512,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   ListConnectorsRequest request =
    *       ListConnectorsRequest.newBuilder()
@@ -510,6 +542,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   ListConnectorsRequest request =
    *       ListConnectorsRequest.newBuilder()
@@ -545,6 +579,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   ConnectorName name = ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]");
    *   vpcAccessServiceClient.deleteConnectorAsync(name).get();
@@ -567,6 +603,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   String name = ConnectorName.of("[PROJECT]", "[LOCATION]", "[CONNECTOR]").toString();
    *   vpcAccessServiceClient.deleteConnectorAsync(name).get();
@@ -588,6 +626,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   DeleteConnectorRequest request =
    *       DeleteConnectorRequest.newBuilder()
@@ -612,6 +652,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   DeleteConnectorRequest request =
    *       DeleteConnectorRequest.newBuilder()
@@ -636,6 +678,8 @@ public class VpcAccessServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.create()) {
    *   DeleteConnectorRequest request =
    *       DeleteConnectorRequest.newBuilder()
