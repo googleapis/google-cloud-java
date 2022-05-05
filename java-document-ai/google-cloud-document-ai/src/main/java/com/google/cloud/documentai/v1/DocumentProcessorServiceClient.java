@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DocumentProcessorServiceClient documentProcessorServiceClient =
  *     DocumentProcessorServiceClient.create()) {
  *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
@@ -77,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DocumentProcessorServiceSettings documentProcessorServiceSettings =
  *     DocumentProcessorServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DocumentProcessorServiceSettings documentProcessorServiceSettings =
  *     DocumentProcessorServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DocumentProcessorServiceClient documentProcessorServiceClient =
@@ -169,6 +175,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
@@ -192,6 +200,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
@@ -214,6 +224,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
@@ -239,6 +251,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessRequest request =
@@ -265,6 +279,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
@@ -291,6 +307,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
@@ -316,6 +334,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
@@ -346,6 +366,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
@@ -377,6 +399,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   BatchProcessRequest request =
@@ -405,6 +429,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   HumanReviewConfigName humanReviewConfig =
@@ -435,6 +461,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   String humanReviewConfig =
@@ -463,6 +491,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ReviewDocumentRequest request =
@@ -492,6 +522,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ReviewDocumentRequest request =
@@ -521,6 +553,8 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
    *   ReviewDocumentRequest request =
