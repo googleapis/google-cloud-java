@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
  * <p>Sample for PredictionServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
  *   ExamplePayload payload = ExamplePayload.newBuilder().build();
@@ -54,6 +56,8 @@
  * <p>Sample for AutoMlClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
  *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
  *   Dataset response = autoMlClient.getDataset(name);
