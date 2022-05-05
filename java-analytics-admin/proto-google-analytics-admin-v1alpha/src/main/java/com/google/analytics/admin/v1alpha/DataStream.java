@@ -198,6 +198,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -572,6 +574,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1629,6 +1633,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2519,6 +2525,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -4393,8 +4401,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (streamDataCase_ == 6) {
           webStreamDataBuilder_.mergeFrom(value);
+        } else {
+          webStreamDataBuilder_.setMessage(value);
         }
-        webStreamDataBuilder_.setMessage(value);
       }
       streamDataCase_ = 6;
       return this;
@@ -4633,8 +4642,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (streamDataCase_ == 7) {
           androidAppStreamDataBuilder_.mergeFrom(value);
+        } else {
+          androidAppStreamDataBuilder_.setMessage(value);
         }
-        androidAppStreamDataBuilder_.setMessage(value);
       }
       streamDataCase_ = 7;
       return this;
@@ -4873,8 +4883,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (streamDataCase_ == 8) {
           iosAppStreamDataBuilder_.mergeFrom(value);
+        } else {
+          iosAppStreamDataBuilder_.setMessage(value);
         }
-        iosAppStreamDataBuilder_.setMessage(value);
       }
       streamDataCase_ = 8;
       return this;

@@ -134,6 +134,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -968,6 +970,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2614,8 +2618,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 1) {
             accountBuilder_.mergeFrom(value);
+          } else {
+            accountBuilder_.setMessage(value);
           }
-          accountBuilder_.setMessage(value);
         }
         resourceCase_ = 1;
         return this;
@@ -2823,8 +2828,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 2) {
             propertyBuilder_.mergeFrom(value);
+          } else {
+            propertyBuilder_.setMessage(value);
           }
-          propertyBuilder_.setMessage(value);
         }
         resourceCase_ = 2;
         return this;
@@ -3033,8 +3039,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 6) {
             firebaseLinkBuilder_.mergeFrom(value);
+          } else {
+            firebaseLinkBuilder_.setMessage(value);
           }
-          firebaseLinkBuilder_.setMessage(value);
         }
         resourceCase_ = 6;
         return this;
@@ -3243,8 +3250,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 7) {
             googleAdsLinkBuilder_.mergeFrom(value);
+          } else {
+            googleAdsLinkBuilder_.setMessage(value);
           }
-          googleAdsLinkBuilder_.setMessage(value);
         }
         resourceCase_ = 7;
         return this;
@@ -3461,8 +3469,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 8) {
             googleSignalsSettingsBuilder_.mergeFrom(value);
+          } else {
+            googleSignalsSettingsBuilder_.setMessage(value);
           }
-          googleSignalsSettingsBuilder_.setMessage(value);
         }
         resourceCase_ = 8;
         return this;
@@ -3701,8 +3710,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 9) {
             displayVideo360AdvertiserLinkBuilder_.mergeFrom(value);
+          } else {
+            displayVideo360AdvertiserLinkBuilder_.setMessage(value);
           }
-          displayVideo360AdvertiserLinkBuilder_.setMessage(value);
         }
         resourceCase_ = 9;
         return this;
@@ -3952,8 +3962,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 10) {
             displayVideo360AdvertiserLinkProposalBuilder_.mergeFrom(value);
+          } else {
+            displayVideo360AdvertiserLinkProposalBuilder_.setMessage(value);
           }
-          displayVideo360AdvertiserLinkProposalBuilder_.setMessage(value);
         }
         resourceCase_ = 10;
         return this;
@@ -4183,8 +4194,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 11) {
             conversionEventBuilder_.mergeFrom(value);
+          } else {
+            conversionEventBuilder_.setMessage(value);
           }
-          conversionEventBuilder_.setMessage(value);
         }
         resourceCase_ = 11;
         return this;
@@ -4409,8 +4421,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 12) {
             measurementProtocolSecretBuilder_.mergeFrom(value);
+          } else {
+            measurementProtocolSecretBuilder_.setMessage(value);
           }
-          measurementProtocolSecretBuilder_.setMessage(value);
         }
         resourceCase_ = 12;
         return this;
@@ -4631,8 +4644,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 13) {
             customDimensionBuilder_.mergeFrom(value);
+          } else {
+            customDimensionBuilder_.setMessage(value);
           }
-          customDimensionBuilder_.setMessage(value);
         }
         resourceCase_ = 13;
         return this;
@@ -4843,8 +4857,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 14) {
             customMetricBuilder_.mergeFrom(value);
+          } else {
+            customMetricBuilder_.setMessage(value);
           }
-          customMetricBuilder_.setMessage(value);
         }
         resourceCase_ = 14;
         return this;
@@ -5061,8 +5076,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 15) {
             dataRetentionSettingsBuilder_.mergeFrom(value);
+          } else {
+            dataRetentionSettingsBuilder_.setMessage(value);
           }
-          dataRetentionSettingsBuilder_.setMessage(value);
         }
         resourceCase_ = 15;
         return this;
@@ -5277,8 +5293,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         } else {
           if (resourceCase_ == 18) {
             dataStreamBuilder_.mergeFrom(value);
+          } else {
+            dataStreamBuilder_.setMessage(value);
           }
-          dataStreamBuilder_.setMessage(value);
         }
         resourceCase_ = 18;
         return this;

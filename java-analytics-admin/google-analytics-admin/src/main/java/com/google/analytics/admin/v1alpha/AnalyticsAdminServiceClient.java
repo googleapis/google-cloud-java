@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
  *     AnalyticsAdminServiceClient.create()) {
  *   AccountName name = AccountName.of("[ACCOUNT]");
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AnalyticsAdminServiceSettings analyticsAdminServiceSettings =
  *     AnalyticsAdminServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AnalyticsAdminServiceSettings analyticsAdminServiceSettings =
  *     AnalyticsAdminServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AnalyticsAdminServiceClient analyticsAdminServiceClient =
@@ -160,6 +166,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AccountName name = AccountName.of("[ACCOUNT]");
@@ -184,6 +192,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = AccountName.of("[ACCOUNT]").toString();
@@ -207,6 +217,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetAccountRequest request =
@@ -229,6 +241,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetAccountRequest request =
@@ -255,6 +269,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountsRequest request =
@@ -287,6 +303,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountsRequest request =
@@ -320,6 +338,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountsRequest request =
@@ -364,6 +384,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AccountName name = AccountName.of("[ACCOUNT]");
@@ -397,6 +419,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = AccountName.of("[ACCOUNT]").toString();
@@ -429,6 +453,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteAccountRequest request =
@@ -460,6 +486,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteAccountRequest request =
@@ -482,6 +510,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   Account account = Account.newBuilder().build();
@@ -510,6 +540,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateAccountRequest request =
@@ -535,6 +567,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateAccountRequest request =
@@ -560,6 +594,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ProvisionAccountTicketRequest request =
@@ -587,6 +623,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ProvisionAccountTicketRequest request =
@@ -613,6 +651,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountSummariesRequest request =
@@ -642,6 +682,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountSummariesRequest request =
@@ -670,6 +712,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListAccountSummariesRequest request =
@@ -705,6 +749,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName name = PropertyName.of("[PROPERTY]");
@@ -729,6 +775,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = PropertyName.of("[PROPERTY]").toString();
@@ -752,6 +800,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetPropertyRequest request =
@@ -774,6 +824,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetPropertyRequest request =
@@ -800,6 +852,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListPropertiesRequest request =
@@ -833,6 +887,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListPropertiesRequest request =
@@ -867,6 +923,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListPropertiesRequest request =
@@ -904,6 +962,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   Property property = Property.newBuilder().build();
@@ -928,6 +988,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreatePropertyRequest request =
@@ -950,6 +1012,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreatePropertyRequest request =
@@ -981,6 +1045,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName name = PropertyName.of("[PROPERTY]");
@@ -1014,6 +1080,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = PropertyName.of("[PROPERTY]").toString();
@@ -1046,6 +1114,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeletePropertyRequest request =
@@ -1079,6 +1149,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeletePropertyRequest request =
@@ -1103,6 +1175,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   Property property = Property.newBuilder().build();
@@ -1131,6 +1205,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdatePropertyRequest request =
@@ -1156,6 +1232,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdatePropertyRequest request =
@@ -1181,6 +1259,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
@@ -1204,6 +1284,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
@@ -1226,6 +1308,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetUserLinkRequest request =
@@ -1250,6 +1334,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetUserLinkRequest request =
@@ -1274,6 +1360,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchGetUserLinksRequest request =
@@ -1299,6 +1387,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchGetUserLinksRequest request =
@@ -1325,6 +1415,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AccountName parent = AccountName.of("[ACCOUNT]");
@@ -1352,6 +1444,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1379,6 +1473,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = AccountName.of("[ACCOUNT]").toString();
@@ -1403,6 +1499,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
@@ -1431,6 +1529,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
@@ -1460,6 +1560,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListUserLinksRequest request =
@@ -1501,6 +1603,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
@@ -1536,6 +1640,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
@@ -1571,6 +1677,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AuditUserLinksRequest request =
@@ -1611,6 +1719,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AccountName parent = AccountName.of("[ACCOUNT]");
@@ -1643,6 +1753,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1675,6 +1787,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = AccountName.of("[ACCOUNT]").toString();
@@ -1704,6 +1818,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateUserLinkRequest request =
@@ -1734,6 +1850,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateUserLinkRequest request =
@@ -1763,6 +1881,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchCreateUserLinksRequest request =
@@ -1794,6 +1914,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchCreateUserLinksRequest request =
@@ -1821,6 +1943,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UserLink userLink = UserLink.newBuilder().build();
@@ -1844,6 +1968,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateUserLinkRequest request =
@@ -1866,6 +1992,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateUserLinkRequest request =
@@ -1888,6 +2016,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchUpdateUserLinksRequest request =
@@ -1915,6 +2045,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchUpdateUserLinksRequest request =
@@ -1941,6 +2073,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
@@ -1964,6 +2098,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
@@ -1986,6 +2122,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteUserLinkRequest request =
@@ -2010,6 +2148,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteUserLinkRequest request =
@@ -2034,6 +2174,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchDeleteUserLinksRequest request =
@@ -2059,6 +2201,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   BatchDeleteUserLinksRequest request =
@@ -2086,6 +2230,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2116,6 +2262,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -2146,6 +2294,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateFirebaseLinkRequest request =
@@ -2173,6 +2323,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateFirebaseLinkRequest request =
@@ -2198,6 +2350,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   FirebaseLinkName name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]");
@@ -2224,6 +2378,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
@@ -2248,6 +2404,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteFirebaseLinkRequest request =
@@ -2272,6 +2430,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteFirebaseLinkRequest request =
@@ -2296,6 +2456,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2324,6 +2486,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -2350,6 +2514,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
@@ -2379,6 +2545,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
@@ -2408,6 +2576,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListFirebaseLinksRequest request =
@@ -2444,6 +2614,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GlobalSiteTagName name = GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -2470,6 +2642,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]").toString();
@@ -2495,6 +2669,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetGlobalSiteTagRequest request =
@@ -2519,6 +2695,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetGlobalSiteTagRequest request =
@@ -2543,6 +2721,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2572,6 +2752,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -2601,6 +2783,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateGoogleAdsLinkRequest request =
@@ -2626,6 +2810,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateGoogleAdsLinkRequest request =
@@ -2652,6 +2838,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
@@ -2684,6 +2872,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateGoogleAdsLinkRequest request =
@@ -2709,6 +2899,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateGoogleAdsLinkRequest request =
@@ -2735,6 +2927,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GoogleAdsLinkName name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]");
@@ -2760,6 +2954,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
@@ -2783,6 +2979,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteGoogleAdsLinkRequest request =
@@ -2807,6 +3005,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteGoogleAdsLinkRequest request =
@@ -2831,6 +3031,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2859,6 +3061,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -2885,6 +3089,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
@@ -2915,6 +3121,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
@@ -2944,6 +3152,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListGoogleAdsLinksRequest request =
@@ -2980,6 +3190,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataSharingSettingsName name = DataSharingSettingsName.of("[ACCOUNT]");
@@ -3006,6 +3218,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = DataSharingSettingsName.of("[ACCOUNT]").toString();
@@ -3030,6 +3244,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataSharingSettingsRequest request =
@@ -3054,6 +3270,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataSharingSettingsRequest request =
@@ -3079,6 +3297,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   MeasurementProtocolSecretName name =
@@ -3109,6 +3329,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -3137,6 +3359,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetMeasurementProtocolSecretRequest request =
@@ -3166,6 +3390,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetMeasurementProtocolSecretRequest request =
@@ -3194,6 +3420,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -3224,6 +3452,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
@@ -3252,6 +3482,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
@@ -3282,6 +3514,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
@@ -3314,6 +3548,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListMeasurementProtocolSecretsRequest request =
@@ -3351,6 +3587,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -3384,6 +3622,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
@@ -3417,6 +3657,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateMeasurementProtocolSecretRequest request =
@@ -3444,6 +3686,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateMeasurementProtocolSecretRequest request =
@@ -3470,6 +3714,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   MeasurementProtocolSecretName name =
@@ -3498,6 +3744,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -3525,6 +3773,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteMeasurementProtocolSecretRequest request =
@@ -3553,6 +3803,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteMeasurementProtocolSecretRequest request =
@@ -3581,6 +3833,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   MeasurementProtocolSecret measurementProtocolSecret =
@@ -3613,6 +3867,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateMeasurementProtocolSecretRequest request =
@@ -3640,6 +3896,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateMeasurementProtocolSecretRequest request =
@@ -3669,6 +3927,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AcknowledgeUserDataCollectionRequest request =
@@ -3699,6 +3959,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   AcknowledgeUserDataCollectionRequest request =
@@ -3726,6 +3988,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   SearchChangeHistoryEventsRequest request =
@@ -3762,6 +4026,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   SearchChangeHistoryEventsRequest request =
@@ -3798,6 +4064,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   SearchChangeHistoryEventsRequest request =
@@ -3840,6 +4108,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GoogleSignalsSettingsName name = GoogleSignalsSettingsName.of("[PROPERTY]");
@@ -3866,6 +4136,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = GoogleSignalsSettingsName.of("[PROPERTY]").toString();
@@ -3890,6 +4162,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetGoogleSignalsSettingsRequest request =
@@ -3916,6 +4190,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetGoogleSignalsSettingsRequest request =
@@ -3941,6 +4217,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GoogleSignalsSettings googleSignalsSettings = GoogleSignalsSettings.newBuilder().build();
@@ -3975,6 +4253,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateGoogleSignalsSettingsRequest request =
@@ -4002,6 +4282,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateGoogleSignalsSettingsRequest request =
@@ -4028,6 +4310,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4059,6 +4343,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -4090,6 +4376,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateConversionEventRequest request =
@@ -4115,6 +4403,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateConversionEventRequest request =
@@ -4141,6 +4431,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
@@ -4168,6 +4460,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
@@ -4193,6 +4487,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetConversionEventRequest request =
@@ -4217,6 +4513,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetConversionEventRequest request =
@@ -4242,6 +4540,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
@@ -4269,6 +4569,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString();
@@ -4294,6 +4596,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteConversionEventRequest request =
@@ -4318,6 +4622,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteConversionEventRequest request =
@@ -4344,6 +4650,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4374,6 +4682,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -4402,6 +4712,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
@@ -4434,6 +4746,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
@@ -4465,6 +4779,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListConversionEventsRequest request =
@@ -4501,6 +4817,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DisplayVideo360AdvertiserLinkName name =
@@ -4530,6 +4848,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -4557,6 +4877,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDisplayVideo360AdvertiserLinkRequest request =
@@ -4586,6 +4908,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDisplayVideo360AdvertiserLinkRequest request =
@@ -4616,6 +4940,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4645,6 +4971,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -4672,6 +5000,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
@@ -4702,6 +5032,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
@@ -4735,6 +5067,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinksRequest request =
@@ -4775,6 +5109,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4810,6 +5146,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -4845,6 +5183,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkRequest request =
@@ -4875,6 +5215,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkRequest request =
@@ -4904,6 +5246,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DisplayVideo360AdvertiserLinkName name =
@@ -4931,6 +5275,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -4957,6 +5303,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDisplayVideo360AdvertiserLinkRequest request =
@@ -4985,6 +5333,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDisplayVideo360AdvertiserLinkRequest request =
@@ -5015,6 +5365,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
@@ -5049,6 +5401,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDisplayVideo360AdvertiserLinkRequest request =
@@ -5076,6 +5430,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDisplayVideo360AdvertiserLinkRequest request =
@@ -5105,6 +5461,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DisplayVideo360AdvertiserLinkProposalName name =
@@ -5135,6 +5493,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -5164,6 +5524,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5193,6 +5555,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5224,6 +5588,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5255,6 +5621,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -5284,6 +5652,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
@@ -5317,6 +5687,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
@@ -5350,6 +5722,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDisplayVideo360AdvertiserLinkProposalsRequest request =
@@ -5390,6 +5764,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5424,6 +5800,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -5457,6 +5835,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5485,6 +5865,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5516,6 +5898,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DisplayVideo360AdvertiserLinkProposalName name =
@@ -5546,6 +5930,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name =
@@ -5574,6 +5960,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5603,6 +5991,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5634,6 +6024,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5665,6 +6057,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5699,6 +6093,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CancelDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5730,6 +6126,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CancelDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -5761,6 +6159,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5791,6 +6191,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -5821,6 +6223,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomDimensionRequest request =
@@ -5846,6 +6250,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomDimensionRequest request =
@@ -5872,6 +6278,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomDimension customDimension = CustomDimension.newBuilder().build();
@@ -5904,6 +6312,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateCustomDimensionRequest request =
@@ -5929,6 +6339,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateCustomDimensionRequest request =
@@ -5955,6 +6367,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5983,6 +6397,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -6009,6 +6425,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
@@ -6039,6 +6457,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
@@ -6068,6 +6488,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomDimensionsRequest request =
@@ -6104,6 +6526,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
@@ -6130,6 +6554,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = CustomDimensionName.of("[PROPERTY]").toString();
@@ -6154,6 +6580,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomDimensionRequest request =
@@ -6178,6 +6606,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomDimensionRequest request =
@@ -6203,6 +6633,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
@@ -6229,6 +6661,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = CustomDimensionName.of("[PROPERTY]").toString();
@@ -6253,6 +6687,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomDimensionRequest request =
@@ -6277,6 +6713,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomDimensionRequest request =
@@ -6302,6 +6740,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -6330,6 +6770,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -6358,6 +6800,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomMetricRequest request =
@@ -6383,6 +6827,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateCustomMetricRequest request =
@@ -6408,6 +6854,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomMetric customMetric = CustomMetric.newBuilder().build();
@@ -6439,6 +6887,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateCustomMetricRequest request =
@@ -6464,6 +6914,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateCustomMetricRequest request =
@@ -6489,6 +6941,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -6517,6 +6971,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -6543,6 +6999,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
@@ -6572,6 +7030,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
@@ -6601,6 +7061,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListCustomMetricsRequest request =
@@ -6637,6 +7099,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
@@ -6663,6 +7127,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = CustomMetricName.of("[PROPERTY]").toString();
@@ -6687,6 +7153,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomMetricRequest request =
@@ -6711,6 +7179,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomMetricRequest request =
@@ -6735,6 +7205,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
@@ -6759,6 +7231,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = CustomMetricName.of("[PROPERTY]").toString();
@@ -6782,6 +7256,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomMetricRequest request =
@@ -6806,6 +7282,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomMetricRequest request =
@@ -6830,6 +7308,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
@@ -6857,6 +7337,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = DataRetentionSettingsName.of("[PROPERTY]").toString();
@@ -6882,6 +7364,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataRetentionSettingsRequest request =
@@ -6908,6 +7392,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataRetentionSettingsRequest request =
@@ -6933,6 +7419,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
@@ -6967,6 +7455,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDataRetentionSettingsRequest request =
@@ -6994,6 +7484,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDataRetentionSettingsRequest request =
@@ -7020,6 +7512,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -7048,6 +7542,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -7073,6 +7569,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDataStreamRequest request =
@@ -7098,6 +7596,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   CreateDataStreamRequest request =
@@ -7123,6 +7623,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -7147,6 +7649,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
@@ -7170,6 +7674,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDataStreamRequest request =
@@ -7194,6 +7700,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DeleteDataStreamRequest request =
@@ -7218,6 +7726,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataStream dataStream = DataStream.newBuilder().build();
@@ -7248,6 +7758,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDataStreamRequest request =
@@ -7273,6 +7785,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   UpdateDataStreamRequest request =
@@ -7298,6 +7812,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -7325,6 +7841,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String parent = PropertyName.of("[PROPERTY]").toString();
@@ -7349,6 +7867,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDataStreamsRequest request =
@@ -7377,6 +7897,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDataStreamsRequest request =
@@ -7406,6 +7928,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   ListDataStreamsRequest request =
@@ -7442,6 +7966,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -7466,6 +7992,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   String name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
@@ -7489,6 +8017,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataStreamRequest request =
@@ -7513,6 +8043,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
    *   GetDataStreamRequest request =
