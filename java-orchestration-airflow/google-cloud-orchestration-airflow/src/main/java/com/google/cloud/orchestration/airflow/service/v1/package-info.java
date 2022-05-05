@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
  * <p>Sample for EnvironmentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
  *   String name = "name3373707";
  *   Environment response = environmentsClient.getEnvironment(name);
@@ -37,6 +39,8 @@
  * <p>Sample for ImageVersionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ImageVersionsClient imageVersionsClient = ImageVersionsClient.create()) {
  *   String parent = "parent-995424086";
  *   for (ImageVersion element : imageVersionsClient.listImageVersions(parent).iterateAll()) {
