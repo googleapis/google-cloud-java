@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
  *   String name = "name3373707";
  *   Feature response = gkeHubClient.getFeature(name);
@@ -96,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GkeHubSettings gkeHubSettings =
  *     GkeHubSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -106,6 +110,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GkeHubSettings gkeHubSettings = GkeHubSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GkeHubClient gkeHubClient = GkeHubClient.create(gkeHubSettings);
  * }</pre>
@@ -182,6 +188,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Feature element : gkeHubClient.listFeatures(parent).iterateAll()) {
@@ -206,6 +214,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
@@ -235,6 +245,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
@@ -264,6 +276,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   ListFeaturesRequest request =
    *       ListFeaturesRequest.newBuilder()
@@ -299,6 +313,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   String name = "name3373707";
    *   Feature response = gkeHubClient.getFeature(name);
@@ -321,6 +337,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   GetFeatureRequest request = GetFeatureRequest.newBuilder().setName("name3373707").build();
    *   Feature response = gkeHubClient.getFeature(request);
@@ -341,6 +359,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   GetFeatureRequest request = GetFeatureRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Feature> future = gkeHubClient.getFeatureCallable().futureCall(request);
@@ -360,6 +380,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   String parent = "parent-995424086";
    *   Feature resource = Feature.newBuilder().build();
@@ -392,6 +414,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
@@ -419,6 +443,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
@@ -446,6 +472,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   CreateFeatureRequest request =
    *       CreateFeatureRequest.newBuilder()
@@ -471,6 +499,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   String name = "name3373707";
    *   gkeHubClient.deleteFeatureAsync(name).get();
@@ -493,6 +523,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
@@ -519,6 +551,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
@@ -545,6 +579,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
@@ -569,6 +605,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   String name = "name3373707";
    *   Feature resource = Feature.newBuilder().build();
@@ -606,6 +644,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()
@@ -633,6 +673,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()
@@ -660,6 +702,8 @@ public class GkeHubClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubClient gkeHubClient = GkeHubClient.create()) {
    *   UpdateFeatureRequest request =
    *       UpdateFeatureRequest.newBuilder()

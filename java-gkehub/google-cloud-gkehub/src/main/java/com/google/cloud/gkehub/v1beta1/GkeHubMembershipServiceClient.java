@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
  *     GkeHubMembershipServiceClient.create()) {
  *   String name = "name3373707";
@@ -92,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GkeHubMembershipServiceSettings gkeHubMembershipServiceSettings =
  *     GkeHubMembershipServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -103,6 +107,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GkeHubMembershipServiceSettings gkeHubMembershipServiceSettings =
  *     GkeHubMembershipServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
@@ -184,6 +190,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   String parent = "parent-995424086";
@@ -210,6 +218,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
@@ -241,6 +251,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
@@ -272,6 +284,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
@@ -310,6 +324,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   String name = "name3373707";
@@ -333,6 +349,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GetMembershipRequest request =
@@ -355,6 +373,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GetMembershipRequest request =
@@ -381,6 +401,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   String parent = "parent-995424086";
@@ -424,6 +446,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
@@ -456,6 +480,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
@@ -488,6 +514,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
@@ -519,6 +547,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   String name = "name3373707";
@@ -546,6 +576,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
@@ -576,6 +608,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
@@ -606,6 +640,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
@@ -631,6 +667,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   String name = "name3373707";
@@ -671,6 +709,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
@@ -699,6 +739,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
@@ -727,6 +769,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
@@ -757,6 +801,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateConnectManifestRequest request =
@@ -791,6 +837,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateConnectManifestRequest request =
@@ -822,6 +870,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   ValidateExclusivityRequest request =
@@ -850,6 +900,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   ValidateExclusivityRequest request =
@@ -886,6 +938,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateExclusivityManifestRequest request =
@@ -923,6 +977,8 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateExclusivityManifestRequest request =
