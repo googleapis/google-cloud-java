@@ -151,6 +151,8 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -994,8 +996,9 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       } else {
         if (exprCase_ == 1) {
           andGroupBuilder_.mergeFrom(value);
+        } else {
+          andGroupBuilder_.setMessage(value);
         }
-        andGroupBuilder_.setMessage(value);
       }
       exprCase_ = 1;
       return this;
@@ -1204,8 +1207,9 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       } else {
         if (exprCase_ == 2) {
           orGroupBuilder_.mergeFrom(value);
+        } else {
+          orGroupBuilder_.setMessage(value);
         }
-        orGroupBuilder_.setMessage(value);
       }
       exprCase_ = 2;
       return this;
@@ -1413,8 +1417,9 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       } else {
         if (exprCase_ == 3) {
           notExpressionBuilder_.mergeFrom(value);
+        } else {
+          notExpressionBuilder_.setMessage(value);
         }
-        notExpressionBuilder_.setMessage(value);
       }
       exprCase_ = 3;
       return this;
@@ -1631,8 +1636,9 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       } else {
         if (exprCase_ == 4) {
           filterBuilder_.mergeFrom(value);
+        } else {
+          filterBuilder_.setMessage(value);
         }
-        filterBuilder_.setMessage(value);
       }
       exprCase_ = 4;
       return this;

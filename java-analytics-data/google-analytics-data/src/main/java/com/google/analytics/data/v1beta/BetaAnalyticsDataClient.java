@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
  *   RunReportRequest request =
  *       RunReportRequest.newBuilder()
@@ -85,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BetaAnalyticsDataSettings betaAnalyticsDataSettings =
  *     BetaAnalyticsDataSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BetaAnalyticsDataSettings betaAnalyticsDataSettings =
  *     BetaAnalyticsDataSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BetaAnalyticsDataClient betaAnalyticsDataClient =
@@ -169,6 +175,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunReportRequest request =
    *       RunReportRequest.newBuilder()
@@ -209,6 +217,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunReportRequest request =
    *       RunReportRequest.newBuilder()
@@ -248,6 +258,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunPivotReportRequest request =
    *       RunPivotReportRequest.newBuilder()
@@ -284,6 +296,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunPivotReportRequest request =
    *       RunPivotReportRequest.newBuilder()
@@ -318,6 +332,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   BatchRunReportsRequest request =
    *       BatchRunReportsRequest.newBuilder()
@@ -342,6 +358,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   BatchRunReportsRequest request =
    *       BatchRunReportsRequest.newBuilder()
@@ -367,6 +385,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   BatchRunPivotReportsRequest request =
    *       BatchRunPivotReportsRequest.newBuilder()
@@ -392,6 +412,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   BatchRunPivotReportsRequest request =
    *       BatchRunPivotReportsRequest.newBuilder()
@@ -424,6 +446,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   MetadataName name = MetadataName.of("[PROPERTY]");
    *   Metadata response = betaAnalyticsDataClient.getMetadata(name);
@@ -459,6 +483,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   String name = MetadataName.of("[PROPERTY]").toString();
    *   Metadata response = betaAnalyticsDataClient.getMetadata(name);
@@ -493,6 +519,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   GetMetadataRequest request =
    *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
@@ -521,6 +549,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   GetMetadataRequest request =
    *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
@@ -543,6 +573,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunRealtimeReportRequest request =
    *       RunRealtimeReportRequest.newBuilder()
@@ -576,6 +608,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   RunRealtimeReportRequest request =
    *       RunRealtimeReportRequest.newBuilder()
@@ -618,6 +652,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   CheckCompatibilityRequest request =
    *       CheckCompatibilityRequest.newBuilder()
@@ -655,6 +691,8 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.create()) {
    *   CheckCompatibilityRequest request =
    *       CheckCompatibilityRequest.newBuilder()

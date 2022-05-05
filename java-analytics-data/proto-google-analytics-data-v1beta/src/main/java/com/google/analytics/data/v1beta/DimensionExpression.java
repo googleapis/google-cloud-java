@@ -152,6 +152,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -277,6 +279,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1025,6 +1029,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2683,8 +2689,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       } else {
         if (oneExpressionCase_ == 4) {
           lowerCaseBuilder_.mergeFrom(value);
+        } else {
+          lowerCaseBuilder_.setMessage(value);
         }
-        lowerCaseBuilder_.setMessage(value);
       }
       oneExpressionCase_ = 4;
       return this;
@@ -2908,8 +2915,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       } else {
         if (oneExpressionCase_ == 5) {
           upperCaseBuilder_.mergeFrom(value);
+        } else {
+          upperCaseBuilder_.setMessage(value);
         }
-        upperCaseBuilder_.setMessage(value);
       }
       oneExpressionCase_ = 5;
       return this;
@@ -3149,8 +3157,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       } else {
         if (oneExpressionCase_ == 6) {
           concatenateBuilder_.mergeFrom(value);
+        } else {
+          concatenateBuilder_.setMessage(value);
         }
-        concatenateBuilder_.setMessage(value);
       }
       oneExpressionCase_ = 6;
       return this;

@@ -166,6 +166,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -340,6 +342,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1528,6 +1532,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2427,6 +2433,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3615,6 +3623,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -5510,8 +5520,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (oneFilterCase_ == 3) {
           stringFilterBuilder_.mergeFrom(value);
+        } else {
+          stringFilterBuilder_.setMessage(value);
         }
-        stringFilterBuilder_.setMessage(value);
       }
       oneFilterCase_ = 3;
       return this;
@@ -5721,8 +5732,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (oneFilterCase_ == 4) {
           inListFilterBuilder_.mergeFrom(value);
+        } else {
+          inListFilterBuilder_.setMessage(value);
         }
-        inListFilterBuilder_.setMessage(value);
       }
       oneFilterCase_ = 4;
       return this;
@@ -5932,8 +5944,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (oneFilterCase_ == 5) {
           numericFilterBuilder_.mergeFrom(value);
+        } else {
+          numericFilterBuilder_.setMessage(value);
         }
-        numericFilterBuilder_.setMessage(value);
       }
       oneFilterCase_ = 5;
       return this;
@@ -6143,8 +6156,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (oneFilterCase_ == 6) {
           betweenFilterBuilder_.mergeFrom(value);
+        } else {
+          betweenFilterBuilder_.setMessage(value);
         }
-        betweenFilterBuilder_.setMessage(value);
       }
       oneFilterCase_ = 6;
       return this;
