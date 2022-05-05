@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EssentialContactsServiceClient essentialContactsServiceClient =
  *     EssentialContactsServiceClient.create()) {
  *   FolderName parent = FolderName.of("[FOLDER]");
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * EssentialContactsServiceSettings essentialContactsServiceSettings =
  *     EssentialContactsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * EssentialContactsServiceSettings essentialContactsServiceSettings =
  *     EssentialContactsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EssentialContactsServiceClient essentialContactsServiceClient =
@@ -162,6 +168,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
@@ -191,6 +199,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -220,6 +230,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -249,6 +261,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -275,6 +289,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   CreateContactRequest request =
@@ -300,6 +316,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   CreateContactRequest request =
@@ -325,6 +343,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   Contact contact = Contact.newBuilder().build();
@@ -353,6 +373,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   UpdateContactRequest request =
@@ -378,6 +400,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   UpdateContactRequest request =
@@ -403,6 +427,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
@@ -431,6 +457,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
@@ -459,6 +487,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -487,6 +517,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -512,6 +544,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
@@ -540,6 +574,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
@@ -569,6 +605,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ListContactsRequest request =
@@ -604,6 +642,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ContactName name = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]");
@@ -629,6 +669,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   String name = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString();
@@ -653,6 +695,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   GetContactRequest request =
@@ -677,6 +721,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   GetContactRequest request =
@@ -701,6 +747,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ContactName name = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]");
@@ -726,6 +774,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   String name = ContactName.ofProjectContactName("[PROJECT]", "[CONTACT]").toString();
@@ -750,6 +800,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   DeleteContactRequest request =
@@ -774,6 +826,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   DeleteContactRequest request =
@@ -799,6 +853,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
@@ -829,6 +885,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
@@ -860,6 +918,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   ComputeContactsRequest request =
@@ -898,6 +958,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   SendTestMessageRequest request =
@@ -925,6 +987,8 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EssentialContactsServiceClient essentialContactsServiceClient =
    *     EssentialContactsServiceClient.create()) {
    *   SendTestMessageRequest request =
