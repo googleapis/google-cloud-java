@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
  *   CreateScanConfigRequest request =
  *       CreateScanConfigRequest.newBuilder()
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WebSecurityScannerSettings webSecurityScannerSettings =
  *     WebSecurityScannerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WebSecurityScannerClient webSecurityScannerClient =
@@ -163,6 +169,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   CreateScanConfigRequest request =
    *       CreateScanConfigRequest.newBuilder()
@@ -187,6 +195,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   CreateScanConfigRequest request =
    *       CreateScanConfigRequest.newBuilder()
@@ -211,6 +221,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   DeleteScanConfigRequest request =
    *       DeleteScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -232,6 +244,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   DeleteScanConfigRequest request =
    *       DeleteScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -253,6 +267,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanConfigRequest request =
    *       GetScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -274,6 +290,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanConfigRequest request =
    *       GetScanConfigRequest.newBuilder().setName("name3373707").build();
@@ -295,6 +313,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -322,6 +342,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -350,6 +372,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanConfigsRequest request =
    *       ListScanConfigsRequest.newBuilder()
@@ -385,6 +409,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   UpdateScanConfigRequest request =
    *       UpdateScanConfigRequest.newBuilder()
@@ -409,6 +435,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   UpdateScanConfigRequest request =
    *       UpdateScanConfigRequest.newBuilder()
@@ -433,6 +461,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.startScanRun(request);
@@ -453,6 +483,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future =
@@ -473,6 +505,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.getScanRun(request);
@@ -493,6 +527,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future = webSecurityScannerClient.getScanRunCallable().futureCall(request);
@@ -512,6 +548,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -539,6 +577,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -567,6 +607,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListScanRunsRequest request =
    *       ListScanRunsRequest.newBuilder()
@@ -601,6 +643,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder().setName("name3373707").build();
    *   ScanRun response = webSecurityScannerClient.stopScanRun(request);
@@ -621,6 +665,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<ScanRun> future =
@@ -641,6 +687,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -668,6 +716,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -696,6 +746,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListCrawledUrlsRequest request =
    *       ListCrawledUrlsRequest.newBuilder()
@@ -731,6 +783,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetFindingRequest request = GetFindingRequest.newBuilder().setName("name3373707").build();
    *   Finding response = webSecurityScannerClient.getFinding(request);
@@ -751,6 +805,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   GetFindingRequest request = GetFindingRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Finding> future = webSecurityScannerClient.getFindingCallable().futureCall(request);
@@ -770,6 +826,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -798,6 +856,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -827,6 +887,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingsRequest request =
    *       ListFindingsRequest.newBuilder()
@@ -862,6 +924,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingTypeStatsRequest request =
    *       ListFindingTypeStatsRequest.newBuilder().setParent("parent-995424086").build();
@@ -885,6 +949,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
    *   ListFindingTypeStatsRequest request =
    *       ListFindingTypeStatsRequest.newBuilder().setParent("parent-995424086").build();
