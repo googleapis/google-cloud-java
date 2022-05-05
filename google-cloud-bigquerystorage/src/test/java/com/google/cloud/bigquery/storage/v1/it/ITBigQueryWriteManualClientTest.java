@@ -28,6 +28,8 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.cloud.bigquery.storage.v1.*;
+import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetAlreadyExists;
+import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetOutOfRange;
 import com.google.cloud.bigquery.storage.v1.Exceptions.SchemaMismatchedException;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StreamFinalizedException;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
@@ -897,6 +899,75 @@ public class ITBigQueryWriteManualClientTest {
         // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
         assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
         assertThat(e.getCause().getMessage()).contains("Stream has been finalized");
+      }
+    }
+  }
+
+  @Test
+  public void testOffsetAlreadyExistsError()
+      throws IOException, ExecutionException, InterruptedException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableId)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build()) {
+      // Append once with correct offset
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      response.get();
+      // Append again with the same offset
+      ApiFuture<AppendRowsResponse> response2 =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+      try {
+        response2.get();
+        Assert.fail("Should fail");
+      } catch (ExecutionException e) {
+        assertEquals(Exceptions.OffsetAlreadyExists.class, e.getCause().getClass());
+        Exceptions.OffsetAlreadyExists actualError = (OffsetAlreadyExists) e.getCause();
+        assertNotNull(actualError.getStreamName());
+        assertEquals(1, actualError.getExpectedOffset());
+        assertEquals(0, actualError.getActualOffset());
+        assertEquals(Code.ALREADY_EXISTS, Status.fromThrowable(e.getCause()).getCode());
+        assertThat(e.getCause().getMessage())
+            .contains("The offset is within stream, expected offset 1, received 0");
+      }
+    }
+  }
+
+  @Test
+  public void testOffsetOutOfRangeError() throws IOException, InterruptedException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableId)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .build()) {
+      // Append with an out of range offset
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 10);
+      try {
+        response.get();
+        Assert.fail("Should fail");
+      } catch (ExecutionException e) {
+        assertEquals(Exceptions.OffsetOutOfRange.class, e.getCause().getClass());
+        Exceptions.OffsetOutOfRange actualError = (OffsetOutOfRange) e.getCause();
+        assertNotNull(actualError.getStreamName());
+        assertEquals(0, actualError.getExpectedOffset());
+        assertEquals(10, actualError.getActualOffset());
+        assertEquals(Code.OUT_OF_RANGE, Status.fromThrowable(e.getCause()).getCode());
+        assertThat(e.getCause().getMessage())
+            .contains("The offset is beyond stream, expected offset 0, received 10");
       }
     }
   }
