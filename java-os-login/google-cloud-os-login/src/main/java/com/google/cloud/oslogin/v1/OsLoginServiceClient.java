@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
  *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
  *   osLoginServiceClient.deletePosixAccount(name);
@@ -74,6 +76,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OsLoginServiceSettings osLoginServiceSettings =
  *     OsLoginServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -84,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OsLoginServiceSettings osLoginServiceSettings =
  *     OsLoginServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create(osLoginServiceSettings);
@@ -151,6 +157,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
    *   osLoginServiceClient.deletePosixAccount(name);
@@ -177,6 +185,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = ProjectName.of("[USER]", "[PROJECT]").toString();
    *   osLoginServiceClient.deletePosixAccount(name);
@@ -201,6 +211,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   DeletePosixAccountRequest request =
    *       DeletePosixAccountRequest.newBuilder()
@@ -224,6 +236,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   DeletePosixAccountRequest request =
    *       DeletePosixAccountRequest.newBuilder()
@@ -247,6 +261,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
    *   osLoginServiceClient.deleteSshPublicKey(name);
@@ -273,6 +289,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
    *   osLoginServiceClient.deleteSshPublicKey(name);
@@ -297,6 +315,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   DeleteSshPublicKeyRequest request =
    *       DeleteSshPublicKeyRequest.newBuilder()
@@ -320,6 +340,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   DeleteSshPublicKeyRequest request =
    *       DeleteSshPublicKeyRequest.newBuilder()
@@ -344,6 +366,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UserName name = UserName.of("[USER]");
    *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
@@ -367,6 +391,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = UserName.of("[USER]").toString();
    *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
@@ -389,6 +415,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetLoginProfileRequest request =
    *       GetLoginProfileRequest.newBuilder()
@@ -415,6 +443,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetLoginProfileRequest request =
    *       GetLoginProfileRequest.newBuilder()
@@ -440,6 +470,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
    *   OsLoginProto.SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
@@ -464,6 +496,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
    *   OsLoginProto.SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
@@ -487,6 +521,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetSshPublicKeyRequest request =
    *       GetSshPublicKeyRequest.newBuilder()
@@ -510,6 +546,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   GetSshPublicKeyRequest request =
    *       GetSshPublicKeyRequest.newBuilder()
@@ -535,6 +573,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UserName parent = UserName.of("[USER]");
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -565,6 +605,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -595,6 +637,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UserName parent = UserName.of("[USER]");
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -628,6 +672,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -661,6 +707,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
@@ -687,6 +735,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
@@ -714,6 +764,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -746,6 +798,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -775,6 +829,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -810,6 +866,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
@@ -845,6 +903,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UpdateSshPublicKeyRequest request =
    *       UpdateSshPublicKeyRequest.newBuilder()
@@ -871,6 +931,8 @@ public class OsLoginServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   UpdateSshPublicKeyRequest request =
    *       UpdateSshPublicKeyRequest.newBuilder()
