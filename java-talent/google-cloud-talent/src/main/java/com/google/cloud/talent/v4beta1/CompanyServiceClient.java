@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Company company = Company.newBuilder().build();
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CompanyServiceSettings companyServiceSettings =
  *     CompanyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
@@ -156,6 +162,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Company company = Company.newBuilder().build();
@@ -186,6 +194,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   Company company = Company.newBuilder().build();
@@ -216,6 +226,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   Company company = Company.newBuilder().build();
@@ -243,6 +255,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
@@ -267,6 +281,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CreateCompanyRequest request =
    *       CreateCompanyRequest.newBuilder()
@@ -290,6 +306,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CompanyName name =
    *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
@@ -317,6 +335,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String name =
    *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
@@ -343,6 +363,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   GetCompanyRequest request =
    *       GetCompanyRequest.newBuilder()
@@ -368,6 +390,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   GetCompanyRequest request =
    *       GetCompanyRequest.newBuilder()
@@ -392,6 +416,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   Company company = Company.newBuilder().build();
    *   Company response = companyServiceClient.updateCompany(company);
@@ -413,6 +439,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   UpdateCompanyRequest request =
    *       UpdateCompanyRequest.newBuilder()
@@ -437,6 +465,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   UpdateCompanyRequest request =
    *       UpdateCompanyRequest.newBuilder()
@@ -460,6 +490,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   CompanyName name =
    *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]");
@@ -487,6 +519,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String name =
    *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
@@ -513,6 +547,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   DeleteCompanyRequest request =
    *       DeleteCompanyRequest.newBuilder()
@@ -538,6 +574,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   DeleteCompanyRequest request =
    *       DeleteCompanyRequest.newBuilder()
@@ -562,6 +600,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
@@ -592,6 +632,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
@@ -622,6 +664,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
@@ -649,6 +693,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
@@ -677,6 +723,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()
@@ -706,6 +754,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
    *   ListCompaniesRequest request =
    *       ListCompaniesRequest.newBuilder()

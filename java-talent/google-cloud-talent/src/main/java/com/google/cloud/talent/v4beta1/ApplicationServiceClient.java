@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
  *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
  *   Application application = Application.newBuilder().build();
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApplicationServiceSettings applicationServiceSettings =
  *     ApplicationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApplicationServiceSettings applicationServiceSettings =
  *     ApplicationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ApplicationServiceClient applicationServiceClient =
@@ -160,6 +166,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
    *   Application application = Application.newBuilder().build();
@@ -189,6 +197,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   String parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString();
    *   Application application = Application.newBuilder().build();
@@ -215,6 +225,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   CreateApplicationRequest request =
    *       CreateApplicationRequest.newBuilder()
@@ -239,6 +251,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   CreateApplicationRequest request =
    *       CreateApplicationRequest.newBuilder()
@@ -263,6 +277,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ApplicationName name =
    *       ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
@@ -289,6 +305,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   String name =
    *       ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]").toString();
@@ -314,6 +332,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   GetApplicationRequest request =
    *       GetApplicationRequest.newBuilder()
@@ -339,6 +359,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   GetApplicationRequest request =
    *       GetApplicationRequest.newBuilder()
@@ -364,6 +386,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   Application application = Application.newBuilder().build();
    *   Application response = applicationServiceClient.updateApplication(application);
@@ -387,6 +411,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   UpdateApplicationRequest request =
    *       UpdateApplicationRequest.newBuilder()
@@ -411,6 +437,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   UpdateApplicationRequest request =
    *       UpdateApplicationRequest.newBuilder()
@@ -435,6 +463,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ApplicationName name =
    *       ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
@@ -463,6 +493,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   String name =
    *       ApplicationName.of("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]").toString();
@@ -488,6 +520,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   DeleteApplicationRequest request =
    *       DeleteApplicationRequest.newBuilder()
@@ -513,6 +547,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   DeleteApplicationRequest request =
    *       DeleteApplicationRequest.newBuilder()
@@ -538,6 +574,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
    *   for (Application element : applicationServiceClient.listApplications(parent).iterateAll()) {
@@ -566,6 +604,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   String parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString();
    *   for (Application element : applicationServiceClient.listApplications(parent).iterateAll()) {
@@ -592,6 +632,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ListApplicationsRequest request =
    *       ListApplicationsRequest.newBuilder()
@@ -619,6 +661,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ListApplicationsRequest request =
    *       ListApplicationsRequest.newBuilder()
@@ -647,6 +691,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
    *   ListApplicationsRequest request =
    *       ListApplicationsRequest.newBuilder()

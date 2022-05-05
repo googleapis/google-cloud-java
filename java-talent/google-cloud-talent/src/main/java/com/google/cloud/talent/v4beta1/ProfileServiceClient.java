@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Profile profile = Profile.newBuilder().build();
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ProfileServiceSettings profileServiceSettings =
  *     ProfileServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ProfileServiceSettings profileServiceSettings =
  *     ProfileServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ProfileServiceClient profileServiceClient = ProfileServiceClient.create(profileServiceSettings);
@@ -157,6 +163,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   for (Profile element : profileServiceClient.listProfiles(parent).iterateAll()) {
@@ -185,6 +193,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   for (Profile element : profileServiceClient.listProfiles(parent).iterateAll()) {
@@ -210,6 +220,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
@@ -239,6 +251,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
@@ -269,6 +283,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ListProfilesRequest request =
    *       ListProfilesRequest.newBuilder()
@@ -304,6 +320,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   Profile profile = Profile.newBuilder().build();
@@ -333,6 +351,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
    *   Profile profile = Profile.newBuilder().build();
@@ -359,6 +379,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
@@ -383,6 +405,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
@@ -406,6 +430,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
    *   Profile response = profileServiceClient.getProfile(name);
@@ -430,6 +456,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   String name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString();
    *   Profile response = profileServiceClient.getProfile(name);
@@ -453,6 +481,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   GetProfileRequest request =
    *       GetProfileRequest.newBuilder()
@@ -476,6 +506,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   GetProfileRequest request =
    *       GetProfileRequest.newBuilder()
@@ -498,6 +530,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   Profile profile = Profile.newBuilder().build();
    *   Profile response = profileServiceClient.updateProfile(profile);
@@ -519,6 +553,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   UpdateProfileRequest request =
    *       UpdateProfileRequest.newBuilder()
@@ -543,6 +579,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   UpdateProfileRequest request =
    *       UpdateProfileRequest.newBuilder()
@@ -567,6 +605,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   ProfileName name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
    *   profileServiceClient.deleteProfile(name);
@@ -592,6 +632,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   String name = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]").toString();
    *   profileServiceClient.deleteProfile(name);
@@ -616,6 +658,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   DeleteProfileRequest request =
    *       DeleteProfileRequest.newBuilder()
@@ -640,6 +684,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   DeleteProfileRequest request =
    *       DeleteProfileRequest.newBuilder()
@@ -668,6 +714,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   SearchProfilesRequest request =
    *       SearchProfilesRequest.newBuilder()
@@ -711,6 +759,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   SearchProfilesRequest request =
    *       SearchProfilesRequest.newBuilder()
@@ -754,6 +804,8 @@ public class ProfileServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
    *   SearchProfilesRequest request =
    *       SearchProfilesRequest.newBuilder()

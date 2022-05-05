@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@
  * <p>Sample for CompanyServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Company company = Company.newBuilder().build();
@@ -39,6 +41,8 @@
  * <p>Sample for CompletionClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompletionClient completionClient = CompletionClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -59,6 +63,8 @@
  * <p>Sample for EventServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
@@ -74,6 +80,8 @@
  * <p>Sample for JobServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Job job = Job.newBuilder().build();
@@ -88,6 +96,8 @@
  * <p>Sample for TenantServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Tenant tenant = Tenant.newBuilder().build();

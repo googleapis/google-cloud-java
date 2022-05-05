@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@
  * <p>Sample for ApplicationServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
  *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
  *   Application application = Application.newBuilder().build();
@@ -40,6 +42,8 @@
  * <p>Sample for CompanyServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Company company = Company.newBuilder().build();
@@ -54,6 +58,8 @@
  * <p>Sample for CompletionClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompletionClient completionClient = CompletionClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -76,6 +82,8 @@
  * <p>Sample for EventServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
@@ -91,6 +99,8 @@
  * <p>Sample for JobServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Job job = Job.newBuilder().build();
@@ -106,6 +116,8 @@
  * <p>Sample for ProfileServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
  *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   Profile profile = Profile.newBuilder().build();
@@ -120,6 +132,8 @@
  * <p>Sample for TenantServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TenantServiceClient tenantServiceClient = TenantServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Tenant tenant = Tenant.newBuilder().build();
