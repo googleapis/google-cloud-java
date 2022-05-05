@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ServicesClient servicesClient = ServicesClient.create()) {
  *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
  *   Service response = servicesClient.getService(name);
@@ -86,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServicesSettings servicesSettings =
  *     ServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServicesSettings servicesSettings =
  *     ServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServicesClient servicesClient = ServicesClient.create(servicesSettings);
@@ -172,6 +178,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Service service = Service.newBuilder().build();
@@ -205,6 +213,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Service service = Service.newBuilder().build();
@@ -238,6 +248,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -264,6 +276,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -291,6 +305,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -316,6 +332,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   Service response = servicesClient.getService(name);
@@ -339,6 +357,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   Service response = servicesClient.getService(name);
@@ -361,6 +381,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -384,6 +406,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -406,6 +430,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Service element : servicesClient.listServices(parent).iterateAll()) {
@@ -434,6 +460,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Service element : servicesClient.listServices(parent).iterateAll()) {
@@ -459,6 +487,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -487,6 +517,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -515,6 +547,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -549,6 +583,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   Service service = Service.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -574,6 +610,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -600,6 +638,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -627,6 +667,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -653,6 +695,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   Service response = servicesClient.deleteServiceAsync(name).get();
@@ -677,6 +721,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   Service response = servicesClient.deleteServiceAsync(name).get();
@@ -700,6 +746,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -726,6 +774,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -753,6 +803,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -778,6 +830,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -803,6 +857,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -826,6 +882,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -851,6 +909,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -877,6 +937,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -903,6 +965,8 @@ public class ServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()

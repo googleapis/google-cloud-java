@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
  *   RevisionName name = RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]");
  *   Revision response = revisionsClient.getRevision(name);
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RevisionsSettings revisionsSettings =
  *     RevisionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RevisionsSettings revisionsSettings =
  *     RevisionsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RevisionsClient revisionsClient = RevisionsClient.create(revisionsSettings);
@@ -166,6 +172,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   RevisionName name = RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]");
    *   Revision response = revisionsClient.getRevision(name);
@@ -189,6 +197,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   String name =
    *       RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString();
@@ -212,6 +222,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   GetRevisionRequest request =
    *       GetRevisionRequest.newBuilder()
@@ -236,6 +248,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   GetRevisionRequest request =
    *       GetRevisionRequest.newBuilder()
@@ -259,6 +273,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   for (Revision element : revisionsClient.listRevisions(parent).iterateAll()) {
@@ -287,6 +303,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   for (Revision element : revisionsClient.listRevisions(parent).iterateAll()) {
@@ -312,6 +330,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   ListRevisionsRequest request =
    *       ListRevisionsRequest.newBuilder()
@@ -340,6 +360,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   ListRevisionsRequest request =
    *       ListRevisionsRequest.newBuilder()
@@ -368,6 +390,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   ListRevisionsRequest request =
    *       ListRevisionsRequest.newBuilder()
@@ -402,6 +426,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   RevisionName name = RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]");
    *   Revision response = revisionsClient.deleteRevisionAsync(name).get();
@@ -425,6 +451,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   String name =
    *       RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString();
@@ -448,6 +476,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   DeleteRevisionRequest request =
    *       DeleteRevisionRequest.newBuilder()
@@ -475,6 +505,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   DeleteRevisionRequest request =
    *       DeleteRevisionRequest.newBuilder()
@@ -502,6 +534,8 @@ public class RevisionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RevisionsClient revisionsClient = RevisionsClient.create()) {
    *   DeleteRevisionRequest request =
    *       DeleteRevisionRequest.newBuilder()
