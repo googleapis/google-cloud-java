@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TpuClient tpuClient = TpuClient.create()) {
  *   NodeName name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
  *   Node response = tpuClient.getNode(name);
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TpuSettings tpuSettings =
  *     TpuSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TpuSettings tpuSettings = TpuSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TpuClient tpuClient = TpuClient.create(tpuSettings);
  * }</pre>
@@ -167,6 +173,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Node element : tpuClient.listNodes(parent).iterateAll()) {
@@ -191,6 +199,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Node element : tpuClient.listNodes(parent).iterateAll()) {
@@ -214,6 +224,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
@@ -241,6 +253,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
@@ -267,6 +281,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListNodesRequest request =
    *       ListNodesRequest.newBuilder()
@@ -300,6 +316,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   NodeName name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
    *   Node response = tpuClient.getNode(name);
@@ -322,6 +340,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
    *   Node response = tpuClient.getNode(name);
@@ -343,6 +363,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetNodeRequest request =
    *       GetNodeRequest.newBuilder()
@@ -366,6 +388,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetNodeRequest request =
    *       GetNodeRequest.newBuilder()
@@ -388,6 +412,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Node node = Node.newBuilder().build();
@@ -419,6 +445,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Node node = Node.newBuilder().build();
@@ -446,6 +474,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
@@ -471,6 +501,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
@@ -497,6 +529,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   CreateNodeRequest request =
    *       CreateNodeRequest.newBuilder()
@@ -521,6 +555,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   NodeName name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
    *   Node response = tpuClient.deleteNodeAsync(name).get();
@@ -543,6 +579,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
    *   Node response = tpuClient.deleteNodeAsync(name).get();
@@ -564,6 +602,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   DeleteNodeRequest request =
    *       DeleteNodeRequest.newBuilder()
@@ -587,6 +627,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   DeleteNodeRequest request =
    *       DeleteNodeRequest.newBuilder()
@@ -611,6 +653,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   DeleteNodeRequest request =
    *       DeleteNodeRequest.newBuilder()
@@ -633,6 +677,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ReimageNodeRequest request =
    *       ReimageNodeRequest.newBuilder()
@@ -658,6 +704,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ReimageNodeRequest request =
    *       ReimageNodeRequest.newBuilder()
@@ -683,6 +731,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ReimageNodeRequest request =
    *       ReimageNodeRequest.newBuilder()
@@ -706,6 +756,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StopNodeRequest request = StopNodeRequest.newBuilder().setName("name3373707").build();
    *   Node response = tpuClient.stopNodeAsync(request).get();
@@ -726,6 +778,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StopNodeRequest request = StopNodeRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Node, OperationMetadata> future =
@@ -747,6 +801,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StopNodeRequest request = StopNodeRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future = tpuClient.stopNodeCallable().futureCall(request);
@@ -766,6 +822,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StartNodeRequest request = StartNodeRequest.newBuilder().setName("name3373707").build();
    *   Node response = tpuClient.startNodeAsync(request).get();
@@ -786,6 +844,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StartNodeRequest request = StartNodeRequest.newBuilder().setName("name3373707").build();
    *   OperationFuture<Node, OperationMetadata> future =
@@ -807,6 +867,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   StartNodeRequest request = StartNodeRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Operation> future = tpuClient.startNodeCallable().futureCall(request);
@@ -826,6 +888,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   TensorFlowVersionName parent =
    *       TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]");
@@ -854,6 +918,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String parent =
    *       TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]").toString();
@@ -879,6 +945,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
@@ -911,6 +979,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
@@ -943,6 +1013,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListTensorFlowVersionsRequest request =
    *       ListTensorFlowVersionsRequest.newBuilder()
@@ -982,6 +1054,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   TensorFlowVersionName name =
    *       TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]");
@@ -1007,6 +1081,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String name =
    *       TensorFlowVersionName.of("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]").toString();
@@ -1030,6 +1106,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetTensorFlowVersionRequest request =
    *       GetTensorFlowVersionRequest.newBuilder()
@@ -1055,6 +1133,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetTensorFlowVersionRequest request =
    *       GetTensorFlowVersionRequest.newBuilder()
@@ -1081,6 +1161,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   AcceleratorTypeName parent =
    *       AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]");
@@ -1108,6 +1190,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String parent =
    *       AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString();
@@ -1133,6 +1217,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -1165,6 +1251,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -1197,6 +1285,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -1236,6 +1326,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   AcceleratorTypeName name =
    *       AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]");
@@ -1261,6 +1353,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   String name =
    *       AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString();
@@ -1284,6 +1378,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetAcceleratorTypeRequest request =
    *       GetAcceleratorTypeRequest.newBuilder()
@@ -1309,6 +1405,8 @@ public class TpuClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TpuClient tpuClient = TpuClient.create()) {
    *   GetAcceleratorTypeRequest request =
    *       GetAcceleratorTypeRequest.newBuilder()
