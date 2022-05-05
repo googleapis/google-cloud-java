@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
  *   String languageCode = "languageCode-2092349083";
  *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
@@ -68,6 +70,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TextToSpeechSettings textToSpeechSettings =
  *     TextToSpeechSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -78,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TextToSpeechSettings textToSpeechSettings =
  *     TextToSpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TextToSpeechClient textToSpeechClient = TextToSpeechClient.create(textToSpeechSettings);
@@ -144,6 +150,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   String languageCode = "languageCode-2092349083";
    *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
@@ -171,6 +179,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   ListVoicesRequest request =
    *       ListVoicesRequest.newBuilder().setLanguageCode("languageCode-2092349083").build();
@@ -192,6 +202,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   ListVoicesRequest request =
    *       ListVoicesRequest.newBuilder().setLanguageCode("languageCode-2092349083").build();
@@ -213,6 +225,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   SynthesisInput input = SynthesisInput.newBuilder().build();
    *   VoiceSelectionParams voice = VoiceSelectionParams.newBuilder().build();
@@ -245,6 +259,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   SynthesizeSpeechRequest request =
    *       SynthesizeSpeechRequest.newBuilder()
@@ -270,6 +286,8 @@ public class TextToSpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
    *   SynthesizeSpeechRequest request =
    *       SynthesizeSpeechRequest.newBuilder()
