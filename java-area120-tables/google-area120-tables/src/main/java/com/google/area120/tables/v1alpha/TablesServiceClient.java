@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
  *   TableName name = TableName.of("[TABLE]");
  *   Table response = tablesServiceClient.getTable(name);
@@ -111,6 +113,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TablesServiceSettings tablesServiceSettings =
  *     TablesServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -121,6 +125,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TablesServiceSettings tablesServiceSettings =
  *     TablesServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TablesServiceClient tablesServiceClient = TablesServiceClient.create(tablesServiceSettings);
@@ -189,6 +195,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   TableName name = TableName.of("[TABLE]");
    *   Table response = tablesServiceClient.getTable(name);
@@ -211,6 +219,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String name = TableName.of("[TABLE]").toString();
    *   Table response = tablesServiceClient.getTable(name);
@@ -232,6 +242,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetTableRequest request =
    *       GetTableRequest.newBuilder().setName(TableName.of("[TABLE]").toString()).build();
@@ -253,6 +265,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetTableRequest request =
    *       GetTableRequest.newBuilder().setName(TableName.of("[TABLE]").toString()).build();
@@ -273,6 +287,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListTablesRequest request =
    *       ListTablesRequest.newBuilder()
@@ -299,6 +315,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListTablesRequest request =
    *       ListTablesRequest.newBuilder()
@@ -324,6 +342,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListTablesRequest request =
    *       ListTablesRequest.newBuilder()
@@ -356,6 +376,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   WorkspaceName name = WorkspaceName.of("[WORKSPACE]");
    *   Workspace response = tablesServiceClient.getWorkspace(name);
@@ -378,6 +400,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String name = WorkspaceName.of("[WORKSPACE]").toString();
    *   Workspace response = tablesServiceClient.getWorkspace(name);
@@ -399,6 +423,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetWorkspaceRequest request =
    *       GetWorkspaceRequest.newBuilder()
@@ -422,6 +448,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetWorkspaceRequest request =
    *       GetWorkspaceRequest.newBuilder()
@@ -444,6 +472,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListWorkspacesRequest request =
    *       ListWorkspacesRequest.newBuilder()
@@ -470,6 +500,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListWorkspacesRequest request =
    *       ListWorkspacesRequest.newBuilder()
@@ -497,6 +529,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListWorkspacesRequest request =
    *       ListWorkspacesRequest.newBuilder()
@@ -531,6 +565,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   RowName name = RowName.of("[TABLE]", "[ROW]");
    *   Row response = tablesServiceClient.getRow(name);
@@ -553,6 +589,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String name = RowName.of("[TABLE]", "[ROW]").toString();
    *   Row response = tablesServiceClient.getRow(name);
@@ -574,6 +612,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetRowRequest request =
    *       GetRowRequest.newBuilder()
@@ -598,6 +638,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   GetRowRequest request =
    *       GetRowRequest.newBuilder()
@@ -621,6 +663,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   for (Row element : tablesServiceClient.listRows(parent).iterateAll()) {
@@ -644,6 +688,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListRowsRequest request =
    *       ListRowsRequest.newBuilder()
@@ -673,6 +719,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListRowsRequest request =
    *       ListRowsRequest.newBuilder()
@@ -701,6 +749,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   ListRowsRequest request =
    *       ListRowsRequest.newBuilder()
@@ -736,6 +786,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   Row row = Row.newBuilder().build();
@@ -759,6 +811,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   CreateRowRequest request =
    *       CreateRowRequest.newBuilder()
@@ -784,6 +838,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   CreateRowRequest request =
    *       CreateRowRequest.newBuilder()
@@ -808,6 +864,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchCreateRowsRequest request =
    *       BatchCreateRowsRequest.newBuilder()
@@ -832,6 +890,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchCreateRowsRequest request =
    *       BatchCreateRowsRequest.newBuilder()
@@ -857,6 +917,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   Row row = Row.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -881,6 +943,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   UpdateRowRequest request =
    *       UpdateRowRequest.newBuilder()
@@ -906,6 +970,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   UpdateRowRequest request =
    *       UpdateRowRequest.newBuilder()
@@ -930,6 +996,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchUpdateRowsRequest request =
    *       BatchUpdateRowsRequest.newBuilder()
@@ -954,6 +1022,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchUpdateRowsRequest request =
    *       BatchUpdateRowsRequest.newBuilder()
@@ -979,6 +1049,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   RowName name = RowName.of("[TABLE]", "[ROW]");
    *   tablesServiceClient.deleteRow(name);
@@ -1001,6 +1073,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   String name = RowName.of("[TABLE]", "[ROW]").toString();
    *   tablesServiceClient.deleteRow(name);
@@ -1022,6 +1096,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   DeleteRowRequest request =
    *       DeleteRowRequest.newBuilder().setName(RowName.of("[TABLE]", "[ROW]").toString()).build();
@@ -1043,6 +1119,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   DeleteRowRequest request =
    *       DeleteRowRequest.newBuilder().setName(RowName.of("[TABLE]", "[ROW]").toString()).build();
@@ -1063,6 +1141,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchDeleteRowsRequest request =
    *       BatchDeleteRowsRequest.newBuilder()
@@ -1087,6 +1167,8 @@ public class TablesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
    *   BatchDeleteRowsRequest request =
    *       BatchDeleteRowsRequest.newBuilder()
