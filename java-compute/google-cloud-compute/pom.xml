@@ -100,7 +100,7 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <argLine>-Xmx1024m -XX:MaxPermSize=512m</argLine>
+          <argLine>@{argLine} -Xmx1024m -XX:MaxPermSize=512m</argLine>
         </configuration>
       </plugin>
     </plugins>
@@ -129,7 +129,7 @@
           <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>-Xmx1024m</argLine>
+              <argLine>@{argLine} -Xmx1024m</argLine>
             </configuration>
           </plugin>
         </plugins>
