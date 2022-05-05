@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
  *   GetServiceRequest request = GetServiceRequest.newBuilder().setName("name3373707").build();
  *   Service response = serviceUsageClient.getService(request);
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServiceUsageSettings serviceUsageSettings =
  *     ServiceUsageSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServiceUsageSettings serviceUsageSettings =
  *     ServiceUsageSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServiceUsageClient serviceUsageClient = ServiceUsageClient.create(serviceUsageSettings);
@@ -171,6 +177,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   EnableServiceRequest request =
    *       EnableServiceRequest.newBuilder().setName("name3373707").build();
@@ -197,6 +205,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   EnableServiceRequest request =
    *       EnableServiceRequest.newBuilder().setName("name3373707").build();
@@ -224,6 +234,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   EnableServiceRequest request =
    *       EnableServiceRequest.newBuilder().setName("name3373707").build();
@@ -254,6 +266,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DisableServiceRequest request =
    *       DisableServiceRequest.newBuilder().setName("name3373707").build();
@@ -285,6 +299,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DisableServiceRequest request =
    *       DisableServiceRequest.newBuilder().setName("name3373707").build();
@@ -317,6 +333,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DisableServiceRequest request =
    *       DisableServiceRequest.newBuilder().setName("name3373707").build();
@@ -340,6 +358,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetServiceRequest request = GetServiceRequest.newBuilder().setName("name3373707").build();
    *   Service response = serviceUsageClient.getService(request);
@@ -362,6 +382,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetServiceRequest request = GetServiceRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Service> future = serviceUsageClient.getServiceCallable().futureCall(request);
@@ -388,6 +410,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -422,6 +446,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -458,6 +484,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -498,6 +526,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   BatchEnableServicesRequest request =
    *       BatchEnableServicesRequest.newBuilder()
@@ -528,6 +558,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   BatchEnableServicesRequest request =
    *       BatchEnableServicesRequest.newBuilder()
@@ -559,6 +591,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   BatchEnableServicesRequest request =
    *       BatchEnableServicesRequest.newBuilder()
@@ -589,6 +623,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerQuotaMetricsRequest request =
    *       ListConsumerQuotaMetricsRequest.newBuilder()
@@ -622,6 +658,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerQuotaMetricsRequest request =
    *       ListConsumerQuotaMetricsRequest.newBuilder()
@@ -654,6 +692,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerQuotaMetricsRequest request =
    *       ListConsumerQuotaMetricsRequest.newBuilder()
@@ -690,6 +730,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetConsumerQuotaMetricRequest request =
    *       GetConsumerQuotaMetricRequest.newBuilder()
@@ -714,6 +756,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetConsumerQuotaMetricRequest request =
    *       GetConsumerQuotaMetricRequest.newBuilder()
@@ -739,6 +783,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetConsumerQuotaLimitRequest request =
    *       GetConsumerQuotaLimitRequest.newBuilder()
@@ -763,6 +809,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GetConsumerQuotaLimitRequest request =
    *       GetConsumerQuotaLimitRequest.newBuilder()
@@ -791,6 +839,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateAdminOverrideRequest request =
    *       CreateAdminOverrideRequest.newBuilder()
@@ -821,6 +871,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateAdminOverrideRequest request =
    *       CreateAdminOverrideRequest.newBuilder()
@@ -851,6 +903,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateAdminOverrideRequest request =
    *       CreateAdminOverrideRequest.newBuilder()
@@ -877,6 +931,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateAdminOverrideRequest request =
    *       UpdateAdminOverrideRequest.newBuilder()
@@ -905,6 +961,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateAdminOverrideRequest request =
    *       UpdateAdminOverrideRequest.newBuilder()
@@ -933,6 +991,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateAdminOverrideRequest request =
    *       UpdateAdminOverrideRequest.newBuilder()
@@ -960,6 +1020,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteAdminOverrideRequest request =
    *       DeleteAdminOverrideRequest.newBuilder()
@@ -986,6 +1048,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteAdminOverrideRequest request =
    *       DeleteAdminOverrideRequest.newBuilder()
@@ -1012,6 +1076,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteAdminOverrideRequest request =
    *       DeleteAdminOverrideRequest.newBuilder()
@@ -1037,6 +1103,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListAdminOverridesRequest request =
    *       ListAdminOverridesRequest.newBuilder()
@@ -1065,6 +1133,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListAdminOverridesRequest request =
    *       ListAdminOverridesRequest.newBuilder()
@@ -1093,6 +1163,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListAdminOverridesRequest request =
    *       ListAdminOverridesRequest.newBuilder()
@@ -1129,6 +1201,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportAdminOverridesRequest request =
    *       ImportAdminOverridesRequest.newBuilder()
@@ -1157,6 +1231,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportAdminOverridesRequest request =
    *       ImportAdminOverridesRequest.newBuilder()
@@ -1185,6 +1261,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportAdminOverridesRequest request =
    *       ImportAdminOverridesRequest.newBuilder()
@@ -1214,6 +1292,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateConsumerOverrideRequest request =
    *       CreateConsumerOverrideRequest.newBuilder()
@@ -1244,6 +1324,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateConsumerOverrideRequest request =
    *       CreateConsumerOverrideRequest.newBuilder()
@@ -1274,6 +1356,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   CreateConsumerOverrideRequest request =
    *       CreateConsumerOverrideRequest.newBuilder()
@@ -1301,6 +1385,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateConsumerOverrideRequest request =
    *       UpdateConsumerOverrideRequest.newBuilder()
@@ -1329,6 +1415,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateConsumerOverrideRequest request =
    *       UpdateConsumerOverrideRequest.newBuilder()
@@ -1357,6 +1445,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   UpdateConsumerOverrideRequest request =
    *       UpdateConsumerOverrideRequest.newBuilder()
@@ -1385,6 +1475,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteConsumerOverrideRequest request =
    *       DeleteConsumerOverrideRequest.newBuilder()
@@ -1411,6 +1503,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteConsumerOverrideRequest request =
    *       DeleteConsumerOverrideRequest.newBuilder()
@@ -1437,6 +1531,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   DeleteConsumerOverrideRequest request =
    *       DeleteConsumerOverrideRequest.newBuilder()
@@ -1463,6 +1559,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerOverridesRequest request =
    *       ListConsumerOverridesRequest.newBuilder()
@@ -1491,6 +1589,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerOverridesRequest request =
    *       ListConsumerOverridesRequest.newBuilder()
@@ -1519,6 +1619,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ListConsumerOverridesRequest request =
    *       ListConsumerOverridesRequest.newBuilder()
@@ -1556,6 +1658,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportConsumerOverridesRequest request =
    *       ImportConsumerOverridesRequest.newBuilder()
@@ -1585,6 +1689,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportConsumerOverridesRequest request =
    *       ImportConsumerOverridesRequest.newBuilder()
@@ -1616,6 +1722,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   ImportConsumerOverridesRequest request =
    *       ImportConsumerOverridesRequest.newBuilder()
@@ -1642,6 +1750,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GenerateServiceIdentityRequest request =
    *       GenerateServiceIdentityRequest.newBuilder().setParent("parent-995424086").build();
@@ -1664,6 +1774,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GenerateServiceIdentityRequest request =
    *       GenerateServiceIdentityRequest.newBuilder().setParent("parent-995424086").build();
@@ -1686,6 +1798,8 @@ public class ServiceUsageClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceUsageClient serviceUsageClient = ServiceUsageClient.create()) {
    *   GenerateServiceIdentityRequest request =
    *       GenerateServiceIdentityRequest.newBuilder().setParent("parent-995424086").build();
