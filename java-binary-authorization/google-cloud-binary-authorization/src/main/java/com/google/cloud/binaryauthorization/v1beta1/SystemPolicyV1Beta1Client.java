@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
  *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
  *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
@@ -69,6 +71,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SystemPolicyV1Beta1Settings systemPolicyV1Beta1Settings =
  *     SystemPolicyV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -80,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SystemPolicyV1Beta1Settings systemPolicyV1Beta1Settings =
  *     SystemPolicyV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * SystemPolicyV1Beta1Client systemPolicyV1Beta1Client =
@@ -149,6 +155,8 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
    *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
@@ -172,6 +180,8 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   String name = PolicyName.ofProjectName("[PROJECT]").toString();
    *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
@@ -194,6 +204,8 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   GetSystemPolicyRequest request =
    *       GetSystemPolicyRequest.newBuilder()
@@ -217,6 +229,8 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   GetSystemPolicyRequest request =
    *       GetSystemPolicyRequest.newBuilder()

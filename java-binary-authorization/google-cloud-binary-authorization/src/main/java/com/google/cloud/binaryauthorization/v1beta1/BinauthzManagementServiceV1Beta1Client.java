@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
  *     BinauthzManagementServiceV1Beta1Client.create()) {
  *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
  *     BinauthzManagementServiceV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
  *     BinauthzManagementServiceV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
@@ -179,6 +185,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
@@ -211,6 +219,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = PolicyName.ofProjectName("[PROJECT]").toString();
@@ -242,6 +252,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
@@ -273,6 +285,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetPolicyRequest request =
@@ -301,6 +315,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   Policy policy = Policy.newBuilder().build();
@@ -330,6 +346,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdatePolicyRequest request =
@@ -356,6 +374,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdatePolicyRequest request =
@@ -381,6 +401,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -421,6 +443,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -461,6 +485,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   CreateAttestorRequest request =
@@ -490,6 +516,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   CreateAttestorRequest request =
@@ -517,6 +545,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   AttestorName name = AttestorName.of("[PROJECT]", "[ATTESTOR]");
@@ -543,6 +573,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = AttestorName.of("[PROJECT]", "[ATTESTOR]").toString();
@@ -568,6 +600,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetAttestorRequest request =
@@ -593,6 +627,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   GetAttestorRequest request =
@@ -618,6 +654,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   Attestor attestor = Attestor.newBuilder().build();
@@ -645,6 +683,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdateAttestorRequest request =
@@ -668,6 +708,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   UpdateAttestorRequest request =
@@ -691,6 +733,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -722,6 +766,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -750,6 +796,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -780,6 +828,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -810,6 +860,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   ListAttestorsRequest request =
@@ -846,6 +898,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   AttestorName name = AttestorName.of("[PROJECT]", "[ATTESTOR]");
@@ -872,6 +926,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   String name = AttestorName.of("[PROJECT]", "[ATTESTOR]").toString();
@@ -897,6 +953,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   DeleteAttestorRequest request =
@@ -922,6 +980,8 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
    *     BinauthzManagementServiceV1Beta1Client.create()) {
    *   DeleteAttestorRequest request =

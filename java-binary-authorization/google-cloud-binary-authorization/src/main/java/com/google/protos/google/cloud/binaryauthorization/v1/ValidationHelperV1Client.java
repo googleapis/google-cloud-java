@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ValidationHelperV1Client validationHelperV1Client = ValidationHelperV1Client.create()) {
  *   Service.ValidateAttestationOccurrenceRequest request =
  *       Service.ValidateAttestationOccurrenceRequest.newBuilder()
@@ -76,6 +78,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ValidationHelperV1Settings validationHelperV1Settings =
  *     ValidationHelperV1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -87,6 +91,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ValidationHelperV1Settings validationHelperV1Settings =
  *     ValidationHelperV1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * ValidationHelperV1Client validationHelperV1Client =
@@ -155,6 +161,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ValidationHelperV1Client validationHelperV1Client = ValidationHelperV1Client.create()) {
    *   Service.ValidateAttestationOccurrenceRequest request =
    *       Service.ValidateAttestationOccurrenceRequest.newBuilder()
@@ -183,6 +191,8 @@ public class ValidationHelperV1Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ValidationHelperV1Client validationHelperV1Client = ValidationHelperV1Client.create()) {
    *   Service.ValidateAttestationOccurrenceRequest request =
    *       Service.ValidateAttestationOccurrenceRequest.newBuilder()
