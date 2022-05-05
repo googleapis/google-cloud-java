@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
  *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
  *   DataSource response = dataTransferServiceClient.getDataSource(name);
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataTransferServiceSettings dataTransferServiceSettings =
  *     DataTransferServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataTransferServiceSettings dataTransferServiceSettings =
  *     DataTransferServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DataTransferServiceClient dataTransferServiceClient =
@@ -159,6 +165,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
    *   DataSource response = dataTransferServiceClient.getDataSource(name);
@@ -183,6 +191,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString();
    *   DataSource response = dataTransferServiceClient.getDataSource(name);
@@ -206,6 +216,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetDataSourceRequest request =
    *       GetDataSourceRequest.newBuilder()
@@ -230,6 +242,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetDataSourceRequest request =
    *       GetDataSourceRequest.newBuilder()
@@ -254,6 +268,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
@@ -281,6 +297,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
@@ -308,6 +326,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
@@ -332,6 +352,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
@@ -359,6 +381,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
@@ -387,6 +411,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
@@ -422,6 +448,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
@@ -454,6 +482,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
@@ -486,6 +516,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
@@ -517,6 +549,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
@@ -544,6 +578,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
@@ -572,6 +608,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -601,6 +639,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   UpdateTransferConfigRequest request =
    *       UpdateTransferConfigRequest.newBuilder()
@@ -628,6 +668,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   UpdateTransferConfigRequest request =
    *       UpdateTransferConfigRequest.newBuilder()
@@ -656,6 +698,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName name =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
@@ -683,6 +727,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
@@ -709,6 +755,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DeleteTransferConfigRequest request =
    *       DeleteTransferConfigRequest.newBuilder()
@@ -734,6 +782,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DeleteTransferConfigRequest request =
    *       DeleteTransferConfigRequest.newBuilder()
@@ -759,6 +809,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName name =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
@@ -786,6 +838,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
@@ -811,6 +865,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetTransferConfigRequest request =
    *       GetTransferConfigRequest.newBuilder()
@@ -836,6 +892,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetTransferConfigRequest request =
    *       GetTransferConfigRequest.newBuilder()
@@ -861,6 +919,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (TransferConfig element :
@@ -889,6 +949,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (TransferConfig element :
@@ -917,6 +979,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (TransferConfig element :
@@ -943,6 +1007,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
@@ -973,6 +1039,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
@@ -1002,6 +1070,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
@@ -1041,6 +1111,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName parent =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
@@ -1083,6 +1155,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
@@ -1126,6 +1200,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ScheduleTransferRunsRequest request =
    *       ScheduleTransferRunsRequest.newBuilder()
@@ -1160,6 +1236,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ScheduleTransferRunsRequest request =
    *       ScheduleTransferRunsRequest.newBuilder()
@@ -1193,6 +1271,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   StartManualTransferRunsRequest request =
    *       StartManualTransferRunsRequest.newBuilder()
@@ -1222,6 +1302,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   StartManualTransferRunsRequest request =
    *       StartManualTransferRunsRequest.newBuilder()
@@ -1248,6 +1330,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName name =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
@@ -1273,6 +1357,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
@@ -1298,6 +1384,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetTransferRunRequest request =
    *       GetTransferRunRequest.newBuilder()
@@ -1323,6 +1411,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   GetTransferRunRequest request =
    *       GetTransferRunRequest.newBuilder()
@@ -1348,6 +1438,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName name =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
@@ -1375,6 +1467,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
@@ -1400,6 +1494,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DeleteTransferRunRequest request =
    *       DeleteTransferRunRequest.newBuilder()
@@ -1425,6 +1521,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DeleteTransferRunRequest request =
    *       DeleteTransferRunRequest.newBuilder()
@@ -1450,6 +1548,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName parent =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
@@ -1480,6 +1580,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent =
    *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
@@ -1509,6 +1611,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
@@ -1539,6 +1643,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
@@ -1570,6 +1676,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
@@ -1608,6 +1716,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName parent =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
@@ -1638,6 +1748,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String parent =
    *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
@@ -1667,6 +1779,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
@@ -1698,6 +1812,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
@@ -1729,6 +1845,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
@@ -1767,6 +1885,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
    *   CheckValidCredsResponse response = dataTransferServiceClient.checkValidCreds(name);
@@ -1791,6 +1911,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   String name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString();
    *   CheckValidCredsResponse response = dataTransferServiceClient.checkValidCreds(name);
@@ -1814,6 +1936,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CheckValidCredsRequest request =
    *       CheckValidCredsRequest.newBuilder()
@@ -1838,6 +1962,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CheckValidCredsRequest request =
    *       CheckValidCredsRequest.newBuilder()
@@ -1867,6 +1993,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   EnrollDataSourcesRequest request =
    *       EnrollDataSourcesRequest.newBuilder()
@@ -1895,6 +2023,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   EnrollDataSourcesRequest request =
    *       EnrollDataSourcesRequest.newBuilder()
