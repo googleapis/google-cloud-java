@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
  *   GatewayName name = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
  *   Gateway response = apiGatewayServiceClient.getGateway(name);
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApiGatewayServiceSettings apiGatewayServiceSettings =
  *     ApiGatewayServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApiGatewayServiceSettings apiGatewayServiceSettings =
  *     ApiGatewayServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ApiGatewayServiceClient apiGatewayServiceClient =
@@ -173,6 +179,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Gateway element : apiGatewayServiceClient.listGateways(parent).iterateAll()) {
@@ -200,6 +208,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Gateway element : apiGatewayServiceClient.listGateways(parent).iterateAll()) {
@@ -224,6 +234,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListGatewaysRequest request =
    *       ListGatewaysRequest.newBuilder()
@@ -253,6 +265,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListGatewaysRequest request =
    *       ListGatewaysRequest.newBuilder()
@@ -283,6 +297,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListGatewaysRequest request =
    *       ListGatewaysRequest.newBuilder()
@@ -319,6 +335,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GatewayName name = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
    *   Gateway response = apiGatewayServiceClient.getGateway(name);
@@ -342,6 +360,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString();
    *   Gateway response = apiGatewayServiceClient.getGateway(name);
@@ -364,6 +384,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetGatewayRequest request =
    *       GetGatewayRequest.newBuilder()
@@ -387,6 +409,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetGatewayRequest request =
    *       GetGatewayRequest.newBuilder()
@@ -409,6 +433,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Gateway gateway = Gateway.newBuilder().build();
@@ -443,6 +469,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Gateway gateway = Gateway.newBuilder().build();
@@ -477,6 +505,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateGatewayRequest request =
    *       CreateGatewayRequest.newBuilder()
@@ -503,6 +533,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateGatewayRequest request =
    *       CreateGatewayRequest.newBuilder()
@@ -529,6 +561,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateGatewayRequest request =
    *       CreateGatewayRequest.newBuilder()
@@ -554,6 +588,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   Gateway gateway = Gateway.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -582,6 +618,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateGatewayRequest request =
    *       UpdateGatewayRequest.newBuilder()
@@ -607,6 +645,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateGatewayRequest request =
    *       UpdateGatewayRequest.newBuilder()
@@ -632,6 +672,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateGatewayRequest request =
    *       UpdateGatewayRequest.newBuilder()
@@ -656,6 +698,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GatewayName name = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]");
    *   apiGatewayServiceClient.deleteGatewayAsync(name).get();
@@ -679,6 +723,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = GatewayName.of("[PROJECT]", "[LOCATION]", "[GATEWAY]").toString();
    *   apiGatewayServiceClient.deleteGatewayAsync(name).get();
@@ -701,6 +747,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteGatewayRequest request =
    *       DeleteGatewayRequest.newBuilder()
@@ -725,6 +773,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteGatewayRequest request =
    *       DeleteGatewayRequest.newBuilder()
@@ -749,6 +799,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteGatewayRequest request =
    *       DeleteGatewayRequest.newBuilder()
@@ -772,6 +824,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Api element : apiGatewayServiceClient.listApis(parent).iterateAll()) {
@@ -797,6 +851,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Api element : apiGatewayServiceClient.listApis(parent).iterateAll()) {
@@ -821,6 +877,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApisRequest request =
    *       ListApisRequest.newBuilder()
@@ -850,6 +908,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApisRequest request =
    *       ListApisRequest.newBuilder()
@@ -878,6 +938,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApisRequest request =
    *       ListApisRequest.newBuilder()
@@ -913,6 +975,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiName name = ApiName.of("[PROJECT]", "[API]");
    *   Api response = apiGatewayServiceClient.getApi(name);
@@ -935,6 +999,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = ApiName.of("[PROJECT]", "[API]").toString();
    *   Api response = apiGatewayServiceClient.getApi(name);
@@ -956,6 +1022,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetApiRequest request =
    *       GetApiRequest.newBuilder().setName(ApiName.of("[PROJECT]", "[API]").toString()).build();
@@ -977,6 +1045,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetApiRequest request =
    *       GetApiRequest.newBuilder().setName(ApiName.of("[PROJECT]", "[API]").toString()).build();
@@ -997,6 +1067,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Api api = Api.newBuilder().build();
@@ -1030,6 +1102,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Api api = Api.newBuilder().build();
@@ -1059,6 +1133,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiRequest request =
    *       CreateApiRequest.newBuilder()
@@ -1084,6 +1160,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiRequest request =
    *       CreateApiRequest.newBuilder()
@@ -1110,6 +1188,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiRequest request =
    *       CreateApiRequest.newBuilder()
@@ -1134,6 +1214,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   Api api = Api.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1162,6 +1244,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiRequest request =
    *       UpdateApiRequest.newBuilder()
@@ -1186,6 +1270,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiRequest request =
    *       UpdateApiRequest.newBuilder()
@@ -1211,6 +1297,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiRequest request =
    *       UpdateApiRequest.newBuilder()
@@ -1234,6 +1322,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiName name = ApiName.of("[PROJECT]", "[API]");
    *   apiGatewayServiceClient.deleteApiAsync(name).get();
@@ -1256,6 +1346,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = ApiName.of("[PROJECT]", "[API]").toString();
    *   apiGatewayServiceClient.deleteApiAsync(name).get();
@@ -1277,6 +1369,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiRequest request =
    *       DeleteApiRequest.newBuilder()
@@ -1300,6 +1394,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiRequest request =
    *       DeleteApiRequest.newBuilder()
@@ -1324,6 +1420,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiRequest request =
    *       DeleteApiRequest.newBuilder()
@@ -1346,6 +1444,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiName parent = ApiName.of("[PROJECT]", "[API]");
    *   for (ApiConfig element : apiGatewayServiceClient.listApiConfigs(parent).iterateAll()) {
@@ -1373,6 +1473,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = ApiName.of("[PROJECT]", "[API]").toString();
    *   for (ApiConfig element : apiGatewayServiceClient.listApiConfigs(parent).iterateAll()) {
@@ -1397,6 +1499,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApiConfigsRequest request =
    *       ListApiConfigsRequest.newBuilder()
@@ -1426,6 +1530,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApiConfigsRequest request =
    *       ListApiConfigsRequest.newBuilder()
@@ -1456,6 +1562,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ListApiConfigsRequest request =
    *       ListApiConfigsRequest.newBuilder()
@@ -1493,6 +1601,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiConfigName name = ApiConfigName.of("[PROJECT]", "[API]", "[API_CONFIG]");
    *   ApiConfig response = apiGatewayServiceClient.getApiConfig(name);
@@ -1516,6 +1626,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = ApiConfigName.of("[PROJECT]", "[API]", "[API_CONFIG]").toString();
    *   ApiConfig response = apiGatewayServiceClient.getApiConfig(name);
@@ -1538,6 +1650,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetApiConfigRequest request =
    *       GetApiConfigRequest.newBuilder()
@@ -1561,6 +1675,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   GetApiConfigRequest request =
    *       GetApiConfigRequest.newBuilder()
@@ -1584,6 +1700,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiName parent = ApiName.of("[PROJECT]", "[API]");
    *   ApiConfig apiConfig = ApiConfig.newBuilder().build();
@@ -1618,6 +1736,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String parent = ApiName.of("[PROJECT]", "[API]").toString();
    *   ApiConfig apiConfig = ApiConfig.newBuilder().build();
@@ -1652,6 +1772,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiConfigRequest request =
    *       CreateApiConfigRequest.newBuilder()
@@ -1678,6 +1800,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiConfigRequest request =
    *       CreateApiConfigRequest.newBuilder()
@@ -1704,6 +1828,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   CreateApiConfigRequest request =
    *       CreateApiConfigRequest.newBuilder()
@@ -1729,6 +1855,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiConfig apiConfig = ApiConfig.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1761,6 +1889,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiConfigRequest request =
    *       UpdateApiConfigRequest.newBuilder()
@@ -1786,6 +1916,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiConfigRequest request =
    *       UpdateApiConfigRequest.newBuilder()
@@ -1811,6 +1943,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   UpdateApiConfigRequest request =
    *       UpdateApiConfigRequest.newBuilder()
@@ -1835,6 +1969,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   ApiConfigName name = ApiConfigName.of("[PROJECT]", "[API]", "[API_CONFIG]");
    *   apiGatewayServiceClient.deleteApiConfigAsync(name).get();
@@ -1858,6 +1994,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   String name = ApiConfigName.of("[PROJECT]", "[API]", "[API_CONFIG]").toString();
    *   apiGatewayServiceClient.deleteApiConfigAsync(name).get();
@@ -1880,6 +2018,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiConfigRequest request =
    *       DeleteApiConfigRequest.newBuilder()
@@ -1904,6 +2044,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiConfigRequest request =
    *       DeleteApiConfigRequest.newBuilder()
@@ -1928,6 +2070,8 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.create()) {
    *   DeleteApiConfigRequest request =
    *       DeleteApiConfigRequest.newBuilder()
