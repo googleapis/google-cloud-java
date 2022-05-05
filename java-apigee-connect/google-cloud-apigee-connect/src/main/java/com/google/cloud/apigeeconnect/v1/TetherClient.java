@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TetherClient tetherClient = TetherClient.create()) {
  *   BidiStream<EgressResponse, EgressRequest> bidiStream = tetherClient.egressCallable().call();
  *   EgressResponse request =
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TetherSettings tetherSettings =
  *     TetherSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TetherSettings tetherSettings = TetherSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TetherClient tetherClient = TetherClient.create(tetherSettings);
  * }</pre>
@@ -161,6 +167,8 @@ public class TetherClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TetherClient tetherClient = TetherClient.create()) {
    *   BidiStream<EgressResponse, EgressRequest> bidiStream = tetherClient.egressCallable().call();
    *   EgressResponse request =

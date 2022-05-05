@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
  *   EndpointName parent = EndpointName.of("[PROJECT]", "[ENDPOINT]");
  *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConnectionServiceSettings connectionServiceSettings =
  *     ConnectionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConnectionServiceSettings connectionServiceSettings =
  *     ConnectionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ConnectionServiceClient connectionServiceClient =
@@ -158,6 +164,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   EndpointName parent = EndpointName.of("[PROJECT]", "[ENDPOINT]");
    *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
@@ -185,6 +193,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String parent = EndpointName.of("[PROJECT]", "[ENDPOINT]").toString();
    *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
@@ -209,6 +219,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
@@ -236,6 +248,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
@@ -264,6 +278,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
