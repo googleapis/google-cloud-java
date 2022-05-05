@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,8 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of runPipeline to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WorkflowsServiceV2BetaStubSettings.Builder workflowsServiceV2BetaSettingsBuilder =
  *     WorkflowsServiceV2BetaStubSettings.newBuilder();
  * workflowsServiceV2BetaSettingsBuilder
