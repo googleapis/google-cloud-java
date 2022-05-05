@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@
  * <p>Sample for AlertPolicyServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
  *   AlertPolicyName name =
  *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
@@ -53,6 +55,8 @@
  * <p>Sample for GroupServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
  *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
  *   Group response = groupServiceClient.getGroup(name);
@@ -67,6 +71,8 @@
  * <p>Sample for MetricServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
  *   MonitoredResourceDescriptorName name =
  *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
@@ -84,6 +90,8 @@
  * <p>Sample for NotificationChannelServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NotificationChannelServiceClient notificationChannelServiceClient =
  *     NotificationChannelServiceClient.create()) {
  *   NotificationChannelDescriptorName name =
@@ -103,6 +111,8 @@
  * <p>Sample for QueryServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (QueryServiceClient queryServiceClient = QueryServiceClient.create()) {
  *   QueryTimeSeriesRequest request =
  *       QueryTimeSeriesRequest.newBuilder()
@@ -126,6 +136,8 @@
  * <p>Sample for ServiceMonitoringServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
  *     ServiceMonitoringServiceClient.create()) {
  *   FolderName parent = FolderName.of("[FOLDER]");
@@ -146,6 +158,8 @@
  * <p>Sample for UptimeCheckServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
  *   UptimeCheckConfigName name =
  *       UptimeCheckConfigName.ofProjectUptimeCheckConfigName(

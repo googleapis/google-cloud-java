@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NotificationChannelServiceClient notificationChannelServiceClient =
  *     NotificationChannelServiceClient.create()) {
  *   NotificationChannelDescriptorName name =
@@ -104,6 +106,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NotificationChannelServiceSettings notificationChannelServiceSettings =
  *     NotificationChannelServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -115,6 +119,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NotificationChannelServiceSettings notificationChannelServiceSettings =
  *     NotificationChannelServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NotificationChannelServiceClient notificationChannelServiceClient =
@@ -186,6 +192,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
@@ -223,6 +231,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
@@ -260,6 +270,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
@@ -297,6 +309,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
@@ -332,6 +346,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
@@ -365,6 +381,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
@@ -399,6 +417,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelDescriptorsRequest request =
@@ -439,6 +459,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelDescriptorName name =
@@ -470,6 +492,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -499,6 +523,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelDescriptorRequest request =
@@ -529,6 +555,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelDescriptorRequest request =
@@ -559,6 +587,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
@@ -593,6 +623,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
@@ -628,6 +660,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
@@ -662,6 +696,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
@@ -694,6 +730,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
@@ -726,6 +764,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
@@ -759,6 +799,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ListNotificationChannelsRequest request =
@@ -800,6 +842,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelName name =
@@ -831,6 +875,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -861,6 +907,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelRequest request =
@@ -892,6 +940,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelRequest request =
@@ -921,6 +971,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
@@ -958,6 +1010,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
@@ -995,6 +1049,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
@@ -1032,6 +1088,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
@@ -1069,6 +1127,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   CreateNotificationChannelRequest request =
@@ -1097,6 +1157,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   CreateNotificationChannelRequest request =
@@ -1123,6 +1185,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1156,6 +1220,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   UpdateNotificationChannelRequest request =
@@ -1183,6 +1249,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   UpdateNotificationChannelRequest request =
@@ -1209,6 +1277,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelName name =
@@ -1243,6 +1313,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -1275,6 +1347,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   DeleteNotificationChannelRequest request =
@@ -1303,6 +1377,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   DeleteNotificationChannelRequest request =
@@ -1333,6 +1409,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelName name =
@@ -1361,6 +1439,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -1388,6 +1468,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   SendNotificationChannelVerificationCodeRequest request =
@@ -1417,6 +1499,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   SendNotificationChannelVerificationCodeRequest request =
@@ -1462,6 +1546,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelName name =
@@ -1508,6 +1594,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -1553,6 +1641,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelVerificationCodeRequest request =
@@ -1599,6 +1689,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   GetNotificationChannelVerificationCodeRequest request =
@@ -1633,6 +1725,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   NotificationChannelName name =
@@ -1671,6 +1765,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   String name =
@@ -1706,6 +1802,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   VerifyNotificationChannelRequest request =
@@ -1737,6 +1835,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NotificationChannelServiceClient notificationChannelServiceClient =
    *     NotificationChannelServiceClient.create()) {
    *   VerifyNotificationChannelRequest request =

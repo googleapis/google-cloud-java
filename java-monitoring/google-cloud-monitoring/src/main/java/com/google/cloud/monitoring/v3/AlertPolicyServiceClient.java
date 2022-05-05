@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
  *   AlertPolicyName name =
  *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
@@ -96,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AlertPolicyServiceSettings alertPolicyServiceSettings =
  *     AlertPolicyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -107,6 +111,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AlertPolicyServiceSettings alertPolicyServiceSettings =
  *     AlertPolicyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AlertPolicyServiceClient alertPolicyServiceClient =
@@ -175,6 +181,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
@@ -207,6 +215,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
@@ -239,6 +249,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
@@ -271,6 +283,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
@@ -300,6 +314,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
@@ -329,6 +345,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
@@ -359,6 +377,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ListAlertPoliciesRequest request =
    *       ListAlertPoliciesRequest.newBuilder()
@@ -396,6 +416,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   AlertPolicyName name =
    *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
@@ -420,6 +442,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   String name =
    *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString();
@@ -443,6 +467,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   GetAlertPolicyRequest request =
    *       GetAlertPolicyRequest.newBuilder()
@@ -468,6 +494,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   GetAlertPolicyRequest request =
    *       GetAlertPolicyRequest.newBuilder()
@@ -493,6 +521,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
@@ -530,6 +560,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
@@ -567,6 +599,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
@@ -604,6 +638,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
@@ -638,6 +674,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   CreateAlertPolicyRequest request =
    *       CreateAlertPolicyRequest.newBuilder()
@@ -662,6 +700,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   CreateAlertPolicyRequest request =
    *       CreateAlertPolicyRequest.newBuilder()
@@ -686,6 +726,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   AlertPolicyName name =
    *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
@@ -713,6 +755,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   String name =
    *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString();
@@ -737,6 +781,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   DeleteAlertPolicyRequest request =
    *       DeleteAlertPolicyRequest.newBuilder()
@@ -762,6 +808,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   DeleteAlertPolicyRequest request =
    *       DeleteAlertPolicyRequest.newBuilder()
@@ -789,6 +837,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
@@ -834,6 +884,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   UpdateAlertPolicyRequest request =
    *       UpdateAlertPolicyRequest.newBuilder()
@@ -860,6 +912,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
    *   UpdateAlertPolicyRequest request =
    *       UpdateAlertPolicyRequest.newBuilder()

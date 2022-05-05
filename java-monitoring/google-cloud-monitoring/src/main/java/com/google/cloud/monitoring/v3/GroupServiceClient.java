@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
  *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
  *   Group response = groupServiceClient.getGroup(name);
@@ -99,6 +101,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GroupServiceSettings groupServiceSettings =
  *     GroupServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,6 +113,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GroupServiceSettings groupServiceSettings =
  *     GroupServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GroupServiceClient groupServiceClient = GroupServiceClient.create(groupServiceSettings);
@@ -175,6 +181,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
    *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
@@ -201,6 +209,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
    *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
@@ -227,6 +237,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
@@ -253,6 +265,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
    *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
@@ -278,6 +292,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
@@ -305,6 +321,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
@@ -331,6 +349,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupsRequest request =
    *       ListGroupsRequest.newBuilder()
@@ -364,6 +384,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   Group response = groupServiceClient.getGroup(name);
@@ -387,6 +409,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   String name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString();
    *   Group response = groupServiceClient.getGroup(name);
@@ -409,6 +433,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GetGroupRequest request =
    *       GetGroupRequest.newBuilder()
@@ -432,6 +458,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GetGroupRequest request =
    *       GetGroupRequest.newBuilder()
@@ -454,6 +482,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ResourceName name = ResourceName.of("[FOLDER]");
    *   Group group = Group.newBuilder().build();
@@ -484,6 +514,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
    *   Group group = Group.newBuilder().build();
@@ -514,6 +546,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
    *   Group group = Group.newBuilder().build();
@@ -544,6 +578,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
    *   Group group = Group.newBuilder().build();
@@ -571,6 +607,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   CreateGroupRequest request =
    *       CreateGroupRequest.newBuilder()
@@ -596,6 +634,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   CreateGroupRequest request =
    *       CreateGroupRequest.newBuilder()
@@ -620,6 +660,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   Group group = Group.newBuilder().build();
    *   Group response = groupServiceClient.updateGroup(group);
@@ -642,6 +684,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   UpdateGroupRequest request =
    *       UpdateGroupRequest.newBuilder()
@@ -666,6 +710,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   UpdateGroupRequest request =
    *       UpdateGroupRequest.newBuilder()
@@ -689,6 +735,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   groupServiceClient.deleteGroup(name);
@@ -712,6 +760,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   String name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString();
    *   groupServiceClient.deleteGroup(name);
@@ -734,6 +784,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   DeleteGroupRequest request =
    *       DeleteGroupRequest.newBuilder()
@@ -758,6 +810,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   DeleteGroupRequest request =
    *       DeleteGroupRequest.newBuilder()
@@ -781,6 +835,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAll()) {
@@ -806,6 +862,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   String name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]").toString();
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAll()) {
@@ -830,6 +888,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupMembersRequest request =
    *       ListGroupMembersRequest.newBuilder()
@@ -859,6 +919,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupMembersRequest request =
    *       ListGroupMembersRequest.newBuilder()
@@ -889,6 +951,8 @@ public class GroupServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
    *   ListGroupMembersRequest request =
    *       ListGroupMembersRequest.newBuilder()
