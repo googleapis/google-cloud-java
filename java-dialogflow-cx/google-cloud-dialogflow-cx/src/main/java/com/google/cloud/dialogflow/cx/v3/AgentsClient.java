@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AgentsClient agentsClient = AgentsClient.create()) {
  *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   Agent response = agentsClient.getAgent(name);
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AgentsSettings agentsSettings =
  *     AgentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AgentsClient agentsClient = AgentsClient.create(agentsSettings);
  * }</pre>
@@ -168,6 +174,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Agent element : agentsClient.listAgents(parent).iterateAll()) {
@@ -193,6 +201,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Agent element : agentsClient.listAgents(parent).iterateAll()) {
@@ -217,6 +227,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
@@ -244,6 +256,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
@@ -270,6 +284,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ListAgentsRequest request =
    *       ListAgentsRequest.newBuilder()
@@ -303,6 +319,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Agent response = agentsClient.getAgent(name);
@@ -326,6 +344,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   String name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Agent response = agentsClient.getAgent(name);
@@ -348,6 +368,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentRequest request =
    *       GetAgentRequest.newBuilder()
@@ -371,6 +393,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentRequest request =
    *       GetAgentRequest.newBuilder()
@@ -396,6 +420,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Agent agent = Agent.newBuilder().build();
@@ -427,6 +453,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Agent agent = Agent.newBuilder().build();
@@ -455,6 +483,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   CreateAgentRequest request =
    *       CreateAgentRequest.newBuilder()
@@ -482,6 +512,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   CreateAgentRequest request =
    *       CreateAgentRequest.newBuilder()
@@ -508,6 +540,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   Agent agent = Agent.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -536,6 +570,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   UpdateAgentRequest request =
    *       UpdateAgentRequest.newBuilder()
@@ -563,6 +599,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   UpdateAgentRequest request =
    *       UpdateAgentRequest.newBuilder()
@@ -586,6 +624,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   agentsClient.deleteAgent(name);
@@ -609,6 +649,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   String name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   agentsClient.deleteAgent(name);
@@ -631,6 +673,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   DeleteAgentRequest request =
    *       DeleteAgentRequest.newBuilder()
@@ -654,6 +698,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   DeleteAgentRequest request =
    *       DeleteAgentRequest.newBuilder()
@@ -684,6 +730,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
@@ -720,6 +768,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
@@ -756,6 +806,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ExportAgentRequest request =
    *       ExportAgentRequest.newBuilder()
@@ -797,6 +849,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
    *       RestoreAgentRequest.newBuilder()
@@ -835,6 +889,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
    *       RestoreAgentRequest.newBuilder()
@@ -874,6 +930,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   RestoreAgentRequest request =
    *       RestoreAgentRequest.newBuilder()
@@ -898,6 +956,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ValidateAgentRequest request =
    *       ValidateAgentRequest.newBuilder()
@@ -924,6 +984,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ValidateAgentRequest request =
    *       ValidateAgentRequest.newBuilder()
@@ -949,6 +1011,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   AgentValidationResultName name =
    *       AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
@@ -976,6 +1040,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   String name = AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   AgentValidationResult response = agentsClient.getAgentValidationResult(name);
@@ -1000,6 +1066,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentValidationResultRequest request =
    *       GetAgentValidationResultRequest.newBuilder()
@@ -1027,6 +1095,8 @@ public class AgentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   GetAgentValidationResultRequest request =
    *       GetAgentValidationResultRequest.newBuilder()

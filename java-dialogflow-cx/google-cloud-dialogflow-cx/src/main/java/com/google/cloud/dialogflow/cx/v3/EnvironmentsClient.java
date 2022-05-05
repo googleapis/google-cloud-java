@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
  *   EnvironmentName name =
  *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -85,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * EnvironmentsSettings environmentsSettings =
  *     EnvironmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * EnvironmentsSettings environmentsSettings =
  *     EnvironmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EnvironmentsClient environmentsClient = EnvironmentsClient.create(environmentsSettings);
@@ -173,6 +179,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
@@ -202,6 +210,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
@@ -229,6 +239,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -257,6 +269,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -286,6 +300,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListEnvironmentsRequest request =
    *       ListEnvironmentsRequest.newBuilder()
@@ -321,6 +337,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   EnvironmentName name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -346,6 +364,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -370,6 +390,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder()
@@ -395,6 +417,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder()
@@ -429,6 +453,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Environment environment = Environment.newBuilder().build();
@@ -468,6 +494,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Environment environment = Environment.newBuilder().build();
@@ -504,6 +532,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -538,6 +568,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -572,6 +604,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   CreateEnvironmentRequest request =
    *       CreateEnvironmentRequest.newBuilder()
@@ -604,6 +638,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   Environment environment = Environment.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -641,6 +677,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   UpdateEnvironmentRequest request =
    *       UpdateEnvironmentRequest.newBuilder()
@@ -674,6 +712,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   UpdateEnvironmentRequest request =
    *       UpdateEnvironmentRequest.newBuilder()
@@ -707,6 +747,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   UpdateEnvironmentRequest request =
    *       UpdateEnvironmentRequest.newBuilder()
@@ -731,6 +773,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   EnvironmentName name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -758,6 +802,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -782,6 +828,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   DeleteEnvironmentRequest request =
    *       DeleteEnvironmentRequest.newBuilder()
@@ -807,6 +855,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   DeleteEnvironmentRequest request =
    *       DeleteEnvironmentRequest.newBuilder()
@@ -831,6 +881,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   EnvironmentName name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -861,6 +913,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String name =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -888,6 +942,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   LookupEnvironmentHistoryRequest request =
    *       LookupEnvironmentHistoryRequest.newBuilder()
@@ -919,6 +975,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   LookupEnvironmentHistoryRequest request =
    *       LookupEnvironmentHistoryRequest.newBuilder()
@@ -949,6 +1007,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   LookupEnvironmentHistoryRequest request =
    *       LookupEnvironmentHistoryRequest.newBuilder()
@@ -996,6 +1056,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   RunContinuousTestRequest request =
    *       RunContinuousTestRequest.newBuilder()
@@ -1032,6 +1094,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   RunContinuousTestRequest request =
    *       RunContinuousTestRequest.newBuilder()
@@ -1069,6 +1133,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   RunContinuousTestRequest request =
    *       RunContinuousTestRequest.newBuilder()
@@ -1094,6 +1160,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   EnvironmentName parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -1125,6 +1193,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   String parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -1153,6 +1223,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
@@ -1184,6 +1256,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
@@ -1215,6 +1289,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   ListContinuousTestResultsRequest request =
    *       ListContinuousTestResultsRequest.newBuilder()
@@ -1259,6 +1335,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   DeployFlowRequest request =
    *       DeployFlowRequest.newBuilder()
@@ -1295,6 +1373,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   DeployFlowRequest request =
    *       DeployFlowRequest.newBuilder()
@@ -1331,6 +1411,8 @@ public class EnvironmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
    *   DeployFlowRequest request =
    *       DeployFlowRequest.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
  *   ChangelogName name = ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]");
  *   Changelog response = changelogsClient.getChangelog(name);
@@ -77,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ChangelogsSettings changelogsSettings =
  *     ChangelogsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -87,6 +91,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ChangelogsSettings changelogsSettings =
  *     ChangelogsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ChangelogsClient changelogsClient = ChangelogsClient.create(changelogsSettings);
@@ -153,6 +159,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   for (Changelog element : changelogsClient.listChangelogs(parent).iterateAll()) {
@@ -180,6 +188,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Changelog element : changelogsClient.listChangelogs(parent).iterateAll()) {
@@ -204,6 +214,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
@@ -232,6 +244,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
@@ -261,6 +275,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ListChangelogsRequest request =
    *       ListChangelogsRequest.newBuilder()
@@ -296,6 +312,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   ChangelogName name = ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]");
    *   Changelog response = changelogsClient.getChangelog(name);
@@ -320,6 +338,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   String name =
    *       ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]").toString();
@@ -344,6 +364,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   GetChangelogRequest request =
    *       GetChangelogRequest.newBuilder()
@@ -368,6 +390,8 @@ public class ChangelogsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
    *   GetChangelogRequest request =
    *       GetChangelogRequest.newBuilder()

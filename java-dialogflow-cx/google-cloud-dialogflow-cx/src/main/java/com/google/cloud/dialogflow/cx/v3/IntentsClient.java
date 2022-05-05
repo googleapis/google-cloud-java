@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * IntentsSettings intentsSettings =
  *     IntentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * IntentsSettings intentsSettings = IntentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * IntentsClient intentsClient = IntentsClient.create(intentsSettings);
  * }</pre>
@@ -152,6 +158,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
@@ -179,6 +187,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
@@ -203,6 +213,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
@@ -232,6 +244,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
@@ -261,6 +275,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ListIntentsRequest request =
    *       ListIntentsRequest.newBuilder()
@@ -296,6 +312,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
    *   Intent response = intentsClient.getIntent(name);
@@ -319,6 +337,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   String name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
    *   Intent response = intentsClient.getIntent(name);
@@ -341,6 +361,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   GetIntentRequest request =
    *       GetIntentRequest.newBuilder()
@@ -365,6 +387,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   GetIntentRequest request =
    *       GetIntentRequest.newBuilder()
@@ -391,6 +415,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Intent intent = Intent.newBuilder().build();
@@ -422,6 +448,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Intent intent = Intent.newBuilder().build();
@@ -450,6 +478,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
@@ -478,6 +508,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   CreateIntentRequest request =
    *       CreateIntentRequest.newBuilder()
@@ -505,6 +537,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   Intent intent = Intent.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -533,6 +567,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   UpdateIntentRequest request =
    *       UpdateIntentRequest.newBuilder()
@@ -561,6 +597,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   UpdateIntentRequest request =
    *       UpdateIntentRequest.newBuilder()
@@ -588,6 +626,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
    *   intentsClient.deleteIntent(name);
@@ -614,6 +654,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   String name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
    *   intentsClient.deleteIntent(name);
@@ -639,6 +681,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   DeleteIntentRequest request =
    *       DeleteIntentRequest.newBuilder()
@@ -665,6 +709,8 @@ public class IntentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   DeleteIntentRequest request =
    *       DeleteIntentRequest.newBuilder()

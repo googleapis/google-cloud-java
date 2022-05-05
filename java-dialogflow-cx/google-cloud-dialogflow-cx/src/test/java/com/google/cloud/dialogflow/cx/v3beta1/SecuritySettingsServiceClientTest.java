@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,7 @@ public class SecuritySettingsServiceClientTest {
             .setInspectTemplate("inspectTemplate-2053620050")
             .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setAudioExportSettings(SecuritySettings.AudioExportSettings.newBuilder().build())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -142,6 +143,7 @@ public class SecuritySettingsServiceClientTest {
             .setInspectTemplate("inspectTemplate-2053620050")
             .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setAudioExportSettings(SecuritySettings.AudioExportSettings.newBuilder().build())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -191,6 +193,7 @@ public class SecuritySettingsServiceClientTest {
             .setInspectTemplate("inspectTemplate-2053620050")
             .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setAudioExportSettings(SecuritySettings.AudioExportSettings.newBuilder().build())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -238,6 +241,7 @@ public class SecuritySettingsServiceClientTest {
             .setInspectTemplate("inspectTemplate-2053620050")
             .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setAudioExportSettings(SecuritySettings.AudioExportSettings.newBuilder().build())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -283,6 +287,7 @@ public class SecuritySettingsServiceClientTest {
             .setInspectTemplate("inspectTemplate-2053620050")
             .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setAudioExportSettings(SecuritySettings.AudioExportSettings.newBuilder().build())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
  * <p>Sample for AgentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AgentsClient agentsClient = AgentsClient.create()) {
  *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   Agent response = agentsClient.getAgent(name);
@@ -40,6 +42,8 @@
  * <p>Sample for ChangelogsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
  *   ChangelogName name = ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]");
  *   Changelog response = changelogsClient.getChangelog(name);
@@ -54,6 +58,8 @@
  * <p>Sample for DeploymentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
  *   DeploymentName name =
  *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]");
@@ -69,6 +75,8 @@
  * <p>Sample for EntityTypesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name =
  *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
@@ -84,6 +92,8 @@
  * <p>Sample for EnvironmentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
  *   EnvironmentName name =
  *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -99,6 +109,8 @@
  * <p>Sample for ExperimentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
  *   ExperimentName name =
  *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -113,6 +125,8 @@
  * <p>Sample for FlowsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FlowsClient flowsClient = FlowsClient.create()) {
  *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   Flow flow = Flow.newBuilder().build();
@@ -127,6 +141,8 @@
  * <p>Sample for IntentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
@@ -140,6 +156,8 @@
  * <p>Sample for PagesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PagesClient pagesClient = PagesClient.create()) {
  *   PageName name = PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
  *   Page response = pagesClient.getPage(name);
@@ -153,6 +171,8 @@
  * <p>Sample for SecuritySettingsServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SecuritySettingsServiceClient securitySettingsServiceClient =
  *     SecuritySettingsServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -171,6 +191,8 @@
  * <p>Sample for SessionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
  *   DetectIntentRequest request =
  *       DetectIntentRequest.newBuilder()
@@ -194,6 +216,8 @@
  * <p>Sample for SessionEntityTypesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name =
  *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -210,6 +234,8 @@
  * <p>Sample for TestCasesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
  *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   testCasesClient.batchDeleteTestCases(parent);
@@ -224,6 +250,8 @@
  * <p>Sample for TransitionRouteGroupsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TransitionRouteGroupsClient transitionRouteGroupsClient =
  *     TransitionRouteGroupsClient.create()) {
  *   TransitionRouteGroupName name =
@@ -240,6 +268,8 @@
  * <p>Sample for VersionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VersionsClient versionsClient = VersionsClient.create()) {
  *   VersionName name =
  *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
@@ -254,6 +284,8 @@
  * <p>Sample for WebhooksClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
  *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
  *   Webhook response = webhooksClient.getWebhook(name);

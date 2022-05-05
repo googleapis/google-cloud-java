@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SecuritySettingsServiceClient securitySettingsServiceClient =
  *     SecuritySettingsServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecuritySettingsServiceSettings securitySettingsServiceSettings =
  *     SecuritySettingsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecuritySettingsServiceSettings securitySettingsServiceSettings =
  *     SecuritySettingsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SecuritySettingsServiceClient securitySettingsServiceClient =
@@ -163,6 +169,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -195,6 +203,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -227,6 +237,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   CreateSecuritySettingsRequest request =
@@ -252,6 +264,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   CreateSecuritySettingsRequest request =
@@ -280,6 +294,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   SecuritySettingsName name =
@@ -309,6 +325,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   String name =
@@ -336,6 +354,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   GetSecuritySettingsRequest request =
@@ -364,6 +384,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   GetSecuritySettingsRequest request =
@@ -391,6 +413,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
@@ -423,6 +447,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   UpdateSecuritySettingsRequest request =
@@ -448,6 +474,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   UpdateSecuritySettingsRequest request =
@@ -474,6 +502,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -503,6 +533,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -530,6 +562,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
@@ -560,6 +594,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
@@ -589,6 +625,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   ListSecuritySettingsRequest request =
@@ -625,6 +663,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   SecuritySettingsName name =
@@ -654,6 +694,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   String name =
@@ -681,6 +723,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   DeleteSecuritySettingsRequest request =
@@ -707,6 +751,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecuritySettingsServiceClient securitySettingsServiceClient =
    *     SecuritySettingsServiceClient.create()) {
    *   DeleteSecuritySettingsRequest request =

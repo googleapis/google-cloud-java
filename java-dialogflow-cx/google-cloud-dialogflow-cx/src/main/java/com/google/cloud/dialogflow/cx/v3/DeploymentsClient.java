@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
  *   DeploymentName name =
  *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]");
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DeploymentsSettings deploymentsSettings =
  *     DeploymentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DeploymentsSettings deploymentsSettings =
  *     DeploymentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DeploymentsClient deploymentsClient = DeploymentsClient.create(deploymentsSettings);
@@ -155,6 +161,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   EnvironmentName parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -185,6 +193,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   String parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -212,6 +222,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
@@ -242,6 +254,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
@@ -273,6 +287,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   ListDeploymentsRequest request =
    *       ListDeploymentsRequest.newBuilder()
@@ -310,6 +326,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   DeploymentName name =
    *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]");
@@ -335,6 +353,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   String name =
    *       DeploymentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[DEPLOYMENT]")
@@ -360,6 +380,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   GetDeploymentRequest request =
    *       GetDeploymentRequest.newBuilder()
@@ -386,6 +408,8 @@ public class DeploymentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DeploymentsClient deploymentsClient = DeploymentsClient.create()) {
    *   GetDeploymentRequest request =
    *       GetDeploymentRequest.newBuilder()

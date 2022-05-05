@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
  *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
  *   Webhook response = webhooksClient.getWebhook(name);
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WebhooksSettings webhooksSettings =
  *     WebhooksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WebhooksSettings webhooksSettings =
  *     WebhooksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WebhooksClient webhooksClient = WebhooksClient.create(webhooksSettings);
@@ -153,6 +159,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   for (Webhook element : webhooksClient.listWebhooks(parent).iterateAll()) {
@@ -180,6 +188,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Webhook element : webhooksClient.listWebhooks(parent).iterateAll()) {
@@ -204,6 +214,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
@@ -231,6 +243,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
@@ -258,6 +272,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   ListWebhooksRequest request =
    *       ListWebhooksRequest.newBuilder()
@@ -291,6 +307,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
    *   Webhook response = webhooksClient.getWebhook(name);
@@ -314,6 +332,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   String name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
    *   Webhook response = webhooksClient.getWebhook(name);
@@ -336,6 +356,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   GetWebhookRequest request =
    *       GetWebhookRequest.newBuilder()
@@ -359,6 +381,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   GetWebhookRequest request =
    *       GetWebhookRequest.newBuilder()
@@ -381,6 +405,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Webhook webhook = Webhook.newBuilder().build();
@@ -409,6 +435,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Webhook webhook = Webhook.newBuilder().build();
@@ -434,6 +462,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   CreateWebhookRequest request =
    *       CreateWebhookRequest.newBuilder()
@@ -458,6 +488,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   CreateWebhookRequest request =
    *       CreateWebhookRequest.newBuilder()
@@ -481,6 +513,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   Webhook webhook = Webhook.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -506,6 +540,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   UpdateWebhookRequest request =
    *       UpdateWebhookRequest.newBuilder()
@@ -530,6 +566,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   UpdateWebhookRequest request =
    *       UpdateWebhookRequest.newBuilder()
@@ -553,6 +591,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
    *   webhooksClient.deleteWebhook(name);
@@ -576,6 +616,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   String name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
    *   webhooksClient.deleteWebhook(name);
@@ -598,6 +640,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   DeleteWebhookRequest request =
    *       DeleteWebhookRequest.newBuilder()
@@ -622,6 +666,8 @@ public class WebhooksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
    *   DeleteWebhookRequest request =
    *       DeleteWebhookRequest.newBuilder()

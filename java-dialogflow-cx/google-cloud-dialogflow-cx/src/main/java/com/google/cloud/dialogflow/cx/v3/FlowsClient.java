@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FlowsClient flowsClient = FlowsClient.create()) {
  *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   Flow flow = Flow.newBuilder().build();
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FlowsSettings flowsSettings =
  *     FlowsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FlowsSettings flowsSettings = FlowsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FlowsClient flowsClient = FlowsClient.create(flowsSettings);
  * }</pre>
@@ -172,6 +178,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Flow flow = Flow.newBuilder().build();
@@ -203,6 +211,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Flow flow = Flow.newBuilder().build();
@@ -231,6 +241,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   CreateFlowRequest request =
    *       CreateFlowRequest.newBuilder()
@@ -259,6 +271,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   CreateFlowRequest request =
    *       CreateFlowRequest.newBuilder()
@@ -283,6 +297,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
    *   flowsClient.deleteFlow(name);
@@ -306,6 +322,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   flowsClient.deleteFlow(name);
@@ -328,6 +346,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   DeleteFlowRequest request =
    *       DeleteFlowRequest.newBuilder()
@@ -352,6 +372,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   DeleteFlowRequest request =
    *       DeleteFlowRequest.newBuilder()
@@ -375,6 +397,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   for (Flow element : flowsClient.listFlows(parent).iterateAll()) {
@@ -400,6 +424,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   for (Flow element : flowsClient.listFlows(parent).iterateAll()) {
@@ -424,6 +450,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
@@ -452,6 +480,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
@@ -479,6 +509,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ListFlowsRequest request =
    *       ListFlowsRequest.newBuilder()
@@ -513,6 +545,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
    *   Flow response = flowsClient.getFlow(name);
@@ -536,6 +570,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   Flow response = flowsClient.getFlow(name);
@@ -558,6 +594,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   GetFlowRequest request =
    *       GetFlowRequest.newBuilder()
@@ -582,6 +620,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   GetFlowRequest request =
    *       GetFlowRequest.newBuilder()
@@ -608,6 +648,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   Flow flow = Flow.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -636,6 +678,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   UpdateFlowRequest request =
    *       UpdateFlowRequest.newBuilder()
@@ -664,6 +708,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   UpdateFlowRequest request =
    *       UpdateFlowRequest.newBuilder()
@@ -700,6 +746,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   FlowName name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
    *   flowsClient.trainFlowAsync(name).get();
@@ -735,6 +783,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String name = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
    *   flowsClient.trainFlowAsync(name).get();
@@ -769,6 +819,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   TrainFlowRequest request =
    *       TrainFlowRequest.newBuilder()
@@ -804,6 +856,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   TrainFlowRequest request =
    *       TrainFlowRequest.newBuilder()
@@ -839,6 +893,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   TrainFlowRequest request =
    *       TrainFlowRequest.newBuilder()
@@ -862,6 +918,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ValidateFlowRequest request =
    *       ValidateFlowRequest.newBuilder()
@@ -887,6 +945,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ValidateFlowRequest request =
    *       ValidateFlowRequest.newBuilder()
@@ -912,6 +972,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   FlowValidationResultName name =
    *       FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
@@ -940,6 +1002,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   String name =
    *       FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString();
@@ -966,6 +1030,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   GetFlowValidationResultRequest request =
    *       GetFlowValidationResultRequest.newBuilder()
@@ -994,6 +1060,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   GetFlowValidationResultRequest request =
    *       GetFlowValidationResultRequest.newBuilder()
@@ -1032,6 +1100,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
@@ -1067,6 +1137,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
@@ -1102,6 +1174,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ImportFlowRequest request =
    *       ImportFlowRequest.newBuilder()
@@ -1135,6 +1209,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ExportFlowRequest request =
    *       ExportFlowRequest.newBuilder()
@@ -1172,6 +1248,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ExportFlowRequest request =
    *       ExportFlowRequest.newBuilder()
@@ -1209,6 +1287,8 @@ public class FlowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FlowsClient flowsClient = FlowsClient.create()) {
    *   ExportFlowRequest request =
    *       ExportFlowRequest.newBuilder()

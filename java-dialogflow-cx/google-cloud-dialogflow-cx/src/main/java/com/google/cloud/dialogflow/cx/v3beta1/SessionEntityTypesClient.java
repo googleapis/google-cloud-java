@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name =
  *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SessionEntityTypesSettings sessionEntityTypesSettings =
  *     SessionEntityTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SessionEntityTypesSettings sessionEntityTypesSettings =
  *     SessionEntityTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SessionEntityTypesClient sessionEntityTypesClient =
@@ -162,6 +168,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionName parent =
    *       SessionName.ofProjectLocationAgentSessionName(
@@ -195,6 +203,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String parent =
    *       SessionName.ofProjectLocationAgentSessionName(
@@ -227,6 +237,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
@@ -259,6 +271,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
@@ -290,6 +304,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   ListSessionEntityTypesRequest request =
    *       ListSessionEntityTypesRequest.newBuilder()
@@ -328,6 +344,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionEntityTypeName name =
    *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -359,6 +377,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String name =
    *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -389,6 +409,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   GetSessionEntityTypeRequest request =
    *       GetSessionEntityTypeRequest.newBuilder()
@@ -415,6 +437,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   GetSessionEntityTypeRequest request =
    *       GetSessionEntityTypeRequest.newBuilder()
@@ -442,6 +466,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionName parent =
    *       SessionName.ofProjectLocationAgentSessionName(
@@ -477,6 +503,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String parent =
    *       SessionName.ofProjectLocationAgentSessionName(
@@ -513,6 +541,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
@@ -540,6 +570,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   CreateSessionEntityTypeRequest request =
    *       CreateSessionEntityTypeRequest.newBuilder()
@@ -568,6 +600,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionEntityType sessionEntityType = SessionEntityType.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -603,6 +637,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   UpdateSessionEntityTypeRequest request =
    *       UpdateSessionEntityTypeRequest.newBuilder()
@@ -627,6 +663,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   UpdateSessionEntityTypeRequest request =
    *       UpdateSessionEntityTypeRequest.newBuilder()
@@ -652,6 +690,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   SessionEntityTypeName name =
    *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -684,6 +724,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   String name =
    *       SessionEntityTypeName.ofProjectLocationAgentSessionEntityTypeName(
@@ -715,6 +757,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   DeleteSessionEntityTypeRequest request =
    *       DeleteSessionEntityTypeRequest.newBuilder()
@@ -741,6 +785,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
    *   DeleteSessionEntityTypeRequest request =
    *       DeleteSessionEntityTypeRequest.newBuilder()

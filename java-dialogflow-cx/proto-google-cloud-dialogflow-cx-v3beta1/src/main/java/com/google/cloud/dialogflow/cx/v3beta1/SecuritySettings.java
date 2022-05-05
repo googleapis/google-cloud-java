@@ -145,6 +145,25 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
               inspectTemplate_ = s;
               break;
             }
+          case 98:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder
+                  subBuilder = null;
+              if (audioExportSettings_ != null) {
+                subBuilder = audioExportSettings_.toBuilder();
+              }
+              audioExportSettings_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(audioExportSettings_);
+                audioExportSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 106:
             {
               com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings.Builder
@@ -628,6 +647,1427 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.PurgeDataType)
+  }
+
+  public interface AudioExportSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket to export audio record to. You need to grant
+     * `service-&lt;Conversation Project
+     * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+     * Admin` role in this bucket.
+     * </pre>
+     *
+     * <code>string gcs_bucket = 1;</code>
+     *
+     * @return The gcsBucket.
+     */
+    java.lang.String getGcsBucket();
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket to export audio record to. You need to grant
+     * `service-&lt;Conversation Project
+     * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+     * Admin` role in this bucket.
+     * </pre>
+     *
+     * <code>string gcs_bucket = 1;</code>
+     *
+     * @return The bytes for gcsBucket.
+     */
+    com.google.protobuf.ByteString getGcsBucketBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Filename pattern for exported audio.
+     * </pre>
+     *
+     * <code>string audio_export_pattern = 2;</code>
+     *
+     * @return The audioExportPattern.
+     */
+    java.lang.String getAudioExportPattern();
+    /**
+     *
+     *
+     * <pre>
+     * Filename pattern for exported audio.
+     * </pre>
+     *
+     * <code>string audio_export_pattern = 2;</code>
+     *
+     * @return The bytes for audioExportPattern.
+     */
+    com.google.protobuf.ByteString getAudioExportPatternBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Enable audio redaction if it is true.
+     * </pre>
+     *
+     * <code>bool enable_audio_redaction = 3;</code>
+     *
+     * @return The enableAudioRedaction.
+     */
+    boolean getEnableAudioRedaction();
+
+    /**
+     *
+     *
+     * <pre>
+     * File format for exported audio file. Currently only in telephony
+     * recordings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for audioFormat.
+     */
+    int getAudioFormatValue();
+    /**
+     *
+     *
+     * <pre>
+     * File format for exported audio file. Currently only in telephony
+     * recordings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+     * </code>
+     *
+     * @return The audioFormat.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+        getAudioFormat();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for exporting audio.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings}
+   */
+  public static final class AudioExportSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+      AudioExportSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AudioExportSettings.newBuilder() to construct.
+    private AudioExportSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AudioExportSettings() {
+      gcsBucket_ = "";
+      audioExportPattern_ = "";
+      audioFormat_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AudioExportSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private AudioExportSettings(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                gcsBucket_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                audioExportPattern_ = s;
+                break;
+              }
+            case 24:
+              {
+                enableAudioRedaction_ = input.readBool();
+                break;
+              }
+            case 32:
+              {
+                int rawValue = input.readEnum();
+
+                audioFormat_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_AudioExportSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_AudioExportSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File format for exported audio file. Currently only in telephony
+     * recordings.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat}
+     */
+    public enum AudioFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified. Do not use.
+       * </pre>
+       *
+       * <code>AUDIO_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      AUDIO_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * G.711 mu-law PCM with 8kHz sample rate.
+       * </pre>
+       *
+       * <code>MULAW = 1;</code>
+       */
+      MULAW(1),
+      /**
+       *
+       *
+       * <pre>
+       * MP3 file format.
+       * </pre>
+       *
+       * <code>MP3 = 2;</code>
+       */
+      MP3(2),
+      /**
+       *
+       *
+       * <pre>
+       * OGG Vorbis.
+       * </pre>
+       *
+       * <code>OGG = 3;</code>
+       */
+      OGG(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified. Do not use.
+       * </pre>
+       *
+       * <code>AUDIO_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int AUDIO_FORMAT_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * G.711 mu-law PCM with 8kHz sample rate.
+       * </pre>
+       *
+       * <code>MULAW = 1;</code>
+       */
+      public static final int MULAW_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * MP3 file format.
+       * </pre>
+       *
+       * <code>MP3 = 2;</code>
+       */
+      public static final int MP3_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * OGG Vorbis.
+       * </pre>
+       *
+       * <code>OGG = 3;</code>
+       */
+      public static final int OGG_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AudioFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AudioFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return AUDIO_FORMAT_UNSPECIFIED;
+          case 1:
+            return MULAW;
+          case 2:
+            return MP3;
+          case 3:
+            return OGG;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AudioFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<AudioFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AudioFormat>() {
+            public AudioFormat findValueByNumber(int number) {
+              return AudioFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final AudioFormat[] VALUES = values();
+
+      public static AudioFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AudioFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat)
+    }
+
+    public static final int GCS_BUCKET_FIELD_NUMBER = 1;
+    private volatile java.lang.Object gcsBucket_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket to export audio record to. You need to grant
+     * `service-&lt;Conversation Project
+     * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+     * Admin` role in this bucket.
+     * </pre>
+     *
+     * <code>string gcs_bucket = 1;</code>
+     *
+     * @return The gcsBucket.
+     */
+    @java.lang.Override
+    public java.lang.String getGcsBucket() {
+      java.lang.Object ref = gcsBucket_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gcsBucket_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage bucket to export audio record to. You need to grant
+     * `service-&lt;Conversation Project
+     * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+     * Admin` role in this bucket.
+     * </pre>
+     *
+     * <code>string gcs_bucket = 1;</code>
+     *
+     * @return The bytes for gcsBucket.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGcsBucketBytes() {
+      java.lang.Object ref = gcsBucket_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gcsBucket_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUDIO_EXPORT_PATTERN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object audioExportPattern_;
+    /**
+     *
+     *
+     * <pre>
+     * Filename pattern for exported audio.
+     * </pre>
+     *
+     * <code>string audio_export_pattern = 2;</code>
+     *
+     * @return The audioExportPattern.
+     */
+    @java.lang.Override
+    public java.lang.String getAudioExportPattern() {
+      java.lang.Object ref = audioExportPattern_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        audioExportPattern_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filename pattern for exported audio.
+     * </pre>
+     *
+     * <code>string audio_export_pattern = 2;</code>
+     *
+     * @return The bytes for audioExportPattern.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAudioExportPatternBytes() {
+      java.lang.Object ref = audioExportPattern_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        audioExportPattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENABLE_AUDIO_REDACTION_FIELD_NUMBER = 3;
+    private boolean enableAudioRedaction_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable audio redaction if it is true.
+     * </pre>
+     *
+     * <code>bool enable_audio_redaction = 3;</code>
+     *
+     * @return The enableAudioRedaction.
+     */
+    @java.lang.Override
+    public boolean getEnableAudioRedaction() {
+      return enableAudioRedaction_;
+    }
+
+    public static final int AUDIO_FORMAT_FIELD_NUMBER = 4;
+    private int audioFormat_;
+    /**
+     *
+     *
+     * <pre>
+     * File format for exported audio file. Currently only in telephony
+     * recordings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for audioFormat.
+     */
+    @java.lang.Override
+    public int getAudioFormatValue() {
+      return audioFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File format for exported audio file. Currently only in telephony
+     * recordings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+     * </code>
+     *
+     * @return The audioFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+        getAudioFormat() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+          result =
+              com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                  .AudioFormat.valueOf(audioFormat_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsBucket_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsBucket_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioExportPattern_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, audioExportPattern_);
+      }
+      if (enableAudioRedaction_ != false) {
+        output.writeBool(3, enableAudioRedaction_);
+      }
+      if (audioFormat_
+          != com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+              .AUDIO_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, audioFormat_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsBucket_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsBucket_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioExportPattern_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, audioExportPattern_);
+      }
+      if (enableAudioRedaction_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableAudioRedaction_);
+      }
+      if (audioFormat_
+          != com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+              .AUDIO_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, audioFormat_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings) obj;
+
+      if (!getGcsBucket().equals(other.getGcsBucket())) return false;
+      if (!getAudioExportPattern().equals(other.getAudioExportPattern())) return false;
+      if (getEnableAudioRedaction() != other.getEnableAudioRedaction()) return false;
+      if (audioFormat_ != other.audioFormat_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GCS_BUCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getGcsBucket().hashCode();
+      hash = (37 * hash) + AUDIO_EXPORT_PATTERN_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioExportPattern().hashCode();
+      hash = (37 * hash) + ENABLE_AUDIO_REDACTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAudioRedaction());
+      hash = (37 * hash) + AUDIO_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + audioFormat_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for exporting audio.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_AudioExportSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_AudioExportSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        gcsBucket_ = "";
+
+        audioExportPattern_ = "";
+
+        enableAudioRedaction_ = false;
+
+        audioFormat_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_AudioExportSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings(this);
+        result.gcsBucket_ = gcsBucket_;
+        result.audioExportPattern_ = audioExportPattern_;
+        result.enableAudioRedaction_ = enableAudioRedaction_;
+        result.audioFormat_ = audioFormat_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                .getDefaultInstance()) return this;
+        if (!other.getGcsBucket().isEmpty()) {
+          gcsBucket_ = other.gcsBucket_;
+          onChanged();
+        }
+        if (!other.getAudioExportPattern().isEmpty()) {
+          audioExportPattern_ = other.audioExportPattern_;
+          onChanged();
+        }
+        if (other.getEnableAudioRedaction() != false) {
+          setEnableAudioRedaction(other.getEnableAudioRedaction());
+        }
+        if (other.audioFormat_ != 0) {
+          setAudioFormatValue(other.getAudioFormatValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object gcsBucket_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Storage bucket to export audio record to. You need to grant
+       * `service-&lt;Conversation Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+       * Admin` role in this bucket.
+       * </pre>
+       *
+       * <code>string gcs_bucket = 1;</code>
+       *
+       * @return The gcsBucket.
+       */
+      public java.lang.String getGcsBucket() {
+        java.lang.Object ref = gcsBucket_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcsBucket_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Storage bucket to export audio record to. You need to grant
+       * `service-&lt;Conversation Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+       * Admin` role in this bucket.
+       * </pre>
+       *
+       * <code>string gcs_bucket = 1;</code>
+       *
+       * @return The bytes for gcsBucket.
+       */
+      public com.google.protobuf.ByteString getGcsBucketBytes() {
+        java.lang.Object ref = gcsBucket_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcsBucket_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Storage bucket to export audio record to. You need to grant
+       * `service-&lt;Conversation Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+       * Admin` role in this bucket.
+       * </pre>
+       *
+       * <code>string gcs_bucket = 1;</code>
+       *
+       * @param value The gcsBucket to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcsBucket(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        gcsBucket_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Storage bucket to export audio record to. You need to grant
+       * `service-&lt;Conversation Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+       * Admin` role in this bucket.
+       * </pre>
+       *
+       * <code>string gcs_bucket = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGcsBucket() {
+
+        gcsBucket_ = getDefaultInstance().getGcsBucket();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Storage bucket to export audio record to. You need to grant
+       * `service-&lt;Conversation Project
+       * Number&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com` the `Storage Object
+       * Admin` role in this bucket.
+       * </pre>
+       *
+       * <code>string gcs_bucket = 1;</code>
+       *
+       * @param value The bytes for gcsBucket to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcsBucketBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        gcsBucket_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object audioExportPattern_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Filename pattern for exported audio.
+       * </pre>
+       *
+       * <code>string audio_export_pattern = 2;</code>
+       *
+       * @return The audioExportPattern.
+       */
+      public java.lang.String getAudioExportPattern() {
+        java.lang.Object ref = audioExportPattern_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          audioExportPattern_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Filename pattern for exported audio.
+       * </pre>
+       *
+       * <code>string audio_export_pattern = 2;</code>
+       *
+       * @return The bytes for audioExportPattern.
+       */
+      public com.google.protobuf.ByteString getAudioExportPatternBytes() {
+        java.lang.Object ref = audioExportPattern_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          audioExportPattern_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Filename pattern for exported audio.
+       * </pre>
+       *
+       * <code>string audio_export_pattern = 2;</code>
+       *
+       * @param value The audioExportPattern to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioExportPattern(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        audioExportPattern_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Filename pattern for exported audio.
+       * </pre>
+       *
+       * <code>string audio_export_pattern = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioExportPattern() {
+
+        audioExportPattern_ = getDefaultInstance().getAudioExportPattern();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Filename pattern for exported audio.
+       * </pre>
+       *
+       * <code>string audio_export_pattern = 2;</code>
+       *
+       * @param value The bytes for audioExportPattern to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioExportPatternBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        audioExportPattern_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableAudioRedaction_;
+      /**
+       *
+       *
+       * <pre>
+       * Enable audio redaction if it is true.
+       * </pre>
+       *
+       * <code>bool enable_audio_redaction = 3;</code>
+       *
+       * @return The enableAudioRedaction.
+       */
+      @java.lang.Override
+      public boolean getEnableAudioRedaction() {
+        return enableAudioRedaction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enable audio redaction if it is true.
+       * </pre>
+       *
+       * <code>bool enable_audio_redaction = 3;</code>
+       *
+       * @param value The enableAudioRedaction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableAudioRedaction(boolean value) {
+
+        enableAudioRedaction_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Enable audio redaction if it is true.
+       * </pre>
+       *
+       * <code>bool enable_audio_redaction = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableAudioRedaction() {
+
+        enableAudioRedaction_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int audioFormat_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * File format for exported audio file. Currently only in telephony
+       * recordings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for audioFormat.
+       */
+      @java.lang.Override
+      public int getAudioFormatValue() {
+        return audioFormat_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * File format for exported audio file. Currently only in telephony
+       * recordings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for audioFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioFormatValue(int value) {
+
+        audioFormat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * File format for exported audio file. Currently only in telephony
+       * recordings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+       * </code>
+       *
+       * @return The audioFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+          getAudioFormat() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+            result =
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                    .AudioFormat.valueOf(audioFormat_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                .AudioFormat.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * File format for exported audio file. Currently only in telephony
+       * recordings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+       * </code>
+       *
+       * @param value The audioFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAudioFormat(
+          com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        audioFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * File format for exported audio file. Currently only in telephony
+       * recordings.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.AudioFormat audio_format = 4;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAudioFormat() {
+
+        audioFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AudioExportSettings> PARSER =
+        new com.google.protobuf.AbstractParser<AudioExportSettings>() {
+          @java.lang.Override
+          public AudioExportSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AudioExportSettings(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<AudioExportSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AudioExportSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface InsightsExportSettingsOrBuilder
@@ -1778,6 +3218,91 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
   private int purgeDataTypesMemoizedSerializedSize;
 
+  public static final int AUDIO_EXPORT_SETTINGS_FIELD_NUMBER = 12;
+  private com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+      audioExportSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   *
+   * @return Whether the audioExportSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioExportSettings() {
+    return audioExportSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   *
+   * @return The audioExportSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+      getAudioExportSettings() {
+    return audioExportSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+            .getDefaultInstance()
+        : audioExportSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Controls audio export settings for post-conversation analytics when
+   * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+   * [Participants.StreamingAnalyzeContent][].
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+   * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+   * If audio export is enabled, audio is recorded and saved to
+   * [audio_export_settings.gcs_bucket][], subject to retention policy of
+   * [audio_export_settings.gcs_bucket][].
+   * This setting won't effect audio input for implicit sessions via
+   * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettingsOrBuilder
+      getAudioExportSettingsOrBuilder() {
+    return getAudioExportSettings();
+  }
+
   public static final int INSIGHTS_EXPORT_SETTINGS_FIELD_NUMBER = 13;
   private com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings
       insightsExportSettings_;
@@ -1891,6 +3416,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, inspectTemplate_);
     }
+    if (audioExportSettings_ != null) {
+      output.writeMessage(12, getAudioExportSettings());
+    }
     if (insightsExportSettings_ != null) {
       output.writeMessage(13, getInsightsExportSettings());
     }
@@ -1945,6 +3473,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, inspectTemplate_);
     }
+    if (audioExportSettings_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getAudioExportSettings());
+    }
     if (insightsExportSettings_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getInsightsExportSettings());
@@ -1975,6 +3507,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (!getInspectTemplate().equals(other.getInspectTemplate())) return false;
     if (!getDeidentifyTemplate().equals(other.getDeidentifyTemplate())) return false;
     if (!purgeDataTypes_.equals(other.purgeDataTypes_)) return false;
+    if (hasAudioExportSettings() != other.hasAudioExportSettings()) return false;
+    if (hasAudioExportSettings()) {
+      if (!getAudioExportSettings().equals(other.getAudioExportSettings())) return false;
+    }
     if (hasInsightsExportSettings() != other.hasInsightsExportSettings()) return false;
     if (hasInsightsExportSettings()) {
       if (!getInsightsExportSettings().equals(other.getInsightsExportSettings())) return false;
@@ -2013,6 +3549,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (getPurgeDataTypesCount() > 0) {
       hash = (37 * hash) + PURGE_DATA_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + purgeDataTypes_.hashCode();
+    }
+    if (hasAudioExportSettings()) {
+      hash = (37 * hash) + AUDIO_EXPORT_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioExportSettings().hashCode();
     }
     if (hasInsightsExportSettings()) {
       hash = (37 * hash) + INSIGHTS_EXPORT_SETTINGS_FIELD_NUMBER;
@@ -2188,6 +3728,12 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
 
       purgeDataTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (audioExportSettingsBuilder_ == null) {
+        audioExportSettings_ = null;
+      } else {
+        audioExportSettings_ = null;
+        audioExportSettingsBuilder_ = null;
+      }
       if (insightsExportSettingsBuilder_ == null) {
         insightsExportSettings_ = null;
       } else {
@@ -2238,6 +3784,11 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.purgeDataTypes_ = purgeDataTypes_;
+      if (audioExportSettingsBuilder_ == null) {
+        result.audioExportSettings_ = audioExportSettings_;
+      } else {
+        result.audioExportSettings_ = audioExportSettingsBuilder_.build();
+      }
       if (insightsExportSettingsBuilder_ == null) {
         result.insightsExportSettings_ = insightsExportSettings_;
       } else {
@@ -2325,6 +3876,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
           purgeDataTypes_.addAll(other.purgeDataTypes_);
         }
         onChanged();
+      }
+      if (other.hasAudioExportSettings()) {
+        mergeAudioExportSettings(other.getAudioExportSettings());
       }
       if (other.hasInsightsExportSettings()) {
         mergeInsightsExportSettings(other.getInsightsExportSettings());
@@ -3532,6 +5086,302 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        audioExportSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettingsOrBuilder>
+        audioExportSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     *
+     * @return Whether the audioExportSettings field is set.
+     */
+    public boolean hasAudioExportSettings() {
+      return audioExportSettingsBuilder_ != null || audioExportSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     *
+     * @return The audioExportSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+        getAudioExportSettings() {
+      if (audioExportSettingsBuilder_ == null) {
+        return audioExportSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                .getDefaultInstance()
+            : audioExportSettings_;
+      } else {
+        return audioExportSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public Builder setAudioExportSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings value) {
+      if (audioExportSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audioExportSettings_ = value;
+        onChanged();
+      } else {
+        audioExportSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public Builder setAudioExportSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder
+            builderForValue) {
+      if (audioExportSettingsBuilder_ == null) {
+        audioExportSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioExportSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public Builder mergeAudioExportSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings value) {
+      if (audioExportSettingsBuilder_ == null) {
+        if (audioExportSettings_ != null) {
+          audioExportSettings_ =
+              com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                  .newBuilder(audioExportSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          audioExportSettings_ = value;
+        }
+        onChanged();
+      } else {
+        audioExportSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public Builder clearAudioExportSettings() {
+      if (audioExportSettingsBuilder_ == null) {
+        audioExportSettings_ = null;
+        onChanged();
+      } else {
+        audioExportSettings_ = null;
+        audioExportSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder
+        getAudioExportSettingsBuilder() {
+
+      onChanged();
+      return getAudioExportSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettingsOrBuilder
+        getAudioExportSettingsOrBuilder() {
+      if (audioExportSettingsBuilder_ != null) {
+        return audioExportSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return audioExportSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings
+                .getDefaultInstance()
+            : audioExportSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Controls audio export settings for post-conversation analytics when
+     * ingesting audio to conversations via [Participants.AnalyzeContent][] or
+     * [Participants.StreamingAnalyzeContent][].
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION or
+     * [audio_export_settings.gcs_bucket][] is empty, audio export is disabled.
+     * If audio export is enabled, audio is recorded and saved to
+     * [audio_export_settings.gcs_bucket][], subject to retention policy of
+     * [audio_export_settings.gcs_bucket][].
+     * This setting won't effect audio input for implicit sessions via
+     * [Sessions.DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] or [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings audio_export_settings = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettingsOrBuilder>
+        getAudioExportSettingsFieldBuilder() {
+      if (audioExportSettingsBuilder_ == null) {
+        audioExportSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.AudioExportSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings
+                    .AudioExportSettingsOrBuilder>(
+                getAudioExportSettings(), getParentForChildren(), isClean());
+        audioExportSettings_ = null;
+      }
+      return audioExportSettingsBuilder_;
     }
 
     private com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings

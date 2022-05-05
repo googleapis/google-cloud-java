@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
  *   ExperimentName name =
  *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ExperimentsSettings experimentsSettings =
  *     ExperimentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ExperimentsSettings experimentsSettings =
  *     ExperimentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ExperimentsClient experimentsClient = ExperimentsClient.create(experimentsSettings);
@@ -157,6 +163,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   EnvironmentName parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -187,6 +195,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -214,6 +224,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
@@ -244,6 +256,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
@@ -275,6 +289,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ListExperimentsRequest request =
    *       ListExperimentsRequest.newBuilder()
@@ -312,6 +328,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ExperimentName name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -337,6 +355,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
@@ -362,6 +382,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   GetExperimentRequest request =
    *       GetExperimentRequest.newBuilder()
@@ -388,6 +410,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   GetExperimentRequest request =
    *       GetExperimentRequest.newBuilder()
@@ -414,6 +438,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   EnvironmentName parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
@@ -446,6 +472,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String parent =
    *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
@@ -475,6 +503,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   CreateExperimentRequest request =
    *       CreateExperimentRequest.newBuilder()
@@ -502,6 +532,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   CreateExperimentRequest request =
    *       CreateExperimentRequest.newBuilder()
@@ -528,6 +560,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   Experiment experiment = Experiment.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -555,6 +589,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   UpdateExperimentRequest request =
    *       UpdateExperimentRequest.newBuilder()
@@ -579,6 +615,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   UpdateExperimentRequest request =
    *       UpdateExperimentRequest.newBuilder()
@@ -603,6 +641,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ExperimentName name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -629,6 +669,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
@@ -655,6 +697,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   DeleteExperimentRequest request =
    *       DeleteExperimentRequest.newBuilder()
@@ -681,6 +725,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   DeleteExperimentRequest request =
    *       DeleteExperimentRequest.newBuilder()
@@ -707,6 +753,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ExperimentName name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -733,6 +781,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
@@ -759,6 +809,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   StartExperimentRequest request =
    *       StartExperimentRequest.newBuilder()
@@ -786,6 +838,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   StartExperimentRequest request =
    *       StartExperimentRequest.newBuilder()
@@ -813,6 +867,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   ExperimentName name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
@@ -839,6 +895,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   String name =
    *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
@@ -865,6 +923,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   StopExperimentRequest request =
    *       StopExperimentRequest.newBuilder()
@@ -892,6 +952,8 @@ public class ExperimentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
    *   StopExperimentRequest request =
    *       StopExperimentRequest.newBuilder()
