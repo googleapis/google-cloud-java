@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
  *   GetInstanceRequest request =
  *       GetInstanceRequest.newBuilder()
@@ -86,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataFusionSettings dataFusionSettings =
  *     DataFusionSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataFusionSettings dataFusionSettings =
  *     DataFusionSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DataFusionClient dataFusionClient = DataFusionClient.create(dataFusionSettings);
@@ -172,6 +178,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Version element : dataFusionClient.listAvailableVersions(parent).iterateAll()) {
@@ -199,6 +207,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Version element : dataFusionClient.listAvailableVersions(parent).iterateAll()) {
@@ -224,6 +234,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
@@ -253,6 +265,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
@@ -282,6 +296,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListAvailableVersionsRequest request =
    *       ListAvailableVersionsRequest.newBuilder()
@@ -318,6 +334,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -347,6 +365,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -377,6 +397,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -412,6 +434,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -435,6 +459,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -457,6 +483,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Instance instance = Instance.newBuilder().build();
@@ -489,6 +517,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Instance instance = Instance.newBuilder().build();
@@ -521,6 +551,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -547,6 +579,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -573,6 +607,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -597,6 +633,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   dataFusionClient.deleteInstanceAsync(name).get();
@@ -620,6 +658,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   dataFusionClient.deleteInstanceAsync(name).get();
@@ -642,6 +682,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -666,6 +708,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -690,6 +734,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -712,6 +758,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   Instance instance = Instance.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -743,6 +791,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -768,6 +818,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -793,6 +845,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -816,6 +870,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
    *       RestartInstanceRequest.newBuilder()
@@ -840,6 +896,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
    *       RestartInstanceRequest.newBuilder()
@@ -864,6 +922,8 @@ public class DataFusionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataFusionClient dataFusionClient = DataFusionClient.create()) {
    *   RestartInstanceRequest request =
    *       RestartInstanceRequest.newBuilder()
