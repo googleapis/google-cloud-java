@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@
  * <p>Sample for DataCatalogClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   String entryGroupId = "entryGroupId1228924712";
@@ -44,6 +46,8 @@
  * <p>Sample for PolicyTagManagerClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
@@ -61,6 +65,8 @@
  * <p>Sample for PolicyTagManagerSerializationClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create()) {
  *   ReplaceTaxonomyRequest request =
