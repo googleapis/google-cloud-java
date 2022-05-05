@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
  *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
@@ -70,6 +72,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LanguageServiceSettings languageServiceSettings =
  *     LanguageServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -81,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LanguageServiceSettings languageServiceSettings =
  *     LanguageServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LanguageServiceClient languageServiceClient =
@@ -149,6 +155,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
@@ -171,6 +179,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.forNumber(0);
@@ -200,6 +210,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSentimentRequest request =
    *       AnalyzeSentimentRequest.newBuilder()
@@ -224,6 +236,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSentimentRequest request =
    *       AnalyzeSentimentRequest.newBuilder()
@@ -250,6 +264,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitiesResponse response = languageServiceClient.analyzeEntities(document);
@@ -273,6 +289,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.forNumber(0);
@@ -303,6 +321,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitiesRequest request =
    *       AnalyzeEntitiesRequest.newBuilder()
@@ -328,6 +348,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitiesRequest request =
    *       AnalyzeEntitiesRequest.newBuilder()
@@ -355,6 +377,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeEntitySentimentResponse response =
@@ -380,6 +404,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.forNumber(0);
@@ -411,6 +437,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitySentimentRequest request =
    *       AnalyzeEntitySentimentRequest.newBuilder()
@@ -439,6 +467,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitySentimentRequest request =
    *       AnalyzeEntitySentimentRequest.newBuilder()
@@ -465,6 +495,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSyntaxResponse response = languageServiceClient.analyzeSyntax(document);
@@ -487,6 +519,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.forNumber(0);
@@ -515,6 +549,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSyntaxRequest request =
    *       AnalyzeSyntaxRequest.newBuilder()
@@ -540,6 +576,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSyntaxRequest request =
    *       AnalyzeSyntaxRequest.newBuilder()
@@ -564,6 +602,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   ClassifyTextResponse response = languageServiceClient.classifyText(document);
@@ -585,6 +625,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
    *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
@@ -606,6 +648,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   ClassifyTextRequest request =
    *       ClassifyTextRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
@@ -628,6 +672,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
@@ -654,6 +700,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
@@ -687,6 +735,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnnotateTextRequest request =
    *       AnnotateTextRequest.newBuilder()
@@ -713,6 +763,8 @@ public class LanguageServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnnotateTextRequest request =
    *       AnnotateTextRequest.newBuilder()
