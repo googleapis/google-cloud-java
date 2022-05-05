@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
  *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -89,6 +91,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BareMetalSolutionSettings bareMetalSolutionSettings =
  *     BareMetalSolutionSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -100,6 +104,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BareMetalSolutionSettings bareMetalSolutionSettings =
  *     BareMetalSolutionSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BareMetalSolutionClient bareMetalSolutionClient =
@@ -179,6 +185,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Instance element : bareMetalSolutionClient.listInstances(parent).iterateAll()) {
@@ -205,6 +213,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Instance element : bareMetalSolutionClient.listInstances(parent).iterateAll()) {
@@ -228,6 +238,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -255,6 +267,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -283,6 +297,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -317,6 +333,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -339,6 +357,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   Instance response = bareMetalSolutionClient.getInstance(name);
@@ -360,6 +380,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -383,6 +405,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -407,6 +431,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   ResetInstanceResponse response = bareMetalSolutionClient.resetInstanceAsync(name).get();
@@ -431,6 +457,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   ResetInstanceResponse response = bareMetalSolutionClient.resetInstanceAsync(name).get();
@@ -454,6 +482,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -479,6 +509,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -504,6 +536,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -527,6 +561,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Volume element : bareMetalSolutionClient.listVolumes(parent).iterateAll()) {
@@ -553,6 +589,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Volume element : bareMetalSolutionClient.listVolumes(parent).iterateAll()) {
@@ -576,6 +614,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -603,6 +643,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -631,6 +673,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumesRequest request =
    *       ListVolumesRequest.newBuilder()
@@ -664,6 +708,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   Volume response = bareMetalSolutionClient.getVolume(name);
@@ -686,6 +732,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   Volume response = bareMetalSolutionClient.getVolume(name);
@@ -707,6 +755,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeRequest request =
    *       GetVolumeRequest.newBuilder()
@@ -730,6 +780,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeRequest request =
    *       GetVolumeRequest.newBuilder()
@@ -752,6 +804,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   Volume volume = Volume.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -780,6 +834,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -805,6 +861,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -830,6 +888,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateVolumeRequest request =
    *       UpdateVolumeRequest.newBuilder()
@@ -854,6 +914,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Network element : bareMetalSolutionClient.listNetworks(parent).iterateAll()) {
@@ -880,6 +942,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Network element : bareMetalSolutionClient.listNetworks(parent).iterateAll()) {
@@ -903,6 +967,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -930,6 +996,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -958,6 +1026,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -992,6 +1062,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   NetworkName name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]");
    *   Network response = bareMetalSolutionClient.getNetwork(name);
@@ -1014,6 +1086,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString();
    *   Network response = bareMetalSolutionClient.getNetwork(name);
@@ -1035,6 +1109,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -1058,6 +1134,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -1080,6 +1158,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (SnapshotSchedulePolicy element :
@@ -1108,6 +1188,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (SnapshotSchedulePolicy element :
@@ -1134,6 +1216,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListSnapshotSchedulePoliciesRequest request =
    *       ListSnapshotSchedulePoliciesRequest.newBuilder()
@@ -1163,6 +1247,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListSnapshotSchedulePoliciesRequest request =
    *       ListSnapshotSchedulePoliciesRequest.newBuilder()
@@ -1192,6 +1278,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListSnapshotSchedulePoliciesRequest request =
    *       ListSnapshotSchedulePoliciesRequest.newBuilder()
@@ -1228,6 +1316,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   SnapshotSchedulePolicyName name =
    *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
@@ -1253,6 +1343,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name =
    *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
@@ -1277,6 +1369,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetSnapshotSchedulePolicyRequest request =
    *       GetSnapshotSchedulePolicyRequest.newBuilder()
@@ -1304,6 +1398,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetSnapshotSchedulePolicyRequest request =
    *       GetSnapshotSchedulePolicyRequest.newBuilder()
@@ -1331,6 +1427,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
@@ -1366,6 +1464,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
@@ -1401,6 +1501,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   CreateSnapshotSchedulePolicyRequest request =
    *       CreateSnapshotSchedulePolicyRequest.newBuilder()
@@ -1428,6 +1530,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   CreateSnapshotSchedulePolicyRequest request =
    *       CreateSnapshotSchedulePolicyRequest.newBuilder()
@@ -1454,6 +1558,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1485,6 +1591,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateSnapshotSchedulePolicyRequest request =
    *       UpdateSnapshotSchedulePolicyRequest.newBuilder()
@@ -1511,6 +1619,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   UpdateSnapshotSchedulePolicyRequest request =
    *       UpdateSnapshotSchedulePolicyRequest.newBuilder()
@@ -1536,6 +1646,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   SnapshotSchedulePolicyName name =
    *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
@@ -1561,6 +1673,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name =
    *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
@@ -1585,6 +1699,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DeleteSnapshotSchedulePolicyRequest request =
    *       DeleteSnapshotSchedulePolicyRequest.newBuilder()
@@ -1611,6 +1727,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DeleteSnapshotSchedulePolicyRequest request =
    *       DeleteSnapshotSchedulePolicyRequest.newBuilder()
@@ -1638,6 +1756,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
@@ -1668,6 +1788,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
@@ -1697,6 +1819,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   CreateVolumeSnapshotRequest request =
    *       CreateVolumeSnapshotRequest.newBuilder()
@@ -1721,6 +1845,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   CreateVolumeSnapshotRequest request =
    *       CreateVolumeSnapshotRequest.newBuilder()
@@ -1746,6 +1872,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeSnapshotName volumeSnapshot =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
@@ -1773,6 +1901,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String volumeSnapshot =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
@@ -1798,6 +1928,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   RestoreVolumeSnapshotRequest request =
    *       RestoreVolumeSnapshotRequest.newBuilder()
@@ -1824,6 +1956,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   RestoreVolumeSnapshotRequest request =
    *       RestoreVolumeSnapshotRequest.newBuilder()
@@ -1850,6 +1984,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   RestoreVolumeSnapshotRequest request =
    *       RestoreVolumeSnapshotRequest.newBuilder()
@@ -1876,6 +2012,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeSnapshotName name =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
@@ -1901,6 +2039,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
@@ -1924,6 +2064,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DeleteVolumeSnapshotRequest request =
    *       DeleteVolumeSnapshotRequest.newBuilder()
@@ -1949,6 +2091,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   DeleteVolumeSnapshotRequest request =
    *       DeleteVolumeSnapshotRequest.newBuilder()
@@ -1974,6 +2118,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeSnapshotName name =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
@@ -1999,6 +2145,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name =
    *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
@@ -2021,6 +2169,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeSnapshotRequest request =
    *       GetVolumeSnapshotRequest.newBuilder()
@@ -2046,6 +2196,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetVolumeSnapshotRequest request =
    *       GetVolumeSnapshotRequest.newBuilder()
@@ -2071,6 +2223,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   for (VolumeSnapshot element :
@@ -2098,6 +2252,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   for (VolumeSnapshot element :
@@ -2123,6 +2279,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumeSnapshotsRequest request =
    *       ListVolumeSnapshotsRequest.newBuilder()
@@ -2152,6 +2310,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumeSnapshotsRequest request =
    *       ListVolumeSnapshotsRequest.newBuilder()
@@ -2180,6 +2340,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListVolumeSnapshotsRequest request =
    *       ListVolumeSnapshotsRequest.newBuilder()
@@ -2215,6 +2377,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   LunName name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
    *   Lun response = bareMetalSolutionClient.getLun(name);
@@ -2237,6 +2401,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String name = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
    *   Lun response = bareMetalSolutionClient.getLun(name);
@@ -2258,6 +2424,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetLunRequest request =
    *       GetLunRequest.newBuilder()
@@ -2281,6 +2449,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   GetLunRequest request =
    *       GetLunRequest.newBuilder()
@@ -2303,6 +2473,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
    *   for (Lun element : bareMetalSolutionClient.listLuns(parent).iterateAll()) {
@@ -2327,6 +2499,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
    *   for (Lun element : bareMetalSolutionClient.listLuns(parent).iterateAll()) {
@@ -2350,6 +2524,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
@@ -2377,6 +2553,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
@@ -2403,6 +2581,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
    *   ListLunsRequest request =
    *       ListLunsRequest.newBuilder()
