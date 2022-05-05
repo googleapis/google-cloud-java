@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
  * <p>Sample for ConnectionServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   ConnectionProto.Connection connection = ConnectionProto.Connection.newBuilder().build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Connection connection = Connection.newBuilder().build();
@@ -98,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConnectionServiceSettings connectionServiceSettings =
  *     ConnectionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,6 +113,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConnectionServiceSettings connectionServiceSettings =
  *     ConnectionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ConnectionServiceClient connectionServiceClient =
@@ -177,6 +183,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Connection connection = Connection.newBuilder().build();
@@ -210,6 +218,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Connection connection = Connection.newBuilder().build();
@@ -243,6 +253,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   CreateConnectionRequest request =
    *       CreateConnectionRequest.newBuilder()
@@ -268,6 +280,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   CreateConnectionRequest request =
    *       CreateConnectionRequest.newBuilder()
@@ -293,6 +307,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   Connection response = connectionServiceClient.getConnection(name);
@@ -316,6 +332,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   Connection response = connectionServiceClient.getConnection(name);
@@ -338,6 +356,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   GetConnectionRequest request =
    *       GetConnectionRequest.newBuilder()
@@ -361,6 +381,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   GetConnectionRequest request =
    *       GetConnectionRequest.newBuilder()
@@ -384,6 +406,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
@@ -411,6 +435,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
@@ -435,6 +461,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
@@ -462,6 +490,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
@@ -490,6 +520,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ListConnectionsRequest request =
    *       ListConnectionsRequest.newBuilder()
@@ -526,6 +558,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   Connection connection = Connection.newBuilder().build();
@@ -559,6 +593,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   Connection connection = Connection.newBuilder().build();
@@ -592,6 +628,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   UpdateConnectionRequest request =
    *       UpdateConnectionRequest.newBuilder()
@@ -618,6 +656,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   UpdateConnectionRequest request =
    *       UpdateConnectionRequest.newBuilder()
@@ -643,6 +683,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   connectionServiceClient.deleteConnection(name);
@@ -666,6 +708,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   connectionServiceClient.deleteConnection(name);
@@ -688,6 +732,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   DeleteConnectionRequest request =
    *       DeleteConnectionRequest.newBuilder()
@@ -711,6 +757,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   DeleteConnectionRequest request =
    *       DeleteConnectionRequest.newBuilder()
@@ -735,6 +783,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   GetPolicyOptions options = GetPolicyOptions.newBuilder().build();
@@ -764,6 +814,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   GetPolicyOptions options = GetPolicyOptions.newBuilder().build();
@@ -790,6 +842,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -815,6 +869,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -840,6 +896,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   Policy policy = Policy.newBuilder().build();
@@ -872,6 +930,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -901,6 +961,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -928,6 +990,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -957,6 +1021,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
    *   List<String> permissions = new ArrayList<>();
@@ -994,6 +1060,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -1031,6 +1099,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1060,6 +1130,8 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
