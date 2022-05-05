@@ -20,3 +20,8 @@ jobs:
         with:
           name: code-coverage
           path: monorepo/coverage.zip
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: monoreop/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
