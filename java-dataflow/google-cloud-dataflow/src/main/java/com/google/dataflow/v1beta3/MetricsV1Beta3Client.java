@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
  *   GetJobMetricsRequest request =
  *       GetJobMetricsRequest.newBuilder()
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetricsV1Beta3Settings metricsV1Beta3Settings =
  *     MetricsV1Beta3Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetricsV1Beta3Settings metricsV1Beta3Settings =
  *     MetricsV1Beta3Settings.newBuilder().setEndpoint(myEndpoint).build();
  * MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create(metricsV1Beta3Settings);
@@ -165,6 +171,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetJobMetricsRequest request =
    *       GetJobMetricsRequest.newBuilder()
@@ -196,6 +204,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetJobMetricsRequest request =
    *       GetJobMetricsRequest.newBuilder()
@@ -224,6 +234,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetJobExecutionDetailsRequest request =
    *       GetJobExecutionDetailsRequest.newBuilder()
@@ -257,6 +269,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetJobExecutionDetailsRequest request =
    *       GetJobExecutionDetailsRequest.newBuilder()
@@ -289,6 +303,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetJobExecutionDetailsRequest request =
    *       GetJobExecutionDetailsRequest.newBuilder()
@@ -328,6 +344,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetStageExecutionDetailsRequest request =
    *       GetStageExecutionDetailsRequest.newBuilder()
@@ -364,6 +382,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetStageExecutionDetailsRequest request =
    *       GetStageExecutionDetailsRequest.newBuilder()
@@ -399,6 +419,8 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
    *   GetStageExecutionDetailsRequest request =
    *       GetStageExecutionDetailsRequest.newBuilder()

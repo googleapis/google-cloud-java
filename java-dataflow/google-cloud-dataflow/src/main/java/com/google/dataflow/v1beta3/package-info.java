@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
  * <p>Sample for JobsV1Beta3Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
  *   CreateJobRequest request =
  *       CreateJobRequest.newBuilder()
@@ -48,6 +50,8 @@
  * <p>Sample for MessagesV1Beta3Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
  *   ListJobMessagesRequest request =
  *       ListJobMessagesRequest.newBuilder()
@@ -73,6 +77,8 @@
  * <p>Sample for MetricsV1Beta3Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create()) {
  *   GetJobMetricsRequest request =
  *       GetJobMetricsRequest.newBuilder()
@@ -92,6 +98,8 @@
  * <p>Sample for SnapshotsV1Beta3Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SnapshotsV1Beta3Client snapshotsV1Beta3Client = SnapshotsV1Beta3Client.create()) {
  *   GetSnapshotRequest request =
  *       GetSnapshotRequest.newBuilder()
@@ -110,6 +118,8 @@
  * <p>Sample for TemplatesServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TemplatesServiceClient templatesServiceClient = TemplatesServiceClient.create()) {
  *   CreateJobFromTemplateRequest request =
  *       CreateJobFromTemplateRequest.newBuilder()
@@ -130,6 +140,8 @@
  * <p>Sample for FlexTemplatesServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FlexTemplatesServiceClient flexTemplatesServiceClient =
  *     FlexTemplatesServiceClient.create()) {
  *   LaunchFlexTemplateRequest request =

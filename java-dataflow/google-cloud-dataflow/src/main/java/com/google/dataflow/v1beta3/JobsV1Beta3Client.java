@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
  *   CreateJobRequest request =
  *       CreateJobRequest.newBuilder()
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * JobsV1Beta3Settings jobsV1Beta3Settings =
  *     JobsV1Beta3Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * JobsV1Beta3Settings jobsV1Beta3Settings =
  *     JobsV1Beta3Settings.newBuilder().setEndpoint(myEndpoint).build();
  * JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create(jobsV1Beta3Settings);
@@ -165,6 +171,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -196,6 +204,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -227,6 +237,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -258,6 +270,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -289,6 +303,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -321,6 +337,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -352,6 +370,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -387,6 +407,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -421,6 +443,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -456,6 +480,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -485,6 +511,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -515,6 +543,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -550,6 +580,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CheckActiveJobsRequest request =
    *       CheckActiveJobsRequest.newBuilder().setProjectId("projectId-894832108").build();
@@ -571,6 +603,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   CheckActiveJobsRequest request =
    *       CheckActiveJobsRequest.newBuilder().setProjectId("projectId-894832108").build();
@@ -593,6 +627,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   SnapshotJobRequest request =
    *       SnapshotJobRequest.newBuilder()
@@ -621,6 +657,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create()) {
    *   SnapshotJobRequest request =
    *       SnapshotJobRequest.newBuilder()

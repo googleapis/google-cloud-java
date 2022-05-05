@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
  *   ListJobMessagesRequest request =
  *       ListJobMessagesRequest.newBuilder()
@@ -90,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MessagesV1Beta3Settings messagesV1Beta3Settings =
  *     MessagesV1Beta3Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -101,6 +105,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MessagesV1Beta3Settings messagesV1Beta3Settings =
  *     MessagesV1Beta3Settings.newBuilder().setEndpoint(myEndpoint).build();
  * MessagesV1Beta3Client messagesV1Beta3Client =
@@ -176,6 +182,8 @@ public class MessagesV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
    *   ListJobMessagesRequest request =
    *       ListJobMessagesRequest.newBuilder()
@@ -214,6 +222,8 @@ public class MessagesV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
    *   ListJobMessagesRequest request =
    *       ListJobMessagesRequest.newBuilder()
@@ -253,6 +263,8 @@ public class MessagesV1Beta3Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MessagesV1Beta3Client messagesV1Beta3Client = MessagesV1Beta3Client.create()) {
    *   ListJobMessagesRequest request =
    *       ListJobMessagesRequest.newBuilder()
