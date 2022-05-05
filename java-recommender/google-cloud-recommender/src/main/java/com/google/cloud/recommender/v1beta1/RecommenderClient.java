@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
  *   InsightName name =
  *       InsightName.ofProjectLocationInsightTypeInsightName(
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecommenderSettings recommenderSettings =
  *     RecommenderSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecommenderSettings recommenderSettings =
  *     RecommenderSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RecommenderClient recommenderClient = RecommenderClient.create(recommenderSettings);
@@ -161,6 +167,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   InsightTypeName parent =
    *       InsightTypeName.ofProjectLocationInsightTypeName(
@@ -209,6 +217,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String parent =
    *       InsightTypeName.ofProjectLocationInsightTypeName(
@@ -255,6 +265,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListInsightsRequest request =
    *       ListInsightsRequest.newBuilder()
@@ -287,6 +299,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListInsightsRequest request =
    *       ListInsightsRequest.newBuilder()
@@ -319,6 +333,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListInsightsRequest request =
    *       ListInsightsRequest.newBuilder()
@@ -357,6 +373,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   InsightName name =
    *       InsightName.ofProjectLocationInsightTypeInsightName(
@@ -382,6 +400,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       InsightName.ofProjectLocationInsightTypeInsightName(
@@ -407,6 +427,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetInsightRequest request =
    *       GetInsightRequest.newBuilder()
@@ -434,6 +456,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetInsightRequest request =
    *       GetInsightRequest.newBuilder()
@@ -464,6 +488,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   InsightName name =
    *       InsightName.ofProjectLocationInsightTypeInsightName(
@@ -503,6 +529,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       InsightName.ofProjectLocationInsightTypeInsightName(
@@ -543,6 +571,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkInsightAcceptedRequest request =
    *       MarkInsightAcceptedRequest.newBuilder()
@@ -576,6 +606,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkInsightAcceptedRequest request =
    *       MarkInsightAcceptedRequest.newBuilder()
@@ -605,6 +637,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommenderName parent =
    *       RecommenderName.ofProjectLocationRecommenderName(
@@ -683,6 +717,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String parent =
    *       RecommenderName.ofProjectLocationRecommenderName(
@@ -758,6 +794,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListRecommendationsRequest request =
    *       ListRecommendationsRequest.newBuilder()
@@ -791,6 +829,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListRecommendationsRequest request =
    *       ListRecommendationsRequest.newBuilder()
@@ -824,6 +864,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   ListRecommendationsRequest request =
    *       ListRecommendationsRequest.newBuilder()
@@ -864,6 +906,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommendationName name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -891,6 +935,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -916,6 +962,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetRecommendationRequest request =
    *       GetRecommendationRequest.newBuilder()
@@ -943,6 +991,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetRecommendationRequest request =
    *       GetRecommendationRequest.newBuilder()
@@ -976,6 +1026,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommendationName name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1019,6 +1071,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1063,6 +1117,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationClaimedRequest request =
    *       MarkRecommendationClaimedRequest.newBuilder()
@@ -1098,6 +1154,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationClaimedRequest request =
    *       MarkRecommendationClaimedRequest.newBuilder()
@@ -1135,6 +1193,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommendationName name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1179,6 +1239,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1224,6 +1286,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationSucceededRequest request =
    *       MarkRecommendationSucceededRequest.newBuilder()
@@ -1261,6 +1325,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationSucceededRequest request =
    *       MarkRecommendationSucceededRequest.newBuilder()
@@ -1298,6 +1364,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommendationName name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1342,6 +1410,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       RecommendationName.ofProjectLocationRecommenderRecommendationName(
@@ -1387,6 +1457,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationFailedRequest request =
    *       MarkRecommendationFailedRequest.newBuilder()
@@ -1423,6 +1495,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   MarkRecommendationFailedRequest request =
    *       MarkRecommendationFailedRequest.newBuilder()
@@ -1453,6 +1527,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommenderConfigName name =
    *       RecommenderConfigName.ofProjectLocationRecommenderName(
@@ -1491,6 +1567,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       RecommenderConfigName.ofProjectLocationRecommenderName(
@@ -1528,6 +1606,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetRecommenderConfigRequest request =
    *       GetRecommenderConfigRequest.newBuilder()
@@ -1555,6 +1635,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetRecommenderConfigRequest request =
    *       GetRecommenderConfigRequest.newBuilder()
@@ -1582,6 +1664,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   RecommenderConfig recommenderConfig = RecommenderConfig.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1611,6 +1695,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   UpdateRecommenderConfigRequest request =
    *       UpdateRecommenderConfigRequest.newBuilder()
@@ -1636,6 +1722,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   UpdateRecommenderConfigRequest request =
    *       UpdateRecommenderConfigRequest.newBuilder()
@@ -1663,6 +1751,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   InsightTypeConfigName name =
    *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
@@ -1701,6 +1791,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   String name =
    *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
@@ -1738,6 +1830,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetInsightTypeConfigRequest request =
    *       GetInsightTypeConfigRequest.newBuilder()
@@ -1765,6 +1859,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   GetInsightTypeConfigRequest request =
    *       GetInsightTypeConfigRequest.newBuilder()
@@ -1792,6 +1888,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   InsightTypeConfig insightTypeConfig = InsightTypeConfig.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1821,6 +1919,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   UpdateInsightTypeConfigRequest request =
    *       UpdateInsightTypeConfigRequest.newBuilder()
@@ -1846,6 +1946,8 @@ public class RecommenderClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
    *   UpdateInsightTypeConfigRequest request =
    *       UpdateInsightTypeConfigRequest.newBuilder()
