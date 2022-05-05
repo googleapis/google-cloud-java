@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SecretManagerServiceClient secretManagerServiceClient =
  *     SecretManagerServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -95,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecretManagerServiceSettings secretManagerServiceSettings =
  *     SecretManagerServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -106,6 +110,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecretManagerServiceSettings secretManagerServiceSettings =
  *     SecretManagerServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SecretManagerServiceClient secretManagerServiceClient =
@@ -174,6 +180,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -202,6 +210,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -227,6 +237,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretsRequest request =
@@ -256,6 +268,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretsRequest request =
@@ -286,6 +300,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretsRequest request =
@@ -323,6 +339,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -360,6 +378,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -397,6 +417,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   CreateSecretRequest request =
@@ -424,6 +446,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   CreateSecretRequest request =
@@ -451,6 +475,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
@@ -483,6 +509,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String parent = SecretName.of("[PROJECT]", "[SECRET]").toString();
@@ -512,6 +540,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   AddSecretVersionRequest request =
@@ -538,6 +568,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   AddSecretVersionRequest request =
@@ -563,6 +595,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
@@ -587,6 +621,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretName.of("[PROJECT]", "[SECRET]").toString();
@@ -610,6 +646,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetSecretRequest request =
@@ -634,6 +672,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetSecretRequest request =
@@ -657,6 +697,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   Secret secret = Secret.newBuilder().build();
@@ -683,6 +725,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   UpdateSecretRequest request =
@@ -708,6 +752,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   UpdateSecretRequest request =
@@ -733,6 +779,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
@@ -757,6 +805,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretName.of("[PROJECT]", "[SECRET]").toString();
@@ -780,6 +830,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DeleteSecretRequest request =
@@ -805,6 +857,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DeleteSecretRequest request =
@@ -831,6 +885,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
@@ -862,6 +918,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String parent = SecretName.of("[PROJECT]", "[SECRET]").toString();
@@ -891,6 +949,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretVersionsRequest request =
@@ -923,6 +983,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretVersionsRequest request =
@@ -954,6 +1016,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   ListSecretVersionsRequest request =
@@ -994,6 +1058,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -1024,6 +1090,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
@@ -1053,6 +1121,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetSecretVersionRequest request =
@@ -1080,6 +1150,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetSecretVersionRequest request =
@@ -1108,6 +1180,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -1141,6 +1215,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
@@ -1172,6 +1248,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   AccessSecretVersionRequest request =
@@ -1201,6 +1279,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   AccessSecretVersionRequest request =
@@ -1230,6 +1310,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -1261,6 +1343,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
@@ -1290,6 +1374,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DisableSecretVersionRequest request =
@@ -1319,6 +1405,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DisableSecretVersionRequest request =
@@ -1349,6 +1437,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -1380,6 +1470,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
@@ -1409,6 +1501,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   EnableSecretVersionRequest request =
@@ -1438,6 +1532,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   EnableSecretVersionRequest request =
@@ -1469,6 +1565,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
@@ -1501,6 +1599,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
@@ -1531,6 +1631,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DestroySecretVersionRequest request =
@@ -1561,6 +1663,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   DestroySecretVersionRequest request =
@@ -1590,6 +1694,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -1619,6 +1725,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
@@ -1646,6 +1754,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1672,6 +1782,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1702,6 +1814,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -1732,6 +1846,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
