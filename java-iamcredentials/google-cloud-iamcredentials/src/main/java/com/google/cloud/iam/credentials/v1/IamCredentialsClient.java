@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
  *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
  *   List<String> delegates = new ArrayList<>();
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * IamCredentialsSettings iamCredentialsSettings =
  *     IamCredentialsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * IamCredentialsSettings iamCredentialsSettings =
  *     IamCredentialsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create(iamCredentialsSettings);
@@ -159,6 +165,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List<String> delegates = new ArrayList<>();
@@ -208,6 +216,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
    *   List<String> delegates = new ArrayList<>();
@@ -257,6 +267,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   GenerateAccessTokenRequest request =
    *       GenerateAccessTokenRequest.newBuilder()
@@ -283,6 +295,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   GenerateAccessTokenRequest request =
    *       GenerateAccessTokenRequest.newBuilder()
@@ -310,6 +324,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List<String> delegates = new ArrayList<>();
@@ -357,6 +373,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
    *   List<String> delegates = new ArrayList<>();
@@ -404,6 +422,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   GenerateIdTokenRequest request =
    *       GenerateIdTokenRequest.newBuilder()
@@ -430,6 +450,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   GenerateIdTokenRequest request =
    *       GenerateIdTokenRequest.newBuilder()
@@ -457,6 +479,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List<String> delegates = new ArrayList<>();
@@ -498,6 +522,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
    *   List<String> delegates = new ArrayList<>();
@@ -538,6 +564,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   SignBlobRequest request =
    *       SignBlobRequest.newBuilder()
@@ -563,6 +591,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   SignBlobRequest request =
    *       SignBlobRequest.newBuilder()
@@ -588,6 +618,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List<String> delegates = new ArrayList<>();
@@ -629,6 +661,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   String name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString();
    *   List<String> delegates = new ArrayList<>();
@@ -669,6 +703,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   SignJwtRequest request =
    *       SignJwtRequest.newBuilder()
@@ -694,6 +730,8 @@ public class IamCredentialsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
    *   SignJwtRequest request =
    *       SignJwtRequest.newBuilder()
