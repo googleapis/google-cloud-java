@@ -393,7 +393,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertThat(actual).contains("37%");
+    assertThat(actual).contains("PS4");
   }
 
   @Test
@@ -520,8 +520,8 @@ public class ITSystemTest {
       }
     }
     List<String> expectedResults = new ArrayList<>();
-    expectedResults.add("Skyscraper");
-    expectedResults.add("Suburb");
+    expectedResults.add("Electra Tower");
+    expectedResults.add("Metropolitan area");
     assertThat(actual).containsAnyIn(expectedResults);
   }
 
