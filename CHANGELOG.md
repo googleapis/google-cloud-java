@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.13.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.2...v2.13.0) (2022-05-05)
+
+
+### Features
+
+* add support to a few more specific StorageErrors for the Write API ([#1563](https://github.com/googleapis/java-bigquerystorage/issues/1563)) ([c26091e](https://github.com/googleapis/java-bigquerystorage/commit/c26091e48b6542cf2078d46e2dbfe3220ab031f6))
+* next release from main branch is 2.12.2 ([#1624](https://github.com/googleapis/java-bigquerystorage/issues/1624)) ([b2aa2a4](https://github.com/googleapis/java-bigquerystorage/commit/b2aa2a43752e5a8a71f7bc434397b73d77d8eb58))
+
+
+### Bug Fixes
+
+* A stuck when the client fail to get DoneCallback ([#1637](https://github.com/googleapis/java-bigquerystorage/issues/1637)) ([3baa84e](https://github.com/googleapis/java-bigquerystorage/commit/3baa84e96671a14936d1667d0e036a1565fa5b7a))
+* Fix a possible NULL PTR after introduced timeout on waitForDone ([#1638](https://github.com/googleapis/java-bigquerystorage/issues/1638)) ([e1c6ded](https://github.com/googleapis/java-bigquerystorage/commit/e1c6ded336effbe302eee56df056a56a9dbb6b2f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.10 ([#1623](https://github.com/googleapis/java-bigquerystorage/issues/1623)) ([54b74b8](https://github.com/googleapis/java-bigquerystorage/commit/54b74b80368252b93fb445c481731e0edfe3f5c3))
+* update dependency org.apache.avro:avro to v1.11.0 ([#1632](https://github.com/googleapis/java-bigquerystorage/issues/1632)) ([b47eea0](https://github.com/googleapis/java-bigquerystorage/commit/b47eea05d4db5acaa7337dc4e1faa018d8b4e40d))
+
+
+### Documentation
+
+* **samples:** update WriteComittedStream sample code to match best practices ([#1628](https://github.com/googleapis/java-bigquerystorage/issues/1628)) ([5d4c7e1](https://github.com/googleapis/java-bigquerystorage/commit/5d4c7e18b82ab85f7498e34a29920e9af765f918))
+* **sample:** update WriteToDefaultStream sample to match best practices ([#1631](https://github.com/googleapis/java-bigquerystorage/issues/1631)) ([73ddd7b](https://github.com/googleapis/java-bigquerystorage/commit/73ddd7b4fd44dce4be434726df57ecd84e6e3e6a))
+
 ### [2.12.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.1...v2.12.2) (2022-04-18)
 
 
