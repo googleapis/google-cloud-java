@@ -182,7 +182,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the Google Cloud project that this VM image belongs to.
-   * Format: `projects/{project_id}`
+   * Format: `{project_id}`
    * </pre>
    *
    * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,7 +206,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The name of the Google Cloud project that this VM image belongs to.
-   * Format: `projects/{project_id}`
+   * Format: `{project_id}`
    * </pre>
    *
    * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,7 +768,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Google Cloud project that this VM image belongs to.
-     * Format: `projects/{project_id}`
+     * Format: `{project_id}`
      * </pre>
      *
      * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -791,7 +791,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Google Cloud project that this VM image belongs to.
-     * Format: `projects/{project_id}`
+     * Format: `{project_id}`
      * </pre>
      *
      * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -814,7 +814,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Google Cloud project that this VM image belongs to.
-     * Format: `projects/{project_id}`
+     * Format: `{project_id}`
      * </pre>
      *
      * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -836,7 +836,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Google Cloud project that this VM image belongs to.
-     * Format: `projects/{project_id}`
+     * Format: `{project_id}`
      * </pre>
      *
      * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -854,7 +854,7 @@ public final class VmImage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The name of the Google Cloud project that this VM image belongs to.
-     * Format: `projects/{project_id}`
+     * Format: `{project_id}`
      * </pre>
      *
      * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>

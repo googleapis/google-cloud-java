@@ -28,7 +28,7 @@ public interface VmImageOrBuilder
    *
    * <pre>
    * Required. The name of the Google Cloud project that this VM image belongs to.
-   * Format: `projects/{project_id}`
+   * Format: `{project_id}`
    * </pre>
    *
    * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface VmImageOrBuilder
    *
    * <pre>
    * Required. The name of the Google Cloud project that this VM image belongs to.
-   * Format: `projects/{project_id}`
+   * Format: `{project_id}`
    * </pre>
    *
    * <code>string project = 1 [(.google.api.field_behavior) = REQUIRED];</code>

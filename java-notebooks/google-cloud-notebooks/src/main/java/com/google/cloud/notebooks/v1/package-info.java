@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
  * <p>Sample for ManagedNotebookServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ManagedNotebookServiceClient managedNotebookServiceClient =
  *     ManagedNotebookServiceClient.create()) {
  *   RuntimeName name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]");
@@ -40,6 +42,8 @@
  * <p>Sample for NotebookServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
  *   String name = "name3373707";
  *   Instance response = notebookServiceClient.getInstance(name);
