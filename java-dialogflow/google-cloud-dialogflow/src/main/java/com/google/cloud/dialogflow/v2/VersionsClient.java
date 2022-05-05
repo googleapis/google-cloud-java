@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VersionsClient versionsClient = VersionsClient.create()) {
  *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
  *   Version response = versionsClient.getVersion(name);
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VersionsSettings versionsSettings =
  *     VersionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VersionsSettings versionsSettings =
  *     VersionsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VersionsClient versionsClient = VersionsClient.create(versionsSettings);
@@ -153,6 +159,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   for (Version element : versionsClient.listVersions(parent).iterateAll()) {
@@ -181,6 +189,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   for (Version element : versionsClient.listVersions(parent).iterateAll()) {
@@ -206,6 +216,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -233,6 +245,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -260,6 +274,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   ListVersionsRequest request =
    *       ListVersionsRequest.newBuilder()
@@ -293,6 +309,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
    *   Version response = versionsClient.getVersion(name);
@@ -318,6 +336,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   String name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString();
    *   Version response = versionsClient.getVersion(name);
@@ -342,6 +362,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   GetVersionRequest request =
    *       GetVersionRequest.newBuilder()
@@ -365,6 +387,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   GetVersionRequest request =
    *       GetVersionRequest.newBuilder()
@@ -389,6 +413,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   AgentName parent = AgentName.ofProjectName("[PROJECT]");
    *   Version version = Version.newBuilder().build();
@@ -420,6 +446,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   String parent = AgentName.ofProjectName("[PROJECT]").toString();
    *   Version version = Version.newBuilder().build();
@@ -448,6 +476,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   CreateVersionRequest request =
    *       CreateVersionRequest.newBuilder()
@@ -474,6 +504,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   CreateVersionRequest request =
    *       CreateVersionRequest.newBuilder()
@@ -500,6 +532,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   Version version = Version.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -530,6 +564,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   UpdateVersionRequest request =
    *       UpdateVersionRequest.newBuilder()
@@ -557,6 +593,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   UpdateVersionRequest request =
    *       UpdateVersionRequest.newBuilder()
@@ -580,6 +618,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
    *   versionsClient.deleteVersion(name);
@@ -605,6 +645,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   String name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]").toString();
    *   versionsClient.deleteVersion(name);
@@ -629,6 +671,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   DeleteVersionRequest request =
    *       DeleteVersionRequest.newBuilder()
@@ -652,6 +696,8 @@ public class VersionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VersionsClient versionsClient = VersionsClient.create()) {
    *   DeleteVersionRequest request =
    *       DeleteVersionRequest.newBuilder()

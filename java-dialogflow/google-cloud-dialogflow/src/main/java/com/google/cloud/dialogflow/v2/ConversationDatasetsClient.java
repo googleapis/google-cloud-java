@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationDatasetsClient conversationDatasetsClient =
  *     ConversationDatasetsClient.create()) {
  *   ConversationDatasetName name =
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConversationDatasetsSettings conversationDatasetsSettings =
  *     ConversationDatasetsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConversationDatasetsSettings conversationDatasetsSettings =
  *     ConversationDatasetsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ConversationDatasetsClient conversationDatasetsClient =
@@ -185,6 +191,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   String parent = "parent-995424086";
@@ -226,6 +234,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   CreateConversationDatasetRequest request =
@@ -261,6 +271,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   CreateConversationDatasetRequest request =
@@ -300,6 +312,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   CreateConversationDatasetRequest request =
@@ -326,6 +340,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ConversationDatasetName name =
@@ -353,6 +369,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   String name =
@@ -379,6 +397,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   GetConversationDatasetRequest request =
@@ -405,6 +425,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   GetConversationDatasetRequest request =
@@ -432,6 +454,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -461,6 +485,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -488,6 +514,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ListConversationDatasetsRequest request =
@@ -518,6 +546,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ListConversationDatasetsRequest request =
@@ -547,6 +577,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ListConversationDatasetsRequest request =
@@ -592,6 +624,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ConversationDatasetName name =
@@ -629,6 +663,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   String name =
@@ -665,6 +701,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   DeleteConversationDatasetRequest request =
@@ -701,6 +739,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   DeleteConversationDatasetRequest request =
@@ -740,6 +780,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   DeleteConversationDatasetRequest request =
@@ -777,6 +819,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ImportConversationDataRequest request =
@@ -817,6 +861,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ImportConversationDataRequest request =
@@ -862,6 +908,8 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationDatasetsClient conversationDatasetsClient =
    *     ConversationDatasetsClient.create()) {
    *   ImportConversationDataRequest request =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
  *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -73,6 +75,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -83,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
@@ -159,6 +165,8 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
    *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -213,6 +221,8 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   String session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString();
    *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -264,6 +274,8 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   DetectIntentRequest request =
    *       DetectIntentRequest.newBuilder()
@@ -303,6 +315,8 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   DetectIntentRequest request =
    *       DetectIntentRequest.newBuilder()
@@ -342,6 +356,8 @@ public class SessionsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SessionsClient sessionsClient = SessionsClient.create()) {
    *   BidiStream<StreamingDetectIntentRequest, StreamingDetectIntentResponse> bidiStream =
    *       sessionsClient.streamingDetectIntentCallable().call();

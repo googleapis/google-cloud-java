@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
  *   FulfillmentName name = FulfillmentName.ofProjectName("[PROJECT]");
  *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
@@ -70,6 +72,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FulfillmentsSettings fulfillmentsSettings =
  *     FulfillmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -80,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FulfillmentsSettings fulfillmentsSettings =
  *     FulfillmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create(fulfillmentsSettings);
@@ -147,6 +153,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   FulfillmentName name = FulfillmentName.ofProjectName("[PROJECT]");
    *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
@@ -171,6 +179,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   String name = FulfillmentName.ofProjectName("[PROJECT]").toString();
    *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
@@ -194,6 +204,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   GetFulfillmentRequest request =
    *       GetFulfillmentRequest.newBuilder()
@@ -217,6 +229,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   GetFulfillmentRequest request =
    *       GetFulfillmentRequest.newBuilder()
@@ -240,6 +254,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   Fulfillment fulfillment = Fulfillment.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -268,6 +284,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   UpdateFulfillmentRequest request =
    *       UpdateFulfillmentRequest.newBuilder()
@@ -292,6 +310,8 @@ public class FulfillmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
    *   UpdateFulfillmentRequest request =
    *       UpdateFulfillmentRequest.newBuilder()

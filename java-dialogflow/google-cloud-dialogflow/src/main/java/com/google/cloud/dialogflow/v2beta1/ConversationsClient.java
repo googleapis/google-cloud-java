@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Conversation conversation = Conversation.newBuilder().build();
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConversationsSettings conversationsSettings =
  *     ConversationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ConversationsSettings conversationsSettings =
  *     ConversationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ConversationsClient conversationsClient = ConversationsClient.create(conversationsSettings);
@@ -172,6 +178,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Conversation conversation = Conversation.newBuilder().build();
@@ -216,6 +224,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Conversation conversation = Conversation.newBuilder().build();
@@ -260,6 +270,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Conversation conversation = Conversation.newBuilder().build();
@@ -304,6 +316,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CreateConversationRequest request =
    *       CreateConversationRequest.newBuilder()
@@ -345,6 +359,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CreateConversationRequest request =
    *       CreateConversationRequest.newBuilder()
@@ -370,6 +386,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Conversation element : conversationsClient.listConversations(parent).iterateAll()) {
@@ -397,6 +415,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Conversation element : conversationsClient.listConversations(parent).iterateAll()) {
@@ -424,6 +444,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Conversation element : conversationsClient.listConversations(parent).iterateAll()) {
@@ -449,6 +471,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
@@ -477,6 +501,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
@@ -506,6 +532,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListConversationsRequest request =
    *       ListConversationsRequest.newBuilder()
@@ -542,6 +570,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ConversationName name =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -566,6 +596,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String name =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -589,6 +621,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
@@ -614,6 +648,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
@@ -640,6 +676,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ConversationName name =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -668,6 +706,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String name =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -694,6 +734,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CompleteConversationRequest request =
    *       CompleteConversationRequest.newBuilder()
@@ -720,6 +762,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   CompleteConversationRequest request =
    *       CompleteConversationRequest.newBuilder()
@@ -747,6 +791,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ConversationName parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -775,6 +821,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -801,6 +849,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   BatchCreateMessagesRequest request =
    *       BatchCreateMessagesRequest.newBuilder()
@@ -828,6 +878,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   BatchCreateMessagesRequest request =
    *       BatchCreateMessagesRequest.newBuilder()
@@ -858,6 +910,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ConversationName parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -890,6 +944,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   String parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -919,6 +975,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()
@@ -952,6 +1010,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()
@@ -986,6 +1046,8 @@ public class ConversationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
    *   ListMessagesRequest request =
    *       ListMessagesRequest.newBuilder()

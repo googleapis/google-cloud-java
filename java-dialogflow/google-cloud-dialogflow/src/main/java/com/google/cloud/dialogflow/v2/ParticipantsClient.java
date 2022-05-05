@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
  *   ConversationName parent =
  *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ParticipantsSettings participantsSettings =
  *     ParticipantsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ParticipantsSettings participantsSettings =
  *     ParticipantsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ParticipantsClient participantsClient = ParticipantsClient.create(participantsSettings);
@@ -155,6 +161,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ConversationName parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -185,6 +193,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -212,6 +222,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   CreateParticipantRequest request =
    *       CreateParticipantRequest.newBuilder()
@@ -238,6 +250,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   CreateParticipantRequest request =
    *       CreateParticipantRequest.newBuilder()
@@ -264,6 +278,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName name =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -290,6 +306,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String name =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -316,6 +334,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   GetParticipantRequest request =
    *       GetParticipantRequest.newBuilder()
@@ -342,6 +362,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   GetParticipantRequest request =
    *       GetParticipantRequest.newBuilder()
@@ -368,6 +390,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ConversationName parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -397,6 +421,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
    *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
@@ -424,6 +450,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
@@ -453,6 +481,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
@@ -483,6 +513,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ListParticipantsRequest request =
    *       ListParticipantsRequest.newBuilder()
@@ -520,6 +552,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   Participant participant = Participant.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -547,6 +581,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   UpdateParticipantRequest request =
    *       UpdateParticipantRequest.newBuilder()
@@ -571,6 +607,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   UpdateParticipantRequest request =
    *       UpdateParticipantRequest.newBuilder()
@@ -599,6 +637,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -635,6 +675,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName participant =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -671,6 +713,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String participant =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -707,6 +751,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String participant =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -743,6 +789,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   AnalyzeContentRequest request =
    *       AnalyzeContentRequest.newBuilder()
@@ -777,6 +825,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   AnalyzeContentRequest request =
    *       AnalyzeContentRequest.newBuilder()
@@ -808,6 +858,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -836,6 +888,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -862,6 +916,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestArticlesRequest request =
    *       SuggestArticlesRequest.newBuilder()
@@ -894,6 +950,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestArticlesRequest request =
    *       SuggestArticlesRequest.newBuilder()
@@ -927,6 +985,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -955,6 +1015,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -982,6 +1044,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestFaqAnswersRequest request =
    *       SuggestFaqAnswersRequest.newBuilder()
@@ -1014,6 +1078,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestFaqAnswersRequest request =
    *       SuggestFaqAnswersRequest.newBuilder()
@@ -1047,6 +1113,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   ParticipantName parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -1075,6 +1143,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   String parent =
    *       ParticipantName.ofProjectConversationParticipantName(
@@ -1102,6 +1172,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestSmartRepliesRequest request =
    *       SuggestSmartRepliesRequest.newBuilder()
@@ -1134,6 +1206,8 @@ public class ParticipantsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
    *   SuggestSmartRepliesRequest request =
    *       SuggestSmartRepliesRequest.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
  * <p>Sample for AgentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AgentsClient agentsClient = AgentsClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Agent response = agentsClient.getAgent(parent);
@@ -40,6 +42,8 @@
  * <p>Sample for AnswerRecordsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.create()) {
  *   AnswerRecord answerRecord = AnswerRecord.newBuilder().build();
  *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -54,6 +58,8 @@
  * <p>Sample for ContextsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ContextsClient contextsClient = ContextsClient.create()) {
  *   ContextName name =
  *       ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
@@ -69,6 +75,8 @@
  * <p>Sample for ConversationsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Conversation conversation = Conversation.newBuilder().build();
@@ -86,6 +94,8 @@
  * <p>Sample for ConversationDatasetsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationDatasetsClient conversationDatasetsClient =
  *     ConversationDatasetsClient.create()) {
  *   ConversationDatasetName name =
@@ -101,6 +111,8 @@
  * <p>Sample for ConversationModelsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationModelsClient conversationModelsClient = ConversationModelsClient.create()) {
  *   String name = "name3373707";
  *   ConversationModel response = conversationModelsClient.getConversationModel(name);
@@ -115,6 +127,8 @@
  * <p>Sample for ConversationProfilesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ConversationProfilesClient conversationProfilesClient =
  *     ConversationProfilesClient.create()) {
  *   ConversationProfileName name =
@@ -132,6 +146,8 @@
  * <p>Sample for DocumentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DocumentsClient documentsClient = DocumentsClient.create()) {
  *   DocumentName name =
  *       DocumentName.ofProjectKnowledgeBaseDocumentName(
@@ -148,6 +164,8 @@
  * <p>Sample for EntityTypesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
  *   EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
  *   EntityType response = entityTypesClient.getEntityType(name);
@@ -162,6 +180,8 @@
  * <p>Sample for EnvironmentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
  *   GetEnvironmentRequest request =
  *       GetEnvironmentRequest.newBuilder()
@@ -180,6 +200,8 @@
  * <p>Sample for FulfillmentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FulfillmentsClient fulfillmentsClient = FulfillmentsClient.create()) {
  *   FulfillmentName name = FulfillmentName.ofProjectName("[PROJECT]");
  *   Fulfillment response = fulfillmentsClient.getFulfillment(name);
@@ -193,6 +215,8 @@
  * <p>Sample for IntentsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IntentsClient intentsClient = IntentsClient.create()) {
  *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
  *   Intent response = intentsClient.getIntent(name);
@@ -207,6 +231,8 @@
  * <p>Sample for KnowledgeBasesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
  *   KnowledgeBaseName name =
  *       KnowledgeBaseName.ofProjectKnowledgeBaseName("[PROJECT]", "[KNOWLEDGE_BASE]");
@@ -222,6 +248,8 @@
  * <p>Sample for ParticipantsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
  *   ConversationName parent =
  *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
@@ -240,6 +268,8 @@
  * <p>Sample for SessionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionsClient sessionsClient = SessionsClient.create()) {
  *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
  *   QueryInput queryInput = QueryInput.newBuilder().build();
@@ -255,6 +285,8 @@
  * <p>Sample for SessionEntityTypesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
  *   SessionEntityTypeName name =
  *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
@@ -270,6 +302,8 @@
  * <p>Sample for VersionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VersionsClient versionsClient = VersionsClient.create()) {
  *   VersionName name = VersionName.ofProjectVersionName("[PROJECT]", "[VERSION]");
  *   Version response = versionsClient.getVersion(name);
