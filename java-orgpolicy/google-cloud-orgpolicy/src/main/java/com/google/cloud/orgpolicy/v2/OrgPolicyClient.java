@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
  *   PolicyName name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]");
  *   Policy response = orgPolicyClient.getPolicy(name);
@@ -93,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OrgPolicySettings orgPolicySettings =
  *     OrgPolicySettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -103,6 +107,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OrgPolicySettings orgPolicySettings =
  *     OrgPolicySettings.newBuilder().setEndpoint(myEndpoint).build();
  * OrgPolicyClient orgPolicyClient = OrgPolicyClient.create(orgPolicySettings);
@@ -168,6 +174,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
    *   for (Constraint element : orgPolicyClient.listConstraints(parent).iterateAll()) {
@@ -202,6 +210,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (Constraint element : orgPolicyClient.listConstraints(parent).iterateAll()) {
@@ -236,6 +246,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Constraint element : orgPolicyClient.listConstraints(parent).iterateAll()) {
@@ -270,6 +282,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Constraint element : orgPolicyClient.listConstraints(parent).iterateAll()) {
@@ -301,6 +315,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
@@ -328,6 +344,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
@@ -356,6 +374,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListConstraintsRequest request =
    *       ListConstraintsRequest.newBuilder()
@@ -390,6 +410,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
    *   for (Policy element : orgPolicyClient.listPolicies(parent).iterateAll()) {
@@ -424,6 +446,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (Policy element : orgPolicyClient.listPolicies(parent).iterateAll()) {
@@ -458,6 +482,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (Policy element : orgPolicyClient.listPolicies(parent).iterateAll()) {
@@ -492,6 +518,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (Policy element : orgPolicyClient.listPolicies(parent).iterateAll()) {
@@ -523,6 +551,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -550,6 +580,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -577,6 +609,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ListPoliciesRequest request =
    *       ListPoliciesRequest.newBuilder()
@@ -613,6 +647,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   PolicyName name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]");
    *   Policy response = orgPolicyClient.getPolicy(name);
@@ -638,6 +674,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString();
    *   Policy response = orgPolicyClient.getPolicy(name);
@@ -662,6 +700,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   GetPolicyRequest request =
    *       GetPolicyRequest.newBuilder()
@@ -688,6 +728,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   GetPolicyRequest request =
    *       GetPolicyRequest.newBuilder()
@@ -713,6 +755,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   PolicyName name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]");
    *   Policy response = orgPolicyClient.getEffectivePolicy(name);
@@ -740,6 +784,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString();
    *   Policy response = orgPolicyClient.getEffectivePolicy(name);
@@ -765,6 +811,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   GetEffectivePolicyRequest request =
    *       GetEffectivePolicyRequest.newBuilder()
@@ -791,6 +839,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   GetEffectivePolicyRequest request =
    *       GetEffectivePolicyRequest.newBuilder()
@@ -817,6 +867,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   FolderName parent = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
@@ -856,6 +908,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   Policy policy = Policy.newBuilder().build();
@@ -895,6 +949,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
@@ -934,6 +990,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -970,6 +1028,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
@@ -998,6 +1058,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   CreatePolicyRequest request =
    *       CreatePolicyRequest.newBuilder()
@@ -1027,6 +1089,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = orgPolicyClient.updatePolicy(policy);
@@ -1054,6 +1118,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   UpdatePolicyRequest request =
    *       UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
@@ -1081,6 +1147,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   UpdatePolicyRequest request =
    *       UpdatePolicyRequest.newBuilder().setPolicy(Policy.newBuilder().build()).build();
@@ -1104,6 +1172,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   PolicyName name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]");
    *   orgPolicyClient.deletePolicy(name);
@@ -1129,6 +1199,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   String name = PolicyName.ofProjectPolicyName("[PROJECT]", "[POLICY]").toString();
    *   orgPolicyClient.deletePolicy(name);
@@ -1153,6 +1225,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder()
@@ -1179,6 +1253,8 @@ public class OrgPolicyClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrgPolicyClient orgPolicyClient = OrgPolicyClient.create()) {
    *   DeletePolicyRequest request =
    *       DeletePolicyRequest.newBuilder()
