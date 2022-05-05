@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   AnalyzeIamPolicyRequest request =
  *       AnalyzeIamPolicyRequest.newBuilder()
@@ -76,6 +78,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -86,6 +90,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AssetServiceSettings assetServiceSettings =
  *     AssetServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
@@ -166,6 +172,8 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyRequest request =
    *       AnalyzeIamPolicyRequest.newBuilder()
@@ -192,6 +200,8 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   AnalyzeIamPolicyRequest request =
    *       AnalyzeIamPolicyRequest.newBuilder()
@@ -219,6 +229,8 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportIamPolicyAnalysisRequest request =
    *       ExportIamPolicyAnalysisRequest.newBuilder()
@@ -248,6 +260,8 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportIamPolicyAnalysisRequest request =
    *       ExportIamPolicyAnalysisRequest.newBuilder()
@@ -279,6 +293,8 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportIamPolicyAnalysisRequest request =
    *       ExportIamPolicyAnalysisRequest.newBuilder()
