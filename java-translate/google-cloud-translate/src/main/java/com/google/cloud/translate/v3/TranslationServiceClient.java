@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   String targetLanguageCode = "targetLanguageCode-106414698";
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TranslationServiceSettings translationServiceSettings =
  *     TranslationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TranslationServiceSettings translationServiceSettings =
  *     TranslationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TranslationServiceClient translationServiceClient =
@@ -174,6 +180,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String targetLanguageCode = "targetLanguageCode-106414698";
@@ -216,6 +224,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String targetLanguageCode = "targetLanguageCode-106414698";
@@ -258,6 +268,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String model = "model104069929";
@@ -327,6 +339,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String model = "model104069929";
@@ -396,6 +410,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateTextRequest request =
    *       TranslateTextRequest.newBuilder()
@@ -426,6 +442,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateTextRequest request =
    *       TranslateTextRequest.newBuilder()
@@ -456,6 +474,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String model = "model104069929";
@@ -503,6 +523,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String model = "model104069929";
@@ -550,6 +572,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   DetectLanguageRequest request =
    *       DetectLanguageRequest.newBuilder()
@@ -576,6 +600,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   DetectLanguageRequest request =
    *       DetectLanguageRequest.newBuilder()
@@ -603,6 +629,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String model = "model104069929";
@@ -651,6 +679,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String model = "model104069929";
@@ -699,6 +729,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GetSupportedLanguagesRequest request =
    *       GetSupportedLanguagesRequest.newBuilder()
@@ -724,6 +756,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GetSupportedLanguagesRequest request =
    *       GetSupportedLanguagesRequest.newBuilder()
@@ -750,6 +784,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateDocumentRequest request =
    *       TranslateDocumentRequest.newBuilder()
@@ -780,6 +816,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateDocumentRequest request =
    *       TranslateDocumentRequest.newBuilder()
@@ -816,6 +854,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateTextRequest request =
    *       BatchTranslateTextRequest.newBuilder()
@@ -853,6 +893,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateTextRequest request =
    *       BatchTranslateTextRequest.newBuilder()
@@ -890,6 +932,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateTextRequest request =
    *       BatchTranslateTextRequest.newBuilder()
@@ -926,6 +970,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String sourceLanguageCode = "sourceLanguageCode1645917472";
@@ -988,6 +1034,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String sourceLanguageCode = "sourceLanguageCode1645917472";
@@ -1050,6 +1098,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
@@ -1088,6 +1138,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
@@ -1128,6 +1180,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   BatchTranslateDocumentRequest request =
    *       BatchTranslateDocumentRequest.newBuilder()
@@ -1160,6 +1214,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Glossary glossary = Glossary.newBuilder().build();
@@ -1189,6 +1245,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Glossary glossary = Glossary.newBuilder().build();
@@ -1215,6 +1273,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   CreateGlossaryRequest request =
    *       CreateGlossaryRequest.newBuilder()
@@ -1241,6 +1301,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   CreateGlossaryRequest request =
    *       CreateGlossaryRequest.newBuilder()
@@ -1267,6 +1329,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   CreateGlossaryRequest request =
    *       CreateGlossaryRequest.newBuilder()
@@ -1291,6 +1355,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
@@ -1317,6 +1383,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
@@ -1340,6 +1408,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   ListGlossariesRequest request =
    *       ListGlossariesRequest.newBuilder()
@@ -1368,6 +1438,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   ListGlossariesRequest request =
    *       ListGlossariesRequest.newBuilder()
@@ -1397,6 +1469,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   ListGlossariesRequest request =
    *       ListGlossariesRequest.newBuilder()
@@ -1433,6 +1507,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
    *   Glossary response = translationServiceClient.getGlossary(name);
@@ -1455,6 +1531,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString();
    *   Glossary response = translationServiceClient.getGlossary(name);
@@ -1476,6 +1554,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GetGlossaryRequest request =
    *       GetGlossaryRequest.newBuilder()
@@ -1499,6 +1579,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GetGlossaryRequest request =
    *       GetGlossaryRequest.newBuilder()
@@ -1523,6 +1605,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
    *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
@@ -1547,6 +1631,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   String name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString();
    *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
@@ -1570,6 +1656,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   DeleteGlossaryRequest request =
    *       DeleteGlossaryRequest.newBuilder()
@@ -1595,6 +1683,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   DeleteGlossaryRequest request =
    *       DeleteGlossaryRequest.newBuilder()
@@ -1621,6 +1711,8 @@ public class TranslationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   DeleteGlossaryRequest request =
    *       DeleteGlossaryRequest.newBuilder()
