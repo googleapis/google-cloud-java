@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Job job = Job.newBuilder().build();
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TranscoderServiceSettings transcoderServiceSettings =
  *     TranscoderServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TranscoderServiceSettings transcoderServiceSettings =
  *     TranscoderServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TranscoderServiceClient transcoderServiceClient =
@@ -162,6 +168,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Job job = Job.newBuilder().build();
@@ -190,6 +198,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Job job = Job.newBuilder().build();
@@ -214,6 +224,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -238,6 +250,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -261,6 +275,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Job element : transcoderServiceClient.listJobs(parent).iterateAll()) {
@@ -285,6 +301,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Job element : transcoderServiceClient.listJobs(parent).iterateAll()) {
@@ -308,6 +326,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -337,6 +357,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -365,6 +387,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -400,6 +424,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   Job response = transcoderServiceClient.getJob(name);
@@ -423,6 +449,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   Job response = transcoderServiceClient.getJob(name);
@@ -445,6 +473,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -468,6 +498,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -490,6 +522,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   transcoderServiceClient.deleteJob(name);
@@ -513,6 +547,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   transcoderServiceClient.deleteJob(name);
@@ -535,6 +571,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
@@ -559,6 +597,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
@@ -582,6 +622,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
@@ -618,6 +660,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   JobTemplate jobTemplate = JobTemplate.newBuilder().build();
@@ -654,6 +698,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   CreateJobTemplateRequest request =
    *       CreateJobTemplateRequest.newBuilder()
@@ -679,6 +725,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   CreateJobTemplateRequest request =
    *       CreateJobTemplateRequest.newBuilder()
@@ -704,6 +752,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (JobTemplate element : transcoderServiceClient.listJobTemplates(parent).iterateAll()) {
@@ -731,6 +781,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (JobTemplate element : transcoderServiceClient.listJobTemplates(parent).iterateAll()) {
@@ -756,6 +808,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobTemplatesRequest request =
    *       ListJobTemplatesRequest.newBuilder()
@@ -785,6 +839,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobTemplatesRequest request =
    *       ListJobTemplatesRequest.newBuilder()
@@ -815,6 +871,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   ListJobTemplatesRequest request =
    *       ListJobTemplatesRequest.newBuilder()
@@ -852,6 +910,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
    *   JobTemplate response = transcoderServiceClient.getJobTemplate(name);
@@ -875,6 +935,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString();
    *   JobTemplate response = transcoderServiceClient.getJobTemplate(name);
@@ -897,6 +959,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   GetJobTemplateRequest request =
    *       GetJobTemplateRequest.newBuilder()
@@ -920,6 +984,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   GetJobTemplateRequest request =
    *       GetJobTemplateRequest.newBuilder()
@@ -943,6 +1009,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   JobTemplateName name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]");
    *   transcoderServiceClient.deleteJobTemplate(name);
@@ -968,6 +1036,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   String name = JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString();
    *   transcoderServiceClient.deleteJobTemplate(name);
@@ -990,6 +1060,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   DeleteJobTemplateRequest request =
    *       DeleteJobTemplateRequest.newBuilder()
@@ -1014,6 +1086,8 @@ public class TranscoderServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
    *   DeleteJobTemplateRequest request =
    *       DeleteJobTemplateRequest.newBuilder()
