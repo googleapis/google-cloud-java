@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
  *   PatchJobs.ExecutePatchJobRequest request =
  *       PatchJobs.ExecutePatchJobRequest.newBuilder()
@@ -92,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OsConfigServiceSettings osConfigServiceSettings =
  *     OsConfigServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -103,6 +107,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OsConfigServiceSettings osConfigServiceSettings =
  *     OsConfigServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * OsConfigServiceClient osConfigServiceClient =
@@ -172,6 +178,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ExecutePatchJobRequest request =
    *       PatchJobs.ExecutePatchJobRequest.newBuilder()
@@ -202,6 +210,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ExecutePatchJobRequest request =
    *       PatchJobs.ExecutePatchJobRequest.newBuilder()
@@ -234,6 +244,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.GetPatchJobRequest request =
    *       PatchJobs.GetPatchJobRequest.newBuilder().setName("name3373707").build();
@@ -256,6 +268,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.GetPatchJobRequest request =
    *       PatchJobs.GetPatchJobRequest.newBuilder().setName("name3373707").build();
@@ -278,6 +292,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.CancelPatchJobRequest request =
    *       PatchJobs.CancelPatchJobRequest.newBuilder().setName("name3373707").build();
@@ -299,6 +315,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.CancelPatchJobRequest request =
    *       PatchJobs.CancelPatchJobRequest.newBuilder().setName("name3373707").build();
@@ -321,6 +339,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobsRequest request =
    *       PatchJobs.ListPatchJobsRequest.newBuilder()
@@ -349,6 +369,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobsRequest request =
    *       PatchJobs.ListPatchJobsRequest.newBuilder()
@@ -378,6 +400,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobsRequest request =
    *       PatchJobs.ListPatchJobsRequest.newBuilder()
@@ -414,6 +438,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String parent = "parent-995424086";
    *   for (PatchJobs.PatchJobInstanceDetails element :
@@ -440,6 +466,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
    *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
@@ -470,6 +498,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
    *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
@@ -500,6 +530,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
    *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
@@ -538,6 +570,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.CreatePatchDeploymentRequest request =
    *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
@@ -565,6 +599,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.CreatePatchDeploymentRequest request =
    *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
@@ -592,6 +628,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.GetPatchDeploymentRequest request =
    *       PatchDeployments.GetPatchDeploymentRequest.newBuilder().setName("name3373707").build();
@@ -614,6 +652,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.GetPatchDeploymentRequest request =
    *       PatchDeployments.GetPatchDeploymentRequest.newBuilder().setName("name3373707").build();
@@ -637,6 +677,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.ListPatchDeploymentsRequest request =
    *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
@@ -666,6 +708,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.ListPatchDeploymentsRequest request =
    *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
@@ -695,6 +739,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.ListPatchDeploymentsRequest request =
    *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
@@ -732,6 +778,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.DeletePatchDeploymentRequest request =
    *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder().setName("name3373707").build();
@@ -753,6 +801,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.DeletePatchDeploymentRequest request =
    *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder().setName("name3373707").build();
@@ -775,6 +825,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.PatchDeployment patchDeployment =
    *       PatchDeployments.PatchDeployment.newBuilder().build();
@@ -806,6 +858,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.UpdatePatchDeploymentRequest request =
    *       PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
@@ -832,6 +886,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.UpdatePatchDeploymentRequest request =
    *       PatchDeployments.UpdatePatchDeploymentRequest.newBuilder()
@@ -859,6 +915,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
    *   PatchDeployments.PatchDeployment response = osConfigServiceClient.pausePatchDeployment(name);
@@ -885,6 +943,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
    *   PatchDeployments.PatchDeployment response = osConfigServiceClient.pausePatchDeployment(name);
@@ -909,6 +969,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.PausePatchDeploymentRequest request =
    *       PatchDeployments.PausePatchDeploymentRequest.newBuilder()
@@ -935,6 +997,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.PausePatchDeploymentRequest request =
    *       PatchDeployments.PausePatchDeploymentRequest.newBuilder()
@@ -961,6 +1025,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
    *   PatchDeployments.PatchDeployment response = osConfigServiceClient.resumePatchDeployment(name);
@@ -987,6 +1053,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
    *   PatchDeployments.PatchDeployment response = osConfigServiceClient.resumePatchDeployment(name);
@@ -1011,6 +1079,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.ResumePatchDeploymentRequest request =
    *       PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
@@ -1037,6 +1107,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   PatchDeployments.ResumePatchDeploymentRequest request =
    *       PatchDeployments.ResumePatchDeploymentRequest.newBuilder()
@@ -1062,6 +1134,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
@@ -1092,6 +1166,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
@@ -1122,6 +1198,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.CreateGuestPolicyRequest request =
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
@@ -1148,6 +1226,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.CreateGuestPolicyRequest request =
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
@@ -1174,6 +1254,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicyName name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]");
    *   GuestPolicies.GuestPolicy response = osConfigServiceClient.getGuestPolicy(name);
@@ -1199,6 +1281,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
    *   GuestPolicies.GuestPolicy response = osConfigServiceClient.getGuestPolicy(name);
@@ -1222,6 +1306,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.GetGuestPolicyRequest request =
    *       GuestPolicies.GetGuestPolicyRequest.newBuilder()
@@ -1246,6 +1332,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.GetGuestPolicyRequest request =
    *       GuestPolicies.GetGuestPolicyRequest.newBuilder()
@@ -1270,6 +1358,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (GuestPolicies.GuestPolicy element :
@@ -1298,6 +1388,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (GuestPolicies.GuestPolicy element :
@@ -1324,6 +1416,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
@@ -1353,6 +1447,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
@@ -1381,6 +1477,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.ListGuestPoliciesRequest request =
    *       GuestPolicies.ListGuestPoliciesRequest.newBuilder()
@@ -1417,6 +1515,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1446,6 +1546,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.UpdateGuestPolicyRequest request =
    *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
@@ -1471,6 +1573,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.UpdateGuestPolicyRequest request =
    *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
@@ -1496,6 +1600,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicyName name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]");
    *   osConfigServiceClient.deleteGuestPolicy(name);
@@ -1521,6 +1627,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   String name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString();
    *   osConfigServiceClient.deleteGuestPolicy(name);
@@ -1544,6 +1652,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.DeleteGuestPolicyRequest request =
    *       GuestPolicies.DeleteGuestPolicyRequest.newBuilder()
@@ -1567,6 +1677,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.DeleteGuestPolicyRequest request =
    *       GuestPolicies.DeleteGuestPolicyRequest.newBuilder()
@@ -1592,6 +1704,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
    *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
@@ -1621,6 +1735,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.LookupEffectiveGuestPolicyRequest request =
    *       GuestPolicies.LookupEffectiveGuestPolicyRequest.newBuilder()
