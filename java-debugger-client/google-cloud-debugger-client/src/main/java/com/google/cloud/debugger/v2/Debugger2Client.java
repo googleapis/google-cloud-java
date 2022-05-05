@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
  *   String debuggeeId = "debuggeeId-1833285553";
  *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
@@ -92,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * Debugger2Settings debugger2Settings =
  *     Debugger2Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -102,6 +106,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * Debugger2Settings debugger2Settings =
  *     Debugger2Settings.newBuilder().setEndpoint(myEndpoint).build();
  * Debugger2Client debugger2Client = Debugger2Client.create(debugger2Settings);
@@ -167,6 +173,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   String debuggeeId = "debuggeeId-1833285553";
    *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
@@ -201,6 +209,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   SetBreakpointRequest request =
    *       SetBreakpointRequest.newBuilder()
@@ -226,6 +236,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   SetBreakpointRequest request =
    *       SetBreakpointRequest.newBuilder()
@@ -251,6 +263,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   String debuggeeId = "debuggeeId-1833285553";
    *   String breakpointId = "breakpointId570266860";
@@ -284,6 +298,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   GetBreakpointRequest request =
    *       GetBreakpointRequest.newBuilder()
@@ -309,6 +325,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   GetBreakpointRequest request =
    *       GetBreakpointRequest.newBuilder()
@@ -334,6 +352,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   String debuggeeId = "debuggeeId-1833285553";
    *   String breakpointId = "breakpointId570266860";
@@ -365,6 +385,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   DeleteBreakpointRequest request =
    *       DeleteBreakpointRequest.newBuilder()
@@ -390,6 +412,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   DeleteBreakpointRequest request =
    *       DeleteBreakpointRequest.newBuilder()
@@ -414,6 +438,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   String debuggeeId = "debuggeeId-1833285553";
    *   String clientVersion = "clientVersion771880589";
@@ -442,6 +468,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   ListBreakpointsRequest request =
    *       ListBreakpointsRequest.newBuilder()
@@ -471,6 +499,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   ListBreakpointsRequest request =
    *       ListBreakpointsRequest.newBuilder()
@@ -501,6 +531,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   String project = "project-309310695";
    *   String clientVersion = "clientVersion771880589";
@@ -529,6 +561,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   ListDebuggeesRequest request =
    *       ListDebuggeesRequest.newBuilder()
@@ -554,6 +588,8 @@ public class Debugger2Client implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
    *   ListDebuggeesRequest request =
    *       ListDebuggeesRequest.newBuilder()

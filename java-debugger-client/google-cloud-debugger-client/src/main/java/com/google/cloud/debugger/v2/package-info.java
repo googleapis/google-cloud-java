@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@
  * <p>Sample for Controller2Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (Controller2Client controller2Client = Controller2Client.create()) {
  *   Debuggee debuggee = Debuggee.newBuilder().build();
  *   RegisterDebuggeeResponse response = controller2Client.registerDebuggee(debuggee);
@@ -64,6 +66,8 @@
  * <p>Sample for Debugger2Client:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (Debugger2Client debugger2Client = Debugger2Client.create()) {
  *   String debuggeeId = "debuggeeId-1833285553";
  *   Breakpoint breakpoint = Breakpoint.newBuilder().build();
