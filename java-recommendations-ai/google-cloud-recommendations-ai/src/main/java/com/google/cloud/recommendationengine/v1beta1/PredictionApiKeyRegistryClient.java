@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
  *     PredictionApiKeyRegistryClient.create()) {
  *   EventStoreName parent =
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings =
  *     PredictionApiKeyRegistrySettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings =
  *     PredictionApiKeyRegistrySettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
@@ -169,6 +175,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   EventStoreName parent =
@@ -203,6 +211,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   String parent =
@@ -237,6 +247,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   CreatePredictionApiKeyRegistrationRequest request =
@@ -266,6 +278,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   CreatePredictionApiKeyRegistrationRequest request =
@@ -297,6 +311,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   EventStoreName parent =
@@ -328,6 +344,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   String parent =
@@ -357,6 +375,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   ListPredictionApiKeyRegistrationsRequest request =
@@ -389,6 +409,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   ListPredictionApiKeyRegistrationsRequest request =
@@ -423,6 +445,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   ListPredictionApiKeyRegistrationsRequest request =
@@ -464,6 +488,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   PredictionApiKeyRegistrationName name =
@@ -496,6 +522,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   String name =
@@ -527,6 +555,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   DeletePredictionApiKeyRegistrationRequest request =
@@ -559,6 +589,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
    *     PredictionApiKeyRegistryClient.create()) {
    *   DeletePredictionApiKeyRegistrationRequest request =

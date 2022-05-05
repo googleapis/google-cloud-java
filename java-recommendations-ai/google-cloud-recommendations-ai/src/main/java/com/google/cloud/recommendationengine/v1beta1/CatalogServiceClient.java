@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
  *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
  *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CatalogServiceClient catalogServiceClient = CatalogServiceClient.create(catalogServiceSettings);
@@ -172,6 +178,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
    *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
@@ -200,6 +208,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
    *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
@@ -225,6 +235,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CreateCatalogItemRequest request =
    *       CreateCatalogItemRequest.newBuilder()
@@ -249,6 +261,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CreateCatalogItemRequest request =
    *       CreateCatalogItemRequest.newBuilder()
@@ -273,6 +287,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogItemPathName name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
@@ -297,6 +313,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
@@ -321,6 +339,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   GetCatalogItemRequest request =
    *       GetCatalogItemRequest.newBuilder()
@@ -347,6 +367,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   GetCatalogItemRequest request =
    *       GetCatalogItemRequest.newBuilder()
@@ -373,6 +395,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
    *   String filter = "filter-1274492040";
@@ -404,6 +428,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
    *   String filter = "filter-1274492040";
@@ -432,6 +458,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogItemsRequest request =
    *       ListCatalogItemsRequest.newBuilder()
@@ -460,6 +488,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogItemsRequest request =
    *       ListCatalogItemsRequest.newBuilder()
@@ -489,6 +519,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogItemsRequest request =
    *       ListCatalogItemsRequest.newBuilder()
@@ -525,6 +557,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogItemPathName name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
@@ -560,6 +594,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
@@ -596,6 +632,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   UpdateCatalogItemRequest request =
    *       UpdateCatalogItemRequest.newBuilder()
@@ -624,6 +662,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   UpdateCatalogItemRequest request =
    *       UpdateCatalogItemRequest.newBuilder()
@@ -652,6 +692,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogItemPathName name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
@@ -678,6 +720,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String name =
    *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
@@ -702,6 +746,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   DeleteCatalogItemRequest request =
    *       DeleteCatalogItemRequest.newBuilder()
@@ -728,6 +774,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   DeleteCatalogItemRequest request =
    *       DeleteCatalogItemRequest.newBuilder()
@@ -758,6 +806,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
    *   String requestId = "requestId693933066";
@@ -805,6 +855,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
    *   String requestId = "requestId693933066";
@@ -849,6 +901,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ImportCatalogItemsRequest request =
    *       ImportCatalogItemsRequest.newBuilder()
@@ -881,6 +935,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ImportCatalogItemsRequest request =
    *       ImportCatalogItemsRequest.newBuilder()
@@ -913,6 +969,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ImportCatalogItemsRequest request =
    *       ImportCatalogItemsRequest.newBuilder()

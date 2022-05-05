@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
  *   EventStoreName parent =
  *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * UserEventServiceSettings userEventServiceSettings =
  *     UserEventServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * UserEventServiceSettings userEventServiceSettings =
  *     UserEventServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * UserEventServiceClient userEventServiceClient =
@@ -175,6 +181,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   EventStoreName parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -204,6 +212,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   String parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
@@ -230,6 +240,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   WriteUserEventRequest request =
    *       WriteUserEventRequest.newBuilder()
@@ -256,6 +268,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   WriteUserEventRequest request =
    *       WriteUserEventRequest.newBuilder()
@@ -286,6 +300,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   EventStoreName parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -330,6 +346,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   String parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
@@ -373,6 +391,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   CollectUserEventRequest request =
    *       CollectUserEventRequest.newBuilder()
@@ -405,6 +425,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   CollectUserEventRequest request =
    *       CollectUserEventRequest.newBuilder()
@@ -433,6 +455,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   EventStoreName parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -483,6 +507,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   String parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
@@ -530,6 +556,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ListUserEventsRequest request =
    *       ListUserEventsRequest.newBuilder()
@@ -560,6 +588,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ListUserEventsRequest request =
    *       ListUserEventsRequest.newBuilder()
@@ -591,6 +621,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ListUserEventsRequest request =
    *       ListUserEventsRequest.newBuilder()
@@ -631,6 +663,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   EventStoreName parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -685,6 +719,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   String parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
@@ -739,6 +775,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
@@ -769,6 +807,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
@@ -800,6 +840,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
@@ -831,6 +873,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   EventStoreName parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
@@ -881,6 +925,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   String parent =
    *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
@@ -928,6 +974,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
@@ -962,6 +1010,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
@@ -995,6 +1045,8 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()

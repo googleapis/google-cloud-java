@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   PlacementName name =
  *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PredictionServiceSettings predictionServiceSettings =
  *     PredictionServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PredictionServiceClient predictionServiceClient =
@@ -167,6 +173,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   PlacementName name =
    *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
@@ -231,6 +239,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   String name =
    *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
@@ -293,6 +303,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   PredictRequest request =
    *       PredictRequest.newBuilder()
@@ -332,6 +344,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   PredictRequest request =
    *       PredictRequest.newBuilder()
@@ -370,6 +384,8 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
    *   PredictRequest request =
    *       PredictRequest.newBuilder()
