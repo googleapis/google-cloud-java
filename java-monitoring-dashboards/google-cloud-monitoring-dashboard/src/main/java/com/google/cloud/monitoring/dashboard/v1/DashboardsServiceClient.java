@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
  *   CreateDashboardRequest request =
  *       CreateDashboardRequest.newBuilder()
@@ -91,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DashboardsServiceSettings dashboardsServiceSettings =
  *     DashboardsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -102,6 +106,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DashboardsServiceSettings dashboardsServiceSettings =
  *     DashboardsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DashboardsServiceClient dashboardsServiceClient =
@@ -174,6 +180,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   CreateDashboardRequest request =
    *       CreateDashboardRequest.newBuilder()
@@ -203,6 +211,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   CreateDashboardRequest request =
    *       CreateDashboardRequest.newBuilder()
@@ -231,6 +241,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   ListDashboardsRequest request =
    *       ListDashboardsRequest.newBuilder()
@@ -261,6 +273,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   ListDashboardsRequest request =
    *       ListDashboardsRequest.newBuilder()
@@ -292,6 +306,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   ListDashboardsRequest request =
    *       ListDashboardsRequest.newBuilder()
@@ -330,6 +346,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   GetDashboardRequest request =
    *       GetDashboardRequest.newBuilder()
@@ -356,6 +374,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   GetDashboardRequest request =
    *       GetDashboardRequest.newBuilder()
@@ -383,6 +403,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   DeleteDashboardRequest request =
    *       DeleteDashboardRequest.newBuilder()
@@ -410,6 +432,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   DeleteDashboardRequest request =
    *       DeleteDashboardRequest.newBuilder()
@@ -437,6 +461,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   UpdateDashboardRequest request =
    *       UpdateDashboardRequest.newBuilder()
@@ -465,6 +491,8 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
    *   UpdateDashboardRequest request =
    *       UpdateDashboardRequest.newBuilder()
