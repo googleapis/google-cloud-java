@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataMigrationServiceClient dataMigrationServiceClient =
  *     DataMigrationServiceClient.create()) {
  *   MigrationJobName name = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]");
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataMigrationServiceSettings dataMigrationServiceSettings =
  *     DataMigrationServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataMigrationServiceSettings dataMigrationServiceSettings =
  *     DataMigrationServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DataMigrationServiceClient dataMigrationServiceClient =
@@ -174,6 +180,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -202,6 +210,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -228,6 +238,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
@@ -259,6 +271,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
@@ -290,6 +304,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListMigrationJobsRequest request =
@@ -328,6 +344,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   MigrationJobName name = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]");
@@ -351,6 +369,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String name = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString();
@@ -373,6 +393,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GetMigrationJobRequest request =
@@ -397,6 +419,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GetMigrationJobRequest request =
@@ -421,6 +445,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -458,6 +484,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -495,6 +523,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
@@ -523,6 +553,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
@@ -551,6 +583,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateMigrationJobRequest request =
@@ -578,6 +612,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   MigrationJob migrationJob = MigrationJob.newBuilder().build();
@@ -609,6 +645,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateMigrationJobRequest request =
@@ -636,6 +674,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateMigrationJobRequest request =
@@ -663,6 +703,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateMigrationJobRequest request =
@@ -689,6 +731,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   MigrationJobName name = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]");
@@ -715,6 +759,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String name = MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString();
@@ -738,6 +784,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteMigrationJobRequest request =
@@ -765,6 +813,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteMigrationJobRequest request =
@@ -792,6 +842,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteMigrationJobRequest request =
@@ -818,6 +870,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StartMigrationJobRequest request =
@@ -843,6 +897,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StartMigrationJobRequest request =
@@ -868,6 +924,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StartMigrationJobRequest request =
@@ -892,6 +950,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StopMigrationJobRequest request =
@@ -917,6 +977,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StopMigrationJobRequest request =
@@ -942,6 +1004,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   StopMigrationJobRequest request =
@@ -967,6 +1031,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ResumeMigrationJobRequest request =
@@ -993,6 +1059,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ResumeMigrationJobRequest request =
@@ -1019,6 +1087,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ResumeMigrationJobRequest request =
@@ -1044,6 +1114,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   PromoteMigrationJobRequest request =
@@ -1070,6 +1142,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   PromoteMigrationJobRequest request =
@@ -1096,6 +1170,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   PromoteMigrationJobRequest request =
@@ -1121,6 +1197,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   VerifyMigrationJobRequest request =
@@ -1147,6 +1225,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   VerifyMigrationJobRequest request =
@@ -1173,6 +1253,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   VerifyMigrationJobRequest request =
@@ -1198,6 +1280,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   RestartMigrationJobRequest request =
@@ -1224,6 +1308,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   RestartMigrationJobRequest request =
@@ -1250,6 +1336,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   RestartMigrationJobRequest request =
@@ -1274,6 +1362,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GenerateSshScriptRequest request =
@@ -1301,6 +1391,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GenerateSshScriptRequest request =
@@ -1328,6 +1420,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1356,6 +1450,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -1382,6 +1478,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
@@ -1414,6 +1512,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
@@ -1445,6 +1545,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ListConnectionProfilesRequest request =
@@ -1483,6 +1585,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ConnectionProfileName name =
@@ -1509,6 +1613,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String name =
@@ -1533,6 +1639,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GetConnectionProfileRequest request =
@@ -1559,6 +1667,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   GetConnectionProfileRequest request =
@@ -1586,6 +1696,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ConnectionProfileName parent =
@@ -1625,6 +1737,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String parent =
@@ -1662,6 +1776,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
@@ -1693,6 +1809,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
@@ -1724,6 +1842,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   CreateConnectionProfileRequest request =
@@ -1754,6 +1874,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
@@ -1787,6 +1909,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateConnectionProfileRequest request =
@@ -1815,6 +1939,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateConnectionProfileRequest request =
@@ -1843,6 +1969,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   UpdateConnectionProfileRequest request =
@@ -1871,6 +1999,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   ConnectionProfileName name =
@@ -1899,6 +2029,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   String name =
@@ -1924,6 +2056,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteConnectionProfileRequest request =
@@ -1954,6 +2088,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteConnectionProfileRequest request =
@@ -1984,6 +2120,8 @@ public class DataMigrationServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataMigrationServiceClient dataMigrationServiceClient =
    *     DataMigrationServiceClient.create()) {
    *   DeleteConnectionProfileRequest request =
