@@ -103,6 +103,8 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -252,7 +254,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     if (heightPixels_ != 0) {
       output.writeInt32(3, heightPixels_);
     }
-    if (frameRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
       output.writeDouble(4, frameRate_);
     }
     unknownFields.writeTo(output);
@@ -273,7 +275,7 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     if (heightPixels_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, heightPixels_);
     }
-    if (frameRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, frameRate_);
     }
     size += unknownFields.getSerializedSize();

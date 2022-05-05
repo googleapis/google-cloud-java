@@ -102,6 +102,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -553,8 +555,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               }
             case 56:
               {
-                gopModeCase_ = 7;
                 gopMode_ = input.readInt32();
+                gopModeCase_ = 7;
                 break;
               }
             case 66:
@@ -629,6 +631,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1206,7 +1210,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (heightPixels_ != 0) {
         output.writeInt32(2, heightPixels_);
       }
-      if (frameRate_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
         output.writeDouble(3, frameRate_);
       }
       if (bitrateBps_ != 0) {
@@ -1236,7 +1240,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (bFrameCount_ != 0) {
         output.writeInt32(13, bFrameCount_);
       }
-      if (aqStrength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(aqStrength_) != 0) {
         output.writeDouble(14, aqStrength_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
@@ -1260,7 +1264,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (heightPixels_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, heightPixels_);
       }
-      if (frameRate_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, frameRate_);
       }
       if (bitrateBps_ != 0) {
@@ -1294,7 +1298,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (bFrameCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, bFrameCount_);
       }
-      if (aqStrength_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(aqStrength_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(14, aqStrength_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
@@ -2301,8 +2305,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         } else {
           if (gopModeCase_ == 8) {
             gopDurationBuilder_.mergeFrom(value);
+          } else {
+            gopDurationBuilder_.setMessage(value);
           }
-          gopDurationBuilder_.setMessage(value);
         }
         gopModeCase_ = 8;
         return this;
@@ -3732,8 +3737,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (codecSettingsCase_ == 20) {
           h264Builder_.mergeFrom(value);
+        } else {
+          h264Builder_.setMessage(value);
         }
-        h264Builder_.setMessage(value);
       }
       codecSettingsCase_ = 20;
       return this;

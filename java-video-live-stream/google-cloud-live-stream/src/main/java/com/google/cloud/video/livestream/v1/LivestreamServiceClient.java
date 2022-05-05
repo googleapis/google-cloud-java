@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
  *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
  *   Channel response = livestreamServiceClient.getChannel(name);
@@ -86,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LivestreamServiceSettings livestreamServiceSettings =
  *     LivestreamServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,6 +101,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LivestreamServiceSettings livestreamServiceSettings =
  *     LivestreamServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LivestreamServiceClient livestreamServiceClient =
@@ -176,6 +182,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Channel channel = Channel.newBuilder().build();
@@ -210,6 +218,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Channel channel = Channel.newBuilder().build();
@@ -244,6 +254,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateChannelRequest request =
    *       CreateChannelRequest.newBuilder()
@@ -271,6 +283,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateChannelRequest request =
    *       CreateChannelRequest.newBuilder()
@@ -298,6 +312,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateChannelRequest request =
    *       CreateChannelRequest.newBuilder()
@@ -324,6 +340,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Channel element : livestreamServiceClient.listChannels(parent).iterateAll()) {
@@ -351,6 +369,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Channel element : livestreamServiceClient.listChannels(parent).iterateAll()) {
@@ -375,6 +395,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListChannelsRequest request =
    *       ListChannelsRequest.newBuilder()
@@ -404,6 +426,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListChannelsRequest request =
    *       ListChannelsRequest.newBuilder()
@@ -434,6 +458,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListChannelsRequest request =
    *       ListChannelsRequest.newBuilder()
@@ -470,6 +496,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   Channel response = livestreamServiceClient.getChannel(name);
@@ -493,6 +521,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   Channel response = livestreamServiceClient.getChannel(name);
@@ -515,6 +545,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetChannelRequest request =
    *       GetChannelRequest.newBuilder()
@@ -538,6 +570,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetChannelRequest request =
    *       GetChannelRequest.newBuilder()
@@ -560,6 +594,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   livestreamServiceClient.deleteChannelAsync(name).get();
@@ -583,6 +619,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   livestreamServiceClient.deleteChannelAsync(name).get();
@@ -605,6 +643,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteChannelRequest request =
    *       DeleteChannelRequest.newBuilder()
@@ -631,6 +671,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteChannelRequest request =
    *       DeleteChannelRequest.newBuilder()
@@ -657,6 +699,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteChannelRequest request =
    *       DeleteChannelRequest.newBuilder()
@@ -682,6 +726,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   Channel channel = Channel.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -718,6 +764,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateChannelRequest request =
    *       UpdateChannelRequest.newBuilder()
@@ -744,6 +792,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateChannelRequest request =
    *       UpdateChannelRequest.newBuilder()
@@ -770,6 +820,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateChannelRequest request =
    *       UpdateChannelRequest.newBuilder()
@@ -796,6 +848,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   ChannelOperationResponse response = livestreamServiceClient.startChannelAsync(name).get();
@@ -821,6 +875,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   ChannelOperationResponse response = livestreamServiceClient.startChannelAsync(name).get();
@@ -845,6 +901,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StartChannelRequest request =
    *       StartChannelRequest.newBuilder()
@@ -871,6 +929,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StartChannelRequest request =
    *       StartChannelRequest.newBuilder()
@@ -897,6 +957,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StartChannelRequest request =
    *       StartChannelRequest.newBuilder()
@@ -922,6 +984,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   ChannelOperationResponse response = livestreamServiceClient.stopChannelAsync(name).get();
@@ -947,6 +1011,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   ChannelOperationResponse response = livestreamServiceClient.stopChannelAsync(name).get();
@@ -971,6 +1037,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StopChannelRequest request =
    *       StopChannelRequest.newBuilder()
@@ -997,6 +1065,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StopChannelRequest request =
    *       StopChannelRequest.newBuilder()
@@ -1023,6 +1093,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   StopChannelRequest request =
    *       StopChannelRequest.newBuilder()
@@ -1047,6 +1119,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Input input = Input.newBuilder().build();
@@ -1080,6 +1154,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Input input = Input.newBuilder().build();
@@ -1113,6 +1189,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateInputRequest request =
    *       CreateInputRequest.newBuilder()
@@ -1140,6 +1218,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateInputRequest request =
    *       CreateInputRequest.newBuilder()
@@ -1167,6 +1247,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateInputRequest request =
    *       CreateInputRequest.newBuilder()
@@ -1193,6 +1275,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Input element : livestreamServiceClient.listInputs(parent).iterateAll()) {
@@ -1218,6 +1302,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Input element : livestreamServiceClient.listInputs(parent).iterateAll()) {
@@ -1242,6 +1328,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListInputsRequest request =
    *       ListInputsRequest.newBuilder()
@@ -1271,6 +1359,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListInputsRequest request =
    *       ListInputsRequest.newBuilder()
@@ -1300,6 +1390,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListInputsRequest request =
    *       ListInputsRequest.newBuilder()
@@ -1335,6 +1427,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
    *   Input response = livestreamServiceClient.getInput(name);
@@ -1358,6 +1452,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]").toString();
    *   Input response = livestreamServiceClient.getInput(name);
@@ -1380,6 +1476,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetInputRequest request =
    *       GetInputRequest.newBuilder()
@@ -1403,6 +1501,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetInputRequest request =
    *       GetInputRequest.newBuilder()
@@ -1425,6 +1525,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
    *   livestreamServiceClient.deleteInputAsync(name).get();
@@ -1448,6 +1550,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]").toString();
    *   livestreamServiceClient.deleteInputAsync(name).get();
@@ -1470,6 +1574,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteInputRequest request =
    *       DeleteInputRequest.newBuilder()
@@ -1495,6 +1601,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteInputRequest request =
    *       DeleteInputRequest.newBuilder()
@@ -1520,6 +1628,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteInputRequest request =
    *       DeleteInputRequest.newBuilder()
@@ -1544,6 +1654,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   Input input = Input.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1576,6 +1688,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateInputRequest request =
    *       UpdateInputRequest.newBuilder()
@@ -1602,6 +1716,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateInputRequest request =
    *       UpdateInputRequest.newBuilder()
@@ -1628,6 +1744,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   UpdateInputRequest request =
    *       UpdateInputRequest.newBuilder()
@@ -1653,6 +1771,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   Event event = Event.newBuilder().build();
@@ -1685,6 +1805,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   Event event = Event.newBuilder().build();
@@ -1717,6 +1839,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateEventRequest request =
    *       CreateEventRequest.newBuilder()
@@ -1743,6 +1867,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   CreateEventRequest request =
    *       CreateEventRequest.newBuilder()
@@ -1768,6 +1894,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
    *   for (Event element : livestreamServiceClient.listEvents(parent).iterateAll()) {
@@ -1793,6 +1921,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString();
    *   for (Event element : livestreamServiceClient.listEvents(parent).iterateAll()) {
@@ -1817,6 +1947,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -1846,6 +1978,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -1875,6 +2009,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   ListEventsRequest request =
    *       ListEventsRequest.newBuilder()
@@ -1910,6 +2046,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   EventName name = EventName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[EVENT]");
    *   Event response = livestreamServiceClient.getEvent(name);
@@ -1933,6 +2071,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = EventName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[EVENT]").toString();
    *   Event response = livestreamServiceClient.getEvent(name);
@@ -1955,6 +2095,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetEventRequest request =
    *       GetEventRequest.newBuilder()
@@ -1978,6 +2120,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   GetEventRequest request =
    *       GetEventRequest.newBuilder()
@@ -2000,6 +2144,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   EventName name = EventName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[EVENT]");
    *   livestreamServiceClient.deleteEvent(name);
@@ -2023,6 +2169,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   String name = EventName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[EVENT]").toString();
    *   livestreamServiceClient.deleteEvent(name);
@@ -2045,6 +2193,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteEventRequest request =
    *       DeleteEventRequest.newBuilder()
@@ -2069,6 +2219,8 @@ public class LivestreamServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LivestreamServiceClient livestreamServiceClient = LivestreamServiceClient.create()) {
    *   DeleteEventRequest request =
    *       DeleteEventRequest.newBuilder()
