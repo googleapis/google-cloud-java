@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
  * <p>Sample for CatalogServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
  *   Catalog catalog = Catalog.newBuilder().build();
  *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -43,6 +45,8 @@
  * <p>Sample for CompletionServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
  *   CompleteQueryRequest request =
  *       CompleteQueryRequest.newBuilder()
@@ -65,6 +69,8 @@
  * <p>Sample for PredictionServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   PredictRequest request =
  *       PredictRequest.newBuilder()
@@ -89,6 +95,8 @@
  * <p>Sample for ProductServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
  *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
  *   Product product = Product.newBuilder().build();
@@ -107,6 +115,8 @@
  * <p>Sample for SearchServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SearchServiceClient searchServiceClient = SearchServiceClient.create()) {
  *   SearchRequest request =
  *       SearchRequest.newBuilder()
@@ -143,6 +153,8 @@
  * <p>Sample for UserEventServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
  *   WriteUserEventRequest request =
  *       WriteUserEventRequest.newBuilder()

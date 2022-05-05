@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
  *   Catalog catalog = Catalog.newBuilder().build();
  *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CatalogServiceSettings catalogServiceSettings =
  *     CatalogServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CatalogServiceClient catalogServiceClient = CatalogServiceClient.create(catalogServiceSettings);
@@ -156,6 +162,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Catalog element : catalogServiceClient.listCatalogs(parent).iterateAll()) {
@@ -185,6 +193,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Catalog element : catalogServiceClient.listCatalogs(parent).iterateAll()) {
@@ -211,6 +221,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogsRequest request =
    *       ListCatalogsRequest.newBuilder()
@@ -238,6 +250,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogsRequest request =
    *       ListCatalogsRequest.newBuilder()
@@ -266,6 +280,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   ListCatalogsRequest request =
    *       ListCatalogsRequest.newBuilder()
@@ -299,6 +315,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   Catalog catalog = Catalog.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -330,6 +348,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   UpdateCatalogRequest request =
    *       UpdateCatalogRequest.newBuilder()
@@ -354,6 +374,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   UpdateCatalogRequest request =
    *       UpdateCatalogRequest.newBuilder()
@@ -406,6 +428,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
    *   catalogServiceClient.setDefaultBranch(catalog);
@@ -460,6 +484,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
    *   catalogServiceClient.setDefaultBranch(catalog);
@@ -512,6 +538,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   SetDefaultBranchRequest request =
    *       SetDefaultBranchRequest.newBuilder()
@@ -568,6 +596,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   SetDefaultBranchRequest request =
    *       SetDefaultBranchRequest.newBuilder()
@@ -596,6 +626,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   CatalogName catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
    *   GetDefaultBranchResponse response = catalogServiceClient.getDefaultBranch(catalog);
@@ -623,6 +655,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   String catalog = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
    *   GetDefaultBranchResponse response = catalogServiceClient.getDefaultBranch(catalog);
@@ -648,6 +682,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   GetDefaultBranchRequest request =
    *       GetDefaultBranchRequest.newBuilder()
@@ -673,6 +709,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   GetDefaultBranchRequest request =
    *       GetDefaultBranchRequest.newBuilder()
