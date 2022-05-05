@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
  *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
  *   Customer response = cloudChannelServiceClient.getCustomer(name);
@@ -98,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudChannelServiceSettings cloudChannelServiceSettings =
  *     CloudChannelServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,6 +113,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudChannelServiceSettings cloudChannelServiceSettings =
  *     CloudChannelServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudChannelServiceClient cloudChannelServiceClient =
@@ -199,6 +205,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomersRequest request =
    *       ListCustomersRequest.newBuilder()
@@ -238,6 +246,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomersRequest request =
    *       ListCustomersRequest.newBuilder()
@@ -278,6 +288,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomersRequest request =
    *       ListCustomersRequest.newBuilder()
@@ -325,6 +337,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
    *   Customer response = cloudChannelServiceClient.getCustomer(name);
@@ -360,6 +374,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
    *   Customer response = cloudChannelServiceClient.getCustomer(name);
@@ -394,6 +410,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetCustomerRequest request =
    *       GetCustomerRequest.newBuilder()
@@ -429,6 +447,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetCustomerRequest request =
    *       GetCustomerRequest.newBuilder()
@@ -470,6 +490,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CheckCloudIdentityAccountsExistRequest request =
    *       CheckCloudIdentityAccountsExistRequest.newBuilder()
@@ -514,6 +536,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CheckCloudIdentityAccountsExistRequest request =
    *       CheckCloudIdentityAccountsExistRequest.newBuilder()
@@ -552,6 +576,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateCustomerRequest request =
    *       CreateCustomerRequest.newBuilder()
@@ -588,6 +614,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateCustomerRequest request =
    *       CreateCustomerRequest.newBuilder()
@@ -625,6 +653,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateCustomerRequest request =
    *       UpdateCustomerRequest.newBuilder()
@@ -662,6 +692,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateCustomerRequest request =
    *       UpdateCustomerRequest.newBuilder()
@@ -696,6 +728,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
    *   cloudChannelServiceClient.deleteCustomer(name);
@@ -728,6 +762,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
    *   cloudChannelServiceClient.deleteCustomer(name);
@@ -759,6 +795,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteCustomerRequest request =
    *       DeleteCustomerRequest.newBuilder()
@@ -792,6 +830,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteCustomerRequest request =
    *       DeleteCustomerRequest.newBuilder()
@@ -831,6 +871,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ImportCustomerRequest request =
    *       ImportCustomerRequest.newBuilder()
@@ -874,6 +916,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ImportCustomerRequest request =
    *       ImportCustomerRequest.newBuilder()
@@ -922,6 +966,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ProvisionCloudIdentityRequest request =
    *       ProvisionCloudIdentityRequest.newBuilder()
@@ -970,6 +1016,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ProvisionCloudIdentityRequest request =
    *       ProvisionCloudIdentityRequest.newBuilder()
@@ -1018,6 +1066,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ProvisionCloudIdentityRequest request =
    *       ProvisionCloudIdentityRequest.newBuilder()
@@ -1054,6 +1104,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListEntitlementsRequest request =
    *       ListEntitlementsRequest.newBuilder()
@@ -1090,6 +1142,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListEntitlementsRequest request =
    *       ListEntitlementsRequest.newBuilder()
@@ -1127,6 +1181,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListEntitlementsRequest request =
    *       ListEntitlementsRequest.newBuilder()
@@ -1178,6 +1234,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableSkusRequest request =
    *       ListTransferableSkusRequest.newBuilder()
@@ -1225,6 +1283,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableSkusRequest request =
    *       ListTransferableSkusRequest.newBuilder()
@@ -1271,6 +1331,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableSkusRequest request =
    *       ListTransferableSkusRequest.newBuilder()
@@ -1324,6 +1386,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableOffersRequest request =
    *       ListTransferableOffersRequest.newBuilder()
@@ -1371,6 +1435,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableOffersRequest request =
    *       ListTransferableOffersRequest.newBuilder()
@@ -1417,6 +1483,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListTransferableOffersRequest request =
    *       ListTransferableOffersRequest.newBuilder()
@@ -1464,6 +1532,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetEntitlementRequest request =
    *       GetEntitlementRequest.newBuilder()
@@ -1497,6 +1567,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetEntitlementRequest request =
    *       GetEntitlementRequest.newBuilder()
@@ -1550,6 +1622,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateEntitlementRequest request =
    *       CreateEntitlementRequest.newBuilder()
@@ -1606,6 +1680,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateEntitlementRequest request =
    *       CreateEntitlementRequest.newBuilder()
@@ -1662,6 +1738,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateEntitlementRequest request =
    *       CreateEntitlementRequest.newBuilder()
@@ -1710,6 +1788,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeParametersRequest request =
    *       ChangeParametersRequest.newBuilder()
@@ -1760,6 +1840,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeParametersRequest request =
    *       ChangeParametersRequest.newBuilder()
@@ -1810,6 +1892,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeParametersRequest request =
    *       ChangeParametersRequest.newBuilder()
@@ -1859,6 +1943,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeRenewalSettingsRequest request =
    *       ChangeRenewalSettingsRequest.newBuilder()
@@ -1908,6 +1994,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeRenewalSettingsRequest request =
    *       ChangeRenewalSettingsRequest.newBuilder()
@@ -1957,6 +2045,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeRenewalSettingsRequest request =
    *       ChangeRenewalSettingsRequest.newBuilder()
@@ -2004,6 +2094,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeOfferRequest request =
    *       ChangeOfferRequest.newBuilder()
@@ -2053,6 +2145,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeOfferRequest request =
    *       ChangeOfferRequest.newBuilder()
@@ -2102,6 +2196,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChangeOfferRequest request =
    *       ChangeOfferRequest.newBuilder()
@@ -2151,6 +2247,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   StartPaidServiceRequest request =
    *       StartPaidServiceRequest.newBuilder()
@@ -2198,6 +2296,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   StartPaidServiceRequest request =
    *       StartPaidServiceRequest.newBuilder()
@@ -2245,6 +2345,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   StartPaidServiceRequest request =
    *       StartPaidServiceRequest.newBuilder()
@@ -2290,6 +2392,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   SuspendEntitlementRequest request =
    *       SuspendEntitlementRequest.newBuilder()
@@ -2336,6 +2440,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   SuspendEntitlementRequest request =
    *       SuspendEntitlementRequest.newBuilder()
@@ -2382,6 +2488,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   SuspendEntitlementRequest request =
    *       SuspendEntitlementRequest.newBuilder()
@@ -2432,6 +2540,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CancelEntitlementRequest request =
    *       CancelEntitlementRequest.newBuilder()
@@ -2483,6 +2593,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CancelEntitlementRequest request =
    *       CancelEntitlementRequest.newBuilder()
@@ -2534,6 +2646,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CancelEntitlementRequest request =
    *       CancelEntitlementRequest.newBuilder()
@@ -2584,6 +2698,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ActivateEntitlementRequest request =
    *       ActivateEntitlementRequest.newBuilder()
@@ -2635,6 +2751,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ActivateEntitlementRequest request =
    *       ActivateEntitlementRequest.newBuilder()
@@ -2686,6 +2804,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ActivateEntitlementRequest request =
    *       ActivateEntitlementRequest.newBuilder()
@@ -2735,6 +2855,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsRequest request =
    *       TransferEntitlementsRequest.newBuilder()
@@ -2788,6 +2910,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsRequest request =
    *       TransferEntitlementsRequest.newBuilder()
@@ -2841,6 +2965,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsRequest request =
    *       TransferEntitlementsRequest.newBuilder()
@@ -2894,6 +3020,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsToGoogleRequest request =
    *       TransferEntitlementsToGoogleRequest.newBuilder()
@@ -2946,6 +3074,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsToGoogleRequest request =
    *       TransferEntitlementsToGoogleRequest.newBuilder()
@@ -3000,6 +3130,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   TransferEntitlementsToGoogleRequest request =
    *       TransferEntitlementsToGoogleRequest.newBuilder()
@@ -3038,6 +3170,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerLinksRequest request =
    *       ListChannelPartnerLinksRequest.newBuilder()
@@ -3080,6 +3214,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerLinksRequest request =
    *       ListChannelPartnerLinksRequest.newBuilder()
@@ -3121,6 +3257,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerLinksRequest request =
    *       ListChannelPartnerLinksRequest.newBuilder()
@@ -3170,6 +3308,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerLinkRequest request =
    *       GetChannelPartnerLinkRequest.newBuilder()
@@ -3207,6 +3347,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerLinkRequest request =
    *       GetChannelPartnerLinkRequest.newBuilder()
@@ -3252,6 +3394,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateChannelPartnerLinkRequest request =
    *       CreateChannelPartnerLinkRequest.newBuilder()
@@ -3297,6 +3441,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateChannelPartnerLinkRequest request =
    *       CreateChannelPartnerLinkRequest.newBuilder()
@@ -3341,6 +3487,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateChannelPartnerLinkRequest request =
    *       UpdateChannelPartnerLinkRequest.newBuilder()
@@ -3386,6 +3534,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateChannelPartnerLinkRequest request =
    *       UpdateChannelPartnerLinkRequest.newBuilder()
@@ -3427,6 +3577,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerRepricingConfigName name =
    *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
@@ -3469,6 +3621,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name =
    *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
@@ -3509,6 +3663,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetCustomerRepricingConfigRequest request =
    *       GetCustomerRepricingConfigRequest.newBuilder()
@@ -3552,6 +3708,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetCustomerRepricingConfigRequest request =
    *       GetCustomerRepricingConfigRequest.newBuilder()
@@ -3603,6 +3761,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
    *   for (CustomerRepricingConfig element :
@@ -3657,6 +3817,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
    *   for (CustomerRepricingConfig element :
@@ -3709,6 +3871,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomerRepricingConfigsRequest request =
    *       ListCustomerRepricingConfigsRequest.newBuilder()
@@ -3763,6 +3927,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomerRepricingConfigsRequest request =
    *       ListCustomerRepricingConfigsRequest.newBuilder()
@@ -3817,6 +3983,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListCustomerRepricingConfigsRequest request =
    *       ListCustomerRepricingConfigsRequest.newBuilder()
@@ -3895,6 +4063,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerName parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
    *   CustomerRepricingConfig customerRepricingConfig =
@@ -3967,6 +4137,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String parent = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
    *   CustomerRepricingConfig customerRepricingConfig =
@@ -4039,6 +4211,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateCustomerRepricingConfigRequest request =
    *       CreateCustomerRepricingConfigRequest.newBuilder()
@@ -4106,6 +4280,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateCustomerRepricingConfigRequest request =
    *       CreateCustomerRepricingConfigRequest.newBuilder()
@@ -4162,6 +4338,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerRepricingConfig customerRepricingConfig =
    *       CustomerRepricingConfig.newBuilder().build();
@@ -4220,6 +4398,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateCustomerRepricingConfigRequest request =
    *       UpdateCustomerRepricingConfigRequest.newBuilder()
@@ -4276,6 +4456,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateCustomerRepricingConfigRequest request =
    *       UpdateCustomerRepricingConfigRequest.newBuilder()
@@ -4315,6 +4497,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CustomerRepricingConfigName name =
    *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]");
@@ -4356,6 +4540,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name =
    *       CustomerRepricingConfigName.of("[ACCOUNT]", "[CUSTOMER]", "[CUSTOMER_REPRICING_CONFIG]")
@@ -4396,6 +4582,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteCustomerRepricingConfigRequest request =
    *       DeleteCustomerRepricingConfigRequest.newBuilder()
@@ -4437,6 +4625,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteCustomerRepricingConfigRequest request =
    *       DeleteCustomerRepricingConfigRequest.newBuilder()
@@ -4481,6 +4671,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChannelPartnerRepricingConfigName name =
    *       ChannelPartnerRepricingConfigName.of(
@@ -4527,6 +4719,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name =
    *       ChannelPartnerRepricingConfigName.of(
@@ -4571,6 +4765,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerRepricingConfigRequest request =
    *       GetChannelPartnerRepricingConfigRequest.newBuilder()
@@ -4616,6 +4812,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerRepricingConfigRequest request =
    *       GetChannelPartnerRepricingConfigRequest.newBuilder()
@@ -4668,6 +4866,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChannelPartnerLinkName parent =
    *       ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
@@ -4725,6 +4925,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String parent = ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString();
    *   for (ChannelPartnerRepricingConfig element :
@@ -4779,6 +4981,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerRepricingConfigsRequest request =
    *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
@@ -4835,6 +5039,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerRepricingConfigsRequest request =
    *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
@@ -4894,6 +5100,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListChannelPartnerRepricingConfigsRequest request =
    *       ListChannelPartnerRepricingConfigsRequest.newBuilder()
@@ -4971,6 +5179,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChannelPartnerLinkName parent =
    *       ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]");
@@ -5045,6 +5255,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String parent = ChannelPartnerLinkName.of("[ACCOUNT]", "[CHANNEL_PARTNER_LINK]").toString();
    *   ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
@@ -5118,6 +5330,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateChannelPartnerRepricingConfigRequest request =
    *       CreateChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5184,6 +5398,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   CreateChannelPartnerRepricingConfigRequest request =
    *       CreateChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5245,6 +5461,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChannelPartnerRepricingConfig channelPartnerRepricingConfig =
    *       ChannelPartnerRepricingConfig.newBuilder().build();
@@ -5306,6 +5524,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateChannelPartnerRepricingConfigRequest request =
    *       UpdateChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5363,6 +5583,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UpdateChannelPartnerRepricingConfigRequest request =
    *       UpdateChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5407,6 +5629,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ChannelPartnerRepricingConfigName name =
    *       ChannelPartnerRepricingConfigName.of(
@@ -5450,6 +5674,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   String name =
    *       ChannelPartnerRepricingConfigName.of(
@@ -5492,6 +5718,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteChannelPartnerRepricingConfigRequest request =
    *       DeleteChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5536,6 +5764,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   DeleteChannelPartnerRepricingConfigRequest request =
    *       DeleteChannelPartnerRepricingConfigRequest.newBuilder()
@@ -5575,6 +5805,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   LookupOfferRequest request =
    *       LookupOfferRequest.newBuilder()
@@ -5609,6 +5841,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   LookupOfferRequest request =
    *       LookupOfferRequest.newBuilder()
@@ -5638,6 +5872,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListProductsRequest request =
    *       ListProductsRequest.newBuilder()
@@ -5672,6 +5908,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListProductsRequest request =
    *       ListProductsRequest.newBuilder()
@@ -5707,6 +5945,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListProductsRequest request =
    *       ListProductsRequest.newBuilder()
@@ -5748,6 +5988,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()
@@ -5783,6 +6025,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()
@@ -5817,6 +6061,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()
@@ -5858,6 +6104,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListOffersRequest request =
    *       ListOffersRequest.newBuilder()
@@ -5893,6 +6141,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListOffersRequest request =
    *       ListOffersRequest.newBuilder()
@@ -5928,6 +6178,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListOffersRequest request =
    *       ListOffersRequest.newBuilder()
@@ -5975,6 +6227,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableSkusRequest request =
    *       ListPurchasableSkusRequest.newBuilder()
@@ -6017,6 +6271,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableSkusRequest request =
    *       ListPurchasableSkusRequest.newBuilder()
@@ -6058,6 +6314,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableSkusRequest request =
    *       ListPurchasableSkusRequest.newBuilder()
@@ -6106,6 +6364,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableOffersRequest request =
    *       ListPurchasableOffersRequest.newBuilder()
@@ -6148,6 +6408,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableOffersRequest request =
    *       ListPurchasableOffersRequest.newBuilder()
@@ -6189,6 +6451,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListPurchasableOffersRequest request =
    *       ListPurchasableOffersRequest.newBuilder()
@@ -6241,6 +6505,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   RegisterSubscriberRequest request =
    *       RegisterSubscriberRequest.newBuilder()
@@ -6281,6 +6547,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   RegisterSubscriberRequest request =
    *       RegisterSubscriberRequest.newBuilder()
@@ -6324,6 +6592,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UnregisterSubscriberRequest request =
    *       UnregisterSubscriberRequest.newBuilder()
@@ -6368,6 +6638,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UnregisterSubscriberRequest request =
    *       UnregisterSubscriberRequest.newBuilder()
@@ -6409,6 +6681,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
@@ -6452,6 +6726,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
@@ -6496,6 +6772,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
