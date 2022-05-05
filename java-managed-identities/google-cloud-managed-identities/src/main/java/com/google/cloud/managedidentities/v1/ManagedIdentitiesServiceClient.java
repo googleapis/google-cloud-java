@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
  *     ManagedIdentitiesServiceClient.create()) {
  *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -112,6 +114,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ManagedIdentitiesServiceSettings managedIdentitiesServiceSettings =
  *     ManagedIdentitiesServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -123,6 +127,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ManagedIdentitiesServiceSettings managedIdentitiesServiceSettings =
  *     ManagedIdentitiesServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
@@ -204,6 +210,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -246,6 +254,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -288,6 +298,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
@@ -315,6 +327,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
@@ -344,6 +358,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   CreateMicrosoftAdDomainRequest request =
@@ -371,6 +387,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -397,6 +415,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -421,6 +441,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ResetAdminPasswordRequest request =
@@ -446,6 +468,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ResetAdminPasswordRequest request =
@@ -471,6 +495,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -499,6 +525,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -524,6 +552,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
@@ -554,6 +584,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
@@ -585,6 +617,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ListDomainsRequest request =
@@ -622,6 +656,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -646,6 +682,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -669,6 +707,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   GetDomainRequest request =
@@ -693,6 +733,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   GetDomainRequest request =
@@ -717,6 +759,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   Domain domain = Domain.newBuilder().build();
@@ -747,6 +791,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   UpdateDomainRequest request =
@@ -772,6 +818,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   UpdateDomainRequest request =
@@ -798,6 +846,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   UpdateDomainRequest request =
@@ -823,6 +873,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -847,6 +899,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -870,6 +924,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DeleteDomainRequest request =
@@ -894,6 +950,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DeleteDomainRequest request =
@@ -919,6 +977,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DeleteDomainRequest request =
@@ -943,6 +1003,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -972,6 +1034,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -998,6 +1062,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
@@ -1023,6 +1089,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
@@ -1049,6 +1117,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   AttachTrustRequest request =
@@ -1074,6 +1144,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -1112,6 +1184,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -1150,6 +1224,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
@@ -1177,6 +1253,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
@@ -1204,6 +1282,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ReconfigureTrustRequest request =
@@ -1230,6 +1310,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -1259,6 +1341,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -1285,6 +1369,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
@@ -1310,6 +1396,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
@@ -1336,6 +1424,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DetachTrustRequest request =
@@ -1362,6 +1452,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
@@ -1393,6 +1485,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   String name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
@@ -1420,6 +1514,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
@@ -1447,6 +1543,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
@@ -1474,6 +1572,8 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
    *     ManagedIdentitiesServiceClient.create()) {
    *   ValidateTrustRequest request =
