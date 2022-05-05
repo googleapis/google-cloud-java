@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetricsClient metricsClient = MetricsClient.create()) {
  *   LogMetricName metricName = LogMetricName.of("[PROJECT]", "[METRIC]");
  *   LogMetric response = metricsClient.getLogMetric(metricName);
@@ -86,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetricsSettings metricsSettings =
  *     MetricsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetricsSettings metricsSettings = MetricsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MetricsClient metricsClient = MetricsClient.create(metricsSettings);
  * }</pre>
@@ -160,6 +166,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAll()) {
@@ -187,6 +195,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   for (LogMetric element : metricsClient.listLogMetrics(parent).iterateAll()) {
@@ -211,6 +221,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ListLogMetricsRequest request =
    *       ListLogMetricsRequest.newBuilder()
@@ -238,6 +250,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ListLogMetricsRequest request =
    *       ListLogMetricsRequest.newBuilder()
@@ -265,6 +279,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ListLogMetricsRequest request =
    *       ListLogMetricsRequest.newBuilder()
@@ -299,6 +315,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   LogMetricName metricName = LogMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric response = metricsClient.getLogMetric(metricName);
@@ -324,6 +342,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   String metricName = LogMetricName.of("[PROJECT]", "[METRIC]").toString();
    *   LogMetric response = metricsClient.getLogMetric(metricName);
@@ -347,6 +367,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   GetLogMetricRequest request =
    *       GetLogMetricRequest.newBuilder()
@@ -370,6 +392,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   GetLogMetricRequest request =
    *       GetLogMetricRequest.newBuilder()
@@ -392,6 +416,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
@@ -422,6 +448,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
    *   LogMetric metric = LogMetric.newBuilder().build();
@@ -449,6 +477,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   CreateLogMetricRequest request =
    *       CreateLogMetricRequest.newBuilder()
@@ -473,6 +503,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   CreateLogMetricRequest request =
    *       CreateLogMetricRequest.newBuilder()
@@ -496,6 +528,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   LogMetricName metricName = LogMetricName.of("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
@@ -527,6 +561,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   String metricName = LogMetricName.of("[PROJECT]", "[METRIC]").toString();
    *   LogMetric metric = LogMetric.newBuilder().build();
@@ -555,6 +591,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   UpdateLogMetricRequest request =
    *       UpdateLogMetricRequest.newBuilder()
@@ -579,6 +617,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   UpdateLogMetricRequest request =
    *       UpdateLogMetricRequest.newBuilder()
@@ -602,6 +642,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   LogMetricName metricName = LogMetricName.of("[PROJECT]", "[METRIC]");
    *   metricsClient.deleteLogMetric(metricName);
@@ -627,6 +669,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   String metricName = LogMetricName.of("[PROJECT]", "[METRIC]").toString();
    *   metricsClient.deleteLogMetric(metricName);
@@ -650,6 +694,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   DeleteLogMetricRequest request =
    *       DeleteLogMetricRequest.newBuilder()
@@ -673,6 +719,8 @@ public class MetricsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetricsClient metricsClient = MetricsClient.create()) {
    *   DeleteLogMetricRequest request =
    *       DeleteLogMetricRequest.newBuilder()
