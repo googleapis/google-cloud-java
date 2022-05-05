@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
  *     AssuredWorkloadsServiceClient.create()) {
  *   Workload workload = Workload.newBuilder().build();
@@ -85,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
  *     AssuredWorkloadsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
  *     AssuredWorkloadsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
@@ -176,6 +182,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
@@ -206,6 +214,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
@@ -233,6 +243,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
@@ -260,6 +272,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
@@ -287,6 +301,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   CreateWorkloadRequest request =
@@ -315,6 +331,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   Workload workload = Workload.newBuilder().build();
@@ -344,6 +362,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   UpdateWorkloadRequest request =
@@ -371,6 +391,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   UpdateWorkloadRequest request =
@@ -397,6 +419,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
@@ -422,6 +446,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   String name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString();
@@ -446,6 +472,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   DeleteWorkloadRequest request =
@@ -472,6 +500,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   DeleteWorkloadRequest request =
@@ -497,6 +527,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   WorkloadName name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
@@ -523,6 +555,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   String name = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString();
@@ -548,6 +582,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   GetWorkloadRequest request =
@@ -572,6 +608,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   GetWorkloadRequest request =
@@ -596,6 +634,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
@@ -624,6 +664,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   String parent = LocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
@@ -649,6 +691,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
@@ -678,6 +722,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
@@ -708,6 +754,8 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
    *     AssuredWorkloadsServiceClient.create()) {
    *   ListWorkloadsRequest request =
