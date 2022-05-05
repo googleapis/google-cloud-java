@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VideoStitcherServiceClient videoStitcherServiceClient =
  *     VideoStitcherServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -85,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VideoStitcherServiceSettings videoStitcherServiceSettings =
  *     VideoStitcherServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -96,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VideoStitcherServiceSettings videoStitcherServiceSettings =
  *     VideoStitcherServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VideoStitcherServiceClient videoStitcherServiceClient =
@@ -164,6 +170,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -200,6 +208,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -236,6 +246,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateCdnKeyRequest request =
@@ -262,6 +274,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateCdnKeyRequest request =
@@ -288,6 +302,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -316,6 +332,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -341,6 +359,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListCdnKeysRequest request =
@@ -371,6 +391,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListCdnKeysRequest request =
@@ -402,6 +424,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListCdnKeysRequest request =
@@ -439,6 +463,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CdnKeyName name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]");
@@ -463,6 +489,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString();
@@ -486,6 +514,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetCdnKeyRequest request =
@@ -510,6 +540,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetCdnKeyRequest request =
@@ -533,6 +565,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CdnKeyName name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]");
@@ -557,6 +591,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = CdnKeyName.of("[PROJECT]", "[LOCATION]", "[CDN_KEY]").toString();
@@ -580,6 +616,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   DeleteCdnKeyRequest request =
@@ -604,6 +642,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   DeleteCdnKeyRequest request =
@@ -628,6 +668,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CdnKey cdnKey = CdnKey.newBuilder().build();
@@ -655,6 +697,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   UpdateCdnKeyRequest request =
@@ -680,6 +724,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   UpdateCdnKeyRequest request =
@@ -706,6 +752,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -736,6 +784,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -763,6 +813,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateVodSessionRequest request =
@@ -789,6 +841,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateVodSessionRequest request =
@@ -815,6 +869,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   VodSessionName name = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]");
@@ -840,6 +896,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]").toString();
@@ -864,6 +922,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodSessionRequest request =
@@ -889,6 +949,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodSessionRequest request =
@@ -913,6 +975,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   VodSessionName parent = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]");
@@ -942,6 +1006,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]").toString();
@@ -969,6 +1035,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodStitchDetailsRequest request =
@@ -999,6 +1067,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodStitchDetailsRequest request =
@@ -1028,6 +1098,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodStitchDetailsRequest request =
@@ -1064,6 +1136,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   VodStitchDetailName name =
@@ -1092,6 +1166,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name =
@@ -1119,6 +1195,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodStitchDetailRequest request =
@@ -1146,6 +1224,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodStitchDetailRequest request =
@@ -1174,6 +1254,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   VodSessionName parent = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]");
@@ -1203,6 +1285,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = VodSessionName.of("[PROJECT]", "[LOCATION]", "[VOD_SESSION]").toString();
@@ -1230,6 +1314,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodAdTagDetailsRequest request =
@@ -1260,6 +1346,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodAdTagDetailsRequest request =
@@ -1289,6 +1377,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListVodAdTagDetailsRequest request =
@@ -1325,6 +1415,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   VodAdTagDetailName name =
@@ -1353,6 +1445,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name =
@@ -1379,6 +1473,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodAdTagDetailRequest request =
@@ -1406,6 +1502,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetVodAdTagDetailRequest request =
@@ -1433,6 +1531,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
@@ -1462,6 +1562,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString();
@@ -1489,6 +1591,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListLiveAdTagDetailsRequest request =
@@ -1519,6 +1623,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListLiveAdTagDetailsRequest request =
@@ -1548,6 +1654,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListLiveAdTagDetailsRequest request =
@@ -1584,6 +1692,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LiveAdTagDetailName name =
@@ -1612,6 +1722,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name =
@@ -1639,6 +1751,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetLiveAdTagDetailRequest request =
@@ -1666,6 +1780,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetLiveAdTagDetailRequest request =
@@ -1694,6 +1810,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1728,6 +1846,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -1762,6 +1882,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateSlateRequest request =
@@ -1788,6 +1910,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateSlateRequest request =
@@ -1814,6 +1938,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1839,6 +1965,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -1863,6 +1991,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListSlatesRequest request =
@@ -1893,6 +2023,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListSlatesRequest request =
@@ -1923,6 +2055,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   ListSlatesRequest request =
@@ -1959,6 +2093,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   SlateName name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]");
@@ -1983,6 +2119,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString();
@@ -2006,6 +2144,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetSlateRequest request =
@@ -2030,6 +2170,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetSlateRequest request =
@@ -2053,6 +2195,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   Slate slate = Slate.newBuilder().build();
@@ -2078,6 +2222,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   UpdateSlateRequest request =
@@ -2103,6 +2249,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   UpdateSlateRequest request =
@@ -2128,6 +2276,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   SlateName name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]");
@@ -2152,6 +2302,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString();
@@ -2175,6 +2327,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   DeleteSlateRequest request =
@@ -2199,6 +2353,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   DeleteSlateRequest request =
@@ -2223,6 +2379,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
@@ -2261,6 +2419,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString();
@@ -2296,6 +2456,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateLiveSessionRequest request =
@@ -2321,6 +2483,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   CreateLiveSessionRequest request =
@@ -2346,6 +2510,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   LiveSessionName name = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
@@ -2370,6 +2536,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   String name = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString();
@@ -2393,6 +2561,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetLiveSessionRequest request =
@@ -2417,6 +2587,8 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
    *   GetLiveSessionRequest request =
