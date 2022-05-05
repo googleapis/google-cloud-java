@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
  *     GameServerDeploymentsServiceClient.create()) {
  *   GameServerDeploymentName name =
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
  *     GameServerDeploymentsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GameServerDeploymentsServiceSettings gameServerDeploymentsServiceSettings =
  *     GameServerDeploymentsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
@@ -181,6 +187,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -211,6 +219,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -238,6 +248,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -270,6 +282,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -304,6 +318,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   ListGameServerDeploymentsRequest request =
@@ -342,6 +358,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -370,6 +388,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -396,6 +416,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRequest request =
@@ -423,6 +445,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRequest request =
@@ -449,6 +473,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -483,6 +509,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -516,6 +544,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -544,6 +574,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -574,6 +606,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   CreateGameServerDeploymentRequest request =
@@ -603,6 +637,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -631,6 +667,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -657,6 +695,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -683,6 +723,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -711,6 +753,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   DeleteGameServerDeploymentRequest request =
@@ -739,6 +783,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
@@ -775,6 +821,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -802,6 +850,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -831,6 +881,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRequest request =
@@ -859,6 +911,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentName name =
@@ -888,6 +942,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   String name =
@@ -914,6 +970,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRolloutRequest request =
@@ -941,6 +999,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GetGameServerDeploymentRolloutRequest request =
@@ -973,6 +1033,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   GameServerDeploymentRollout rollout = GameServerDeploymentRollout.newBuilder().build();
@@ -1013,6 +1075,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1044,6 +1108,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1077,6 +1143,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   UpdateGameServerDeploymentRolloutRequest request =
@@ -1105,6 +1173,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   PreviewGameServerDeploymentRolloutRequest request =
@@ -1133,6 +1203,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   PreviewGameServerDeploymentRolloutRequest request =
@@ -1165,6 +1237,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   FetchDeploymentStateRequest request =
@@ -1191,6 +1265,8 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
    *     GameServerDeploymentsServiceClient.create()) {
    *   FetchDeploymentStateRequest request =

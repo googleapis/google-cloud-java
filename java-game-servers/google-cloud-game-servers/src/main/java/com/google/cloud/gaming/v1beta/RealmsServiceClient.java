@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
  *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
  *   Realm response = realmsServiceClient.getRealm(name);
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RealmsServiceSettings realmsServiceSettings =
  *     RealmsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RealmsServiceSettings realmsServiceSettings =
  *     RealmsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RealmsServiceClient realmsServiceClient = RealmsServiceClient.create(realmsServiceSettings);
@@ -172,6 +178,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Realm element : realmsServiceClient.listRealms(parent).iterateAll()) {
@@ -197,6 +205,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Realm element : realmsServiceClient.listRealms(parent).iterateAll()) {
@@ -221,6 +231,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
@@ -250,6 +262,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
@@ -278,6 +292,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   ListRealmsRequest request =
    *       ListRealmsRequest.newBuilder()
@@ -313,6 +329,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
    *   Realm response = realmsServiceClient.getRealm(name);
@@ -336,6 +354,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   String name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
    *   Realm response = realmsServiceClient.getRealm(name);
@@ -358,6 +378,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   GetRealmRequest request =
    *       GetRealmRequest.newBuilder()
@@ -381,6 +403,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   GetRealmRequest request =
    *       GetRealmRequest.newBuilder()
@@ -403,6 +427,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Realm realm = Realm.newBuilder().build();
@@ -435,6 +461,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Realm realm = Realm.newBuilder().build();
@@ -467,6 +495,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
@@ -493,6 +523,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
@@ -519,6 +551,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   CreateRealmRequest request =
    *       CreateRealmRequest.newBuilder()
@@ -543,6 +577,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
    *   realmsServiceClient.deleteRealmAsync(name).get();
@@ -566,6 +602,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   String name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]").toString();
    *   realmsServiceClient.deleteRealmAsync(name).get();
@@ -588,6 +626,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   DeleteRealmRequest request =
    *       DeleteRealmRequest.newBuilder()
@@ -612,6 +652,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   DeleteRealmRequest request =
    *       DeleteRealmRequest.newBuilder()
@@ -636,6 +678,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   DeleteRealmRequest request =
    *       DeleteRealmRequest.newBuilder()
@@ -658,6 +702,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   Realm realm = Realm.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -687,6 +733,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   UpdateRealmRequest request =
    *       UpdateRealmRequest.newBuilder()
@@ -712,6 +760,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   UpdateRealmRequest request =
    *       UpdateRealmRequest.newBuilder()
@@ -737,6 +787,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   UpdateRealmRequest request =
    *       UpdateRealmRequest.newBuilder()
@@ -760,6 +812,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   PreviewRealmUpdateRequest request =
    *       PreviewRealmUpdateRequest.newBuilder()
@@ -785,6 +839,8 @@ public class RealmsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
    *   PreviewRealmUpdateRequest request =
    *       PreviewRealmUpdateRequest.newBuilder()
