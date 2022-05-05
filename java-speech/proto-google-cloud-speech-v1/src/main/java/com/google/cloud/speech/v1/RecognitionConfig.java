@@ -308,7 +308,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+   * code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1.RecognitionConfig.AudioEncoding}
@@ -643,7 +644,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -660,7 +662,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -689,7 +692,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -1429,6 +1433,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short form content like commands or single shot directed
+   *     speech.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
    *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
    *   &lt;/tr&gt;
@@ -1481,6 +1498,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
    *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short form content like commands or single shot directed
+   *     speech.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
    *   &lt;/tr&gt;
    *   &lt;tr&gt;
    *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
@@ -2283,7 +2313,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2300,7 +2331,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2320,7 +2352,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2342,7 +2375,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2365,7 +2399,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2390,7 +2425,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2411,7 +2447,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2435,7 +2472,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -4861,6 +4899,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short form content like commands or single shot directed
+     *     speech.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
      *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
      *   &lt;/tr&gt;
@@ -4912,6 +4963,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
      *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short form content like commands or single shot directed
+     *     speech.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
@@ -4967,6 +5031,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short form content like commands or single shot directed
+     *     speech.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
      *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
      *   &lt;/tr&gt;
@@ -5019,6 +5096,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short form content like commands or single shot directed
+     *     speech.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
      *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
      *   &lt;/tr&gt;
@@ -5065,6 +5155,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
      *     &lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_long&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for long form content like media or conversation.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;latest_short&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short form content like commands or single shot directed
+     *     speech.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for short queries such as voice commands or voice search.&lt;/td&gt;
      *   &lt;/tr&gt;
      *   &lt;tr&gt;
      *     &lt;td&gt;&lt;code&gt;command_and_search&lt;/code&gt;&lt;/td&gt;

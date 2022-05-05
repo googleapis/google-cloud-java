@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
  *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -74,6 +76,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SpeechSettings speechSettings =
  *     SpeechSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -84,6 +88,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SpeechClient speechClient = SpeechClient.create(speechSettings);
  * }</pre>
@@ -161,6 +167,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -187,6 +195,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognizeRequest request =
    *       RecognizeRequest.newBuilder()
@@ -212,6 +222,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognizeRequest request =
    *       RecognizeRequest.newBuilder()
@@ -238,6 +250,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -268,6 +282,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   LongRunningRecognizeRequest request =
    *       LongRunningRecognizeRequest.newBuilder()
@@ -297,6 +313,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   LongRunningRecognizeRequest request =
    *       LongRunningRecognizeRequest.newBuilder()
@@ -327,6 +345,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   LongRunningRecognizeRequest request =
    *       LongRunningRecognizeRequest.newBuilder()
@@ -353,6 +373,8 @@ public class SpeechClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   BidiStream<StreamingRecognizeRequest, StreamingRecognizeResponse> bidiStream =
    *       speechClient.streamingRecognizeCallable().call();

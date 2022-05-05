@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AdaptationSettings adaptationSettings =
  *     AdaptationSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AdaptationSettings adaptationSettings =
  *     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
@@ -158,6 +164,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -199,6 +207,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -239,6 +249,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreatePhraseSetRequest request =
    *       CreatePhraseSetRequest.newBuilder()
@@ -266,6 +278,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreatePhraseSetRequest request =
    *       CreatePhraseSetRequest.newBuilder()
@@ -290,6 +304,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    *   PhraseSet response = adaptationClient.getPhraseSet(name);
@@ -318,6 +334,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    *   PhraseSet response = adaptationClient.getPhraseSet(name);
@@ -345,6 +363,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   GetPhraseSetRequest request =
    *       GetPhraseSetRequest.newBuilder()
@@ -368,6 +388,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   GetPhraseSetRequest request =
    *       GetPhraseSetRequest.newBuilder()
@@ -390,6 +412,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
@@ -422,6 +446,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
@@ -451,6 +477,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
@@ -478,6 +506,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
@@ -506,6 +536,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListPhraseSetRequest request =
    *       ListPhraseSetRequest.newBuilder()
@@ -539,6 +571,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -573,6 +607,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   UpdatePhraseSetRequest request =
    *       UpdatePhraseSetRequest.newBuilder()
@@ -597,6 +633,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   UpdatePhraseSetRequest request =
    *       UpdatePhraseSetRequest.newBuilder()
@@ -620,6 +658,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    *   adaptationClient.deletePhraseSet(name);
@@ -643,6 +683,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    *   adaptationClient.deletePhraseSet(name);
@@ -665,6 +707,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   DeletePhraseSetRequest request =
    *       DeletePhraseSetRequest.newBuilder()
@@ -688,6 +732,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   DeletePhraseSetRequest request =
    *       DeletePhraseSetRequest.newBuilder()
@@ -710,6 +756,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   CustomClass customClass = CustomClass.newBuilder().build();
@@ -749,6 +797,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   CustomClass customClass = CustomClass.newBuilder().build();
@@ -788,6 +838,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreateCustomClassRequest request =
    *       CreateCustomClassRequest.newBuilder()
@@ -813,6 +865,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CreateCustomClassRequest request =
    *       CreateCustomClassRequest.newBuilder()
@@ -838,6 +892,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    *   CustomClass response = adaptationClient.getCustomClass(name);
@@ -861,6 +917,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    *   CustomClass response = adaptationClient.getCustomClass(name);
@@ -883,6 +941,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   GetCustomClassRequest request =
    *       GetCustomClassRequest.newBuilder()
@@ -906,6 +966,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   GetCustomClassRequest request =
    *       GetCustomClassRequest.newBuilder()
@@ -928,6 +990,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
@@ -960,6 +1024,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
@@ -990,6 +1056,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
@@ -1017,6 +1085,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
@@ -1045,6 +1115,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   ListCustomClassesRequest request =
    *       ListCustomClassesRequest.newBuilder()
@@ -1080,6 +1152,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CustomClass customClass = CustomClass.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1115,6 +1189,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   UpdateCustomClassRequest request =
    *       UpdateCustomClassRequest.newBuilder()
@@ -1139,6 +1215,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   UpdateCustomClassRequest request =
    *       UpdateCustomClassRequest.newBuilder()
@@ -1163,6 +1241,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    *   adaptationClient.deleteCustomClass(name);
@@ -1193,6 +1273,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    *   adaptationClient.deleteCustomClass(name);
@@ -1220,6 +1302,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   DeleteCustomClassRequest request =
    *       DeleteCustomClassRequest.newBuilder()
@@ -1243,6 +1327,8 @@ public class AdaptationClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    *   DeleteCustomClassRequest request =
    *       DeleteCustomClassRequest.newBuilder()
