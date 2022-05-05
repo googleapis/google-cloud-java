@@ -24,4 +24,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
-          folder: monoreop/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
+          folder: monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
