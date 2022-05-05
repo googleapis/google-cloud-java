@@ -59,3 +59,6 @@ awk -v MODULES="`awk -v ORS='\\\\n' '1' ../coverage-modules.txt`" '1;/<dependenc
 mvn install -T C1
 mvn jacoco:report-aggregate -T C1
 
+# create coverage archive
+cd CoverageAggregator/target/site/jacoco-aggregate
+zip ../../../../../coverage.zip ./* -r
