@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@
  * <p>Sample for TopicAdminClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
  *   TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
  *   Topic response = topicAdminClient.createTopic(name);
@@ -42,6 +44,8 @@
  * <p>Sample for SubscriptionAdminClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
  *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
  *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -59,6 +63,8 @@
  * <p>Sample for SchemaServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Schema schema = Schema.newBuilder().build();
