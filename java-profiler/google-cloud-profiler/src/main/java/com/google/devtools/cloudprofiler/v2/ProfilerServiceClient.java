@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
  *   CreateProfileRequest request =
  *       CreateProfileRequest.newBuilder()
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ProfilerServiceSettings profilerServiceSettings =
  *     ProfilerServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ProfilerServiceSettings profilerServiceSettings =
  *     ProfilerServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ProfilerServiceClient profilerServiceClient =
@@ -170,6 +176,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
@@ -204,6 +212,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateProfileRequest request =
    *       CreateProfileRequest.newBuilder()
@@ -229,6 +239,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateOfflineProfileRequest request =
    *       CreateOfflineProfileRequest.newBuilder()
@@ -254,6 +266,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   CreateOfflineProfileRequest request =
    *       CreateOfflineProfileRequest.newBuilder()
@@ -280,6 +294,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   UpdateProfileRequest request =
    *       UpdateProfileRequest.newBuilder()
@@ -306,6 +322,8 @@ public class ProfilerServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.create()) {
    *   UpdateProfileRequest request =
    *       UpdateProfileRequest.newBuilder()
