@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FoldersClient foldersClient = FoldersClient.create()) {
  *   FolderName name = FolderName.of("[FOLDER]");
  *   Folder response = foldersClient.getFolder(name);
@@ -88,6 +90,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FoldersSettings foldersSettings =
  *     FoldersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -98,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FoldersSettings foldersSettings = FoldersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FoldersClient foldersClient = FoldersClient.create(foldersSettings);
  * }</pre>
@@ -175,6 +181,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
    *   Folder response = foldersClient.getFolder(name);
@@ -200,6 +208,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
    *   Folder response = foldersClient.getFolder(name);
@@ -224,6 +234,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetFolderRequest request =
    *       GetFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -247,6 +259,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetFolderRequest request =
    *       GetFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -270,6 +284,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (Folder element : foldersClient.listFolders(parent).iterateAll()) {
@@ -302,6 +318,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (Folder element : foldersClient.listFolders(parent).iterateAll()) {
@@ -331,6 +349,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
@@ -362,6 +382,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
@@ -393,6 +415,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ListFoldersRequest request =
    *       ListFoldersRequest.newBuilder()
@@ -431,6 +455,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String query = "query107944136";
    *   for (Folder element : foldersClient.searchFolders(query).iterateAll()) {
@@ -481,6 +507,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SearchFoldersRequest request =
    *       SearchFoldersRequest.newBuilder()
@@ -512,6 +540,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SearchFoldersRequest request =
    *       SearchFoldersRequest.newBuilder()
@@ -543,6 +573,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SearchFoldersRequest request =
    *       SearchFoldersRequest.newBuilder()
@@ -594,6 +626,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   Folder folder = Folder.newBuilder().build();
    *   Folder response = foldersClient.createFolderAsync(folder).get();
@@ -634,6 +668,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   CreateFolderRequest request =
    *       CreateFolderRequest.newBuilder().setFolder(Folder.newBuilder().build()).build();
@@ -674,6 +710,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   CreateFolderRequest request =
    *       CreateFolderRequest.newBuilder().setFolder(Folder.newBuilder().build()).build();
@@ -714,6 +752,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   CreateFolderRequest request =
    *       CreateFolderRequest.newBuilder().setFolder(Folder.newBuilder().build()).build();
@@ -745,6 +785,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   Folder folder = Folder.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -782,6 +824,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UpdateFolderRequest request =
    *       UpdateFolderRequest.newBuilder()
@@ -818,6 +862,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UpdateFolderRequest request =
    *       UpdateFolderRequest.newBuilder()
@@ -854,6 +900,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UpdateFolderRequest request =
    *       UpdateFolderRequest.newBuilder()
@@ -888,6 +936,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
    *   ResourceName destinationParent = FolderName.of("[FOLDER]");
@@ -930,6 +980,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
    *   String destinationParent = FolderName.of("[FOLDER]").toString();
@@ -972,6 +1024,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
    *   ResourceName destinationParent = FolderName.of("[FOLDER]");
@@ -1014,6 +1068,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
    *   String destinationParent = FolderName.of("[FOLDER]").toString();
@@ -1056,6 +1112,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
@@ -1092,6 +1150,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
@@ -1128,6 +1188,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   MoveFolderRequest request =
    *       MoveFolderRequest.newBuilder()
@@ -1158,6 +1220,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
    *   Folder response = foldersClient.deleteFolderAsync(name).get();
@@ -1188,6 +1252,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
    *   Folder response = foldersClient.deleteFolderAsync(name).get();
@@ -1217,6 +1283,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   DeleteFolderRequest request =
    *       DeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1246,6 +1314,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   DeleteFolderRequest request =
    *       DeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1275,6 +1345,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   DeleteFolderRequest request =
    *       DeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1302,6 +1374,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   FolderName name = FolderName.of("[FOLDER]");
    *   Folder response = foldersClient.undeleteFolderAsync(name).get();
@@ -1333,6 +1407,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String name = FolderName.of("[FOLDER]").toString();
    *   Folder response = foldersClient.undeleteFolderAsync(name).get();
@@ -1362,6 +1438,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UndeleteFolderRequest request =
    *       UndeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1391,6 +1469,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UndeleteFolderRequest request =
    *       UndeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1420,6 +1500,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   UndeleteFolderRequest request =
    *       UndeleteFolderRequest.newBuilder().setName(FolderName.of("[FOLDER]").toString()).build();
@@ -1443,6 +1525,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = foldersClient.getIamPolicy(resource);
@@ -1471,6 +1555,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = foldersClient.getIamPolicy(resource);
@@ -1496,6 +1582,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1523,6 +1611,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1548,6 +1638,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
@@ -1580,6 +1672,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -1609,6 +1703,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1636,6 +1732,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1663,6 +1761,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
@@ -1697,6 +1797,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -1731,6 +1833,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1758,6 +1862,8 @@ public class FoldersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FoldersClient foldersClient = FoldersClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()

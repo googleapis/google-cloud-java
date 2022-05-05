@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
  *   TagKeyName name = TagKeyName.of("[TAG_KEY]");
  *   TagKey response = tagKeysClient.getTagKey(name);
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagKeysSettings tagKeysSettings =
  *     TagKeysSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,6 +101,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagKeysSettings tagKeysSettings = TagKeysSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TagKeysClient tagKeysClient = TagKeysClient.create(tagKeysSettings);
  * }</pre>
@@ -172,6 +178,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagKey element : tagKeysClient.listTagKeys(parent).iterateAll()) {
@@ -199,6 +207,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagKey element : tagKeysClient.listTagKeys(parent).iterateAll()) {
@@ -223,6 +233,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
@@ -250,6 +262,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
@@ -277,6 +291,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ListTagKeysRequest request =
    *       ListTagKeysRequest.newBuilder()
@@ -311,6 +327,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TagKeyName name = TagKeyName.of("[TAG_KEY]");
    *   TagKey response = tagKeysClient.getTagKey(name);
@@ -334,6 +352,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String name = TagKeyName.of("[TAG_KEY]").toString();
    *   TagKey response = tagKeysClient.getTagKey(name);
@@ -356,6 +376,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetTagKeyRequest request =
    *       GetTagKeyRequest.newBuilder().setName(TagKeyName.of("[TAG_KEY]").toString()).build();
@@ -378,6 +400,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetTagKeyRequest request =
    *       GetTagKeyRequest.newBuilder().setName(TagKeyName.of("[TAG_KEY]").toString()).build();
@@ -400,6 +424,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TagKey tagKey = TagKey.newBuilder().build();
    *   TagKey response = tagKeysClient.createTagKeyAsync(tagKey).get();
@@ -424,6 +450,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   CreateTagKeyRequest request =
    *       CreateTagKeyRequest.newBuilder()
@@ -451,6 +479,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   CreateTagKeyRequest request =
    *       CreateTagKeyRequest.newBuilder()
@@ -478,6 +508,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   CreateTagKeyRequest request =
    *       CreateTagKeyRequest.newBuilder()
@@ -501,6 +533,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TagKey tagKey = TagKey.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -529,6 +563,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   UpdateTagKeyRequest request =
    *       UpdateTagKeyRequest.newBuilder()
@@ -555,6 +591,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   UpdateTagKeyRequest request =
    *       UpdateTagKeyRequest.newBuilder()
@@ -581,6 +619,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   UpdateTagKeyRequest request =
    *       UpdateTagKeyRequest.newBuilder()
@@ -605,6 +645,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TagKeyName name = TagKeyName.of("[TAG_KEY]");
    *   TagKey response = tagKeysClient.deleteTagKeyAsync(name).get();
@@ -629,6 +671,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String name = TagKeyName.of("[TAG_KEY]").toString();
    *   TagKey response = tagKeysClient.deleteTagKeyAsync(name).get();
@@ -652,6 +696,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   DeleteTagKeyRequest request =
    *       DeleteTagKeyRequest.newBuilder()
@@ -678,6 +724,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   DeleteTagKeyRequest request =
    *       DeleteTagKeyRequest.newBuilder()
@@ -704,6 +752,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   DeleteTagKeyRequest request =
    *       DeleteTagKeyRequest.newBuilder()
@@ -731,6 +781,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = tagKeysClient.getIamPolicy(resource);
@@ -759,6 +811,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = tagKeysClient.getIamPolicy(resource);
@@ -784,6 +838,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -811,6 +867,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -836,6 +894,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
@@ -868,6 +928,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -897,6 +959,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -924,6 +988,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -951,6 +1017,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
@@ -985,6 +1053,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -1019,6 +1089,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1046,6 +1118,8 @@ public class TagKeysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagKeysClient tagKeysClient = TagKeysClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()

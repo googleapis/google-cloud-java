@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
  *   ResourceName parent = FolderName.of("[FOLDER]");
  *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -85,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagBindingsSettings tagBindingsSettings =
  *     TagBindingsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagBindingsSettings tagBindingsSettings =
  *     TagBindingsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TagBindingsClient tagBindingsClient = TagBindingsClient.create(tagBindingsSettings);
@@ -175,6 +181,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -205,6 +213,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagBinding element : tagBindingsClient.listTagBindings(parent).iterateAll()) {
@@ -232,6 +242,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -262,6 +274,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -293,6 +307,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   ListTagBindingsRequest request =
    *       ListTagBindingsRequest.newBuilder()
@@ -329,6 +345,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   TagBinding tagBinding = TagBinding.newBuilder().build();
    *   TagBinding response = tagBindingsClient.createTagBindingAsync(tagBinding).get();
@@ -353,6 +371,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -379,6 +399,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -405,6 +427,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   CreateTagBindingRequest request =
    *       CreateTagBindingRequest.newBuilder()
@@ -429,6 +453,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   TagBindingName name = TagBindingName.of("[TAG_BINDING]");
    *   tagBindingsClient.deleteTagBindingAsync(name).get();
@@ -454,6 +480,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   String name = TagBindingName.of("[TAG_BINDING]").toString();
    *   tagBindingsClient.deleteTagBindingAsync(name).get();
@@ -477,6 +505,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()
@@ -501,6 +531,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()
@@ -525,6 +557,8 @@ public class TagBindingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
    *   DeleteTagBindingRequest request =
    *       DeleteTagBindingRequest.newBuilder()

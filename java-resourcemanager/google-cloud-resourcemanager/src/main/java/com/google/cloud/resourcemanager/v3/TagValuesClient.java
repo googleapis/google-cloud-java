@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
  *   TagValueName name = TagValueName.of("[TAG_VALUE]");
  *   TagValue response = tagValuesClient.getTagValue(name);
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagValuesSettings tagValuesSettings =
  *     TagValuesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,6 +101,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TagValuesSettings tagValuesSettings =
  *     TagValuesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TagValuesClient tagValuesClient = TagValuesClient.create(tagValuesSettings);
@@ -173,6 +179,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (TagValue element : tagValuesClient.listTagValues(parent).iterateAll()) {
@@ -200,6 +208,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String parent = FolderName.of("[FOLDER]").toString();
    *   for (TagValue element : tagValuesClient.listTagValues(parent).iterateAll()) {
@@ -224,6 +234,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ListTagValuesRequest request =
    *       ListTagValuesRequest.newBuilder()
@@ -251,6 +263,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ListTagValuesRequest request =
    *       ListTagValuesRequest.newBuilder()
@@ -278,6 +292,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ListTagValuesRequest request =
    *       ListTagValuesRequest.newBuilder()
@@ -312,6 +328,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TagValueName name = TagValueName.of("[TAG_VALUE]");
    *   TagValue response = tagValuesClient.getTagValue(name);
@@ -335,6 +353,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String name = TagValueName.of("[TAG_VALUE]").toString();
    *   TagValue response = tagValuesClient.getTagValue(name);
@@ -357,6 +377,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetTagValueRequest request =
    *       GetTagValueRequest.newBuilder()
@@ -381,6 +403,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetTagValueRequest request =
    *       GetTagValueRequest.newBuilder()
@@ -405,6 +429,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TagValue tagValue = TagValue.newBuilder().build();
    *   TagValue response = tagValuesClient.createTagValueAsync(tagValue).get();
@@ -431,6 +457,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   CreateTagValueRequest request =
    *       CreateTagValueRequest.newBuilder()
@@ -458,6 +486,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   CreateTagValueRequest request =
    *       CreateTagValueRequest.newBuilder()
@@ -485,6 +515,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   CreateTagValueRequest request =
    *       CreateTagValueRequest.newBuilder()
@@ -508,6 +540,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TagValue tagValue = TagValue.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -536,6 +570,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   UpdateTagValueRequest request =
    *       UpdateTagValueRequest.newBuilder()
@@ -562,6 +598,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   UpdateTagValueRequest request =
    *       UpdateTagValueRequest.newBuilder()
@@ -588,6 +626,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   UpdateTagValueRequest request =
    *       UpdateTagValueRequest.newBuilder()
@@ -612,6 +652,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TagValueName name = TagValueName.of("[TAG_VALUE]");
    *   TagValue response = tagValuesClient.deleteTagValueAsync(name).get();
@@ -635,6 +677,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String name = TagValueName.of("[TAG_VALUE]").toString();
    *   TagValue response = tagValuesClient.deleteTagValueAsync(name).get();
@@ -656,6 +700,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   DeleteTagValueRequest request =
    *       DeleteTagValueRequest.newBuilder()
@@ -682,6 +728,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   DeleteTagValueRequest request =
    *       DeleteTagValueRequest.newBuilder()
@@ -708,6 +756,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   DeleteTagValueRequest request =
    *       DeleteTagValueRequest.newBuilder()
@@ -736,6 +786,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = tagValuesClient.getIamPolicy(resource);
@@ -765,6 +817,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = tagValuesClient.getIamPolicy(resource);
@@ -791,6 +845,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -819,6 +875,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -844,6 +902,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy policy = Policy.newBuilder().build();
@@ -876,6 +936,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -905,6 +967,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -932,6 +996,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -959,6 +1025,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
@@ -994,6 +1062,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -1029,6 +1099,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1056,6 +1128,8 @@ public class TagValuesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TagValuesClient tagValuesClient = TagValuesClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()

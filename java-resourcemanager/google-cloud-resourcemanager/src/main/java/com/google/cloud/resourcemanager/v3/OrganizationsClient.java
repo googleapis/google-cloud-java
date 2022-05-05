@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
  *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
  *   Organization response = organizationsClient.getOrganization(name);
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OrganizationsSettings organizationsSettings =
  *     OrganizationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * OrganizationsSettings organizationsSettings =
  *     OrganizationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * OrganizationsClient organizationsClient = OrganizationsClient.create(organizationsSettings);
@@ -159,6 +165,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
    *   Organization response = organizationsClient.getOrganization(name);
@@ -183,6 +191,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   String name = OrganizationName.of("[ORGANIZATION]").toString();
    *   Organization response = organizationsClient.getOrganization(name);
@@ -206,6 +216,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetOrganizationRequest request =
    *       GetOrganizationRequest.newBuilder()
@@ -229,6 +241,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetOrganizationRequest request =
    *       GetOrganizationRequest.newBuilder()
@@ -257,6 +271,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   String query = "query107944136";
    *   for (Organization element : organizationsClient.searchOrganizations(query).iterateAll()) {
@@ -300,6 +316,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SearchOrganizationsRequest request =
    *       SearchOrganizationsRequest.newBuilder()
@@ -333,6 +351,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SearchOrganizationsRequest request =
    *       SearchOrganizationsRequest.newBuilder()
@@ -366,6 +386,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SearchOrganizationsRequest request =
    *       SearchOrganizationsRequest.newBuilder()
@@ -406,6 +428,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = organizationsClient.getIamPolicy(resource);
@@ -436,6 +460,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = organizationsClient.getIamPolicy(resource);
@@ -463,6 +489,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -492,6 +520,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -519,6 +549,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   Policy response = organizationsClient.setIamPolicy(resource);
@@ -548,6 +580,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   Policy response = organizationsClient.setIamPolicy(resource);
@@ -574,6 +608,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -603,6 +639,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -630,6 +668,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   ResourceName resource = FolderName.of("[FOLDER]");
    *   List<String> permissions = new ArrayList<>();
@@ -665,6 +705,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   String resource = FolderName.of("[FOLDER]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -700,6 +742,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -727,6 +771,8 @@ public class OrganizationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (OrganizationsClient organizationsClient = OrganizationsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
