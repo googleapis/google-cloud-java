@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
  *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
  *   Service response = dataprocMetastoreClient.getService(name);
@@ -99,6 +101,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataprocMetastoreSettings dataprocMetastoreSettings =
  *     DataprocMetastoreSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -110,6 +114,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DataprocMetastoreSettings dataprocMetastoreSettings =
  *     DataprocMetastoreSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DataprocMetastoreClient dataprocMetastoreClient =
@@ -189,6 +195,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Service element : dataprocMetastoreClient.listServices(parent).iterateAll()) {
@@ -217,6 +225,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Service element : dataprocMetastoreClient.listServices(parent).iterateAll()) {
@@ -242,6 +252,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -271,6 +283,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -301,6 +315,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -337,6 +353,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   Service response = dataprocMetastoreClient.getService(name);
@@ -361,6 +379,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   Service response = dataprocMetastoreClient.getService(name);
@@ -384,6 +404,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -407,6 +429,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetServiceRequest request =
    *       GetServiceRequest.newBuilder()
@@ -429,6 +453,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Service service = Service.newBuilder().build();
@@ -467,6 +493,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Service service = Service.newBuilder().build();
@@ -505,6 +533,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -532,6 +562,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -559,6 +591,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateServiceRequest request =
    *       CreateServiceRequest.newBuilder()
@@ -585,6 +619,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   Service service = Service.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -616,6 +652,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -642,6 +680,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -668,6 +708,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
@@ -693,6 +735,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   dataprocMetastoreClient.deleteServiceAsync(name).get();
@@ -717,6 +761,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   dataprocMetastoreClient.deleteServiceAsync(name).get();
@@ -740,6 +786,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -765,6 +813,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -790,6 +840,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteServiceRequest request =
    *       DeleteServiceRequest.newBuilder()
@@ -814,6 +866,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   for (MetadataImport element :
@@ -843,6 +897,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   for (MetadataImport element :
@@ -870,6 +926,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListMetadataImportsRequest request =
    *       ListMetadataImportsRequest.newBuilder()
@@ -901,6 +959,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListMetadataImportsRequest request =
    *       ListMetadataImportsRequest.newBuilder()
@@ -931,6 +991,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListMetadataImportsRequest request =
    *       ListMetadataImportsRequest.newBuilder()
@@ -968,6 +1030,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   MetadataImportName name =
    *       MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]");
@@ -995,6 +1059,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String name =
    *       MetadataImportName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[METADATA_IMPORT]")
@@ -1020,6 +1086,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetMetadataImportRequest request =
    *       GetMetadataImportRequest.newBuilder()
@@ -1045,6 +1113,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetMetadataImportRequest request =
    *       GetMetadataImportRequest.newBuilder()
@@ -1070,6 +1140,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
@@ -1111,6 +1183,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
@@ -1152,6 +1226,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateMetadataImportRequest request =
    *       CreateMetadataImportRequest.newBuilder()
@@ -1179,6 +1255,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateMetadataImportRequest request =
    *       CreateMetadataImportRequest.newBuilder()
@@ -1206,6 +1284,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateMetadataImportRequest request =
    *       CreateMetadataImportRequest.newBuilder()
@@ -1234,6 +1314,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   MetadataImport metadataImport = MetadataImport.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1269,6 +1351,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateMetadataImportRequest request =
    *       UpdateMetadataImportRequest.newBuilder()
@@ -1296,6 +1380,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateMetadataImportRequest request =
    *       UpdateMetadataImportRequest.newBuilder()
@@ -1323,6 +1409,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   UpdateMetadataImportRequest request =
    *       UpdateMetadataImportRequest.newBuilder()
@@ -1349,6 +1437,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ExportMetadataRequest request =
    *       ExportMetadataRequest.newBuilder()
@@ -1374,6 +1464,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ExportMetadataRequest request =
    *       ExportMetadataRequest.newBuilder()
@@ -1399,6 +1491,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ExportMetadataRequest request =
    *       ExportMetadataRequest.newBuilder()
@@ -1423,6 +1517,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
@@ -1455,6 +1551,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   String backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString();
@@ -1487,6 +1585,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
@@ -1519,6 +1619,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String service = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   String backup = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString();
@@ -1548,6 +1650,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   RestoreServiceRequest request =
    *       RestoreServiceRequest.newBuilder()
@@ -1575,6 +1679,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   RestoreServiceRequest request =
    *       RestoreServiceRequest.newBuilder()
@@ -1602,6 +1708,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   RestoreServiceRequest request =
    *       RestoreServiceRequest.newBuilder()
@@ -1628,6 +1736,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   for (Backup element : dataprocMetastoreClient.listBackups(parent).iterateAll()) {
@@ -1656,6 +1766,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   for (Backup element : dataprocMetastoreClient.listBackups(parent).iterateAll()) {
@@ -1681,6 +1793,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListBackupsRequest request =
    *       ListBackupsRequest.newBuilder()
@@ -1710,6 +1824,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListBackupsRequest request =
    *       ListBackupsRequest.newBuilder()
@@ -1740,6 +1856,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ListBackupsRequest request =
    *       ListBackupsRequest.newBuilder()
@@ -1775,6 +1893,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
    *   Backup response = dataprocMetastoreClient.getBackup(name);
@@ -1799,6 +1919,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString();
    *   Backup response = dataprocMetastoreClient.getBackup(name);
@@ -1822,6 +1944,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetBackupRequest request =
    *       GetBackupRequest.newBuilder()
@@ -1845,6 +1969,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   GetBackupRequest request =
    *       GetBackupRequest.newBuilder()
@@ -1867,6 +1993,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   ServiceName parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
    *   Backup backup = Backup.newBuilder().build();
@@ -1904,6 +2032,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String parent = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString();
    *   Backup backup = Backup.newBuilder().build();
@@ -1941,6 +2071,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateBackupRequest request =
    *       CreateBackupRequest.newBuilder()
@@ -1968,6 +2100,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateBackupRequest request =
    *       CreateBackupRequest.newBuilder()
@@ -1995,6 +2129,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   CreateBackupRequest request =
    *       CreateBackupRequest.newBuilder()
@@ -2021,6 +2157,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]");
    *   dataprocMetastoreClient.deleteBackupAsync(name).get();
@@ -2045,6 +2183,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   String name = BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString();
    *   dataprocMetastoreClient.deleteBackupAsync(name).get();
@@ -2068,6 +2208,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteBackupRequest request =
    *       DeleteBackupRequest.newBuilder()
@@ -2093,6 +2235,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteBackupRequest request =
    *       DeleteBackupRequest.newBuilder()
@@ -2118,6 +2262,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
    *   DeleteBackupRequest request =
    *       DeleteBackupRequest.newBuilder()
