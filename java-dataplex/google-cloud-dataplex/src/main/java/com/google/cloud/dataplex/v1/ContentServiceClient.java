@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
  *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
  *   Content content = Content.newBuilder().build();
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ContentServiceSettings contentServiceSettings =
  *     ContentServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ContentServiceSettings contentServiceSettings =
  *     ContentServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ContentServiceClient contentServiceClient = ContentServiceClient.create(contentServiceSettings);
@@ -156,6 +162,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
    *   Content content = Content.newBuilder().build();
@@ -184,6 +192,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   String parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString();
    *   Content content = Content.newBuilder().build();
@@ -209,6 +219,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   CreateContentRequest request =
    *       CreateContentRequest.newBuilder()
@@ -234,6 +246,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   CreateContentRequest request =
    *       CreateContentRequest.newBuilder()
@@ -258,6 +272,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   Content content = Content.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -283,6 +299,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   UpdateContentRequest request =
    *       UpdateContentRequest.newBuilder()
@@ -308,6 +326,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   UpdateContentRequest request =
    *       UpdateContentRequest.newBuilder()
@@ -332,6 +352,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   ContentName name = ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]");
    *   contentServiceClient.deleteContent(name);
@@ -355,6 +377,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   String name = ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString();
    *   contentServiceClient.deleteContent(name);
@@ -377,6 +401,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   DeleteContentRequest request =
    *       DeleteContentRequest.newBuilder()
@@ -400,6 +426,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   DeleteContentRequest request =
    *       DeleteContentRequest.newBuilder()
@@ -422,6 +450,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   ContentName name = ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]");
    *   Content response = contentServiceClient.getContent(name);
@@ -445,6 +475,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   String name = ContentName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[CONTENT]").toString();
    *   Content response = contentServiceClient.getContent(name);
@@ -467,6 +499,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   GetContentRequest request =
    *       GetContentRequest.newBuilder()
@@ -490,6 +524,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   GetContentRequest request =
    *       GetContentRequest.newBuilder()
@@ -512,6 +548,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
    *   for (Content element : contentServiceClient.listContent(parent).iterateAll()) {
@@ -539,6 +577,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   String parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]").toString();
    *   for (Content element : contentServiceClient.listContent(parent).iterateAll()) {
@@ -563,6 +603,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   ListContentRequest request =
    *       ListContentRequest.newBuilder()
@@ -591,6 +633,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   ListContentRequest request =
    *       ListContentRequest.newBuilder()
@@ -620,6 +664,8 @@ public class ContentServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
    *   ListContentRequest request =
    *       ListContentRequest.newBuilder()

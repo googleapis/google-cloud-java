@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
  * <p>Sample for ContentServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
  *   LakeName parent = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
  *   Content content = Content.newBuilder().build();
@@ -41,6 +43,8 @@
  * <p>Sample for MetadataServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
  *   ZoneName parent = ZoneName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]");
  *   Entity entity = Entity.newBuilder().build();
@@ -58,6 +62,8 @@
  * <p>Sample for DataplexServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
  *   LakeName name = LakeName.of("[PROJECT]", "[LOCATION]", "[LAKE]");
  *   Lake response = dataplexServiceClient.getLake(name);
