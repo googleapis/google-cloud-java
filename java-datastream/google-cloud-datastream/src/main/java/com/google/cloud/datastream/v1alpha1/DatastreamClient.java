@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
  *   ConnectionProfileName name =
  *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DatastreamSettings datastreamSettings =
  *     DatastreamSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DatastreamSettings datastreamSettings =
  *     DatastreamSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DatastreamClient datastreamClient = DatastreamClient.create(datastreamSettings);
@@ -170,6 +176,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (ConnectionProfile element :
@@ -197,6 +205,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (ConnectionProfile element :
@@ -222,6 +232,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
@@ -253,6 +265,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
@@ -283,6 +297,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListConnectionProfilesRequest request =
    *       ListConnectionProfilesRequest.newBuilder()
@@ -320,6 +336,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ConnectionProfileName name =
    *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
@@ -345,6 +363,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
@@ -368,6 +388,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetConnectionProfileRequest request =
    *       GetConnectionProfileRequest.newBuilder()
@@ -393,6 +415,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetConnectionProfileRequest request =
    *       GetConnectionProfileRequest.newBuilder()
@@ -419,6 +443,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
@@ -453,6 +479,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
@@ -487,6 +515,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
@@ -514,6 +544,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
@@ -542,6 +574,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateConnectionProfileRequest request =
    *       CreateConnectionProfileRequest.newBuilder()
@@ -569,6 +603,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -601,6 +637,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateConnectionProfileRequest request =
    *       UpdateConnectionProfileRequest.newBuilder()
@@ -627,6 +665,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateConnectionProfileRequest request =
    *       UpdateConnectionProfileRequest.newBuilder()
@@ -654,6 +694,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateConnectionProfileRequest request =
    *       UpdateConnectionProfileRequest.newBuilder()
@@ -680,6 +722,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ConnectionProfileName name =
    *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
@@ -706,6 +750,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
@@ -729,6 +775,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
@@ -756,6 +804,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
@@ -783,6 +833,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteConnectionProfileRequest request =
    *       DeleteConnectionProfileRequest.newBuilder()
@@ -812,6 +864,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DiscoverConnectionProfileRequest request =
    *       DiscoverConnectionProfileRequest.newBuilder()
@@ -839,6 +893,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DiscoverConnectionProfileRequest request =
    *       DiscoverConnectionProfileRequest.newBuilder()
@@ -863,6 +919,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Stream element : datastreamClient.listStreams(parent).iterateAll()) {
@@ -889,6 +947,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Stream element : datastreamClient.listStreams(parent).iterateAll()) {
@@ -912,6 +972,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListStreamsRequest request =
    *       ListStreamsRequest.newBuilder()
@@ -941,6 +1003,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListStreamsRequest request =
    *       ListStreamsRequest.newBuilder()
@@ -970,6 +1034,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListStreamsRequest request =
    *       ListStreamsRequest.newBuilder()
@@ -1005,6 +1071,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   StreamName name = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]");
    *   Stream response = datastreamClient.getStream(name);
@@ -1027,6 +1095,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString();
    *   Stream response = datastreamClient.getStream(name);
@@ -1048,6 +1118,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetStreamRequest request =
    *       GetStreamRequest.newBuilder()
@@ -1071,6 +1143,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetStreamRequest request =
    *       GetStreamRequest.newBuilder()
@@ -1093,6 +1167,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Stream stream = Stream.newBuilder().build();
@@ -1124,6 +1200,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Stream stream = Stream.newBuilder().build();
@@ -1155,6 +1233,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateStreamRequest request =
    *       CreateStreamRequest.newBuilder()
@@ -1184,6 +1264,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateStreamRequest request =
    *       CreateStreamRequest.newBuilder()
@@ -1213,6 +1295,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateStreamRequest request =
    *       CreateStreamRequest.newBuilder()
@@ -1240,6 +1324,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   Stream stream = Stream.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1268,6 +1354,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateStreamRequest request =
    *       UpdateStreamRequest.newBuilder()
@@ -1296,6 +1384,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateStreamRequest request =
    *       UpdateStreamRequest.newBuilder()
@@ -1324,6 +1414,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   UpdateStreamRequest request =
    *       UpdateStreamRequest.newBuilder()
@@ -1350,6 +1442,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   StreamName name = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]");
    *   datastreamClient.deleteStreamAsync(name).get();
@@ -1372,6 +1466,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name = StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString();
    *   datastreamClient.deleteStreamAsync(name).get();
@@ -1393,6 +1489,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteStreamRequest request =
    *       DeleteStreamRequest.newBuilder()
@@ -1418,6 +1516,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteStreamRequest request =
    *       DeleteStreamRequest.newBuilder()
@@ -1443,6 +1543,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteStreamRequest request =
    *       DeleteStreamRequest.newBuilder()
@@ -1466,6 +1568,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchErrorsRequest request =
    *       FetchErrorsRequest.newBuilder()
@@ -1490,6 +1594,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchErrorsRequest request =
    *       FetchErrorsRequest.newBuilder()
@@ -1514,6 +1620,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchErrorsRequest request =
    *       FetchErrorsRequest.newBuilder()
@@ -1538,6 +1646,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (String element : datastreamClient.fetchStaticIps(name).iterateAll()) {
@@ -1565,6 +1675,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (String element : datastreamClient.fetchStaticIps(name).iterateAll()) {
@@ -1591,6 +1703,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchStaticIpsRequest request =
    *       FetchStaticIpsRequest.newBuilder()
@@ -1620,6 +1734,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchStaticIpsRequest request =
    *       FetchStaticIpsRequest.newBuilder()
@@ -1649,6 +1765,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   FetchStaticIpsRequest request =
    *       FetchStaticIpsRequest.newBuilder()
@@ -1683,6 +1801,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
@@ -1717,6 +1837,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
@@ -1751,6 +1873,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
@@ -1778,6 +1902,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
@@ -1806,6 +1932,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreatePrivateConnectionRequest request =
    *       CreatePrivateConnectionRequest.newBuilder()
@@ -1833,6 +1961,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName name =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
@@ -1858,6 +1988,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
@@ -1881,6 +2013,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetPrivateConnectionRequest request =
    *       GetPrivateConnectionRequest.newBuilder()
@@ -1906,6 +2040,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetPrivateConnectionRequest request =
    *       GetPrivateConnectionRequest.newBuilder()
@@ -1932,6 +2068,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (PrivateConnection element :
@@ -1960,6 +2098,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (PrivateConnection element :
@@ -1986,6 +2126,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
@@ -2017,6 +2159,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
@@ -2047,6 +2191,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListPrivateConnectionsRequest request =
    *       ListPrivateConnectionsRequest.newBuilder()
@@ -2084,6 +2230,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName name =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
@@ -2110,6 +2258,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
@@ -2133,6 +2283,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
@@ -2161,6 +2313,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
@@ -2189,6 +2343,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeletePrivateConnectionRequest request =
    *       DeletePrivateConnectionRequest.newBuilder()
@@ -2217,6 +2373,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName parent =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
@@ -2249,6 +2407,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
@@ -2281,6 +2441,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
@@ -2310,6 +2472,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
@@ -2339,6 +2503,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   CreateRouteRequest request =
    *       CreateRouteRequest.newBuilder()
@@ -2366,6 +2532,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
    *   Route response = datastreamClient.getRoute(name);
@@ -2388,6 +2556,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
@@ -2410,6 +2580,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
@@ -2435,6 +2607,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
@@ -2459,6 +2633,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   PrivateConnectionName parent =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
@@ -2484,6 +2660,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String parent =
    *       PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]").toString();
@@ -2508,6 +2686,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -2539,6 +2719,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -2569,6 +2751,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -2606,6 +2790,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   RouteName name = RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
    *   datastreamClient.deleteRouteAsync(name).get();
@@ -2628,6 +2814,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   String name =
    *       RouteName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]").toString();
@@ -2650,6 +2838,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
@@ -2677,6 +2867,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
@@ -2704,6 +2896,8 @@ public class DatastreamClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
