@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
  *   List<AnnotateImageRequest> requests = new ArrayList<>();
  *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
@@ -75,6 +77,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -85,6 +89,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
@@ -163,6 +169,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List<AnnotateImageRequest> requests = new ArrayList<>();
    *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
@@ -186,6 +194,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   BatchAnnotateImagesRequest request =
    *       BatchAnnotateImagesRequest.newBuilder()
@@ -210,6 +220,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   BatchAnnotateImagesRequest request =
    *       BatchAnnotateImagesRequest.newBuilder()
@@ -240,6 +252,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List<AnnotateFileRequest> requests = new ArrayList<>();
    *   BatchAnnotateFilesResponse response = imageAnnotatorClient.batchAnnotateFiles(requests);
@@ -268,6 +282,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   BatchAnnotateFilesRequest request =
    *       BatchAnnotateFilesRequest.newBuilder()
@@ -297,6 +313,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   BatchAnnotateFilesRequest request =
    *       BatchAnnotateFilesRequest.newBuilder()
@@ -329,6 +347,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List<AnnotateImageRequest> requests = new ArrayList<>();
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
@@ -366,6 +386,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateImagesRequest request =
    *       AsyncBatchAnnotateImagesRequest.newBuilder()
@@ -400,6 +422,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateImagesRequest request =
    *       AsyncBatchAnnotateImagesRequest.newBuilder()
@@ -434,6 +458,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateImagesRequest request =
    *       AsyncBatchAnnotateImagesRequest.newBuilder()
@@ -464,6 +490,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
    *   AsyncBatchAnnotateFilesResponse response =
@@ -492,6 +520,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateFilesRequest request =
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
@@ -522,6 +552,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateFilesRequest request =
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
@@ -552,6 +584,8 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   AsyncBatchAnnotateFilesRequest request =
    *       AsyncBatchAnnotateFilesRequest.newBuilder()
