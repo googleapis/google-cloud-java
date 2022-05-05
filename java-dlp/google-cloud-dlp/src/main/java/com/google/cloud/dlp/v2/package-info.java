@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@
  * <p>Sample for DlpServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
  *   InspectContentRequest request =
  *       InspectContentRequest.newBuilder()
