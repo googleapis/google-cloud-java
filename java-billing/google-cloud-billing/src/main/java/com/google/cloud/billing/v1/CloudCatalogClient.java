@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
  *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
  *     // doThingsWith(element);
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudCatalogSettings cloudCatalogSettings =
  *     CloudCatalogSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudCatalogSettings cloudCatalogSettings =
  *     CloudCatalogSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create(cloudCatalogSettings);
@@ -154,6 +160,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
    *     // doThingsWith(element);
@@ -176,6 +184,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -202,6 +212,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -229,6 +241,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListServicesRequest request =
    *       ListServicesRequest.newBuilder()
@@ -261,6 +275,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ServiceName parent = ServiceName.of("[SERVICE]");
    *   for (Sku element : cloudCatalogClient.listSkus(parent).iterateAll()) {
@@ -285,6 +301,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   String parent = ServiceName.of("[SERVICE]").toString();
    *   for (Sku element : cloudCatalogClient.listSkus(parent).iterateAll()) {
@@ -308,6 +326,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()
@@ -338,6 +358,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()
@@ -367,6 +389,8 @@ public class CloudCatalogClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
    *   ListSkusRequest request =
    *       ListSkusRequest.newBuilder()

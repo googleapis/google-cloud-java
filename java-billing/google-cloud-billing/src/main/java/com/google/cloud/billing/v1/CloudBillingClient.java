@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
  *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
  *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudBillingSettings cloudBillingSettings =
  *     CloudBillingSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudBillingSettings cloudBillingSettings =
  *     CloudBillingSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudBillingClient cloudBillingClient = CloudBillingClient.create(cloudBillingSettings);
@@ -159,6 +165,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
@@ -185,6 +193,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
@@ -208,6 +218,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetBillingAccountRequest request =
    *       GetBillingAccountRequest.newBuilder()
@@ -232,6 +244,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetBillingAccountRequest request =
    *       GetBillingAccountRequest.newBuilder()
@@ -256,6 +270,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   for (BillingAccount element : cloudBillingClient.listBillingAccounts().iterateAll()) {
    *     // doThingsWith(element);
@@ -279,6 +295,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListBillingAccountsRequest request =
    *       ListBillingAccountsRequest.newBuilder()
@@ -308,6 +326,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListBillingAccountsRequest request =
    *       ListBillingAccountsRequest.newBuilder()
@@ -337,6 +357,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListBillingAccountsRequest request =
    *       ListBillingAccountsRequest.newBuilder()
@@ -376,6 +398,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   BillingAccount account = BillingAccount.newBuilder().build();
@@ -408,6 +432,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   BillingAccount account = BillingAccount.newBuilder().build();
@@ -436,6 +462,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateBillingAccountRequest request =
    *       UpdateBillingAccountRequest.newBuilder()
@@ -465,6 +493,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateBillingAccountRequest request =
    *       UpdateBillingAccountRequest.newBuilder()
@@ -496,6 +526,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   BillingAccount billingAccount = BillingAccount.newBuilder().build();
    *   BillingAccount response = cloudBillingClient.createBillingAccount(billingAccount);
@@ -525,6 +557,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   CreateBillingAccountRequest request =
    *       CreateBillingAccountRequest.newBuilder()
@@ -553,6 +587,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   CreateBillingAccountRequest request =
    *       CreateBillingAccountRequest.newBuilder()
@@ -579,6 +615,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   for (ProjectBillingInfo element :
@@ -609,6 +647,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   for (ProjectBillingInfo element :
@@ -637,6 +677,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
@@ -668,6 +710,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
@@ -698,6 +742,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ListProjectBillingInfoRequest request =
    *       ListProjectBillingInfoRequest.newBuilder()
@@ -735,6 +781,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String name = "name3373707";
    *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
@@ -760,6 +808,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
    *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
@@ -783,6 +833,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
    *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
@@ -833,6 +885,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String name = "name3373707";
    *   ProjectBillingInfo projectBillingInfo = ProjectBillingInfo.newBuilder().build();
@@ -892,6 +946,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateProjectBillingInfoRequest request =
    *       UpdateProjectBillingInfoRequest.newBuilder()
@@ -945,6 +1001,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   UpdateProjectBillingInfoRequest request =
    *       UpdateProjectBillingInfoRequest.newBuilder()
@@ -972,6 +1030,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   Policy response = cloudBillingClient.getIamPolicy(resource);
@@ -999,6 +1059,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   Policy response = cloudBillingClient.getIamPolicy(resource);
@@ -1023,6 +1085,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1049,6 +1113,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
@@ -1075,6 +1141,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   Policy policy = Policy.newBuilder().build();
@@ -1108,6 +1176,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   Policy policy = Policy.newBuilder().build();
@@ -1138,6 +1208,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1166,6 +1238,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
@@ -1192,6 +1266,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
    *   List<String> permissions = new ArrayList<>();
@@ -1226,6 +1302,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
    *   List<String> permissions = new ArrayList<>();
@@ -1260,6 +1338,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
@@ -1286,6 +1366,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
