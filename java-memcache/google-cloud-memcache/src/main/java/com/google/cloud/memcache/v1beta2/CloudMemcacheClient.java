@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
  *   Instance response = cloudMemcacheClient.getInstance(name);
@@ -100,6 +102,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudMemcacheSettings cloudMemcacheSettings =
  *     CloudMemcacheSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -110,6 +114,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudMemcacheSettings cloudMemcacheSettings =
  *     CloudMemcacheSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create(cloudMemcacheSettings);
@@ -189,6 +195,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
@@ -216,6 +224,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
@@ -240,6 +250,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -269,6 +281,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -299,6 +313,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -334,6 +350,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   Instance response = cloudMemcacheClient.getInstance(name);
@@ -358,6 +376,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   Instance response = cloudMemcacheClient.getInstance(name);
@@ -381,6 +401,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -404,6 +426,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -426,6 +450,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String instanceId = "instanceId902024336";
@@ -468,6 +494,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String instanceId = "instanceId902024336";
@@ -510,6 +538,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -536,6 +566,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -562,6 +594,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   CreateInstanceRequest request =
    *       CreateInstanceRequest.newBuilder()
@@ -587,6 +621,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   Instance resource = Instance.newBuilder().build();
@@ -613,6 +649,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -638,6 +676,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -663,6 +703,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -689,6 +731,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -724,6 +768,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -759,6 +805,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateParametersRequest request =
    *       UpdateParametersRequest.newBuilder()
@@ -787,6 +835,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateParametersRequest request =
    *       UpdateParametersRequest.newBuilder()
@@ -815,6 +865,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   UpdateParametersRequest request =
    *       UpdateParametersRequest.newBuilder()
@@ -840,6 +892,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   cloudMemcacheClient.deleteInstanceAsync(name).get();
@@ -864,6 +918,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   cloudMemcacheClient.deleteInstanceAsync(name).get();
@@ -887,6 +943,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -911,6 +969,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -935,6 +995,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -959,6 +1021,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   List<String> nodeIds = new ArrayList<>();
@@ -994,6 +1058,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   List<String> nodeIds = new ArrayList<>();
@@ -1029,6 +1095,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplyParametersRequest request =
    *       ApplyParametersRequest.newBuilder()
@@ -1056,6 +1124,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplyParametersRequest request =
    *       ApplyParametersRequest.newBuilder()
@@ -1083,6 +1153,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplyParametersRequest request =
    *       ApplyParametersRequest.newBuilder()
@@ -1108,6 +1180,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   List<String> nodeIds = new ArrayList<>();
@@ -1144,6 +1218,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
    *   List<String> nodeIds = new ArrayList<>();
@@ -1180,6 +1256,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplySoftwareUpdateRequest request =
    *       ApplySoftwareUpdateRequest.newBuilder()
@@ -1206,6 +1284,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplySoftwareUpdateRequest request =
    *       ApplySoftwareUpdateRequest.newBuilder()
@@ -1232,6 +1312,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   ApplySoftwareUpdateRequest request =
    *       ApplySoftwareUpdateRequest.newBuilder()
