@@ -49,10 +49,15 @@ import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.BigQueryDryRunResult;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.BigQueryResult;
+import com.google.cloud.bigquery.BigQuerySQLException;
 import com.google.cloud.bigquery.Clustering;
+import com.google.cloud.bigquery.Connection;
 import com.google.cloud.bigquery.ConnectionProperty;
+import com.google.cloud.bigquery.ConnectionSettings;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
@@ -62,6 +67,7 @@ import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.HivePartitioningOptions;
@@ -72,6 +78,9 @@ import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.JobStatistics.TransactionInfo;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.LoadJobConfiguration;
@@ -79,6 +88,7 @@ import com.google.cloud.bigquery.MaterializedViewDefinition;
 import com.google.cloud.bigquery.Model;
 import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
+import com.google.cloud.bigquery.Parameter;
 import com.google.cloud.bigquery.ParquetOptions;
 import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -129,7 +139,11 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Time;
 import java.time.Instant;
+import java.time.LocalTime;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -273,6 +287,103 @@ public class ITBigQueryTest {
           BIGNUMERIC_FIELD_SCHEMA3,
           BIGNUMERIC_FIELD_SCHEMA4);
 
+  private static final Schema BQ_RESULTSET_SCHEMA =
+      Schema.of(
+          Field.newBuilder("TimestampField", StandardSQLTypeName.TIMESTAMP)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("TimestampDescription")
+              .build(),
+          Field.newBuilder("StringField", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("StringDescription")
+              .build(),
+          Field.newBuilder("IntegerArrayField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.REPEATED)
+              .setDescription("IntegerArrayDescription")
+              .build(),
+          Field.newBuilder("BooleanField", StandardSQLTypeName.BOOL)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BooleanDescription")
+              .build(),
+          Field.newBuilder("BytesField", StandardSQLTypeName.BYTES)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BytesDescription")
+              .build(),
+          Field.newBuilder(
+                  "RecordField",
+                  StandardSQLTypeName.STRUCT,
+                  Field.newBuilder("TimestampField", StandardSQLTypeName.TIMESTAMP)
+                      .setMode(Field.Mode.NULLABLE)
+                      .setDescription("TimestampDescription")
+                      .build(),
+                  Field.newBuilder("StringField", StandardSQLTypeName.STRING)
+                      .setMode(Field.Mode.NULLABLE)
+                      .setDescription("StringDescription")
+                      .build(),
+                  Field.newBuilder("IntegerArrayField", StandardSQLTypeName.NUMERIC)
+                      .setMode(Field.Mode.REPEATED)
+                      .setDescription("IntegerArrayDescription")
+                      .build(),
+                  Field.newBuilder("BooleanField", StandardSQLTypeName.BOOL)
+                      .setMode(Field.Mode.NULLABLE)
+                      .setDescription("BooleanDescription")
+                      .build(),
+                  Field.newBuilder("BytesField", StandardSQLTypeName.BYTES)
+                      .setMode(Field.Mode.NULLABLE)
+                      .setDescription("BytesDescription")
+                      .build())
+              .setMode(Field.Mode.REQUIRED)
+              .setDescription("RecordDescription")
+              .build(),
+          Field.newBuilder("IntegerField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("IntegerDescription")
+              .build(),
+          Field.newBuilder("FloatField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("FloatDescription")
+              .build(),
+          Field.newBuilder("GeographyField", StandardSQLTypeName.GEOGRAPHY)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("GeographyDescription")
+              .build(),
+          Field.newBuilder("NumericField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("NumericDescription")
+              .build(),
+          Field.newBuilder("BigNumericField", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BigNumericDescription")
+              .build(),
+          Field.newBuilder("BigNumericField1", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BigNumeric1Description")
+              .build(),
+          Field.newBuilder("BigNumericField2", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BigNumeric2Description")
+              .build(),
+          Field.newBuilder("BigNumericField3", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BigNumeric3Description")
+              .build(),
+          Field.newBuilder("BigNumericField4", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("BigNumeric4Description")
+              .build(),
+          Field.newBuilder("TimeField", StandardSQLTypeName.TIME)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("TimeDescription")
+              .build(),
+          Field.newBuilder("DateField", StandardSQLTypeName.DATE)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("DateDescription")
+              .build(),
+          Field.newBuilder("DateTimeField", StandardSQLTypeName.DATETIME)
+              .setMode(Field.Mode.NULLABLE)
+              .setDescription("DateTimeDescription")
+              .build());
+
   private static final Field DDL_TIMESTAMP_FIELD_SCHEMA =
       Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
           .setDescription("TimestampDescription")
@@ -316,6 +427,55 @@ public class ITBigQueryTest {
           Field.newBuilder("BooleanField", LegacySQLTypeName.BOOLEAN)
               .setMode(Field.Mode.NULLABLE)
               .build());
+
+  private static final Schema BQ_RESULTSET_EXPECTED_SCHEMA =
+      Schema.of(
+          Field.newBuilder("StringField", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("BigNumericField", StandardSQLTypeName.BIGNUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("BooleanField", StandardSQLTypeName.BOOL)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("BytesField", StandardSQLTypeName.BYTES)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("IntegerField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("TimestampField", StandardSQLTypeName.TIMESTAMP)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("FloatField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("NumericField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("TimeField", StandardSQLTypeName.TIME)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("DateField", StandardSQLTypeName.DATE)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("DateTimeField", StandardSQLTypeName.DATETIME)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("GeographyField", StandardSQLTypeName.GEOGRAPHY)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("BytesField_1", StandardSQLTypeName.BYTES)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("BooleanField_1", StandardSQLTypeName.BOOL)
+              .setMode(Field.Mode.NULLABLE)
+              .build(),
+          Field.newBuilder("IntegerArrayField", StandardSQLTypeName.NUMERIC)
+              .setMode(Field.Mode.REPEATED)
+              .build());
+
   private static final Schema QUERY_RESULT_SCHEMA_BIGNUMERIC =
       Schema.of(
           Field.newBuilder("TimestampField", LegacySQLTypeName.TIMESTAMP)
@@ -360,6 +520,7 @@ public class ITBigQueryTest {
   private static final String LOAD_FILE = "load.csv";
   private static final String LOAD_FILE_LARGE = "load_large.csv";
   private static final String JSON_LOAD_FILE = "load.json";
+  private static final String JSON_LOAD_FILE_BQ_RESULTSET = "load_bq_resultset.json";
   private static final String JSON_LOAD_FILE_SIMPLE = "load_simple.json";
   private static final String EXTRACT_FILE = "extract.csv";
   private static final String EXTRACT_MODEL_FILE = "extract_model.csv";
@@ -368,7 +529,10 @@ public class ITBigQueryTest {
   private static final TableId TABLE_ID_DDL = TableId.of(DATASET, "ddl_testing_table");
   private static final TableId TABLE_ID_FASTQUERY = TableId.of(DATASET, "fastquery_testing_table");
   private static final TableId TABLE_ID_LARGE = TableId.of(DATASET, "large_data_testing_table");
+  private static final TableId TABLE_ID_FASTQUERY_BQ_RESULTSET =
+      TableId.of(DATASET, "fastquery_testing_bq_resultset");
   private static final String CSV_CONTENT = "StringValue1\nStringValue2\n";
+
   private static final String JSON_CONTENT =
       "{"
           + "  \"TimestampField\": \"2014-08-19 07:41:35.220 -05:00\","
@@ -424,6 +588,64 @@ public class ITBigQueryTest {
           + "  \"BigNumericField3\": \"578960446186580977117854925043439539266.34992332820282019728792003956564819967\","
           + "  \"BigNumericField4\": \"-578960446186580977117854925043439539266.34992332820282019728792003956564819968\""
           + "}";
+
+  private static final String JSON_CONTENT_BQ_RESULTSET =
+      "{"
+          + "  \"TimestampField\": null,"
+          + "  \"StringField\": null,"
+          + "  \"IntegerArrayField\": null,"
+          + "  \"BooleanField\": null,"
+          + "  \"BytesField\": null,"
+          + "  \"RecordField\": {"
+          + "    \"TimestampField\": null,"
+          + "    \"StringField\": null,"
+          + "    \"IntegerArrayField\": null,"
+          + "    \"BooleanField\": null,"
+          + "    \"BytesField\": null"
+          + "  },"
+          + "  \"IntegerField\": null,"
+          + "  \"FloatField\": null,"
+          + "  \"GeographyField\": null,"
+          + "  \"NumericField\": null,"
+          + "  \"BigNumericField\": null,"
+          + "  \"BigNumericField1\": null,"
+          + "  \"BigNumericField2\": null,"
+          + "  \"BigNumericField3\": null,"
+          + "  \"BigNumericField4\": null,"
+          + "  \"TimeField\": null,"
+          + "  \"DateField\": null,"
+          + "  \"DateTimeField\": null"
+          + "}\n"
+          + "{"
+          + "  \"TimestampField\": \"2018-08-19 12:11:35.123456 UTC\","
+          + "  \"StringField\": \"StringValue1\","
+          + "  \"IntegerArrayField\": [1,2,3,4],"
+          + "  \"BooleanField\": \"false\","
+          + "  \"BytesField\": \""
+          + BYTES_BASE64
+          + "\","
+          + "  \"RecordField\": {"
+          + "    \"TimestampField\": \"1969-07-20 20:18:04 UTC\","
+          + "    \"StringField\": null,"
+          + "    \"IntegerArrayField\": [1,0],"
+          + "    \"BooleanField\": \"true\","
+          + "    \"BytesField\": \""
+          + BYTES_BASE64
+          + "\""
+          + "  },"
+          + "  \"IntegerField\": \"1\","
+          + "  \"FloatField\": \"10.1\","
+          + "  \"GeographyField\": \"POINT(-122.35022 47.649154)\","
+          + "  \"NumericField\": \"100\","
+          + "  \"BigNumericField\": \"0.33333333333333333333333333333333333333\","
+          + "  \"BigNumericField1\": \"1e-38\","
+          + "  \"BigNumericField2\": \"-1e38\","
+          + "  \"BigNumericField3\": \"578960446186580977117854925043439539266.34992332820282019728792003956564819967\","
+          + "  \"BigNumericField4\": \"-578960446186580977117854925043439539266.34992332820282019728792003956564819968\","
+          + "  \"TimeField\": \"12:11:35.123456\","
+          + "  \"DateField\": \"2018-08-19\","
+          + "  \"DateTimeField\": \"2018-08-19 12:11:35.123456\""
+          + "}";
   private static final String JSON_CONTENT_SIMPLE =
       "{"
           + "  \"TimestampField\": \"2014-08-19 07:41:35.220 -05:00\","
@@ -476,6 +698,11 @@ public class ITBigQueryTest {
         ITBigQueryTest.class.getClassLoader().getResourceAsStream("QueryTestData.csv");
     storage.createFrom(
         BlobInfo.newBuilder(BUCKET, LOAD_FILE_LARGE).setContentType("text/plain").build(), stream);
+    storage.create(
+        BlobInfo.newBuilder(BUCKET, JSON_LOAD_FILE_BQ_RESULTSET)
+            .setContentType("application/json")
+            .build(),
+        JSON_CONTENT_BQ_RESULTSET.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info =
         DatasetInfo.newBuilder(DATASET).setDescription(DESCRIPTION).setLabels(LABELS).build();
     bigquery.create(info);
@@ -508,6 +735,19 @@ public class ITBigQueryTest {
     Job jobFastQuery = bigquery.create(JobInfo.of(configurationFastQuery));
     jobFastQuery = jobFastQuery.waitFor();
     assertNull(jobFastQuery.getStatus().getError());
+
+    LoadJobConfiguration configFastQueryBQResultset =
+        LoadJobConfiguration.newBuilder(
+                TABLE_ID_FASTQUERY_BQ_RESULTSET,
+                "gs://" + BUCKET + "/" + JSON_LOAD_FILE_BQ_RESULTSET,
+                FormatOptions.json())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(BQ_RESULTSET_SCHEMA)
+            .setLabels(labels)
+            .build();
+    Job jobFastQueryBQResultSet = bigquery.create(JobInfo.of(configFastQueryBQResultset));
+    jobFastQueryBQResultSet = jobFastQueryBQResultSet.waitFor();
+    assertNull(jobFastQueryBQResultSet.getStatus().getError());
 
     LoadJobConfiguration configurationDDL =
         LoadJobConfiguration.newBuilder(
@@ -712,6 +952,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate this test case for executeSelect on the relevant part */
   @Test
   public void testJsonType() throws InterruptedException {
     String tableName = "test_create_table_jsontype";
@@ -819,6 +1060,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate this test case for executeSelect on the relevant part */
   @Test
   public void testIntervalType() throws InterruptedException {
     String tableName = "test_create_table_intervaltype";
@@ -1701,6 +1943,7 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testListAllTableData() {
     Page<FieldValueList> rows = bigquery.listTableData(TABLE_ID);
@@ -2036,6 +2279,7 @@ public class ITBigQueryTest {
     assertEquals(sharedDatasetAcl, updatedDataset.getAcl());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testSingleStatementsQueryException() throws InterruptedException {
     String invalidQuery =
@@ -2052,6 +2296,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testMultipleStatementsQueryException() throws InterruptedException {
     String invalidQuery =
@@ -2070,6 +2315,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQuery() throws InterruptedException {
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -2102,6 +2348,16 @@ public class ITBigQueryTest {
     assertNotNull(statistics.getQueryPlan());
   }
 
+  @Test
+  public void testExecuteSelectDefaultConnectionSettings() throws SQLException {
+    // Use the default connection settings
+    Connection connection = bigquery.createConnection();
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    assertEquals(42, bigQueryResult.getTotalRows());
+  }
+
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryTimeStamp() throws InterruptedException {
     String query = "SELECT TIMESTAMP '2022-01-24T23:54:25.095574Z'";
@@ -2136,6 +2392,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryCaseInsensitiveSchemaFieldByGetName() throws InterruptedException {
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();
@@ -2164,6 +2421,7 @@ public class ITBigQueryTest {
     assertEquals(2, rowCount);
   }
 
+  /* TODO(prasmish): replicate bigquery.query part of the test case for executeSelect - modify this test case */
   @Test
   public void testQueryExternalHivePartitioningOptionAutoLayout() throws InterruptedException {
     String tableName = "test_queryexternalhivepartition_autolayout_table";
@@ -2198,6 +2456,7 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(tableId));
   }
 
+  /* TODO(prasmish): replicate bigquery.query part of the test case for executeSelect - modify this test case */
   @Test
   public void testQueryExternalHivePartitioningOptionCustomLayout() throws InterruptedException {
     String tableName = "test_queryexternalhivepartition_customlayout_table";
@@ -2234,6 +2493,463 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testConnectionImplDryRun() throws SQLException {
+    String query =
+        String.format(
+            "select StringField,  BigNumericField, BooleanField, BytesField, IntegerField, TimestampField, FloatField, NumericField, TimeField, DateField,  DateTimeField , GeographyField, RecordField.BytesField, RecordField.BooleanField, IntegerArrayField from %s where StringField = ? order by TimestampField",
+            TABLE_ID_FASTQUERY_BQ_RESULTSET.getTable());
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setCreateSession(true)
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryDryRunResult bigQueryDryRunResultSet = connection.dryRun(query);
+    assertNotNull(bigQueryDryRunResultSet.getSchema());
+    assertEquals(
+        BQ_RESULTSET_EXPECTED_SCHEMA, bigQueryDryRunResultSet.getSchema()); // match the schema
+    List<Parameter> queryParameters = bigQueryDryRunResultSet.getQueryParameters();
+    assertEquals(StandardSQLTypeName.STRING, queryParameters.get(0).getValue().getType());
+    QueryStatistics queryStatistics = bigQueryDryRunResultSet.getStatistics().getQueryStatistics();
+    assertNotNull(queryStatistics);
+    SessionInfo sessionInfo = bigQueryDryRunResultSet.getStatistics().getSessionInfo();
+    assertNotNull(sessionInfo.getSessionId());
+    assertEquals(StatementType.SELECT, queryStatistics.getStatementType());
+  }
+
+  @Test
+  // This test case test the order of the records, making sure that the result is not jumbled up due
+  // to the multithreaded BigQueryResult implementation
+  public void testBQResultSetMultiThreadedOrder() throws SQLException {
+    String query =
+        "SELECT date FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null order by date asc limit 300000";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setNumBufferedRows(10000) // page size
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    assertTrue(rs.next());
+    ++cnt;
+    java.sql.Date lastDate = rs.getDate(0);
+    while (rs.next()) {
+      assertNotNull(rs.getDate(0));
+      assertTrue(rs.getDate(0).getTime() >= lastDate.getTime()); // sorted order is maintained
+      lastDate = rs.getDate(0);
+      ++cnt;
+    }
+    assertEquals(300000, cnt); // total 300000 rows should be read
+  }
+
+  @Test
+  public void testBQResultSetPaginationSlowQuery() throws SQLException {
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by date limit 300000";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setNumBufferedRows(10000) // page size
+            .setJobTimeoutMs(
+                15000L) // So that ConnectionImpl.isFastQuerySupported returns false, and the slow
+            // query route gets executed
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    while (rs.next()) { // pagination starts after approx 120,000 records
+      assertNotNull(rs.getDate(0));
+      assertNotNull(rs.getString(1));
+      assertNotNull(rs.getString(2));
+      assertTrue(rs.getInt(3) >= 0);
+      assertTrue(rs.getInt(4) >= 0);
+      ++cnt;
+    }
+    assertEquals(300000, cnt); // total 300000 rows should be read
+  }
+
+  @Test
+  public void testExecuteSelectSinglePageTableRow() throws SQLException {
+    String query =
+        "select StringField,  BigNumericField, BooleanField, BytesField, IntegerField, TimestampField, FloatField, "
+            + "NumericField, TimeField, DateField,  DateTimeField , GeographyField, RecordField.BytesField, RecordField.BooleanField, IntegerArrayField from "
+            + TABLE_ID_FASTQUERY_BQ_RESULTSET.getTable()
+            + " order by TimestampField";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    Schema sc = bigQueryResult.getSchema();
+
+    assertEquals(BQ_RESULTSET_EXPECTED_SCHEMA, sc); // match the schema
+    assertEquals(2, bigQueryResult.getTotalRows()); // Expecting 2 rows
+
+    assertTrue(rs.next()); // first row
+    // checking for the null or 0 column values
+    assertNull(rs.getString("StringField"));
+    assertTrue(rs.getDouble("BigNumericField") == 0.0d);
+    assertFalse(rs.getBoolean("BooleanField"));
+    assertNull(rs.getBytes("BytesField"));
+    assertEquals(rs.getInt("IntegerField"), 0);
+    assertNull(rs.getTimestamp("TimestampField"));
+    assertNull(rs.getDate("DateField"));
+    assertTrue(rs.getDouble("FloatField") == 0.0d);
+    assertTrue(rs.getDouble("NumericField") == 0.0d);
+    assertNull(rs.getTime("TimeField"));
+    assertNull(rs.getString("DateTimeField"));
+    assertNull(rs.getString("GeographyField"));
+    assertNull(rs.getBytes("BytesField_1"));
+    assertFalse(rs.getBoolean("BooleanField_1"));
+
+    assertTrue(rs.next()); // second row
+    // second row is non null, comparing the values
+    assertEquals("StringValue1", rs.getString("StringField"));
+    assertTrue(rs.getDouble("BigNumericField") == 0.3333333333333333d);
+    assertFalse(rs.getBoolean("BooleanField"));
+    assertNotNull(rs.getBytes("BytesField"));
+    assertEquals(1, rs.getInt("IntegerField"));
+    assertEquals(1534680695123L, rs.getTimestamp("TimestampField").getTime());
+    assertEquals(java.sql.Date.valueOf("2018-08-19"), rs.getDate("DateField"));
+    assertTrue(rs.getDouble("FloatField") == 10.1d);
+    assertTrue(rs.getDouble("NumericField") == 100.0d);
+    assertEquals(Time.valueOf(LocalTime.of(12, 11, 35, 123456)), rs.getTime("TimeField"));
+    assertEquals("2018-08-19T12:11:35.123456", rs.getString("DateTimeField"));
+    assertEquals("POINT(-122.35022 47.649154)", rs.getString("GeographyField"));
+    assertNotNull(rs.getBytes("BytesField_1"));
+    assertTrue(rs.getBoolean("BooleanField_1"));
+    assertTrue(
+        rs.getObject("IntegerArrayField") instanceof com.google.cloud.bigquery.FieldValueList);
+    FieldValueList integerArrayFieldValue =
+        (com.google.cloud.bigquery.FieldValueList) rs.getObject("IntegerArrayField");
+    assertEquals(4, integerArrayFieldValue.size()); // Array has 4 elements
+    assertEquals(3, (integerArrayFieldValue.get(2).getNumericValue()).intValue());
+
+    assertFalse(rs.next()); // no 3rd row in the table
+  }
+
+  @Test
+  public void testConnectionClose() throws SQLException {
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by date limit 300000";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setNumBufferedRows(10000) // page size
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    while (rs.next()) {
+      ++cnt;
+      if (cnt > 57000) { // breaking at 57K, query reads 300K
+        assertTrue(connection.close()); // we should be able to cancel the connection
+      }
+    }
+    assertTrue(
+        cnt < 60000); // Few extra records are still read (generally ~10) even after canceling, as
+    // the backgrounds threads are still active while the interrupt occurs and the
+    // buffer and pageCache are cleared
+  }
+
+  @Test
+  public void testBQResultSetPagination() throws SQLException {
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by date limit 300000";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setNumBufferedRows(10000) // page size
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    while (rs.next()) { // pagination starts after approx 120,000 records
+      assertNotNull(rs.getDate(0));
+      assertNotNull(rs.getString(1));
+      assertNotNull(rs.getString(2));
+      assertTrue(rs.getInt(3) >= 0);
+      assertTrue(rs.getInt(4) >= 0);
+      ++cnt;
+    }
+    assertEquals(300000, cnt); // total 300000 rows should be read
+  }
+
+  @Test
+  public void testReadAPIIterationAndOrder()
+      throws SQLException { // use read API to read 300K records and check the order
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setPriority(
+                QueryJobConfiguration.Priority
+                    .INTERACTIVE) // required for this integration test so that isFastQuerySupported
+            // returns false
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    int lasConfirmedCases = Integer.MIN_VALUE;
+    while (rs.next()) { // pagination starts after approx 120,000 records
+      assertNotNull(rs.getDate(0));
+      assertNotNull(rs.getString(1));
+      assertNotNull(rs.getString(2));
+      assertTrue(rs.getInt(3) >= 0);
+      assertTrue(rs.getInt(4) >= 0);
+
+      // check if the records are sorted
+      assertTrue(rs.getInt(3) >= lasConfirmedCases);
+      lasConfirmedCases = rs.getInt(3);
+      ++cnt;
+    }
+    assertEquals(300000, cnt); // total 300000 rows should be read
+    connection.close();
+  }
+
+  @Test
+  public void testReadAPIConnectionMultiClose()
+      throws
+          SQLException { // use read API to read 300K records, then closes the connection. This test
+    // repeats it multiple times and assets if the connection was closed
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setPriority(
+                QueryJobConfiguration.Priority
+                    .INTERACTIVE) // required for this integration test so that isFastQuerySupported
+            // returns false
+            .build();
+    int closeCnt = 0, runCnt = 3;
+    for (int run = 0; run < runCnt; run++) {
+      Connection connection = bigquery.createConnection(connectionSettings);
+      BigQueryResult bigQueryResult = connection.executeSelect(query);
+      ResultSet rs = bigQueryResult.getResultSet();
+      int cnt = 0;
+      while (rs.next()) { // pagination starts after approx 120,000 records
+        assertNotNull(rs.getDate(0));
+        ++cnt;
+      }
+      assertEquals(300000, cnt); // total 300000 rows should be read
+      assertTrue(connection.close()); // check if connection closed
+      closeCnt++;
+    }
+    assertEquals(
+        closeCnt, runCnt); // check if the connection closed for the required number of times
+  }
+
+  @Test
+  public void testExecuteSelectSinglePageTableRowColInd() throws SQLException {
+    String query =
+        "select StringField,  BigNumericField, BooleanField, BytesField, IntegerField, TimestampField, FloatField, "
+            + "NumericField, TimeField, DateField,  DateTimeField , GeographyField, RecordField.BytesField, RecordField.BooleanField, IntegerArrayField from "
+            + TABLE_ID_FASTQUERY_BQ_RESULTSET.getTable()
+            + " order by TimestampField";
+    /*
+    Column Index mapping for ref:
+    StringField,  0    BigNumericField, 1    BooleanField,  2   BytesField,  3    IntegerField, 4   TimestampField, 5   FloatField, " 6
+    NumericField, 7    TimeField, 8     DateField,  9    DateTimeField , 10   GeographyField, 11    RecordField.BytesField, 12     RecordField.BooleanField, 13   IntegerArrayField 14
+         */
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    ResultSet rs = bigQueryResult.getResultSet();
+    Schema sc = bigQueryResult.getSchema();
+
+    assertEquals(BQ_RESULTSET_EXPECTED_SCHEMA, sc); // match the schema
+    assertEquals(2, bigQueryResult.getTotalRows()); // Expecting 2 rows
+    while (rs.next()) {
+      assertEquals(rs.getString(0), rs.getString("StringField"));
+      assertTrue(rs.getDouble(1) == rs.getDouble("BigNumericField"));
+      assertEquals(rs.getBoolean(2), rs.getBoolean("BooleanField"));
+      if (rs.getBytes(3) == null) { // both overloads should be null
+        assertEquals(rs.getBytes(3), rs.getBytes("BytesField"));
+      } else { // value in String representation should be the same
+        assertEquals(
+            new String(rs.getBytes(3), StandardCharsets.UTF_8),
+            new String(rs.getBytes("BytesField"), StandardCharsets.UTF_8));
+      }
+      assertEquals(rs.getInt(4), rs.getInt("IntegerField"));
+      assertEquals(rs.getTimestamp(5), rs.getTimestamp("TimestampField"));
+      assertEquals(rs.getDate(9), rs.getDate("DateField"));
+      assertTrue(rs.getDouble("FloatField") == rs.getDouble(6));
+      assertTrue(rs.getDouble("NumericField") == rs.getDouble(7));
+      assertEquals(rs.getTime(8), rs.getTime("TimeField"));
+      assertEquals(rs.getString(10), rs.getString("DateTimeField"));
+      assertEquals(rs.getString(11), rs.getString("GeographyField"));
+      if (rs.getBytes(12) == null) { // both overloads should be null
+        assertEquals(rs.getBytes(12), rs.getBytes("BytesField_1"));
+      } else { // value in String representation should be the same
+        assertEquals(
+            new String(rs.getBytes(12), StandardCharsets.UTF_8),
+            new String(rs.getBytes("BytesField_1"), StandardCharsets.UTF_8));
+      }
+      assertEquals(rs.getBoolean(13), rs.getBoolean("BooleanField_1"));
+      assertTrue(
+          rs.getObject("IntegerArrayField") instanceof com.google.cloud.bigquery.FieldValueList);
+      FieldValueList integerArrayFieldValue =
+          (com.google.cloud.bigquery.FieldValueList) rs.getObject("IntegerArrayField");
+      assertTrue(rs.getObject(14) instanceof com.google.cloud.bigquery.FieldValueList);
+      FieldValueList integerArrayFieldValueColInd =
+          (com.google.cloud.bigquery.FieldValueList) rs.getObject(14);
+      assertEquals(
+          integerArrayFieldValue.size(),
+          integerArrayFieldValueColInd.size()); // Array has 4 elements
+      if (integerArrayFieldValue.size() == 4) { // as we are picking the third index
+        assertEquals(
+            (integerArrayFieldValue.get(2).getNumericValue()).intValue(),
+            (integerArrayFieldValueColInd.get(2).getNumericValue()).intValue());
+      }
+    }
+  }
+
+  @Test
+  public void testExecuteSelectStruct() throws SQLException {
+    String query = "select (STRUCT(\"Vancouver\" as city, 5 as years)) as address";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    assertEquals(1, bigQueryResult.getTotalRows());
+
+    Schema schema = bigQueryResult.getSchema();
+    assertEquals("address", schema.getFields().get(0).getName());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getMode());
+    // Backend is currently returning LegacySQLTypeName. Tracking bug: b/202977620
+    assertEquals(LegacySQLTypeName.RECORD, schema.getFields().get(0).getType());
+    assertEquals("city", schema.getFields().get(0).getSubFields().get(0).getName());
+    assertEquals(
+        LegacySQLTypeName.STRING, schema.getFields().get(0).getSubFields().get(0).getType());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getSubFields().get(0).getMode());
+    assertEquals("years", schema.getFields().get(0).getSubFields().get(1).getName());
+    assertEquals(
+        LegacySQLTypeName.INTEGER, schema.getFields().get(0).getSubFields().get(1).getType());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getSubFields().get(1).getMode());
+
+    ResultSet rs = bigQueryResult.getResultSet();
+    assertTrue(rs.next());
+    FieldValueList addressFieldValue =
+        (com.google.cloud.bigquery.FieldValueList) rs.getObject("address");
+    assertEquals(rs.getObject("address"), rs.getObject(0));
+    assertEquals("Vancouver", addressFieldValue.get(0).getStringValue());
+    assertEquals(5, addressFieldValue.get(1).getLongValue());
+    assertFalse(rs.next()); // only 1 row of data
+  }
+
+  @Test
+  public void testExecuteSelectStructSubField() throws SQLException {
+    String query =
+        "select address.city from (select (STRUCT(\"Vancouver\" as city, 5 as years)) as address)";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    assertEquals(1, bigQueryResult.getTotalRows());
+
+    Schema schema = bigQueryResult.getSchema();
+    assertEquals("city", schema.getFields().get(0).getName());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getMode());
+    // Backend is currently returning LegacySQLTypeName. Tracking bug: b/202977620
+    assertEquals(LegacySQLTypeName.STRING, schema.getFields().get(0).getType());
+    assertNull(
+        schema.getFields().get(0).getSubFields()); // this is a String field without any subfields
+
+    ResultSet rs = bigQueryResult.getResultSet();
+    assertTrue(rs.next());
+    String cityFieldValue = rs.getString("city");
+    assertEquals(rs.getString("city"), rs.getObject(0));
+    assertEquals("Vancouver", cityFieldValue);
+    assertFalse(rs.next()); // only 1 row of data
+  }
+
+  @Test
+  public void testExecuteSelectArray() throws SQLException {
+    String query = "SELECT [1,2,3]";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    assertEquals(1, bigQueryResult.getTotalRows());
+
+    Schema schema = bigQueryResult.getSchema();
+    assertEquals("f0_", schema.getFields().get(0).getName());
+    assertEquals(Field.Mode.REPEATED, schema.getFields().get(0).getMode());
+    assertEquals(LegacySQLTypeName.INTEGER, schema.getFields().get(0).getType());
+    assertNull(schema.getFields().get(0).getSubFields()); // no subfields for Integers
+
+    ResultSet rs = bigQueryResult.getResultSet();
+    assertTrue(rs.next());
+    FieldValueList arrayFieldValue = (com.google.cloud.bigquery.FieldValueList) rs.getObject(0);
+    assertEquals(1, arrayFieldValue.get(0).getLongValue());
+    assertEquals(2, arrayFieldValue.get(1).getLongValue());
+    assertEquals(3, arrayFieldValue.get(2).getLongValue());
+  }
+
+  @Test
+  public void testExecuteSelectArrayOfStruct() throws SQLException {
+    String query =
+        "SELECT [STRUCT(\"Vancouver\" as city, 5 as years), STRUCT(\"Boston\" as city, 10 as years)]";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    assertEquals(1, bigQueryResult.getTotalRows());
+
+    Schema schema = bigQueryResult.getSchema();
+    assertEquals("f0_", schema.getFields().get(0).getName());
+    assertEquals(Field.Mode.REPEATED, schema.getFields().get(0).getMode());
+    // Backend is currently returning LegacySQLTypeName. Tracking bug: b/202977620
+    // Verify the field metadata of the two subfields of the struct
+    assertEquals(LegacySQLTypeName.RECORD, schema.getFields().get(0).getType());
+    assertEquals("city", schema.getFields().get(0).getSubFields().get(0).getName());
+    assertEquals(
+        LegacySQLTypeName.STRING, schema.getFields().get(0).getSubFields().get(0).getType());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getSubFields().get(0).getMode());
+    assertEquals("years", schema.getFields().get(0).getSubFields().get(1).getName());
+    assertEquals(
+        LegacySQLTypeName.INTEGER, schema.getFields().get(0).getSubFields().get(1).getType());
+    assertEquals(Field.Mode.NULLABLE, schema.getFields().get(0).getSubFields().get(1).getMode());
+
+    ResultSet rs = bigQueryResult.getResultSet();
+    assertTrue(rs.next());
+    FieldValueList arrayOfStructFieldValue =
+        (com.google.cloud.bigquery.FieldValueList) rs.getObject(0);
+    // Verify the values of the two structs in the array
+    assertEquals(Attribute.RECORD, arrayOfStructFieldValue.get(0).getAttribute());
+    assertEquals(
+        "Vancouver", arrayOfStructFieldValue.get(0).getRecordValue().get(0).getStringValue());
+    assertEquals(5, arrayOfStructFieldValue.get(0).getRecordValue().get(1).getLongValue());
+    assertEquals(Attribute.RECORD, arrayOfStructFieldValue.get(1).getAttribute());
+    assertEquals("Boston", arrayOfStructFieldValue.get(1).getRecordValue().get(0).getStringValue());
+    assertEquals(10, arrayOfStructFieldValue.get(1).getRecordValue().get(1).getLongValue());
+  }
+
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
+  @Test
   public void testFastQueryMultipleRuns() throws InterruptedException {
     String query =
         "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID_FASTQUERY.getTable();
@@ -2265,6 +2981,7 @@ public class ITBigQueryTest {
     assertFalse(result2.hasNextPage());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testFastQuerySinglePageDuplicateRequestIds() throws InterruptedException {
     String query =
@@ -2294,6 +3011,7 @@ public class ITBigQueryTest {
     assertFalse(result2.hasNextPage());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testFastSQLQuery() throws InterruptedException {
     String query =
@@ -2323,6 +3041,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testFastSQLQueryMultiPage() throws InterruptedException {
     String query =
@@ -2449,6 +3168,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testFastQueryHTTPException() throws InterruptedException {
     String queryInvalid =
@@ -2511,8 +3231,34 @@ public class ITBigQueryTest {
     remoteJobWithSession = remoteJobWithSession.waitFor();
     assertNull(remoteJobWithSession.getStatus().getError());
     Job queryJobWithSession = bigquery.getJob(remoteJobWithSession.getJobId());
-    JobStatistics.QueryStatistics statisticsWithSession = queryJobWithSession.getStatistics();
+    QueryStatistics statisticsWithSession = queryJobWithSession.getStatistics();
     assertEquals(sessionId, statisticsWithSession.getSessionInfo().getSessionId());
+  }
+
+  // TODO: uncomment this testcase when executeUpdate is implemented
+  // @Test
+  // public void testExecuteSelectWithSession() throws BigQuerySQLException {
+  //   String query = "CREATE TEMPORARY TABLE temptable AS SELECT 17 as foo";
+  //   ConnectionSettings connectionSettings =
+  // ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).setCreateSession(true).build();
+  //   Connection connection = bigquery.createConnection(connectionSettings);
+  //   BigQueryResult bigQueryResult = connection.execute(query);
+  //   BigQueryResultStats stats = bigQueryResult.getBigQueryResultStats();
+  //   assertNotNull(stats.getSessionInfo().getSessionId());
+  // }
+
+  @Test
+  public void testExecuteSelectSessionSupport() throws BigQuerySQLException {
+    String query = "SELECT 17 as foo";
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setCreateSession(true)
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryResult bigQueryResult = connection.executeSelect(query);
+    String sessionId = bigQueryResult.getBigQueryResultStats().getSessionInfo().getSessionId();
+    assertNotNull(sessionId);
   }
 
   @Test
@@ -2535,6 +3281,7 @@ public class ITBigQueryTest {
     assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testTransactionInfo() throws InterruptedException {
     String tableName = TABLE_ID_FASTQUERY.getTable();
@@ -2556,6 +3303,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testScriptStatistics() throws InterruptedException {
     String script =
@@ -2706,6 +3454,27 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): expand below test case with all the fields shown in the above test case */
+  @Test
+  public void testExecuteSelectWithPositionalQueryParameters() throws BigQuerySQLException {
+    String query =
+        "SELECT TimestampField, StringField FROM "
+            + TABLE_ID.getTable()
+            + " WHERE StringField = ?"
+            + " AND TimestampField > ?";
+    QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+    QueryParameterValue timestampParameter =
+        QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00");
+    Parameter stringParam = Parameter.newBuilder().setValue(stringParameter).build();
+    Parameter timeStampParam = Parameter.newBuilder().setValue(timestampParameter).build();
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    List<Parameter> parameters = ImmutableList.of(stringParam, timeStampParam);
+    BigQueryResult rs = connection.executeSelect(query, parameters);
+    assertEquals(2, rs.getTotalRows());
+  }
+
   @Test
   public void testNamedQueryParameters() throws InterruptedException {
     String query =
@@ -2728,6 +3497,30 @@ public class ITBigQueryTest {
     assertEquals(2, Iterables.size(result.getValues()));
   }
 
+  @Test
+  public void testExecuteSelectWithNamedQueryParameters() throws BigQuerySQLException {
+    String query =
+        "SELECT TimestampField, StringField, BooleanField FROM "
+            + TABLE_ID.getTable()
+            + " WHERE StringField = @stringParam"
+            + " AND IntegerField IN UNNEST(@integerList)";
+    QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+    QueryParameterValue intArrayParameter =
+        QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+    Parameter stringParam =
+        Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
+    Parameter intArrayParam =
+        Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
+    BigQueryResult rs = connection.executeSelect(query, parameters);
+    assertEquals(2, rs.getTotalRows());
+  }
+
+  /* TODO(prasmish): replicate relevant parts of the test case for executeSelect */
   @Test
   public void testStructNamedQueryParameters() throws InterruptedException {
     QueryParameterValue booleanValue = QueryParameterValue.bool(true);
@@ -2782,6 +3575,7 @@ public class ITBigQueryTest {
     assertEquals("test-stringField", record.getRecordValue().get("stringField").getStringValue());
   }
 
+  /* TODO(prasmish): replicate relevant parts of the test case for executeSelect */
   @Test
   public void testNestedStructNamedQueryParameters() throws InterruptedException {
     QueryParameterValue booleanValue = QueryParameterValue.bool(true);
@@ -2825,6 +3619,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate relevant parts of the test case for executeSelect */
   @Test
   public void testBytesParameter() throws Exception {
     String query = "SELECT BYTE_LENGTH(@p) AS length";
@@ -3108,6 +3903,7 @@ public class ITBigQueryTest {
     assertTrue(remoteTable.delete());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
@@ -3152,6 +3948,7 @@ public class ITBigQueryTest {
     assertNotNull(statistics.getQueryPlan());
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryJobWithConnectionProperties() throws InterruptedException {
     String tableName = "test_query_job_table_connection_properties";
@@ -3171,6 +3968,7 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(destinationTable));
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryJobWithLabels() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
@@ -3194,6 +3992,7 @@ public class ITBigQueryTest {
     }
   }
 
+  /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQueryJobWithRangePartitioning() throws InterruptedException {
     String tableName = "test_query_job_table_rangepartitioning";
@@ -3304,6 +4103,7 @@ public class ITBigQueryTest {
             .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
     assertNull(remoteJob.getJobId().getJob());
+    remoteJob.getStatistics();
     assertEquals(DONE, remoteJob.getStatus().getState());
     assertNotNull(remoteJob.getConfiguration());
   }

@@ -21,6 +21,7 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
@@ -339,6 +340,7 @@ public abstract class JobStatistics implements Serializable {
     private final List<QueryStage> queryPlan;
     private final List<TimelineSample> timeline;
     private final Schema schema;
+    private final List<QueryParameter> queryParameters;
 
     /**
      * StatementType represents possible types of SQL statements reported as part of the
@@ -421,6 +423,7 @@ public abstract class JobStatistics implements Serializable {
       private List<QueryStage> queryPlan;
       private List<TimelineSample> timeline;
       private Schema schema;
+      private List<QueryParameter> queryParameters;
 
       private Builder() {}
 
@@ -569,6 +572,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setQueryParameters(List<QueryParameter> queryParameters) {
+        this.queryParameters = queryParameters;
+        return self();
+      }
+
       @Override
       QueryStatistics build() {
         return new QueryStatistics(this);
@@ -595,6 +603,7 @@ public abstract class JobStatistics implements Serializable {
       this.queryPlan = builder.queryPlan;
       this.timeline = builder.timeline;
       this.schema = builder.schema;
+      this.queryParameters = builder.queryParameters;
     }
 
     /** Returns query statistics specific to the use of BI Engine. */
@@ -715,6 +724,14 @@ public abstract class JobStatistics implements Serializable {
       return schema;
     }
 
+    /**
+     * Standard SQL only: Returns a list of undeclared query parameters detected during a dry run
+     * validation.
+     */
+    public List<QueryParameter> getQueryParameters() {
+      return queryParameters;
+    }
+
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
@@ -725,7 +742,8 @@ public abstract class JobStatistics implements Serializable {
           .add("totalBytesProcessed", totalBytesProcessed)
           .add("queryPlan", queryPlan)
           .add("timeline", timeline)
-          .add("schema", schema);
+          .add("schema", schema)
+          .add("queryParameters", queryParameters);
     }
 
     @Override
@@ -746,7 +764,8 @@ public abstract class JobStatistics implements Serializable {
           totalBytesBilled,
           totalBytesProcessed,
           queryPlan,
-          schema);
+          schema,
+          queryParameters);
     }
 
     @Override
@@ -787,6 +806,9 @@ public abstract class JobStatistics implements Serializable {
       }
       if (schema != null) {
         queryStatisticsPb.setSchema(schema.toPb());
+      }
+      if (queryParameters != null) {
+        queryStatisticsPb.setUndeclaredQueryParameters(queryParameters);
       }
       return super.toPb().setQuery(queryStatisticsPb);
     }

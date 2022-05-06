@@ -6,4 +6,8 @@ __pycache__
 .settings
 .classpath
 .DS_Store
-
+.diff.txt
+.new-list.txt
+.org-list.txt
+SimpleBenchmarkApp/src/main/java/com/google/cloud/App.java
+.flattened-pom.xml

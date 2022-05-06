@@ -19,3 +19,10 @@ To run a benchmark jar, run the following command
   cd benchmark
   java -jar target/benchmark.jar
 ```
+
+To run ConnImplBenchmark, run the following command
+```
+# Run from benchmark directory
+  cd benchmark
+  java -jar target/benchmark.jar com.google.cloud.bigquery.ConnImplBenchmark
+```

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
@@ -32,6 +33,7 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
  * An interface for Google Cloud BigQuery.
@@ -759,6 +761,53 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   Job create(JobInfo jobInfo, JobOption... options);
+
+  /**
+   * Creates a new BigQuery query connection used for executing queries (not the same as BigQuery
+   * connection properties). It uses the BigQuery Storage Read API for high throughput queries by
+   * default.
+   *
+   * <p>Example of creating a query connection.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *       ConnectionSettings connectionSettings =
+   *         ConnectionSettings.newBuilder()
+   *             .setRequestTimeout(10L)
+   *             .setMaxResults(100L)
+   *             .setUseQueryCache(true)
+   *             .build();
+   *       Connection connection = bigquery.createConnection(connectionSettings);
+   * }
+   * </pre>
+   *
+   * @throws BigQueryException upon failure
+   * @param connectionSettings
+   */
+  @BetaApi
+  Connection createConnection(@NonNull ConnectionSettings connectionSettings);
+
+  /**
+   * Creates a new BigQuery query connection used for executing queries (not the same as BigQuery
+   * connection properties). It uses the BigQuery Storage Read API for high throughput queries by
+   * default. This overloaded method creates a Connection with default ConnectionSettings for query
+   * execution where default values are set for numBufferedRows (20000), useReadApi (true),
+   * useLegacySql (false).
+   *
+   * <p>Example of creating a query connection.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *       Connection connection = bigquery.createConnection();
+   * }
+   * </pre>
+   *
+   * @throws BigQueryException upon failure
+   */
+  @BetaApi
+  Connection createConnection();
 
   /**
    * Returns the requested dataset or {@code null} if not found.

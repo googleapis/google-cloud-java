@@ -66,6 +66,21 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- BOM for bigquerystorage-->
+      <!--    <dependency>
+           <groupId>com.google.cloud</groupId>
+           <artifactId>libraries-bom</artifactId>
+           <version>24.2.0</version>
+           <type>pom</type>
+           <scope>import</scope>
+         </dependency>-->
+         <dependency>
+           <groupId>com.google.cloud</groupId>
+           <artifactId>google-cloud-datacatalog-bom</artifactId>
+           <version>1.6.1</version>
+           <type>pom</type>
+           <scope>import</scope>
+         </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -98,6 +113,13 @@
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>2.9.0</version>
+      </dependency>
+
+      <!-- Used for Interval and Range types -->
+      <dependency>
+        <groupId>org.threeten</groupId>
+        <artifactId>threeten-extra</artifactId>
+        <version>1.7.0</version>
       </dependency>
 
       <!-- Used for Interval and Range types -->
@@ -148,9 +170,58 @@
     </dependencies>
   </dependencyManagement>
 
+  <dependencies>
+    <!-- Dependency for bigquerystorage-->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquerystorage</artifactId>
+      <version>2.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
+      <version>2.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-vector</artifactId>
+      <version>7.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-core</artifactId>
+      <version>7.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-netty</artifactId>
+      <version>7.0.0</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
   <modules>
     <module>google-cloud-bigquery</module>
   </modules>
+
+  <build>
+    <plugins>
+      <!-- This is actually a used dependency -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>org.apache.arrow:arrow-memory-netty</ignoredUnusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <reporting>
     <plugins>

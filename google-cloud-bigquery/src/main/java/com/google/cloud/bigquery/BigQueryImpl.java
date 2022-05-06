@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.PolicyHelper.convertToApiPolicy;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
@@ -54,6 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
@@ -349,6 +351,21 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           }
         };
     return create(jobInfo, idProvider, options);
+  }
+
+  @Override
+  @BetaApi
+  public Connection createConnection(@NonNull ConnectionSettings connectionSettings)
+      throws BigQueryException {
+    return new ConnectionImpl(connectionSettings, getOptions(), bigQueryRpc, DEFAULT_RETRY_CONFIG);
+  }
+
+  @Override
+  @BetaApi
+  public Connection createConnection() throws BigQueryException {
+    ConnectionSettings defaultConnectionSettings = ConnectionSettings.newBuilder().build();
+    return new ConnectionImpl(
+        defaultConnectionSettings, getOptions(), bigQueryRpc, DEFAULT_RETRY_CONFIG);
   }
 
   @InternalApi("visible for testing")
