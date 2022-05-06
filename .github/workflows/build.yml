@@ -1,10 +1,8 @@
 name: CI
 on:
   schedule:
-    - cron: '0 1 * * *' # nightly at 1 am
+    - cron: '0 1 * * *' # nightly at 1 am UTC
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -25,3 +23,8 @@ jobs:
         with:
           branch: gh-pages
           folder: monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
+      - name: Push monorepo to branch
+        run: |
+          cd monorepo/google-cloud-java
+          git remote add monorepo ${{ github.repositoryUrl }}
+          git push -f monorepo main:monorepo
