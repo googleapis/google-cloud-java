@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
  *   EnvironmentName name = EnvironmentName.of("[USER]", "[ENVIRONMENT]");
  *   Environment response = cloudShellServiceClient.getEnvironment(name);
@@ -77,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudShellServiceSettings cloudShellServiceSettings =
  *     CloudShellServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudShellServiceSettings cloudShellServiceSettings =
  *     CloudShellServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudShellServiceClient cloudShellServiceClient =
@@ -167,6 +173,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   EnvironmentName name = EnvironmentName.of("[USER]", "[ENVIRONMENT]");
    *   Environment response = cloudShellServiceClient.getEnvironment(name);
@@ -191,6 +199,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   String name = EnvironmentName.of("[USER]", "[ENVIRONMENT]").toString();
    *   Environment response = cloudShellServiceClient.getEnvironment(name);
@@ -214,6 +224,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder()
@@ -237,6 +249,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   GetEnvironmentRequest request =
    *       GetEnvironmentRequest.newBuilder()
@@ -264,6 +278,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   StartEnvironmentRequest request =
    *       StartEnvironmentRequest.newBuilder()
@@ -295,6 +311,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   StartEnvironmentRequest request =
    *       StartEnvironmentRequest.newBuilder()
@@ -326,6 +344,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   StartEnvironmentRequest request =
    *       StartEnvironmentRequest.newBuilder()
@@ -353,6 +373,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AuthorizeEnvironmentRequest request =
    *       AuthorizeEnvironmentRequest.newBuilder()
@@ -383,6 +405,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AuthorizeEnvironmentRequest request =
    *       AuthorizeEnvironmentRequest.newBuilder()
@@ -413,6 +437,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AuthorizeEnvironmentRequest request =
    *       AuthorizeEnvironmentRequest.newBuilder()
@@ -442,6 +468,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AddPublicKeyRequest request =
    *       AddPublicKeyRequest.newBuilder()
@@ -469,6 +497,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AddPublicKeyRequest request =
    *       AddPublicKeyRequest.newBuilder()
@@ -496,6 +526,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   AddPublicKeyRequest request =
    *       AddPublicKeyRequest.newBuilder()
@@ -522,6 +554,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   RemovePublicKeyRequest request =
    *       RemovePublicKeyRequest.newBuilder()
@@ -550,6 +584,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   RemovePublicKeyRequest request =
    *       RemovePublicKeyRequest.newBuilder()
@@ -578,6 +614,8 @@ public class CloudShellServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.create()) {
    *   RemovePublicKeyRequest request =
    *       RemovePublicKeyRequest.newBuilder()
