@@ -207,7 +207,12 @@ public interface HttpRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
-  java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

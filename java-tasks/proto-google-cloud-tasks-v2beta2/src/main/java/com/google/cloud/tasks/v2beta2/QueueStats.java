@@ -114,6 +114,8 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -302,7 +304,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     if (concurrentDispatchesCount_ != 0L) {
       output.writeInt64(4, concurrentDispatchesCount_);
     }
-    if (effectiveExecutionRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(effectiveExecutionRate_) != 0) {
       output.writeDouble(5, effectiveExecutionRate_);
     }
     unknownFields.writeTo(output);
@@ -328,7 +330,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     if (concurrentDispatchesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, concurrentDispatchesCount_);
     }
-    if (effectiveExecutionRate_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(effectiveExecutionRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, effectiveExecutionRate_);
     }
     size += unknownFields.getSerializedSize();

@@ -214,6 +214,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1940,8 +1942,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (messageTypeCase_ == 2) {
           appEngineHttpRequestBuilder_.mergeFrom(value);
+        } else {
+          appEngineHttpRequestBuilder_.setMessage(value);
         }
-        appEngineHttpRequestBuilder_.setMessage(value);
       }
       messageTypeCase_ = 2;
       return this;
@@ -2158,8 +2161,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (messageTypeCase_ == 3) {
           httpRequestBuilder_.mergeFrom(value);
+        } else {
+          httpRequestBuilder_.setMessage(value);
         }
-        httpRequestBuilder_.setMessage(value);
       }
       messageTypeCase_ = 3;
       return this;

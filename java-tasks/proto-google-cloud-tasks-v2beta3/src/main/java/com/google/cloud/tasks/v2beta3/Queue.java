@@ -235,6 +235,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2312,8 +2314,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (queueTypeCase_ == 3) {
           appEngineHttpQueueBuilder_.mergeFrom(value);
+        } else {
+          appEngineHttpQueueBuilder_.setMessage(value);
         }
-        appEngineHttpQueueBuilder_.setMessage(value);
       }
       queueTypeCase_ = 3;
       return this;

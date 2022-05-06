@@ -71,14 +71,14 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
             break;
           case 8:
             {
-              numAttemptsCase_ = 1;
               numAttempts_ = input.readInt32();
+              numAttemptsCase_ = 1;
               break;
             }
           case 16:
             {
-              numAttemptsCase_ = 2;
               numAttempts_ = input.readBool();
+              numAttemptsCase_ = 2;
               break;
             }
           case 26:
@@ -142,6 +142,8 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {

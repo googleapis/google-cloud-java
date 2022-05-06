@@ -172,6 +172,8 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -407,7 +409,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsHeaders(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
@@ -482,7 +484,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -519,7 +521,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getHeadersOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     if (!map.containsKey(key)) {
@@ -1463,7 +1465,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
@@ -1539,7 +1541,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1576,7 +1578,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
@@ -1620,7 +1622,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
@@ -1661,11 +1663,12 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putHeaders(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableHeaders().getMutableMap().put(key, value);
       return this;
     }
@@ -1903,8 +1906,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (authorizationHeaderCase_ == 5) {
           oauthTokenBuilder_.mergeFrom(value);
+        } else {
+          oauthTokenBuilder_.setMessage(value);
         }
-        oauthTokenBuilder_.setMessage(value);
       }
       authorizationHeaderCase_ = 5;
       return this;
@@ -2161,8 +2165,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (authorizationHeaderCase_ == 6) {
           oidcTokenBuilder_.mergeFrom(value);
+        } else {
+          oidcTokenBuilder_.setMessage(value);
         }
-        oidcTokenBuilder_.setMessage(value);
       }
       authorizationHeaderCase_ = 6;
       return this;

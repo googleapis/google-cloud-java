@@ -226,6 +226,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2061,8 +2063,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetTypeCase_ == 3) {
           appEngineHttpTargetBuilder_.mergeFrom(value);
+        } else {
+          appEngineHttpTargetBuilder_.setMessage(value);
         }
-        appEngineHttpTargetBuilder_.setMessage(value);
       }
       targetTypeCase_ = 3;
       return this;
@@ -2281,8 +2284,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetTypeCase_ == 4) {
           pullTargetBuilder_.mergeFrom(value);
+        } else {
+          pullTargetBuilder_.setMessage(value);
         }
-        pullTargetBuilder_.setMessage(value);
       }
       targetTypeCase_ = 4;
       return this;
