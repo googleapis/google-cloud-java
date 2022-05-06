@@ -141,6 +141,8 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -378,7 +380,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean containsHeaders(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
@@ -459,7 +461,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -499,7 +501,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public java.lang.String getHeadersOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     if (!map.containsKey(key)) {
@@ -1427,7 +1429,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
@@ -1509,7 +1511,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     public java.lang.String getHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1549,7 +1551,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
@@ -1596,7 +1598,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      */
     public Builder removeHeaders(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
@@ -1640,11 +1642,12 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
      */
     public Builder putHeaders(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableHeaders().getMutableMap().put(key, value);
       return this;
     }

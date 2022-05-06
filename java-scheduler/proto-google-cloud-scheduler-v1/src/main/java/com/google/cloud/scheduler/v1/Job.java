@@ -261,6 +261,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2396,8 +2398,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetCase_ == 4) {
           pubsubTargetBuilder_.mergeFrom(value);
+        } else {
+          pubsubTargetBuilder_.setMessage(value);
         }
-        pubsubTargetBuilder_.setMessage(value);
       }
       targetCase_ = 4;
       return this;
@@ -2606,8 +2609,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetCase_ == 5) {
           appEngineHttpTargetBuilder_.mergeFrom(value);
+        } else {
+          appEngineHttpTargetBuilder_.setMessage(value);
         }
-        appEngineHttpTargetBuilder_.setMessage(value);
       }
       targetCase_ = 5;
       return this;
@@ -2816,8 +2820,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (targetCase_ == 6) {
           httpTargetBuilder_.mergeFrom(value);
+        } else {
+          httpTargetBuilder_.setMessage(value);
         }
-        httpTargetBuilder_.setMessage(value);
       }
       targetCase_ = 6;
       return this;

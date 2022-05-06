@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
  *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
  *   Job response = cloudSchedulerClient.getJob(name);
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudSchedulerSettings cloudSchedulerSettings =
  *     CloudSchedulerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudSchedulerSettings cloudSchedulerSettings =
  *     CloudSchedulerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create(cloudSchedulerSettings);
@@ -156,6 +162,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Job element : cloudSchedulerClient.listJobs(parent).iterateAll()) {
@@ -181,6 +189,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Job element : cloudSchedulerClient.listJobs(parent).iterateAll()) {
@@ -205,6 +215,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -232,6 +244,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -258,6 +272,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -291,6 +307,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   Job response = cloudSchedulerClient.getJob(name);
@@ -314,6 +332,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   Job response = cloudSchedulerClient.getJob(name);
@@ -336,6 +356,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -359,6 +381,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -381,6 +405,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Job job = Job.newBuilder().build();
@@ -413,6 +439,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Job job = Job.newBuilder().build();
@@ -441,6 +469,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -465,6 +495,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   CreateJobRequest request =
    *       CreateJobRequest.newBuilder()
@@ -496,6 +528,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   Job job = Job.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -531,6 +565,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -563,6 +599,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -586,6 +624,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   cloudSchedulerClient.deleteJob(name);
@@ -609,6 +649,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   cloudSchedulerClient.deleteJob(name);
@@ -631,6 +673,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
@@ -654,6 +698,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
@@ -682,6 +728,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   Job response = cloudSchedulerClient.pauseJob(name);
@@ -711,6 +759,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   Job response = cloudSchedulerClient.pauseJob(name);
@@ -739,6 +789,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   PauseJobRequest request =
    *       PauseJobRequest.newBuilder()
@@ -768,6 +820,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   PauseJobRequest request =
    *       PauseJobRequest.newBuilder()
@@ -796,6 +850,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   Job response = cloudSchedulerClient.resumeJob(name);
@@ -825,6 +881,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   Job response = cloudSchedulerClient.resumeJob(name);
@@ -853,6 +911,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ResumeJobRequest request =
    *       ResumeJobRequest.newBuilder()
@@ -882,6 +942,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   ResumeJobRequest request =
    *       ResumeJobRequest.newBuilder()
@@ -907,6 +969,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   Job response = cloudSchedulerClient.runJob(name);
@@ -933,6 +997,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   String name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString();
    *   Job response = cloudSchedulerClient.runJob(name);
@@ -958,6 +1024,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   RunJobRequest request =
    *       RunJobRequest.newBuilder()
@@ -984,6 +1052,8 @@ public class CloudSchedulerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
    *   RunJobRequest request =
    *       RunJobRequest.newBuilder()
