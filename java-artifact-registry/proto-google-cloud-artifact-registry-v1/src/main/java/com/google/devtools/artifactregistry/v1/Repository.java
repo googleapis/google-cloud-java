@@ -145,6 +145,30 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               kmsKeyName_ = s;
               break;
             }
+          case 74:
+            {
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder
+                  subBuilder = null;
+              if (formatConfigCase_ == 9) {
+                subBuilder =
+                    ((com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                            formatConfig_)
+                        .toBuilder();
+              }
+              formatConfig_ =
+                  input.readMessage(
+                      com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                        formatConfig_);
+                formatConfig_ = subBuilder.buildPartial();
+              }
+              formatConfigCase_ = 9;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,6 +180,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -437,6 +463,1080 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.Format)
   }
 
+  public interface MavenRepositoryConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The repository with this flag will allow publishing
+     * the same snapshot versions.
+     * </pre>
+     *
+     * <code>bool allow_snapshot_overwrites = 1;</code>
+     *
+     * @return The allowSnapshotOverwrites.
+     */
+    boolean getAllowSnapshotOverwrites();
+
+    /**
+     *
+     *
+     * <pre>
+     * Version policy defines the versions that the registry will accept.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for versionPolicy.
+     */
+    int getVersionPolicyValue();
+    /**
+     *
+     *
+     * <pre>
+     * Version policy defines the versions that the registry will accept.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+     * </code>
+     *
+     * @return The versionPolicy.
+     */
+    com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+        getVersionPolicy();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * MavenRepositoryConfig is maven related repository details.
+   * Provides additional configuration details for repositories of the maven
+   * format type.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig}
+   */
+  public static final class MavenRepositoryConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+      MavenRepositoryConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MavenRepositoryConfig.newBuilder() to construct.
+    private MavenRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MavenRepositoryConfig() {
+      versionPolicy_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MavenRepositoryConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private MavenRepositoryConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                allowSnapshotOverwrites_ = input.readBool();
+                break;
+              }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                versionPolicy_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_MavenRepositoryConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_Repository_MavenRepositoryConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.class,
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * VersionPolicy is the version policy for the repository.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy}
+     */
+    public enum VersionPolicy implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * VERSION_POLICY_UNSPECIFIED - the version policy is not defined.
+       * When the version policy is not defined, no validation is performed
+       * for the versions.
+       * </pre>
+       *
+       * <code>VERSION_POLICY_UNSPECIFIED = 0;</code>
+       */
+      VERSION_POLICY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * RELEASE - repository will accept only Release versions.
+       * </pre>
+       *
+       * <code>RELEASE = 1;</code>
+       */
+      RELEASE(1),
+      /**
+       *
+       *
+       * <pre>
+       * SNAPSHOT - repository will accept only Snapshot versions.
+       * </pre>
+       *
+       * <code>SNAPSHOT = 2;</code>
+       */
+      SNAPSHOT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * VERSION_POLICY_UNSPECIFIED - the version policy is not defined.
+       * When the version policy is not defined, no validation is performed
+       * for the versions.
+       * </pre>
+       *
+       * <code>VERSION_POLICY_UNSPECIFIED = 0;</code>
+       */
+      public static final int VERSION_POLICY_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * RELEASE - repository will accept only Release versions.
+       * </pre>
+       *
+       * <code>RELEASE = 1;</code>
+       */
+      public static final int RELEASE_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * SNAPSHOT - repository will accept only Snapshot versions.
+       * </pre>
+       *
+       * <code>SNAPSHOT = 2;</code>
+       */
+      public static final int SNAPSHOT_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static VersionPolicy valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static VersionPolicy forNumber(int value) {
+        switch (value) {
+          case 0:
+            return VERSION_POLICY_UNSPECIFIED;
+          case 1:
+            return RELEASE;
+          case 2:
+            return SNAPSHOT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<VersionPolicy> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<VersionPolicy>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<VersionPolicy>() {
+                public VersionPolicy findValueByNumber(int number) {
+                  return VersionPolicy.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final VersionPolicy[] VALUES = values();
+
+      public static VersionPolicy valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private VersionPolicy(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy)
+    }
+
+    public static final int ALLOW_SNAPSHOT_OVERWRITES_FIELD_NUMBER = 1;
+    private boolean allowSnapshotOverwrites_;
+    /**
+     *
+     *
+     * <pre>
+     * The repository with this flag will allow publishing
+     * the same snapshot versions.
+     * </pre>
+     *
+     * <code>bool allow_snapshot_overwrites = 1;</code>
+     *
+     * @return The allowSnapshotOverwrites.
+     */
+    @java.lang.Override
+    public boolean getAllowSnapshotOverwrites() {
+      return allowSnapshotOverwrites_;
+    }
+
+    public static final int VERSION_POLICY_FIELD_NUMBER = 2;
+    private int versionPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Version policy defines the versions that the registry will accept.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for versionPolicy.
+     */
+    @java.lang.Override
+    public int getVersionPolicyValue() {
+      return versionPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version policy defines the versions that the registry will accept.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+     * </code>
+     *
+     * @return The versionPolicy.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+        getVersionPolicy() {
+      @SuppressWarnings("deprecation")
+      com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+          result =
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+                  .valueOf(versionPolicy_);
+      return result == null
+          ? com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (allowSnapshotOverwrites_ != false) {
+        output.writeBool(1, allowSnapshotOverwrites_);
+      }
+      if (versionPolicy_
+          != com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+              .VERSION_POLICY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, versionPolicy_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (allowSnapshotOverwrites_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, allowSnapshotOverwrites_);
+      }
+      if (versionPolicy_
+          != com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+              .VERSION_POLICY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, versionPolicy_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)) {
+        return super.equals(obj);
+      }
+      com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig other =
+          (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig) obj;
+
+      if (getAllowSnapshotOverwrites() != other.getAllowSnapshotOverwrites()) return false;
+      if (versionPolicy_ != other.versionPolicy_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ALLOW_SNAPSHOT_OVERWRITES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowSnapshotOverwrites());
+      hash = (37 * hash) + VERSION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + versionPolicy_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MavenRepositoryConfig is maven related repository details.
+     * Provides additional configuration details for repositories of the maven
+     * format type.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_MavenRepositoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_MavenRepositoryConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.class,
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        allowSnapshotOverwrites_ = false;
+
+        versionPolicy_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_Repository_MavenRepositoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+          getDefaultInstanceForType() {
+        return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig build() {
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+          buildPartial() {
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig result =
+            new com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig(this);
+        result.allowSnapshotOverwrites_ = allowSnapshotOverwrites_;
+        result.versionPolicy_ = versionPolicy_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig) {
+          return mergeFrom(
+              (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig other) {
+        if (other
+            == com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+                .getDefaultInstance()) return this;
+        if (other.getAllowSnapshotOverwrites() != false) {
+          setAllowSnapshotOverwrites(other.getAllowSnapshotOverwrites());
+        }
+        if (other.versionPolicy_ != 0) {
+          setVersionPolicyValue(other.getVersionPolicyValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean allowSnapshotOverwrites_;
+      /**
+       *
+       *
+       * <pre>
+       * The repository with this flag will allow publishing
+       * the same snapshot versions.
+       * </pre>
+       *
+       * <code>bool allow_snapshot_overwrites = 1;</code>
+       *
+       * @return The allowSnapshotOverwrites.
+       */
+      @java.lang.Override
+      public boolean getAllowSnapshotOverwrites() {
+        return allowSnapshotOverwrites_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The repository with this flag will allow publishing
+       * the same snapshot versions.
+       * </pre>
+       *
+       * <code>bool allow_snapshot_overwrites = 1;</code>
+       *
+       * @param value The allowSnapshotOverwrites to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowSnapshotOverwrites(boolean value) {
+
+        allowSnapshotOverwrites_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The repository with this flag will allow publishing
+       * the same snapshot versions.
+       * </pre>
+       *
+       * <code>bool allow_snapshot_overwrites = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowSnapshotOverwrites() {
+
+        allowSnapshotOverwrites_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int versionPolicy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Version policy defines the versions that the registry will accept.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for versionPolicy.
+       */
+      @java.lang.Override
+      public int getVersionPolicyValue() {
+        return versionPolicy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version policy defines the versions that the registry will accept.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for versionPolicy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionPolicyValue(int value) {
+
+        versionPolicy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version policy defines the versions that the registry will accept.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+       * </code>
+       *
+       * @return The versionPolicy.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+          getVersionPolicy() {
+        @SuppressWarnings("deprecation")
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+            result =
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+                    .VersionPolicy.valueOf(versionPolicy_);
+        return result == null
+            ? com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version policy defines the versions that the registry will accept.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+       * </code>
+       *
+       * @param value The versionPolicy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionPolicy(
+          com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        versionPolicy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version policy defines the versions that the registry will accept.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy version_policy = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVersionPolicy() {
+
+        versionPolicy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+    private static final com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig();
+    }
+
+    public static com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MavenRepositoryConfig> PARSER =
+        new com.google.protobuf.AbstractParser<MavenRepositoryConfig>() {
+          @java.lang.Override
+          public MavenRepositoryConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new MavenRepositoryConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<MavenRepositoryConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MavenRepositoryConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int formatConfigCase_ = 0;
+  private java.lang.Object formatConfig_;
+
+  public enum FormatConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MAVEN_CONFIG(9),
+    FORMATCONFIG_NOT_SET(0);
+    private final int value;
+
+    private FormatConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FormatConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static FormatConfigCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return MAVEN_CONFIG;
+        case 0:
+          return FORMATCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public FormatConfigCase getFormatConfigCase() {
+    return FormatConfigCase.forNumber(formatConfigCase_);
+  }
+
+  public static final int MAVEN_CONFIG_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return Whether the mavenConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMavenConfig() {
+    return formatConfigCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return The mavenConfig.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig getMavenConfig() {
+    if (formatConfigCase_ == 9) {
+      return (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+          formatConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder
+      getMavenConfigOrBuilder() {
+    if (formatConfigCase_ == 9) {
+      return (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+          formatConfig_;
+    }
+    return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        .getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -616,7 +1716,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -659,7 +1759,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -680,7 +1780,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -787,7 +1887,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud KMS resource name of the customer managed encryption key that’s
+   * The Cloud KMS resource name of the customer managed encryption key that's
    * used to encrypt the contents of the Repository. Has the form:
    * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
    * This value may not be changed after the Repository has been created.
@@ -813,7 +1913,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud KMS resource name of the customer managed encryption key that’s
+   * The Cloud KMS resource name of the customer managed encryption key that's
    * used to encrypt the contents of the Repository. Has the form:
    * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
    * This value may not be changed after the Repository has been created.
@@ -872,6 +1972,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, kmsKeyName_);
     }
+    if (formatConfigCase_ == 9) {
+      output.writeMessage(
+          9,
+          (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig) formatConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -911,6 +2016,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, kmsKeyName_);
     }
+    if (formatConfigCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9,
+              (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                  formatConfig_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -940,6 +2052,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!getFormatConfigCase().equals(other.getFormatConfigCase())) return false;
+    switch (formatConfigCase_) {
+      case 9:
+        if (!getMavenConfig().equals(other.getMavenConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -971,6 +2091,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
+    switch (formatConfigCase_) {
+      case 9:
+        hash = (37 * hash) + MAVEN_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getMavenConfig().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1157,6 +2285,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       kmsKeyName_ = "";
 
+      formatConfigCase_ = 0;
+      formatConfig_ = null;
       return this;
     }
 
@@ -1185,6 +2315,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.artifactregistry.v1.Repository result =
           new com.google.devtools.artifactregistry.v1.Repository(this);
       int from_bitField0_ = bitField0_;
+      if (formatConfigCase_ == 9) {
+        if (mavenConfigBuilder_ == null) {
+          result.formatConfig_ = formatConfig_;
+        } else {
+          result.formatConfig_ = mavenConfigBuilder_.build();
+        }
+      }
       result.name_ = name_;
       result.format_ = format_;
       result.description_ = description_;
@@ -1201,6 +2338,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.kmsKeyName_ = kmsKeyName_;
+      result.formatConfigCase_ = formatConfigCase_;
       onBuilt();
       return result;
     }
@@ -1273,6 +2411,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         kmsKeyName_ = other.kmsKeyName_;
         onChanged();
       }
+      switch (other.getFormatConfigCase()) {
+        case MAVEN_CONFIG:
+          {
+            mergeMavenConfig(other.getMavenConfig());
+            break;
+          }
+        case FORMATCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1303,7 +2452,266 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int formatConfigCase_ = 0;
+    private java.lang.Object formatConfig_;
+
+    public FormatConfigCase getFormatConfigCase() {
+      return FormatConfigCase.forNumber(formatConfigCase_);
+    }
+
+    public Builder clearFormatConfig() {
+      formatConfigCase_ = 0;
+      formatConfig_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder>
+        mavenConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     *
+     * @return Whether the mavenConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasMavenConfig() {
+      return formatConfigCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     *
+     * @return The mavenConfig.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+        getMavenConfig() {
+      if (mavenConfigBuilder_ == null) {
+        if (formatConfigCase_ == 9) {
+          return (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+              formatConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+            .getDefaultInstance();
+      } else {
+        if (formatConfigCase_ == 9) {
+          return mavenConfigBuilder_.getMessage();
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    public Builder setMavenConfig(
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig value) {
+      if (mavenConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        formatConfig_ = value;
+        onChanged();
+      } else {
+        mavenConfigBuilder_.setMessage(value);
+      }
+      formatConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    public Builder setMavenConfig(
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder
+            builderForValue) {
+      if (mavenConfigBuilder_ == null) {
+        formatConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        mavenConfigBuilder_.setMessage(builderForValue.build());
+      }
+      formatConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    public Builder mergeMavenConfig(
+        com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig value) {
+      if (mavenConfigBuilder_ == null) {
+        if (formatConfigCase_ == 9
+            && formatConfig_
+                != com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+                    .getDefaultInstance()) {
+          formatConfig_ =
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.newBuilder(
+                      (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                          formatConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          formatConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (formatConfigCase_ == 9) {
+          mavenConfigBuilder_.mergeFrom(value);
+        } else {
+          mavenConfigBuilder_.setMessage(value);
+        }
+      }
+      formatConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    public Builder clearMavenConfig() {
+      if (mavenConfigBuilder_ == null) {
+        if (formatConfigCase_ == 9) {
+          formatConfigCase_ = 0;
+          formatConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (formatConfigCase_ == 9) {
+          formatConfigCase_ = 0;
+          formatConfig_ = null;
+        }
+        mavenConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder
+        getMavenConfigBuilder() {
+      return getMavenConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder
+        getMavenConfigOrBuilder() {
+      if ((formatConfigCase_ == 9) && (mavenConfigBuilder_ != null)) {
+        return mavenConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (formatConfigCase_ == 9) {
+          return (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+              formatConfig_;
+        }
+        return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven repository config contains repository level configuration
+     * for the repositories of maven type.
+     * </pre>
+     *
+     * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig,
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder,
+            com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder>
+        getMavenConfigFieldBuilder() {
+      if (mavenConfigBuilder_ == null) {
+        if (!(formatConfigCase_ == 9)) {
+          formatConfig_ =
+              com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
+                  .getDefaultInstance();
+        }
+        mavenConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig,
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder,
+                com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder>(
+                (com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
+                    formatConfig_,
+                getParentForChildren(),
+                isClean());
+        formatConfig_ = null;
+      }
+      formatConfigCase_ = 9;
+      onChanged();
+      ;
+      return mavenConfigBuilder_;
+    }
 
     private java.lang.Object name_ = "";
     /**
@@ -1656,7 +3064,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -1700,7 +3108,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1721,7 +3129,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -1749,7 +3157,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -1774,11 +3182,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -2171,7 +3580,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud KMS resource name of the customer managed encryption key that’s
+     * The Cloud KMS resource name of the customer managed encryption key that's
      * used to encrypt the contents of the Repository. Has the form:
      * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
      * This value may not be changed after the Repository has been created.
@@ -2196,7 +3605,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud KMS resource name of the customer managed encryption key that’s
+     * The Cloud KMS resource name of the customer managed encryption key that's
      * used to encrypt the contents of the Repository. Has the form:
      * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
      * This value may not be changed after the Repository has been created.
@@ -2221,7 +3630,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud KMS resource name of the customer managed encryption key that’s
+     * The Cloud KMS resource name of the customer managed encryption key that's
      * used to encrypt the contents of the Repository. Has the form:
      * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
      * This value may not be changed after the Repository has been created.
@@ -2245,7 +3654,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud KMS resource name of the customer managed encryption key that’s
+     * The Cloud KMS resource name of the customer managed encryption key that's
      * used to encrypt the contents of the Repository. Has the form:
      * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
      * This value may not be changed after the Repository has been created.
@@ -2265,7 +3674,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud KMS resource name of the customer managed encryption key that’s
+     * The Cloud KMS resource name of the customer managed encryption key that's
      * used to encrypt the contents of the Repository. Has the form:
      * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
      * This value may not be changed after the Repository has been created.

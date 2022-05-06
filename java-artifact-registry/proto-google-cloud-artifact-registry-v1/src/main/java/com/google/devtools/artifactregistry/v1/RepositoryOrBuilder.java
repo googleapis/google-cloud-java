@@ -27,6 +27,48 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return Whether the mavenConfig field is set.
+   */
+  boolean hasMavenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   *
+   * @return The mavenConfig.
+   */
+  com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig getMavenConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Maven repository config contains repository level configuration
+   * for the repositories of maven type.
+   * </pre>
+   *
+   * <code>.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig maven_config = 9;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder
+      getMavenConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the repository, for example:
    * "projects/p1/locations/us-central1/repositories/repo1".
    * </pre>
@@ -158,7 +200,12 @@ public interface RepositoryOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -248,7 +295,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The Cloud KMS resource name of the customer managed encryption key that’s
+   * The Cloud KMS resource name of the customer managed encryption key that's
    * used to encrypt the contents of the Repository. Has the form:
    * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
    * This value may not be changed after the Repository has been created.
@@ -263,7 +310,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The Cloud KMS resource name of the customer managed encryption key that’s
+   * The Cloud KMS resource name of the customer managed encryption key that's
    * used to encrypt the contents of the Repository. Has the form:
    * `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`.
    * This value may not be changed after the Repository has been created.
@@ -274,4 +321,6 @@ public interface RepositoryOrBuilder
    * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  public com.google.devtools.artifactregistry.v1.Repository.FormatConfigCase getFormatConfigCase();
 }

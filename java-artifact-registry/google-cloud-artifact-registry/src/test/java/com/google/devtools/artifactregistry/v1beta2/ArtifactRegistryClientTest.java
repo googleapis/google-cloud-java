@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
@@ -1164,6 +1165,7 @@ public class ArtifactRegistryClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
@@ -1172,6 +1174,7 @@ public class ArtifactRegistryClientTest {
         SetIamPolicyRequest.newBuilder()
             .setResource(ProjectSettingsName.of("[PROJECT]").toString())
             .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     Policy actualResponse = client.setIamPolicy(request);
@@ -1183,6 +1186,7 @@ public class ArtifactRegistryClientTest {
 
     Assert.assertEquals(request.getResource(), actualRequest.getResource());
     Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1199,6 +1203,7 @@ public class ArtifactRegistryClientTest {
           SetIamPolicyRequest.newBuilder()
               .setResource(ProjectSettingsName.of("[PROJECT]").toString())
               .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.setIamPolicy(request);
       Assert.fail("No exception raised");
@@ -1213,6 +1218,7 @@ public class ArtifactRegistryClientTest {
         Policy.newBuilder()
             .setVersion(351608024)
             .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);

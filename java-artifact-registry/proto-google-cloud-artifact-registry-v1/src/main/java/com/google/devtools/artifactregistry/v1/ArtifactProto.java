@@ -39,6 +39,10 @@ public final class ArtifactProto {
       internal_static_google_devtools_artifactregistry_v1_ListDockerImagesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_ListDockerImagesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -52,29 +56,30 @@ public final class ArtifactProto {
           + "tifact.proto\022#google.devtools.artifactre"
           + "gistry.v1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\032\034google/api/annot"
-          + "ations.proto\"\342\002\n\013DockerImage\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\002\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\014\n\004tags\030\003 \003(\t\022"
-          + "\030\n\020image_size_bytes\030\004 \001(\003\022/\n\013upload_time"
-          + "\030\005 \001(\0132\032.google.protobuf.Timestamp\022\022\n\nme"
-          + "dia_type\030\006 \001(\t\022.\n\nbuild_time\030\007 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp:\220\001\352A\214\001\n+artifactr"
-          + "egistry.googleapis.com/DockerImage\022]proj"
-          + "ects/{project}/locations/{location}/repo"
-          + "sitories/{repository}/dockerImages/{dock"
-          + "er_image}\"U\n\027ListDockerImagesRequest\022\023\n\006"
-          + "parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"|\n\030ListDockerImagesResp"
-          + "onse\022G\n\rdocker_images\030\001 \003(\01320.google.dev"
-          + "tools.artifactregistry.v1.DockerImage\022\027\n"
-          + "\017next_page_token\030\002 \001(\tB\373\001\n\'com.google.de"
-          + "vtools.artifactregistry.v1B\rArtifactProt"
-          + "oP\001ZSgoogle.golang.org/genproto/googleap"
-          + "is/devtools/artifactregistry/v1;artifact"
-          + "registry\252\002 Google.Cloud.ArtifactRegistry"
-          + ".V1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002"
-          + "#Google::Cloud::ArtifactRegistry::V1b\006pr"
-          + "oto3"
+          + "otobuf/timestamp.proto\"\342\002\n\013DockerImage\022\021"
+          + "\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003uri\030\002 \001(\tB\003\340A\002\022\014\n\004t"
+          + "ags\030\003 \003(\t\022\030\n\020image_size_bytes\030\004 \001(\003\022/\n\013u"
+          + "pload_time\030\005 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022\022\n\nmedia_type\030\006 \001(\t\022.\n\nbuild_time\030\007"
+          + " \001(\0132\032.google.protobuf.Timestamp:\220\001\352A\214\001\n"
+          + "+artifactregistry.googleapis.com/DockerI"
+          + "mage\022]projects/{project}/locations/{loca"
+          + "tion}/repositories/{repository}/dockerIm"
+          + "ages/{docker_image}\"U\n\027ListDockerImagesR"
+          + "equest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"|\n\030ListDocker"
+          + "ImagesResponse\022G\n\rdocker_images\030\001 \003(\01320."
+          + "google.devtools.artifactregistry.v1.Dock"
+          + "erImage\022\027\n\017next_page_token\030\002 \001(\t\"Z\n\025GetD"
+          + "ockerImageRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n"
+          + "+artifactregistry.googleapis.com/DockerI"
+          + "mageB\373\001\n\'com.google.devtools.artifactreg"
+          + "istry.v1B\rArtifactProtoP\001ZSgoogle.golang"
+          + ".org/genproto/googleapis/devtools/artifa"
+          + "ctregistry/v1;artifactregistry\252\002 Google."
+          + "Cloud.ArtifactRegistry.V1\312\002 Google\\Cloud"
+          + "\\ArtifactRegistry\\V1\352\002#Google::Cloud::Ar"
+          + "tifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,7 +88,6 @@ public final class ArtifactProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1_DockerImage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -109,16 +113,24 @@ public final class ArtifactProto {
             new java.lang.String[] {
               "DockerImages", "NextPageToken",
             });
+    internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
