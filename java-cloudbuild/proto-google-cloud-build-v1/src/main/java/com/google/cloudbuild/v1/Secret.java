@@ -109,6 +109,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -235,7 +237,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsSecretEnv(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSecretEnv().getMap().containsKey(key);
   }
@@ -279,7 +281,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ByteString getSecretEnvOrDefault(
       java.lang.String key, com.google.protobuf.ByteString defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
         internalGetSecretEnv().getMap();
@@ -301,7 +303,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
         internalGetSecretEnv().getMap();
@@ -821,7 +823,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsSecretEnv(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSecretEnv().getMap().containsKey(key);
     }
@@ -865,7 +867,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSecretEnvOrDefault(
         java.lang.String key, com.google.protobuf.ByteString defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
           internalGetSecretEnv().getMap();
@@ -887,7 +889,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
           internalGetSecretEnv().getMap();
@@ -916,7 +918,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeSecretEnv(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSecretEnv().getMutableMap().remove(key);
       return this;
@@ -941,11 +943,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putSecretEnv(java.lang.String key, com.google.protobuf.ByteString value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableSecretEnv().getMutableMap().put(key, value);
       return this;
     }

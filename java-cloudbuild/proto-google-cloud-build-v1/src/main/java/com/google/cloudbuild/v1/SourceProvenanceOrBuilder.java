@@ -225,8 +225,12 @@ public interface SourceProvenanceOrBuilder
    * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+
+  /* nullable */
   com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
-      java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloudbuild.v1.FileHashes defaultValue);
   /**
    *
    *

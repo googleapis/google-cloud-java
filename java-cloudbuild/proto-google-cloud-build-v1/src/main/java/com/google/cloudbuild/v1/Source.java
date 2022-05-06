@@ -127,6 +127,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -883,8 +885,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 2) {
           storageSourceBuilder_.mergeFrom(value);
+        } else {
+          storageSourceBuilder_.setMessage(value);
         }
-        storageSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 2;
       return this;
@@ -1096,8 +1099,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 3) {
           repoSourceBuilder_.mergeFrom(value);
+        } else {
+          repoSourceBuilder_.setMessage(value);
         }
-        repoSourceBuilder_.setMessage(value);
       }
       sourceCase_ = 3;
       return this;
@@ -1323,8 +1327,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCase_ == 8) {
           storageSourceManifestBuilder_.mergeFrom(value);
+        } else {
+          storageSourceManifestBuilder_.setMessage(value);
         }
-        storageSourceManifestBuilder_.setMessage(value);
       }
       sourceCase_ = 8;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String id = "id3355";
@@ -122,6 +124,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudBuildSettings cloudBuildSettings =
  *     CloudBuildSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -132,6 +136,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudBuildSettings cloudBuildSettings =
  *     CloudBuildSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudBuildClient cloudBuildClient = CloudBuildClient.create(cloudBuildSettings);
@@ -211,6 +217,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   Build build = Build.newBuilder().build();
@@ -239,6 +247,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
@@ -268,6 +278,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
@@ -297,6 +309,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
@@ -324,6 +338,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String id = "id3355";
@@ -351,6 +367,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildRequest request =
    *       GetBuildRequest.newBuilder()
@@ -379,6 +397,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildRequest request =
    *       GetBuildRequest.newBuilder()
@@ -406,6 +426,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String filter = "filter-1274492040";
@@ -435,6 +457,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
@@ -467,6 +491,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
@@ -498,6 +524,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
@@ -533,6 +561,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String id = "id3355";
@@ -557,6 +587,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CancelBuildRequest request =
    *       CancelBuildRequest.newBuilder()
@@ -582,6 +614,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CancelBuildRequest request =
    *       CancelBuildRequest.newBuilder()
@@ -636,6 +670,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String id = "id3355";
@@ -691,6 +727,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RetryBuildRequest request =
    *       RetryBuildRequest.newBuilder()
@@ -747,6 +785,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RetryBuildRequest request =
    *       RetryBuildRequest.newBuilder()
@@ -803,6 +843,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RetryBuildRequest request =
    *       RetryBuildRequest.newBuilder()
@@ -831,6 +873,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String name = "name3373707";
    *   ApprovalResult approvalResult = ApprovalResult.newBuilder().build();
@@ -861,6 +905,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ApproveBuildRequest request =
    *       ApproveBuildRequest.newBuilder()
@@ -890,6 +936,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ApproveBuildRequest request =
    *       ApproveBuildRequest.newBuilder()
@@ -919,6 +967,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ApproveBuildRequest request =
    *       ApproveBuildRequest.newBuilder()
@@ -944,6 +994,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   BuildTrigger trigger = BuildTrigger.newBuilder().build();
@@ -970,6 +1022,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
@@ -997,6 +1051,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
@@ -1024,6 +1080,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String triggerId = "triggerId-648752909";
@@ -1050,6 +1108,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildTriggerRequest request =
    *       GetBuildTriggerRequest.newBuilder()
@@ -1077,6 +1137,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetBuildTriggerRequest request =
    *       GetBuildTriggerRequest.newBuilder()
@@ -1104,6 +1166,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   for (BuildTrigger element : cloudBuildClient.listBuildTriggers(projectId).iterateAll()) {
@@ -1130,6 +1194,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
@@ -1160,6 +1226,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
@@ -1191,6 +1259,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
@@ -1229,6 +1299,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String triggerId = "triggerId-648752909";
@@ -1258,6 +1330,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteBuildTriggerRequest request =
    *       DeleteBuildTriggerRequest.newBuilder()
@@ -1285,6 +1359,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteBuildTriggerRequest request =
    *       DeleteBuildTriggerRequest.newBuilder()
@@ -1311,6 +1387,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String triggerId = "triggerId-648752909";
@@ -1344,6 +1422,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   UpdateBuildTriggerRequest request =
    *       UpdateBuildTriggerRequest.newBuilder()
@@ -1371,6 +1451,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   UpdateBuildTriggerRequest request =
    *       UpdateBuildTriggerRequest.newBuilder()
@@ -1396,6 +1478,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String triggerId = "triggerId-648752909";
@@ -1427,6 +1511,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
@@ -1454,6 +1540,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
@@ -1481,6 +1569,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   RunBuildTriggerRequest request =
    *       RunBuildTriggerRequest.newBuilder()
@@ -1507,6 +1597,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ReceiveTriggerWebhookRequest request =
    *       ReceiveTriggerWebhookRequest.newBuilder()
@@ -1536,6 +1628,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ReceiveTriggerWebhookRequest request =
    *       ReceiveTriggerWebhookRequest.newBuilder()
@@ -1564,6 +1658,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   WorkerPool workerPool = WorkerPool.newBuilder().build();
@@ -1599,6 +1695,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   WorkerPool workerPool = WorkerPool.newBuilder().build();
@@ -1634,6 +1732,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateWorkerPoolRequest request =
    *       CreateWorkerPoolRequest.newBuilder()
@@ -1661,6 +1761,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateWorkerPoolRequest request =
    *       CreateWorkerPoolRequest.newBuilder()
@@ -1689,6 +1791,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateWorkerPoolRequest request =
    *       CreateWorkerPoolRequest.newBuilder()
@@ -1714,6 +1818,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
    *   WorkerPool response = cloudBuildClient.getWorkerPool(name);
@@ -1737,6 +1843,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString();
    *   WorkerPool response = cloudBuildClient.getWorkerPool(name);
@@ -1759,6 +1867,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetWorkerPoolRequest request =
    *       GetWorkerPoolRequest.newBuilder()
@@ -1782,6 +1892,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   GetWorkerPoolRequest request =
    *       GetWorkerPoolRequest.newBuilder()
@@ -1804,6 +1916,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   WorkerPoolName name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]");
    *   cloudBuildClient.deleteWorkerPoolAsync(name).get();
@@ -1828,6 +1942,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String name = WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString();
    *   cloudBuildClient.deleteWorkerPoolAsync(name).get();
@@ -1851,6 +1967,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteWorkerPoolRequest request =
    *       DeleteWorkerPoolRequest.newBuilder()
@@ -1878,6 +1996,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteWorkerPoolRequest request =
    *       DeleteWorkerPoolRequest.newBuilder()
@@ -1905,6 +2025,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   DeleteWorkerPoolRequest request =
    *       DeleteWorkerPoolRequest.newBuilder()
@@ -1930,6 +2052,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   WorkerPool workerPool = WorkerPool.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1960,6 +2084,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   UpdateWorkerPoolRequest request =
    *       UpdateWorkerPoolRequest.newBuilder()
@@ -1986,6 +2112,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   UpdateWorkerPoolRequest request =
    *       UpdateWorkerPoolRequest.newBuilder()
@@ -2013,6 +2141,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   UpdateWorkerPoolRequest request =
    *       UpdateWorkerPoolRequest.newBuilder()
@@ -2037,6 +2167,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (WorkerPool element : cloudBuildClient.listWorkerPools(parent).iterateAll()) {
@@ -2064,6 +2196,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (WorkerPool element : cloudBuildClient.listWorkerPools(parent).iterateAll()) {
@@ -2088,6 +2222,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListWorkerPoolsRequest request =
    *       ListWorkerPoolsRequest.newBuilder()
@@ -2115,6 +2251,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListWorkerPoolsRequest request =
    *       ListWorkerPoolsRequest.newBuilder()
@@ -2143,6 +2281,8 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListWorkerPoolsRequest request =
    *       ListWorkerPoolsRequest.newBuilder()

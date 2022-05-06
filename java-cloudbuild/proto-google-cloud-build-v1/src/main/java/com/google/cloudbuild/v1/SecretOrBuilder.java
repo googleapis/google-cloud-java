@@ -106,8 +106,12 @@ public interface SecretOrBuilder
    *
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
+
+  /* nullable */
   com.google.protobuf.ByteString getSecretEnvOrDefault(
-      java.lang.String key, com.google.protobuf.ByteString defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.ByteString defaultValue);
   /**
    *
    *

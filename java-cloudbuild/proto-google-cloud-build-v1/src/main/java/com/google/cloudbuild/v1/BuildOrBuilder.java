@@ -808,7 +808,12 @@ public interface BuildOrBuilder
    *
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
-  java.lang.String getSubstitutionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getSubstitutionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1020,8 +1025,12 @@ public interface BuildOrBuilder
    * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+
+  /* nullable */
   com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
-      java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloudbuild.v1.TimeSpan defaultValue);
   /**
    *
    *

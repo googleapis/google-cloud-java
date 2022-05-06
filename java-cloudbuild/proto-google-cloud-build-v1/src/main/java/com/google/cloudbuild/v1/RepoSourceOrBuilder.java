@@ -287,7 +287,12 @@ public interface RepoSourceOrBuilder
    *
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
-  java.lang.String getSubstitutionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getSubstitutionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
