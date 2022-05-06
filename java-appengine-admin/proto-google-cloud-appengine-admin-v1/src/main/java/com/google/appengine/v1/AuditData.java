@@ -111,6 +111,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -778,8 +780,9 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (methodCase_ == 1) {
           updateServiceBuilder_.mergeFrom(value);
+        } else {
+          updateServiceBuilder_.setMessage(value);
         }
-        updateServiceBuilder_.setMessage(value);
       }
       methodCase_ = 1;
       return this;
@@ -987,8 +990,9 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (methodCase_ == 2) {
           createVersionBuilder_.mergeFrom(value);
+        } else {
+          createVersionBuilder_.setMessage(value);
         }
-        createVersionBuilder_.setMessage(value);
       }
       methodCase_ = 2;
       return this;

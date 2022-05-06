@@ -49,4 +49,31 @@ public interface VpcAccessConnectorOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The egress setting for the connector, controlling what traffic is diverted
+   * through it.
+   * </pre>
+   *
+   * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+   *
+   * @return The enum numeric value on the wire for egressSetting.
+   */
+  int getEgressSettingValue();
+  /**
+   *
+   *
+   * <pre>
+   * The egress setting for the connector, controlling what traffic is diverted
+   * through it.
+   * </pre>
+   *
+   * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+   *
+   * @return The egressSetting.
+   */
+  com.google.appengine.v1.VpcAccessConnector.EgressSetting getEgressSetting();
 }

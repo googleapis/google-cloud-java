@@ -14,7 +14,7 @@
               "methods": ["createApplicationAsync", "createApplicationOperationCallable", "createApplicationCallable"]
             },
             "GetApplication": {
-              "methods": ["getApplication", "getApplicationCallable"]
+              "methods": ["getApplication", "getApplication", "getApplicationCallable"]
             },
             "RepairApplication": {
               "methods": ["repairApplicationAsync", "repairApplicationOperationCallable", "repairApplicationCallable"]

@@ -172,6 +172,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1544,8 +1546,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (handlerTypeCase_ == 2) {
           staticFilesBuilder_.mergeFrom(value);
+        } else {
+          staticFilesBuilder_.setMessage(value);
         }
-        staticFilesBuilder_.setMessage(value);
       }
       handlerTypeCase_ = 2;
       return this;
@@ -1762,8 +1765,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (handlerTypeCase_ == 3) {
           scriptBuilder_.mergeFrom(value);
+        } else {
+          scriptBuilder_.setMessage(value);
         }
-        scriptBuilder_.setMessage(value);
       }
       handlerTypeCase_ = 3;
       return this;
@@ -1979,8 +1983,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (handlerTypeCase_ == 4) {
           apiEndpointBuilder_.mergeFrom(value);
+        } else {
+          apiEndpointBuilder_.setMessage(value);
         }
-        apiEndpointBuilder_.setMessage(value);
       }
       handlerTypeCase_ = 4;
       return this;

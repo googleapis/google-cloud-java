@@ -73,8 +73,12 @@ public interface DeploymentOrBuilder
    *
    * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
    */
+
+  /* nullable */
   com.google.appengine.v1.FileInfo getFilesOrDefault(
-      java.lang.String key, com.google.appengine.v1.FileInfo defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.appengine.v1.FileInfo defaultValue);
   /**
    *
    *

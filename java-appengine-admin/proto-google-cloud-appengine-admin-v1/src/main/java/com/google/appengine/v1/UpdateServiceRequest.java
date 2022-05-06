@@ -123,6 +123,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -250,7 +252,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -265,7 +267,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -280,7 +282,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1010,7 +1012,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1024,7 +1026,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1044,7 +1046,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1066,7 +1068,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1085,7 +1087,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1109,7 +1111,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1129,7 +1131,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1143,7 +1145,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -1161,7 +1163,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard field mask for the set of fields to be updated.
+     * Required. Standard field mask for the set of fields to be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>

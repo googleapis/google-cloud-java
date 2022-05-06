@@ -357,6 +357,35 @@ public interface ApplicationOrBuilder
   com.google.protobuf.ByteString getDefaultBucketBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The service account associated with the application.
+   * This is the app-level default identity. If no identity provided during
+   * create version, Admin API will fallback to this one.
+   * </pre>
+   *
+   * <code>string service_account = 13;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * The service account associated with the application.
+   * This is the app-level default identity. If no identity provided during
+   * create version, Admin API will fallback to this one.
+   * </pre>
+   *
+   * <code>string service_account = 13;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
    * <code>.google.appengine.v1.Application.IdentityAwareProxy iap = 14;</code>
    *
    * @return Whether the iap field is set.

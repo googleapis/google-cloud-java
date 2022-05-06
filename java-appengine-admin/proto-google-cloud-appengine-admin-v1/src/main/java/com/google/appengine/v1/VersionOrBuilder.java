@@ -521,6 +521,20 @@ public interface VersionOrBuilder
    *
    *
    * <pre>
+   * Allows App Engine second generation runtimes to access the legacy bundled
+   * services.
+   * </pre>
+   *
+   * <code>bool app_engine_apis = 128;</code>
+   *
+   * @return The appEngineApis.
+   */
+  boolean getAppEngineApis();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata settings that are supplied to this version to enable
    * beta runtime features.
    * </pre>
@@ -563,7 +577,12 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; beta_settings = 13;</code>
    */
-  java.lang.String getBetaSettingsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getBetaSettingsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1066,7 +1085,12 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; env_variables = 104;</code>
    */
-  java.lang.String getEnvVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getEnvVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1125,8 +1149,12 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; build_env_variables = 125;</code>
    */
+
+  /* nullable */
   java.lang.String getBuildEnvVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

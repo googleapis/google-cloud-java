@@ -206,6 +206,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -402,6 +404,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1717,7 +1721,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (errors_ != 0) {
       output.writeInt32(10, errors_);
     }
-    if (qps_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(qps_) != 0) {
       output.writeFloat(11, qps_);
     }
     if (averageLatency_ != 0) {
@@ -1779,7 +1783,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (errors_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, errors_);
     }
-    if (qps_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(qps_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(11, qps_);
     }
     if (averageLatency_ != 0) {

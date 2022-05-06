@@ -99,6 +99,8 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -210,10 +212,10 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (targetCpuUtilization_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(targetCpuUtilization_) != 0) {
       output.writeDouble(1, targetCpuUtilization_);
     }
-    if (targetThroughputUtilization_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(targetThroughputUtilization_) != 0) {
       output.writeDouble(2, targetThroughputUtilization_);
     }
     if (minInstances_ != 0) {
@@ -231,10 +233,10 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (targetCpuUtilization_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(targetCpuUtilization_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, targetCpuUtilization_);
     }
-    if (targetThroughputUtilization_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(targetThroughputUtilization_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(2, targetThroughputUtilization_);
     }

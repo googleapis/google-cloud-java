@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.protobuf.FieldMask;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -147,6 +148,7 @@ public class ServicesClientTest {
             .setName("name3373707")
             .setId("id3355")
             .setSplit(TrafficSplit.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setNetworkSettings(NetworkSettings.newBuilder().build())
             .build();
     mockServices.addResponse(expectedResponse);
@@ -188,6 +190,7 @@ public class ServicesClientTest {
             .setName("name3373707")
             .setId("id3355")
             .setSplit(TrafficSplit.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .setNetworkSettings(NetworkSettings.newBuilder().build())
             .build();
     Operation resultOperation =

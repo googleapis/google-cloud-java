@@ -48,6 +48,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     servingStatus_ = 0;
     defaultHostname_ = "";
     defaultBucket_ = "";
+    serviceAccount_ = "";
     gcrDomain_ = "";
     databaseType_ = 0;
   }
@@ -164,6 +165,13 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
               defaultBucket_ = s;
               break;
             }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
+              break;
+            }
           case 114:
             {
               com.google.appengine.v1.Application.IdentityAwareProxy.Builder subBuilder = null;
@@ -223,6 +231,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -788,6 +798,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1925,6 +1937,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -3044,6 +3058,59 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 13;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * The service account associated with the application.
+   * This is the app-level default identity. If no identity provided during
+   * create version, Admin API will fallback to this one.
+   * </pre>
+   *
+   * <code>string service_account = 13;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account associated with the application.
+   * This is the app-level default identity. If no identity provided during
+   * create version, Admin API will fallback to this one.
+   * </pre>
+   *
+   * <code>string service_account = 13;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IAP_FIELD_NUMBER = 14;
   private com.google.appengine.v1.Application.IdentityAwareProxy iap_;
   /**
@@ -3255,6 +3322,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, defaultBucket_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, serviceAccount_);
+    }
     if (iap_ != null) {
       output.writeMessage(14, getIap());
     }
@@ -3309,6 +3379,9 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, defaultBucket_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, serviceAccount_);
+    }
     if (iap_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getIap());
     }
@@ -3350,6 +3423,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     if (servingStatus_ != other.servingStatus_) return false;
     if (!getDefaultHostname().equals(other.getDefaultHostname())) return false;
     if (!getDefaultBucket().equals(other.getDefaultBucket())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (hasIap() != other.hasIap()) return false;
     if (hasIap()) {
       if (!getIap().equals(other.getIap())) return false;
@@ -3395,6 +3469,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDefaultHostname().hashCode();
     hash = (37 * hash) + DEFAULT_BUCKET_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultBucket().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     if (hasIap()) {
       hash = (37 * hash) + IAP_FIELD_NUMBER;
       hash = (53 * hash) + getIap().hashCode();
@@ -3582,6 +3658,8 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
 
       defaultBucket_ = "";
 
+      serviceAccount_ = "";
+
       if (iapBuilder_ == null) {
         iap_ = null;
       } else {
@@ -3647,6 +3725,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       result.servingStatus_ = servingStatus_;
       result.defaultHostname_ = defaultHostname_;
       result.defaultBucket_ = defaultBucket_;
+      result.serviceAccount_ = serviceAccount_;
       if (iapBuilder_ == null) {
         result.iap_ = iap_;
       } else {
@@ -3767,6 +3846,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDefaultBucket().isEmpty()) {
         defaultBucket_ = other.defaultBucket_;
+        onChanged();
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
         onChanged();
       }
       if (other.hasIap()) {
@@ -5310,6 +5393,122 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       defaultBucket_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account associated with the application.
+     * This is the app-level default identity. If no identity provided during
+     * create version, Admin API will fallback to this one.
+     * </pre>
+     *
+     * <code>string service_account = 13;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account associated with the application.
+     * This is the app-level default identity. If no identity provided during
+     * create version, Admin API will fallback to this one.
+     * </pre>
+     *
+     * <code>string service_account = 13;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account associated with the application.
+     * This is the app-level default identity. If no identity provided during
+     * create version, Admin API will fallback to this one.
+     * </pre>
+     *
+     * <code>string service_account = 13;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account associated with the application.
+     * This is the app-level default identity. If no identity provided during
+     * create version, Admin API will fallback to this one.
+     * </pre>
+     *
+     * <code>string service_account = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account associated with the application.
+     * This is the app-level default identity. If no identity provided during
+     * create version, Admin API will fallback to this one.
+     * </pre>
+     *
+     * <code>string service_account = 13;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
       onChanged();
       return this;
     }

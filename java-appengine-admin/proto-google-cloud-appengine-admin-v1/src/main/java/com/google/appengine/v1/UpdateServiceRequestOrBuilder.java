@@ -90,7 +90,7 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -102,7 +102,7 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
@@ -114,7 +114,7 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Standard field mask for the set of fields to be updated.
+   * Required. Standard field mask for the set of fields to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>

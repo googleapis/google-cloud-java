@@ -123,6 +123,110 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Ingress settings for this service. Will apply to all versions.
    * </pre>
    *

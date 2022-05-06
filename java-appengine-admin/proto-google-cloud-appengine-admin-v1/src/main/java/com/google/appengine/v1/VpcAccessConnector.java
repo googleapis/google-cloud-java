@@ -39,6 +39,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
 
   private VpcAccessConnector() {
     name_ = "";
+    egressSetting_ = 0;
   }
 
   @java.lang.Override
@@ -77,6 +78,13 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
               name_ = s;
               break;
             }
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              egressSetting_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +96,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -109,6 +119,149 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.appengine.v1.VpcAccessConnector.class,
             com.google.appengine.v1.VpcAccessConnector.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Available egress settings.
+   * This controls what traffic is diverted through the VPC Access Connector
+   * resource. By default PRIVATE_IP_RANGES will be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.appengine.v1.VpcAccessConnector.EgressSetting}
+   */
+  public enum EgressSetting implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>EGRESS_SETTING_UNSPECIFIED = 0;</code> */
+    EGRESS_SETTING_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Force the use of VPC Access for all egress traffic from the function.
+     * </pre>
+     *
+     * <code>ALL_TRAFFIC = 1;</code>
+     */
+    ALL_TRAFFIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the VPC Access Connector for private IP space from RFC1918.
+     * </pre>
+     *
+     * <code>PRIVATE_IP_RANGES = 2;</code>
+     */
+    PRIVATE_IP_RANGES(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /** <code>EGRESS_SETTING_UNSPECIFIED = 0;</code> */
+    public static final int EGRESS_SETTING_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Force the use of VPC Access for all egress traffic from the function.
+     * </pre>
+     *
+     * <code>ALL_TRAFFIC = 1;</code>
+     */
+    public static final int ALL_TRAFFIC_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Use the VPC Access Connector for private IP space from RFC1918.
+     * </pre>
+     *
+     * <code>PRIVATE_IP_RANGES = 2;</code>
+     */
+    public static final int PRIVATE_IP_RANGES_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EgressSetting valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EgressSetting forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EGRESS_SETTING_UNSPECIFIED;
+        case 1:
+          return ALL_TRAFFIC;
+        case 2:
+          return PRIVATE_IP_RANGES;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EgressSetting> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EgressSetting> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EgressSetting>() {
+          public EgressSetting findValueByNumber(int number) {
+            return EgressSetting.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.appengine.v1.VpcAccessConnector.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final EgressSetting[] VALUES = values();
+
+    public static EgressSetting valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EgressSetting(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.appengine.v1.VpcAccessConnector.EgressSetting)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -162,6 +315,46 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int EGRESS_SETTING_FIELD_NUMBER = 2;
+  private int egressSetting_;
+  /**
+   *
+   *
+   * <pre>
+   * The egress setting for the connector, controlling what traffic is diverted
+   * through it.
+   * </pre>
+   *
+   * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+   *
+   * @return The enum numeric value on the wire for egressSetting.
+   */
+  @java.lang.Override
+  public int getEgressSettingValue() {
+    return egressSetting_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The egress setting for the connector, controlling what traffic is diverted
+   * through it.
+   * </pre>
+   *
+   * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+   *
+   * @return The egressSetting.
+   */
+  @java.lang.Override
+  public com.google.appengine.v1.VpcAccessConnector.EgressSetting getEgressSetting() {
+    @SuppressWarnings("deprecation")
+    com.google.appengine.v1.VpcAccessConnector.EgressSetting result =
+        com.google.appengine.v1.VpcAccessConnector.EgressSetting.valueOf(egressSetting_);
+    return result == null
+        ? com.google.appengine.v1.VpcAccessConnector.EgressSetting.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,6 +372,11 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (egressSetting_
+        != com.google.appengine.v1.VpcAccessConnector.EgressSetting.EGRESS_SETTING_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, egressSetting_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -190,6 +388,11 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (egressSetting_
+        != com.google.appengine.v1.VpcAccessConnector.EgressSetting.EGRESS_SETTING_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, egressSetting_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -208,6 +411,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
         (com.google.appengine.v1.VpcAccessConnector) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (egressSetting_ != other.egressSetting_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -221,6 +425,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + EGRESS_SETTING_FIELD_NUMBER;
+    hash = (53 * hash) + egressSetting_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -368,6 +574,8 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       super.clear();
       name_ = "";
 
+      egressSetting_ = 0;
+
       return this;
     }
 
@@ -396,6 +604,7 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       com.google.appengine.v1.VpcAccessConnector result =
           new com.google.appengine.v1.VpcAccessConnector(this);
       result.name_ = name_;
+      result.egressSetting_ = egressSetting_;
       onBuilt();
       return result;
     }
@@ -448,6 +657,9 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.egressSetting_ != 0) {
+        setEgressSettingValue(other.getEgressSettingValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -585,6 +797,105 @@ public final class VpcAccessConnector extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int egressSetting_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The egress setting for the connector, controlling what traffic is diverted
+     * through it.
+     * </pre>
+     *
+     * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+     *
+     * @return The enum numeric value on the wire for egressSetting.
+     */
+    @java.lang.Override
+    public int getEgressSettingValue() {
+      return egressSetting_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The egress setting for the connector, controlling what traffic is diverted
+     * through it.
+     * </pre>
+     *
+     * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for egressSetting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEgressSettingValue(int value) {
+
+      egressSetting_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The egress setting for the connector, controlling what traffic is diverted
+     * through it.
+     * </pre>
+     *
+     * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+     *
+     * @return The egressSetting.
+     */
+    @java.lang.Override
+    public com.google.appengine.v1.VpcAccessConnector.EgressSetting getEgressSetting() {
+      @SuppressWarnings("deprecation")
+      com.google.appengine.v1.VpcAccessConnector.EgressSetting result =
+          com.google.appengine.v1.VpcAccessConnector.EgressSetting.valueOf(egressSetting_);
+      return result == null
+          ? com.google.appengine.v1.VpcAccessConnector.EgressSetting.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The egress setting for the connector, controlling what traffic is diverted
+     * through it.
+     * </pre>
+     *
+     * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+     *
+     * @param value The egressSetting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEgressSetting(
+        com.google.appengine.v1.VpcAccessConnector.EgressSetting value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      egressSetting_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The egress setting for the connector, controlling what traffic is diverted
+     * through it.
+     * </pre>
+     *
+     * <code>.google.appengine.v1.VpcAccessConnector.EgressSetting egress_setting = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEgressSetting() {
+
+      egressSetting_ = 0;
       onChanged();
       return this;
     }

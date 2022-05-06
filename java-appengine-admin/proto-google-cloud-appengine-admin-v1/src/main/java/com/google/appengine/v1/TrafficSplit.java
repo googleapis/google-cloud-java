@@ -105,6 +105,8 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -411,7 +413,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsAllocations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAllocations().getMap().containsKey(key);
   }
@@ -460,7 +462,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getAllocationsOrDefault(java.lang.String key, double defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -484,7 +486,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public double getAllocationsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
     if (!map.containsKey(key)) {
@@ -998,7 +1000,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAllocations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAllocations().getMap().containsKey(key);
     }
@@ -1047,7 +1049,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getAllocationsOrDefault(java.lang.String key, double defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1071,7 +1073,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getAllocationsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetAllocations().getMap();
       if (!map.containsKey(key)) {
@@ -1102,7 +1104,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeAllocations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAllocations().getMutableMap().remove(key);
       return this;
@@ -1130,7 +1132,7 @@ public final class TrafficSplit extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllocations(java.lang.String key, double value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableAllocations().getMutableMap().put(key, value);

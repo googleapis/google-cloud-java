@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,11 @@
  * <p>Sample for ApplicationsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
- *   GetApplicationRequest request =
- *       GetApplicationRequest.newBuilder().setName("name3373707").build();
- *   Application response = applicationsClient.getApplication(request);
+ *   String name = "name3373707";
+ *   Application response = applicationsClient.getApplication(name);
  * }
  * }</pre>
  *
@@ -38,6 +39,8 @@
  * <p>Sample for ServicesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ServicesClient servicesClient = ServicesClient.create()) {
  *   GetServiceRequest request = GetServiceRequest.newBuilder().setName("name3373707").build();
  *   Service response = servicesClient.getService(request);
@@ -51,6 +54,8 @@
  * <p>Sample for VersionsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VersionsClient versionsClient = VersionsClient.create()) {
  *   GetVersionRequest request =
  *       GetVersionRequest.newBuilder()
@@ -68,6 +73,8 @@
  * <p>Sample for InstancesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InstancesClient instancesClient = InstancesClient.create()) {
  *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
  *   Instance response = instancesClient.getInstance(request);
@@ -89,6 +96,8 @@
  * <p>Sample for FirewallClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FirewallClient firewallClient = FirewallClient.create()) {
  *   BatchUpdateIngressRulesRequest request =
  *       BatchUpdateIngressRulesRequest.newBuilder()
@@ -108,6 +117,8 @@
  * <p>Sample for AuthorizedDomainsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AuthorizedDomainsClient authorizedDomainsClient = AuthorizedDomainsClient.create()) {
  *   ListAuthorizedDomainsRequest request =
  *       ListAuthorizedDomainsRequest.newBuilder()
@@ -130,6 +141,8 @@
  * <p>Sample for AuthorizedCertificatesClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AuthorizedCertificatesClient authorizedCertificatesClient =
  *     AuthorizedCertificatesClient.create()) {
  *   GetAuthorizedCertificateRequest request =
@@ -149,6 +162,8 @@
  * <p>Sample for DomainMappingsClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
  *   GetDomainMappingRequest request =
  *       GetDomainMappingRequest.newBuilder().setName("name3373707").build();

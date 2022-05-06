@@ -172,6 +172,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -2249,8 +2251,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       } else {
         if (methodMetadataCase_ == 8) {
           createVersionMetadataBuilder_.mergeFrom(value);
+        } else {
+          createVersionMetadataBuilder_.setMessage(value);
         }
-        createVersionMetadataBuilder_.setMessage(value);
       }
       methodMetadataCase_ = 8;
       return this;

@@ -67,6 +67,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -107,6 +108,19 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           case 50:
             {
               com.google.appengine.v1.NetworkSettings.Builder subBuilder = null;
@@ -134,6 +148,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -145,6 +161,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.ServiceProto
         .internal_static_google_appengine_v1_Service_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 4:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -311,6 +338,140 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return getSplit();
   }
 
+  public static final int LABELS_FIELD_NUMBER = 4;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.appengine.v1.ServiceProto
+                .internal_static_google_appengine_v1_Service_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of labels to apply to this service. Labels are key/value pairs that
+   * describe the service and all resources that belong to it (e.g.,
+   * versions). The labels can be used to search and group resources, and are
+   * propagated to the usage and billing reports, enabling fine-grain analysis
+   * of costs. An example of using labels is to tag resources belonging to
+   * different environments (e.g., "env=prod", "env=qa").
+   * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+   * contain lowercase letters, numeric characters, underscores, dashes, and
+   * international characters. Label keys must start with a lowercase letter
+   * or an international character. Each service can have at most 32 labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 4;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int NETWORK_SETTINGS_FIELD_NUMBER = 6;
   private com.google.appengine.v1.NetworkSettings networkSettings_;
   /**
@@ -382,6 +543,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (split_ != null) {
       output.writeMessage(3, getSplit());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
     if (networkSettings_ != null) {
       output.writeMessage(6, getNetworkSettings());
     }
@@ -402,6 +565,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     if (split_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSplit());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
     if (networkSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getNetworkSettings());
@@ -427,6 +600,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (hasSplit()) {
       if (!getSplit().equals(other.getSplit())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasNetworkSettings() != other.hasNetworkSettings()) return false;
     if (hasNetworkSettings()) {
       if (!getNetworkSettings().equals(other.getNetworkSettings())) return false;
@@ -449,6 +623,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (hasSplit()) {
       hash = (37 * hash) + SPLIT_FIELD_NUMBER;
       hash = (53 * hash) + getSplit().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     if (hasNetworkSettings()) {
       hash = (37 * hash) + NETWORK_SETTINGS_FIELD_NUMBER;
@@ -577,6 +755,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_appengine_v1_Service_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -613,6 +811,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         split_ = null;
         splitBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       if (networkSettingsBuilder_ == null) {
         networkSettings_ = null;
       } else {
@@ -645,6 +844,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Service buildPartial() {
       com.google.appengine.v1.Service result = new com.google.appengine.v1.Service(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.id_ = id_;
       if (splitBuilder_ == null) {
@@ -652,6 +852,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.split_ = splitBuilder_.build();
       }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       if (networkSettingsBuilder_ == null) {
         result.networkSettings_ = networkSettings_;
       } else {
@@ -717,6 +919,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSplit()) {
         mergeSplit(other.getSplit());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasNetworkSettings()) {
         mergeNetworkSettings(other.getNetworkSettings());
       }
@@ -748,6 +951,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1169,6 +1374,227 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         split_ = null;
       }
       return splitBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of labels to apply to this service. Labels are key/value pairs that
+     * describe the service and all resources that belong to it (e.g.,
+     * versions). The labels can be used to search and group resources, and are
+     * propagated to the usage and billing reports, enabling fine-grain analysis
+     * of costs. An example of using labels is to tag resources belonging to
+     * different environments (e.g., "env=prod", "env=qa").
+     * &lt;p&gt;Label keys and values can be no longer than 63 characters and can only
+     * contain lowercase letters, numeric characters, underscores, dashes, and
+     * international characters. Label keys must start with a lowercase letter
+     * or an international character. Each service can have at most 32 labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 4;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
     }
 
     private com.google.appengine.v1.NetworkSettings networkSettings_;

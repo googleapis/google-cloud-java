@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -162,6 +162,7 @@ public class VersionsClientTest {
             .setRuntimeChannel("runtimeChannel989413899")
             .setThreadsafe(true)
             .setVm(true)
+            .setAppEngineApis(true)
             .putAllBetaSettings(new HashMap<String, String>())
             .setEnv("env100589")
             .setServingStatus(ServingStatus.forNumber(0))
@@ -244,6 +245,7 @@ public class VersionsClientTest {
             .setRuntimeChannel("runtimeChannel989413899")
             .setThreadsafe(true)
             .setVm(true)
+            .setAppEngineApis(true)
             .putAllBetaSettings(new HashMap<String, String>())
             .setEnv("env100589")
             .setServingStatus(ServingStatus.forNumber(0))
@@ -334,6 +336,7 @@ public class VersionsClientTest {
             .setRuntimeChannel("runtimeChannel989413899")
             .setThreadsafe(true)
             .setVm(true)
+            .setAppEngineApis(true)
             .putAllBetaSettings(new HashMap<String, String>())
             .setEnv("env100589")
             .setServingStatus(ServingStatus.forNumber(0))

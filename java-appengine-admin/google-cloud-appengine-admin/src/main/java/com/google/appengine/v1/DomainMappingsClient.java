@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
  *   GetDomainMappingRequest request =
  *       GetDomainMappingRequest.newBuilder().setName("name3373707").build();
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DomainMappingsSettings domainMappingsSettings =
  *     DomainMappingsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DomainMappingsSettings domainMappingsSettings =
  *     DomainMappingsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DomainMappingsClient domainMappingsClient = DomainMappingsClient.create(domainMappingsSettings);
@@ -170,6 +176,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   ListDomainMappingsRequest request =
    *       ListDomainMappingsRequest.newBuilder()
@@ -198,6 +206,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   ListDomainMappingsRequest request =
    *       ListDomainMappingsRequest.newBuilder()
@@ -226,6 +236,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   ListDomainMappingsRequest request =
    *       ListDomainMappingsRequest.newBuilder()
@@ -261,6 +273,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   GetDomainMappingRequest request =
    *       GetDomainMappingRequest.newBuilder().setName("name3373707").build();
@@ -282,6 +296,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   GetDomainMappingRequest request =
    *       GetDomainMappingRequest.newBuilder().setName("name3373707").build();
@@ -305,6 +321,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   CreateDomainMappingRequest request =
    *       CreateDomainMappingRequest.newBuilder()
@@ -333,6 +351,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   CreateDomainMappingRequest request =
    *       CreateDomainMappingRequest.newBuilder()
@@ -361,6 +381,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   CreateDomainMappingRequest request =
    *       CreateDomainMappingRequest.newBuilder()
@@ -388,6 +410,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   UpdateDomainMappingRequest request =
    *       UpdateDomainMappingRequest.newBuilder()
@@ -416,6 +440,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   UpdateDomainMappingRequest request =
    *       UpdateDomainMappingRequest.newBuilder()
@@ -444,6 +470,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   UpdateDomainMappingRequest request =
    *       UpdateDomainMappingRequest.newBuilder()
@@ -470,6 +498,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   DeleteDomainMappingRequest request =
    *       DeleteDomainMappingRequest.newBuilder().setName("name3373707").build();
@@ -493,6 +523,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   DeleteDomainMappingRequest request =
    *       DeleteDomainMappingRequest.newBuilder().setName("name3373707").build();
@@ -516,6 +548,8 @@ public class DomainMappingsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DomainMappingsClient domainMappingsClient = DomainMappingsClient.create()) {
    *   DeleteDomainMappingRequest request =
    *       DeleteDomainMappingRequest.newBuilder().setName("name3373707").build();

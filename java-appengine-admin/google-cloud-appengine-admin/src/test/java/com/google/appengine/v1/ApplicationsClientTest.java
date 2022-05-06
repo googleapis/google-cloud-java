@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,23 +95,23 @@ public class ApplicationsClientTest {
             .setDefaultCookieExpiration(Duration.newBuilder().build())
             .setDefaultHostname("defaultHostname1698284948")
             .setDefaultBucket("defaultBucket487561099")
+            .setServiceAccount("serviceAccount1079137720")
             .setIap(Application.IdentityAwareProxy.newBuilder().build())
             .setGcrDomain("gcrDomain-595843206")
             .setFeatureSettings(Application.FeatureSettings.newBuilder().build())
             .build();
     mockApplications.addResponse(expectedResponse);
 
-    GetApplicationRequest request =
-        GetApplicationRequest.newBuilder().setName("name3373707").build();
+    String name = "name3373707";
 
-    Application actualResponse = client.getApplication(request);
+    Application actualResponse = client.getApplication(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockApplications.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetApplicationRequest actualRequest = ((GetApplicationRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -124,9 +124,8 @@ public class ApplicationsClientTest {
     mockApplications.addException(exception);
 
     try {
-      GetApplicationRequest request =
-          GetApplicationRequest.newBuilder().setName("name3373707").build();
-      client.getApplication(request);
+      String name = "name3373707";
+      client.getApplication(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -146,6 +145,7 @@ public class ApplicationsClientTest {
             .setDefaultCookieExpiration(Duration.newBuilder().build())
             .setDefaultHostname("defaultHostname1698284948")
             .setDefaultBucket("defaultBucket487561099")
+            .setServiceAccount("serviceAccount1079137720")
             .setIap(Application.IdentityAwareProxy.newBuilder().build())
             .setGcrDomain("gcrDomain-595843206")
             .setFeatureSettings(Application.FeatureSettings.newBuilder().build())
@@ -209,6 +209,7 @@ public class ApplicationsClientTest {
             .setDefaultCookieExpiration(Duration.newBuilder().build())
             .setDefaultHostname("defaultHostname1698284948")
             .setDefaultBucket("defaultBucket487561099")
+            .setServiceAccount("serviceAccount1079137720")
             .setIap(Application.IdentityAwareProxy.newBuilder().build())
             .setGcrDomain("gcrDomain-595843206")
             .setFeatureSettings(Application.FeatureSettings.newBuilder().build())
@@ -278,6 +279,7 @@ public class ApplicationsClientTest {
             .setDefaultCookieExpiration(Duration.newBuilder().build())
             .setDefaultHostname("defaultHostname1698284948")
             .setDefaultBucket("defaultBucket487561099")
+            .setServiceAccount("serviceAccount1079137720")
             .setIap(Application.IdentityAwareProxy.newBuilder().build())
             .setGcrDomain("gcrDomain-595843206")
             .setFeatureSettings(Application.FeatureSettings.newBuilder().build())

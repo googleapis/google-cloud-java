@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,10 +37,11 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
- *   GetApplicationRequest request =
- *       GetApplicationRequest.newBuilder().setName("name3373707").build();
- *   Application response = applicationsClient.getApplication(request);
+ *   String name = "name3373707";
+ *   Application response = applicationsClient.getApplication(name);
  * }
  * }</pre>
  *
@@ -73,6 +74,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApplicationsSettings applicationsSettings =
  *     ApplicationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -83,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ApplicationsSettings applicationsSettings =
  *     ApplicationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ApplicationsClient applicationsClient = ApplicationsClient.create(applicationsSettings);
@@ -160,6 +165,31 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
+   *   String name = "name3373707";
+   *   Application response = applicationsClient.getApplication(name);
+   * }
+   * }</pre>
+   *
+   * @param name Name of the Application resource to get. Example: `apps/myapp`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application getApplication(String name) {
+    GetApplicationRequest request = GetApplicationRequest.newBuilder().setName(name).build();
+    return getApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about an application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   GetApplicationRequest request =
    *       GetApplicationRequest.newBuilder().setName("name3373707").build();
@@ -181,6 +211,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   GetApplicationRequest request =
    *       GetApplicationRequest.newBuilder().setName("name3373707").build();
@@ -211,6 +243,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   CreateApplicationRequest request =
    *       CreateApplicationRequest.newBuilder()
@@ -244,6 +278,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   CreateApplicationRequest request =
    *       CreateApplicationRequest.newBuilder()
@@ -277,6 +313,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   CreateApplicationRequest request =
    *       CreateApplicationRequest.newBuilder()
@@ -301,11 +339,14 @@ public class ApplicationsClient implements BackgroundResource {
    *   <li>`auth_domain` - Google authentication domain for controlling user access to the
    *       application.
    *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li>`iap` - Identity-Aware Proxy properties for the application.
    * </ul>
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   UpdateApplicationRequest request =
    *       UpdateApplicationRequest.newBuilder()
@@ -333,11 +374,14 @@ public class ApplicationsClient implements BackgroundResource {
    *   <li>`auth_domain` - Google authentication domain for controlling user access to the
    *       application.
    *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li>`iap` - Identity-Aware Proxy properties for the application.
    * </ul>
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   UpdateApplicationRequest request =
    *       UpdateApplicationRequest.newBuilder()
@@ -365,11 +409,14 @@ public class ApplicationsClient implements BackgroundResource {
    *   <li>`auth_domain` - Google authentication domain for controlling user access to the
    *       application.
    *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li>`iap` - Identity-Aware Proxy properties for the application.
    * </ul>
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   UpdateApplicationRequest request =
    *       UpdateApplicationRequest.newBuilder()
@@ -401,6 +448,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   RepairApplicationRequest request =
    *       RepairApplicationRequest.newBuilder().setName("name3373707").build();
@@ -429,6 +478,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   RepairApplicationRequest request =
    *       RepairApplicationRequest.newBuilder().setName("name3373707").build();
@@ -457,6 +508,8 @@ public class ApplicationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ApplicationsClient applicationsClient = ApplicationsClient.create()) {
    *   RepairApplicationRequest request =
    *       RepairApplicationRequest.newBuilder().setName("name3373707").build();

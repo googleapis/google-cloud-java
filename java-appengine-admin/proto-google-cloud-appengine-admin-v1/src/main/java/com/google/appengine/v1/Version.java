@@ -542,6 +542,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
               serviceAccount_ = s;
               break;
             }
+          case 1024:
+            {
+              appEngineApis_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -553,6 +558,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1394,6 +1401,25 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return vm_;
   }
 
+  public static final int APP_ENGINE_APIS_FIELD_NUMBER = 128;
+  private boolean appEngineApis_;
+  /**
+   *
+   *
+   * <pre>
+   * Allows App Engine second generation runtimes to access the legacy bundled
+   * services.
+   * </pre>
+   *
+   * <code>bool app_engine_apis = 128;</code>
+   *
+   * @return The appEngineApis.
+   */
+  @java.lang.Override
+  public boolean getAppEngineApis() {
+    return appEngineApis_;
+  }
+
   public static final int BETA_SETTINGS_FIELD_NUMBER = 13;
 
   private static final class BetaSettingsDefaultEntryHolder {
@@ -1434,7 +1460,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsBetaSettings(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetBetaSettings().getMap().containsKey(key);
   }
@@ -1472,7 +1498,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBetaSettingsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBetaSettings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1490,7 +1516,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getBetaSettingsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBetaSettings().getMap();
     if (!map.containsKey(key)) {
@@ -2196,7 +2222,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsEnvVariables(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetEnvVariables().getMap().containsKey(key);
   }
@@ -2234,7 +2260,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnvVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2252,7 +2278,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getEnvVariablesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
     if (!map.containsKey(key)) {
@@ -2301,7 +2327,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsBuildEnvVariables(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetBuildEnvVariables().getMap().containsKey(key);
   }
@@ -2339,7 +2365,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBuildEnvVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildEnvVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2357,7 +2383,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getBuildEnvVariablesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildEnvVariables().getMap();
     if (!map.containsKey(key)) {
@@ -3035,6 +3061,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 127, serviceAccount_);
     }
+    if (appEngineApis_ != false) {
+      output.writeBool(128, appEngineApis_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3207,6 +3236,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(127, serviceAccount_);
     }
+    if (appEngineApis_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(128, appEngineApis_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3239,6 +3271,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!getRuntimeChannel().equals(other.getRuntimeChannel())) return false;
     if (getThreadsafe() != other.getThreadsafe()) return false;
     if (getVm() != other.getVm()) return false;
+    if (getAppEngineApis() != other.getAppEngineApis()) return false;
     if (!internalGetBetaSettings().equals(other.internalGetBetaSettings())) return false;
     if (!getEnv().equals(other.getEnv())) return false;
     if (servingStatus_ != other.servingStatus_) return false;
@@ -3349,6 +3382,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThreadsafe());
     hash = (37 * hash) + VM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVm());
+    hash = (37 * hash) + APP_ENGINE_APIS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAppEngineApis());
     if (!internalGetBetaSettings().getMap().isEmpty()) {
       hash = (37 * hash) + BETA_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetBetaSettings().hashCode();
@@ -3653,6 +3688,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
       vm_ = false;
 
+      appEngineApis_ = false;
+
       internalGetMutableBetaSettings().clear();
       env_ = "";
 
@@ -3829,6 +3866,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       result.runtimeChannel_ = runtimeChannel_;
       result.threadsafe_ = threadsafe_;
       result.vm_ = vm_;
+      result.appEngineApis_ = appEngineApis_;
       result.betaSettings_ = internalGetBetaSettings();
       result.betaSettings_.makeImmutable();
       result.env_ = env_;
@@ -4022,6 +4060,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getVm() != false) {
         setVm(other.getVm());
+      }
+      if (other.getAppEngineApis() != false) {
+        setAppEngineApis(other.getAppEngineApis());
       }
       internalGetMutableBetaSettings().mergeFrom(other.internalGetBetaSettings());
       if (!other.getEnv().isEmpty()) {
@@ -4591,8 +4632,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (scalingCase_ == 3) {
           automaticScalingBuilder_.mergeFrom(value);
+        } else {
+          automaticScalingBuilder_.setMessage(value);
         }
-        automaticScalingBuilder_.setMessage(value);
       }
       scalingCase_ = 3;
       return this;
@@ -4822,8 +4864,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (scalingCase_ == 4) {
           basicScalingBuilder_.mergeFrom(value);
+        } else {
+          basicScalingBuilder_.setMessage(value);
         }
-        basicScalingBuilder_.setMessage(value);
       }
       scalingCase_ = 4;
       return this;
@@ -5050,8 +5093,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (scalingCase_ == 5) {
           manualScalingBuilder_.mergeFrom(value);
+        } else {
+          manualScalingBuilder_.setMessage(value);
         }
-        manualScalingBuilder_.setMessage(value);
       }
       scalingCase_ = 5;
       return this;
@@ -6394,6 +6438,61 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean appEngineApis_;
+    /**
+     *
+     *
+     * <pre>
+     * Allows App Engine second generation runtimes to access the legacy bundled
+     * services.
+     * </pre>
+     *
+     * <code>bool app_engine_apis = 128;</code>
+     *
+     * @return The appEngineApis.
+     */
+    @java.lang.Override
+    public boolean getAppEngineApis() {
+      return appEngineApis_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows App Engine second generation runtimes to access the legacy bundled
+     * services.
+     * </pre>
+     *
+     * <code>bool app_engine_apis = 128;</code>
+     *
+     * @param value The appEngineApis to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppEngineApis(boolean value) {
+
+      appEngineApis_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows App Engine second generation runtimes to access the legacy bundled
+     * services.
+     * </pre>
+     *
+     * <code>bool app_engine_apis = 128;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppEngineApis() {
+
+      appEngineApis_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> betaSettings_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -6435,7 +6534,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsBetaSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetBetaSettings().getMap().containsKey(key);
     }
@@ -6473,7 +6572,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBetaSettingsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetBetaSettings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -6491,7 +6590,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getBetaSettingsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetBetaSettings().getMap();
       if (!map.containsKey(key)) {
@@ -6516,7 +6615,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeBetaSettings(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableBetaSettings().getMutableMap().remove(key);
       return this;
@@ -6538,11 +6637,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putBetaSettings(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableBetaSettings().getMutableMap().put(key, value);
       return this;
     }
@@ -8871,7 +8971,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsEnvVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetEnvVariables().getMap().containsKey(key);
     }
@@ -8909,7 +9009,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnvVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -8927,7 +9027,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getEnvVariablesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnvVariables().getMap();
       if (!map.containsKey(key)) {
@@ -8952,7 +9052,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeEnvVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableEnvVariables().getMutableMap().remove(key);
       return this;
@@ -8974,11 +9074,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putEnvVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableEnvVariables().getMutableMap().put(key, value);
       return this;
     }
@@ -9039,7 +9140,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsBuildEnvVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetBuildEnvVariables().getMap().containsKey(key);
     }
@@ -9077,7 +9178,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBuildEnvVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBuildEnvVariables().getMap();
@@ -9096,7 +9197,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getBuildEnvVariablesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBuildEnvVariables().getMap();
@@ -9122,7 +9223,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeBuildEnvVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableBuildEnvVariables().getMutableMap().remove(key);
       return this;
@@ -9144,11 +9245,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putBuildEnvVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableBuildEnvVariables().getMutableMap().put(key, value);
       return this;
     }

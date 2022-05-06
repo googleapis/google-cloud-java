@@ -115,6 +115,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -329,13 +331,13 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (cpu_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cpu_) != 0) {
       output.writeDouble(1, cpu_);
     }
-    if (diskGb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(diskGb_) != 0) {
       output.writeDouble(2, diskGb_);
     }
-    if (memoryGb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(memoryGb_) != 0) {
       output.writeDouble(3, memoryGb_);
     }
     for (int i = 0; i < volumes_.size(); i++) {
@@ -353,13 +355,13 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (cpu_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(cpu_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, cpu_);
     }
-    if (diskGb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(diskGb_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, diskGb_);
     }
-    if (memoryGb_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(memoryGb_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, memoryGb_);
     }
     for (int i = 0; i < volumes_.size(); i++) {
