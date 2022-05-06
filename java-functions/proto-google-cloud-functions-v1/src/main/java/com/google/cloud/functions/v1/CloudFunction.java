@@ -401,6 +401,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1684,7 +1686,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -1719,7 +1721,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1736,7 +1738,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1784,7 +1786,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsEnvironmentVariables(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetEnvironmentVariables().getMap().containsKey(key);
   }
@@ -1820,7 +1822,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnvironmentVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetEnvironmentVariables().getMap();
@@ -1838,7 +1840,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getEnvironmentVariablesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetEnvironmentVariables().getMap();
@@ -1888,7 +1890,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsBuildEnvironmentVariables(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
   }
@@ -1924,7 +1926,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBuildEnvironmentVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetBuildEnvironmentVariables().getMap();
@@ -1942,7 +1944,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getBuildEnvironmentVariablesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetBuildEnvironmentVariables().getMap();
@@ -4315,8 +4317,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (sourceCodeCase_ == 4) {
           sourceRepositoryBuilder_.mergeFrom(value);
+        } else {
+          sourceRepositoryBuilder_.setMessage(value);
         }
-        sourceRepositoryBuilder_.setMessage(value);
       }
       sourceCodeCase_ = 4;
       return this;
@@ -4686,8 +4689,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (triggerCase_ == 5) {
           httpsTriggerBuilder_.mergeFrom(value);
+        } else {
+          httpsTriggerBuilder_.setMessage(value);
         }
-        httpsTriggerBuilder_.setMessage(value);
       }
       triggerCase_ = 5;
       return this;
@@ -4895,8 +4899,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (triggerCase_ == 6) {
           eventTriggerBuilder_.mergeFrom(value);
+        } else {
+          eventTriggerBuilder_.setMessage(value);
         }
-        eventTriggerBuilder_.setMessage(value);
       }
       triggerCase_ = 6;
       return this;
@@ -6008,7 +6013,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -6044,7 +6049,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -6061,7 +6066,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -6085,7 +6090,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -6106,11 +6111,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -6169,7 +6175,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsEnvironmentVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetEnvironmentVariables().getMap().containsKey(key);
     }
@@ -6205,7 +6211,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnvironmentVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetEnvironmentVariables().getMap();
@@ -6223,7 +6229,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getEnvironmentVariablesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetEnvironmentVariables().getMap();
@@ -6248,7 +6254,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeEnvironmentVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableEnvironmentVariables().getMutableMap().remove(key);
       return this;
@@ -6269,11 +6275,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putEnvironmentVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableEnvironmentVariables().getMutableMap().put(key, value);
       return this;
     }
@@ -6334,7 +6341,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsBuildEnvironmentVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetBuildEnvironmentVariables().getMap().containsKey(key);
     }
@@ -6370,7 +6377,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBuildEnvironmentVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBuildEnvironmentVariables().getMap();
@@ -6388,7 +6395,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getBuildEnvironmentVariablesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetBuildEnvironmentVariables().getMap();
@@ -6413,7 +6420,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeBuildEnvironmentVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableBuildEnvironmentVariables().getMutableMap().remove(key);
       return this;
@@ -6434,11 +6441,12 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putBuildEnvironmentVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableBuildEnvironmentVariables().getMutableMap().put(key, value);
       return this;
     }

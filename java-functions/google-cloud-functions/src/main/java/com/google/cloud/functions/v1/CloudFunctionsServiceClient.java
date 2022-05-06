@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
  *     CloudFunctionsServiceClient.create()) {
  *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
@@ -88,6 +90,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudFunctionsServiceSettings cloudFunctionsServiceSettings =
  *     CloudFunctionsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -99,6 +103,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * CloudFunctionsServiceSettings cloudFunctionsServiceSettings =
  *     CloudFunctionsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * CloudFunctionsServiceClient cloudFunctionsServiceClient =
@@ -178,6 +184,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   ListFunctionsRequest request =
@@ -207,6 +215,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   ListFunctionsRequest request =
@@ -236,6 +246,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   ListFunctionsRequest request =
@@ -271,6 +283,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
@@ -294,6 +308,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
@@ -316,6 +332,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GetFunctionRequest request =
@@ -340,6 +358,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GetFunctionRequest request =
@@ -365,6 +385,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -397,6 +419,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -426,6 +450,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CreateFunctionRequest request =
@@ -453,6 +479,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CreateFunctionRequest request =
@@ -480,6 +508,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CreateFunctionRequest request =
@@ -505,6 +535,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CloudFunction function = CloudFunction.newBuilder().build();
@@ -529,6 +561,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   UpdateFunctionRequest request =
@@ -555,6 +589,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   UpdateFunctionRequest request =
@@ -581,6 +617,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   UpdateFunctionRequest request =
@@ -607,6 +645,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
@@ -632,6 +672,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
@@ -655,6 +697,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   DeleteFunctionRequest request =
@@ -681,6 +725,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   DeleteFunctionRequest request =
@@ -707,6 +753,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   DeleteFunctionRequest request =
@@ -733,6 +781,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
@@ -763,6 +813,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
@@ -790,6 +842,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CallFunctionRequest request =
@@ -817,6 +871,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   CallFunctionRequest request =
@@ -869,6 +925,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateUploadUrlRequest request =
@@ -918,6 +976,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateUploadUrlRequest request =
@@ -943,6 +1003,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateDownloadUrlRequest request =
@@ -971,6 +1033,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateDownloadUrlRequest request =
@@ -997,12 +1061,15 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Policy response = cloudFunctionsServiceClient.setIamPolicy(request);
    * }
@@ -1022,12 +1089,15 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
    *       cloudFunctionsServiceClient.setIamPolicyCallable().futureCall(request);
@@ -1048,6 +1118,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1074,6 +1146,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GetIamPolicyRequest request =
@@ -1100,6 +1174,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   TestIamPermissionsRequest request =
@@ -1126,6 +1202,8 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   TestIamPermissionsRequest request =
