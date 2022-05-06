@@ -16,9 +16,12 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -31,6 +34,8 @@ import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
@@ -42,6 +47,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.function.ThrowingRunnable;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.threeten.bp.Instant;
@@ -538,6 +544,41 @@ public class JsonStreamWriterTest {
       jsonArr.put(bar);
       ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       appendFuture.get();
+    }
+  }
+
+  @Test
+  public void testFlowControlSetting() throws Exception {
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(0, TEST_INT).build();
+    try (JsonStreamWriter writer =
+        JsonStreamWriter.newBuilder(TEST_STREAM, tableSchema)
+            .setChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setFlowControlSettings(
+                FlowControlSettings.newBuilder()
+                    .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
+                    .setMaxOutstandingRequestBytes(1L)
+                    .build())
+            .build()) {
+      JSONObject foo = new JSONObject();
+      foo.put("test_int", 10);
+      JSONArray jsonArr = new JSONArray();
+      jsonArr.put(foo);
+      StatusRuntimeException ex =
+          assertThrows(
+              StatusRuntimeException.class,
+              new ThrowingRunnable() {
+                @Override
+                public void run() throws Throwable {
+                  writer.append(jsonArr);
+                }
+              });
+      assertEquals(ex.getStatus().getCode(), Status.RESOURCE_EXHAUSTED.getCode());
+      assertTrue(
+          ex.getStatus()
+              .getDescription()
+              .contains(
+                  "Exceeds client side inflight buffer, consider add more buffer or open more connections"));
     }
   }
 }

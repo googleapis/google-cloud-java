@@ -21,6 +21,7 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -540,6 +541,39 @@ public class StreamWriterTest {
     for (int i = 0; i < appendCount; i++) {
       assertEquals(i, testBigQueryWrite.getAppendRequests().get(i).getOffset().getValue());
     }
+    writer.close();
+  }
+
+  @Test
+  public void testAppendsWithTinyMaxInflightBytesThrow() throws Exception {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightBytes(1)
+            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
+            .build();
+    // Server will sleep 100ms before every response.
+    testBigQueryWrite.setResponseSleep(Duration.ofMillis(100));
+    long appendCount = 10;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            new ThrowingRunnable() {
+              @Override
+              public void run() throws Throwable {
+                writer.append(createProtoRows(new String[] {String.valueOf(10)}), -1);
+              }
+            });
+    assertEquals(ex.getStatus().getCode(), Status.RESOURCE_EXHAUSTED.getCode());
+    assertTrue(
+        ex.getStatus()
+            .getDescription()
+            .contains(
+                "Exceeds client side inflight buffer, consider add more buffer or open more connections"));
+
     writer.close();
   }
 

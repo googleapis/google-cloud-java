@@ -17,6 +17,7 @@ package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -73,6 +74,11 @@ public class StreamWriter implements AutoCloseable {
    * Max allowed inflight bytes in the stream. Method append is blocked at this.
    */
   private final long maxInflightBytes;
+
+  /*
+   * Behavior when inflight queue is exceeded. Only supports Block or Throw, default is Block.
+   */
+  private final FlowController.LimitExceededBehavior limitExceededBehavior;
 
   /*
    * TraceId for debugging purpose.
@@ -190,6 +196,7 @@ public class StreamWriter implements AutoCloseable {
     this.writerSchema = builder.writerSchema;
     this.maxInflightRequests = builder.maxInflightRequest;
     this.maxInflightBytes = builder.maxInflightBytes;
+    this.limitExceededBehavior = builder.limitExceededBehavior;
     this.traceId = builder.traceId;
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
@@ -332,18 +339,29 @@ public class StreamWriter implements AutoCloseable {
     long start_time = System.currentTimeMillis();
     while (this.inflightRequests >= this.maxInflightRequests
         || this.inflightBytes >= this.maxInflightBytes) {
-      try {
-        inflightReduced.await(100, TimeUnit.MILLISECONDS);
-      } catch (InterruptedException e) {
-        log.warning(
-            "Interrupted while waiting for inflight quota. Stream: "
-                + streamName
-                + " Error: "
-                + e.toString());
+      if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException) {
         throw new StatusRuntimeException(
-            Status.fromCode(Code.CANCELLED)
-                .withCause(e)
-                .withDescription("Interrupted while waiting for quota."));
+            Status.fromCode(Code.RESOURCE_EXHAUSTED)
+                .withDescription(
+                    "Exceeds client side inflight buffer, consider add more buffer or open more connections."));
+      } else if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.Ignore) {
+        throw new StatusRuntimeException(
+            Status.fromCode(Code.INVALID_ARGUMENT)
+                .withDescription("LimitExceededBehavior.Ignore is not supported on StreamWriter."));
+      } else {
+        try {
+          inflightReduced.await(100, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+          log.warning(
+              "Interrupted while waiting for inflight quota. Stream: "
+                  + streamName
+                  + " Error: "
+                  + e.toString());
+          throw new StatusRuntimeException(
+              Status.fromCode(Code.CANCELLED)
+                  .withCause(e)
+                  .withDescription("Interrupted while waiting for quota."));
+        }
       }
     }
     inflightWaitSec.set((System.currentTimeMillis() - start_time) / 1000);
@@ -714,6 +732,9 @@ public class StreamWriter implements AutoCloseable {
     private CredentialsProvider credentialsProvider =
         BigQueryWriteSettings.defaultCredentialsProviderBuilder().build();
 
+    private FlowController.LimitExceededBehavior limitExceededBehavior =
+        FlowController.LimitExceededBehavior.Block;
+
     private String traceId = null;
 
     private TableSchema updatedTableSchema = null;
@@ -781,6 +802,18 @@ public class StreamWriter implements AutoCloseable {
             "TraceId must follow the format of A:B. Actual:" + traceId);
       }
       this.traceId = traceId;
+      return this;
+    }
+
+    /**
+     * Sets the limit exceeded behavior.
+     *
+     * @param limitExceededBehavior
+     * @return
+     */
+    public Builder setLimitExceededBehavior(
+        FlowController.LimitExceededBehavior limitExceededBehavior) {
+      this.limitExceededBehavior = limitExceededBehavior;
       return this;
     }
 

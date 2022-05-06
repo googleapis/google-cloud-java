@@ -78,6 +78,10 @@ public class JsonStreamWriter implements AutoCloseable {
     this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
     this.totalMessageSize = protoSchema.getSerializedSize();
     streamWriterBuilder.setWriterSchema(protoSchema);
+    if (builder.flowControlSettings != null) {
+      streamWriterBuilder.setLimitExceededBehavior(
+          builder.flowControlSettings.getLimitExceededBehavior());
+    }
     setStreamWriterSettings(
         builder.channelProvider,
         builder.credentialsProvider,
@@ -214,6 +218,10 @@ public class JsonStreamWriter implements AutoCloseable {
         streamWriterBuilder.setMaxInflightRequests(
             flowControlSettings.getMaxOutstandingElementCount());
       }
+      if (flowControlSettings.getLimitExceededBehavior() != null) {
+        streamWriterBuilder.setLimitExceededBehavior(
+            flowControlSettings.getLimitExceededBehavior());
+      }
     }
   }
 
@@ -335,7 +343,6 @@ public class JsonStreamWriter implements AutoCloseable {
      * @return Builder
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
-      Preconditions.checkNotNull(flowControlSettings, "FlowControlSettings is null.");
       this.flowControlSettings =
           Preconditions.checkNotNull(flowControlSettings, "FlowControlSettings is null.");
       return this;
