@@ -20,7 +20,7 @@ export PATH=$PATH:`pwd`/git-filter-repo
 
 mkdir google-cloud-java
 cd google-cloud-java
-git init
+git init -b main
 
 cat ../../repos.txt | while read service
 do
