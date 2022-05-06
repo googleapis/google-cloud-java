@@ -131,6 +131,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -261,7 +263,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsFileHashes(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetFileHashes().getMap().containsKey(key);
   }
@@ -307,7 +309,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> map =
         internalGetFileHashes().getMap();
@@ -330,7 +332,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> map =
         internalGetFileHashes().getMap();
@@ -1064,7 +1066,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsFileHashes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetFileHashes().getMap().containsKey(key);
     }
@@ -1110,7 +1112,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.FileHashes getFileHashesOrDefault(
         java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> map =
           internalGetFileHashes().getMap();
@@ -1133,7 +1135,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> map =
           internalGetFileHashes().getMap();
@@ -1163,7 +1165,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeFileHashes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableFileHashes().getMutableMap().remove(key);
       return this;
@@ -1189,11 +1191,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putFileHashes(java.lang.String key, io.grafeas.v1.FileHashes value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableFileHashes().getMutableMap().put(key, value);
       return this;
     }

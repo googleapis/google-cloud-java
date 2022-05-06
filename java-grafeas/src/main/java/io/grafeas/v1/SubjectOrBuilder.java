@@ -91,7 +91,12 @@ public interface SubjectOrBuilder
    *
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
-  java.lang.String getDigestOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getDigestOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

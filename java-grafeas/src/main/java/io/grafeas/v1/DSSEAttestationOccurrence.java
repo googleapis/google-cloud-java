@@ -110,6 +110,8 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -901,8 +903,9 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       } else {
         if (decodedPayloadCase_ == 2) {
           statementBuilder_.mergeFrom(value);
+        } else {
+          statementBuilder_.setMessage(value);
         }
-        statementBuilder_.setMessage(value);
       }
       decodedPayloadCase_ = 2;
       return this;

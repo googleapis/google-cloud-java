@@ -113,8 +113,12 @@ public interface SourceOrBuilder
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
+
+  /* nullable */
   io.grafeas.v1.FileHashes getFileHashesOrDefault(
-      java.lang.String key, io.grafeas.v1.FileHashes defaultValue);
+      java.lang.String key,
+      /* nullable */
+      io.grafeas.v1.FileHashes defaultValue);
   /**
    *
    *

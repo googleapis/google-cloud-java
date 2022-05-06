@@ -103,6 +103,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -230,7 +232,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public boolean containsNotes(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetNotes().getMap().containsKey(key);
   }
@@ -268,7 +270,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   public io.grafeas.v1.Note getNotesOrDefault(
       java.lang.String key, io.grafeas.v1.Note defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, io.grafeas.v1.Note> map = internalGetNotes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -286,7 +288,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   @java.lang.Override
   public io.grafeas.v1.Note getNotesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, io.grafeas.v1.Note> map = internalGetNotes().getMap();
     if (!map.containsKey(key)) {
@@ -813,7 +815,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public boolean containsNotes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetNotes().getMap().containsKey(key);
     }
@@ -853,7 +855,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     public io.grafeas.v1.Note getNotesOrDefault(
         java.lang.String key, io.grafeas.v1.Note defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, io.grafeas.v1.Note> map = internalGetNotes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -872,7 +874,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public io.grafeas.v1.Note getNotesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, io.grafeas.v1.Note> map = internalGetNotes().getMap();
       if (!map.containsKey(key)) {
@@ -898,7 +900,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      */
     public Builder removeNotes(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableNotes().getMutableMap().remove(key);
       return this;
@@ -921,11 +923,12 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      */
     public Builder putNotes(java.lang.String key, io.grafeas.v1.Note value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableNotes().getMutableMap().put(key, value);
       return this;
     }

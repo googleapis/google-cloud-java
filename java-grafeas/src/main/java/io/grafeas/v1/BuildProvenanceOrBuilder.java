@@ -441,7 +441,12 @@ public interface BuildProvenanceOrBuilder
    *
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
-  java.lang.String getBuildOptionsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getBuildOptionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

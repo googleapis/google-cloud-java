@@ -318,6 +318,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -3083,8 +3085,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 8) {
           vulnerabilityBuilder_.mergeFrom(value);
+        } else {
+          vulnerabilityBuilder_.setMessage(value);
         }
-        vulnerabilityBuilder_.setMessage(value);
       }
       detailsCase_ = 8;
       return this;
@@ -3289,8 +3292,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 9) {
           buildBuilder_.mergeFrom(value);
+        } else {
+          buildBuilder_.setMessage(value);
         }
-        buildBuilder_.setMessage(value);
       }
       detailsCase_ = 9;
       return this;
@@ -3498,8 +3502,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 10) {
           imageBuilder_.mergeFrom(value);
+        } else {
+          imageBuilder_.setMessage(value);
         }
-        imageBuilder_.setMessage(value);
       }
       detailsCase_ = 10;
       return this;
@@ -3707,8 +3712,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 11) {
           packageBuilder_.mergeFrom(value);
+        } else {
+          packageBuilder_.setMessage(value);
         }
-        packageBuilder_.setMessage(value);
       }
       detailsCase_ = 11;
       return this;
@@ -3913,8 +3919,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 12) {
           deploymentBuilder_.mergeFrom(value);
+        } else {
+          deploymentBuilder_.setMessage(value);
         }
-        deploymentBuilder_.setMessage(value);
       }
       detailsCase_ = 12;
       return this;
@@ -4119,8 +4126,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 13) {
           discoveryBuilder_.mergeFrom(value);
+        } else {
+          discoveryBuilder_.setMessage(value);
         }
-        discoveryBuilder_.setMessage(value);
       }
       detailsCase_ = 13;
       return this;
@@ -4325,8 +4333,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 14) {
           attestationBuilder_.mergeFrom(value);
+        } else {
+          attestationBuilder_.setMessage(value);
         }
-        attestationBuilder_.setMessage(value);
       }
       detailsCase_ = 14;
       return this;
@@ -4530,8 +4539,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 15) {
           upgradeBuilder_.mergeFrom(value);
+        } else {
+          upgradeBuilder_.setMessage(value);
         }
-        upgradeBuilder_.setMessage(value);
       }
       detailsCase_ = 15;
       return this;
@@ -4736,8 +4746,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 16) {
           complianceBuilder_.mergeFrom(value);
+        } else {
+          complianceBuilder_.setMessage(value);
         }
-        complianceBuilder_.setMessage(value);
       }
       detailsCase_ = 16;
       return this;
@@ -4943,8 +4954,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (detailsCase_ == 17) {
           dsseAttestationBuilder_.mergeFrom(value);
+        } else {
+          dsseAttestationBuilder_.setMessage(value);
         }
-        dsseAttestationBuilder_.setMessage(value);
       }
       detailsCase_ = 17;
       return this;
