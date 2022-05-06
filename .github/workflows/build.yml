@@ -28,5 +28,5 @@ jobs:
       - name: Push monorepo to branch
         run: |
           cd monorepo/google-cloud-java
-          git remote add monorepo ${{ github.server_url}}/${{ github.repository }}.git
+          git remote add monorepo https://${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:monorepo
