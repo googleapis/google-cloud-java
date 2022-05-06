@@ -4,8 +4,8 @@
 
 set -xe
 
-[ -z "`git config user.email`" ] && git config --global user.email "script@google.com"
-[ -z "`git config user.name`" ] && git config --global user.name "Monorepo Script"
+[ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
+[ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
 
 rm -rf monorepo
 mkdir monorepo
