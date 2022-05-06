@@ -41,33 +41,31 @@ public final class ChannelConnectionProto {
   static {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/eventarc/v1/channel_conne"
-          + "ction.proto\022\030google.cloud.eventarc.v1\032\034g"
-          + "oogle/api/annotations.proto\032\037google/api/"
-          + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\247\003\n\021ChannelConnection\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0228\n\007channel\030\005 \001(\tB\'\340A"
-          + "\002\372A!\n\037eventarc.googleapis.com/Channel\0224\n"
-          + "\013create_time\030\006 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\022\035\n\020activation_"
-          + "token\030\010 \001(\tB\003\340A\004:\247\001\352A\243\001\n)eventarc.google"
-          + "apis.com/ChannelConnection\022Oprojects/{pr"
-          + "oject}/locations/{location}/channelConne"
-          + "ctions/{channel_connection}*\022channelConn"
-          + "ections2\021channelConnectionB\316\001\n\034com.googl"
-          + "e.cloud.eventarc.v1B\026ChannelConnectionPr"
-          + "otoP\001Z@google.golang.org/genproto/google"
-          + "apis/cloud/eventarc/v1;eventarc\252\002\030Google"
-          + ".Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eventa"
-          + "rc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006pro"
-          + "to3"
+          + "ction.proto\022\030google.cloud.eventarc.v1\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032\037google/protobuf/times"
+          + "tamp.proto\"\247\003\n\021ChannelConnection\022\021\n\004name"
+          + "\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0228\n\007channel"
+          + "\030\005 \001(\tB\'\340A\002\372A!\n\037eventarc.googleapis.com/"
+          + "Channel\0224\n\013create_time\030\006 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\035\n\020a"
+          + "ctivation_token\030\010 \001(\tB\003\340A\004:\247\001\352A\243\001\n)event"
+          + "arc.googleapis.com/ChannelConnection\022Opr"
+          + "ojects/{project}/locations/{location}/ch"
+          + "annelConnections/{channel_connection}*\022c"
+          + "hannelConnections2\021channelConnectionB\316\001\n"
+          + "\034com.google.cloud.eventarc.v1B\026ChannelCo"
+          + "nnectionProtoP\001Z@google.golang.org/genpr"
+          + "oto/googleapis/cloud/eventarc/v1;eventar"
+          + "c\252\002\030Google.Cloud.Eventarc.V1\312\002\030Google\\Cl"
+          + "oud\\Eventarc\\V1\352\002\033Google::Cloud::Eventar"
+          + "c::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -87,7 +85,6 @@ public final class ChannelConnectionProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -41,34 +41,32 @@ public final class ChannelProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/eventarc/v1/channel.proto"
-          + "\022\030google.cloud.eventarc.v1\032\034google/api/a"
-          + "nnotations.proto\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\"\363\003\n\007Channe"
-          + "l\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0224"
-          + "\n\013create_time\030\005 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\022\025\n\010provider\030\007"
-          + " \001(\tB\003\340A\002\022\033\n\014pubsub_topic\030\010 \001(\tB\003\340A\003H\000\022;"
-          + "\n\005state\030\t \001(\0162\'.google.cloud.eventarc.v1"
-          + ".Channel.StateB\003\340A\003\022\035\n\020activation_token\030"
-          + "\n \001(\tB\003\340A\003\"E\n\005State\022\025\n\021STATE_UNSPECIFIED"
-          + "\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010INACTIVE\020"
-          + "\003:s\352Ap\n\037eventarc.googleapis.com/Channel\022"
-          + ":projects/{project}/locations/{location}"
-          + "/channels/{channel}*\010channels2\007channelB\013"
-          + "\n\ttransportB\304\001\n\034com.google.cloud.eventar"
-          + "c.v1B\014ChannelProtoP\001Z@google.golang.org/"
-          + "genproto/googleapis/cloud/eventarc/v1;ev"
-          + "entarc\252\002\030Google.Cloud.Eventarc.V1\312\002\030Goog"
-          + "le\\Cloud\\Eventarc\\V1\352\002\033Google::Cloud::Ev"
-          + "entarc::V1b\006proto3"
+          + "\022\030google.cloud.eventarc.v1\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\363\003\n\007Channel\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 "
+          + "\001(\tB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\0224\n\013update_time\030\006 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\025\n\010"
+          + "provider\030\007 \001(\tB\003\340A\002\022\033\n\014pubsub_topic\030\010 \001("
+          + "\tB\003\340A\003H\000\022;\n\005state\030\t \001(\0162\'.google.cloud.e"
+          + "ventarc.v1.Channel.StateB\003\340A\003\022\035\n\020activat"
+          + "ion_token\030\n \001(\tB\003\340A\003\"E\n\005State\022\025\n\021STATE_U"
+          + "NSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\014\n"
+          + "\010INACTIVE\020\003:s\352Ap\n\037eventarc.googleapis.co"
+          + "m/Channel\022:projects/{project}/locations/"
+          + "{location}/channels/{channel}*\010channels2"
+          + "\007channelB\013\n\ttransportB\304\001\n\034com.google.clo"
+          + "ud.eventarc.v1B\014ChannelProtoP\001Z@google.g"
+          + "olang.org/genproto/googleapis/cloud/even"
+          + "tarc/v1;eventarc\252\002\030Google.Cloud.Eventarc"
+          + ".V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google:"
+          + ":Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -95,7 +93,6 @@ public final class ChannelProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
