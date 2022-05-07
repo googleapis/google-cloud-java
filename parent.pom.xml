@@ -13,7 +13,6 @@
   </properties>
 
   <modules>
-    <module>CoverageAggregator</module>
   </modules>
 
   <build>
