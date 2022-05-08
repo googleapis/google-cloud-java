@@ -314,6 +314,16 @@ public class StreamWriter implements AutoCloseable {
                     .withDescription("Connection is already closed")));
         return requestWrapper.appendResult;
       }
+      // Check if queue is going to be full before adding the request.
+      if ((this.inflightRequests + 1 >= this.maxInflightRequests
+              || this.inflightBytes + requestWrapper.messageSize >= this.maxInflightBytes)
+          && (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException)) {
+        throw new StatusRuntimeException(
+            Status.fromCode(Code.RESOURCE_EXHAUSTED)
+                .withDescription(
+                    "Exceeds client side inflight buffer, consider add more buffer or open more connections."));
+      }
+
       if (connectionFinalStatus != null) {
         requestWrapper.appendResult.setException(
             new StatusRuntimeException(
@@ -339,29 +349,18 @@ public class StreamWriter implements AutoCloseable {
     long start_time = System.currentTimeMillis();
     while (this.inflightRequests >= this.maxInflightRequests
         || this.inflightBytes >= this.maxInflightBytes) {
-      if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException) {
+      try {
+        inflightReduced.await(100, TimeUnit.MILLISECONDS);
+      } catch (InterruptedException e) {
+        log.warning(
+            "Interrupted while waiting for inflight quota. Stream: "
+                + streamName
+                + " Error: "
+                + e.toString());
         throw new StatusRuntimeException(
-            Status.fromCode(Code.RESOURCE_EXHAUSTED)
-                .withDescription(
-                    "Exceeds client side inflight buffer, consider add more buffer or open more connections."));
-      } else if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.Ignore) {
-        throw new StatusRuntimeException(
-            Status.fromCode(Code.INVALID_ARGUMENT)
-                .withDescription("LimitExceededBehavior.Ignore is not supported on StreamWriter."));
-      } else {
-        try {
-          inflightReduced.await(100, TimeUnit.MILLISECONDS);
-        } catch (InterruptedException e) {
-          log.warning(
-              "Interrupted while waiting for inflight quota. Stream: "
-                  + streamName
-                  + " Error: "
-                  + e.toString());
-          throw new StatusRuntimeException(
-              Status.fromCode(Code.CANCELLED)
-                  .withCause(e)
-                  .withDescription("Interrupted while waiting for quota."));
-        }
+            Status.fromCode(Code.CANCELLED)
+                .withCause(e)
+                .withDescription("Interrupted while waiting for quota."));
       }
     }
     inflightWaitSec.set((System.currentTimeMillis() - start_time) / 1000);
@@ -812,7 +811,12 @@ public class StreamWriter implements AutoCloseable {
      * @return
      */
     public Builder setLimitExceededBehavior(
-        FlowController.LimitExceededBehavior limitExceededBehavior) {
+        FlowController.LimitExceededBehavior limitExceededBehavior) throws StatusRuntimeException {
+      if (limitExceededBehavior == FlowController.LimitExceededBehavior.Ignore) {
+        throw new StatusRuntimeException(
+            Status.fromCode(Code.INVALID_ARGUMENT)
+                .withDescription("LimitExceededBehavior.Ignore is not supported on StreamWriter."));
+      }
       this.limitExceededBehavior = limitExceededBehavior;
       return this;
     }

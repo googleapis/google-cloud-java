@@ -552,12 +552,6 @@ public class StreamWriterTest {
             .setMaxInflightBytes(1)
             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
             .build();
-    // Server will sleep 100ms before every response.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(100));
-    long appendCount = 10;
-    for (int i = 0; i < appendCount; i++) {
-      testBigQueryWrite.addResponse(createAppendResponse(i));
-    }
     StatusRuntimeException ex =
         assertThrows(
             StatusRuntimeException.class,
@@ -575,6 +569,29 @@ public class StreamWriterTest {
                 "Exceeds client side inflight buffer, consider add more buffer or open more connections"));
 
     writer.close();
+  }
+
+  @Test
+  public void testLimitBehaviorIgnoreNotAccepted() throws Exception {
+    StatusRuntimeException ex =
+        assertThrows(
+            StatusRuntimeException.class,
+            new ThrowingRunnable() {
+              @Override
+              public void run() throws Throwable {
+                StreamWriter writer =
+                    StreamWriter.newBuilder(TEST_STREAM, client)
+                        .setWriterSchema(createProtoSchema())
+                        .setMaxInflightBytes(1)
+                        .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Ignore)
+                        .build();
+              }
+            });
+    assertEquals(ex.getStatus().getCode(), Status.INVALID_ARGUMENT.getCode());
+    assertTrue(
+        ex.getStatus()
+            .getDescription()
+            .contains("LimitExceededBehavior.Ignore is not supported on StreamWriter."));
   }
 
   @Test
