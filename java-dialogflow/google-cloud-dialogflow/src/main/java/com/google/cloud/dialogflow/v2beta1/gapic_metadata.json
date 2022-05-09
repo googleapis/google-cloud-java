@@ -331,6 +331,9 @@
             "ListSuggestions": {
               "methods": ["listSuggestions", "listSuggestionsPagedCallable", "listSuggestionsCallable"]
             },
+            "StreamingAnalyzeContent": {
+              "methods": ["streamingAnalyzeContentCallable"]
+            },
             "SuggestArticles": {
               "methods": ["suggestArticles", "suggestArticles", "suggestArticles", "suggestArticlesCallable"]
             },

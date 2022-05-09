@@ -92,6 +92,18 @@ public final class ParticipantProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_AnalyzeContentResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_InputTextConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_InputTextConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_fieldAccessorTable;
@@ -200,6 +212,14 @@ public final class ParticipantProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_EndInteraction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_Segment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_Segment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_fieldAccessorTable;
@@ -300,7 +320,7 @@ public final class ParticipantProto {
           + "2beta1.AssistQueryParameters.DocumentsMe"
           + "tadataFiltersEntry\032?\n\035DocumentsMetadataF"
           + "iltersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001\"\242\004\n\025AnalyzeContentRequest\022B\n\013partici"
+          + "\0028\001\"\322\004\n\025AnalyzeContentRequest\022B\n\013partici"
           + "pant\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.googleapi"
           + "s.com/Participant\022@\n\ntext_input\030\006 \001(\0132*."
           + "google.cloud.dialogflow.v2beta1.TextInpu"
@@ -311,216 +331,263 @@ public final class ParticipantProto {
           + "_params\030\t \001(\01320.google.cloud.dialogflow."
           + "v2beta1.QueryParameters\022S\n\023assist_query_"
           + "params\030\016 \001(\01326.google.cloud.dialogflow.v"
-          + "2beta1.AssistQueryParameters\0225\n\021message_"
-          + "send_time\030\n \001(\0132\032.google.protobuf.Timest"
-          + "amp\022\022\n\nrequest_id\030\013 \001(\tB\007\n\005input\",\n\016Dtmf"
-          + "Parameters\022\032\n\022accepts_dtmf_input\030\001 \001(\010\"\374"
-          + "\003\n\026AnalyzeContentResponse\022\022\n\nreply_text\030"
-          + "\001 \001(\t\022A\n\013reply_audio\030\002 \001(\0132,.google.clou"
-          + "d.dialogflow.v2beta1.OutputAudio\022S\n\025auto"
-          + "mated_agent_reply\030\003 \001(\01324.google.cloud.d"
-          + "ialogflow.v2beta1.AutomatedAgentReply\0229\n"
-          + "\007message\030\005 \001(\0132(.google.cloud.dialogflow"
-          + ".v2beta1.Message\022Y\n\036human_agent_suggesti"
-          + "on_results\030\006 \003(\01321.google.cloud.dialogfl"
-          + "ow.v2beta1.SuggestionResult\022V\n\033end_user_"
-          + "suggestion_results\030\007 \003(\01321.google.cloud."
-          + "dialogflow.v2beta1.SuggestionResult\022H\n\017d"
-          + "tmf_parameters\030\t \001(\0132/.google.cloud.dial"
-          + "ogflow.v2beta1.DtmfParameters\"j\n\024Annotat"
-          + "edMessagePart\022\014\n\004text\030\001 \001(\t\022\023\n\013entity_ty"
-          + "pe\030\002 \001(\t\022/\n\017formatted_value\030\003 \001(\0132\026.goog"
-          + "le.protobuf.Value\"s\n\021MessageAnnotation\022D"
-          + "\n\005parts\030\001 \003(\01325.google.cloud.dialogflow."
-          + "v2beta1.AnnotatedMessagePart\022\030\n\020contain_"
-          + "entities\030\002 \001(\010\"\325\001\n\rArticleAnswer\022\r\n\005titl"
-          + "e\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\020\n\010snippets\030\003 \003(\t\022N"
-          + "\n\010metadata\030\005 \003(\0132<.google.cloud.dialogfl"
-          + "ow.v2beta1.ArticleAnswer.MetadataEntry\022\025"
-          + "\n\ranswer_record\030\006 \001(\t\032/\n\rMetadataEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\345\001\n\tFaqAn"
-          + "swer\022\016\n\006answer\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002"
-          + "\022\020\n\010question\030\003 \001(\t\022\016\n\006source\030\004 \001(\t\022J\n\010me"
-          + "tadata\030\005 \003(\01328.google.cloud.dialogflow.v"
-          + "2beta1.FaqAnswer.MetadataEntry\022\025\n\ranswer"
-          + "_record\030\006 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\020SmartReplyAnsw"
-          + "er\022\r\n\005reply\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022B\n"
-          + "\ranswer_record\030\003 \001(\tB+\372A(\n&dialogflow.go"
-          + "ogleapis.com/AnswerRecord\"\371\002\n\020Suggestion"
-          + "Result\022#\n\005error\030\001 \001(\0132\022.google.rpc.Statu"
-          + "sH\000\022]\n\031suggest_articles_response\030\002 \001(\01328"
-          + ".google.cloud.dialogflow.v2beta1.Suggest"
-          + "ArticlesResponseH\000\022b\n\034suggest_faq_answer"
-          + "s_response\030\003 \001(\0132:.google.cloud.dialogfl"
-          + "ow.v2beta1.SuggestFaqAnswersResponseH\000\022f"
-          + "\n\036suggest_smart_replies_response\030\004 \001(\0132<"
-          + ".google.cloud.dialogflow.v2beta1.Suggest"
-          + "SmartRepliesResponseH\000B\025\n\023suggestion_res"
-          + "ponse\"\217\002\n\026SuggestArticlesRequest\022=\n\006pare"
-          + "nt\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.googleapis."
-          + "com/Participant\022A\n\016latest_message\030\002 \001(\tB"
-          + ")\340A\001\372A#\n!dialogflow.googleapis.com/Messa"
-          + "ge\022\031\n\014context_size\030\003 \001(\005B\003\340A\001\022X\n\023assist_"
-          + "query_params\030\004 \001(\01326.google.cloud.dialog"
-          + "flow.v2beta1.AssistQueryParametersB\003\340A\001\""
-          + "\220\001\n\027SuggestArticlesResponse\022G\n\017article_a"
-          + "nswers\030\001 \003(\0132..google.cloud.dialogflow.v"
-          + "2beta1.ArticleAnswer\022\026\n\016latest_message\030\002"
-          + " \001(\t\022\024\n\014context_size\030\003 \001(\005\"\221\002\n\030SuggestFa"
-          + "qAnswersRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n"
-          + "%dialogflow.googleapis.com/Participant\022A"
-          + "\n\016latest_message\030\002 \001(\tB)\340A\001\372A#\n!dialogfl"
-          + "ow.googleapis.com/Message\022\031\n\014context_siz"
-          + "e\030\003 \001(\005B\003\340A\001\022X\n\023assist_query_params\030\004 \001("
-          + "\01326.google.cloud.dialogflow.v2beta1.Assi"
-          + "stQueryParametersB\003\340A\001\"\212\001\n\031SuggestFaqAns"
-          + "wersResponse\022?\n\013faq_answers\030\001 \003(\0132*.goog"
-          + "le.cloud.dialogflow.v2beta1.FaqAnswer\022\026\n"
-          + "\016latest_message\030\002 \001(\t\022\024\n\014context_size\030\003 "
-          + "\001(\005\"\371\001\n\032SuggestSmartRepliesRequest\022=\n\006pa"
-          + "rent\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.googleapi"
-          + "s.com/Participant\022F\n\022current_text_input\030"
-          + "\004 \001(\0132*.google.cloud.dialogflow.v2beta1."
-          + "TextInput\022>\n\016latest_message\030\002 \001(\tB&\372A#\n!"
-          + "dialogflow.googleapis.com/Message\022\024\n\014con"
-          + "text_size\030\003 \001(\005\"\303\001\n\033SuggestSmartRepliesR"
-          + "esponse\022N\n\023smart_reply_answers\030\001 \003(\01321.g"
-          + "oogle.cloud.dialogflow.v2beta1.SmartRepl"
-          + "yAnswer\022>\n\016latest_message\030\002 \001(\tB&\372A#\n!di"
-          + "alogflow.googleapis.com/Message\022\024\n\014conte"
-          + "xt_size\030\003 \001(\005\"\304\005\n\nSuggestion\022\014\n\004name\030\001 \001"
-          + "(\t\022E\n\010articles\030\002 \003(\01323.google.cloud.dial"
-          + "ogflow.v2beta1.Suggestion.Article\022J\n\013faq"
-          + "_answers\030\004 \003(\01325.google.cloud.dialogflow"
-          + ".v2beta1.Suggestion.FaqAnswer\022/\n\013create_"
-          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\022\026"
-          + "\n\016latest_message\030\007 \001(\t\032\324\001\n\007Article\022\r\n\005ti"
-          + "tle\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\020\n\010snippets\030\003 \003(\t"
-          + "\022S\n\010metadata\030\005 \003(\0132A.google.cloud.dialog"
-          + "flow.v2beta1.Suggestion.Article.Metadata"
-          + "Entry\022\025\n\ranswer_record\030\006 \001(\t\032/\n\rMetadata"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\360\001"
-          + "\n\tFaqAnswer\022\016\n\006answer\030\001 \001(\t\022\022\n\nconfidenc"
-          + "e\030\002 \001(\002\022\020\n\010question\030\003 \001(\t\022\016\n\006source\030\004 \001("
-          + "\t\022U\n\010metadata\030\005 \003(\0132C.google.cloud.dialo"
-          + "gflow.v2beta1.Suggestion.FaqAnswer.Metad"
-          + "ataEntry\022\025\n\ranswer_record\030\006 \001(\t\032/\n\rMetad"
-          + "ataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + ":\002\030\001\"c\n\026ListSuggestionsRequest\022\016\n\006parent"
-          + "\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
-          + "\003 \001(\t\022\016\n\006filter\030\004 \001(\t:\002\030\001\"x\n\027ListSuggest"
-          + "ionsResponse\022@\n\013suggestions\030\001 \003(\0132+.goog"
-          + "le.cloud.dialogflow.v2beta1.Suggestion\022\027"
-          + "\n\017next_page_token\030\002 \001(\t:\002\030\001\"\\\n\030CompileSu"
-          + "ggestionRequest\022\016\n\006parent\030\001 \001(\t\022\026\n\016lates"
-          + "t_message\030\002 \001(\t\022\024\n\014context_size\030\003 \001(\005:\002\030"
-          + "\001\"\216\001\n\031CompileSuggestionResponse\022?\n\nsugge"
-          + "stion\030\001 \001(\0132+.google.cloud.dialogflow.v2"
-          + "beta1.Suggestion\022\026\n\016latest_message\030\002 \001(\t"
-          + "\022\024\n\014context_size\030\003 \001(\005:\002\030\001\"\356\004\n\017ResponseM"
-          + "essage\022E\n\004text\030\001 \001(\01325.google.cloud.dial"
-          + "ogflow.v2beta1.ResponseMessage.TextH\000\022*\n"
-          + "\007payload\030\002 \001(\0132\027.google.protobuf.StructH"
-          + "\000\022_\n\022live_agent_handoff\030\003 \001(\0132A.google.c"
-          + "loud.dialogflow.v2beta1.ResponseMessage."
-          + "LiveAgentHandoffH\000\022Z\n\017end_interaction\030\004 "
-          + "\001(\0132?.google.cloud.dialogflow.v2beta1.Re"
-          + "sponseMessage.EndInteractionH\000\022i\n\027teleph"
-          + "ony_transfer_call\030\006 \001(\0132F.google.cloud.d"
-          + "ialogflow.v2beta1.ResponseMessage.Teleph"
-          + "onyTransferCallH\000\032\024\n\004Text\022\014\n\004text\030\001 \003(\t\032"
-          + "=\n\020LiveAgentHandoff\022)\n\010metadata\030\001 \001(\0132\027."
-          + "google.protobuf.Struct\032\020\n\016EndInteraction"
-          + "\032N\n\025TelephonyTransferCall\022\026\n\014phone_numbe"
-          + "r\030\001 \001(\tH\000\022\021\n\007sip_uri\030\002 \001(\tH\000B\n\n\010endpoint"
-          + "B\t\n\007message2\310\031\n\014Participants\022\271\002\n\021CreateP"
-          + "articipant\0229.google.cloud.dialogflow.v2b"
-          + "eta1.CreateParticipantRequest\032,.google.c"
-          + "loud.dialogflow.v2beta1.Participant\"\272\001\202\323"
-          + "\344\223\002\236\001\"9/v2beta1/{parent=projects/*/conve"
-          + "rsations/*}/participants:\013participantZT\""
-          + "E/v2beta1/{parent=projects/*/locations/*"
-          + "/conversations/*}/participants:\013particip"
-          + "ant\332A\022parent,participant\022\213\002\n\016GetParticip"
-          + "ant\0226.google.cloud.dialogflow.v2beta1.Ge"
-          + "tParticipantRequest\032,.google.cloud.dialo"
-          + "gflow.v2beta1.Participant\"\222\001\202\323\344\223\002\204\001\0229/v2"
-          + "beta1/{name=projects/*/conversations/*/p"
-          + "articipants/*}ZG\022E/v2beta1/{name=project"
-          + "s/*/locations/*/conversations/*/particip"
-          + "ants/*}\332A\004name\022\236\002\n\020ListParticipants\0228.go"
-          + "ogle.cloud.dialogflow.v2beta1.ListPartic"
-          + "ipantsRequest\0329.google.cloud.dialogflow."
-          + "v2beta1.ListParticipantsResponse\"\224\001\202\323\344\223\002"
-          + "\204\001\0229/v2beta1/{parent=projects/*/conversa"
-          + "tions/*}/participantsZG\022E/v2beta1/{paren"
-          + "t=projects/*/locations/*/conversations/*"
-          + "}/participants\332A\006parent\022\326\002\n\021UpdatePartic"
-          + "ipant\0229.google.cloud.dialogflow.v2beta1."
-          + "UpdateParticipantRequest\032,.google.cloud."
-          + "dialogflow.v2beta1.Participant\"\327\001\202\323\344\223\002\266\001"
-          + "2E/v2beta1/{participant.name=projects/*/"
-          + "conversations/*/participants/*}:\013partici"
-          + "pantZ`2Q/v2beta1/{participant.name=proje"
-          + "cts/*/locations/*/conversations/*/partic"
-          + "ipants/*}:\013participant\332A\027participant,upd"
-          + "ate_mask\022\364\002\n\016AnalyzeContent\0226.google.clo"
-          + "ud.dialogflow.v2beta1.AnalyzeContentRequ"
-          + "est\0327.google.cloud.dialogflow.v2beta1.An"
-          + "alyzeContentResponse\"\360\001\202\323\344\223\002\266\001\"O/v2beta1"
-          + "/{participant=projects/*/conversations/*"
-          + "/participants/*}:analyzeContent:\001*Z`\"[/v"
-          + "2beta1/{participant=projects/*/locations"
-          + "/*/conversations/*/participants/*}:analy"
-          + "zeContent:\001*\332A\026participant,text_input\332A\027"
-          + "participant,event_input\022\335\002\n\017SuggestArtic"
-          + "les\0227.google.cloud.dialogflow.v2beta1.Su"
-          + "ggestArticlesRequest\0328.google.cloud.dial"
-          + "ogflow.v2beta1.SuggestArticlesResponse\"\326"
-          + "\001\202\323\344\223\002\306\001\"W/v2beta1/{parent=projects/*/co"
-          + "nversations/*/participants/*}/suggestion"
-          + "s:suggestArticles:\001*Zh\"c/v2beta1/{parent"
-          + "=projects/*/locations/*/conversations/*/"
-          + "participants/*}/suggestions:suggestArtic"
-          + "les:\001*\332A\006parent\022\347\002\n\021SuggestFaqAnswers\0229."
+          + "2beta1.AssistQueryParameters\022.\n\rcx_param"
+          + "eters\030\022 \001(\0132\027.google.protobuf.Struct\0225\n\021"
+          + "message_send_time\030\n \001(\0132\032.google.protobu"
+          + "f.Timestamp\022\022\n\nrequest_id\030\013 \001(\tB\007\n\005input"
+          + "\",\n\016DtmfParameters\022\032\n\022accepts_dtmf_input"
+          + "\030\001 \001(\010\"\374\003\n\026AnalyzeContentResponse\022\022\n\nrep"
+          + "ly_text\030\001 \001(\t\022A\n\013reply_audio\030\002 \001(\0132,.goo"
+          + "gle.cloud.dialogflow.v2beta1.OutputAudio"
+          + "\022S\n\025automated_agent_reply\030\003 \001(\01324.google"
+          + ".cloud.dialogflow.v2beta1.AutomatedAgent"
+          + "Reply\0229\n\007message\030\005 \001(\0132(.google.cloud.di"
+          + "alogflow.v2beta1.Message\022Y\n\036human_agent_"
+          + "suggestion_results\030\006 \003(\01321.google.cloud."
+          + "dialogflow.v2beta1.SuggestionResult\022V\n\033e"
+          + "nd_user_suggestion_results\030\007 \003(\01321.googl"
+          + "e.cloud.dialogflow.v2beta1.SuggestionRes"
+          + "ult\022H\n\017dtmf_parameters\030\t \001(\0132/.google.cl"
+          + "oud.dialogflow.v2beta1.DtmfParameters\"(\n"
+          + "\017InputTextConfig\022\025\n\rlanguage_code\030\001 \001(\t\""
+          + "\317\005\n\036StreamingAnalyzeContentRequest\022B\n\013pa"
+          + "rticipant\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.goog"
+          + "leapis.com/Participant\022I\n\014audio_config\030\002"
+          + " \001(\01321.google.cloud.dialogflow.v2beta1.I"
+          + "nputAudioConfigH\000\022G\n\013text_config\030\003 \001(\01320"
+          + ".google.cloud.dialogflow.v2beta1.InputTe"
+          + "xtConfigH\000\022N\n\022reply_audio_config\030\004 \001(\01322"
+          + ".google.cloud.dialogflow.v2beta1.OutputA"
+          + "udioConfig\022\025\n\013input_audio\030\005 \001(\014H\001\022\024\n\ninp"
+          + "ut_text\030\006 \001(\tH\001\022J\n\ninput_dtmf\030\t \001(\01324.go"
+          + "ogle.cloud.dialogflow.v2beta1.TelephonyD"
+          + "tmfEventsH\001\022F\n\014query_params\030\007 \001(\01320.goog"
+          + "le.cloud.dialogflow.v2beta1.QueryParamet"
+          + "ers\022S\n\023assist_query_params\030\010 \001(\01326.googl"
+          + "e.cloud.dialogflow.v2beta1.AssistQueryPa"
+          + "rameters\022.\n\rcx_parameters\030\r \001(\0132\027.google"
+          + ".protobuf.Struct\022,\n$enable_partial_autom"
+          + "ated_agent_reply\030\014 \001(\010B\010\n\006configB\007\n\005inpu"
+          + "t\"\336\004\n\037StreamingAnalyzeContentResponse\022W\n"
+          + "\022recognition_result\030\001 \001(\0132;.google.cloud"
+          + ".dialogflow.v2beta1.StreamingRecognition"
+          + "Result\022\022\n\nreply_text\030\002 \001(\t\022A\n\013reply_audi"
+          + "o\030\003 \001(\0132,.google.cloud.dialogflow.v2beta"
+          + "1.OutputAudio\022S\n\025automated_agent_reply\030\004"
+          + " \001(\01324.google.cloud.dialogflow.v2beta1.A"
+          + "utomatedAgentReply\0229\n\007message\030\006 \001(\0132(.go"
+          + "ogle.cloud.dialogflow.v2beta1.Message\022Y\n"
+          + "\036human_agent_suggestion_results\030\007 \003(\01321."
+          + "google.cloud.dialogflow.v2beta1.Suggesti"
+          + "onResult\022V\n\033end_user_suggestion_results\030"
+          + "\010 \003(\01321.google.cloud.dialogflow.v2beta1."
+          + "SuggestionResult\022H\n\017dtmf_parameters\030\n \001("
+          + "\0132/.google.cloud.dialogflow.v2beta1.Dtmf"
+          + "Parameters\"j\n\024AnnotatedMessagePart\022\014\n\004te"
+          + "xt\030\001 \001(\t\022\023\n\013entity_type\030\002 \001(\t\022/\n\017formatt"
+          + "ed_value\030\003 \001(\0132\026.google.protobuf.Value\"s"
+          + "\n\021MessageAnnotation\022D\n\005parts\030\001 \003(\01325.goo"
+          + "gle.cloud.dialogflow.v2beta1.AnnotatedMe"
+          + "ssagePart\022\030\n\020contain_entities\030\002 \001(\010\"\325\001\n\r"
+          + "ArticleAnswer\022\r\n\005title\030\001 \001(\t\022\013\n\003uri\030\002 \001("
+          + "\t\022\020\n\010snippets\030\003 \003(\t\022N\n\010metadata\030\005 \003(\0132<."
+          + "google.cloud.dialogflow.v2beta1.ArticleA"
+          + "nswer.MetadataEntry\022\025\n\ranswer_record\030\006 \001"
+          + "(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001\"\345\001\n\tFaqAnswer\022\016\n\006answer\030\001 \001("
+          + "\t\022\022\n\nconfidence\030\002 \001(\002\022\020\n\010question\030\003 \001(\t\022"
+          + "\016\n\006source\030\004 \001(\t\022J\n\010metadata\030\005 \003(\01328.goog"
+          + "le.cloud.dialogflow.v2beta1.FaqAnswer.Me"
+          + "tadataEntry\022\025\n\ranswer_record\030\006 \001(\t\032/\n\rMe"
+          + "tadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+          + "\0028\001\"y\n\020SmartReplyAnswer\022\r\n\005reply\030\001 \001(\t\022\022"
+          + "\n\nconfidence\030\002 \001(\002\022B\n\ranswer_record\030\003 \001("
+          + "\tB+\372A(\n&dialogflow.googleapis.com/Answer"
+          + "Record\"\371\002\n\020SuggestionResult\022#\n\005error\030\001 \001"
+          + "(\0132\022.google.rpc.StatusH\000\022]\n\031suggest_arti"
+          + "cles_response\030\002 \001(\01328.google.cloud.dialo"
+          + "gflow.v2beta1.SuggestArticlesResponseH\000\022"
+          + "b\n\034suggest_faq_answers_response\030\003 \001(\0132:."
           + "google.cloud.dialogflow.v2beta1.SuggestF"
-          + "aqAnswersRequest\032:.google.cloud.dialogfl"
-          + "ow.v2beta1.SuggestFaqAnswersResponse\"\332\001\202"
-          + "\323\344\223\002\312\001\"Y/v2beta1/{parent=projects/*/conv"
-          + "ersations/*/participants/*}/suggestions:"
-          + "suggestFaqAnswers:\001*Zj\"e/v2beta1/{parent"
-          + "=projects/*/locations/*/conversations/*/"
-          + "participants/*}/suggestions:suggestFaqAn"
-          + "swers:\001*\332A\006parent\022\361\002\n\023SuggestSmartReplie"
-          + "s\022;.google.cloud.dialogflow.v2beta1.Sugg"
-          + "estSmartRepliesRequest\032<.google.cloud.di"
-          + "alogflow.v2beta1.SuggestSmartRepliesResp"
-          + "onse\"\336\001\202\323\344\223\002\316\001\"[/v2beta1/{parent=project"
-          + "s/*/conversations/*/participants/*}/sugg"
-          + "estions:suggestSmartReplies:\001*Zl\"g/v2bet"
-          + "a1/{parent=projects/*/locations/*/conver"
-          + "sations/*/participants/*}/suggestions:su"
-          + "ggestSmartReplies:\001*\332A\006parent\022\330\001\n\017ListSu"
-          + "ggestions\0227.google.cloud.dialogflow.v2be"
-          + "ta1.ListSuggestionsRequest\0328.google.clou"
-          + "d.dialogflow.v2beta1.ListSuggestionsResp"
-          + "onse\"R\210\002\001\202\323\344\223\002I\022G/v2beta1/{parent=projec"
-          + "ts/*/conversations/*/participants/*}/sug"
-          + "gestions\022\351\001\n\021CompileSuggestion\0229.google."
-          + "cloud.dialogflow.v2beta1.CompileSuggesti"
-          + "onRequest\032:.google.cloud.dialogflow.v2be"
-          + "ta1.CompileSuggestionResponse\"]\210\002\001\202\323\344\223\002T"
-          + "\"O/v2beta1/{parent=projects/*/conversati"
-          + "ons/*/participants/*}/suggestions:compil"
-          + "e:\001*\032x\312A\031dialogflow.googleapis.com\322AYhtt"
-          + "ps://www.googleapis.com/auth/cloud-platf"
-          + "orm,https://www.googleapis.com/auth/dial"
-          + "ogflowB\256\001\n#com.google.cloud.dialogflow.v"
-          + "2beta1B\020ParticipantProtoP\001ZIgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/dialogfl"
-          + "ow/v2beta1;dialogflow\370\001\001\242\002\002DF\252\002\037Google.C"
-          + "loud.Dialogflow.V2beta1b\006proto3"
+          + "aqAnswersResponseH\000\022f\n\036suggest_smart_rep"
+          + "lies_response\030\004 \001(\0132<.google.cloud.dialo"
+          + "gflow.v2beta1.SuggestSmartRepliesRespons"
+          + "eH\000B\025\n\023suggestion_response\"\217\002\n\026SuggestAr"
+          + "ticlesRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%d"
+          + "ialogflow.googleapis.com/Participant\022A\n\016"
+          + "latest_message\030\002 \001(\tB)\340A\001\372A#\n!dialogflow"
+          + ".googleapis.com/Message\022\031\n\014context_size\030"
+          + "\003 \001(\005B\003\340A\001\022X\n\023assist_query_params\030\004 \001(\0132"
+          + "6.google.cloud.dialogflow.v2beta1.Assist"
+          + "QueryParametersB\003\340A\001\"\220\001\n\027SuggestArticles"
+          + "Response\022G\n\017article_answers\030\001 \003(\0132..goog"
+          + "le.cloud.dialogflow.v2beta1.ArticleAnswe"
+          + "r\022\026\n\016latest_message\030\002 \001(\t\022\024\n\014context_siz"
+          + "e\030\003 \001(\005\"\221\002\n\030SuggestFaqAnswersRequest\022=\n\006"
+          + "parent\030\001 \001(\tB-\340A\002\372A\'\n%dialogflow.googlea"
+          + "pis.com/Participant\022A\n\016latest_message\030\002 "
+          + "\001(\tB)\340A\001\372A#\n!dialogflow.googleapis.com/M"
+          + "essage\022\031\n\014context_size\030\003 \001(\005B\003\340A\001\022X\n\023ass"
+          + "ist_query_params\030\004 \001(\01326.google.cloud.di"
+          + "alogflow.v2beta1.AssistQueryParametersB\003"
+          + "\340A\001\"\212\001\n\031SuggestFaqAnswersResponse\022?\n\013faq"
+          + "_answers\030\001 \003(\0132*.google.cloud.dialogflow"
+          + ".v2beta1.FaqAnswer\022\026\n\016latest_message\030\002 \001"
+          + "(\t\022\024\n\014context_size\030\003 \001(\005\"\371\001\n\032SuggestSmar"
+          + "tRepliesRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%dialogflow.googleapis.com/Participant\022F"
+          + "\n\022current_text_input\030\004 \001(\0132*.google.clou"
+          + "d.dialogflow.v2beta1.TextInput\022>\n\016latest"
+          + "_message\030\002 \001(\tB&\372A#\n!dialogflow.googleap"
+          + "is.com/Message\022\024\n\014context_size\030\003 \001(\005\"\303\001\n"
+          + "\033SuggestSmartRepliesResponse\022N\n\023smart_re"
+          + "ply_answers\030\001 \003(\01321.google.cloud.dialogf"
+          + "low.v2beta1.SmartReplyAnswer\022>\n\016latest_m"
+          + "essage\030\002 \001(\tB&\372A#\n!dialogflow.googleapis"
+          + ".com/Message\022\024\n\014context_size\030\003 \001(\005\"\304\005\n\nS"
+          + "uggestion\022\014\n\004name\030\001 \001(\t\022E\n\010articles\030\002 \003("
+          + "\01323.google.cloud.dialogflow.v2beta1.Sugg"
+          + "estion.Article\022J\n\013faq_answers\030\004 \003(\01325.go"
+          + "ogle.cloud.dialogflow.v2beta1.Suggestion"
+          + ".FaqAnswer\022/\n\013create_time\030\005 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022\026\n\016latest_message\030\007 "
+          + "\001(\t\032\324\001\n\007Article\022\r\n\005title\030\001 \001(\t\022\013\n\003uri\030\002 "
+          + "\001(\t\022\020\n\010snippets\030\003 \003(\t\022S\n\010metadata\030\005 \003(\0132"
+          + "A.google.cloud.dialogflow.v2beta1.Sugges"
+          + "tion.Article.MetadataEntry\022\025\n\ranswer_rec"
+          + "ord\030\006 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\032\360\001\n\tFaqAnswer\022\016\n\006answ"
+          + "er\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022\020\n\010question"
+          + "\030\003 \001(\t\022\016\n\006source\030\004 \001(\t\022U\n\010metadata\030\005 \003(\013"
+          + "2C.google.cloud.dialogflow.v2beta1.Sugge"
+          + "stion.FaqAnswer.MetadataEntry\022\025\n\ranswer_"
+          + "record\030\006 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\002\030\001\"c\n\026ListSuggest"
+          + "ionsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001"
+          + "(\t:\002\030\001\"x\n\027ListSuggestionsResponse\022@\n\013sug"
+          + "gestions\030\001 \003(\0132+.google.cloud.dialogflow"
+          + ".v2beta1.Suggestion\022\027\n\017next_page_token\030\002"
+          + " \001(\t:\002\030\001\"\\\n\030CompileSuggestionRequest\022\016\n\006"
+          + "parent\030\001 \001(\t\022\026\n\016latest_message\030\002 \001(\t\022\024\n\014"
+          + "context_size\030\003 \001(\005:\002\030\001\"\216\001\n\031CompileSugges"
+          + "tionResponse\022?\n\nsuggestion\030\001 \001(\0132+.googl"
+          + "e.cloud.dialogflow.v2beta1.Suggestion\022\026\n"
+          + "\016latest_message\030\002 \001(\t\022\024\n\014context_size\030\003 "
+          + "\001(\005:\002\030\001\"\203\007\n\017ResponseMessage\022E\n\004text\030\001 \001("
+          + "\01325.google.cloud.dialogflow.v2beta1.Resp"
+          + "onseMessage.TextH\000\022*\n\007payload\030\002 \001(\0132\027.go"
+          + "ogle.protobuf.StructH\000\022_\n\022live_agent_han"
+          + "doff\030\003 \001(\0132A.google.cloud.dialogflow.v2b"
+          + "eta1.ResponseMessage.LiveAgentHandoffH\000\022"
+          + "Z\n\017end_interaction\030\004 \001(\0132?.google.cloud."
+          + "dialogflow.v2beta1.ResponseMessage.EndIn"
+          + "teractionH\000\022R\n\013mixed_audio\030\005 \001(\0132;.googl"
+          + "e.cloud.dialogflow.v2beta1.ResponseMessa"
+          + "ge.MixedAudioH\000\022i\n\027telephony_transfer_ca"
+          + "ll\030\006 \001(\0132F.google.cloud.dialogflow.v2bet"
+          + "a1.ResponseMessage.TelephonyTransferCall"
+          + "H\000\032\024\n\004Text\022\014\n\004text\030\001 \003(\t\032=\n\020LiveAgentHan"
+          + "doff\022)\n\010metadata\030\001 \001(\0132\027.google.protobuf"
+          + ".Struct\032\020\n\016EndInteraction\032\276\001\n\nMixedAudio"
+          + "\022U\n\010segments\030\001 \003(\0132C.google.cloud.dialog"
+          + "flow.v2beta1.ResponseMessage.MixedAudio."
+          + "Segment\032Y\n\007Segment\022\017\n\005audio\030\001 \001(\014H\000\022\r\n\003u"
+          + "ri\030\002 \001(\tH\000\022#\n\033allow_playback_interruptio"
+          + "n\030\003 \001(\010B\t\n\007content\032N\n\025TelephonyTransferC"
+          + "all\022\026\n\014phone_number\030\001 \001(\tH\000\022\021\n\007sip_uri\030\002"
+          + " \001(\tH\000B\n\n\010endpointB\t\n\007message2\355\032\n\014Partic"
+          + "ipants\022\271\002\n\021CreateParticipant\0229.google.cl"
+          + "oud.dialogflow.v2beta1.CreateParticipant"
+          + "Request\032,.google.cloud.dialogflow.v2beta"
+          + "1.Participant\"\272\001\202\323\344\223\002\236\001\"9/v2beta1/{paren"
+          + "t=projects/*/conversations/*}/participan"
+          + "ts:\013participantZT\"E/v2beta1/{parent=proj"
+          + "ects/*/locations/*/conversations/*}/part"
+          + "icipants:\013participant\332A\022parent,participa"
+          + "nt\022\213\002\n\016GetParticipant\0226.google.cloud.dia"
+          + "logflow.v2beta1.GetParticipantRequest\032,."
+          + "google.cloud.dialogflow.v2beta1.Particip"
+          + "ant\"\222\001\202\323\344\223\002\204\001\0229/v2beta1/{name=projects/*"
+          + "/conversations/*/participants/*}ZG\022E/v2b"
+          + "eta1/{name=projects/*/locations/*/conver"
+          + "sations/*/participants/*}\332A\004name\022\236\002\n\020Lis"
+          + "tParticipants\0228.google.cloud.dialogflow."
+          + "v2beta1.ListParticipantsRequest\0329.google"
+          + ".cloud.dialogflow.v2beta1.ListParticipan"
+          + "tsResponse\"\224\001\202\323\344\223\002\204\001\0229/v2beta1/{parent=p"
+          + "rojects/*/conversations/*}/participantsZ"
+          + "G\022E/v2beta1/{parent=projects/*/locations"
+          + "/*/conversations/*}/participants\332A\006paren"
+          + "t\022\326\002\n\021UpdateParticipant\0229.google.cloud.d"
+          + "ialogflow.v2beta1.UpdateParticipantReque"
+          + "st\032,.google.cloud.dialogflow.v2beta1.Par"
+          + "ticipant\"\327\001\202\323\344\223\002\266\0012E/v2beta1/{participan"
+          + "t.name=projects/*/conversations/*/partic"
+          + "ipants/*}:\013participantZ`2Q/v2beta1/{part"
+          + "icipant.name=projects/*/locations/*/conv"
+          + "ersations/*/participants/*}:\013participant"
+          + "\332A\027participant,update_mask\022\364\002\n\016AnalyzeCo"
+          + "ntent\0226.google.cloud.dialogflow.v2beta1."
+          + "AnalyzeContentRequest\0327.google.cloud.dia"
+          + "logflow.v2beta1.AnalyzeContentResponse\"\360"
+          + "\001\202\323\344\223\002\266\001\"O/v2beta1/{participant=projects"
+          + "/*/conversations/*/participants/*}:analy"
+          + "zeContent:\001*Z`\"[/v2beta1/{participant=pr"
+          + "ojects/*/locations/*/conversations/*/par"
+          + "ticipants/*}:analyzeContent:\001*\332A\026partici"
+          + "pant,text_input\332A\027participant,event_inpu"
+          + "t\022\242\001\n\027StreamingAnalyzeContent\022?.google.c"
+          + "loud.dialogflow.v2beta1.StreamingAnalyze"
+          + "ContentRequest\032@.google.cloud.dialogflow"
+          + ".v2beta1.StreamingAnalyzeContentResponse"
+          + "\"\000(\0010\001\022\335\002\n\017SuggestArticles\0227.google.clou"
+          + "d.dialogflow.v2beta1.SuggestArticlesRequ"
+          + "est\0328.google.cloud.dialogflow.v2beta1.Su"
+          + "ggestArticlesResponse\"\326\001\202\323\344\223\002\306\001\"W/v2beta"
+          + "1/{parent=projects/*/conversations/*/par"
+          + "ticipants/*}/suggestions:suggestArticles"
+          + ":\001*Zh\"c/v2beta1/{parent=projects/*/locat"
+          + "ions/*/conversations/*/participants/*}/s"
+          + "uggestions:suggestArticles:\001*\332A\006parent\022\347"
+          + "\002\n\021SuggestFaqAnswers\0229.google.cloud.dial"
+          + "ogflow.v2beta1.SuggestFaqAnswersRequest\032"
+          + ":.google.cloud.dialogflow.v2beta1.Sugges"
+          + "tFaqAnswersResponse\"\332\001\202\323\344\223\002\312\001\"Y/v2beta1/"
+          + "{parent=projects/*/conversations/*/parti"
+          + "cipants/*}/suggestions:suggestFaqAnswers"
+          + ":\001*Zj\"e/v2beta1/{parent=projects/*/locat"
+          + "ions/*/conversations/*/participants/*}/s"
+          + "uggestions:suggestFaqAnswers:\001*\332A\006parent"
+          + "\022\361\002\n\023SuggestSmartReplies\022;.google.cloud."
+          + "dialogflow.v2beta1.SuggestSmartRepliesRe"
+          + "quest\032<.google.cloud.dialogflow.v2beta1."
+          + "SuggestSmartRepliesResponse\"\336\001\202\323\344\223\002\316\001\"[/"
+          + "v2beta1/{parent=projects/*/conversations"
+          + "/*/participants/*}/suggestions:suggestSm"
+          + "artReplies:\001*Zl\"g/v2beta1/{parent=projec"
+          + "ts/*/locations/*/conversations/*/partici"
+          + "pants/*}/suggestions:suggestSmartReplies"
+          + ":\001*\332A\006parent\022\330\001\n\017ListSuggestions\0227.googl"
+          + "e.cloud.dialogflow.v2beta1.ListSuggestio"
+          + "nsRequest\0328.google.cloud.dialogflow.v2be"
+          + "ta1.ListSuggestionsResponse\"R\210\002\001\202\323\344\223\002I\022G"
+          + "/v2beta1/{parent=projects/*/conversation"
+          + "s/*/participants/*}/suggestions\022\351\001\n\021Comp"
+          + "ileSuggestion\0229.google.cloud.dialogflow."
+          + "v2beta1.CompileSuggestionRequest\032:.googl"
+          + "e.cloud.dialogflow.v2beta1.CompileSugges"
+          + "tionResponse\"]\210\002\001\202\323\344\223\002T\"O/v2beta1/{paren"
+          + "t=projects/*/conversations/*/participant"
+          + "s/*}/suggestions:compile:\001*\032x\312A\031dialogfl"
+          + "ow.googleapis.com\322AYhttps://www.googleap"
+          + "is.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/dialogflowB\256\001\n#com.go"
+          + "ogle.cloud.dialogflow.v2beta1B\020Participa"
+          + "ntProtoP\001ZIgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/dialogflow/v2beta1;dialog"
+          + "flow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V"
+          + "2beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -675,6 +742,7 @@ public final class ParticipantProto {
               "ReplyAudioConfig",
               "QueryParams",
               "AssistQueryParams",
+              "CxParameters",
               "MessageSendTime",
               "RequestId",
               "Input",
@@ -701,8 +769,51 @@ public final class ParticipantProto {
               "EndUserSuggestionResults",
               "DtmfParameters",
             });
-    internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_descriptor =
+    internal_static_google_cloud_dialogflow_v2beta1_InputTextConfig_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_dialogflow_v2beta1_InputTextConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_InputTextConfig_descriptor,
+            new java.lang.String[] {
+              "LanguageCode",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentRequest_descriptor,
+            new java.lang.String[] {
+              "Participant",
+              "AudioConfig",
+              "TextConfig",
+              "ReplyAudioConfig",
+              "InputAudio",
+              "InputText",
+              "InputDtmf",
+              "QueryParams",
+              "AssistQueryParams",
+              "CxParameters",
+              "EnablePartialAutomatedAgentReply",
+              "Config",
+              "Input",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentResponse_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_StreamingAnalyzeContentResponse_descriptor,
+            new java.lang.String[] {
+              "RecognitionResult",
+              "ReplyText",
+              "ReplyAudio",
+              "AutomatedAgentReply",
+              "Message",
+              "HumanAgentSuggestionResults",
+              "EndUserSuggestionResults",
+              "DtmfParameters",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_descriptor =
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_descriptor,
@@ -710,7 +821,7 @@ public final class ParticipantProto {
               "Text", "EntityType", "FormattedValue",
             });
     internal_static_google_cloud_dialogflow_v2beta1_MessageAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_dialogflow_v2beta1_MessageAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_MessageAnnotation_descriptor,
@@ -718,7 +829,7 @@ public final class ParticipantProto {
               "Parts", "ContainEntities",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ArticleAnswer_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_dialogflow_v2beta1_ArticleAnswer_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ArticleAnswer_descriptor,
@@ -736,7 +847,7 @@ public final class ParticipantProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dialogflow_v2beta1_FaqAnswer_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_dialogflow_v2beta1_FaqAnswer_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_FaqAnswer_descriptor,
@@ -754,7 +865,7 @@ public final class ParticipantProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SmartReplyAnswer_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_dialogflow_v2beta1_SmartReplyAnswer_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SmartReplyAnswer_descriptor,
@@ -762,7 +873,7 @@ public final class ParticipantProto {
               "Reply", "Confidence", "AnswerRecord",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestionResult_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestionResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestionResult_descriptor,
@@ -774,7 +885,7 @@ public final class ParticipantProto {
               "SuggestionResponse",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesRequest_descriptor,
@@ -782,7 +893,7 @@ public final class ParticipantProto {
               "Parent", "LatestMessage", "ContextSize", "AssistQueryParams",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestArticlesResponse_descriptor,
@@ -790,7 +901,7 @@ public final class ParticipantProto {
               "ArticleAnswers", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersRequest_descriptor,
@@ -798,7 +909,7 @@ public final class ParticipantProto {
               "Parent", "LatestMessage", "ContextSize", "AssistQueryParams",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestFaqAnswersResponse_descriptor,
@@ -806,7 +917,7 @@ public final class ParticipantProto {
               "FaqAnswers", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesRequest_descriptor,
@@ -814,7 +925,7 @@ public final class ParticipantProto {
               "Parent", "CurrentTextInput", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SuggestSmartRepliesResponse_descriptor,
@@ -822,7 +933,7 @@ public final class ParticipantProto {
               "SmartReplyAnswers", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_Suggestion_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_dialogflow_v2beta1_Suggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_Suggestion_descriptor,
@@ -870,7 +981,7 @@ public final class ParticipantProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsRequest_descriptor,
@@ -878,7 +989,7 @@ public final class ParticipantProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ListSuggestionsResponse_descriptor,
@@ -886,7 +997,7 @@ public final class ParticipantProto {
               "Suggestions", "NextPageToken",
             });
     internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionRequest_descriptor,
@@ -894,7 +1005,7 @@ public final class ParticipantProto {
               "Parent", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_CompileSuggestionResponse_descriptor,
@@ -902,7 +1013,7 @@ public final class ParticipantProto {
               "Suggestion", "LatestMessage", "ContextSize",
             });
     internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_descriptor,
@@ -911,6 +1022,7 @@ public final class ParticipantProto {
               "Payload",
               "LiveAgentHandoff",
               "EndInteraction",
+              "MixedAudio",
               "TelephonyTransferCall",
               "Message",
             });
@@ -942,10 +1054,30 @@ public final class ParticipantProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_EndInteraction_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_descriptor =
+    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_descriptor =
         internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_descriptor
             .getNestedTypes()
             .get(3);
+    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_descriptor,
+            new java.lang.String[] {
+              "Segments",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_Segment_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_Segment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_MixedAudio_Segment_descriptor,
+            new java.lang.String[] {
+              "Audio", "Uri", "AllowPlaybackInterruption", "Content",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_descriptor
+            .getNestedTypes()
+            .get(4);
     internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_TelephonyTransferCall_descriptor,

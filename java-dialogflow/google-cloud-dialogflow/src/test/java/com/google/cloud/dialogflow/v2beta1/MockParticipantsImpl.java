@@ -164,6 +164,43 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   }
 
   @Override
+  public StreamObserver<StreamingAnalyzeContentRequest> streamingAnalyzeContent(
+      final StreamObserver<StreamingAnalyzeContentResponse> responseObserver) {
+    StreamObserver<StreamingAnalyzeContentRequest> requestObserver =
+        new StreamObserver<StreamingAnalyzeContentRequest>() {
+          @Override
+          public void onNext(StreamingAnalyzeContentRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingAnalyzeContentResponse) {
+              responseObserver.onNext(((StreamingAnalyzeContentResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingAnalyzeContent, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingAnalyzeContentResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
   public void suggestArticles(
       SuggestArticlesRequest request, StreamObserver<SuggestArticlesResponse> responseObserver) {
     Object response = responses.poll();

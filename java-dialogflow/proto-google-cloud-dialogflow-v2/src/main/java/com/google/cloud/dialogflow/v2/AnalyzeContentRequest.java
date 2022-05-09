@@ -166,6 +166,21 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 146:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (cxParameters_ != null) {
+                subBuilder = cxParameters_.toBuilder();
+              }
+              cxParameters_ =
+                  input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cxParameters_);
+                cxParameters_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -565,6 +580,64 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     return getAssistQueryParams();
   }
 
+  public static final int CX_PARAMETERS_FIELD_NUMBER = 18;
+  private com.google.protobuf.Struct cxParameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   *
+   * @return Whether the cxParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasCxParameters() {
+    return cxParameters_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   *
+   * @return The cxParameters.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getCxParameters() {
+    return cxParameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cxParameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getCxParametersOrBuilder() {
+    return getCxParameters();
+  }
+
   public static final int REQUEST_ID_FIELD_NUMBER = 11;
   private volatile java.lang.Object requestId_;
   /**
@@ -653,6 +726,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (assistQueryParams_ != null) {
       output.writeMessage(14, getAssistQueryParams());
     }
+    if (cxParameters_ != null) {
+      output.writeMessage(18, getCxParameters());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -687,6 +763,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (assistQueryParams_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAssistQueryParams());
     }
+    if (cxParameters_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCxParameters());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -715,6 +794,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (hasAssistQueryParams() != other.hasAssistQueryParams()) return false;
     if (hasAssistQueryParams()) {
       if (!getAssistQueryParams().equals(other.getAssistQueryParams())) return false;
+    }
+    if (hasCxParameters() != other.hasCxParameters()) return false;
+    if (hasCxParameters()) {
+      if (!getCxParameters().equals(other.getCxParameters())) return false;
     }
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getInputCase().equals(other.getInputCase())) return false;
@@ -752,6 +835,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (hasAssistQueryParams()) {
       hash = (37 * hash) + ASSIST_QUERY_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getAssistQueryParams().hashCode();
+    }
+    if (hasCxParameters()) {
+      hash = (37 * hash) + CX_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getCxParameters().hashCode();
     }
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
@@ -932,6 +1019,12 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         assistQueryParams_ = null;
         assistQueryParamsBuilder_ = null;
       }
+      if (cxParametersBuilder_ == null) {
+        cxParameters_ = null;
+      } else {
+        cxParameters_ = null;
+        cxParametersBuilder_ = null;
+      }
       requestId_ = "";
 
       inputCase_ = 0;
@@ -992,6 +1085,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         result.assistQueryParams_ = assistQueryParams_;
       } else {
         result.assistQueryParams_ = assistQueryParamsBuilder_.build();
+      }
+      if (cxParametersBuilder_ == null) {
+        result.cxParameters_ = cxParameters_;
+      } else {
+        result.cxParameters_ = cxParametersBuilder_.build();
       }
       result.requestId_ = requestId_;
       result.inputCase_ = inputCase_;
@@ -1057,6 +1155,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasAssistQueryParams()) {
         mergeAssistQueryParams(other.getAssistQueryParams());
+      }
+      if (other.hasCxParameters()) {
+        mergeCxParameters(other.getCxParameters());
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
@@ -2264,6 +2365,225 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         assistQueryParams_ = null;
       }
       return assistQueryParamsBuilder_;
+    }
+
+    private com.google.protobuf.Struct cxParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        cxParametersBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     *
+     * @return Whether the cxParameters field is set.
+     */
+    public boolean hasCxParameters() {
+      return cxParametersBuilder_ != null || cxParameters_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     *
+     * @return The cxParameters.
+     */
+    public com.google.protobuf.Struct getCxParameters() {
+      if (cxParametersBuilder_ == null) {
+        return cxParameters_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cxParameters_;
+      } else {
+        return cxParametersBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public Builder setCxParameters(com.google.protobuf.Struct value) {
+      if (cxParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cxParameters_ = value;
+        onChanged();
+      } else {
+        cxParametersBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public Builder setCxParameters(com.google.protobuf.Struct.Builder builderForValue) {
+      if (cxParametersBuilder_ == null) {
+        cxParameters_ = builderForValue.build();
+        onChanged();
+      } else {
+        cxParametersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public Builder mergeCxParameters(com.google.protobuf.Struct value) {
+      if (cxParametersBuilder_ == null) {
+        if (cxParameters_ != null) {
+          cxParameters_ =
+              com.google.protobuf.Struct.newBuilder(cxParameters_).mergeFrom(value).buildPartial();
+        } else {
+          cxParameters_ = value;
+        }
+        onChanged();
+      } else {
+        cxParametersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public Builder clearCxParameters() {
+      if (cxParametersBuilder_ == null) {
+        cxParameters_ = null;
+        onChanged();
+      } else {
+        cxParameters_ = null;
+        cxParametersBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
+
+      onChanged();
+      return getCxParametersFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getCxParametersOrBuilder() {
+      if (cxParametersBuilder_ != null) {
+        return cxParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return cxParameters_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cxParameters_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional parameters to be put into Dialogflow CX session parameters. To
+     * remove a parameter from the session, clients should explicitly set the
+     * parameter value to null.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getCxParametersFieldBuilder() {
+      if (cxParametersBuilder_ == null) {
+        cxParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getCxParameters(), getParentForChildren(), isClean());
+        cxParameters_ = null;
+      }
+      return cxParametersBuilder_;
     }
 
     private java.lang.Object requestId_ = "";

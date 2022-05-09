@@ -801,6 +801,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
+   *           .setCxParameters(Struct.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   AnalyzeContentResponse response = participantsClient.analyzeContent(request);
@@ -837,6 +838,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
+   *           .setCxParameters(Struct.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<AnalyzeContentResponse> future =

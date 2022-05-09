@@ -247,6 +247,53 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   *
+   * @return Whether the cxParameters field is set.
+   */
+  boolean hasCxParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   *
+   * @return The cxParameters.
+   */
+  com.google.protobuf.Struct getCxParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Additional parameters to be put into Dialogflow CX session parameters. To
+   * remove a parameter from the session, clients should explicitly set the
+   * parameter value to null.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct cx_parameters = 18;</code>
+   */
+  com.google.protobuf.StructOrBuilder getCxParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A unique identifier for this request. Restricted to 36 ASCII characters.
    * A random UUID is recommended.
    * This request is only idempotent if a `request_id` is provided.

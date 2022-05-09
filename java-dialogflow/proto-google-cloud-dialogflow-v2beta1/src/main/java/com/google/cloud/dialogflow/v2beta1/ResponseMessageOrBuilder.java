@@ -178,6 +178,44 @@ public interface ResponseMessageOrBuilder
    *
    *
    * <pre>
+   * An audio response message composed of both the synthesized Dialogflow
+   * agent responses and the audios hosted in places known to the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio mixed_audio = 5;</code>
+   *
+   * @return Whether the mixedAudio field is set.
+   */
+  boolean hasMixedAudio();
+  /**
+   *
+   *
+   * <pre>
+   * An audio response message composed of both the synthesized Dialogflow
+   * agent responses and the audios hosted in places known to the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio mixed_audio = 5;</code>
+   *
+   * @return The mixedAudio.
+   */
+  com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio getMixedAudio();
+  /**
+   *
+   *
+   * <pre>
+   * An audio response message composed of both the synthesized Dialogflow
+   * agent responses and the audios hosted in places known to the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio mixed_audio = 5;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudioOrBuilder getMixedAudioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A signal that the client should transfer the phone call connected to
    * this agent to a third-party endpoint.
    * </pre>

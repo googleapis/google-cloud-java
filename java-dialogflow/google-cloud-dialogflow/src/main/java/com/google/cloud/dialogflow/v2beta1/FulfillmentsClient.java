@@ -161,9 +161,9 @@ public class FulfillmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the fulfillment. Supported formats: - `projects/&lt;Project
-   *     ID&gt;/agent/fulfillment` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent/fulfillment`
+   * @param name Required. The name of the fulfillment. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/fulfillment` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Fulfillment getFulfillment(FulfillmentName name) {
@@ -187,9 +187,9 @@ public class FulfillmentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the fulfillment. Supported formats: - `projects/&lt;Project
-   *     ID&gt;/agent/fulfillment` - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agent/fulfillment`
+   * @param name Required. The name of the fulfillment. Supported formats:
+   *     <p>- `projects/&lt;Project ID&gt;/agent/fulfillment` - `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Fulfillment getFulfillment(String name) {

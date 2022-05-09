@@ -131,12 +131,14 @@ public final class AudioConfigProto {
           + "\005\022\014\n\010DTMF_SIX\020\006\022\016\n\nDTMF_SEVEN\020\007\022\016\n\nDTMF_"
           + "EIGHT\020\010\022\r\n\tDTMF_NINE\020\t\022\r\n\tDTMF_ZERO\020\n\022\n\n"
           + "\006DTMF_A\020\013\022\n\n\006DTMF_B\020\014\022\n\n\006DTMF_C\020\r\022\n\n\006DTM"
-          + "F_D\020\016\022\r\n\tDTMF_STAR\020\017\022\016\n\nDTMF_POUND\020\020B\256\001\n"
+          + "F_D\020\016\022\r\n\tDTMF_STAR\020\017\022\016\n\nDTMF_POUND\020\020B\206\002\n"
           + "#com.google.cloud.dialogflow.v2beta1B\020Au"
           + "dioConfigProtoP\001ZIgoogle.golang.org/genp"
           + "roto/googleapis/cloud/dialogflow/v2beta1"
           + ";dialogflow\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialo"
-          + "gflow.V2beta1b\006proto3"
+          + "gflow.V2beta1\352AU\n\033automl.googleapis.com/"
+          + "Model\0226projects/{project}/locations/{loc"
+          + "ation}/models/{model}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -222,6 +224,7 @@ public final class AudioConfigProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
