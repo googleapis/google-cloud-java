@@ -406,7 +406,8 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertThat(actual).contains("37%");
+    String joinedActual = String.join(" ", actual);
+    assertThat(joinedActual).contains("37%");
   }
 
   @Test
