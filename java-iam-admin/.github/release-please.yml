@@ -6,3 +6,7 @@ branches:
     handleGHRelease: true
     releaseType: java-backport
     branch: 1.0.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    branch: 1.1.x
