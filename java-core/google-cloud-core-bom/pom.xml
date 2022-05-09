@@ -78,7 +78,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>native-image-support</artifactId>
-        <version>0.13.2-SNAPSHOT</version><!-- {x-version-update:native-image-support:current} -->
+        <version>0.14.0</version><!-- {x-version-update:native-image-support:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
