@@ -55,6 +55,7 @@
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
     <google-api-services-bigquery.version>v2-rev20220429-1.32.1</google-api-services-bigquery.version>
     <google.cloud.shared-dependencies.version>2.10.0</google.cloud.shared-dependencies.version>
+    <arrow.version>8.0.0</arrow.version>
   </properties>
 
   <dependencyManagement>
@@ -78,17 +79,17 @@
       <dependency>
         <groupId>org.apache.arrow</groupId>
         <artifactId>arrow-vector</artifactId>
-        <version>7.0.0</version>
+        <version>${arrow.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.arrow</groupId>
         <artifactId>arrow-memory-core</artifactId>
-        <version>7.0.0</version>
+        <version>${arrow.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.arrow</groupId>
         <artifactId>arrow-memory-netty</artifactId>
-        <version>7.0.0</version>
+        <version>${arrow.version}</version>
         <scope>runtime</scope>
       </dependency>
 
