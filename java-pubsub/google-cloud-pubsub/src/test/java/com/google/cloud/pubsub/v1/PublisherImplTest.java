@@ -282,6 +282,31 @@ public class PublisherImplTest {
     shutdownTestPublisher(publisher);
   }
 
+  @Test
+  public void testPublishWithCompression() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(2L)
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .build())
+            .setEnableCompression(true)
+            .setCompressionBytesThreshold(100)
+            .build();
+
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+    assertEquals("1", publishFuture1.get());
+    assertEquals("2", publishFuture2.get());
+
+    fakeExecutor.advanceTime(Duration.ofSeconds(100));
+    shutdownTestPublisher(publisher);
+  }
+
   private ApiFuture<String> sendTestMessage(Publisher publisher, String data) {
     return publisher.publish(
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(data)).build());

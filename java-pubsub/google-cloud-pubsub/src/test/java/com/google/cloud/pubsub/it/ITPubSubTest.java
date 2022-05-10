@@ -40,11 +40,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.Timeout;
 
 public class ITPubSubTest {
@@ -403,6 +399,70 @@ public class ITPubSubTest {
     topicAdminClient.deleteTopic(topicName);
   }
 
+  @Test
+  public void testPublishSubscribeWithCompression() throws Exception {
+    TopicName topicName =
+        TopicName.newBuilder()
+            .setProject(projectId)
+            .setTopic(formatForTest("testing-compression-topic"))
+            .build();
+    SubscriptionName subscriptionName =
+        SubscriptionName.of(projectId, formatForTest("testing-compression-subscription"));
+
+    topicAdminClient.createTopic(topicName);
+
+    subscriptionAdminClient.createSubscription(
+        getSubscription(subscriptionName, topicName, PushConfig.newBuilder().build(), 10, false));
+
+    final BlockingQueue<Object> receiveQueue = new LinkedBlockingQueue<>();
+    Subscriber subscriber =
+        Subscriber.newBuilder(
+                subscriptionName.toString(),
+                new MessageReceiver() {
+                  @Override
+                  public void receiveMessage(
+                      final PubsubMessage message, final AckReplyConsumer consumer) {
+                    receiveQueue.offer(MessageAndConsumer.create(message, consumer));
+                  }
+                })
+            .build();
+    subscriber.addListener(
+        new Subscriber.Listener() {
+          public void failed(Subscriber.State from, Throwable failure) {
+            receiveQueue.offer(failure);
+          }
+        },
+        MoreExecutors.directExecutor());
+    subscriber.startAsync();
+
+    Publisher publisher = Publisher.newBuilder(topicName).setEnableCompression(true).build();
+
+    String msg1 = generateMessage("msg1", 1000);
+    String msg2 = generateMessage("msg2", 1500);
+    publisher
+        .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(msg1)).build())
+        .get();
+    publisher
+        .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(msg2)).build())
+        .get();
+    publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
+
+    // Ack the first message.
+    MessageAndConsumer toAck1 = pollQueueMessageAndConsumer(receiveQueue);
+    toAck1.consumer().ack();
+
+    // Ack the second message.
+    MessageAndConsumer toAck2 = pollQueueMessageAndConsumer(receiveQueue);
+    toAck2.consumer().ack();
+
+    assertNotEquals(toAck1.message().getData(), toAck2.message().getData());
+
+    subscriber.stopAsync().awaitTerminated();
+    subscriptionAdminClient.deleteSubscription(subscriptionName);
+    topicAdminClient.deleteTopic(topicName);
+  }
+
   private MessageAndConsumer pollQueueMessageAndConsumer(BlockingQueue<Object> queue)
       throws InterruptedException {
     Object obj = pollQueue(queue);
@@ -433,5 +493,15 @@ public class ITPubSubTest {
     }
 
     return obj;
+  }
+
+  /** Generates message of given bytes by repeatedly concatenating a token. */
+  private String generateMessage(String token, int bytes) {
+    String result = "";
+    int tokenBytes = token.length();
+    for (int i = 0; i < Math.floor(bytes / tokenBytes) + 1; i++) {
+      result = result.concat(token);
+    }
+    return result;
   }
 }

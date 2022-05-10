@@ -35,6 +35,7 @@ import com.google.api.gax.core.ExecutorAsBackgroundResource;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
@@ -50,6 +51,7 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
+import io.grpc.CallOptions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -89,6 +91,8 @@ import org.threeten.bp.Duration;
 public class Publisher implements PublisherInterface {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
+  private static final String GZIP_COMPRESSION = "gzip";
+
   private final String topicName;
 
   private final BatchingSettings batchingSettings;
@@ -113,6 +117,12 @@ public class Publisher implements PublisherInterface {
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
 
   private MessageFlowController flowController = null;
+
+  private final boolean enableCompression;
+  private final long compressionBytesThreshold;
+
+  private final GrpcCallContext publishContext;
+  private final GrpcCallContext publishContextWithCompression;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -140,6 +150,8 @@ public class Publisher implements PublisherInterface {
 
     this.enableMessageOrdering = builder.enableMessageOrdering;
     this.messageTransform = builder.messageTransform;
+    this.enableCompression = builder.enableCompression;
+    this.compressionBytesThreshold = builder.compressionBytesThreshold;
 
     messagesBatches = new HashMap<>();
     messagesBatchLock = new ReentrantLock();
@@ -191,6 +203,10 @@ public class Publisher implements PublisherInterface {
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new Waiter();
+    this.publishContext = GrpcCallContext.createDefault();
+    this.publishContextWithCompression =
+        GrpcCallContext.createDefault()
+            .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
   }
 
   /** Topic which the publisher publishes to. */
@@ -431,13 +447,18 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
+    GrpcCallContext context = publishContext;
+    if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
+      context = publishContextWithCompression;
+    }
     return publisherStub
         .publishCallable()
         .futureCall(
             PublishRequest.newBuilder()
                 .setTopic(topicName)
                 .addAllMessages(outstandingBatch.getMessages())
-                .build());
+                .build(),
+            context);
   }
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
@@ -688,6 +709,8 @@ public class Publisher implements PublisherInterface {
         InstantiatingExecutorProvider.newBuilder()
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
+    static final boolean DEFAULT_ENABLE_COMPRESSION = false;
+    static final long DEFAULT_COMPRESSION_BYTES_THRESHOLD = 240L;
 
     String topicName;
     private String endpoint = PublisherStubSettings.getDefaultEndpoint();
@@ -716,6 +739,9 @@ public class Publisher implements PublisherInterface {
             return input;
           }
         };
+
+    private boolean enableCompression = DEFAULT_ENABLE_COMPRESSION;
+    private long compressionBytesThreshold = DEFAULT_COMPRESSION_BYTES_THRESHOLD;
 
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -824,6 +850,21 @@ public class Publisher implements PublisherInterface {
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = endpoint;
+      return this;
+    }
+
+    /** Gives the ability to enable transport compression. */
+    public Builder setEnableCompression(boolean enableCompression) {
+      this.enableCompression = enableCompression;
+      return this;
+    }
+
+    /**
+     * Sets the threshold (in bytes) above which messages are compressed for transport. Only takes
+     * effect if setEnableCompression(true) is also called."
+     */
+    public Builder setCompressionBytesThreshold(long compressionBytesThreshold) {
+      this.compressionBytesThreshold = compressionBytesThreshold;
       return this;
     }
 
