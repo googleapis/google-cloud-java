@@ -61,7 +61,7 @@
     <threeten.version>1.6.0</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
     <animal-sniffer.version>1.21</animal-sniffer.version>
-    <opencensus.version>0.31.0</opencensus.version>
+    <opencensus.version>0.31.1</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.13.1</errorprone.version>
     <jackson.version>2.13.2.20220328</jackson.version>
