@@ -60,33 +60,13 @@ public class ConnImplBenchmark {
   @Setup
   public void setUp() throws IOException {
     java.util.logging.Logger.getGlobal().setLevel(Level.ALL);
-    ReadClientConnectionConfiguration clientConnectionConfiguration;
-
-    clientConnectionConfiguration =
-        ReadClientConnectionConfiguration.newBuilder()
-            .setTotalToPageRowCountRatio(NUM_PAGE_ROW_CNT_RATIO)
-            .setMinResultSize(NUM_MIN_RESULT_SIZE)
-            .setBufferSize(numBuffRows)
-            .build();
 
     connectionSettingsReadAPIEnabled =
         ConnectionSettings.newBuilder()
-            .setDefaultDataset(DatasetId.of(DATASET))
-            .setNumBufferedRows(numBuffRows) // page size
-            .setPriority(
-                QueryJobConfiguration.Priority
-                    .INTERACTIVE) // DEFAULT VALUE - so that isFastQuerySupported returns false
-            .setReadClientConnectionConfiguration(clientConnectionConfiguration)
             .setUseReadAPI(true) // enable read api
             .build();
     connectionSettingsReadAPIDisabled =
         ConnectionSettings.newBuilder()
-            .setDefaultDataset(DatasetId.of(DATASET))
-            .setNumBufferedRows(numBuffRows) // page size
-            .setPriority(
-                QueryJobConfiguration.Priority
-                    .INTERACTIVE) // so that isFastQuerySupported returns false
-            .setReadClientConnectionConfiguration(clientConnectionConfiguration)
             .setUseReadAPI(false) // disable read api
             .build();
   }
@@ -101,7 +81,7 @@ public class ConnImplBenchmark {
     String selectQuery = String.format(QUERY, rowLimit);
     long hash = 0L;
     try {
-      BigQueryResultSet bigQueryResultSet = connectionReadAPIEnabled.executeSelect(selectQuery);
+      BigQueryResult bigQueryResultSet = connectionReadAPIEnabled.executeSelect(selectQuery);
       hash = getResultHash(bigQueryResultSet);
     } catch (Exception e) {
       e.printStackTrace();
@@ -121,7 +101,7 @@ public class ConnImplBenchmark {
     String selectQuery = String.format(QUERY, rowLimit);
     long hash = 0L;
     try {
-      BigQueryResultSet bigQueryResultSet = connectionReadAPIDisabled.executeSelect(selectQuery);
+      BigQueryResult bigQueryResultSet = connectionReadAPIDisabled.executeSelect(selectQuery);
       hash = getResultHash(bigQueryResultSet);
     } catch (Exception e) {
       e.printStackTrace();
@@ -132,7 +112,7 @@ public class ConnImplBenchmark {
   }
 
   // Hashes all the 20 columns of all the rows
-  private long getResultHash(BigQueryResultSet bigQueryResultSet) throws SQLException {
+  private long getResultHash(BigQueryResult bigQueryResultSet) throws SQLException {
     ResultSet rs = bigQueryResultSet.getResultSet();
     long hash = 0L;
     int cnt = 0;
