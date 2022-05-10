@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-iam-v1:1.3.3:1.3.4-SNAPSHOT
-grpc-google-iam-v1:1.3.3:1.3.4-SNAPSHOT
+proto-google-iam-v1:1.3.4:1.3.4
+grpc-google-iam-v1:1.3.4:1.3.4
