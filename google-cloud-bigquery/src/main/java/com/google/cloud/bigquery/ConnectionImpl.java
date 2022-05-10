@@ -20,6 +20,7 @@ import static com.google.cloud.RetryHelper.runWithRetries;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -496,6 +497,38 @@ class ConnectionImpl implements Connection {
     queryTaskExecutor.execute(parseDataTask);
   }
 
+  /**
+   * This method is called when the current thread is interrupted, this communicates to ResultSet by
+   * adding a EoS
+   *
+   * @param buffer
+   */
+  @InternalApi
+  void markEoS(BlockingQueue<AbstractList<FieldValue>> buffer) { // package-private
+    try {
+      buffer.put(new EndOfFieldValueList()); // All the pages has been processed, put this marker
+    } catch (InterruptedException e) {
+      logger.log(Level.WARNING, "\n" + Thread.currentThread().getName() + " Interrupted", e);
+    }
+  }
+
+  /**
+   * This method is called when the current thread is interrupted, this communicates to ResultSet by
+   * adding a isLast Row
+   *
+   * @param buffer
+   */
+  @InternalApi
+  void markLast(BlockingQueue<BigQueryResultImpl.Row> buffer) { // package-private
+    try {
+      buffer.put(
+          new BigQueryResultImpl.Row(
+              null, true)); // All the pages has been processed, put this marker
+    } catch (InterruptedException e) {
+      logger.log(Level.WARNING, "\n" + Thread.currentThread().getName() + " Interrupted", e);
+    }
+  }
+
   @VisibleForTesting
   void populateBufferAsync(
       BlockingQueue<Tuple<TableDataList, Boolean>> rpcResponseQueue,
@@ -516,11 +549,15 @@ class ConnectionImpl implements Connection {
                   "\n" + Thread.currentThread().getName() + " Interrupted",
                   e); // Thread might get interrupted while calling the Cancel method, which is
               // expected, so logging this instead of throwing the exception back
+              markEoS(
+                  buffer); // Thread has been interrupted, communicate to ResultSet by adding EoS
             }
 
             if (Thread.currentThread().isInterrupted()
                 || fieldValueLists
                     == null) { // do not process further pages and shutdown (outerloop)
+              markEoS(
+                  buffer); // Thread has been interrupted, communicate to ResultSet by adding EoS
               break;
             }
 
@@ -528,6 +565,9 @@ class ConnectionImpl implements Connection {
               try {
                 if (Thread.currentThread()
                     .isInterrupted()) { // do not process further pages and shutdown (inner loop)
+                  markEoS(
+                      buffer); // Thread has been interrupted, communicate to ResultSet by adding
+                  // EoS
                   break;
                 }
                 buffer.put(fieldValueList);
@@ -537,19 +577,15 @@ class ConnectionImpl implements Connection {
             }
           }
 
-          if (Thread.currentThread()
-              .isInterrupted()) { // clear the buffer for any outstanding records
-            buffer.clear();
-            rpcResponseQueue
-                .clear(); // IMP - so that if it's full then it unblocks and the interrupt logic
-            // could trigger
-          }
-
           try {
-            buffer.put(
-                new EndOfFieldValueList()); // All the pages has been processed, put this marker
-          } catch (InterruptedException e) {
-            throw new BigQueryException(0, e.getMessage(), e);
+            if (Thread.currentThread()
+                .isInterrupted()) { // clear the buffer for any outstanding records
+              rpcResponseQueue
+                  .clear(); // IMP - so that if it's full then it unblocks and the interrupt logic
+              // could trigger
+              buffer.clear();
+            }
+            markEoS(buffer); // All the pages has been processed, put this marker
           } finally {
             queryTaskExecutor.shutdownNow(); // Shutdown the thread pool
           }
@@ -790,12 +826,8 @@ class ConnectionImpl implements Connection {
           } catch (Exception e) {
             throw BigQueryException.translateAndThrow(e);
           } finally {
-            try {
-              buffer.put(new BigQueryResultImpl.Row(null, true)); // marking end of stream
-              queryTaskExecutor.shutdownNow(); // Shutdown the thread pool
-            } catch (InterruptedException e) {
-              logger.log(Level.WARNING, "\n Error occurred ", e);
-            }
+            markLast(buffer); // marking end of stream
+            queryTaskExecutor.shutdownNow(); // Shutdown the thread pool
           }
         };
 
@@ -856,6 +888,7 @@ class ConnectionImpl implements Connection {
 
           if (Thread.currentThread().isInterrupted()
               || queryTaskExecutor.isShutdown()) { // do not process and shutdown
+            markLast(buffer); // puts an isLast Row in the buffer for ResultSet to process
             break; // exit the loop, root will be cleared in the finally block
           }
 
@@ -869,9 +902,7 @@ class ConnectionImpl implements Connection {
           }
           buffer.put(new BigQueryResultImpl.Row(curRow));
         }
-        root.clear(); // TODO: make sure to clear the root while implementing the thread
-        // interruption logic (Connection.close method)
-
+        root.clear();
       } catch (RuntimeException | InterruptedException e) {
         throw BigQueryException.translateAndThrow(e);
       } finally {

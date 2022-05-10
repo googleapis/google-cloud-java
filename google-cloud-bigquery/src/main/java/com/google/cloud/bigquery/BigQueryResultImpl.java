@@ -106,18 +106,27 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
   }
 
   private class BigQueryResultSet extends AbstractJdbcResultSet {
+    private boolean hasReachedEnd =
+        false; // flag which will be set to true when we have encountered a EndOfStream or when
+    // curTup.isLast(). Ref: https://github.com/googleapis/java-bigquery/issues/2033
+
     @Override
     /*Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation*/
     public boolean next() throws SQLException {
+      if (hasReachedEnd) { // if end of stream is reached then we can simply return false
+        return false;
+      }
       try {
         cursor = buffer.take(); // advance the cursor,Potentially blocking operation
         if (isEndOfStream(cursor)) { // check for end of stream
           cursor = null;
+          hasReachedEnd = true;
           return false;
         } else if (cursor instanceof Row) {
           Row curTup = (Row) cursor;
           if (curTup.isLast()) { // last Tuple
             cursor = null;
+            hasReachedEnd = true;
             return false;
           }
           return true;
