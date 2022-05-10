@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.11.0](https://github.com/googleapis/java-bigquery/compare/v2.10.10...v2.11.0) (2022-05-10)
+
+
+### Features
+
+* add Connection interface ([#1374](https://github.com/googleapis/java-bigquery/issues/1374)) ([3804275](https://github.com/googleapis/java-bigquery/commit/380427511b33938209241f3800bff05914957f2b))
+* next release from main branch is 2.10.9 ([#1996](https://github.com/googleapis/java-bigquery/issues/1996)) ([f716427](https://github.com/googleapis/java-bigquery/commit/f716427490d4b87573669ab4338335c0844e82c0))
+
+
+### Bug Fixes
+
+* add native image configuration for Arrow ([#2018](https://github.com/googleapis/java-bigquery/issues/2018)) ([06cbe69](https://github.com/googleapis/java-bigquery/commit/06cbe69112e3e0d31e4fb90e43dca6e6dc4f1bdf))
+* fix for flaky connection close issue ([#2034](https://github.com/googleapis/java-bigquery/issues/2034)) ([db3daac](https://github.com/googleapis/java-bigquery/commit/db3daacea8a91ab80b7e923f1480874b01cbad0c))
+
+
+### Documentation
+
+* **sample:** remove unused dependency and add setup instructions ([#2010](https://github.com/googleapis/java-bigquery/issues/2010)) ([e2e9113](https://github.com/googleapis/java-bigquery/commit/e2e91133718d41349a94b5d93d66699e84233e64))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220422-1.32.1 ([#2017](https://github.com/googleapis/java-bigquery/issues/2017)) ([b9fa786](https://github.com/googleapis/java-bigquery/commit/b9fa786ad1bca2fb763a146fa3bb431ff6860153))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220429-1.32.1 ([#2020](https://github.com/googleapis/java-bigquery/issues/2020)) ([78789a5](https://github.com/googleapis/java-bigquery/commit/78789a5530679349dbee691bd1907ffaefc617a6))
+
 ### [2.10.10](https://github.com/googleapis/java-bigquery/compare/v2.10.9...v2.10.10) (2022-04-18)
 
 
