@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.117.0](https://github.com/googleapis/java-pubsub/compare/v1.116.4...v1.117.0) (2022-05-10)
+
+
+### Features
+
+* Adding grpc compression support for publisher client ([#1000](https://github.com/googleapis/java-pubsub/issues/1000)) ([4ad1a3f](https://github.com/googleapis/java-pubsub/commit/4ad1a3fc6e334b6b4efe2167dbe6976c5b5625a6))
+* AuditConfig for IAM v1 ([a1c9b74](https://github.com/googleapis/java-pubsub/commit/a1c9b7448494f50736b9eb5864d49d38a7936280))
+
+
+### Bug Fixes
+
+* added exactly once delivery files to owlbot config ([#1106](https://github.com/googleapis/java-pubsub/issues/1106)) ([bb6f105](https://github.com/googleapis/java-pubsub/commit/bb6f105873f94faf564773d821b8d5d01bac94ca))
+* adding BetaApi annotation on AckReplyConsumerWithResponse for Exactly Once Delivery ([#1097](https://github.com/googleapis/java-pubsub/issues/1097)) ([0e89054](https://github.com/googleapis/java-pubsub/commit/0e890546727657ddb5cb23e58d9c57dd65d978f2))
+* removed beta api annotation for ordering keys ([#1094](https://github.com/googleapis/java-pubsub/issues/1094)) ([3f140fb](https://github.com/googleapis/java-pubsub/commit/3f140fbacf3a157b503b081e7c6964a60ae09466))
+
+
+### Dependencies
+
+* error_prone_annotations from the shared deps BOM ([#1102](https://github.com/googleapis/java-pubsub/issues/1102)) ([3bb2bec](https://github.com/googleapis/java-pubsub/commit/3bb2bec6534e97b2ee84ac5271819f3aea568a85))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.1 ([#1100](https://github.com/googleapis/java-pubsub/issues/1100)) ([063b7aa](https://github.com/googleapis/java-pubsub/commit/063b7aa3e10fc4f74278fc36c73af8ac68dce26d))
+
+
+### Documentation
+
+* **sample:** remove unused native-image-support dependency ([#1103](https://github.com/googleapis/java-pubsub/issues/1103)) ([e7d9000](https://github.com/googleapis/java-pubsub/commit/e7d9000cd0c236d5ff222e13ca3bc25911aa9bd9))
+
 ### [1.116.4](https://github.com/googleapis/java-pubsub/compare/v1.116.3...v1.116.4) (2022-04-19)
 
 
