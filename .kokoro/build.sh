@@ -61,13 +61,23 @@ javadoc)
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -ntp \
-      -Penable-integration-tests \
+      -Dtest=ITBigQueryTest\
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
       -fae \
       verify
     RETURN_CODE=$?
+    ;;
+nightly-it)
+    mvn -B ${INTEGRATION_TEST_ARGS} \
+          -ntp \
+          -Dtest=ITNightlyBigQueryTest
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -fae \
+          test
     ;;
 #graalvm)
 #    # Run Unit and Integration Tests with Native Image
