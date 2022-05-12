@@ -270,6 +270,8 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(1, chRef.getId());
     assertEquals(2, pool.getNumberOfChannels());
+    // This was a fallback from non-ready channel 0 to the newly created channel 1.
+    assertFallbacksMetric(fakeRegistry, 1, 0);
 
     // Adding one active stream to channel 1.
     pool.channelRefs.get(1).activeStreamsCountIncr();
@@ -279,6 +281,8 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(1, chRef.getId());
     assertEquals(2, pool.getNumberOfChannels());
+    // This was the second fallback from non-ready channel 0 to the channel 1.
+    assertFallbacksMetric(fakeRegistry, 2, 0);
 
     // Now let's have channel 0 still as not ready but bring channel 1 streams to low watermark.
     for (int i = 0; i < lowWatermark - 1; i++) {
@@ -289,6 +293,8 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(2, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
+    // This was the third fallback from non-ready channel 0 to the newly created channel 2.
+    assertFallbacksMetric(fakeRegistry, 3, 0);
 
     // Now we reached max pool size. Let's bring channel 2 to the low watermark and channel 1 to the
     // low watermark + 1 streams.
@@ -305,6 +311,8 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(2, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
+    // This was the fourth fallback from non-ready channel 0 to the channel 2.
+    assertFallbacksMetric(fakeRegistry, 4, 0);
 
     // Let's bring channel 1 to max streams and mark channel 2 as not ready.
     for (int i = 0; i < MAX_STREAM - lowWatermark; i++) {
@@ -321,13 +329,6 @@ public final class GcpManagedChannelTest {
     assertEquals(0, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
 
-    // So far the fallback logic sometimes provided different channels than a pool with disabled
-    // fallback would provide. But for metrics we consider a fallback only if we have an affinity
-    // key that was mapped to some channel and after that channel went to a non-ready state we
-    // temporarily used another channel as a fallback.
-    // Because of that, metric values for successful and failed fallbacks should be still zero.
-    assertFallbacksMetric(fakeRegistry, 0, 0);
-
     // Let's have an affinity key and bind it to channel 0.
     final String key = "ABC";
     pool.bind(pool.channelRefs.get(0), Collections.singletonList(key));
@@ -337,7 +338,7 @@ public final class GcpManagedChannelTest {
     // The getChannelRef should return the original channel 0 and report a failed fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(0, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 0, 1);
+    assertFallbacksMetric(fakeRegistry, 4, 1);
 
     // Let's return channel 1 to a ready state.
     pool.processChannelStateChange(1, ConnectivityState.READY);
@@ -345,7 +346,7 @@ public final class GcpManagedChannelTest {
     // The getChannelRef should return the channel 1 and report a successful fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(1, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 1, 1);
+    assertFallbacksMetric(fakeRegistry, 5, 1);
 
     // Let's bring channel 1 back to connecting state.
     pool.processChannelStateChange(1, ConnectivityState.CONNECTING);
@@ -354,7 +355,7 @@ public final class GcpManagedChannelTest {
     // The getChannelRef should return the channel 1 and report a failed fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(1, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 1, 2);
+    assertFallbacksMetric(fakeRegistry, 5, 2);
 
     // Finally, we bring both channel 1 and channel 0 to the ready state and we should get the
     // original channel 0 for the key without any fallbacks happening.
@@ -362,7 +363,7 @@ public final class GcpManagedChannelTest {
     pool.processChannelStateChange(0, ConnectivityState.READY);
     chRef = pool.getChannelRef(key);
     assertEquals(0, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 1, 2);
+    assertFallbacksMetric(fakeRegistry, 5, 2);
   }
 
   @Test

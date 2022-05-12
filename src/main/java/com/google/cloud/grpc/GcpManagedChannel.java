@@ -784,7 +784,7 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
     if (key == null || key.isEmpty()) {
-      return pickLeastBusyChannel();
+      return pickLeastBusyChannel(/* forFallback= */ false);
     }
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
     if (mappedChannel == null || !fallbackEnabled) {
@@ -804,12 +804,14 @@ public class GcpManagedChannel extends ManagedChannel {
       return channelRefs.get(channelId);
     }
     // No temp mapping for this key or fallback channel is also broken.
-    ChannelRef channelRef = pickLeastBusyChannel();
+    ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ true);
     if (!fallbackMap.containsKey(channelRef.getId())
         && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
       // Got a ready and not an overloaded channel.
-      fallbacksSucceeded.incrementAndGet();
-      tempMap.put(key, channelRef.getId());
+      if (channelRef.getId() != mappedChannel.getId()) {
+        fallbacksSucceeded.incrementAndGet();
+        tempMap.put(key, channelRef.getId());
+      }
       return channelRef;
     }
     fallbacksFailed.incrementAndGet();
@@ -835,7 +837,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * channel in the READY state and having fewer than maximum allowed number of active streams will
    * be provided if available.
    */
-  private ChannelRef pickLeastBusyChannel() {
+  private ChannelRef pickLeastBusyChannel(boolean forFallback) {
     if (channelRefs.isEmpty()) {
       return createNewChannel();
     }
@@ -869,10 +871,16 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     if (channelRefs.size() < maxSize && readyMinStreams >= maxConcurrentStreamsLowWatermark) {
+      if (!forFallback) {
+        fallbacksSucceeded.incrementAndGet();
+      }
       return createNewChannel();
     }
 
     if (readyCandidate != null) {
+      if (!forFallback && readyCandidate.getId() != channelCandidate.getId()) {
+        fallbacksSucceeded.incrementAndGet();
+      }
       return readyCandidate;
     }
 
