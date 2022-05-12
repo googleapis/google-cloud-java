@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-appengine-admin/compare/v2.1.11...v2.2.0) (2022-05-06)
+
+
+### Features
+
+* add Application.service_account ([#234](https://github.com/googleapis/java-appengine-admin/issues/234)) ([6d6a715](https://github.com/googleapis/java-appengine-admin/commit/6d6a715bfe8fc46ca63aacc6152597413b5e08cc))
+
 ### [2.1.11](https://github.com/googleapis/java-appengine-admin/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
