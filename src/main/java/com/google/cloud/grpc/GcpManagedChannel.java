@@ -24,6 +24,7 @@ import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
 import io.grpc.CallOptions;
@@ -61,6 +62,9 @@ public class GcpManagedChannel extends ManagedChannel {
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
   static final int DEFAULT_MAX_CHANNEL = 10;
   static final int DEFAULT_MAX_STREAM = 100;
+
+  @GuardedBy("this")
+  private Integer bindingIndex = -1;
 
   private final ManagedChannelBuilder<?> delegateChannelBuilder;
   private final GcpManagedChannelOptions options;
@@ -770,6 +774,37 @@ public class GcpManagedChannel extends ManagedChannel {
 
   public int getMaxActiveStreams() {
     return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
+  }
+
+  /**
+   * Returns a {@link ChannelRef} from the pool for a binding call.
+   * If round-robin on bind is enabled, uses {@link #getChannelRefRoundRobin()}
+   * otherwise {@link #getChannelRef(String)}
+   *
+   * @return {@link ChannelRef} channel to use for a call.
+   */
+  protected ChannelRef getChannelRefForBind() {
+    if (options.getChannelPoolOptions() != null && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
+      return getChannelRefRoundRobin();
+    }
+    return getChannelRef(null);
+  }
+
+  /**
+   * Returns a {@link ChannelRef} from the pool in round-robin manner.
+   * Creates a new channel in the pool until the pool reaches its max size.
+   *
+   * @return {@link ChannelRef}
+   */
+  protected synchronized ChannelRef getChannelRefRoundRobin() {
+    if (channelRefs.size() < maxSize) {
+      return createNewChannel();
+    }
+    bindingIndex++;
+    if (bindingIndex >= channelRefs.size()) {
+      bindingIndex = 0;
+    }
+    return channelRefs.get(bindingIndex);
   }
 
   /**

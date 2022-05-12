@@ -110,6 +110,7 @@ public final class SpannerIntegrationTest {
   private static final ManagedChannelBuilder builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
   private GcpManagedChannel gcpChannel;
+  private GcpManagedChannel gcpChannelBRR;
 
   @BeforeClass
   public static void beforeClass() {
@@ -242,10 +243,35 @@ public final class SpannerIntegrationTest {
 
   /** A wrapper of checking the status of each channelRef in the gcpChannel. */
   private void checkChannelRefs(int channels, int streams, int affinities) {
-    assertEquals(channels, gcpChannel.channelRefs.size());
+    checkChannelRefs(gcpChannel, channels, streams, affinities);
+  }
+
+  private void checkChannelRefs(GcpManagedChannel gcpChannel, int channels, int streams, int affinities) {
+    assertEquals("Channel pool size mismatch.", channels, gcpChannel.channelRefs.size());
     for (int i = 0; i < channels; i++) {
-      assertEquals(streams, gcpChannel.channelRefs.get(i).getActiveStreamsCount());
-      assertEquals(affinities, gcpChannel.channelRefs.get(i).getAffinityCount());
+      assertEquals(
+              String.format("Channel %d streams mismatch.", i),
+              streams, gcpChannel.channelRefs.get(i).getActiveStreamsCount()
+      );
+      assertEquals(
+              String.format("Channel %d affinities mismatch.", i),
+              affinities,
+              gcpChannel.channelRefs.get(i).getAffinityCount()
+      );
+    }
+  }
+
+  private void checkChannelRefs(int[] streams, int[] affinities) {
+    for (int i = 0; i < streams.length; i++) {
+      assertEquals(
+              String.format("Channel %d streams mismatch.", i),
+              streams[i], gcpChannel.channelRefs.get(i).getActiveStreamsCount()
+      );
+      assertEquals(
+              String.format("Channel %d affinities mismatch.", i),
+              affinities[i],
+              gcpChannel.channelRefs.get(i).getAffinityCount()
+      );
     }
   }
 
@@ -292,10 +318,12 @@ public final class SpannerIntegrationTest {
 
   /** Helper Functions for FutureStub. */
   private SpannerFutureStub getSpannerFutureStub() {
+    return getSpannerFutureStub(gcpChannel);
+  }
+
+  private SpannerFutureStub getSpannerFutureStub(GcpManagedChannel gcpChannel) {
     GoogleCredentials creds = getCreds();
-    SpannerFutureStub stub =
-        SpannerGrpc.newFutureStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
-    return stub;
+    return SpannerGrpc.newFutureStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
   }
 
   private List<String> createFutureSessions(SpannerFutureStub stub) throws Exception {
@@ -341,7 +369,7 @@ public final class SpannerIntegrationTest {
   @Rule public ExpectedException expectedEx = ExpectedException.none();
 
   @Before
-  public void setupChannel() {
+  public void setupChannels() {
     File configFile =
         new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
     gcpChannel =
@@ -349,11 +377,25 @@ public final class SpannerIntegrationTest {
             GcpManagedChannelBuilder.forDelegateBuilder(builder)
                 .withApiConfigJsonFile(configFile)
                 .build();
+    gcpChannelBRR =
+            (GcpManagedChannel)
+                    GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                            .withApiConfigJsonFile(configFile)
+                            .withOptions(GcpManagedChannelOptions.newBuilder()
+                                    .withChannelPoolOptions(
+                                            GcpManagedChannelOptions.GcpChannelPoolOptions.newBuilder()
+                                                    .setMaxSize(MAX_CHANNEL)
+                                                    .setConcurrentStreamsLowWatermark(MAX_STREAM)
+                                                    .setUseRoundRobinOnBind(true)
+                                                    .build())
+                                    .build())
+                            .build();
   }
 
   @After
-  public void shutdownChannel() {
+  public void shutdownChannels() {
     gcpChannel.shutdownNow();
+    gcpChannelBRR.shutdownNow();
   }
 
   @Test
@@ -401,6 +443,107 @@ public final class SpannerIntegrationTest {
       deleteSession(stub, session);
     }
     checkChannelRefs(MAX_CHANNEL, 0, 0);
+  }
+
+  @Test
+  public void testSessionsCreatedUsingRoundRobin() throws Exception {
+    SpannerFutureStub stub = getSpannerFutureStub(gcpChannelBRR);
+    List<ListenableFuture<Session>> futures = new ArrayList<>();
+    assertEquals(ConnectivityState.IDLE, gcpChannelBRR.getState(false));
+
+    // Should create one session per channel.
+    CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      ListenableFuture<Session> future = stub.createSession(req);
+      futures.add(future);
+    }
+    // If round-robin in use as expected, then each channel should have 1 active stream with the CreateSession request.
+    checkChannelRefs(gcpChannelBRR, MAX_CHANNEL, 1, 0);
+
+    // Collecting futures results.
+    String lastSession = "";
+    for (ListenableFuture<Session> future : futures) {
+      lastSession = future.get().getName();
+    }
+    // Since createSession will bind the key, check the number of keys bound with channels.
+    // Each channel should have 1 affinity key.
+    assertEquals(MAX_CHANNEL, gcpChannelBRR.affinityKeyToChannelRef.size());
+    checkChannelRefs(gcpChannelBRR, MAX_CHANNEL, 0, 1);
+
+    // Create a different request with the lastSession created.
+    ListenableFuture<ResultSet> responseFuture =
+            stub.executeSql(
+                    ExecuteSqlRequest.newBuilder()
+                            .setSession(lastSession)
+                            .setSql("select * FROM Users")
+                            .build());
+    // The ChannelRef which is bound with the lastSession.
+    GcpManagedChannel.ChannelRef currentChannel =
+            gcpChannelBRR.affinityKeyToChannelRef.get(lastSession);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+
+    // Create another 1 session per channel sequentially.
+    // Without the round-robin it won't use the currentChannel as it has more active streams (1) than other channels.
+    // But with round-robin each channel should get one create session request.
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      ListenableFuture<Session> future = stub.createSession(req);
+      future.get();
+    }
+    ResultSet response = responseFuture.get();
+
+    // If round-robin in use, then each channel should now have 2 active stream with the CreateSession request.
+    checkChannelRefs(gcpChannelBRR, MAX_CHANNEL, 0, 2);
+  }
+
+  @Test
+  public void testSessionsCreatedWithoutRoundRobin() throws Exception {
+    SpannerFutureStub stub = getSpannerFutureStub();
+    List<ListenableFuture<Session>> futures = new ArrayList<>();
+    assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
+
+    // Should create one session per channel.
+    CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      ListenableFuture<Session> future = stub.createSession(req);
+      futures.add(future);
+    }
+    // Each channel should have 1 active stream with the CreateSession request because we create them concurrently.
+    checkChannelRefs(gcpChannel, MAX_CHANNEL, 1, 0);
+
+    // Collecting futures results.
+    String lastSession = "";
+    for (ListenableFuture<Session> future : futures) {
+      lastSession = future.get().getName();
+    }
+    // Since createSession will bind the key, check the number of keys bound with channels.
+    // Each channel should have 1 affinity key.
+    assertEquals(MAX_CHANNEL, gcpChannel.affinityKeyToChannelRef.size());
+    checkChannelRefs(MAX_CHANNEL, 0, 1);
+
+    // Create a different request with the lastSession created.
+    ListenableFuture<ResultSet> responseFuture =
+            stub.executeSql(
+                    ExecuteSqlRequest.newBuilder()
+                            .setSession(lastSession)
+                            .setSql("select * FROM Users")
+                            .build());
+    // The ChannelRef which is bound with the lastSession.
+    GcpManagedChannel.ChannelRef currentChannel =
+            gcpChannel.affinityKeyToChannelRef.get(lastSession);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+
+    // Create another 1 session per channel sequentially.
+    // Without the round-robin it won't use the currentChannel as it has more active streams (1) than other channels.
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      ListenableFuture<Session> future = stub.createSession(req);
+      future.get();
+    }
+    ResultSet response = responseFuture.get();
+
+    // Without round-robin the first channel will get all additional 3 sessions.
+    checkChannelRefs(new int[]{0, 0, 0}, new int[]{4, 1, 1});
   }
 
   @Test

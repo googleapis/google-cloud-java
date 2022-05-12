@@ -115,7 +115,12 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             && delegateChannel.getChannelRef(keys.get(0)) != null) {
           key = keys.get(0);
         }
-        delegateChannelRef = delegateChannel.getChannelRef(key);
+
+        if (affinity != null && affinity.getCommand().equals(AffinityConfig.Command.BIND)) {
+          delegateChannelRef = delegateChannel.getChannelRefForBind();
+        } else {
+          delegateChannelRef = delegateChannel.getChannelRef(key);
+        }
         delegateChannelRef.activeStreamsCountIncr();
 
         // Create the client call and do the previous operations.
