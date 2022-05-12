@@ -100,6 +100,8 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -134,9 +136,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
    * The target_id to which this stage points. This field refers exclusively to
    * the last segment of a target name. For example, this field would just be
    * `my-target` (rather than
-   * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-   * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-   * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+   * `projects/project/locations/location/targets/my-target`). The location of
+   * the `Target` is inferred to be the same as the location of the
+   * `DeliveryPipeline` that contains this `Stage`.
    * </pre>
    *
    * <code>string target_id = 1;</code>
@@ -162,9 +164,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
    * The target_id to which this stage points. This field refers exclusively to
    * the last segment of a target name. For example, this field would just be
    * `my-target` (rather than
-   * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-   * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-   * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+   * `projects/project/locations/location/targets/my-target`). The location of
+   * the `Target` is inferred to be the same as the location of the
+   * `DeliveryPipeline` that contains this `Stage`.
    * </pre>
    *
    * <code>string target_id = 1;</code>
@@ -606,9 +608,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * The target_id to which this stage points. This field refers exclusively to
      * the last segment of a target name. For example, this field would just be
      * `my-target` (rather than
-     * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-     * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-     * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+     * `projects/project/locations/location/targets/my-target`). The location of
+     * the `Target` is inferred to be the same as the location of the
+     * `DeliveryPipeline` that contains this `Stage`.
      * </pre>
      *
      * <code>string target_id = 1;</code>
@@ -633,9 +635,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * The target_id to which this stage points. This field refers exclusively to
      * the last segment of a target name. For example, this field would just be
      * `my-target` (rather than
-     * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-     * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-     * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+     * `projects/project/locations/location/targets/my-target`). The location of
+     * the `Target` is inferred to be the same as the location of the
+     * `DeliveryPipeline` that contains this `Stage`.
      * </pre>
      *
      * <code>string target_id = 1;</code>
@@ -660,9 +662,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * The target_id to which this stage points. This field refers exclusively to
      * the last segment of a target name. For example, this field would just be
      * `my-target` (rather than
-     * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-     * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-     * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+     * `projects/project/locations/location/targets/my-target`). The location of
+     * the `Target` is inferred to be the same as the location of the
+     * `DeliveryPipeline` that contains this `Stage`.
      * </pre>
      *
      * <code>string target_id = 1;</code>
@@ -686,9 +688,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * The target_id to which this stage points. This field refers exclusively to
      * the last segment of a target name. For example, this field would just be
      * `my-target` (rather than
-     * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-     * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-     * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+     * `projects/project/locations/location/targets/my-target`). The location of
+     * the `Target` is inferred to be the same as the location of the
+     * `DeliveryPipeline` that contains this `Stage`.
      * </pre>
      *
      * <code>string target_id = 1;</code>
@@ -708,9 +710,9 @@ public final class Stage extends com.google.protobuf.GeneratedMessageV3
      * The target_id to which this stage points. This field refers exclusively to
      * the last segment of a target name. For example, this field would just be
      * `my-target` (rather than
-     * `projects/project/deliveryPipelines/pipeline/targets/my-target`). The
-     * parent `DeliveryPipeline` of the `Target` is inferred to be the parent
-     * `DeliveryPipeline` of the `Release` in which this `Stage` lives.
+     * `projects/project/locations/location/targets/my-target`). The location of
+     * the `Target` is inferred to be the same as the location of the
+     * `DeliveryPipeline` that contains this `Stage`.
      * </pre>
      *
      * <code>string target_id = 1;</code>

@@ -27,8 +27,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Target`. Format is
+   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -40,8 +40,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Target`. Format is
+   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,7 +183,12 @@ public interface TargetOrBuilder
    * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -205,10 +210,14 @@ public interface TargetOrBuilder
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -220,10 +229,14 @@ public interface TargetOrBuilder
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -238,10 +251,14 @@ public interface TargetOrBuilder
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -253,25 +270,38 @@ public interface TargetOrBuilder
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -401,6 +431,41 @@ public interface TargetOrBuilder
    * <code>.google.cloud.deploy.v1.GkeCluster gke = 15;</code>
    */
   com.google.cloud.deploy.v1.GkeClusterOrBuilder getGkeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   *
+   * @return Whether the anthosCluster field is set.
+   */
+  boolean hasAnthosCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   *
+   * @return The anthosCluster.
+   */
+  com.google.cloud.deploy.v1.AnthosCluster getAnthosCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   */
+  com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder();
 
   /**
    *

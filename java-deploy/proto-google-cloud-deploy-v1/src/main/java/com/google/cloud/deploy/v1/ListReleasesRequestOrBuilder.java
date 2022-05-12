@@ -102,7 +102,7 @@ public interface ListReleasesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter releases to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface ListReleasesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter releases to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *

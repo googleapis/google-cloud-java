@@ -205,6 +205,8 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -475,7 +477,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
@@ -517,7 +519,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   public java.lang.String getAnnotationsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -537,7 +539,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     if (!map.containsKey(key)) {
@@ -577,10 +579,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -588,7 +594,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -604,10 +610,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -622,10 +632,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -633,7 +647,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -644,10 +658,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -655,7 +673,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1867,7 +1885,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
@@ -1909,7 +1927,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public java.lang.String getAnnotationsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1929,7 +1947,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       if (!map.containsKey(key)) {
@@ -1956,7 +1974,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
@@ -1980,11 +1998,12 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAnnotations().getMutableMap().put(key, value);
       return this;
     }
@@ -2036,10 +2055,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2047,7 +2070,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2063,10 +2086,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2081,10 +2108,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2093,7 +2124,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2104,10 +2135,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2115,7 +2150,7 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2134,17 +2169,21 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -2160,21 +2199,26 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -2184,10 +2228,14 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2716,8 +2764,9 @@ public final class DeliveryPipeline extends com.google.protobuf.GeneratedMessage
       } else {
         if (pipelineCase_ == 8) {
           serialPipelineBuilder_.mergeFrom(value);
+        } else {
+          serialPipelineBuilder_.setMessage(value);
         }
-        serialPipelineBuilder_.setMessage(value);
       }
       pipelineCase_ = 8;
       return this;

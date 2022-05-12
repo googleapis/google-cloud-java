@@ -179,6 +179,101 @@ public interface ExecutionConfigOrBuilder
    */
   com.google.cloud.deploy.v1.PrivatePoolOrBuilder getPrivatePoolOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the `WorkerPool`, with the format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * If this optional field is unspecified, the default Cloud Build pool will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workerPool.
+   */
+  java.lang.String getWorkerPool();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the `WorkerPool`, with the format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * If this optional field is unspecified, the default Cloud Build pool will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workerPool.
+   */
+  com.google.protobuf.ByteString getWorkerPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google service account to use for execution. If unspecified,
+   * the project execution service account
+   * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+   * </pre>
+   *
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google service account to use for execution. If unspecified,
+   * the project execution service account
+   * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+   * </pre>
+   *
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage location in which to store execution outputs. This can
+   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * ("gs://my-bucket/my-dir").
+   * If unspecified, a default bucket located in the same region will be used.
+   * </pre>
+   *
+   * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The artifactStorage.
+   */
+  java.lang.String getArtifactStorage();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage location in which to store execution outputs. This can
+   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * ("gs://my-bucket/my-dir").
+   * If unspecified, a default bucket located in the same region will be used.
+   * </pre>
+   *
+   * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for artifactStorage.
+   */
+  com.google.protobuf.ByteString getArtifactStorageBytes();
+
   public com.google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentCase
       getExecutionEnvironmentCase();
 }

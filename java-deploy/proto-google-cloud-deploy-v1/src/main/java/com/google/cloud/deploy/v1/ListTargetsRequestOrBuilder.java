@@ -104,7 +104,7 @@ public interface ListTargetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface ListTargetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *

@@ -117,6 +117,8 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -277,7 +279,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Filter pipelines to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -301,7 +303,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Filter pipelines to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -1061,7 +1063,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Filter pipelines to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1084,7 +1086,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Filter pipelines to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1107,7 +1109,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Filter pipelines to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1129,7 +1131,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Filter pipelines to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1147,7 +1149,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Filter pipelines to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *

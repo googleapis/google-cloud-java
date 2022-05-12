@@ -105,7 +105,7 @@ public interface ListDeliveryPipelinesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Filter pipelines to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface ListDeliveryPipelinesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Filter pipelines to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *

@@ -154,7 +154,12 @@ public interface DeliveryPipelineOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -175,10 +180,14 @@ public interface DeliveryPipelineOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -190,10 +199,14 @@ public interface DeliveryPipelineOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -208,10 +221,14 @@ public interface DeliveryPipelineOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -223,25 +240,38 @@ public interface DeliveryPipelineOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>

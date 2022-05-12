@@ -117,6 +117,8 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -276,7 +278,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -300,7 +302,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+   * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
    * details.
    * </pre>
    *
@@ -1054,7 +1056,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1077,7 +1079,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1100,7 +1102,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1122,7 +1124,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *
@@ -1140,7 +1142,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Filter builds to be returned. See https://google.aip.dev/160 for more
+     * Optional. Filter targets to be returned. See https://google.aip.dev/160 for more
      * details.
      * </pre>
      *

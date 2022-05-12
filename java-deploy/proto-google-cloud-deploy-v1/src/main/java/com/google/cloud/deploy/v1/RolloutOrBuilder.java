@@ -158,7 +158,12 @@ public interface RolloutOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
-  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -179,10 +184,14 @@ public interface RolloutOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -194,10 +203,14 @@ public interface RolloutOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -212,10 +225,14 @@ public interface RolloutOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -227,25 +244,38 @@ public interface RolloutOrBuilder
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -617,4 +647,35 @@ public interface RolloutOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason this deploy failed. This will always be unspecified while the
+   * deploy in progress.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deployFailureCause.
+   */
+  int getDeployFailureCauseValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason this deploy failed. This will always be unspecified while the
+   * deploy in progress.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deployFailureCause.
+   */
+  com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause();
 }

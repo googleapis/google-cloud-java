@@ -77,6 +77,11 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
               cluster_ = s;
               break;
             }
+          case 16:
+            {
+              internalIp_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +93,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -162,6 +169,30 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int INTERNAL_IP_FIELD_NUMBER = 2;
+  private boolean internalIp_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, `cluster` is accessed using the private IP address of the control
+   * plane endpoint. Otherwise, the default IP address of the control plane
+   * endpoint is used. The default IP address is the private IP address for
+   * clusters with private control-plane endpoints and the public IP address
+   * otherwise.
+   * Only specify this option when `cluster` is a [private GKE
+   * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+   * </pre>
+   *
+   * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The internalIp.
+   */
+  @java.lang.Override
+  public boolean getInternalIp() {
+    return internalIp_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -179,6 +210,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cluster_);
     }
+    if (internalIp_ != false) {
+      output.writeBool(2, internalIp_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -190,6 +224,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cluster_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cluster_);
+    }
+    if (internalIp_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, internalIp_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,6 +244,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.deploy.v1.GkeCluster other = (com.google.cloud.deploy.v1.GkeCluster) obj;
 
     if (!getCluster().equals(other.getCluster())) return false;
+    if (getInternalIp() != other.getInternalIp()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +258,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + getCluster().hashCode();
+    hash = (37 * hash) + INTERNAL_IP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInternalIp());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -366,6 +406,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       cluster_ = "";
 
+      internalIp_ = false;
+
       return this;
     }
 
@@ -394,6 +436,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.deploy.v1.GkeCluster result =
           new com.google.cloud.deploy.v1.GkeCluster(this);
       result.cluster_ = cluster_;
+      result.internalIp_ = internalIp_;
       onBuilt();
       return result;
     }
@@ -446,6 +489,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
         onChanged();
+      }
+      if (other.getInternalIp() != false) {
+        setInternalIp(other.getInternalIp());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -583,6 +629,76 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       cluster_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean internalIp_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `cluster` is accessed using the private IP address of the control
+     * plane endpoint. Otherwise, the default IP address of the control plane
+     * endpoint is used. The default IP address is the private IP address for
+     * clusters with private control-plane endpoints and the public IP address
+     * otherwise.
+     * Only specify this option when `cluster` is a [private GKE
+     * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * </pre>
+     *
+     * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The internalIp.
+     */
+    @java.lang.Override
+    public boolean getInternalIp() {
+      return internalIp_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `cluster` is accessed using the private IP address of the control
+     * plane endpoint. Otherwise, the default IP address of the control plane
+     * endpoint is used. The default IP address is the private IP address for
+     * clusters with private control-plane endpoints and the public IP address
+     * otherwise.
+     * Only specify this option when `cluster` is a [private GKE
+     * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * </pre>
+     *
+     * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The internalIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInternalIp(boolean value) {
+
+      internalIp_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, `cluster` is accessed using the private IP address of the control
+     * plane endpoint. Otherwise, the default IP address of the control plane
+     * endpoint is used. The default IP address is the private IP address for
+     * clusters with private control-plane endpoints and the public IP address
+     * otherwise.
+     * Only specify this option when `cluster` is a [private GKE
+     * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * </pre>
+     *
+     * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInternalIp() {
+
+      internalIp_ = false;
       onChanged();
       return this;
     }

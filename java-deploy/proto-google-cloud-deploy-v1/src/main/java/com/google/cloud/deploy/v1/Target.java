@@ -205,6 +205,23 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.deploy.v1.ExecutionConfig.parser(), extensionRegistry));
               break;
             }
+          case 138:
+            {
+              com.google.cloud.deploy.v1.AnthosCluster.Builder subBuilder = null;
+              if (deploymentTargetCase_ == 17) {
+                subBuilder =
+                    ((com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_).toBuilder();
+              }
+              deploymentTarget_ =
+                  input.readMessage(
+                      com.google.cloud.deploy.v1.AnthosCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
+                deploymentTarget_ = subBuilder.buildPartial();
+              }
+              deploymentTargetCase_ = 17;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -216,6 +233,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -263,6 +282,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GKE(15),
+    ANTHOS_CLUSTER(17),
     DEPLOYMENTTARGET_NOT_SET(0);
     private final int value;
 
@@ -283,6 +303,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 15:
           return GKE;
+        case 17:
+          return ANTHOS_CLUSTER;
         case 0:
           return DEPLOYMENTTARGET_NOT_SET;
         default:
@@ -305,8 +327,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Target`. Format is
+   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -329,8 +351,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Target`. Format is
+   * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -539,7 +561,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
@@ -583,7 +605,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAnnotationsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -604,7 +626,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     if (!map.containsKey(key)) {
@@ -644,10 +666,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -655,7 +681,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -671,10 +697,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -689,10 +719,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -700,7 +734,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -711,10 +745,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -722,7 +760,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -896,6 +934,57 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.deploy.v1.GkeCluster) deploymentTarget_;
     }
     return com.google.cloud.deploy.v1.GkeCluster.getDefaultInstance();
+  }
+
+  public static final int ANTHOS_CLUSTER_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   *
+   * @return Whether the anthosCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnthosCluster() {
+    return deploymentTargetCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   *
+   * @return The anthosCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AnthosCluster getAnthosCluster() {
+    if (deploymentTargetCase_ == 17) {
+      return (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying an Anthos Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
+    if (deploymentTargetCase_ == 17) {
+      return (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
   }
 
   public static final int ETAG_FIELD_NUMBER = 12;
@@ -1099,6 +1188,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < executionConfigs_.size(); i++) {
       output.writeMessage(16, executionConfigs_.get(i));
     }
+    if (deploymentTargetCase_ == 17) {
+      output.writeMessage(17, (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1161,6 +1253,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(16, executionConfigs_.get(i));
     }
+    if (deploymentTargetCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1197,6 +1294,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     switch (deploymentTargetCase_) {
       case 15:
         if (!getGke().equals(other.getGke())) return false;
+        break;
+      case 17:
+        if (!getAnthosCluster().equals(other.getAnthosCluster())) return false;
         break;
       case 0:
       default:
@@ -1248,6 +1348,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       case 15:
         hash = (37 * hash) + GKE_FIELD_NUMBER;
         hash = (53 * hash) + getGke().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + ANTHOS_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getAnthosCluster().hashCode();
         break;
       case 0:
       default:
@@ -1511,6 +1615,13 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           result.deploymentTarget_ = gkeBuilder_.build();
         }
       }
+      if (deploymentTargetCase_ == 17) {
+        if (anthosClusterBuilder_ == null) {
+          result.deploymentTarget_ = deploymentTarget_;
+        } else {
+          result.deploymentTarget_ = anthosClusterBuilder_.build();
+        }
+      }
       result.etag_ = etag_;
       if (executionConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
@@ -1635,6 +1746,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             mergeGke(other.getGke());
             break;
           }
+        case ANTHOS_CLUSTER:
+          {
+            mergeAnthosCluster(other.getAnthosCluster());
+            break;
+          }
         case DEPLOYMENTTARGET_NOT_SET:
           {
             break;
@@ -1690,8 +1806,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Target`. Format is
+     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1713,8 +1829,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Target`. Format is
+     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1736,8 +1852,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Target`. Format is
+     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1758,8 +1874,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Target`. Format is
+     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1776,8 +1892,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Target`. Format is projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/targets/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Target`. Format is
+     * projects/{project}/locations/{location}/targets/[a-z][a-z0-9&#92;-]{0,62}.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2158,7 +2274,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
@@ -2202,7 +2318,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAnnotationsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2223,7 +2339,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       if (!map.containsKey(key)) {
@@ -2251,7 +2367,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
@@ -2276,11 +2392,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAnnotations().getMutableMap().put(key, value);
       return this;
     }
@@ -2333,10 +2450,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2344,7 +2465,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2360,10 +2481,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2378,10 +2503,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2390,7 +2519,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2401,10 +2530,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2412,7 +2545,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2431,17 +2564,21 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -2457,21 +2594,26 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -2481,10 +2623,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3059,8 +3205,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (deploymentTargetCase_ == 15) {
           gkeBuilder_.mergeFrom(value);
+        } else {
+          gkeBuilder_.setMessage(value);
         }
-        gkeBuilder_.setMessage(value);
       }
       deploymentTargetCase_ = 15;
       return this;
@@ -3154,6 +3301,216 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gkeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AnthosCluster,
+            com.google.cloud.deploy.v1.AnthosCluster.Builder,
+            com.google.cloud.deploy.v1.AnthosClusterOrBuilder>
+        anthosClusterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     *
+     * @return Whether the anthosCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasAnthosCluster() {
+      return deploymentTargetCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     *
+     * @return The anthosCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AnthosCluster getAnthosCluster() {
+      if (anthosClusterBuilder_ == null) {
+        if (deploymentTargetCase_ == 17) {
+          return (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
+      } else {
+        if (deploymentTargetCase_ == 17) {
+          return anthosClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    public Builder setAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
+      if (anthosClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentTarget_ = value;
+        onChanged();
+      } else {
+        anthosClusterBuilder_.setMessage(value);
+      }
+      deploymentTargetCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    public Builder setAnthosCluster(
+        com.google.cloud.deploy.v1.AnthosCluster.Builder builderForValue) {
+      if (anthosClusterBuilder_ == null) {
+        deploymentTarget_ = builderForValue.build();
+        onChanged();
+      } else {
+        anthosClusterBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentTargetCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    public Builder mergeAnthosCluster(com.google.cloud.deploy.v1.AnthosCluster value) {
+      if (anthosClusterBuilder_ == null) {
+        if (deploymentTargetCase_ == 17
+            && deploymentTarget_ != com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance()) {
+          deploymentTarget_ =
+              com.google.cloud.deploy.v1.AnthosCluster.newBuilder(
+                      (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentTarget_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentTargetCase_ == 17) {
+          anthosClusterBuilder_.mergeFrom(value);
+        } else {
+          anthosClusterBuilder_.setMessage(value);
+        }
+      }
+      deploymentTargetCase_ = 17;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    public Builder clearAnthosCluster() {
+      if (anthosClusterBuilder_ == null) {
+        if (deploymentTargetCase_ == 17) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentTargetCase_ == 17) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+        }
+        anthosClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    public com.google.cloud.deploy.v1.AnthosCluster.Builder getAnthosClusterBuilder() {
+      return getAnthosClusterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AnthosClusterOrBuilder getAnthosClusterOrBuilder() {
+      if ((deploymentTargetCase_ == 17) && (anthosClusterBuilder_ != null)) {
+        return anthosClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentTargetCase_ == 17) {
+          return (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying an Anthos Cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.AnthosCluster anthos_cluster = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AnthosCluster,
+            com.google.cloud.deploy.v1.AnthosCluster.Builder,
+            com.google.cloud.deploy.v1.AnthosClusterOrBuilder>
+        getAnthosClusterFieldBuilder() {
+      if (anthosClusterBuilder_ == null) {
+        if (!(deploymentTargetCase_ == 17)) {
+          deploymentTarget_ = com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
+        }
+        anthosClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.AnthosCluster,
+                com.google.cloud.deploy.v1.AnthosCluster.Builder,
+                com.google.cloud.deploy.v1.AnthosClusterOrBuilder>(
+                (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_,
+                getParentForChildren(),
+                isClean());
+        deploymentTarget_ = null;
+      }
+      deploymentTargetCase_ = 17;
+      onChanged();
+      ;
+      return anthosClusterBuilder_;
     }
 
     private java.lang.Object etag_ = "";

@@ -49,4 +49,23 @@ public interface GkeClusterOrBuilder
    * @return The bytes for cluster.
    */
   com.google.protobuf.ByteString getClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, `cluster` is accessed using the private IP address of the control
+   * plane endpoint. Otherwise, the default IP address of the control plane
+   * endpoint is used. The default IP address is the private IP address for
+   * clusters with private control-plane endpoints and the public IP address
+   * otherwise.
+   * Only specify this option when `cluster` is a [private GKE
+   * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+   * </pre>
+   *
+   * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The internalIp.
+   */
+  boolean getInternalIp();
 }

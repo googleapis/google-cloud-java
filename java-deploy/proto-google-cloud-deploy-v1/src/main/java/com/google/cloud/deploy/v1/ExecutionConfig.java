@@ -39,6 +39,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
 
   private ExecutionConfig() {
     usages_ = java.util.Collections.emptyList();
+    workerPool_ = "";
+    serviceAccount_ = "";
+    artifactStorage_ = "";
   }
 
   @java.lang.Override
@@ -132,6 +135,27 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
               executionEnvironmentCase_ = 3;
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              workerPool_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              artifactStorage_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,6 +167,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -603,6 +629,173 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.deploy.v1.PrivatePool.getDefaultInstance();
   }
 
+  public static final int WORKER_POOL_FIELD_NUMBER = 4;
+  private volatile java.lang.Object workerPool_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the `WorkerPool`, with the format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * If this optional field is unspecified, the default Cloud Build pool will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workerPool.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkerPool() {
+    java.lang.Object ref = workerPool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workerPool_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the `WorkerPool`, with the format
+   * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+   * If this optional field is unspecified, the default Cloud Build pool will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workerPool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkerPoolBytes() {
+    java.lang.Object ref = workerPool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workerPool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google service account to use for execution. If unspecified,
+   * the project execution service account
+   * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+   * </pre>
+   *
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google service account to use for execution. If unspecified,
+   * the project execution service account
+   * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+   * </pre>
+   *
+   * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ARTIFACT_STORAGE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object artifactStorage_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage location in which to store execution outputs. This can
+   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * ("gs://my-bucket/my-dir").
+   * If unspecified, a default bucket located in the same region will be used.
+   * </pre>
+   *
+   * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The artifactStorage.
+   */
+  @java.lang.Override
+  public java.lang.String getArtifactStorage() {
+    java.lang.Object ref = artifactStorage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      artifactStorage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage location in which to store execution outputs. This can
+   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * ("gs://my-bucket/my-dir").
+   * If unspecified, a default bucket located in the same region will be used.
+   * </pre>
+   *
+   * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for artifactStorage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getArtifactStorageBytes() {
+    java.lang.Object ref = artifactStorage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      artifactStorage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -630,6 +823,15 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (executionEnvironmentCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.deploy.v1.PrivatePool) executionEnvironment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workerPool_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactStorage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, artifactStorage_);
     }
     unknownFields.writeTo(output);
   }
@@ -662,6 +864,15 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.deploy.v1.PrivatePool) executionEnvironment_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workerPool_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workerPool_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactStorage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, artifactStorage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -679,6 +890,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.deploy.v1.ExecutionConfig) obj;
 
     if (!usages_.equals(other.usages_)) return false;
+    if (!getWorkerPool().equals(other.getWorkerPool())) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getArtifactStorage().equals(other.getArtifactStorage())) return false;
     if (!getExecutionEnvironmentCase().equals(other.getExecutionEnvironmentCase())) return false;
     switch (executionEnvironmentCase_) {
       case 2:
@@ -705,6 +919,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + USAGES_FIELD_NUMBER;
       hash = (53 * hash) + usages_.hashCode();
     }
+    hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkerPool().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + ARTIFACT_STORAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getArtifactStorage().hashCode();
     switch (executionEnvironmentCase_) {
       case 2:
         hash = (37 * hash) + DEFAULT_POOL_FIELD_NUMBER;
@@ -864,6 +1084,12 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       super.clear();
       usages_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      workerPool_ = "";
+
+      serviceAccount_ = "";
+
+      artifactStorage_ = "";
+
       executionEnvironmentCase_ = 0;
       executionEnvironment_ = null;
       return this;
@@ -913,6 +1139,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           result.executionEnvironment_ = privatePoolBuilder_.build();
         }
       }
+      result.workerPool_ = workerPool_;
+      result.serviceAccount_ = serviceAccount_;
+      result.artifactStorage_ = artifactStorage_;
       result.executionEnvironmentCase_ = executionEnvironmentCase_;
       onBuilt();
       return result;
@@ -971,6 +1200,18 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           ensureUsagesIsMutable();
           usages_.addAll(other.usages_);
         }
+        onChanged();
+      }
+      if (!other.getWorkerPool().isEmpty()) {
+        workerPool_ = other.workerPool_;
+        onChanged();
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        onChanged();
+      }
+      if (!other.getArtifactStorage().isEmpty()) {
+        artifactStorage_ = other.artifactStorage_;
         onChanged();
       }
       switch (other.getExecutionEnvironmentCase()) {
@@ -1407,8 +1648,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (executionEnvironmentCase_ == 2) {
           defaultPoolBuilder_.mergeFrom(value);
+        } else {
+          defaultPoolBuilder_.setMessage(value);
         }
-        defaultPoolBuilder_.setMessage(value);
       }
       executionEnvironmentCase_ = 2;
       return this;
@@ -1634,8 +1876,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (executionEnvironmentCase_ == 3) {
           privatePoolBuilder_.mergeFrom(value);
+        } else {
+          privatePoolBuilder_.setMessage(value);
         }
-        privatePoolBuilder_.setMessage(value);
       }
       executionEnvironmentCase_ = 3;
       return this;
@@ -1737,6 +1980,374 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return privatePoolBuilder_;
+    }
+
+    private java.lang.Object workerPool_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the `WorkerPool`, with the format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * If this optional field is unspecified, the default Cloud Build pool will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The workerPool.
+     */
+    public java.lang.String getWorkerPool() {
+      java.lang.Object ref = workerPool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerPool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the `WorkerPool`, with the format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * If this optional field is unspecified, the default Cloud Build pool will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for workerPool.
+     */
+    public com.google.protobuf.ByteString getWorkerPoolBytes() {
+      java.lang.Object ref = workerPool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workerPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the `WorkerPool`, with the format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * If this optional field is unspecified, the default Cloud Build pool will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The workerPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerPool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      workerPool_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the `WorkerPool`, with the format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * If this optional field is unspecified, the default Cloud Build pool will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkerPool() {
+
+      workerPool_ = getDefaultInstance().getWorkerPool();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the `WorkerPool`, with the format
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
+     * If this optional field is unspecified, the default Cloud Build pool will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * string worker_pool = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for workerPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerPoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      workerPool_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google service account to use for execution. If unspecified,
+     * the project execution service account
+     * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+     * </pre>
+     *
+     * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google service account to use for execution. If unspecified,
+     * the project execution service account
+     * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+     * </pre>
+     *
+     * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google service account to use for execution. If unspecified,
+     * the project execution service account
+     * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+     * </pre>
+     *
+     * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google service account to use for execution. If unspecified,
+     * the project execution service account
+     * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+     * </pre>
+     *
+     * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google service account to use for execution. If unspecified,
+     * the project execution service account
+     * (&lt;PROJECT_NUMBER&gt;-compute&#64;developer.gserviceaccount.com) is used.
+     * </pre>
+     *
+     * <code>string service_account = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object artifactStorage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage location in which to store execution outputs. This can
+     * either be a bucket ("gs://my-bucket") or a path within a bucket
+     * ("gs://my-bucket/my-dir").
+     * If unspecified, a default bucket located in the same region will be used.
+     * </pre>
+     *
+     * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The artifactStorage.
+     */
+    public java.lang.String getArtifactStorage() {
+      java.lang.Object ref = artifactStorage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        artifactStorage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage location in which to store execution outputs. This can
+     * either be a bucket ("gs://my-bucket") or a path within a bucket
+     * ("gs://my-bucket/my-dir").
+     * If unspecified, a default bucket located in the same region will be used.
+     * </pre>
+     *
+     * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for artifactStorage.
+     */
+    public com.google.protobuf.ByteString getArtifactStorageBytes() {
+      java.lang.Object ref = artifactStorage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        artifactStorage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage location in which to store execution outputs. This can
+     * either be a bucket ("gs://my-bucket") or a path within a bucket
+     * ("gs://my-bucket/my-dir").
+     * If unspecified, a default bucket located in the same region will be used.
+     * </pre>
+     *
+     * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The artifactStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactStorage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      artifactStorage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage location in which to store execution outputs. This can
+     * either be a bucket ("gs://my-bucket") or a path within a bucket
+     * ("gs://my-bucket/my-dir").
+     * If unspecified, a default bucket located in the same region will be used.
+     * </pre>
+     *
+     * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArtifactStorage() {
+
+      artifactStorage_ = getDefaultInstance().getArtifactStorage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage location in which to store execution outputs. This can
+     * either be a bucket ("gs://my-bucket") or a path within a bucket
+     * ("gs://my-bucket/my-dir").
+     * If unspecified, a default bucket located in the same region will be used.
+     * </pre>
+     *
+     * <code>string artifact_storage = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for artifactStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactStorageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      artifactStorage_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -48,6 +48,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     failureReason_ = "";
     deployingBuild_ = "";
     etag_ = "";
+    deployFailureCause_ = 0;
   }
 
   @java.lang.Override
@@ -246,6 +247,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
               targetId_ = s;
               break;
             }
+          case 152:
+            {
+              int rawValue = input.readEnum();
+
+              deployFailureCause_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -257,6 +265,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -763,6 +773,213 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.deploy.v1.Rollout.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Well-known deployment failures.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.deploy.v1.Rollout.FailureCause}
+   */
+  public enum FailureCause implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No reason for failure is specified.
+     * </pre>
+     *
+     * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
+     */
+    FAILURE_CAUSE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build is not available, either because it is not enabled or because
+     * Cloud Deploy has insufficient permissions. See [required
+     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
+     */
+    CLOUD_BUILD_UNAVAILABLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The deploy operation did not complete successfully; check Cloud Build
+     * logs.
+     * </pre>
+     *
+     * <code>EXECUTION_FAILED = 2;</code>
+     */
+    EXECUTION_FAILED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Deployment did not complete within the alloted time.
+     * </pre>
+     *
+     * <code>DEADLINE_EXCEEDED = 3;</code>
+     */
+    DEADLINE_EXCEEDED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Release is in a failed state.
+     * </pre>
+     *
+     * <code>RELEASE_FAILED = 4;</code>
+     */
+    RELEASE_FAILED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No reason for failure is specified.
+     * </pre>
+     *
+     * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
+     */
+    public static final int FAILURE_CAUSE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build is not available, either because it is not enabled or because
+     * Cloud Deploy has insufficient permissions. See [required
+     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
+     */
+    public static final int CLOUD_BUILD_UNAVAILABLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The deploy operation did not complete successfully; check Cloud Build
+     * logs.
+     * </pre>
+     *
+     * <code>EXECUTION_FAILED = 2;</code>
+     */
+    public static final int EXECUTION_FAILED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Deployment did not complete within the alloted time.
+     * </pre>
+     *
+     * <code>DEADLINE_EXCEEDED = 3;</code>
+     */
+    public static final int DEADLINE_EXCEEDED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Release is in a failed state.
+     * </pre>
+     *
+     * <code>RELEASE_FAILED = 4;</code>
+     */
+    public static final int RELEASE_FAILED_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FailureCause valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FailureCause forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FAILURE_CAUSE_UNSPECIFIED;
+        case 1:
+          return CLOUD_BUILD_UNAVAILABLE;
+        case 2:
+          return EXECUTION_FAILED;
+        case 3:
+          return DEADLINE_EXCEEDED;
+        case 4:
+          return RELEASE_FAILED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FailureCause> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FailureCause> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FailureCause>() {
+          public FailureCause findValueByNumber(int number) {
+            return FailureCause.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.deploy.v1.Rollout.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final FailureCause[] VALUES = values();
+
+    public static FailureCause valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FailureCause(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.deploy.v1.Rollout.FailureCause)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -957,7 +1174,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
@@ -999,7 +1216,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAnnotationsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1019,7 +1236,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     if (!map.containsKey(key)) {
@@ -1059,10 +1276,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1070,7 +1291,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -1086,10 +1307,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1104,10 +1329,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1115,7 +1344,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1126,10 +1355,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Labels are attributes that can be set and used by both the
    * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints: Each resource is limited to 64 labels. Keys must conform to
-   * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-   * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-   * constrained to be &lt;= 128 bytes in size.
+   * constraints:
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * * All characters must use UTF-8 encoding, and international characters are
+   * allowed.
+   * * Keys must start with a lowercase letter or international character.
+   * * Each resource is limited to a maximum of 64 labels.
+   * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -1137,7 +1370,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1689,6 +1922,48 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DEPLOY_FAILURE_CAUSE_FIELD_NUMBER = 19;
+  private int deployFailureCause_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason this deploy failed. This will always be unspecified while the
+   * deploy in progress.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deployFailureCause.
+   */
+  @java.lang.Override
+  public int getDeployFailureCauseValue() {
+    return deployFailureCause_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason this deploy failed. This will always be unspecified while the
+   * deploy in progress.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deployFailureCause.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.deploy.v1.Rollout.FailureCause result =
+        com.google.cloud.deploy.v1.Rollout.FailureCause.valueOf(deployFailureCause_);
+    return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1750,6 +2025,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, targetId_);
+    }
+    if (deployFailureCause_
+        != com.google.cloud.deploy.v1.Rollout.FailureCause.FAILURE_CAUSE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, deployFailureCause_);
     }
     unknownFields.writeTo(output);
   }
@@ -1824,6 +2103,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, targetId_);
     }
+    if (deployFailureCause_
+        != com.google.cloud.deploy.v1.Rollout.FailureCause.FAILURE_CAUSE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, deployFailureCause_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1870,6 +2153,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (!getFailureReason().equals(other.getFailureReason())) return false;
     if (!getDeployingBuild().equals(other.getDeployingBuild())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (deployFailureCause_ != other.deployFailureCause_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1927,6 +2211,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDeployingBuild().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DEPLOY_FAILURE_CAUSE_FIELD_NUMBER;
+    hash = (53 * hash) + deployFailureCause_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2146,6 +2432,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       etag_ = "";
 
+      deployFailureCause_ = 0;
+
       return this;
     }
 
@@ -2211,6 +2499,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       result.failureReason_ = failureReason_;
       result.deployingBuild_ = deployingBuild_;
       result.etag_ = etag_;
+      result.deployFailureCause_ = deployFailureCause_;
       onBuilt();
       return result;
     }
@@ -2310,6 +2599,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         onChanged();
+      }
+      if (other.deployFailureCause_ != 0) {
+        setDeployFailureCauseValue(other.getDeployFailureCauseValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2718,7 +3010,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
@@ -2760,7 +3052,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAnnotationsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2780,7 +3072,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       if (!map.containsKey(key)) {
@@ -2807,7 +3099,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
@@ -2831,11 +3123,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableAnnotations().getMutableMap().put(key, value);
       return this;
     }
@@ -2887,10 +3180,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2898,7 +3195,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -2914,10 +3211,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2932,10 +3233,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2944,7 +3249,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2955,10 +3260,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -2966,7 +3275,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -2985,17 +3294,21 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -3011,21 +3324,26 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -3035,10 +3353,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Labels are attributes that can be set and used by both the
      * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints: Each resource is limited to 64 labels. Keys must conform to
-     * the regexp: `[a-zA-Z][a-zA-Z0-9_-]{0,62}`. Values must conform to the
-     * regexp: `[a-zA-Z0-9_-]{0,63}`. Both keys and values are additionally
-     * constrained to be &lt;= 128 bytes in size.
+     * constraints:
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     * underscores, and dashes.
+     * * All characters must use UTF-8 encoding, and international characters are
+     * allowed.
+     * * Keys must start with a lowercase letter or international character.
+     * * Each resource is limited to a maximum of 64 labels.
+     * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
@@ -4715,6 +5037,112 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int deployFailureCause_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason this deploy failed. This will always be unspecified while the
+     * deploy in progress.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deployFailureCause.
+     */
+    @java.lang.Override
+    public int getDeployFailureCauseValue() {
+      return deployFailureCause_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason this deploy failed. This will always be unspecified while the
+     * deploy in progress.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deployFailureCause to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployFailureCauseValue(int value) {
+
+      deployFailureCause_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason this deploy failed. This will always be unspecified while the
+     * deploy in progress.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deployFailureCause.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.deploy.v1.Rollout.FailureCause result =
+          com.google.cloud.deploy.v1.Rollout.FailureCause.valueOf(deployFailureCause_);
+      return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason this deploy failed. This will always be unspecified while the
+     * deploy in progress.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The deployFailureCause to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployFailureCause(com.google.cloud.deploy.v1.Rollout.FailureCause value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      deployFailureCause_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason this deploy failed. This will always be unspecified while the
+     * deploy in progress.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Rollout.FailureCause deploy_failure_cause = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployFailureCause() {
+
+      deployFailureCause_ = 0;
       onChanged();
       return this;
     }
