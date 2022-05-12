@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
  *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
  *   Workflow response = workflowsClient.getWorkflow(name);
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WorkflowsSettings workflowsSettings =
  *     WorkflowsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WorkflowsSettings workflowsSettings =
  *     WorkflowsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WorkflowsClient workflowsClient = WorkflowsClient.create(workflowsSettings);
@@ -170,6 +176,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Workflow element : workflowsClient.listWorkflows(parent).iterateAll()) {
@@ -197,6 +205,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Workflow element : workflowsClient.listWorkflows(parent).iterateAll()) {
@@ -221,6 +231,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   ListWorkflowsRequest request =
    *       ListWorkflowsRequest.newBuilder()
@@ -250,6 +262,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   ListWorkflowsRequest request =
    *       ListWorkflowsRequest.newBuilder()
@@ -279,6 +293,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   ListWorkflowsRequest request =
    *       ListWorkflowsRequest.newBuilder()
@@ -314,6 +330,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
    *   Workflow response = workflowsClient.getWorkflow(name);
@@ -337,6 +355,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   String name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
    *   Workflow response = workflowsClient.getWorkflow(name);
@@ -359,6 +379,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   GetWorkflowRequest request =
    *       GetWorkflowRequest.newBuilder()
@@ -382,6 +404,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   GetWorkflowRequest request =
    *       GetWorkflowRequest.newBuilder()
@@ -406,6 +430,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Workflow workflow = Workflow.newBuilder().build();
@@ -449,6 +475,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Workflow workflow = Workflow.newBuilder().build();
@@ -492,6 +520,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   CreateWorkflowRequest request =
    *       CreateWorkflowRequest.newBuilder()
@@ -520,6 +550,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   CreateWorkflowRequest request =
    *       CreateWorkflowRequest.newBuilder()
@@ -548,6 +580,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   CreateWorkflowRequest request =
    *       CreateWorkflowRequest.newBuilder()
@@ -573,6 +607,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
    *   workflowsClient.deleteWorkflowAsync(name).get();
@@ -597,6 +633,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   String name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
    *   workflowsClient.deleteWorkflowAsync(name).get();
@@ -620,6 +658,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   DeleteWorkflowRequest request =
    *       DeleteWorkflowRequest.newBuilder()
@@ -645,6 +685,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   DeleteWorkflowRequest request =
    *       DeleteWorkflowRequest.newBuilder()
@@ -670,6 +712,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   DeleteWorkflowRequest request =
    *       DeleteWorkflowRequest.newBuilder()
@@ -694,6 +738,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   Workflow workflow = Workflow.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -722,6 +768,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   UpdateWorkflowRequest request =
    *       UpdateWorkflowRequest.newBuilder()
@@ -749,6 +797,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   UpdateWorkflowRequest request =
    *       UpdateWorkflowRequest.newBuilder()
@@ -776,6 +826,8 @@ public class WorkflowsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
    *   UpdateWorkflowRequest request =
    *       UpdateWorkflowRequest.newBuilder()
