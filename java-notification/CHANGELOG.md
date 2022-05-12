@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.28](https://github.com/googleapis/java-notification/compare/v0.122.27...v0.122.28) (2022-05-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.117.0 ([#581](https://github.com/googleapis/java-notification/issues/581)) ([e2f602d](https://github.com/googleapis/java-notification/commit/e2f602d7aae6b04d39da7a66846eeee4ffc31a7f))
+
 ### [0.122.27](https://github.com/googleapis/java-notification/compare/v0.122.26...v0.122.27) (2022-04-18)
 
 
