@@ -77,7 +77,8 @@ nightly-it)
           -Dclirr.skip=true \
           -Denforcer.skip=true \
           -fae \
-          test
+          verify
+    RETURN_CODE=$?
     ;;
 #graalvm)
 #    # Run Unit and Integration Tests with Native Image
