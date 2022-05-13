@@ -21,10 +21,14 @@ message ComplexRoot {
   optional int64 test_time_str = 15;
   repeated bytes test_numeric_repeated = 16;
   optional bytes test_numeric_str = 17;
-  optional bytes test_bignumeric = 18;
-  repeated bytes test_bignumeric_str = 19;
-  optional string test_interval = 20;
-  repeated string test_json = 21;
+  optional bytes test_numeric_int = 18;
+  optional bytes test_numeric_long = 19;
+  optional bytes test_bignumeric = 20;
+  repeated bytes test_bignumeric_str = 21;
+  optional bytes test_bignumeric_int = 22;
+  optional bytes test_bignumeric_long = 23;
+  optional string test_interval = 24;
+  repeated string test_json = 25;
 }
 
 message CasingComplex {

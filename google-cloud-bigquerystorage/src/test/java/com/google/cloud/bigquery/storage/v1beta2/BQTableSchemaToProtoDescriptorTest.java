@@ -233,6 +233,18 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .setName("test_numeric_str")
             .build();
+    final TableFieldSchema TEST_NUMERIC_INT =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric_int")
+            .build();
+    final TableFieldSchema TEST_NUMERIC_LONG =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_numeric_long")
+            .build();
     final TableFieldSchema TEST_BIGNUMERIC =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.NUMERIC)
@@ -244,6 +256,18 @@ public class BQTableSchemaToProtoDescriptorTest {
             .setType(TableFieldSchema.Type.NUMERIC)
             .setMode(TableFieldSchema.Mode.REPEATED)
             .setName("test_bignumeric_str")
+            .build();
+    final TableFieldSchema TEST_BIGNUMERIC_INT =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_bignumeric_int")
+            .build();
+    final TableFieldSchema TEST_BIGNUMERIC_LONG =
+        TableFieldSchema.newBuilder()
+            .setType(TableFieldSchema.Type.NUMERIC)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .setName("test_bignumeric_long")
             .build();
     final TableFieldSchema TEST_INTERVAL =
         TableFieldSchema.newBuilder()
@@ -276,10 +300,14 @@ public class BQTableSchemaToProtoDescriptorTest {
             .addFields(14, TEST_TIME_STR)
             .addFields(15, TEST_NUMERIC_REPEATED)
             .addFields(16, TEST_NUMERIC_STR)
-            .addFields(17, TEST_BIGNUMERIC)
-            .addFields(18, TEST_BIGNUMERIC_STR)
-            .addFields(19, TEST_INTERVAL)
-            .addFields(20, TEST_JSON)
+            .addFields(17, TEST_NUMERIC_INT)
+            .addFields(18, TEST_NUMERIC_LONG)
+            .addFields(19, TEST_BIGNUMERIC)
+            .addFields(20, TEST_BIGNUMERIC_STR)
+            .addFields(21, TEST_BIGNUMERIC_INT)
+            .addFields(22, TEST_BIGNUMERIC_LONG)
+            .addFields(23, TEST_INTERVAL)
+            .addFields(24, TEST_JSON)
             .build();
     final Descriptor descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);

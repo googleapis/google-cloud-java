@@ -290,6 +290,12 @@ public class JsonToProtoMessage {
                   BigDecimalByteStringEncoder.encodeToNumericByteString(
                       new BigDecimal((String) val)));
               return;
+            } else if (val instanceof Integer || val instanceof Long) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal(((Number) val).longValue())));
+              return;
             }
           } else if (fieldSchema.getType() == TableFieldSchema.Type.BIGNUMERIC) {
             if (val instanceof String) {
@@ -297,6 +303,12 @@ public class JsonToProtoMessage {
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                       new BigDecimal((String) val)));
+              return;
+            } else if (val instanceof Integer || val instanceof Long) {
+              protoMsg.setField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString(
+                      new BigDecimal(((Number) val).longValue())));
               return;
             }
           }
@@ -504,6 +516,12 @@ public class JsonToProtoMessage {
                   BigDecimalByteStringEncoder.encodeToNumericByteString(
                       new BigDecimal((String) val)));
               added = true;
+            } else if (val instanceof Integer || val instanceof Long) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(
+                      new BigDecimal(((Number) val).longValue())));
+              added = true;
             }
           } else if (fieldSchema != null
               && fieldSchema.getType() == TableFieldSchema.Type.BIGNUMERIC) {
@@ -512,6 +530,12 @@ public class JsonToProtoMessage {
                   fieldDescriptor,
                   BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                       new BigDecimal((String) val)));
+              added = true;
+            } else if (val instanceof Integer || val instanceof Long) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor,
+                  BigDecimalByteStringEncoder.encodeToBigNumericByteString(
+                      new BigDecimal(((Number) val).longValue())));
               added = true;
             }
           }

@@ -409,6 +409,18 @@ public class JsonToProtoMessageTest {
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("test_numeric_str")
           .build();
+  private final TableFieldSchema TEST_NUMERIC_INT =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric_int")
+          .build();
+  private final TableFieldSchema TEST_NUMERIC_LONG =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric_long")
+          .build();
   private final TableFieldSchema TEST_BIGNUMERIC =
       TableFieldSchema.newBuilder()
           .setType(TableFieldSchema.Type.BIGNUMERIC)
@@ -420,6 +432,18 @@ public class JsonToProtoMessageTest {
           .setType(TableFieldSchema.Type.BIGNUMERIC)
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_bignumeric_str")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC_INT =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bignumeric_int")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC_LONG =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bignumeric_long")
           .build();
   final TableFieldSchema TEST_INTERVAL =
       TableFieldSchema.newBuilder()
@@ -452,10 +476,14 @@ public class JsonToProtoMessageTest {
           .addFields(14, TEST_TIME_STR)
           .addFields(15, TEST_NUMERIC_REPEATED)
           .addFields(16, TEST_NUMERIC_STR)
-          .addFields(17, TEST_BIGNUMERIC)
-          .addFields(18, TEST_BIGNUMERIC_STR)
-          .addFields(19, TEST_INTERVAL)
-          .addFields(20, TEST_JSON)
+          .addFields(17, TEST_NUMERIC_INT)
+          .addFields(18, TEST_NUMERIC_LONG)
+          .addFields(19, TEST_BIGNUMERIC)
+          .addFields(20, TEST_BIGNUMERIC_STR)
+          .addFields(21, TEST_BIGNUMERIC_INT)
+          .addFields(22, TEST_BIGNUMERIC_LONG)
+          .addFields(23, TEST_INTERVAL)
+          .addFields(24, TEST_JSON)
           .build();
 
   @Test
@@ -888,11 +916,19 @@ public class JsonToProtoMessageTest {
                     new BigDecimal("-99999999999999999999999999999.999999999")))
             .setTestNumericStr(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("12.4")))
+            .setTestNumericInt(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1)))
+            .setTestNumericLong(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1L)))
             .setTestBignumeric(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                     new BigDecimal("578960446186580977117854925043439539266.3")))
             .addTestBignumericStr(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal("1.23")))
+            .setTestBignumericInt(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1)))
+            .setTestBignumericLong(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1L)))
             .setTestInterval("0-0 0 0:0:0.000005")
             .addTestJson("{'a':'b'}")
             .build();
@@ -937,11 +973,15 @@ public class JsonToProtoMessageTest {
     json.put("test_time", CivilTimeEncoder.encodePacked64TimeMicros(LocalTime.of(1, 0, 1)));
     json.put("test_time_str", "20:51:10.1234");
     json.put("test_numeric_str", "12.4");
+    json.put("test_numeric_int", 1);
+    json.put("test_numeric_long", 1L);
     json.put(
         "test_bignumeric",
         BigDecimalByteStringEncoder.encodeToBigNumericByteString(
             new BigDecimal("578960446186580977117854925043439539266.3")));
     json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
+    json.put("test_bignumeric_int", 1);
+    json.put("test_bignumeric_long", 1L);
     json.put("test_interval", "0-0 0 0:0:0.000005");
     json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));
     DynamicMessage protoMsg =
