@@ -61,7 +61,7 @@ javadoc)
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
       -ntp \
-      -Dtest=ITBigQueryTest\
+      -Dtest=ITBigQueryTest \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
@@ -72,7 +72,7 @@ integration)
 nightly-it)
     mvn -B ${INTEGRATION_TEST_ARGS} \
           -ntp \
-          -Dtest=ITNightlyBigQueryTest
+          -Dtest=ITNightlyBigQueryTest \
           -DtrimStackTrace=false \
           -Dclirr.skip=true \
           -Denforcer.skip=true \
