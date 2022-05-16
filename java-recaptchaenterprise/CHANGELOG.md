@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.11...v2.5.0) (2022-05-04)
+
+
+### Features
+
+* introduced Reason, PasswordLeakVerification, AccountDefenderAssessment ([6b0f9f1](https://github.com/googleapis/java-recaptchaenterprise/commit/6b0f9f1d4a1624f23504cd3655f6691d5bc00c1e))
+
+
+### Bug Fixes
+
+* remove key management API ([#788](https://github.com/googleapis/java-recaptchaenterprise/issues/788)) ([6b0f9f1](https://github.com/googleapis/java-recaptchaenterprise/commit/6b0f9f1d4a1624f23504cd3655f6691d5bc00c1e))
+
+
+### Dependencies
+
+* update dependency org.seleniumhq.selenium:selenium-chrome-driver to v4.1.4 ([#784](https://github.com/googleapis/java-recaptchaenterprise/issues/784)) ([58c4d6d](https://github.com/googleapis/java-recaptchaenterprise/commit/58c4d6dd4f19d9c3dd2ab1a6cad909718db47b28))
+* update dependency org.seleniumhq.selenium:selenium-java to v4.1.4 ([#785](https://github.com/googleapis/java-recaptchaenterprise/issues/785)) ([b448e5b](https://github.com/googleapis/java-recaptchaenterprise/commit/b448e5b53f0a9d9027dc0ff9ec08d5b310388f88))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.6.7 ([#778](https://github.com/googleapis/java-recaptchaenterprise/issues/778)) ([568a069](https://github.com/googleapis/java-recaptchaenterprise/commit/568a0698f6026480e0650484e6e99399c3d85c4b))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.6.7 ([#779](https://github.com/googleapis/java-recaptchaenterprise/issues/779)) ([3f25216](https://github.com/googleapis/java-recaptchaenterprise/commit/3f25216c3de83da6eba98a1e550d72946f022d7d))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.6.7 ([#780](https://github.com/googleapis/java-recaptchaenterprise/issues/780)) ([34f2b81](https://github.com/googleapis/java-recaptchaenterprise/commit/34f2b81a040564c9cb09359617b89f9696e99fe1))
+
 ### [2.4.11](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.10...v2.4.11) (2022-04-15)
 
 
