@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.29](https://github.com/googleapis/java-notification/compare/v0.122.28...v0.122.29) (2022-05-16)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-storage to v1-rev20220509-1.32.1 ([#591](https://github.com/googleapis/java-notification/issues/591)) ([4c020c8](https://github.com/googleapis/java-notification/commit/4c020c89b3b5b6b917e00d100cc68c349bb399a9))
+
 ### [0.122.28](https://github.com/googleapis/java-notification/compare/v0.122.27...v0.122.28) (2022-05-12)
 
 
