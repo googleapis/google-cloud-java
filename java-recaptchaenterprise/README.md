@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-recaptchaenterprise'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-recaptchaenterprise:2.4.11'
+implementation 'com.google.cloud:google-cloud-recaptchaenterprise:2.5.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "2.4.11"
+libraryDependencies += "com.google.cloud" % "google-cloud-recaptchaenterprise" % "2.5.0"
 ```
 
 ## Authentication
@@ -118,6 +118,11 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-recaptchaente
 | List Site Keys | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/ListSiteKeys.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/ListSiteKeys.java) |
 | Migrate Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/MigrateKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/MigrateKey.java) |
 | Update Site Key | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/UpdateSiteKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/UpdateSiteKey.java) |
+| Account Defender Assessment | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/AccountDefenderAssessment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/AccountDefenderAssessment.java) |
+| Annotate Account Defender Assessment | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/AnnotateAccountDefenderAssessment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/AnnotateAccountDefenderAssessment.java) |
+| List Related Account Group Memberships | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/ListRelatedAccountGroupMemberships.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/ListRelatedAccountGroupMemberships.java) |
+| List Related Account Groups | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/ListRelatedAccountGroups.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/ListRelatedAccountGroups.java) |
+| Search Related Account Group Memberships | [source code](https://github.com/googleapis/java-recaptchaenterprise/blob/main/samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/SearchRelatedAccountGroupMemberships.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recaptchaenterprise&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/recaptcha/account_defender/SearchRelatedAccountGroupMemberships.java) |
 
 
 
