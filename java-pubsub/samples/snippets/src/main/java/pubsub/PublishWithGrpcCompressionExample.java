@@ -16,6 +16,7 @@
 
 package pubsub;
 
+// [START pubsub_publisher_with_compression]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
@@ -73,3 +74,4 @@ public class PublishWithGrpcCompressionExample {
     }
   }
 }
+// [END pubsub_publisher_with_compression]
