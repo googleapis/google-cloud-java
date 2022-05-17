@@ -3,6 +3,21 @@
 <differences>
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/analytics/data/v1alpha/**</className>
+    <className>com/google/analytics/data/v1alpha/*</className>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/data/v1alpha/*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/data/v1alpha/*</className>
+    <method>*</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/data/v1alpha/*</className>
+    <method>*</method>
   </difference>
 </differences>
