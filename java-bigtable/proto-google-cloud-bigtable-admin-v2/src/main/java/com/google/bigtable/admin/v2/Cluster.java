@@ -2367,6 +2367,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
+     *  3) All clusters within an instance must use the same CMEK key.
+     * Values are of the form
+     * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2385,6 +2388,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
+     *  3) All clusters within an instance must use the same CMEK key.
+     * Values are of the form
+     * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2502,6 +2508,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
+     *  3) All clusters within an instance must use the same CMEK key.
+     * Values are of the form
+     * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2531,6 +2540,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
      *  2) Only regional keys can be used and the region of the CMEK key must
      *  match the region of the cluster.
+     *  3) All clusters within an instance must use the same CMEK key.
+     * Values are of the form
+     * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
      * </pre>
      *
      * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2886,6 +2898,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
+       *  3) All clusters within an instance must use the same CMEK key.
+       * Values are of the form
+       * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2914,6 +2929,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
+       *  3) All clusters within an instance must use the same CMEK key.
+       * Values are of the form
+       * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2942,6 +2960,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
+       *  3) All clusters within an instance must use the same CMEK key.
+       * Values are of the form
+       * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2969,6 +2990,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
+       *  3) All clusters within an instance must use the same CMEK key.
+       * Values are of the form
+       * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2992,6 +3016,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *  `cloudkms.cryptoKeyEncrypterDecrypter` role on the CMEK key.
        *  2) Only regional keys can be used and the region of the CMEK key must
        *  match the region of the cluster.
+       *  3) All clusters within an instance must use the same CMEK key.
+       * Values are of the form
+       * `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}`
        * </pre>
        *
        * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -3116,7 +3143,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -3140,7 +3167,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -3163,14 +3190,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The location where this cluster's nodes and storage reside. For best
+   * Immutable. The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
    * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The location.
    */
@@ -3190,14 +3218,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The location where this cluster's nodes and storage reside. For best
+   * Immutable. The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
    * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for location.
    */
@@ -3220,7 +3249,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current state of the cluster.
+   * Output only. The current state of the cluster.
    * </pre>
    *
    * <code>
@@ -3237,7 +3266,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current state of the cluster.
+   * Output only. The current state of the cluster.
    * </pre>
    *
    * <code>
@@ -3330,12 +3359,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The type of storage used by this cluster to serve its
+   * Immutable. The type of storage used by this cluster to serve its
    * parent instance's tables, unless explicitly overridden.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The enum numeric value on the wire for defaultStorageType.
    */
@@ -3347,12 +3377,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The type of storage used by this cluster to serve its
+   * Immutable. The type of storage used by this cluster to serve its
    * parent instance's tables, unless explicitly overridden.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The defaultStorageType.
    */
@@ -3893,7 +3924,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -3916,7 +3947,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -3939,7 +3970,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3961,7 +3992,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -3979,7 +4010,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4000,14 +4031,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The location where this cluster's nodes and storage reside. For best
+     * Immutable. The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
      * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The location.
      */
@@ -4026,14 +4058,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The location where this cluster's nodes and storage reside. For best
+     * Immutable. The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
      * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for location.
      */
@@ -4052,14 +4085,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The location where this cluster's nodes and storage reside. For best
+     * Immutable. The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
      * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -4077,14 +4111,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The location where this cluster's nodes and storage reside. For best
+     * Immutable. The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
      * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4098,14 +4133,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The location where this cluster's nodes and storage reside. For best
+     * Immutable. The location where this cluster's nodes and storage reside. For best
      * performance, clients should be located as close as possible to this
      * cluster. Currently only zones are supported, so values should be of the
      * form `projects/{project}/locations/{zone}`.
      * </pre>
      *
-     * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -4126,7 +4162,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current state of the cluster.
+     * Output only. The current state of the cluster.
      * </pre>
      *
      * <code>
@@ -4143,7 +4179,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current state of the cluster.
+     * Output only. The current state of the cluster.
      * </pre>
      *
      * <code>
@@ -4163,7 +4199,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current state of the cluster.
+     * Output only. The current state of the cluster.
      * </pre>
      *
      * <code>
@@ -4183,7 +4219,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current state of the cluster.
+     * Output only. The current state of the cluster.
      * </pre>
      *
      * <code>
@@ -4206,7 +4242,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current state of the cluster.
+     * Output only. The current state of the cluster.
      * </pre>
      *
      * <code>
@@ -4492,12 +4528,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The type of storage used by this cluster to serve its
+     * Immutable. The type of storage used by this cluster to serve its
      * parent instance's tables, unless explicitly overridden.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     * <code>
+     * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The enum numeric value on the wire for defaultStorageType.
      */
@@ -4509,12 +4546,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The type of storage used by this cluster to serve its
+     * Immutable. The type of storage used by this cluster to serve its
      * parent instance's tables, unless explicitly overridden.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     * <code>
+     * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The enum numeric value on the wire for defaultStorageType to set.
      * @return This builder for chaining.
@@ -4529,12 +4567,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The type of storage used by this cluster to serve its
+     * Immutable. The type of storage used by this cluster to serve its
      * parent instance's tables, unless explicitly overridden.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     * <code>
+     * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The defaultStorageType.
      */
@@ -4549,12 +4588,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The type of storage used by this cluster to serve its
+     * Immutable. The type of storage used by this cluster to serve its
      * parent instance's tables, unless explicitly overridden.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     * <code>
+     * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The defaultStorageType to set.
      * @return This builder for chaining.
@@ -4572,12 +4612,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The type of storage used by this cluster to serve its
+     * Immutable. The type of storage used by this cluster to serve its
      * parent instance's tables, unless explicitly overridden.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+     * <code>
+     * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */

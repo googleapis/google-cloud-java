@@ -27,7 +27,6 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
    * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * </pre>
@@ -41,7 +40,6 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
    * `projects/{project}/instances/{instance}/appProfiles/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
    * </pre>
@@ -95,7 +93,7 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * Optional long form description of the use case for this AppProfile.
+   * Long form description of the use case for this AppProfile.
    * </pre>
    *
    * <code>string description = 3;</code>
@@ -107,7 +105,7 @@ public interface AppProfileOrBuilder
    *
    *
    * <pre>
-   * Optional long form description of the use case for this AppProfile.
+   * Long form description of the use case for this AppProfile.
    * </pre>
    *
    * <code>string description = 3;</code>

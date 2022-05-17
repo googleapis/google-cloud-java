@@ -63,7 +63,8 @@ public interface TableOrBuilder
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   int getClusterStatesCount();
@@ -78,7 +79,8 @@ public interface TableOrBuilder
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   boolean containsClusterStates(java.lang.String key);
@@ -97,7 +99,8 @@ public interface TableOrBuilder
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
@@ -113,7 +116,8 @@ public interface TableOrBuilder
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
 
@@ -133,7 +137,8 @@ public interface TableOrBuilder
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(java.lang.String key);
@@ -142,7 +147,6 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -154,7 +158,6 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -169,7 +172,6 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -181,7 +183,6 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -198,7 +199,6 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -211,14 +211,15 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-   * this table. Timestamps not matching the granularity will be rejected.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+   * table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The enum numeric value on the wire for granularity.
    */
@@ -227,14 +228,15 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-   * this table. Timestamps not matching the granularity will be rejected.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+   * table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The granularity.
    */
@@ -244,11 +246,13 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the restoreInfo field is set.
    */
@@ -257,11 +261,13 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The restoreInfo.
    */
@@ -270,11 +276,13 @@ public interface TableOrBuilder
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder();
 }

@@ -386,7 +386,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only populates 'name' and fields related to the table's encryption state.
+     * Only populates `name` and fields related to the table's encryption state.
      * </pre>
      *
      * <code>ENCRYPTION_VIEW = 5;</code>
@@ -450,7 +450,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only populates 'name' and fields related to the table's encryption state.
+     * Only populates `name` and fields related to the table's encryption state.
      * </pre>
      *
      * <code>ENCRYPTION_VIEW = 5;</code>
@@ -568,7 +568,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * <code>
+     * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for replicationState.
@@ -581,7 +582,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * <code>
+     * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The replicationState.
@@ -1035,7 +1037,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * <code>
+     * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for replicationState.
@@ -1051,7 +1054,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Output only. The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * <code>
+     * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The replicationState.
@@ -1558,7 +1562,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * <code>
+       * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for replicationState.
@@ -1574,7 +1579,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * <code>
+       * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @param value The enum numeric value on the wire for replicationState to set.
@@ -1593,7 +1599,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * <code>
+       * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The replicationState.
@@ -1616,7 +1623,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * <code>
+       * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @param value The replicationState to set.
@@ -1639,7 +1647,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * Output only. The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * <code>
+       * .google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return This builder for chaining.
@@ -2268,7 +2277,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2296,7 +2306,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2315,7 +2326,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2339,7 +2351,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2391,7 +2404,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -2416,7 +2428,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -2432,7 +2443,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -2453,7 +2463,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
    * Views: `SCHEMA_VIEW`, `FULL`
    * </pre>
@@ -2479,14 +2488,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-   * this table. Timestamps not matching the granularity will be rejected.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+   * table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The enum numeric value on the wire for granularity.
    */
@@ -2498,14 +2508,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-   * this table. Timestamps not matching the granularity will be rejected.
+   * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+   * table. Timestamps not matching the granularity will be rejected.
    * If unspecified at creation time, the value will be set to `MILLIS`.
    * Views: `SCHEMA_VIEW`, `FULL`.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+   * <code>
+   * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The granularity.
    */
@@ -2525,11 +2536,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the restoreInfo field is set.
    */
@@ -2541,11 +2554,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The restoreInfo.
    */
@@ -2559,11 +2574,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If this table was restored from another data source (e.g. a
-   * backup), this field will be populated with information about the restore.
+   * Output only. If this table was restored from another data source (e.g. a backup), this
+   * field will be populated with information about the restore.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+   * <code>
+   * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
@@ -3162,7 +3179,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3190,7 +3208,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3209,7 +3228,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3233,7 +3253,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3265,7 +3286,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeClusterStates(java.lang.String key) {
@@ -3292,7 +3314,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder putClusterStates(
@@ -3318,7 +3341,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder putAllClusterStates(
@@ -3363,7 +3387,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3388,7 +3411,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3404,7 +3426,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3425,7 +3446,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3454,7 +3474,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3478,7 +3497,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3501,7 +3519,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
      * Views: `SCHEMA_VIEW`, `FULL`
      * </pre>
@@ -3519,14 +3536,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-     * this table. Timestamps not matching the granularity will be rejected.
+     * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+     * table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The enum numeric value on the wire for granularity.
      */
@@ -3538,14 +3556,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-     * this table. Timestamps not matching the granularity will be rejected.
+     * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+     * table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The enum numeric value on the wire for granularity to set.
      * @return This builder for chaining.
@@ -3560,14 +3579,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-     * this table. Timestamps not matching the granularity will be rejected.
+     * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+     * table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The granularity.
      */
@@ -3584,14 +3604,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-     * this table. Timestamps not matching the granularity will be rejected.
+     * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+     * table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The granularity to set.
      * @return This builder for chaining.
@@ -3609,14 +3630,15 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (`CreationOnly`)
-     * The granularity (i.e. `MILLIS`) at which timestamps are stored in
-     * this table. Timestamps not matching the granularity will be rejected.
+     * Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+     * table. Timestamps not matching the granularity will be rejected.
      * If unspecified at creation time, the value will be set to `MILLIS`.
      * Views: `SCHEMA_VIEW`, `FULL`.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
+     * <code>
+     * .google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3637,11 +3659,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the restoreInfo field is set.
      */
@@ -3652,11 +3676,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The restoreInfo.
      */
@@ -3673,11 +3699,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRestoreInfo(com.google.bigtable.admin.v2.RestoreInfo value) {
       if (restoreInfoBuilder_ == null) {
@@ -3696,11 +3724,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRestoreInfo(
         com.google.bigtable.admin.v2.RestoreInfo.Builder builderForValue) {
@@ -3717,11 +3747,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeRestoreInfo(com.google.bigtable.admin.v2.RestoreInfo value) {
       if (restoreInfoBuilder_ == null) {
@@ -3744,11 +3776,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearRestoreInfo() {
       if (restoreInfoBuilder_ == null) {
@@ -3765,11 +3799,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.bigtable.admin.v2.RestoreInfo.Builder getRestoreInfoBuilder() {
 
@@ -3780,11 +3816,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
       if (restoreInfoBuilder_ != null) {
@@ -3799,11 +3837,13 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If this table was restored from another data source (e.g. a
-     * backup), this field will be populated with information about the restore.
+     * Output only. If this table was restored from another data source (e.g. a backup), this
+     * field will be populated with information about the restore.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
+     * <code>
+     * .google.bigtable.admin.v2.RestoreInfo restore_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.RestoreInfo,

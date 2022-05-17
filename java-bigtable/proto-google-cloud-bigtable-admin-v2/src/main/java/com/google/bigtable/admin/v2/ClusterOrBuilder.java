@@ -31,7 +31,7 @@ public interface ClusterOrBuilder
    * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -44,7 +44,7 @@ public interface ClusterOrBuilder
    * `projects/{project}/instances/{instance}/clusters/[a-z][-a-z0-9]*`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -54,14 +54,15 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The location where this cluster's nodes and storage reside. For best
+   * Immutable. The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
    * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The location.
    */
@@ -70,14 +71,15 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The location where this cluster's nodes and storage reside. For best
+   * Immutable. The location where this cluster's nodes and storage reside. For best
    * performance, clients should be located as close as possible to this
    * cluster. Currently only zones are supported, so values should be of the
    * form `projects/{project}/locations/{zone}`.
    * </pre>
    *
-   * <code>string location = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string location = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for location.
    */
@@ -87,7 +89,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * The current state of the cluster.
+   * Output only. The current state of the cluster.
    * </pre>
    *
    * <code>
@@ -101,7 +103,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * The current state of the cluster.
+   * Output only. The current state of the cluster.
    * </pre>
    *
    * <code>
@@ -165,12 +167,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The type of storage used by this cluster to serve its
+   * Immutable. The type of storage used by this cluster to serve its
    * parent instance's tables, unless explicitly overridden.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The enum numeric value on the wire for defaultStorageType.
    */
@@ -179,12 +182,13 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * (`CreationOnly`)
-   * The type of storage used by this cluster to serve its
+   * Immutable. The type of storage used by this cluster to serve its
    * parent instance's tables, unless explicitly overridden.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.StorageType default_storage_type = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.StorageType default_storage_type = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The defaultStorageType.
    */

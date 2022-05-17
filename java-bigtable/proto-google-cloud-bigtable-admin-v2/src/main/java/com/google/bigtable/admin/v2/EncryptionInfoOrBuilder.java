@@ -56,9 +56,8 @@ public interface EncryptionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The status of encrypt/decrypt calls on underlying data for
-   * this resource. Regardless of status, the existing data is always encrypted
-   * at rest.
+   * Output only. The status of encrypt/decrypt calls on underlying data for this resource.
+   * Regardless of status, the existing data is always encrypted at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -71,9 +70,8 @@ public interface EncryptionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The status of encrypt/decrypt calls on underlying data for
-   * this resource. Regardless of status, the existing data is always encrypted
-   * at rest.
+   * Output only. The status of encrypt/decrypt calls on underlying data for this resource.
+   * Regardless of status, the existing data is always encrypted at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -86,9 +84,8 @@ public interface EncryptionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The status of encrypt/decrypt calls on underlying data for
-   * this resource. Regardless of status, the existing data is always encrypted
-   * at rest.
+   * Output only. The status of encrypt/decrypt calls on underlying data for this resource.
+   * Regardless of status, the existing data is always encrypted at rest.
    * </pre>
    *
    * <code>.google.rpc.Status encryption_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -100,8 +97,8 @@ public interface EncryptionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The version of the Cloud KMS key specified in the parent
-   * cluster that is in use for the data underlying this table.
+   * Output only. The version of the Cloud KMS key specified in the parent cluster that is
+   * in use for the data underlying this table.
    * </pre>
    *
    * <code>
@@ -115,8 +112,8 @@ public interface EncryptionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The version of the Cloud KMS key specified in the parent
-   * cluster that is in use for the data underlying this table.
+   * Output only. The version of the Cloud KMS key specified in the parent cluster that is
+   * in use for the data underlying this table.
    * </pre>
    *
    * <code>

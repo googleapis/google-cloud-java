@@ -27,7 +27,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. A globally unique identifier for the backup which cannot be
+   * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
@@ -38,7 +38,7 @@ public interface BackupOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -47,7 +47,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. A globally unique identifier for the backup which cannot be
+   * A globally unique identifier for the backup which cannot be
    * changed. Values are of the form
    * `projects/{project}/instances/{instance}/clusters/{cluster}/
    *    backups/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`
@@ -58,7 +58,7 @@ public interface BackupOrBuilder
    * `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -68,8 +68,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Name of the table from which this backup was created.
-   * This needs to be in the same instance as the backup. Values are of the form
+   * Required. Immutable. Name of the table from which this backup was created. This needs
+   * to be in the same instance as the backup. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{source_table}`.
    * </pre>
    *
@@ -84,8 +84,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Name of the table from which this backup was created.
-   * This needs to be in the same instance as the backup. Values are of the form
+   * Required. Immutable. Name of the table from which this backup was created. This needs
+   * to be in the same instance as the backup. Values are of the form
    * `projects/{project}/instances/{instance}/tables/{source_table}`.
    * </pre>
    *
@@ -153,9 +153,8 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
-   * request is received).  The row data in this backup will be no older than
-   * this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
+   * row data in this backup will be no older than this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -170,9 +169,8 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
-   * request is received).  The row data in this backup will be no older than
-   * this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
+   * row data in this backup will be no older than this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -187,9 +185,8 @@ public interface BackupOrBuilder
    * <pre>
    * Output only. `start_time` is the time that the backup was started
    * (i.e. approximately the time the
-   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup]
-   * request is received).  The row data in this backup will be no older than
-   * this timestamp.
+   * [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup] request is received).  The
+   * row data in this backup will be no older than this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];

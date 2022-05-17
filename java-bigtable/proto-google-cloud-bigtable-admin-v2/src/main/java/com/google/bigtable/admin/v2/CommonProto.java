@@ -41,9 +41,9 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/bigtable/admin/v2/common.proto\022"
-          + "\030google.bigtable.admin.v2\032\037google/protob"
-          + "uf/timestamp.proto\032\034google/api/annotatio"
-          + "ns.proto\"\213\001\n\021OperationProgress\022\030\n\020progre"
+          + "\030google.bigtable.admin.v2\032\034google/api/an"
+          + "notations.proto\032\037google/protobuf/timesta"
+          + "mp.proto\"\213\001\n\021OperationProgress\022\030\n\020progre"
           + "ss_percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.g"
           + "oogle.protobuf.Timestamp\022,\n\010end_time\030\003 \001"
           + "(\0132\032.google.protobuf.Timestamp*=\n\013Storag"
@@ -59,8 +59,8 @@ public final class CommonProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_bigtable_admin_v2_OperationProgress_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -70,8 +70,8 @@ public final class CommonProto {
             new java.lang.String[] {
               "ProgressPercent", "StartTime", "EndTime",
             });
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

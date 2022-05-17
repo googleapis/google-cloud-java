@@ -378,13 +378,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance is meant for development and testing purposes only; it has
-     * no performance or uptime guarantees and is not covered by SLA.
-     * After a development instance is created, it can be upgraded by
-     * updating the instance to type `PRODUCTION`. An instance created
-     * as a production instance cannot be changed to a development instance.
-     * When creating a development instance, `serve_nodes` on the cluster must
-     * not be set.
+     * DEPRECATED: Prefer PRODUCTION for all use cases, as it no longer enforces
+     * a higher minimum node count than DEVELOPMENT.
      * </pre>
      *
      * <code>DEVELOPMENT = 2;</code>
@@ -420,13 +415,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance is meant for development and testing purposes only; it has
-     * no performance or uptime guarantees and is not covered by SLA.
-     * After a development instance is created, it can be upgraded by
-     * updating the instance to type `PRODUCTION`. An instance created
-     * as a production instance cannot be changed to a development instance.
-     * When creating a development instance, `serve_nodes` on the cluster must
-     * not be set.
+     * DEPRECATED: Prefer PRODUCTION for all use cases, as it no longer enforces
+     * a higher minimum node count than DEVELOPMENT.
      * </pre>
      *
      * <code>DEVELOPMENT = 2;</code>
@@ -526,7 +516,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -550,7 +540,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -1327,7 +1317,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -1350,7 +1340,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -1373,7 +1363,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1395,7 +1385,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1413,7 +1403,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/{project}/instances/[a-z][a-z0-9&#92;&#92;-]+[a-z0-9]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

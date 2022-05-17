@@ -58,6 +58,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -115,6 +116,23 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                tables_ =
+                    com.google.protobuf.MapField.newMapField(TablesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String,
+                      com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+                  tables__ =
+                      input.readMessage(
+                          TablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              tables_.getMutableMap().put(tables__.getKey(), tables__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +159,17 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 4:
+        return internalGetTables();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -149,6 +178,999 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         .ensureFieldAccessorsInitialized(
             com.google.bigtable.admin.v2.CreateClusterMetadata.class,
             com.google.bigtable.admin.v2.CreateClusterMetadata.Builder.class);
+  }
+
+  public interface TableProgressOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimate of the size of the table to be copied.
+     * </pre>
+     *
+     * <code>int64 estimated_size_bytes = 2;</code>
+     *
+     * @return The estimatedSizeBytes.
+     */
+    long getEstimatedSizeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimate of the number of bytes copied so far for this table.
+     * This will eventually reach 'estimated_size_bytes' unless the table copy
+     * is CANCELLED.
+     * </pre>
+     *
+     * <code>int64 estimated_copied_bytes = 3;</code>
+     *
+     * @return The estimatedCopiedBytes.
+     */
+    long getEstimatedCopiedBytes();
+
+    /**
+     * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+    /**
+     * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+     *
+     * @return The state.
+     */
+    com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State getState();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Progress info for copying a table's data to the new cluster.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.CreateClusterMetadata.TableProgress}
+   */
+  public static final class TableProgress extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+      TableProgressOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TableProgress.newBuilder() to construct.
+    private TableProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TableProgress() {
+      state_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableProgress();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private TableProgress(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16:
+              {
+                estimatedSizeBytes_ = input.readInt64();
+                break;
+              }
+            case 24:
+              {
+                estimatedCopiedBytes_ = input.readInt64();
+                break;
+              }
+            case 32:
+              {
+                int rawValue = input.readEnum();
+
+                state_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+          .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TableProgress_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+          .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TableProgress_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.class,
+              com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.Builder.class);
+    }
+
+    /** Protobuf enum {@code google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State} */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /** <code>STATE_UNSPECIFIED = 0;</code> */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The table has not yet begun copying to the new cluster.
+       * </pre>
+       *
+       * <code>PENDING = 1;</code>
+       */
+      PENDING(1),
+      /**
+       *
+       *
+       * <pre>
+       * The table is actively being copied to the new cluster.
+       * </pre>
+       *
+       * <code>COPYING = 2;</code>
+       */
+      COPYING(2),
+      /**
+       *
+       *
+       * <pre>
+       * The table has been fully copied to the new cluster.
+       * </pre>
+       *
+       * <code>COMPLETED = 3;</code>
+       */
+      COMPLETED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The table was deleted before it finished copying to the new cluster.
+       * Note that tables deleted after completion will stay marked as
+       * COMPLETED, not CANCELLED.
+       * </pre>
+       *
+       * <code>CANCELLED = 4;</code>
+       */
+      CANCELLED(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /** <code>STATE_UNSPECIFIED = 0;</code> */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The table has not yet begun copying to the new cluster.
+       * </pre>
+       *
+       * <code>PENDING = 1;</code>
+       */
+      public static final int PENDING_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The table is actively being copied to the new cluster.
+       * </pre>
+       *
+       * <code>COPYING = 2;</code>
+       */
+      public static final int COPYING_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The table has been fully copied to the new cluster.
+       * </pre>
+       *
+       * <code>COMPLETED = 3;</code>
+       */
+      public static final int COMPLETED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The table was deleted before it finished copying to the new cluster.
+       * Note that tables deleted after completion will stay marked as
+       * COMPLETED, not CANCELLED.
+       * </pre>
+       *
+       * <code>CANCELLED = 4;</code>
+       */
+      public static final int CANCELLED_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return PENDING;
+          case 2:
+            return COPYING;
+          case 3:
+            return COMPLETED;
+          case 4:
+            return CANCELLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State)
+    }
+
+    public static final int ESTIMATED_SIZE_BYTES_FIELD_NUMBER = 2;
+    private long estimatedSizeBytes_;
+    /**
+     *
+     *
+     * <pre>
+     * Estimate of the size of the table to be copied.
+     * </pre>
+     *
+     * <code>int64 estimated_size_bytes = 2;</code>
+     *
+     * @return The estimatedSizeBytes.
+     */
+    @java.lang.Override
+    public long getEstimatedSizeBytes() {
+      return estimatedSizeBytes_;
+    }
+
+    public static final int ESTIMATED_COPIED_BYTES_FIELD_NUMBER = 3;
+    private long estimatedCopiedBytes_;
+    /**
+     *
+     *
+     * <pre>
+     * Estimate of the number of bytes copied so far for this table.
+     * This will eventually reach 'estimated_size_bytes' unless the table copy
+     * is CANCELLED.
+     * </pre>
+     *
+     * <code>int64 estimated_copied_bytes = 3;</code>
+     *
+     * @return The estimatedCopiedBytes.
+     */
+    @java.lang.Override
+    public long getEstimatedCopiedBytes() {
+      return estimatedCopiedBytes_;
+    }
+
+    public static final int STATE_FIELD_NUMBER = 4;
+    private int state_;
+    /**
+     * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State result =
+          com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State.valueOf(state_);
+      return result == null
+          ? com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (estimatedSizeBytes_ != 0L) {
+        output.writeInt64(2, estimatedSizeBytes_);
+      }
+      if (estimatedCopiedBytes_ != 0L) {
+        output.writeInt64(3, estimatedCopiedBytes_);
+      }
+      if (state_
+          != com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State
+              .STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, state_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (estimatedSizeBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, estimatedSizeBytes_);
+      }
+      if (estimatedCopiedBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, estimatedCopiedBytes_);
+      }
+      if (state_
+          != com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State
+              .STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, state_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress other =
+          (com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress) obj;
+
+      if (getEstimatedSizeBytes() != other.getEstimatedSizeBytes()) return false;
+      if (getEstimatedCopiedBytes() != other.getEstimatedCopiedBytes()) return false;
+      if (state_ != other.state_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ESTIMATED_SIZE_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedSizeBytes());
+      hash = (37 * hash) + ESTIMATED_COPIED_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedCopiedBytes());
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Progress info for copying a table's data to the new cluster.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.CreateClusterMetadata.TableProgress}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgressOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+            .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TableProgress_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+            .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TableProgress_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.class,
+                com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.Builder.class);
+      }
+
+      // Construct using
+      // com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        estimatedSizeBytes_ = 0L;
+
+        estimatedCopiedBytes_ = 0L;
+
+        state_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+            .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TableProgress_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+          getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress build() {
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress buildPartial() {
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress result =
+            new com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress(this);
+        result.estimatedSizeBytes_ = estimatedSizeBytes_;
+        result.estimatedCopiedBytes_ = estimatedCopiedBytes_;
+        result.state_ = state_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress) {
+          return mergeFrom(
+              (com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress other) {
+        if (other
+            == com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+                .getDefaultInstance()) return this;
+        if (other.getEstimatedSizeBytes() != 0L) {
+          setEstimatedSizeBytes(other.getEstimatedSizeBytes());
+        }
+        if (other.getEstimatedCopiedBytes() != 0L) {
+          setEstimatedCopiedBytes(other.getEstimatedCopiedBytes());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long estimatedSizeBytes_;
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the size of the table to be copied.
+       * </pre>
+       *
+       * <code>int64 estimated_size_bytes = 2;</code>
+       *
+       * @return The estimatedSizeBytes.
+       */
+      @java.lang.Override
+      public long getEstimatedSizeBytes() {
+        return estimatedSizeBytes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the size of the table to be copied.
+       * </pre>
+       *
+       * <code>int64 estimated_size_bytes = 2;</code>
+       *
+       * @param value The estimatedSizeBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEstimatedSizeBytes(long value) {
+
+        estimatedSizeBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the size of the table to be copied.
+       * </pre>
+       *
+       * <code>int64 estimated_size_bytes = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEstimatedSizeBytes() {
+
+        estimatedSizeBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long estimatedCopiedBytes_;
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the number of bytes copied so far for this table.
+       * This will eventually reach 'estimated_size_bytes' unless the table copy
+       * is CANCELLED.
+       * </pre>
+       *
+       * <code>int64 estimated_copied_bytes = 3;</code>
+       *
+       * @return The estimatedCopiedBytes.
+       */
+      @java.lang.Override
+      public long getEstimatedCopiedBytes() {
+        return estimatedCopiedBytes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the number of bytes copied so far for this table.
+       * This will eventually reach 'estimated_size_bytes' unless the table copy
+       * is CANCELLED.
+       * </pre>
+       *
+       * <code>int64 estimated_copied_bytes = 3;</code>
+       *
+       * @param value The estimatedCopiedBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEstimatedCopiedBytes(long value) {
+
+        estimatedCopiedBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Estimate of the number of bytes copied so far for this table.
+       * This will eventually reach 'estimated_size_bytes' unless the table copy
+       * is CANCELLED.
+       * </pre>
+       *
+       * <code>int64 estimated_copied_bytes = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEstimatedCopiedBytes() {
+
+        estimatedCopiedBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int state_ = 0;
+      /**
+       * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State getState() {
+        @SuppressWarnings("deprecation")
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State result =
+            com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State.valueOf(state_);
+        return result == null
+            ? com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State.UNRECOGNIZED
+            : result;
+      }
+      /**
+       * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
+    private static final com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress();
+    }
+
+    public static com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TableProgress> PARSER =
+        new com.google.protobuf.AbstractParser<TableProgress>() {
+          @java.lang.Override
+          public TableProgress parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TableProgress(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<TableProgress> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TableProgress> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 1;
@@ -291,6 +1313,157 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     return getFinishTime();
   }
 
+  public static final int TABLES_FIELD_NUMBER = 4;
+
+  private static final class TablesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String,
+                    com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+                    newDefaultInstance(
+                        com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+                            .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_TablesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress
+                            .getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+      tables_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+      internalGetTables() {
+    if (tables_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TablesDefaultEntryHolder.defaultEntry);
+    }
+    return tables_;
+  }
+
+  public int getTablesCount() {
+    return internalGetTables().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys: the full `name` of each table that existed in the instance when
+   * CreateCluster was first called, i.e.
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+   * to the instance by a later API call will be created in the new cluster by
+   * that API call, not this one.
+   * Values: information on how much of a table's data has been copied to the
+   * newly-created cluster so far.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTables(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTables().getMap().containsKey(key);
+  }
+  /** Use {@link #getTablesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+      getTables() {
+    return getTablesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys: the full `name` of each table that existed in the instance when
+   * CreateCluster was first called, i.e.
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+   * to the instance by a later API call will be created in the new cluster by
+   * that API call, not this one.
+   * Values: information on how much of a table's data has been copied to the
+   * newly-created cluster so far.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+      getTablesMap() {
+    return internalGetTables().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys: the full `name` of each table that existed in the instance when
+   * CreateCluster was first called, i.e.
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+   * to the instance by a later API call will be created in the new cluster by
+   * that API call, not this one.
+   * Values: information on how much of a table's data has been copied to the
+   * newly-created cluster so far.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress getTablesOrDefault(
+      java.lang.String key,
+      com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        map = internalGetTables().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys: the full `name` of each table that existed in the instance when
+   * CreateCluster was first called, i.e.
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+   * to the instance by a later API call will be created in the new cluster by
+   * that API call, not this one.
+   * Values: information on how much of a table's data has been copied to the
+   * newly-created cluster so far.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress getTablesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        map = internalGetTables().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -314,6 +1487,8 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     if (finishTime_ != null) {
       output.writeMessage(3, getFinishTime());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTables(), TablesDefaultEntryHolder.defaultEntry, 4);
     unknownFields.writeTo(output);
   }
 
@@ -331,6 +1506,19 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     }
     if (finishTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFinishTime());
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        entry : internalGetTables().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+          tables__ =
+              TablesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, tables__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -360,6 +1548,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     if (hasFinishTime()) {
       if (!getFinishTime().equals(other.getFinishTime())) return false;
     }
+    if (!internalGetTables().equals(other.internalGetTables())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -382,6 +1571,10 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     if (hasFinishTime()) {
       hash = (37 * hash) + FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getFinishTime().hashCode();
+    }
+    if (!internalGetTables().getMap().isEmpty()) {
+      hash = (37 * hash) + TABLES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTables().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -501,6 +1694,26 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
           .internal_static_google_bigtable_admin_v2_CreateClusterMetadata_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetTables();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableTables();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -546,6 +1759,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         finishTime_ = null;
         finishTimeBuilder_ = null;
       }
+      internalGetMutableTables().clear();
       return this;
     }
 
@@ -573,6 +1787,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public com.google.bigtable.admin.v2.CreateClusterMetadata buildPartial() {
       com.google.bigtable.admin.v2.CreateClusterMetadata result =
           new com.google.bigtable.admin.v2.CreateClusterMetadata(this);
+      int from_bitField0_ = bitField0_;
       if (originalRequestBuilder_ == null) {
         result.originalRequest_ = originalRequest_;
       } else {
@@ -588,6 +1803,8 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       } else {
         result.finishTime_ = finishTimeBuilder_.build();
       }
+      result.tables_ = internalGetTables();
+      result.tables_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -647,6 +1864,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       if (other.hasFinishTime()) {
         mergeFinishTime(other.getFinishTime());
       }
+      internalGetMutableTables().mergeFrom(other.internalGetTables());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -676,6 +1894,8 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.bigtable.admin.v2.CreateClusterRequest originalRequest_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1230,6 +2450,242 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         finishTime_ = null;
       }
       return finishTimeBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        tables_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        internalGetTables() {
+      if (tables_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TablesDefaultEntryHolder.defaultEntry);
+      }
+      return tables_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        internalGetMutableTables() {
+      onChanged();
+      ;
+      if (tables_ == null) {
+        tables_ = com.google.protobuf.MapField.newMapField(TablesDefaultEntryHolder.defaultEntry);
+      }
+      if (!tables_.isMutable()) {
+        tables_ = tables_.copy();
+      }
+      return tables_;
+    }
+
+    public int getTablesCount() {
+      return internalGetTables().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTables(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTables().getMap().containsKey(key);
+    }
+    /** Use {@link #getTablesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        getTables() {
+      return getTablesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        getTablesMap() {
+      return internalGetTables().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress getTablesOrDefault(
+        java.lang.String key,
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+          map = internalGetTables().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress getTablesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+          map = internalGetTables().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTables() {
+      internalGetMutableTables().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    public Builder removeTables(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTables().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+        getMutableTables() {
+      return internalGetMutableTables().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    public Builder putTables(
+        java.lang.String key,
+        com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableTables().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys: the full `name` of each table that existed in the instance when
+     * CreateCluster was first called, i.e.
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`. Any table added
+     * to the instance by a later API call will be created in the new cluster by
+     * that API call, not this one.
+     * Values: information on how much of a table's data has been copied to the
+     * newly-created cluster so far.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.admin.v2.CreateClusterMetadata.TableProgress&gt; tables = 4;
+     * </code>
+     */
+    public Builder putAllTables(
+        java.util.Map<
+                java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
+            values) {
+      internalGetMutableTables().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override
