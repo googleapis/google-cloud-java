@@ -124,5 +124,10 @@ public class PublisherIT {
     for (int i = 1; i <= 4; i++) {
       assertThat(bout.toString()).contains("message" + i);
     }
+
+    bout.reset();
+    // Test publish with gRPC compression.
+    PublishWithGrpcCompressionExample.publishWithGrpcCompressionExample(projectId, topicId);
+    assertThat(bout.toString()).contains("Published a compressed message of message ID: ");
   }
 }
