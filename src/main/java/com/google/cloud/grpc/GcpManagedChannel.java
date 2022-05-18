@@ -17,6 +17,7 @@
 package com.google.cloud.grpc;
 
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
@@ -50,6 +51,8 @@ import java.util.LongSummaryStatistics;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -100,6 +103,10 @@ public class GcpManagedChannel extends ManagedChannel {
       new ArrayList<>(
           Collections.singletonList(LabelValue.create(GcpMetricsConstants.RESULT_ERROR)));
   private String metricPrefix;
+  private final String metricPoolIndex =
+      String.format("pool-%d", channelPoolIndex.incrementAndGet());
+  private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
+  private ScheduledExecutorService logMetricService;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -198,14 +205,24 @@ public class GcpManagedChannel extends ManagedChannel {
     initMetrics();
   }
 
+  private synchronized void initLogMetrics() {
+    if (logMetricService != null) {
+      return;
+    }
+    logMetricService = Executors.newSingleThreadScheduledExecutor();
+    logMetricService.scheduleAtFixedRate(this::logMetrics, 60, 60, SECONDS);
+  }
+
   private void initMetrics() {
     final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
     if (metricsOptions == null) {
       logger.info("Metrics options are empty. Metrics disabled.");
+      initLogMetrics();
       return;
     }
     if (metricsOptions.getMetricRegistry() == null) {
       logger.info("Metric registry is null. Metrics disabled.");
+      initLogMetrics();
       return;
     }
     logger.info("Metrics enabled.");
@@ -221,8 +238,7 @@ public class GcpManagedChannel extends ManagedChannel {
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC);
     labelKeys.add(poolKey);
     labelKeysWithResult.add(poolKey);
-    final LabelValue poolIndex =
-        LabelValue.create(String.format("pool-%d", channelPoolIndex.incrementAndGet()));
+    final LabelValue poolIndex = LabelValue.create(metricPoolIndex);
     labelValues.add(poolIndex);
     labelValuesSuccess.add(poolIndex);
     labelValuesError.add(poolIndex);
@@ -409,6 +425,50 @@ public class GcpManagedChannel extends ManagedChannel {
         GcpManagedChannel::reportMaxUnresponsiveDrops);
   }
 
+  private void logGauge(String key, long value) {
+    logger.fine(String.format("%s stat: %s = %d", metricPoolIndex, key, value));
+  }
+
+  private void logCumulative(String key, long value) {
+    logger.fine(() -> {
+      Long prevValue = cumulativeMetricValues.put(key, value);
+      long logValue = prevValue == null ? value : value - prevValue;
+      return String.format("%s stat: %s = %d", metricPoolIndex, key, logValue);
+    });
+  }
+
+  private void logMetrics() {
+    reportMinReadyChannels();
+    reportMaxReadyChannels();
+    reportMaxChannels();
+    reportMaxAllowedChannels();
+    reportNumChannelDisconnect();
+    reportNumChannelConnect();
+    reportMinReadinessTime();
+    reportAvgReadinessTime();
+    reportMaxReadinessTime();
+    reportMinActiveStreams();
+    reportMaxActiveStreams();
+    reportMinTotalActiveStreams();
+    reportMaxTotalActiveStreams();
+    reportMinAffinity();
+    reportMaxAffinity();
+    reportNumAffinity();
+    reportMinOkCalls();
+    reportMinErrCalls();
+    reportMaxOkCalls();
+    reportMaxErrCalls();
+    reportTotalOkCalls();
+    reportTotalErrCalls();
+    reportSucceededFallbacks();
+    reportFailedFallbacks();
+    reportUnresponsiveDetectionCount();
+    reportMinUnresponsiveMs();
+    reportMaxUnresponsiveMs();
+    reportMinUnresponsiveDrops();
+    reportMaxUnresponsiveDrops();
+  }
+
   private MetricOptions createMetricOptions(
       String description, List<LabelKey> labelKeys, String unit) {
     return MetricOptions.builder()
@@ -472,37 +532,48 @@ public class GcpManagedChannel extends ManagedChannel {
     metric.createTimeSeries(labelValuesError, obj, funcErr);
   }
 
+  // TODO: When introducing pool downscaling feature this method must be changed accordingly.
   private long reportMaxChannels() {
-    return getNumberOfChannels();
+    int value = getNumberOfChannels();
+    logGauge(GcpMetricsConstants.METRIC_MAX_CHANNELS, value);
+    return value;
   }
 
   private long reportMaxAllowedChannels() {
+    logGauge(GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS, maxSize);
     return maxSize;
   }
 
   private long reportMinReadyChannels() {
     int value = minReadyChannels;
     minReadyChannels = readyChannels.get();
+    logGauge(GcpMetricsConstants.METRIC_MIN_READY_CHANNELS, value);
     return value;
   }
 
   private long reportMaxReadyChannels() {
     int value = maxReadyChannels;
     maxReadyChannels = readyChannels.get();
+    logGauge(GcpMetricsConstants.METRIC_MAX_READY_CHANNELS, value);
     return value;
   }
 
   private long reportNumChannelConnect() {
-    return numChannelConnect.get();
+    long value = numChannelConnect.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT, value);
+    return value;
   }
 
   private long reportNumChannelDisconnect() {
-    return numChannelDisconnect.get();
+    long value = numChannelDisconnect.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT, value);
+    return value;
   }
 
   private long reportMinReadinessTime() {
     long value = minReadinessTime;
     minReadinessTime = 0;
+    logGauge(GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME, value);
     return value;
   }
 
@@ -513,12 +584,14 @@ public class GcpManagedChannel extends ManagedChannel {
     if (occ != 0) {
       value = total / occ;
     }
+    logGauge(GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME, value);
     return value;
   }
 
   private long reportMaxReadinessTime() {
     long value = maxReadinessTime;
     maxReadinessTime = 0;
+    logGauge(GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME, value);
     return value;
   }
 
@@ -526,6 +599,7 @@ public class GcpManagedChannel extends ManagedChannel {
     int value = minActiveStreams;
     minActiveStreams =
         channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0);
+    logGauge(GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS, value);
     return value;
   }
 
@@ -533,51 +607,62 @@ public class GcpManagedChannel extends ManagedChannel {
     int value = maxActiveStreams;
     maxActiveStreams =
         channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
+    logGauge(GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMinTotalActiveStreams() {
     int value = minTotalActiveStreams;
     minTotalActiveStreams = totalActiveStreams.get();
+    logGauge(GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMaxTotalActiveStreams() {
     int value = maxTotalActiveStreams;
     maxTotalActiveStreams = totalActiveStreams.get();
+    logGauge(GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMinAffinity() {
     int value = minAffinity;
     minAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0);
+    logGauge(GcpMetricsConstants.METRIC_MIN_AFFINITY, value);
     return value;
   }
 
   private int reportMaxAffinity() {
     int value = maxAffinity;
     maxAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0);
+    logGauge(GcpMetricsConstants.METRIC_MAX_AFFINITY, value);
     return value;
   }
 
   private int reportNumAffinity() {
-    return totalAffinityCount.get();
+    int value = totalAffinityCount.get();
+    logGauge(GcpMetricsConstants.METRIC_NUM_AFFINITY, value);
+    return value;
   }
 
   private synchronized long reportMinOkCalls() {
     minOkReported = true;
     calcMinMaxOkCalls();
+    logGauge(GcpMetricsConstants.METRIC_MIN_CALLS + "_ok", minOkCalls);
     return minOkCalls;
   }
 
   private synchronized long reportMaxOkCalls() {
     maxOkReported = true;
     calcMinMaxOkCalls();
+    logGauge(GcpMetricsConstants.METRIC_MAX_CALLS + "_ok", maxOkCalls);
     return maxOkCalls;
   }
 
   private long reportTotalOkCalls() {
-    return totalOkCalls.get();
+    long value = totalOkCalls.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED + "_ok", value);
+    return value;
   }
 
   private void calcMinMaxOkCalls() {
@@ -595,17 +680,21 @@ public class GcpManagedChannel extends ManagedChannel {
   private synchronized long reportMinErrCalls() {
     minErrReported = true;
     calcMinMaxErrCalls();
+    logGauge(GcpMetricsConstants.METRIC_MIN_CALLS + "_err", minErrCalls);
     return minErrCalls;
   }
 
   private synchronized long reportMaxErrCalls() {
     maxErrReported = true;
     calcMinMaxErrCalls();
+    logGauge(GcpMetricsConstants.METRIC_MAX_CALLS + "_err", maxErrCalls);
     return maxErrCalls;
   }
 
   private long reportTotalErrCalls() {
-    return totalErrCalls.get();
+    long value = totalErrCalls.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED + "_err", value);
+    return value;
   }
 
   private void calcMinMaxErrCalls() {
@@ -621,38 +710,48 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportSucceededFallbacks() {
-    return fallbacksSucceeded.get();
+    long value = fallbacksSucceeded.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_FALLBACKS + "_ok", value);
+    return value;
   }
 
   private long reportFailedFallbacks() {
-    return fallbacksFailed.get();
+    long value = fallbacksFailed.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_FALLBACKS + "_fail", value);
+    return value;
   }
 
   private long reportUnresponsiveDetectionCount() {
-    return unresponsiveDetectionCount.get();
+    long value = unresponsiveDetectionCount.get();
+    logCumulative(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS, value);
+    return value;
   }
 
   private long reportMinUnresponsiveMs() {
     long value = minUnresponsiveMs;
     minUnresponsiveMs = 0;
+    logGauge(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME, value);
     return value;
   }
 
   private long reportMaxUnresponsiveMs() {
     long value = maxUnresponsiveMs;
     maxUnresponsiveMs = 0;
+    logGauge(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME, value);
     return value;
   }
 
   private long reportMinUnresponsiveDrops() {
     long value = minUnresponsiveDrops;
     minUnresponsiveDrops = 0;
+    logGauge(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS, value);
     return value;
   }
 
   private long reportMaxUnresponsiveDrops() {
     long value = maxUnresponsiveDrops;
     maxUnresponsiveDrops = 0;
+    logGauge(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS, value);
     return value;
   }
 
@@ -958,6 +1057,9 @@ public class GcpManagedChannel extends ManagedChannel {
         channelRef.getChannel().shutdownNow();
       }
     }
+    if (logMetricService != null && !logMetricService.isTerminated()) {
+      logMetricService.shutdownNow();
+    }
     return this;
   }
 
@@ -965,6 +1067,9 @@ public class GcpManagedChannel extends ManagedChannel {
   public ManagedChannel shutdown() {
     for (ChannelRef channelRef : channelRefs) {
       channelRef.getChannel().shutdown();
+    }
+    if (logMetricService != null) {
+      logMetricService.shutdown();
     }
     return this;
   }
@@ -982,6 +1087,11 @@ public class GcpManagedChannel extends ManagedChannel {
       }
       channelRef.getChannel().awaitTermination(awaitTimeNanos, NANOSECONDS);
     }
+    long awaitTimeNanos = endTimeNanos - System.nanoTime();
+    if (logMetricService != null && awaitTimeNanos > 0) {
+      //noinspection ResultOfMethodCallIgnored
+      logMetricService.awaitTermination(awaitTimeNanos, NANOSECONDS);
+    }
     return isTerminated();
   }
 
@@ -992,6 +1102,9 @@ public class GcpManagedChannel extends ManagedChannel {
         return false;
       }
     }
+    if (logMetricService != null) {
+      return logMetricService.isShutdown();
+    }
     return true;
   }
 
@@ -1001,6 +1114,9 @@ public class GcpManagedChannel extends ManagedChannel {
       if (!channelRef.getChannel().isTerminated()) {
         return false;
       }
+    }
+    if (logMetricService != null) {
+      return logMetricService.isTerminated();
     }
     return true;
   }

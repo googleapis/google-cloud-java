@@ -50,9 +50,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -71,6 +76,30 @@ public final class GcpManagedChannelTest {
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 100;
+  private static final Logger testLogger = Logger.getLogger(GcpManagedChannel.class.getName());
+
+  private final List<LogRecord> logRecords = new LinkedList<>();
+
+  private String lastLogMessage() {
+    return logRecords.get(logRecords.size() - 1).getMessage();
+  }
+
+  private Level lastLogLevel() {
+    return logRecords.get(logRecords.size() - 1).getLevel();
+  }
+
+  private final Handler testLogHandler = new Handler() {
+    @Override
+    public void publish(LogRecord record) {
+      logRecords.add(record);
+    }
+
+    @Override
+    public void flush() {}
+
+    @Override
+    public void close() throws SecurityException {}
+  };
 
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder<?> builder;
@@ -83,6 +112,7 @@ public final class GcpManagedChannelTest {
 
   @Before
   public void setUpChannel() {
+    testLogger.addHandler(testLogHandler);
     builder = ManagedChannelBuilder.forAddress(TARGET, 443);
     gcpChannel = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(builder).build();
   }
@@ -90,6 +120,9 @@ public final class GcpManagedChannelTest {
   @After
   public void shutdown() {
     gcpChannel.shutdownNow();
+    testLogger.removeHandler(testLogHandler);
+    testLogger.setLevel(Level.INFO);
+    logRecords.clear();
   }
 
   @Test
@@ -530,6 +563,8 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testMetrics() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINE);
     final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
     final String prefix = "some/prefix/";
     final List<LabelKey> labelKeys =
@@ -562,7 +597,8 @@ public final class GcpManagedChannelTest {
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
     List<LabelValue> expectedLabelValues = new ArrayList<>(labelValues);
     int currentIndex = GcpManagedChannel.channelPoolIndex.get();
-    expectedLabelValues.add(LabelValue.create(String.format("pool-%d", currentIndex)));
+    String poolIndex = String.format("pool-%d", currentIndex);
+    expectedLabelValues.add(LabelValue.create(poolIndex));
 
     try {
       // Let's fill five channels with some fake streams.
@@ -577,12 +613,19 @@ public final class GcpManagedChannelTest {
       MetricsRecord record = fakeRegistry.pollRecord();
       assertThat(record.getMetrics().size()).isEqualTo(25);
 
+      // Initial log messages count.
+      int logCount = logRecords.size();
+
       List<PointWithFunction<?>> numChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_CHANNELS);
       assertThat(numChannels.size()).isEqualTo(1);
       assertThat(numChannels.get(0).value()).isEqualTo(5L);
       assertThat(numChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(numChannels.get(0).values()).isEqualTo(expectedLabelValues);
+      assertThat(logRecords.size()).isEqualTo(++logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_CHANNELS + " = 5");
 
       List<PointWithFunction<?>> maxAllowedChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS);
@@ -590,6 +633,10 @@ public final class GcpManagedChannelTest {
       assertThat(maxAllowedChannels.get(0).value()).isEqualTo(MAX_CHANNEL);
       assertThat(maxAllowedChannels.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(maxAllowedChannels.get(0).values()).isEqualTo(expectedLabelValues);
+      assertThat(logRecords.size()).isEqualTo(++logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS + " = 10");
 
       List<PointWithFunction<?>> minActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS);
@@ -597,6 +644,10 @@ public final class GcpManagedChannelTest {
       assertThat(minActiveStreams.get(0).value()).isEqualTo(0L);
       assertThat(minActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(minActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+      assertThat(logRecords.size()).isEqualTo(++logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS + " = 0");
 
       List<PointWithFunction<?>> maxActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS);
@@ -604,14 +655,23 @@ public final class GcpManagedChannelTest {
       assertThat(maxActiveStreams.get(0).value()).isEqualTo(7L);
       assertThat(maxActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(maxActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+      assertThat(logRecords.size()).isEqualTo(++logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS + " = 7");
 
       List<PointWithFunction<?>> totalActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS);
       assertThat(totalActiveStreams.size()).isEqualTo(1);
-      assertThat(totalActiveStreams.get(0).value())
-          .isEqualTo(Arrays.stream(streams).asLongStream().sum());
+      long totalStreamsExpected = Arrays.stream(streams).asLongStream().sum();
+      assertThat(totalActiveStreams.get(0).value()).isEqualTo(totalStreamsExpected);
       assertThat(totalActiveStreams.get(0).keys()).isEqualTo(expectedLabelKeys);
       assertThat(totalActiveStreams.get(0).values()).isEqualTo(expectedLabelValues);
+      assertThat(logRecords.size()).isEqualTo(++logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS + " = " +
+              totalStreamsExpected);
     } finally {
       pool.shutdownNow();
     }
@@ -619,6 +679,8 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testUnresponsiveDetection() throws InterruptedException {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINE);
     final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
     // Creating a pool with unresponsive connection detection for 100 ms, 3 dropped requests.
     final GcpManagedChannel pool =
@@ -634,6 +696,8 @@ public final class GcpManagedChannelTest {
                             GcpMetricsOptions.newBuilder().withMetricRegistry(fakeRegistry).build())
                         .build())
                 .build();
+    int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    String poolIndex = String.format("pool-%d", currentIndex);
     final AtomicInteger idleCounter = new AtomicInteger();
     ManagedChannel channel = new FakeIdleCountingManagedChannel(idleCounter);
     ChannelRef chRef = pool.new ChannelRef(channel, 0);
@@ -652,23 +716,52 @@ public final class GcpManagedChannelTest {
     // Reconnected after 3rd deadline exceeded.
     assertEquals(1, idleCounter.get());
 
+    // Initial log messages count.
+    int logCount = logRecords.size();
+
     MetricsRecord record = fakeRegistry.pollRecord();
     List<PointWithFunction<?>> metric =
         record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(1L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(3L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS + " = 3");
+
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(3L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS + " = 3");
+
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isAtLeast(100L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    assertThat(lastLogMessage()).matches(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME +
+            " = 1\\d\\d");
+
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isAtLeast(100L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    assertThat(lastLogMessage()).matches(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME +
+            " = 1\\d\\d");
 
     // Any message from the server must reset the dropped requests count and timestamp.
     TimeUnit.MILLISECONDS.sleep(105);
@@ -708,9 +801,29 @@ public final class GcpManagedChannelTest {
     assertEquals(1, idleCounter.get());
 
     TimeUnit.MILLISECONDS.sleep(105);
-    // Any subsequent deadline exceeded after 100ms must trigger the reconnect.
+    // Any subsequent deadline exceeded after 100ms must trigger the reconnection.
     chRef.activeStreamsCountDecr(startNanos, deStatus, false);
     assertEquals(2, idleCounter.get());
+
+    // The cumulative num_unresponsive_detections metric must become 2.
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isEqualTo(2L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    // But the log metric count the detections since previous report for num_unresponsive_detections
+    // in the logs. It is always delta in the logs, not cumulative.
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+    // If we log it again the cumulative metric value must remain unchanged.
+    metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
+    assertThat(metric.size()).isEqualTo(1);
+    assertThat(metric.get(0).value()).isEqualTo(2L);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
+    // But in the log it must post 0.
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
   }
 
   static class FakeIdleCountingManagedChannel extends ManagedChannel {
