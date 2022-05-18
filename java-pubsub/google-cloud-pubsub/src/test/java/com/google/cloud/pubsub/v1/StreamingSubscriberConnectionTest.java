@@ -26,6 +26,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
+import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
@@ -71,8 +72,8 @@ public class StreamingSubscriberConnectionTest {
       "TRANSIENT_FAILURE_SERVICE_UNAVAILABLE";
   private static final String PERMANENT_FAILURE_OTHER = "I_DO_NOT_MATCH_ANY_KNOWN_ERRORS";
 
-  private static int MOCK_ACK_EXTENSION_DEFAULT = 10;
-  private static Duration ACK_EXPIRATION_PADDING_DEFAULT = Duration.ofSeconds(10);
+  private static int MOCK_ACK_EXTENSION_DEFAULT_SECONDS = 10;
+  private static Duration ACK_EXPIRATION_PADDING_DEFAULT_DURATION = Duration.ofSeconds(10);
   private static int MAX_DURATION_PER_ACK_EXTENSION_DEFAULT_SECONDS = 10;
 
   @Before
@@ -105,7 +106,8 @@ public class StreamingSubscriberConnectionTest {
 
     ModackRequestData modackRequestDataSuccess =
         new ModackRequestData(
-            MOCK_ACK_EXTENSION_DEFAULT, AckRequestData.newBuilder(MOCK_ACK_ID_SUCCESS).build());
+            MOCK_ACK_EXTENSION_DEFAULT_SECONDS,
+            AckRequestData.newBuilder(MOCK_ACK_ID_SUCCESS).build());
     modackRequestDataList.add(modackRequestDataSuccess);
 
     ModackRequestData modackRequestDataNack =
@@ -138,7 +140,8 @@ public class StreamingSubscriberConnectionTest {
     Map<String, String> errorInfoMetadataMapInitialRequest = new HashMap<String, String>();
     List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
 
-    ModackRequestData modackRequestDataDefault = new ModackRequestData(MOCK_ACK_EXTENSION_DEFAULT);
+    ModackRequestData modackRequestDataDefault =
+        new ModackRequestData(MOCK_ACK_EXTENSION_DEFAULT_SECONDS);
 
     // Nack SUCCESS
     SettableApiFuture<AckResponse> messageFutureSuccessExpected = SettableApiFuture.create();
@@ -218,14 +221,14 @@ public class StreamingSubscriberConnectionTest {
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(MOCK_SUBSCRIPTION_NAME)
             .addAllAckIds(ackIdsInitialRequest)
-            .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT)
+            .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT_SECONDS)
             .build();
 
     ModifyAckDeadlineRequest modifyAckDeadlineRequestRetry =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(MOCK_SUBSCRIPTION_NAME)
             .addAllAckIds(ackIdsRetryRequest)
-            .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT)
+            .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT_SECONDS)
             .build();
 
     // Set mock grpc responses
@@ -450,6 +453,53 @@ public class StreamingSubscriberConnectionTest {
         });
   }
 
+  @Test
+  public void testMaxPerRequestChanges() {
+    // Setup mocks
+    List<ModackRequestData> modackRequestDataList = new ArrayList<ModackRequestData>();
+    List<AckRequestData> ackRequestDataList = new ArrayList<AckRequestData>();
+
+    int numAckIds = 3000;
+    int numMaxPerRequestChanges = 1000;
+
+    List<String> mockAckIds = new ArrayList<String>();
+
+    for (int i = 0; i < numAckIds; i++) {
+      String mockAckId = "MOCK-ACK-ID-" + i;
+      mockAckIds.add(mockAckId);
+      ackRequestDataList.add(AckRequestData.newBuilder(mockAckId).build());
+    }
+
+    modackRequestDataList.add(
+        new ModackRequestData(MOCK_ACK_EXTENSION_DEFAULT_SECONDS, ackRequestDataList));
+
+    // Instantiate class and run operation(s)
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnection(false);
+    streamingSubscriberConnection.sendAckOperations(ackRequestDataList);
+    streamingSubscriberConnection.sendModackOperations(modackRequestDataList);
+
+    // Assert expected behavior
+    for (List<String> mockAckIdsInRequest : Lists.partition(mockAckIds, numMaxPerRequestChanges)) {
+      AcknowledgeRequest expectedAcknowledgeRequest =
+          AcknowledgeRequest.newBuilder()
+              .setSubscription(MOCK_SUBSCRIPTION_NAME)
+              .addAllAckIds(mockAckIdsInRequest)
+              .build();
+      verify(mockSubscriberStub.acknowledgeCallable(), times(1))
+          .futureCall(expectedAcknowledgeRequest);
+
+      ModifyAckDeadlineRequest expectedModifyAckDeadlineRequest =
+          ModifyAckDeadlineRequest.newBuilder()
+              .setSubscription(MOCK_SUBSCRIPTION_NAME)
+              .addAllAckIds(mockAckIdsInRequest)
+              .setAckDeadlineSeconds(MOCK_ACK_EXTENSION_DEFAULT_SECONDS)
+              .build();
+      verify(mockSubscriberStub.modifyAckDeadlineCallable(), times(1))
+          .futureCall(expectedModifyAckDeadlineRequest);
+    }
+  }
+
   private StreamingSubscriberConnection getStreamingSubscriberConnection(
       boolean exactlyOnceDeliveryEnabled) {
     StreamingSubscriberConnection streamingSubscriberConnection =
@@ -466,7 +516,7 @@ public class StreamingSubscriberConnectionTest {
       StreamingSubscriberConnection.Builder builder) {
     return builder
         .setSubscription(MOCK_SUBSCRIPTION_NAME)
-        .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT)
+        .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT_DURATION)
         .setAckLatencyDistribution(mock(Distribution.class))
         .setSubscriberStub(mockSubscriberStub)
         .setChannelAffinity(0)

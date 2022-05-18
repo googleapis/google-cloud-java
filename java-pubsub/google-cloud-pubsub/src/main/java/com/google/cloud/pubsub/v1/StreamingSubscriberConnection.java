@@ -431,9 +431,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     // Send modacks
     int pendingOperations = 0;
     for (ModackRequestData modackRequestData : modackRequestDataList) {
-      List<String> ackIdsInRequest = new ArrayList<>();
       for (List<AckRequestData> ackRequestDataInRequestList :
           Lists.partition(modackRequestData.getAckRequestData(), MAX_PER_REQUEST_CHANGES)) {
+        List<String> ackIdsInRequest = new ArrayList<>();
         for (AckRequestData ackRequestData : ackRequestDataInRequestList) {
           ackIdsInRequest.add(ackRequestData.getAckId());
           if (ackRequestData.hasMessageFuture()) {
@@ -511,9 +511,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         // Remove from our pending operations
         ackOperationsWaiter.incrementPendingCount(-1);
 
+        Level level = isAlive() ? Level.WARNING : Level.FINER;
+        logger.log(level, "failed to send operations", t);
+
         if (!getExactlyOnceDeliveryEnabled()) {
-          Level level = isAlive() ? Level.WARNING : Level.FINER;
-          logger.log(level, "failed to send operations", t);
           return;
         }
 
@@ -578,9 +579,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
               currentBackoffMillis,
               TimeUnit.MILLISECONDS);
         }
-
-        Level level = isAlive() ? Level.WARNING : Level.FINER;
-        logger.log(level, "failed to send operations", t);
       }
     };
   }
