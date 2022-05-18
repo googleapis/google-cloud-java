@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.11.2](https://github.com/googleapis/java-bigquery/compare/v2.11.1...v2.11.2) (2022-05-18)
+
+
+### Bug Fixes
+
+* Flaky connenction close issue ([#2044](https://github.com/googleapis/java-bigquery/issues/2044)) ([9993717](https://github.com/googleapis/java-bigquery/commit/9993717d546c4039cb8c846787fdd131cc0c113f))
+* NPE issue with testMultipleRuns ([#2050](https://github.com/googleapis/java-bigquery/issues/2050)) ([251d468](https://github.com/googleapis/java-bigquery/commit/251d4686d22e0000982bcd891de68491326558fe))
+
 ### [2.11.1](https://github.com/googleapis/java-bigquery/compare/v2.11.0...v2.11.1) (2022-05-16)
 
 
