@@ -446,39 +446,90 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return Whether the relatedAssets field is set.
    */
+  @java.lang.Deprecated
   boolean hasRelatedAssets();
   /**
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return The relatedAssets.
    */
+  @java.lang.Deprecated
   com.google.cloud.asset.v1.RelatedAssets getRelatedAssets();
   /**
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   *
+   * @return Whether the relatedAsset field is set.
+   */
+  boolean hasRelatedAsset();
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   *
+   * @return The relatedAsset.
+   */
+  com.google.cloud.asset.v1.RelatedAsset getRelatedAsset();
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   */
+  com.google.cloud.asset.v1.RelatedAssetOrBuilder getRelatedAssetOrBuilder();
 
   /**
    *

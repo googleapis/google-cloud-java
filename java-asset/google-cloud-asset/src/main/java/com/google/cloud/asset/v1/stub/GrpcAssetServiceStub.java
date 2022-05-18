@@ -17,6 +17,7 @@
 package com.google.cloud.asset.v1.stub;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -36,21 +37,30 @@ import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
+import com.google.cloud.asset.v1.CreateSavedQueryRequest;
 import com.google.cloud.asset.v1.DeleteFeedRequest;
+import com.google.cloud.asset.v1.DeleteSavedQueryRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.GetSavedQueryRequest;
 import com.google.cloud.asset.v1.ListAssetsRequest;
 import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
+import com.google.cloud.asset.v1.ListSavedQueriesRequest;
+import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1.SearchAllResourcesResponse;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
+import com.google.cloud.asset.v1.UpdateSavedQueryRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -192,6 +202,71 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(AnalyzeMoveResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateSavedQueryRequest, SavedQuery>
+      createSavedQueryMethodDescriptor =
+          MethodDescriptor.<CreateSavedQueryRequest, SavedQuery>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/CreateSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSavedQueryRequest, SavedQuery>
+      getSavedQueryMethodDescriptor =
+          MethodDescriptor.<GetSavedQueryRequest, SavedQuery>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/GetSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesMethodDescriptor =
+          MethodDescriptor.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/ListSavedQueries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSavedQueriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSavedQueryRequest, SavedQuery>
+      updateSavedQueryMethodDescriptor =
+          MethodDescriptor.<UpdateSavedQueryRequest, SavedQuery>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/UpdateSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSavedQueryRequest, Empty>
+      deleteSavedQueryMethodDescriptor =
+          MethodDescriptor.<DeleteSavedQueryRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/DeleteSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesMethodDescriptor =
+          MethodDescriptor
+              .<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/BatchGetEffectiveIamPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetEffectiveIamPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetEffectiveIamPoliciesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
@@ -222,6 +297,17 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationCallable;
   private final UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable;
+  private final UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable;
+  private final UnaryCallable<GetSavedQueryRequest, SavedQuery> getSavedQueryCallable;
+  private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable;
+  private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable;
+  private final UnaryCallable<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryCallable;
+  private final UnaryCallable<DeleteSavedQueryRequest, Empty> deleteSavedQueryCallable;
+  private final UnaryCallable<
+          BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -405,6 +491,70 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
+        GrpcCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
+            .setMethodDescriptor(createSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQueryTransportSettings =
+        GrpcCallSettings.<GetSavedQueryRequest, SavedQuery>newBuilder()
+            .setMethodDescriptor(getSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
+        listSavedQueriesTransportSettings =
+            GrpcCallSettings.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
+                .setMethodDescriptor(listSavedQueriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryTransportSettings =
+        GrpcCallSettings.<UpdateSavedQueryRequest, SavedQuery>newBuilder()
+            .setMethodDescriptor(updateSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("saved_query.name", String.valueOf(request.getSavedQuery().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQueryTransportSettings =
+        GrpcCallSettings.<DeleteSavedQueryRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+        batchGetEffectiveIamPoliciesTransportSettings =
+            GrpcCallSettings
+                .<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchGetEffectiveIamPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
+                    })
+                .build();
 
     this.exportAssetsCallable =
         callableFactory.createUnaryCallable(
@@ -478,6 +628,29 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.analyzeMoveCallable =
         callableFactory.createUnaryCallable(
             analyzeMoveTransportSettings, settings.analyzeMoveSettings(), clientContext);
+    this.createSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            createSavedQueryTransportSettings, settings.createSavedQuerySettings(), clientContext);
+    this.getSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            getSavedQueryTransportSettings, settings.getSavedQuerySettings(), clientContext);
+    this.listSavedQueriesCallable =
+        callableFactory.createUnaryCallable(
+            listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
+    this.listSavedQueriesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
+    this.updateSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            updateSavedQueryTransportSettings, settings.updateSavedQuerySettings(), clientContext);
+    this.deleteSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            deleteSavedQueryTransportSettings, settings.deleteSavedQuerySettings(), clientContext);
+    this.batchGetEffectiveIamPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            batchGetEffectiveIamPoliciesTransportSettings,
+            settings.batchGetEffectiveIamPoliciesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -587,6 +760,44 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   @Override
   public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     return analyzeMoveCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable() {
+    return createSavedQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSavedQueryRequest, SavedQuery> getSavedQueryCallable() {
+    return getSavedQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable() {
+    return listSavedQueriesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable() {
+    return listSavedQueriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryCallable() {
+    return updateSavedQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSavedQueryRequest, Empty> deleteSavedQueryCallable() {
+    return deleteSavedQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesCallable() {
+    return batchGetEffectiveIamPoliciesCallable;
   }
 
   @Override

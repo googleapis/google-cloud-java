@@ -153,4 +153,31 @@ public interface RelatedAssetOrBuilder
    * @return The bytes of the ancestors at the given index.
    */
   com.google.protobuf.ByteString getAncestorsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the relationship type. Example:
+   * `INSTANCE_TO_INSTANCEGROUP`
+   * </pre>
+   *
+   * <code>string relationship_type = 4;</code>
+   *
+   * @return The relationshipType.
+   */
+  java.lang.String getRelationshipType();
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the relationship type. Example:
+   * `INSTANCE_TO_INSTANCEGROUP`
+   * </pre>
+   *
+   * <code>string relationship_type = 4;</code>
+   *
+   * @return The bytes for relationshipType.
+   */
+  com.google.protobuf.ByteString getRelationshipTypeBytes();
 }

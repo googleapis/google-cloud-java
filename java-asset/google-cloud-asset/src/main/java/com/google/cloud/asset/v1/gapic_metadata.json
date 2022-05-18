@@ -22,11 +22,20 @@
             "BatchGetAssetsHistory": {
               "methods": ["batchGetAssetsHistory", "batchGetAssetsHistoryCallable"]
             },
+            "BatchGetEffectiveIamPolicies": {
+              "methods": ["batchGetEffectiveIamPolicies", "batchGetEffectiveIamPoliciesCallable"]
+            },
             "CreateFeed": {
               "methods": ["createFeed", "createFeed", "createFeedCallable"]
             },
+            "CreateSavedQuery": {
+              "methods": ["createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQuery", "createSavedQueryCallable"]
+            },
             "DeleteFeed": {
               "methods": ["deleteFeed", "deleteFeed", "deleteFeed", "deleteFeedCallable"]
+            },
+            "DeleteSavedQuery": {
+              "methods": ["deleteSavedQuery", "deleteSavedQuery", "deleteSavedQuery", "deleteSavedQueryCallable"]
             },
             "ExportAssets": {
               "methods": ["exportAssetsAsync", "exportAssetsOperationCallable", "exportAssetsCallable"]
@@ -34,11 +43,17 @@
             "GetFeed": {
               "methods": ["getFeed", "getFeed", "getFeed", "getFeedCallable"]
             },
+            "GetSavedQuery": {
+              "methods": ["getSavedQuery", "getSavedQuery", "getSavedQuery", "getSavedQueryCallable"]
+            },
             "ListAssets": {
               "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
             },
             "ListFeeds": {
               "methods": ["listFeeds", "listFeeds", "listFeedsCallable"]
+            },
+            "ListSavedQueries": {
+              "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
             },
             "SearchAllIamPolicies": {
               "methods": ["searchAllIamPolicies", "searchAllIamPolicies", "searchAllIamPoliciesPagedCallable", "searchAllIamPoliciesCallable"]
@@ -48,6 +63,9 @@
             },
             "UpdateFeed": {
               "methods": ["updateFeed", "updateFeed", "updateFeedCallable"]
+            },
+            "UpdateSavedQuery": {
+              "methods": ["updateSavedQuery", "updateSavedQuery", "updateSavedQueryCallable"]
             }
           }
         }

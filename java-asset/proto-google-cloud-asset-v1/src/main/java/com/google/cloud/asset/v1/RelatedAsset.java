@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * An asset identify in Google Cloud which contains its name, type and
+ * An asset identifier in Google Cloud which contains its name, type and
  * ancestors. An asset can be any resource in the Google Cloud [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
  * a resource outside the Google Cloud resource hierarchy (such as Google
@@ -48,6 +48,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     asset_ = "";
     assetType_ = "";
     ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    relationshipType_ = "";
   }
 
   @java.lang.Override
@@ -102,6 +103,13 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000001;
               }
               ancestors_.add(s);
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              relationshipType_ = s;
               break;
             }
           default:
@@ -332,6 +340,57 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     return ancestors_.getByteString(index);
   }
 
+  public static final int RELATIONSHIP_TYPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object relationshipType_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the relationship type. Example:
+   * `INSTANCE_TO_INSTANCEGROUP`
+   * </pre>
+   *
+   * <code>string relationship_type = 4;</code>
+   *
+   * @return The relationshipType.
+   */
+  @java.lang.Override
+  public java.lang.String getRelationshipType() {
+    java.lang.Object ref = relationshipType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      relationshipType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the relationship type. Example:
+   * `INSTANCE_TO_INSTANCEGROUP`
+   * </pre>
+   *
+   * <code>string relationship_type = 4;</code>
+   *
+   * @return The bytes for relationshipType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRelationshipTypeBytes() {
+    java.lang.Object ref = relationshipType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      relationshipType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -354,6 +413,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < ancestors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ancestors_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, relationshipType_);
     }
     unknownFields.writeTo(output);
   }
@@ -378,6 +440,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAncestorsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relationshipType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, relationshipType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -396,6 +461,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     if (!getAsset().equals(other.getAsset())) return false;
     if (!getAssetType().equals(other.getAssetType())) return false;
     if (!getAncestorsList().equals(other.getAncestorsList())) return false;
+    if (!getRelationshipType().equals(other.getRelationshipType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -415,6 +481,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
       hash = (53 * hash) + getAncestorsList().hashCode();
     }
+    hash = (37 * hash) + RELATIONSHIP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getRelationshipType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -519,7 +587,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset identify in Google Cloud which contains its name, type and
+   * An asset identifier in Google Cloud which contains its name, type and
    * ancestors. An asset can be any resource in the Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * a resource outside the Google Cloud resource hierarchy (such as Google
@@ -573,6 +641,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
 
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      relationshipType_ = "";
+
       return this;
     }
 
@@ -608,6 +678,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ancestors_ = ancestors_;
+      result.relationshipType_ = relationshipType_;
       onBuilt();
       return result;
     }
@@ -673,6 +744,10 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
         }
+        onChanged();
+      }
+      if (!other.getRelationshipType().isEmpty()) {
+        relationshipType_ = other.relationshipType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1153,6 +1228,117 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAncestorsIsMutable();
       ancestors_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object relationshipType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the relationship type. Example:
+     * `INSTANCE_TO_INSTANCEGROUP`
+     * </pre>
+     *
+     * <code>string relationship_type = 4;</code>
+     *
+     * @return The relationshipType.
+     */
+    public java.lang.String getRelationshipType() {
+      java.lang.Object ref = relationshipType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        relationshipType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the relationship type. Example:
+     * `INSTANCE_TO_INSTANCEGROUP`
+     * </pre>
+     *
+     * <code>string relationship_type = 4;</code>
+     *
+     * @return The bytes for relationshipType.
+     */
+    public com.google.protobuf.ByteString getRelationshipTypeBytes() {
+      java.lang.Object ref = relationshipType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        relationshipType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the relationship type. Example:
+     * `INSTANCE_TO_INSTANCEGROUP`
+     * </pre>
+     *
+     * <code>string relationship_type = 4;</code>
+     *
+     * @param value The relationshipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelationshipType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      relationshipType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the relationship type. Example:
+     * `INSTANCE_TO_INSTANCEGROUP`
+     * </pre>
+     *
+     * <code>string relationship_type = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelationshipType() {
+
+      relationshipType_ = getDefaultInstance().getRelationshipType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the relationship type. Example:
+     * `INSTANCE_TO_INSTANCEGROUP`
+     * </pre>
+     *
+     * <code>string relationship_type = 4;</code>
+     *
+     * @param value The bytes for relationshipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelationshipTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      relationshipType_ = value;
       onChanged();
       return this;
     }

@@ -18,6 +18,7 @@
 
 package com.google.cloud.asset.v1;
 
+@java.lang.Deprecated
 public interface RelationshipAttributesOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1.RelationshipAttributes)

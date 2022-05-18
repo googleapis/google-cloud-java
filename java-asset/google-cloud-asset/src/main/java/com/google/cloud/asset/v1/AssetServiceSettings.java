@@ -17,6 +17,7 @@
 package com.google.cloud.asset.v1;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -164,6 +165,40 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   /** Returns the object with the settings used for calls to analyzeMove. */
   public UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).analyzeMoveSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSavedQuery. */
+  public UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).createSavedQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSavedQuery. */
+  public UnaryCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).getSavedQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSavedQueries. */
+  public PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).listSavedQueriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSavedQuery. */
+  public UnaryCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQuerySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).updateSavedQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public UnaryCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQuerySettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).deleteSavedQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchGetEffectiveIamPolicies. */
+  public UnaryCallSettings<
+          BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).batchGetEffectiveIamPoliciesSettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -353,6 +388,42 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings() {
       return getStubSettingsBuilder().analyzeMoveSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSavedQuery. */
+    public UnaryCallSettings.Builder<CreateSavedQueryRequest, SavedQuery>
+        createSavedQuerySettings() {
+      return getStubSettingsBuilder().createSavedQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSavedQuery. */
+    public UnaryCallSettings.Builder<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings() {
+      return getStubSettingsBuilder().getSavedQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSavedQueries. */
+    public PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings() {
+      return getStubSettingsBuilder().listSavedQueriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSavedQuery. */
+    public UnaryCallSettings.Builder<UpdateSavedQueryRequest, SavedQuery>
+        updateSavedQuerySettings() {
+      return getStubSettingsBuilder().updateSavedQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    public UnaryCallSettings.Builder<DeleteSavedQueryRequest, Empty> deleteSavedQuerySettings() {
+      return getStubSettingsBuilder().deleteSavedQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetEffectiveIamPolicies. */
+    public UnaryCallSettings.Builder<
+            BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+        batchGetEffectiveIamPoliciesSettings() {
+      return getStubSettingsBuilder().batchGetEffectiveIamPoliciesSettings();
     }
 
     @Override

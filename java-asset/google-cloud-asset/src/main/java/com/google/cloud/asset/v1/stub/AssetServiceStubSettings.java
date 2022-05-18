@@ -17,6 +17,7 @@
 package com.google.cloud.asset.v1.stub;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -56,23 +57,32 @@ import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.Asset;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
+import com.google.cloud.asset.v1.CreateSavedQueryRequest;
 import com.google.cloud.asset.v1.DeleteFeedRequest;
+import com.google.cloud.asset.v1.DeleteSavedQueryRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.GetSavedQueryRequest;
 import com.google.cloud.asset.v1.IamPolicySearchResult;
 import com.google.cloud.asset.v1.ListAssetsRequest;
 import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
+import com.google.cloud.asset.v1.ListSavedQueriesRequest;
+import com.google.cloud.asset.v1.ListSavedQueriesResponse;
 import com.google.cloud.asset.v1.ResourceSearchResult;
+import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1.SearchAllResourcesResponse;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
+import com.google.cloud.asset.v1.UpdateSavedQueryRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -155,6 +165,16 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           AnalyzeIamPolicyLongrunningMetadata>
       analyzeIamPolicyLongrunningOperationSettings;
   private final UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings;
+  private final UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings;
+  private final UnaryCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings;
+  private final PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings;
+  private final UnaryCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQuerySettings;
+  private final UnaryCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQuerySettings;
+  private final UnaryCallSettings<
+          BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesSettings;
 
   private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
       LIST_ASSETS_PAGE_STR_DESC =
@@ -274,6 +294,45 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+      LIST_SAVED_QUERIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSavedQueriesRequest injectToken(
+                ListSavedQueriesRequest payload, String token) {
+              return ListSavedQueriesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSavedQueriesRequest injectPageSize(
+                ListSavedQueriesRequest payload, int pageSize) {
+              return ListSavedQueriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSavedQueriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSavedQueriesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SavedQuery> extractResources(ListSavedQueriesResponse payload) {
+              return payload.getSavedQueriesList() == null
+                  ? ImmutableList.<SavedQuery>of()
+                  : payload.getSavedQueriesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       LIST_ASSETS_PAGE_STR_FACT =
@@ -336,6 +395,25 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
                       PageContext.create(
                           callable, SEARCH_ALL_IAM_POLICIES_PAGE_STR_DESC, request, context);
               return SearchAllIamPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      LIST_SAVED_QUERIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSavedQueriesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse> callable,
+                ListSavedQueriesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSavedQueriesResponse> futureResponse) {
+              PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SAVED_QUERIES_PAGE_STR_DESC, request, context);
+              return ListSavedQueriesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -427,6 +505,40 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   /** Returns the object with the settings used for calls to analyzeMove. */
   public UnaryCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveSettings() {
     return analyzeMoveSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSavedQuery. */
+  public UnaryCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQuerySettings() {
+    return createSavedQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSavedQuery. */
+  public UnaryCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings() {
+    return getSavedQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSavedQueries. */
+  public PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings() {
+    return listSavedQueriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSavedQuery. */
+  public UnaryCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQuerySettings() {
+    return updateSavedQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSavedQuery. */
+  public UnaryCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQuerySettings() {
+    return deleteSavedQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchGetEffectiveIamPolicies. */
+  public UnaryCallSettings<
+          BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesSettings() {
+    return batchGetEffectiveIamPoliciesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -522,6 +634,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     analyzeIamPolicyLongrunningOperationSettings =
         settingsBuilder.analyzeIamPolicyLongrunningOperationSettings().build();
     analyzeMoveSettings = settingsBuilder.analyzeMoveSettings().build();
+    createSavedQuerySettings = settingsBuilder.createSavedQuerySettings().build();
+    getSavedQuerySettings = settingsBuilder.getSavedQuerySettings().build();
+    listSavedQueriesSettings = settingsBuilder.listSavedQueriesSettings().build();
+    updateSavedQuerySettings = settingsBuilder.updateSavedQuerySettings().build();
+    deleteSavedQuerySettings = settingsBuilder.deleteSavedQuerySettings().build();
+    batchGetEffectiveIamPoliciesSettings =
+        settingsBuilder.batchGetEffectiveIamPoliciesSettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
@@ -561,6 +680,19 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
         analyzeIamPolicyLongrunningOperationSettings;
     private final UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings;
+    private final UnaryCallSettings.Builder<CreateSavedQueryRequest, SavedQuery>
+        createSavedQuerySettings;
+    private final UnaryCallSettings.Builder<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings;
+    private final PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings;
+    private final UnaryCallSettings.Builder<UpdateSavedQueryRequest, SavedQuery>
+        updateSavedQuerySettings;
+    private final UnaryCallSettings.Builder<DeleteSavedQueryRequest, Empty>
+        deleteSavedQuerySettings;
+    private final UnaryCallSettings.Builder<
+            BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+        batchGetEffectiveIamPoliciesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -658,6 +790,12 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       analyzeIamPolicyLongrunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeIamPolicyLongrunningOperationSettings = OperationCallSettings.newBuilder();
       analyzeMoveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSavedQueriesSettings = PagedCallSettings.newBuilder(LIST_SAVED_QUERIES_PAGE_STR_FACT);
+      updateSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchGetEffectiveIamPoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -673,7 +811,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               searchAllIamPoliciesSettings,
               analyzeIamPolicySettings,
               analyzeIamPolicyLongrunningSettings,
-              analyzeMoveSettings);
+              analyzeMoveSettings,
+              createSavedQuerySettings,
+              getSavedQuerySettings,
+              listSavedQueriesSettings,
+              updateSavedQuerySettings,
+              deleteSavedQuerySettings,
+              batchGetEffectiveIamPoliciesSettings);
       initDefaults(this);
     }
 
@@ -697,6 +841,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       analyzeIamPolicyLongrunningOperationSettings =
           settings.analyzeIamPolicyLongrunningOperationSettings.toBuilder();
       analyzeMoveSettings = settings.analyzeMoveSettings.toBuilder();
+      createSavedQuerySettings = settings.createSavedQuerySettings.toBuilder();
+      getSavedQuerySettings = settings.getSavedQuerySettings.toBuilder();
+      listSavedQueriesSettings = settings.listSavedQueriesSettings.toBuilder();
+      updateSavedQuerySettings = settings.updateSavedQuerySettings.toBuilder();
+      deleteSavedQuerySettings = settings.deleteSavedQuerySettings.toBuilder();
+      batchGetEffectiveIamPoliciesSettings =
+          settings.batchGetEffectiveIamPoliciesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -712,7 +863,13 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               searchAllIamPoliciesSettings,
               analyzeIamPolicySettings,
               analyzeIamPolicyLongrunningSettings,
-              analyzeMoveSettings);
+              analyzeMoveSettings,
+              createSavedQuerySettings,
+              getSavedQuerySettings,
+              listSavedQueriesSettings,
+              updateSavedQuerySettings,
+              deleteSavedQuerySettings,
+              batchGetEffectiveIamPoliciesSettings);
     }
 
     private static Builder createDefault() {
@@ -791,6 +948,36 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
       builder
           .analyzeMoveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createSavedQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getSavedQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listSavedQueriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateSavedQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSavedQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchGetEffectiveIamPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -957,6 +1144,42 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     public UnaryCallSettings.Builder<AnalyzeMoveRequest, AnalyzeMoveResponse>
         analyzeMoveSettings() {
       return analyzeMoveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSavedQuery. */
+    public UnaryCallSettings.Builder<CreateSavedQueryRequest, SavedQuery>
+        createSavedQuerySettings() {
+      return createSavedQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSavedQuery. */
+    public UnaryCallSettings.Builder<GetSavedQueryRequest, SavedQuery> getSavedQuerySettings() {
+      return getSavedQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSavedQueries. */
+    public PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings() {
+      return listSavedQueriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSavedQuery. */
+    public UnaryCallSettings.Builder<UpdateSavedQueryRequest, SavedQuery>
+        updateSavedQuerySettings() {
+      return updateSavedQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSavedQuery. */
+    public UnaryCallSettings.Builder<DeleteSavedQueryRequest, Empty> deleteSavedQuerySettings() {
+      return deleteSavedQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchGetEffectiveIamPolicies. */
+    public UnaryCallSettings.Builder<
+            BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+        batchGetEffectiveIamPoliciesSettings() {
+      return batchGetEffectiveIamPoliciesSettings;
     }
 
     @Override

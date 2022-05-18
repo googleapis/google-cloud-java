@@ -22,12 +22,16 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
+ * DEPRECATED. This message only presents for the purpose of
+ * backward-compatibility. The server will never populate this message in
+ * responses.
  * The relationship attributes which include  `type`, `source_resource_type`,
  * `target_resource_type` and `action`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.RelationshipAttributes}
  */
+@java.lang.Deprecated
 public final class RelationshipAttributes extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.RelationshipAttributes)
@@ -526,6 +530,9 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
+   * DEPRECATED. This message only presents for the purpose of
+   * backward-compatibility. The server will never populate this message in
+   * responses.
    * The relationship attributes which include  `type`, `source_resource_type`,
    * `target_resource_type` and `action`.
    * </pre>

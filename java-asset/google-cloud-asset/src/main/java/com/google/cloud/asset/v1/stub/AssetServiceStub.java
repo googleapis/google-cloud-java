@@ -17,6 +17,7 @@
 package com.google.cloud.asset.v1.stub;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -32,21 +33,30 @@ import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
+import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
 import com.google.cloud.asset.v1.CreateFeedRequest;
+import com.google.cloud.asset.v1.CreateSavedQueryRequest;
 import com.google.cloud.asset.v1.DeleteFeedRequest;
+import com.google.cloud.asset.v1.DeleteSavedQueryRequest;
 import com.google.cloud.asset.v1.ExportAssetsRequest;
 import com.google.cloud.asset.v1.ExportAssetsResponse;
 import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
+import com.google.cloud.asset.v1.GetSavedQueryRequest;
 import com.google.cloud.asset.v1.ListAssetsRequest;
 import com.google.cloud.asset.v1.ListAssetsResponse;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
+import com.google.cloud.asset.v1.ListSavedQueriesRequest;
+import com.google.cloud.asset.v1.ListSavedQueriesResponse;
+import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
 import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
 import com.google.cloud.asset.v1.SearchAllResourcesRequest;
 import com.google.cloud.asset.v1.SearchAllResourcesResponse;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
+import com.google.cloud.asset.v1.UpdateSavedQueryRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -149,6 +159,38 @@ public abstract class AssetServiceStub implements BackgroundResource {
 
   public UnaryCallable<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveCallable() {
     throw new UnsupportedOperationException("Not implemented: analyzeMoveCallable()");
+  }
+
+  public UnaryCallable<CreateSavedQueryRequest, SavedQuery> createSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSavedQueryCallable()");
+  }
+
+  public UnaryCallable<GetSavedQueryRequest, SavedQuery> getSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSavedQueryCallable()");
+  }
+
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSavedQueriesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSavedQueriesCallable()");
+  }
+
+  public UnaryCallable<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSavedQueryCallable()");
+  }
+
+  public UnaryCallable<DeleteSavedQueryRequest, Empty> deleteSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSavedQueryCallable()");
+  }
+
+  public UnaryCallable<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
+      batchGetEffectiveIamPoliciesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchGetEffectiveIamPoliciesCallable()");
   }
 
   @Override

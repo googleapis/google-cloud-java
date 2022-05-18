@@ -331,4 +331,131 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createSavedQuery(
+      CreateSavedQueryRequest request, StreamObserver<SavedQuery> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SavedQuery) {
+      requests.add(request);
+      responseObserver.onNext(((SavedQuery) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSavedQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SavedQuery.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSavedQuery(
+      GetSavedQueryRequest request, StreamObserver<SavedQuery> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SavedQuery) {
+      requests.add(request);
+      responseObserver.onNext(((SavedQuery) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSavedQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SavedQuery.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSavedQueries(
+      ListSavedQueriesRequest request, StreamObserver<ListSavedQueriesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSavedQueriesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSavedQueriesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSavedQueries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSavedQueriesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSavedQuery(
+      UpdateSavedQueryRequest request, StreamObserver<SavedQuery> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SavedQuery) {
+      requests.add(request);
+      responseObserver.onNext(((SavedQuery) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSavedQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SavedQuery.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSavedQuery(
+      DeleteSavedQueryRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSavedQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchGetEffectiveIamPolicies(
+      BatchGetEffectiveIamPoliciesRequest request,
+      StreamObserver<BatchGetEffectiveIamPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchGetEffectiveIamPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchGetEffectiveIamPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchGetEffectiveIamPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchGetEffectiveIamPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

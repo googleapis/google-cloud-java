@@ -63,7 +63,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery.
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -76,7 +76,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery.
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -89,7 +89,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery.
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>

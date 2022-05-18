@@ -258,6 +258,22 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 122:
+            {
+              com.google.cloud.asset.v1.RelatedAsset.Builder subBuilder = null;
+              if (relatedAsset_ != null) {
+                subBuilder = relatedAsset_.toBuilder();
+              }
+              relatedAsset_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1.RelatedAsset.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(relatedAsset_);
+                relatedAsset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -935,15 +951,21 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRelatedAssets() {
     return relatedAssets_ != null;
   }
@@ -951,15 +973,21 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return The relatedAssets.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.asset.v1.RelatedAssets getRelatedAssets() {
     return relatedAssets_ == null
         ? com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance()
@@ -969,15 +997,67 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The related assets of the asset of one relationship type.
-   * One asset only represents one type of relationship.
+   * DEPRECATED. This field only presents for the purpose of
+   * backward-compatibility. The server will never generate responses with this
+   * field.
+   * The related assets of the asset of one relationship type. One asset
+   * only represents one type of relationship.
    * </pre>
    *
-   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder() {
     return getRelatedAssets();
+  }
+
+  public static final int RELATED_ASSET_FIELD_NUMBER = 15;
+  private com.google.cloud.asset.v1.RelatedAsset relatedAsset_;
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   *
+   * @return Whether the relatedAsset field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelatedAsset() {
+    return relatedAsset_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   *
+   * @return The relatedAsset.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedAsset getRelatedAsset() {
+    return relatedAsset_ == null
+        ? com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()
+        : relatedAsset_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One related asset of the current asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedAssetOrBuilder getRelatedAssetOrBuilder() {
+    return getRelatedAsset();
   }
 
   public static final int ANCESTORS_FIELD_NUMBER = 10;
@@ -1118,6 +1198,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (relatedAssets_ != null) {
       output.writeMessage(13, getRelatedAssets());
     }
+    if (relatedAsset_ != null) {
+      output.writeMessage(15, getRelatedAsset());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1175,6 +1258,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (relatedAssets_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRelatedAssets());
     }
+    if (relatedAsset_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRelatedAsset());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1212,6 +1298,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (hasRelatedAssets() != other.hasRelatedAssets()) return false;
     if (hasRelatedAssets()) {
       if (!getRelatedAssets().equals(other.getRelatedAssets())) return false;
+    }
+    if (hasRelatedAsset() != other.hasRelatedAsset()) return false;
+    if (hasRelatedAsset()) {
+      if (!getRelatedAsset().equals(other.getRelatedAsset())) return false;
     }
     if (!getAncestorsList().equals(other.getAncestorsList())) return false;
     if (!getAccessContextPolicyCase().equals(other.getAccessContextPolicyCase())) return false;
@@ -1266,6 +1356,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (hasRelatedAssets()) {
       hash = (37 * hash) + RELATED_ASSETS_FIELD_NUMBER;
       hash = (53 * hash) + getRelatedAssets().hashCode();
+    }
+    if (hasRelatedAsset()) {
+      hash = (37 * hash) + RELATED_ASSET_FIELD_NUMBER;
+      hash = (53 * hash) + getRelatedAsset().hashCode();
     }
     if (getAncestorsCount() > 0) {
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
@@ -1480,6 +1574,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         relatedAssets_ = null;
         relatedAssetsBuilder_ = null;
       }
+      if (relatedAssetBuilder_ == null) {
+        relatedAsset_ = null;
+      } else {
+        relatedAsset_ = null;
+        relatedAssetBuilder_ = null;
+      }
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       accessContextPolicyCase_ = 0;
@@ -1567,6 +1667,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         result.relatedAssets_ = relatedAssets_;
       } else {
         result.relatedAssets_ = relatedAssetsBuilder_.build();
+      }
+      if (relatedAssetBuilder_ == null) {
+        result.relatedAsset_ = relatedAsset_;
+      } else {
+        result.relatedAsset_ = relatedAssetBuilder_.build();
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
@@ -1672,6 +1777,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRelatedAssets()) {
         mergeRelatedAssets(other.getRelatedAssets());
+      }
+      if (other.hasRelatedAsset()) {
+        mergeRelatedAsset(other.getRelatedAsset());
       }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
@@ -3916,14 +4024,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=167
      * @return Whether the relatedAssets field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRelatedAssets() {
       return relatedAssetsBuilder_ != null || relatedAssets_ != null;
     }
@@ -3931,14 +4045,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=167
      * @return The relatedAssets.
      */
+    @java.lang.Deprecated
     public com.google.cloud.asset.v1.RelatedAssets getRelatedAssets() {
       if (relatedAssetsBuilder_ == null) {
         return relatedAssets_ == null
@@ -3952,12 +4072,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setRelatedAssets(com.google.cloud.asset.v1.RelatedAssets value) {
       if (relatedAssetsBuilder_ == null) {
         if (value == null) {
@@ -3975,12 +4099,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setRelatedAssets(
         com.google.cloud.asset.v1.RelatedAssets.Builder builderForValue) {
       if (relatedAssetsBuilder_ == null) {
@@ -3996,12 +4124,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeRelatedAssets(com.google.cloud.asset.v1.RelatedAssets value) {
       if (relatedAssetsBuilder_ == null) {
         if (relatedAssets_ != null) {
@@ -4023,12 +4155,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearRelatedAssets() {
       if (relatedAssetsBuilder_ == null) {
         relatedAssets_ = null;
@@ -4044,12 +4180,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.asset.v1.RelatedAssets.Builder getRelatedAssetsBuilder() {
 
       onChanged();
@@ -4059,12 +4199,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder() {
       if (relatedAssetsBuilder_ != null) {
         return relatedAssetsBuilder_.getMessageOrBuilder();
@@ -4078,11 +4222,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The related assets of the asset of one relationship type.
-     * One asset only represents one type of relationship.
+     * DEPRECATED. This field only presents for the purpose of
+     * backward-compatibility. The server will never generate responses with this
+     * field.
+     * The related assets of the asset of one relationship type. One asset
+     * only represents one type of relationship.
      * </pre>
      *
-     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1.RelatedAssets,
@@ -4099,6 +4246,191 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         relatedAssets_ = null;
       }
       return relatedAssetsBuilder_;
+    }
+
+    private com.google.cloud.asset.v1.RelatedAsset relatedAsset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.RelatedAsset,
+            com.google.cloud.asset.v1.RelatedAsset.Builder,
+            com.google.cloud.asset.v1.RelatedAssetOrBuilder>
+        relatedAssetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     *
+     * @return Whether the relatedAsset field is set.
+     */
+    public boolean hasRelatedAsset() {
+      return relatedAssetBuilder_ != null || relatedAsset_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     *
+     * @return The relatedAsset.
+     */
+    public com.google.cloud.asset.v1.RelatedAsset getRelatedAsset() {
+      if (relatedAssetBuilder_ == null) {
+        return relatedAsset_ == null
+            ? com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()
+            : relatedAsset_;
+      } else {
+        return relatedAssetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public Builder setRelatedAsset(com.google.cloud.asset.v1.RelatedAsset value) {
+      if (relatedAssetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relatedAsset_ = value;
+        onChanged();
+      } else {
+        relatedAssetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public Builder setRelatedAsset(com.google.cloud.asset.v1.RelatedAsset.Builder builderForValue) {
+      if (relatedAssetBuilder_ == null) {
+        relatedAsset_ = builderForValue.build();
+        onChanged();
+      } else {
+        relatedAssetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public Builder mergeRelatedAsset(com.google.cloud.asset.v1.RelatedAsset value) {
+      if (relatedAssetBuilder_ == null) {
+        if (relatedAsset_ != null) {
+          relatedAsset_ =
+              com.google.cloud.asset.v1.RelatedAsset.newBuilder(relatedAsset_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          relatedAsset_ = value;
+        }
+        onChanged();
+      } else {
+        relatedAssetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public Builder clearRelatedAsset() {
+      if (relatedAssetBuilder_ == null) {
+        relatedAsset_ = null;
+        onChanged();
+      } else {
+        relatedAsset_ = null;
+        relatedAssetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public com.google.cloud.asset.v1.RelatedAsset.Builder getRelatedAssetBuilder() {
+
+      onChanged();
+      return getRelatedAssetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    public com.google.cloud.asset.v1.RelatedAssetOrBuilder getRelatedAssetOrBuilder() {
+      if (relatedAssetBuilder_ != null) {
+        return relatedAssetBuilder_.getMessageOrBuilder();
+      } else {
+        return relatedAsset_ == null
+            ? com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()
+            : relatedAsset_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One related asset of the current asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.RelatedAsset,
+            com.google.cloud.asset.v1.RelatedAsset.Builder,
+            com.google.cloud.asset.v1.RelatedAssetOrBuilder>
+        getRelatedAssetFieldBuilder() {
+      if (relatedAssetBuilder_ == null) {
+        relatedAssetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1.RelatedAsset,
+                com.google.cloud.asset.v1.RelatedAsset.Builder,
+                com.google.cloud.asset.v1.RelatedAssetOrBuilder>(
+                getRelatedAsset(), getParentForChildren(), isClean());
+        relatedAsset_ = null;
+      }
+      return relatedAssetBuilder_;
     }
 
     private com.google.protobuf.LazyStringList ancestors_ =

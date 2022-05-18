@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+ * A request message for
+ * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -37,7 +38,9 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private AnalyzeIamPolicyRequest() {}
+  private AnalyzeIamPolicyRequest() {
+    savedAnalysisQuery_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -97,6 +100,13 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
                 executionTimeout_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              savedAnalysisQuery_ = s;
               break;
             }
           default:
@@ -189,13 +199,87 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     return getAnalysisQuery();
   }
 
+  public static final int SAVED_ANALYSIS_QUERY_FIELD_NUMBER = 3;
+  private volatile java.lang.Object savedAnalysisQuery_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of a saved query, which must be in the format of:
+   * * projects/project_number/savedQueries/saved_query_id
+   * * folders/folder_number/savedQueries/saved_query_id
+   * * organizations/organization_number/savedQueries/saved_query_id
+   * If both `analysis_query` and `saved_analysis_query` are provided, they
+   * will be merged together with the `saved_analysis_query` as base and
+   * the `analysis_query` as overrides. For more details of the merge behavior,
+   * please refer to the
+   * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+   * page.
+   * Note that you cannot override primitive fields with default value, such as
+   * 0 or empty string, etc., because we use proto3, which doesn't support field
+   * presence yet.
+   * </pre>
+   *
+   * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The savedAnalysisQuery.
+   */
+  @java.lang.Override
+  public java.lang.String getSavedAnalysisQuery() {
+    java.lang.Object ref = savedAnalysisQuery_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      savedAnalysisQuery_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of a saved query, which must be in the format of:
+   * * projects/project_number/savedQueries/saved_query_id
+   * * folders/folder_number/savedQueries/saved_query_id
+   * * organizations/organization_number/savedQueries/saved_query_id
+   * If both `analysis_query` and `saved_analysis_query` are provided, they
+   * will be merged together with the `saved_analysis_query` as base and
+   * the `analysis_query` as overrides. For more details of the merge behavior,
+   * please refer to the
+   * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+   * page.
+   * Note that you cannot override primitive fields with default value, such as
+   * 0 or empty string, etc., because we use proto3, which doesn't support field
+   * presence yet.
+   * </pre>
+   *
+   * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for savedAnalysisQuery.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSavedAnalysisQueryBytes() {
+    java.lang.Object ref = savedAnalysisQuery_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      savedAnalysisQuery_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int EXECUTION_TIMEOUT_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration executionTimeout_;
   /**
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -219,7 +303,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -245,7 +330,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -284,6 +370,9 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     if (executionTimeout_ != null) {
       output.writeMessage(2, getExecutionTimeout());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savedAnalysisQuery_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, savedAnalysisQuery_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -298,6 +387,9 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     }
     if (executionTimeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExecutionTimeout());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savedAnalysisQuery_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, savedAnalysisQuery_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,6 +411,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     if (hasAnalysisQuery()) {
       if (!getAnalysisQuery().equals(other.getAnalysisQuery())) return false;
     }
+    if (!getSavedAnalysisQuery().equals(other.getSavedAnalysisQuery())) return false;
     if (hasExecutionTimeout() != other.hasExecutionTimeout()) return false;
     if (hasExecutionTimeout()) {
       if (!getExecutionTimeout().equals(other.getExecutionTimeout())) return false;
@@ -338,6 +431,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       hash = (37 * hash) + ANALYSIS_QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getAnalysisQuery().hashCode();
     }
+    hash = (37 * hash) + SAVED_ANALYSIS_QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getSavedAnalysisQuery().hashCode();
     if (hasExecutionTimeout()) {
       hash = (37 * hash) + EXECUTION_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getExecutionTimeout().hashCode();
@@ -446,7 +541,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+   * A request message for
+   * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -493,6 +589,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         analysisQuery_ = null;
         analysisQueryBuilder_ = null;
       }
+      savedAnalysisQuery_ = "";
+
       if (executionTimeoutBuilder_ == null) {
         executionTimeout_ = null;
       } else {
@@ -531,6 +629,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       } else {
         result.analysisQuery_ = analysisQueryBuilder_.build();
       }
+      result.savedAnalysisQuery_ = savedAnalysisQuery_;
       if (executionTimeoutBuilder_ == null) {
         result.executionTimeout_ = executionTimeout_;
       } else {
@@ -588,6 +687,10 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         return this;
       if (other.hasAnalysisQuery()) {
         mergeAnalysisQuery(other.getAnalysisQuery());
+      }
+      if (!other.getSavedAnalysisQuery().isEmpty()) {
+        savedAnalysisQuery_ = other.savedAnalysisQuery_;
+        onChanged();
       }
       if (other.hasExecutionTimeout()) {
         mergeExecutionTimeout(other.getExecutionTimeout());
@@ -826,6 +929,172 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       return analysisQueryBuilder_;
     }
 
+    private java.lang.Object savedAnalysisQuery_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of a saved query, which must be in the format of:
+     * * projects/project_number/savedQueries/saved_query_id
+     * * folders/folder_number/savedQueries/saved_query_id
+     * * organizations/organization_number/savedQueries/saved_query_id
+     * If both `analysis_query` and `saved_analysis_query` are provided, they
+     * will be merged together with the `saved_analysis_query` as base and
+     * the `analysis_query` as overrides. For more details of the merge behavior,
+     * please refer to the
+     * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+     * page.
+     * Note that you cannot override primitive fields with default value, such as
+     * 0 or empty string, etc., because we use proto3, which doesn't support field
+     * presence yet.
+     * </pre>
+     *
+     * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The savedAnalysisQuery.
+     */
+    public java.lang.String getSavedAnalysisQuery() {
+      java.lang.Object ref = savedAnalysisQuery_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        savedAnalysisQuery_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of a saved query, which must be in the format of:
+     * * projects/project_number/savedQueries/saved_query_id
+     * * folders/folder_number/savedQueries/saved_query_id
+     * * organizations/organization_number/savedQueries/saved_query_id
+     * If both `analysis_query` and `saved_analysis_query` are provided, they
+     * will be merged together with the `saved_analysis_query` as base and
+     * the `analysis_query` as overrides. For more details of the merge behavior,
+     * please refer to the
+     * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+     * page.
+     * Note that you cannot override primitive fields with default value, such as
+     * 0 or empty string, etc., because we use proto3, which doesn't support field
+     * presence yet.
+     * </pre>
+     *
+     * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for savedAnalysisQuery.
+     */
+    public com.google.protobuf.ByteString getSavedAnalysisQueryBytes() {
+      java.lang.Object ref = savedAnalysisQuery_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        savedAnalysisQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of a saved query, which must be in the format of:
+     * * projects/project_number/savedQueries/saved_query_id
+     * * folders/folder_number/savedQueries/saved_query_id
+     * * organizations/organization_number/savedQueries/saved_query_id
+     * If both `analysis_query` and `saved_analysis_query` are provided, they
+     * will be merged together with the `saved_analysis_query` as base and
+     * the `analysis_query` as overrides. For more details of the merge behavior,
+     * please refer to the
+     * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+     * page.
+     * Note that you cannot override primitive fields with default value, such as
+     * 0 or empty string, etc., because we use proto3, which doesn't support field
+     * presence yet.
+     * </pre>
+     *
+     * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The savedAnalysisQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedAnalysisQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      savedAnalysisQuery_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of a saved query, which must be in the format of:
+     * * projects/project_number/savedQueries/saved_query_id
+     * * folders/folder_number/savedQueries/saved_query_id
+     * * organizations/organization_number/savedQueries/saved_query_id
+     * If both `analysis_query` and `saved_analysis_query` are provided, they
+     * will be merged together with the `saved_analysis_query` as base and
+     * the `analysis_query` as overrides. For more details of the merge behavior,
+     * please refer to the
+     * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+     * page.
+     * Note that you cannot override primitive fields with default value, such as
+     * 0 or empty string, etc., because we use proto3, which doesn't support field
+     * presence yet.
+     * </pre>
+     *
+     * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSavedAnalysisQuery() {
+
+      savedAnalysisQuery_ = getDefaultInstance().getSavedAnalysisQuery();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of a saved query, which must be in the format of:
+     * * projects/project_number/savedQueries/saved_query_id
+     * * folders/folder_number/savedQueries/saved_query_id
+     * * organizations/organization_number/savedQueries/saved_query_id
+     * If both `analysis_query` and `saved_analysis_query` are provided, they
+     * will be merged together with the `saved_analysis_query` as base and
+     * the `analysis_query` as overrides. For more details of the merge behavior,
+     * please refer to the
+     * [MergeFrom](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message#Message.MergeFrom.details)
+     * page.
+     * Note that you cannot override primitive fields with default value, such as
+     * 0 or empty string, etc., because we use proto3, which doesn't support field
+     * presence yet.
+     * </pre>
+     *
+     * <code>string saved_analysis_query = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for savedAnalysisQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedAnalysisQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      savedAnalysisQuery_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Duration executionTimeout_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -836,7 +1105,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -859,7 +1129,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -888,7 +1159,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -919,7 +1191,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -947,7 +1220,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -982,7 +1256,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1011,7 +1286,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1034,7 +1310,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1061,7 +1338,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified

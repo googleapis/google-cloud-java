@@ -27,8 +27,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The search is
-   * limited to the resources within the `scope`. The caller must be granted the
+   * Required. A scope can be a project, a folder, or an organization. The
+   * search is limited to the resources within the `scope`. The caller must be
+   * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -47,8 +48,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The search is
-   * limited to the resources within the `scope`. The caller must be granted the
+   * Required. A scope can be a project, a folder, or an organization. The
+   * search is limited to the resources within the `scope`. The caller must be
+   * granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -167,8 +169,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty, it will
-   * search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty,
+   * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -189,8 +191,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty, it will
-   * search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty,
+   * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -211,8 +213,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty, it will
-   * search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty,
+   * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -234,8 +236,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty, it will
-   * search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty,
+   * it will search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -258,10 +260,11 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped at 500 even
-   * if a larger value is given. If set to zero, server will pick an appropriate
-   * default. Returned results may be fewer than requested. When this happens,
-   * there could be more results as long as `next_page_token` is returned.
+   * Optional. The page size for search result pagination. Page size is capped
+   * at 500 even if a larger value is given. If set to zero, server will pick an
+   * appropriate default. Returned results may be fewer than requested. When
+   * this happens, there could be more results as long as `next_page_token` is
+   * returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -274,10 +277,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the preceding call
-   * to this method. `page_token` must be the value of `next_page_token` from
-   * the previous response. The values of all other method parameters, must be
-   * identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of all other
+   * method parameters, must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -289,10 +292,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the preceding call
-   * to this method. `page_token` must be the value of `next_page_token` from
-   * the previous response. The values of all other method parameters, must be
-   * identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of all other
+   * method parameters, must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -305,9 +308,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of the
-   * results. The default order is ascending. Add " DESC" after the field name
-   * to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of
+   * the results. The default order is ascending. Add " DESC" after the field
+   * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -336,9 +339,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of the
-   * results. The default order is ascending. Add " DESC" after the field name
-   * to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of
+   * the results. The default order is ascending. Add " DESC" after the field
+   * name to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -368,10 +371,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be returned in
-   * ResourceSearchResult. Only '*' or combination of top level fields can be
-   * specified. Field names of both snake_case and camelCase are supported.
-   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be
+   * returned in ResourceSearchResult. Only '*' or combination of top level
+   * fields can be specified. Field names of both snake_case and camelCase are
+   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -380,6 +383,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * displayName
    *   * description
    *   * location
+   *   * tagKeys
+   *   * tagValues
+   *   * tagValueIds
    *   * labels
    *   * networkTags
    *   * kmsKey
@@ -405,10 +411,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be returned in
-   * ResourceSearchResult. Only '*' or combination of top level fields can be
-   * specified. Field names of both snake_case and camelCase are supported.
-   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be
+   * returned in ResourceSearchResult. Only '*' or combination of top level
+   * fields can be specified. Field names of both snake_case and camelCase are
+   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -417,6 +423,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * displayName
    *   * description
    *   * location
+   *   * tagKeys
+   *   * tagValues
+   *   * tagValueIds
    *   * labels
    *   * networkTags
    *   * kmsKey
@@ -442,10 +451,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be returned in
-   * ResourceSearchResult. Only '*' or combination of top level fields can be
-   * specified. Field names of both snake_case and camelCase are supported.
-   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be
+   * returned in ResourceSearchResult. Only '*' or combination of top level
+   * fields can be specified. Field names of both snake_case and camelCase are
+   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -454,6 +463,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *   * displayName
    *   * description
    *   * location
+   *   * tagKeys
+   *   * tagValues
+   *   * tagValueIds
    *   * labels
    *   * networkTags
    *   * kmsKey

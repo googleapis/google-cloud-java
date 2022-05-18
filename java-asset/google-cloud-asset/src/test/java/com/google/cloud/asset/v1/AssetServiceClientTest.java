@@ -17,6 +17,7 @@
 package com.google.cloud.asset.v1;
 
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
@@ -35,12 +36,14 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.type.Expr;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -699,6 +702,7 @@ public class AssetServiceClientTest {
     AnalyzeIamPolicyRequest request =
         AnalyzeIamPolicyRequest.newBuilder()
             .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setSavedAnalysisQuery("savedAnalysisQuery376058885")
             .setExecutionTimeout(Duration.newBuilder().build())
             .build();
 
@@ -710,6 +714,7 @@ public class AssetServiceClientTest {
     AnalyzeIamPolicyRequest actualRequest = ((AnalyzeIamPolicyRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getSavedAnalysisQuery(), actualRequest.getSavedAnalysisQuery());
     Assert.assertEquals(request.getExecutionTimeout(), actualRequest.getExecutionTimeout());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -726,6 +731,7 @@ public class AssetServiceClientTest {
       AnalyzeIamPolicyRequest request =
           AnalyzeIamPolicyRequest.newBuilder()
               .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setSavedAnalysisQuery("savedAnalysisQuery376058885")
               .setExecutionTimeout(Duration.newBuilder().build())
               .build();
       client.analyzeIamPolicy(request);
@@ -750,6 +756,7 @@ public class AssetServiceClientTest {
     AnalyzeIamPolicyLongrunningRequest request =
         AnalyzeIamPolicyLongrunningRequest.newBuilder()
             .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+            .setSavedAnalysisQuery("savedAnalysisQuery376058885")
             .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
             .build();
 
@@ -763,6 +770,7 @@ public class AssetServiceClientTest {
         ((AnalyzeIamPolicyLongrunningRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getAnalysisQuery(), actualRequest.getAnalysisQuery());
+    Assert.assertEquals(request.getSavedAnalysisQuery(), actualRequest.getSavedAnalysisQuery());
     Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -779,6 +787,7 @@ public class AssetServiceClientTest {
       AnalyzeIamPolicyLongrunningRequest request =
           AnalyzeIamPolicyLongrunningRequest.newBuilder()
               .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+              .setSavedAnalysisQuery("savedAnalysisQuery376058885")
               .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
               .build();
       client.analyzeIamPolicyLongrunningAsync(request).get();
@@ -830,6 +839,649 @@ public class AssetServiceClientTest {
               .setDestinationParent("destinationParent-1733659048")
               .build();
       client.analyzeMove(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSavedQueryTest() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+    SavedQuery savedQuery = SavedQuery.newBuilder().build();
+    String savedQueryId = "savedQueryId378086268";
+
+    SavedQuery actualResponse = client.createSavedQuery(parent, savedQuery, savedQueryId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSavedQueryRequest actualRequest = ((CreateSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(savedQuery, actualRequest.getSavedQuery());
+    Assert.assertEquals(savedQueryId, actualRequest.getSavedQueryId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSavedQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      SavedQuery savedQuery = SavedQuery.newBuilder().build();
+      String savedQueryId = "savedQueryId378086268";
+      client.createSavedQuery(parent, savedQuery, savedQueryId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSavedQueryTest2() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    SavedQuery savedQuery = SavedQuery.newBuilder().build();
+    String savedQueryId = "savedQueryId378086268";
+
+    SavedQuery actualResponse = client.createSavedQuery(parent, savedQuery, savedQueryId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSavedQueryRequest actualRequest = ((CreateSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(savedQuery, actualRequest.getSavedQuery());
+    Assert.assertEquals(savedQueryId, actualRequest.getSavedQueryId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSavedQueryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      SavedQuery savedQuery = SavedQuery.newBuilder().build();
+      String savedQueryId = "savedQueryId378086268";
+      client.createSavedQuery(parent, savedQuery, savedQueryId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSavedQueryTest3() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    SavedQuery savedQuery = SavedQuery.newBuilder().build();
+    String savedQueryId = "savedQueryId378086268";
+
+    SavedQuery actualResponse = client.createSavedQuery(parent, savedQuery, savedQueryId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSavedQueryRequest actualRequest = ((CreateSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(savedQuery, actualRequest.getSavedQuery());
+    Assert.assertEquals(savedQueryId, actualRequest.getSavedQueryId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSavedQueryExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      SavedQuery savedQuery = SavedQuery.newBuilder().build();
+      String savedQueryId = "savedQueryId378086268";
+      client.createSavedQuery(parent, savedQuery, savedQueryId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSavedQueryTest4() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    SavedQuery savedQuery = SavedQuery.newBuilder().build();
+    String savedQueryId = "savedQueryId378086268";
+
+    SavedQuery actualResponse = client.createSavedQuery(parent, savedQuery, savedQueryId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSavedQueryRequest actualRequest = ((CreateSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(savedQuery, actualRequest.getSavedQuery());
+    Assert.assertEquals(savedQueryId, actualRequest.getSavedQueryId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSavedQueryExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      SavedQuery savedQuery = SavedQuery.newBuilder().build();
+      String savedQueryId = "savedQueryId378086268";
+      client.createSavedQuery(parent, savedQuery, savedQueryId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSavedQueryTest() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
+
+    SavedQuery actualResponse = client.getSavedQuery(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSavedQueryRequest actualRequest = ((GetSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSavedQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
+      client.getSavedQuery(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSavedQueryTest2() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SavedQuery actualResponse = client.getSavedQuery(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSavedQueryRequest actualRequest = ((GetSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSavedQueryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSavedQuery(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      client.listSavedQueries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest2() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listSavedQueries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest3() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listSavedQueries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest4() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSavedQueries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSavedQueryTest() throws Exception {
+    SavedQuery expectedResponse =
+        SavedQuery.newBuilder()
+            .setName(
+                SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastUpdateTime(Timestamp.newBuilder().build())
+            .setLastUpdater("lastUpdater1649733971")
+            .putAllLabels(new HashMap<String, String>())
+            .setContent(SavedQuery.QueryContent.newBuilder().build())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    SavedQuery savedQuery = SavedQuery.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SavedQuery actualResponse = client.updateSavedQuery(savedQuery, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSavedQueryRequest actualRequest = ((UpdateSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(savedQuery, actualRequest.getSavedQuery());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSavedQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      SavedQuery savedQuery = SavedQuery.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSavedQuery(savedQuery, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSavedQueryTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAssetService.addResponse(expectedResponse);
+
+    SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
+
+    client.deleteSavedQuery(name);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSavedQueryRequest actualRequest = ((DeleteSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSavedQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      SavedQueryName name = SavedQueryName.ofProjectSavedQueryName("[PROJECT]", "[SAVED_QUERY]");
+      client.deleteSavedQuery(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSavedQueryTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteSavedQuery(name);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSavedQueryRequest actualRequest = ((DeleteSavedQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSavedQueryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSavedQuery(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchGetEffectiveIamPoliciesTest() throws Exception {
+    BatchGetEffectiveIamPoliciesResponse expectedResponse =
+        BatchGetEffectiveIamPoliciesResponse.newBuilder()
+            .addAllPolicyResults(
+                new ArrayList<BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy>())
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    BatchGetEffectiveIamPoliciesRequest request =
+        BatchGetEffectiveIamPoliciesRequest.newBuilder()
+            .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .addAllNames(new ArrayList<String>())
+            .build();
+
+    BatchGetEffectiveIamPoliciesResponse actualResponse =
+        client.batchGetEffectiveIamPolicies(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchGetEffectiveIamPoliciesRequest actualRequest =
+        ((BatchGetEffectiveIamPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getScope(), actualRequest.getScope());
+    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchGetEffectiveIamPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      BatchGetEffectiveIamPoliciesRequest request =
+          BatchGetEffectiveIamPoliciesRequest.newBuilder()
+              .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .addAllNames(new ArrayList<String>())
+              .build();
+      client.batchGetEffectiveIamPolicies(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

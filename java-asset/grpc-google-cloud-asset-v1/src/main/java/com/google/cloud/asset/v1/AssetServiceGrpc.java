@@ -606,6 +606,276 @@ public final class AssetServiceGrpc {
     return getAnalyzeMoveMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getCreateSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSavedQuery",
+      requestType = com.google.cloud.asset.v1.CreateSavedQueryRequest.class,
+      responseType = com.google.cloud.asset.v1.SavedQuery.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.CreateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getCreateSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.CreateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+        getCreateSavedQueryMethod;
+    if ((getCreateSavedQueryMethod = AssetServiceGrpc.getCreateSavedQueryMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getCreateSavedQueryMethod = AssetServiceGrpc.getCreateSavedQueryMethod) == null) {
+          AssetServiceGrpc.getCreateSavedQueryMethod =
+              getCreateSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.CreateSavedQueryRequest,
+                          com.google.cloud.asset.v1.SavedQuery>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.CreateSavedQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("CreateSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getGetSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSavedQuery",
+      requestType = com.google.cloud.asset.v1.GetSavedQueryRequest.class,
+      responseType = com.google.cloud.asset.v1.SavedQuery.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.GetSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getGetSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.GetSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+        getGetSavedQueryMethod;
+    if ((getGetSavedQueryMethod = AssetServiceGrpc.getGetSavedQueryMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getGetSavedQueryMethod = AssetServiceGrpc.getGetSavedQueryMethod) == null) {
+          AssetServiceGrpc.getGetSavedQueryMethod =
+              getGetSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.GetSavedQueryRequest,
+                          com.google.cloud.asset.v1.SavedQuery>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.GetSavedQueryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("GetSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getGetSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListSavedQueriesRequest,
+          com.google.cloud.asset.v1.ListSavedQueriesResponse>
+      getListSavedQueriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSavedQueries",
+      requestType = com.google.cloud.asset.v1.ListSavedQueriesRequest.class,
+      responseType = com.google.cloud.asset.v1.ListSavedQueriesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.ListSavedQueriesRequest,
+          com.google.cloud.asset.v1.ListSavedQueriesResponse>
+      getListSavedQueriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.ListSavedQueriesRequest,
+            com.google.cloud.asset.v1.ListSavedQueriesResponse>
+        getListSavedQueriesMethod;
+    if ((getListSavedQueriesMethod = AssetServiceGrpc.getListSavedQueriesMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getListSavedQueriesMethod = AssetServiceGrpc.getListSavedQueriesMethod) == null) {
+          AssetServiceGrpc.getListSavedQueriesMethod =
+              getListSavedQueriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.ListSavedQueriesRequest,
+                          com.google.cloud.asset.v1.ListSavedQueriesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSavedQueries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListSavedQueriesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.ListSavedQueriesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("ListSavedQueries"))
+                      .build();
+        }
+      }
+    }
+    return getListSavedQueriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getUpdateSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSavedQuery",
+      requestType = com.google.cloud.asset.v1.UpdateSavedQueryRequest.class,
+      responseType = com.google.cloud.asset.v1.SavedQuery.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.UpdateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+      getUpdateSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.UpdateSavedQueryRequest, com.google.cloud.asset.v1.SavedQuery>
+        getUpdateSavedQueryMethod;
+    if ((getUpdateSavedQueryMethod = AssetServiceGrpc.getUpdateSavedQueryMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getUpdateSavedQueryMethod = AssetServiceGrpc.getUpdateSavedQueryMethod) == null) {
+          AssetServiceGrpc.getUpdateSavedQueryMethod =
+              getUpdateSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.UpdateSavedQueryRequest,
+                          com.google.cloud.asset.v1.SavedQuery>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.UpdateSavedQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("UpdateSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteSavedQueryRequest, com.google.protobuf.Empty>
+      getDeleteSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSavedQuery",
+      requestType = com.google.cloud.asset.v1.DeleteSavedQueryRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.DeleteSavedQueryRequest, com.google.protobuf.Empty>
+      getDeleteSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.DeleteSavedQueryRequest, com.google.protobuf.Empty>
+        getDeleteSavedQueryMethod;
+    if ((getDeleteSavedQueryMethod = AssetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getDeleteSavedQueryMethod = AssetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+          AssetServiceGrpc.getDeleteSavedQueryMethod =
+              getDeleteSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.DeleteSavedQueryRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.DeleteSavedQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("DeleteSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
+          com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+      getBatchGetEffectiveIamPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetEffectiveIamPolicies",
+      requestType = com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.class,
+      responseType = com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
+          com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+      getBatchGetEffectiveIamPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+        getBatchGetEffectiveIamPoliciesMethod;
+    if ((getBatchGetEffectiveIamPoliciesMethod =
+            AssetServiceGrpc.getBatchGetEffectiveIamPoliciesMethod)
+        == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getBatchGetEffectiveIamPoliciesMethod =
+                AssetServiceGrpc.getBatchGetEffectiveIamPoliciesMethod)
+            == null) {
+          AssetServiceGrpc.getBatchGetEffectiveIamPoliciesMethod =
+              getBatchGetEffectiveIamPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
+                          com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchGetEffectiveIamPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("BatchGetEffectiveIamPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getBatchGetEffectiveIamPoliciesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
@@ -663,13 +933,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset proto as columns.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
-     * , which allows you to keep track of the export. We recommend intervals of
-     * at least 2 seconds with exponential retry to poll the export operation
-     * result. For regular-size resource parent, the export operation usually
-     * finishes within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -841,11 +1112,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -872,6 +1144,92 @@ public final class AssetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnalyzeMoveMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a saved query in a parent project/folder/organization.
+     * </pre>
+     */
+    public void createSavedQuery(
+        com.google.cloud.asset.v1.CreateSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a saved query.
+     * </pre>
+     */
+    public void getSavedQuery(
+        com.google.cloud.asset.v1.GetSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all saved queries in a parent project/folder/organization.
+     * </pre>
+     */
+    public void listSavedQueries(
+        com.google.cloud.asset.v1.ListSavedQueriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListSavedQueriesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSavedQueriesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a saved query.
+     * </pre>
+     */
+    public void updateSavedQuery(
+        com.google.cloud.asset.v1.UpdateSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a saved query.
+     * </pre>
+     */
+    public void deleteSavedQuery(
+        com.google.cloud.asset.v1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets effective IAM policies for a batch of resources.
+     * </pre>
+     */
+    public void batchGetEffectiveIamPolicies(
+        com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchGetEffectiveIamPoliciesMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -960,6 +1318,44 @@ public final class AssetServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.asset.v1.AnalyzeMoveRequest,
                       com.google.cloud.asset.v1.AnalyzeMoveResponse>(this, METHODID_ANALYZE_MOVE)))
+          .addMethod(
+              getCreateSavedQueryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.CreateSavedQueryRequest,
+                      com.google.cloud.asset.v1.SavedQuery>(this, METHODID_CREATE_SAVED_QUERY)))
+          .addMethod(
+              getGetSavedQueryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.GetSavedQueryRequest,
+                      com.google.cloud.asset.v1.SavedQuery>(this, METHODID_GET_SAVED_QUERY)))
+          .addMethod(
+              getListSavedQueriesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.ListSavedQueriesRequest,
+                      com.google.cloud.asset.v1.ListSavedQueriesResponse>(
+                      this, METHODID_LIST_SAVED_QUERIES)))
+          .addMethod(
+              getUpdateSavedQueryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.UpdateSavedQueryRequest,
+                      com.google.cloud.asset.v1.SavedQuery>(this, METHODID_UPDATE_SAVED_QUERY)))
+          .addMethod(
+              getDeleteSavedQueryMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.DeleteSavedQueryRequest, com.google.protobuf.Empty>(
+                      this, METHODID_DELETE_SAVED_QUERY)))
+          .addMethod(
+              getBatchGetEffectiveIamPoliciesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
+                      com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>(
+                      this, METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES)))
           .build();
     }
   }
@@ -989,13 +1385,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset proto as columns.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
-     * , which allows you to keep track of the export. We recommend intervals of
-     * at least 2 seconds with exponential retry to poll the export operation
-     * result. For regular-size resource parent, the export operation usually
-     * finishes within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -1183,11 +1580,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -1219,6 +1617,104 @@ public final class AssetServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a saved query in a parent project/folder/organization.
+     * </pre>
+     */
+    public void createSavedQuery(
+        com.google.cloud.asset.v1.CreateSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a saved query.
+     * </pre>
+     */
+    public void getSavedQuery(
+        com.google.cloud.asset.v1.GetSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all saved queries in a parent project/folder/organization.
+     * </pre>
+     */
+    public void listSavedQueries(
+        com.google.cloud.asset.v1.ListSavedQueriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListSavedQueriesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSavedQueriesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a saved query.
+     * </pre>
+     */
+    public void updateSavedQuery(
+        com.google.cloud.asset.v1.UpdateSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a saved query.
+     * </pre>
+     */
+    public void deleteSavedQuery(
+        com.google.cloud.asset.v1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets effective IAM policies for a batch of resources.
+     * </pre>
+     */
+    public void batchGetEffectiveIamPolicies(
+        com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchGetEffectiveIamPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1247,13 +1743,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset proto as columns.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
-     * , which allows you to keep track of the export. We recommend intervals of
-     * at least 2 seconds with exponential retry to poll the export operation
-     * result. For regular-size resource parent, the export operation usually
-     * finishes within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
@@ -1415,11 +1912,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
@@ -1443,6 +1941,85 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1.AnalyzeMoveRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAnalyzeMoveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a saved query in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery createSavedQuery(
+        com.google.cloud.asset.v1.CreateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a saved query.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery getSavedQuery(
+        com.google.cloud.asset.v1.GetSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all saved queries in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.ListSavedQueriesResponse listSavedQueries(
+        com.google.cloud.asset.v1.ListSavedQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a saved query.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SavedQuery updateSavedQuery(
+        com.google.cloud.asset.v1.UpdateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a saved query.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSavedQuery(
+        com.google.cloud.asset.v1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets effective IAM policies for a batch of resources.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse
+        batchGetEffectiveIamPolicies(
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetEffectiveIamPoliciesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1472,13 +2049,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset proto as columns.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API
-     * , which allows you to keep track of the export. We recommend intervals of
-     * at least 2 seconds with exponential retry to poll the export operation
-     * result. For regular-size resource parent, the export operation usually
-     * finishes within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1646,11 +2224,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1677,6 +2256,87 @@ public final class AssetServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAnalyzeMoveMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a saved query in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.SavedQuery>
+        createSavedQuery(com.google.cloud.asset.v1.CreateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a saved query.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.SavedQuery>
+        getSavedQuery(com.google.cloud.asset.v1.GetSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all saved queries in a parent project/folder/organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.ListSavedQueriesResponse>
+        listSavedQueries(com.google.cloud.asset.v1.ListSavedQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSavedQueriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a saved query.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.asset.v1.SavedQuery>
+        updateSavedQuery(com.google.cloud.asset.v1.UpdateSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a saved query.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSavedQuery(com.google.cloud.asset.v1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets effective IAM policies for a batch of resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>
+        batchGetEffectiveIamPolicies(
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchGetEffectiveIamPoliciesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
@@ -1692,6 +2352,12 @@ public final class AssetServiceGrpc {
   private static final int METHODID_ANALYZE_IAM_POLICY = 10;
   private static final int METHODID_ANALYZE_IAM_POLICY_LONGRUNNING = 11;
   private static final int METHODID_ANALYZE_MOVE = 12;
+  private static final int METHODID_CREATE_SAVED_QUERY = 13;
+  private static final int METHODID_GET_SAVED_QUERY = 14;
+  private static final int METHODID_LIST_SAVED_QUERIES = 15;
+  private static final int METHODID_UPDATE_SAVED_QUERY = 16;
+  private static final int METHODID_DELETE_SAVED_QUERY = 17;
+  private static final int METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1782,6 +2448,39 @@ public final class AssetServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeMoveResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_SAVED_QUERY:
+          serviceImpl.createSavedQuery(
+              (com.google.cloud.asset.v1.CreateSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery>) responseObserver);
+          break;
+        case METHODID_GET_SAVED_QUERY:
+          serviceImpl.getSavedQuery(
+              (com.google.cloud.asset.v1.GetSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery>) responseObserver);
+          break;
+        case METHODID_LIST_SAVED_QUERIES:
+          serviceImpl.listSavedQueries(
+              (com.google.cloud.asset.v1.ListSavedQueriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.ListSavedQueriesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SAVED_QUERY:
+          serviceImpl.updateSavedQuery(
+              (com.google.cloud.asset.v1.UpdateSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SavedQuery>) responseObserver);
+          break;
+        case METHODID_DELETE_SAVED_QUERY:
+          serviceImpl.deleteSavedQuery(
+              (com.google.cloud.asset.v1.DeleteSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES:
+          serviceImpl.batchGetEffectiveIamPolicies(
+              (com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1859,6 +2558,12 @@ public final class AssetServiceGrpc {
                       .addMethod(getAnalyzeIamPolicyMethod())
                       .addMethod(getAnalyzeIamPolicyLongrunningMethod())
                       .addMethod(getAnalyzeMoveMethod())
+                      .addMethod(getCreateSavedQueryMethod())
+                      .addMethod(getGetSavedQueryMethod())
+                      .addMethod(getListSavedQueriesMethod())
+                      .addMethod(getUpdateSavedQueryMethod())
+                      .addMethod(getDeleteSavedQueryMethod())
+                      .addMethod(getBatchGetEffectiveIamPoliciesMethod())
                       .build();
         }
       }
