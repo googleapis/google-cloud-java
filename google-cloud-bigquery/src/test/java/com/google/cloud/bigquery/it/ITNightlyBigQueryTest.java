@@ -332,7 +332,31 @@ public class ITNightlyBigQueryTest {
       ++cnt;
     }
     assertEquals(LIMIT_RECS, cnt); // all the records were retrieved
-    connection.close();
+    assertTrue(connection.close());
+  }
+
+  /*
+  This tests interrupts the execution in between and checks if it has been interrupted successfully while using ReadAPI
+   */
+  @Test
+  public void testConnectionClose() throws SQLException {
+    Connection connection = bigquery.createConnection();
+    BigQueryResult bigQueryResult = connection.executeSelect(QUERY);
+    logger.log(Level.INFO, "Query used: {0}", QUERY);
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    while (rs.next()) {
+      ++cnt;
+      if (cnt == 50000) { // interrupt at 50K
+        assertTrue(connection.close());
+      }
+    }
+    assertTrue(
+        LIMIT_RECS
+            > cnt); // we stopped at 50K but still we can expect additional records (typically ~100)
+    // to be retrieved
+    // as a number of records should have been already buffered. less than
+    // LIMIT_RECS should be retrieved
   }
 
   @Test
