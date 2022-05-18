@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.118.0](https://github.com/googleapis/java-pubsub/compare/v1.117.0...v1.118.0) (2022-05-18)
+
+
+### Features
+
+* creating java backport ([#1120](https://github.com/googleapis/java-pubsub/issues/1120)) ([d88f417](https://github.com/googleapis/java-pubsub/commit/d88f4175356b0fdeb0697cfb1a7e6cd83ac0b7a5))
+* next release from main branch is 1.118.0 ([#1127](https://github.com/googleapis/java-pubsub/issues/1127)) ([67605a7](https://github.com/googleapis/java-pubsub/commit/67605a7efb36da5b9e123efb8fe69c58d4cfcbfd))
+
+
+### Bug Fixes
+
+* Too many leases ([#1135](https://github.com/googleapis/java-pubsub/issues/1135)) ([c9bcec5](https://github.com/googleapis/java-pubsub/commit/c9bcec531bf175684306e50eaf7ef96ee60cba78))
+
 ## [1.117.0](https://github.com/googleapis/java-pubsub/compare/v1.116.4...v1.117.0) (2022-05-10)
 
 
