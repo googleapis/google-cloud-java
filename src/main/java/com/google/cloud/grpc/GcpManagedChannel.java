@@ -822,7 +822,12 @@ public class GcpManagedChannel extends ManagedChannel {
       return pickLeastBusyChannel(/* forFallback= */ false);
     }
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
-    if (mappedChannel == null || !fallbackEnabled) {
+    if (mappedChannel == null) {
+      ChannelRef channelRef = pickLeastBusyChannel(/*forFallback= */ false);
+      bind(channelRef, Collections.singletonList(key));
+      return channelRef;
+    }
+    if (!fallbackEnabled) {
       return mappedChannel;
     }
     // Look up if the channelRef is not ready.

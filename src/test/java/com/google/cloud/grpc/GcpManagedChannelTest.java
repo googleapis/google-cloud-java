@@ -382,7 +382,7 @@ public final class GcpManagedChannelTest {
   public void testBindUnbindKey() {
     // Initialize the channel and bind the key, check the affinity count.
     ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
-    ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
+    ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 2, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
     gcpChannel.bind(cf1, Collections.singletonList("key1"));
@@ -416,6 +416,29 @@ public final class GcpManagedChannelTest {
     assertEquals(0, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
+  }
+
+  @Test
+  public void testUsingKeyWithoutBinding() {
+    // Initialize the channel and bind the key, check the affinity count.
+    ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
+    ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 2, 0, 4);
+    gcpChannel.channelRefs.add(cf1);
+    gcpChannel.channelRefs.add(cf2);
+
+    final String key = "non-binded-key";
+    ChannelRef channelRef = gcpChannel.getChannelRef(key);
+    // Should bind on the fly to the least busy channel, which is 2.
+    assertThat(channelRef.getId()).isEqualTo(2);
+
+    cf1.activeStreamsCountDecr(System.nanoTime(), Status.OK, true);
+    cf1.activeStreamsCountDecr(System.nanoTime(), Status.OK, true);
+    // Even after channel 1 now has less active streams (3) the channel 2 is still mapped for the
+    // same key.
+
+    channelRef = gcpChannel.getChannelRef(key);
+    // Should bind on the fly to the least busy channel, which is 2.
+    assertThat(channelRef.getId()).isEqualTo(2);
   }
 
   @Test
