@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.15](https://github.com/googleapis/java-os-login/compare/v2.0.14...v2.0.15) (2022-05-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#677](https://github.com/googleapis/java-os-login/issues/677)) ([970b681](https://github.com/googleapis/java-os-login/commit/970b681e05a4c64a78ab4cc9a0f234b841982672))
+
 ### [2.0.14](https://github.com/googleapis/java-os-login/compare/v2.0.13...v2.0.14) (2022-04-15)
 
 
