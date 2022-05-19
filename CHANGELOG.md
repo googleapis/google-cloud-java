@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.0](https://github.com/googleapis/java-logging/compare/v3.7.6...v3.8.0) (2022-05-16)
+
+
+### Features
+
+* next release from main branch is 3.7.0 ([#957](https://github.com/googleapis/java-logging/issues/957)) ([576a93e](https://github.com/googleapis/java-logging/commit/576a93e2bba9939425e6fce22b13b6580565689c))
+
 ### [3.7.6](https://github.com/googleapis/java-logging/compare/v3.7.5...v3.7.6) (2022-05-03)
 
 
