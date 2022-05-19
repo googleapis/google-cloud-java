@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.12.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.11.0...v2.12.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-shared-dependencies/issues/1440)) ([#697](https://github.com/googleapis/java-shared-dependencies/issues/697)) ([f10ec4e](https://github.com/googleapis/java-shared-dependencies/commit/f10ec4e664d8fde868effe366b7182a5fad08dd0))
+
+
+### Dependencies
+
+* update gax.version to v2.18.1 ([#695](https://github.com/googleapis/java-shared-dependencies/issues/695)) ([09bc61c](https://github.com/googleapis/java-shared-dependencies/commit/09bc61c9152a99bfe87554a07324f15ae6217d6e))
+* update google.core.version to v2.7.1 ([#698](https://github.com/googleapis/java-shared-dependencies/issues/698)) ([43de259](https://github.com/googleapis/java-shared-dependencies/commit/43de2593f1a6e8fa5e34799364ab683246ddd449))
+
 ## [2.11.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.10.0...v2.11.0) (2022-05-18)
 
 
