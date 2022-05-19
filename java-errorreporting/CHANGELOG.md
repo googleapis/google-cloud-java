@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.123.0](https://github.com/googleapis/java-errorreporting/compare/v0.122.23...v0.123.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-errorreporting/issues/1440)) ([#865](https://github.com/googleapis/java-errorreporting/issues/865)) ([a679211](https://github.com/googleapis/java-errorreporting/commit/a6792117c65057059bdd060ad4f43f74cd824347))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#863](https://github.com/googleapis/java-errorreporting/issues/863)) ([dfba42c](https://github.com/googleapis/java-errorreporting/commit/dfba42c75a86f1466fdd12cf1dfd71aef76b194e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#864](https://github.com/googleapis/java-errorreporting/issues/864)) ([5d90a9d](https://github.com/googleapis/java-errorreporting/commit/5d90a9de242aec93c0b5c13d77360c4158e96e50))
+
 ### [0.122.23](https://github.com/googleapis/java-errorreporting/compare/v0.122.22...v0.122.23) (2022-04-16)
 
 
