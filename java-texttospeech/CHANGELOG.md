@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-texttospeech/compare/v2.2.1...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-texttospeech/issues/1440)) ([#694](https://github.com/googleapis/java-texttospeech/issues/694)) ([919f704](https://github.com/googleapis/java-texttospeech/commit/919f70403488553515212d6fb4b61bc1b19e224e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#693](https://github.com/googleapis/java-texttospeech/issues/693)) ([03f5ffd](https://github.com/googleapis/java-texttospeech/commit/03f5ffd5bb443dc034e800c55e88b4cebfd3ec67))
+
 ### [2.2.1](https://github.com/googleapis/java-texttospeech/compare/v2.2.0...v2.2.1) (2022-04-15)
 
 
