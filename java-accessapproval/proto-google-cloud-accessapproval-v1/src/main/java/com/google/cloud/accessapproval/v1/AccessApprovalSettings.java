@@ -41,6 +41,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     name_ = "";
     notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     enrolledServices_ = java.util.Collections.emptyList();
+    activeKeyVersion_ = "";
   }
 
   @java.lang.Override
@@ -106,6 +107,23 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
           case 32:
             {
               enrolledAncestor_ = input.readBool();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              activeKeyVersion_ = s;
+              break;
+            }
+          case 56:
+            {
+              ancestorHasActiveKeyVersion_ = input.readBool();
+              break;
+            }
+          case 64:
+            {
+              invalidKeyVersion_ = input.readBool();
               break;
             }
           default:
@@ -416,6 +434,107 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     return enrolledAncestor_;
   }
 
+  public static final int ACTIVE_KEY_VERSION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object activeKeyVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * The asymmetric crypto key version to use for signing approval requests.
+   * Empty active_key_version indicates that a Google-managed key should be used
+   * for signing. This property will be ignored if set by an ancestor of this
+   * resource, and new non-empty values may not be set.
+   * </pre>
+   *
+   * <code>string active_key_version = 6;</code>
+   *
+   * @return The activeKeyVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getActiveKeyVersion() {
+    java.lang.Object ref = activeKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activeKeyVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The asymmetric crypto key version to use for signing approval requests.
+   * Empty active_key_version indicates that a Google-managed key should be used
+   * for signing. This property will be ignored if set by an ancestor of this
+   * resource, and new non-empty values may not be set.
+   * </pre>
+   *
+   * <code>string active_key_version = 6;</code>
+   *
+   * @return The bytes for activeKeyVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getActiveKeyVersionBytes() {
+    java.lang.Object ref = activeKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      activeKeyVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ANCESTOR_HAS_ACTIVE_KEY_VERSION_FIELD_NUMBER = 7;
+  private boolean ancestorHasActiveKeyVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+   * method). If the field is true, that indicates that an ancestor of this
+   * Project or Folder has set active_key_version (this field will always be
+   * unset for the organization since organizations do not have ancestors).
+   * </pre>
+   *
+   * <code>bool ancestor_has_active_key_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ancestorHasActiveKeyVersion.
+   */
+  @java.lang.Override
+  public boolean getAncestorHasActiveKeyVersion() {
+    return ancestorHasActiveKeyVersion_;
+  }
+
+  public static final int INVALID_KEY_VERSION_FIELD_NUMBER = 8;
+  private boolean invalidKeyVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+   * method). If the field is true, that indicates that there is some
+   * configuration issue with the active_key_version configured at this level in
+   * the resource hierarchy (e.g. it doesn't exist or the Access Approval
+   * service account doesn't have the correct permissions on it, etc.) This key
+   * version is not necessarily the effective key version at this level, as key
+   * versions are inherited top-down.
+   * </pre>
+   *
+   * <code>bool invalid_key_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The invalidKeyVersion.
+   */
+  @java.lang.Override
+  public boolean getInvalidKeyVersion() {
+    return invalidKeyVersion_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -441,6 +560,15 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
     if (enrolledAncestor_ != false) {
       output.writeBool(4, enrolledAncestor_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activeKeyVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, activeKeyVersion_);
+    }
+    if (ancestorHasActiveKeyVersion_ != false) {
+      output.writeBool(7, ancestorHasActiveKeyVersion_);
+    }
+    if (invalidKeyVersion_ != false) {
+      output.writeBool(8, invalidKeyVersion_);
     }
     unknownFields.writeTo(output);
   }
@@ -468,6 +596,16 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     if (enrolledAncestor_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enrolledAncestor_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activeKeyVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, activeKeyVersion_);
+    }
+    if (ancestorHasActiveKeyVersion_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(7, ancestorHasActiveKeyVersion_);
+    }
+    if (invalidKeyVersion_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, invalidKeyVersion_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -488,6 +626,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     if (!getNotificationEmailsList().equals(other.getNotificationEmailsList())) return false;
     if (!getEnrolledServicesList().equals(other.getEnrolledServicesList())) return false;
     if (getEnrolledAncestor() != other.getEnrolledAncestor()) return false;
+    if (!getActiveKeyVersion().equals(other.getActiveKeyVersion())) return false;
+    if (getAncestorHasActiveKeyVersion() != other.getAncestorHasActiveKeyVersion()) return false;
+    if (getInvalidKeyVersion() != other.getInvalidKeyVersion()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -511,6 +652,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + ENROLLED_ANCESTOR_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnrolledAncestor());
+    hash = (37 * hash) + ACTIVE_KEY_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getActiveKeyVersion().hashCode();
+    hash = (37 * hash) + ANCESTOR_HAS_ACTIVE_KEY_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAncestorHasActiveKeyVersion());
+    hash = (37 * hash) + INVALID_KEY_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvalidKeyVersion());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -671,6 +818,12 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       enrolledAncestor_ = false;
 
+      activeKeyVersion_ = "";
+
+      ancestorHasActiveKeyVersion_ = false;
+
+      invalidKeyVersion_ = false;
+
       return this;
     }
 
@@ -715,6 +868,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         result.enrolledServices_ = enrolledServicesBuilder_.build();
       }
       result.enrolledAncestor_ = enrolledAncestor_;
+      result.activeKeyVersion_ = activeKeyVersion_;
+      result.ancestorHasActiveKeyVersion_ = ancestorHasActiveKeyVersion_;
+      result.invalidKeyVersion_ = invalidKeyVersion_;
       onBuilt();
       return result;
     }
@@ -808,6 +964,16 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       if (other.getEnrolledAncestor() != false) {
         setEnrolledAncestor(other.getEnrolledAncestor());
+      }
+      if (!other.getActiveKeyVersion().isEmpty()) {
+        activeKeyVersion_ = other.activeKeyVersion_;
+        onChanged();
+      }
+      if (other.getAncestorHasActiveKeyVersion() != false) {
+        setAncestorHasActiveKeyVersion(other.getAncestorHasActiveKeyVersion());
+      }
+      if (other.getInvalidKeyVersion() != false) {
+        setInvalidKeyVersion(other.getInvalidKeyVersion());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1741,6 +1907,261 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder clearEnrolledAncestor() {
 
       enrolledAncestor_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activeKeyVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The asymmetric crypto key version to use for signing approval requests.
+     * Empty active_key_version indicates that a Google-managed key should be used
+     * for signing. This property will be ignored if set by an ancestor of this
+     * resource, and new non-empty values may not be set.
+     * </pre>
+     *
+     * <code>string active_key_version = 6;</code>
+     *
+     * @return The activeKeyVersion.
+     */
+    public java.lang.String getActiveKeyVersion() {
+      java.lang.Object ref = activeKeyVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activeKeyVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The asymmetric crypto key version to use for signing approval requests.
+     * Empty active_key_version indicates that a Google-managed key should be used
+     * for signing. This property will be ignored if set by an ancestor of this
+     * resource, and new non-empty values may not be set.
+     * </pre>
+     *
+     * <code>string active_key_version = 6;</code>
+     *
+     * @return The bytes for activeKeyVersion.
+     */
+    public com.google.protobuf.ByteString getActiveKeyVersionBytes() {
+      java.lang.Object ref = activeKeyVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        activeKeyVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The asymmetric crypto key version to use for signing approval requests.
+     * Empty active_key_version indicates that a Google-managed key should be used
+     * for signing. This property will be ignored if set by an ancestor of this
+     * resource, and new non-empty values may not be set.
+     * </pre>
+     *
+     * <code>string active_key_version = 6;</code>
+     *
+     * @param value The activeKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveKeyVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      activeKeyVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The asymmetric crypto key version to use for signing approval requests.
+     * Empty active_key_version indicates that a Google-managed key should be used
+     * for signing. This property will be ignored if set by an ancestor of this
+     * resource, and new non-empty values may not be set.
+     * </pre>
+     *
+     * <code>string active_key_version = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveKeyVersion() {
+
+      activeKeyVersion_ = getDefaultInstance().getActiveKeyVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The asymmetric crypto key version to use for signing approval requests.
+     * Empty active_key_version indicates that a Google-managed key should be used
+     * for signing. This property will be ignored if set by an ancestor of this
+     * resource, and new non-empty values may not be set.
+     * </pre>
+     *
+     * <code>string active_key_version = 6;</code>
+     *
+     * @param value The bytes for activeKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveKeyVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      activeKeyVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean ancestorHasActiveKeyVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that an ancestor of this
+     * Project or Folder has set active_key_version (this field will always be
+     * unset for the organization since organizations do not have ancestors).
+     * </pre>
+     *
+     * <code>bool ancestor_has_active_key_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ancestorHasActiveKeyVersion.
+     */
+    @java.lang.Override
+    public boolean getAncestorHasActiveKeyVersion() {
+      return ancestorHasActiveKeyVersion_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that an ancestor of this
+     * Project or Folder has set active_key_version (this field will always be
+     * unset for the organization since organizations do not have ancestors).
+     * </pre>
+     *
+     * <code>bool ancestor_has_active_key_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The ancestorHasActiveKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAncestorHasActiveKeyVersion(boolean value) {
+
+      ancestorHasActiveKeyVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that an ancestor of this
+     * Project or Folder has set active_key_version (this field will always be
+     * unset for the organization since organizations do not have ancestors).
+     * </pre>
+     *
+     * <code>bool ancestor_has_active_key_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAncestorHasActiveKeyVersion() {
+
+      ancestorHasActiveKeyVersion_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean invalidKeyVersion_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that there is some
+     * configuration issue with the active_key_version configured at this level in
+     * the resource hierarchy (e.g. it doesn't exist or the Access Approval
+     * service account doesn't have the correct permissions on it, etc.) This key
+     * version is not necessarily the effective key version at this level, as key
+     * versions are inherited top-down.
+     * </pre>
+     *
+     * <code>bool invalid_key_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The invalidKeyVersion.
+     */
+    @java.lang.Override
+    public boolean getInvalidKeyVersion() {
+      return invalidKeyVersion_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that there is some
+     * configuration issue with the active_key_version configured at this level in
+     * the resource hierarchy (e.g. it doesn't exist or the Access Approval
+     * service account doesn't have the correct permissions on it, etc.) This key
+     * version is not necessarily the effective key version at this level, as key
+     * versions are inherited top-down.
+     * </pre>
+     *
+     * <code>bool invalid_key_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The invalidKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvalidKeyVersion(boolean value) {
+
+      invalidKeyVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+     * method). If the field is true, that indicates that there is some
+     * configuration issue with the active_key_version configured at this level in
+     * the resource hierarchy (e.g. it doesn't exist or the Access Approval
+     * service account doesn't have the correct permissions on it, etc.) This key
+     * version is not necessarily the effective key version at this level, as key
+     * versions are inherited top-down.
+     * </pre>
+     *
+     * <code>bool invalid_key_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvalidKeyVersion() {
+
+      invalidKeyVersion_ = false;
       onChanged();
       return this;
     }

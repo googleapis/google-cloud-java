@@ -20,13 +20,16 @@ import static com.google.cloud.accessapproval.v1.AccessApprovalAdminClient.ListA
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
 import com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage;
 import com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.GetApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse;
 import com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage;
@@ -66,6 +69,11 @@ public abstract class AccessApprovalStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: dismissApprovalRequestCallable()");
   }
 
+  public UnaryCallable<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestCallable() {
+    throw new UnsupportedOperationException("Not implemented: invalidateApprovalRequestCallable()");
+  }
+
   public UnaryCallable<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: getAccessApprovalSettingsCallable()");
@@ -81,6 +89,12 @@ public abstract class AccessApprovalStub implements BackgroundResource {
       deleteAccessApprovalSettingsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAccessApprovalSettingsCallable()");
+  }
+
+  public UnaryCallable<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getAccessApprovalServiceAccountCallable()");
   }
 
   @Override

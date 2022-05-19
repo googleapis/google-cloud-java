@@ -101,6 +101,12 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
     return ((AccessApprovalStubSettings) getStubSettings()).dismissApprovalRequestSettings();
   }
 
+  /** Returns the object with the settings used for calls to invalidateApprovalRequest. */
+  public UnaryCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestSettings() {
+    return ((AccessApprovalStubSettings) getStubSettings()).invalidateApprovalRequestSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAccessApprovalSettings. */
   public UnaryCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsSettings() {
@@ -117,6 +123,13 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
   public UnaryCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsSettings() {
     return ((AccessApprovalStubSettings) getStubSettings()).deleteAccessApprovalSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAccessApprovalServiceAccount. */
+  public UnaryCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountSettings() {
+    return ((AccessApprovalStubSettings) getStubSettings())
+        .getAccessApprovalServiceAccountSettings();
   }
 
   public static final AccessApprovalAdminSettings create(AccessApprovalStubSettings stub)
@@ -243,6 +256,12 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
       return getStubSettingsBuilder().dismissApprovalRequestSettings();
     }
 
+    /** Returns the builder for the settings used for calls to invalidateApprovalRequest. */
+    public UnaryCallSettings.Builder<InvalidateApprovalRequestMessage, ApprovalRequest>
+        invalidateApprovalRequestSettings() {
+      return getStubSettingsBuilder().invalidateApprovalRequestSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getAccessApprovalSettings. */
     public UnaryCallSettings.Builder<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsSettings() {
@@ -259,6 +278,13 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
     public UnaryCallSettings.Builder<DeleteAccessApprovalSettingsMessage, Empty>
         deleteAccessApprovalSettingsSettings() {
       return getStubSettingsBuilder().deleteAccessApprovalSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAccessApprovalServiceAccount. */
+    public UnaryCallSettings.Builder<
+            GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+        getAccessApprovalServiceAccountSettings() {
+      return getStubSettingsBuilder().getAccessApprovalServiceAccountSettings();
     }
 
     @Override

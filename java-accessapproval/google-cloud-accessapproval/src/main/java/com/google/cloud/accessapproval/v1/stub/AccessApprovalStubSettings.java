@@ -40,13 +40,16 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
 import com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage;
 import com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.GetApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse;
 import com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage;
@@ -113,12 +116,17 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       approveApprovalRequestSettings;
   private final UnaryCallSettings<DismissApprovalRequestMessage, ApprovalRequest>
       dismissApprovalRequestSettings;
+  private final UnaryCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestSettings;
   private final UnaryCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsSettings;
   private final UnaryCallSettings<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
       updateAccessApprovalSettingsSettings;
   private final UnaryCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsSettings;
+  private final UnaryCallSettings<
+          GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountSettings;
 
   private static final PagedListDescriptor<
           ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
@@ -212,6 +220,12 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     return dismissApprovalRequestSettings;
   }
 
+  /** Returns the object with the settings used for calls to invalidateApprovalRequest. */
+  public UnaryCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestSettings() {
+    return invalidateApprovalRequestSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAccessApprovalSettings. */
   public UnaryCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsSettings() {
@@ -228,6 +242,12 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
   public UnaryCallSettings<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsSettings() {
     return deleteAccessApprovalSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAccessApprovalServiceAccount. */
+  public UnaryCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountSettings() {
+    return getAccessApprovalServiceAccountSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -310,11 +330,14 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     getApprovalRequestSettings = settingsBuilder.getApprovalRequestSettings().build();
     approveApprovalRequestSettings = settingsBuilder.approveApprovalRequestSettings().build();
     dismissApprovalRequestSettings = settingsBuilder.dismissApprovalRequestSettings().build();
+    invalidateApprovalRequestSettings = settingsBuilder.invalidateApprovalRequestSettings().build();
     getAccessApprovalSettingsSettings = settingsBuilder.getAccessApprovalSettingsSettings().build();
     updateAccessApprovalSettingsSettings =
         settingsBuilder.updateAccessApprovalSettingsSettings().build();
     deleteAccessApprovalSettingsSettings =
         settingsBuilder.deleteAccessApprovalSettingsSettings().build();
+    getAccessApprovalServiceAccountSettings =
+        settingsBuilder.getAccessApprovalServiceAccountSettings().build();
   }
 
   /** Builder for AccessApprovalStubSettings. */
@@ -331,6 +354,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
         approveApprovalRequestSettings;
     private final UnaryCallSettings.Builder<DismissApprovalRequestMessage, ApprovalRequest>
         dismissApprovalRequestSettings;
+    private final UnaryCallSettings.Builder<InvalidateApprovalRequestMessage, ApprovalRequest>
+        invalidateApprovalRequestSettings;
     private final UnaryCallSettings.Builder<
             GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsSettings;
@@ -339,6 +364,9 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
         updateAccessApprovalSettingsSettings;
     private final UnaryCallSettings.Builder<DeleteAccessApprovalSettingsMessage, Empty>
         deleteAccessApprovalSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+        getAccessApprovalServiceAccountSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -350,6 +378,7 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -377,6 +406,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -392,9 +423,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       getApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       approveApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       dismissApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      invalidateApprovalRequestSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAccessApprovalSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAccessApprovalServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -402,9 +435,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               getApprovalRequestSettings,
               approveApprovalRequestSettings,
               dismissApprovalRequestSettings,
+              invalidateApprovalRequestSettings,
               getAccessApprovalSettingsSettings,
               updateAccessApprovalSettingsSettings,
-              deleteAccessApprovalSettingsSettings);
+              deleteAccessApprovalSettingsSettings,
+              getAccessApprovalServiceAccountSettings);
       initDefaults(this);
     }
 
@@ -415,11 +450,14 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       getApprovalRequestSettings = settings.getApprovalRequestSettings.toBuilder();
       approveApprovalRequestSettings = settings.approveApprovalRequestSettings.toBuilder();
       dismissApprovalRequestSettings = settings.dismissApprovalRequestSettings.toBuilder();
+      invalidateApprovalRequestSettings = settings.invalidateApprovalRequestSettings.toBuilder();
       getAccessApprovalSettingsSettings = settings.getAccessApprovalSettingsSettings.toBuilder();
       updateAccessApprovalSettingsSettings =
           settings.updateAccessApprovalSettingsSettings.toBuilder();
       deleteAccessApprovalSettingsSettings =
           settings.deleteAccessApprovalSettingsSettings.toBuilder();
+      getAccessApprovalServiceAccountSettings =
+          settings.getAccessApprovalServiceAccountSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -427,9 +465,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
               getApprovalRequestSettings,
               approveApprovalRequestSettings,
               dismissApprovalRequestSettings,
+              invalidateApprovalRequestSettings,
               getAccessApprovalSettingsSettings,
               updateAccessApprovalSettingsSettings,
-              deleteAccessApprovalSettingsSettings);
+              deleteAccessApprovalSettingsSettings,
+              getAccessApprovalServiceAccountSettings);
     }
 
     private static Builder createDefault() {
@@ -467,6 +507,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .invalidateApprovalRequestSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .getAccessApprovalSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -480,6 +525,11 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
           .deleteAccessApprovalSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAccessApprovalServiceAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -526,6 +576,12 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       return dismissApprovalRequestSettings;
     }
 
+    /** Returns the builder for the settings used for calls to invalidateApprovalRequest. */
+    public UnaryCallSettings.Builder<InvalidateApprovalRequestMessage, ApprovalRequest>
+        invalidateApprovalRequestSettings() {
+      return invalidateApprovalRequestSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getAccessApprovalSettings. */
     public UnaryCallSettings.Builder<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsSettings() {
@@ -542,6 +598,13 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     public UnaryCallSettings.Builder<DeleteAccessApprovalSettingsMessage, Empty>
         deleteAccessApprovalSettingsSettings() {
       return deleteAccessApprovalSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAccessApprovalServiceAccount. */
+    public UnaryCallSettings.Builder<
+            GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+        getAccessApprovalServiceAccountSettings() {
+      return getAccessApprovalServiceAccountSettings;
     }
 
     @Override

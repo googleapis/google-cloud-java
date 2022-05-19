@@ -476,6 +476,64 @@ public class AccessApprovalAdminClientTest {
   }
 
   @Test
+  public void invalidateApprovalRequestTest() throws Exception {
+    ApprovalRequest expectedResponse =
+        ApprovalRequest.newBuilder()
+            .setName(
+                ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]")
+                    .toString())
+            .setRequestedResourceName("requestedResourceName-1218563513")
+            .setRequestedResourceProperties(ResourceProperties.newBuilder().build())
+            .setRequestedReason(AccessReason.newBuilder().build())
+            .setRequestedLocations(AccessLocations.newBuilder().build())
+            .setRequestTime(Timestamp.newBuilder().build())
+            .setRequestedExpiration(Timestamp.newBuilder().build())
+            .build();
+    mockAccessApproval.addResponse(expectedResponse);
+
+    InvalidateApprovalRequestMessage request =
+        InvalidateApprovalRequestMessage.newBuilder()
+            .setName(
+                ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]")
+                    .toString())
+            .build();
+
+    ApprovalRequest actualResponse = client.invalidateApprovalRequest(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccessApproval.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    InvalidateApprovalRequestMessage actualRequest =
+        ((InvalidateApprovalRequestMessage) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void invalidateApprovalRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAccessApproval.addException(exception);
+
+    try {
+      InvalidateApprovalRequestMessage request =
+          InvalidateApprovalRequestMessage.newBuilder()
+              .setName(
+                  ApprovalRequestName.ofProjectApprovalRequestName(
+                          "[PROJECT]", "[APPROVAL_REQUEST]")
+                      .toString())
+              .build();
+      client.invalidateApprovalRequest(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getAccessApprovalSettingsTest() throws Exception {
     AccessApprovalSettings expectedResponse =
         AccessApprovalSettings.newBuilder()
@@ -483,6 +541,9 @@ public class AccessApprovalAdminClientTest {
             .addAllNotificationEmails(new ArrayList<String>())
             .addAllEnrolledServices(new ArrayList<EnrolledService>())
             .setEnrolledAncestor(true)
+            .setActiveKeyVersion("activeKeyVersion1352190239")
+            .setAncestorHasActiveKeyVersion(true)
+            .setInvalidKeyVersion(true)
             .build();
     mockAccessApproval.addResponse(expectedResponse);
 
@@ -525,6 +586,9 @@ public class AccessApprovalAdminClientTest {
             .addAllNotificationEmails(new ArrayList<String>())
             .addAllEnrolledServices(new ArrayList<EnrolledService>())
             .setEnrolledAncestor(true)
+            .setActiveKeyVersion("activeKeyVersion1352190239")
+            .setAncestorHasActiveKeyVersion(true)
+            .setInvalidKeyVersion(true)
             .build();
     mockAccessApproval.addResponse(expectedResponse);
 
@@ -567,6 +631,9 @@ public class AccessApprovalAdminClientTest {
             .addAllNotificationEmails(new ArrayList<String>())
             .addAllEnrolledServices(new ArrayList<EnrolledService>())
             .setEnrolledAncestor(true)
+            .setActiveKeyVersion("activeKeyVersion1352190239")
+            .setAncestorHasActiveKeyVersion(true)
+            .setInvalidKeyVersion(true)
             .build();
     mockAccessApproval.addResponse(expectedResponse);
 
@@ -669,6 +736,46 @@ public class AccessApprovalAdminClientTest {
     try {
       String name = "name3373707";
       client.deleteAccessApprovalSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccessApprovalServiceAccountTest() throws Exception {
+    AccessApprovalServiceAccount expectedResponse =
+        AccessApprovalServiceAccount.newBuilder()
+            .setName("name3373707")
+            .setAccountEmail("accountEmail1067197807")
+            .build();
+    mockAccessApproval.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AccessApprovalServiceAccount actualResponse = client.getAccessApprovalServiceAccount(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAccessApproval.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAccessApprovalServiceAccountMessage actualRequest =
+        ((GetAccessApprovalServiceAccountMessage) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAccessApprovalServiceAccountExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAccessApproval.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAccessApprovalServiceAccount(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

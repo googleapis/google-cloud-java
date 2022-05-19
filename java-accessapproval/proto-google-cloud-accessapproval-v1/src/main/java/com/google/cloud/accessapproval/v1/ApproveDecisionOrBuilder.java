@@ -92,4 +92,87 @@ public interface ApproveDecisionOrBuilder
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   *
+   * @return Whether the invalidateTime field is set.
+   */
+  boolean hasInvalidateTime();
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   *
+   * @return The invalidateTime.
+   */
+  com.google.protobuf.Timestamp getInvalidateTime();
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInvalidateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   *
+   * @return Whether the signatureInfo field is set.
+   */
+  boolean hasSignatureInfo();
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   *
+   * @return The signatureInfo.
+   */
+  com.google.cloud.accessapproval.v1.SignatureInfo getSignatureInfo();
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   */
+  com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder getSignatureInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * True when the request has been auto-approved.
+   * </pre>
+   *
+   * <code>bool auto_approved = 5;</code>
+   *
+   * @return The autoApproved.
+   */
+  boolean getAutoApproved();
 }

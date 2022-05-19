@@ -231,4 +231,71 @@ public interface AccessApprovalSettingsOrBuilder
    * @return The enrolledAncestor.
    */
   boolean getEnrolledAncestor();
+
+  /**
+   *
+   *
+   * <pre>
+   * The asymmetric crypto key version to use for signing approval requests.
+   * Empty active_key_version indicates that a Google-managed key should be used
+   * for signing. This property will be ignored if set by an ancestor of this
+   * resource, and new non-empty values may not be set.
+   * </pre>
+   *
+   * <code>string active_key_version = 6;</code>
+   *
+   * @return The activeKeyVersion.
+   */
+  java.lang.String getActiveKeyVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The asymmetric crypto key version to use for signing approval requests.
+   * Empty active_key_version indicates that a Google-managed key should be used
+   * for signing. This property will be ignored if set by an ancestor of this
+   * resource, and new non-empty values may not be set.
+   * </pre>
+   *
+   * <code>string active_key_version = 6;</code>
+   *
+   * @return The bytes for activeKeyVersion.
+   */
+  com.google.protobuf.ByteString getActiveKeyVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+   * method). If the field is true, that indicates that an ancestor of this
+   * Project or Folder has set active_key_version (this field will always be
+   * unset for the organization since organizations do not have ancestors).
+   * </pre>
+   *
+   * <code>bool ancestor_has_active_key_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ancestorHasActiveKeyVersion.
+   */
+  boolean getAncestorHasActiveKeyVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is read only (not settable via UpdateAccessApprovalSettings
+   * method). If the field is true, that indicates that there is some
+   * configuration issue with the active_key_version configured at this level in
+   * the resource hierarchy (e.g. it doesn't exist or the Access Approval
+   * service account doesn't have the correct permissions on it, etc.) This key
+   * version is not necessarily the effective key version at this level, as key
+   * versions are inherited top-down.
+   * </pre>
+   *
+   * <code>bool invalid_key_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The invalidKeyVersion.
+   */
+  boolean getInvalidKeyVersion();
 }

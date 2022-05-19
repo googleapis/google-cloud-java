@@ -145,6 +145,27 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
   }
 
   @Override
+  public void invalidateApprovalRequest(
+      InvalidateApprovalRequestMessage request, StreamObserver<ApprovalRequest> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ApprovalRequest) {
+      requests.add(request);
+      responseObserver.onNext(((ApprovalRequest) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InvalidateApprovalRequest, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ApprovalRequest.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getAccessApprovalSettings(
       GetAccessApprovalSettingsMessage request,
       StreamObserver<AccessApprovalSettings> responseObserver) {
@@ -205,6 +226,28 @@ public class MockAccessApprovalImpl extends AccessApprovalImplBase {
                   "Unrecognized response type %s for method DeleteAccessApprovalSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAccessApprovalServiceAccount(
+      GetAccessApprovalServiceAccountMessage request,
+      StreamObserver<AccessApprovalServiceAccount> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AccessApprovalServiceAccount) {
+      requests.add(request);
+      responseObserver.onNext(((AccessApprovalServiceAccount) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccessApprovalServiceAccount, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AccessApprovalServiceAccount.class.getName(),
                   Exception.class.getName())));
     }
   }

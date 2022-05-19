@@ -662,6 +662,73 @@ public class AccessApprovalAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest.
+   *
+   * <p>NOTE: This does not deny access to the resource if another request has been made and
+   * approved. It only invalidates a single approval.
+   *
+   * <p>Returns FAILED_PRECONDITION if the request exists but is not in an approved state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   InvalidateApprovalRequestMessage request =
+   *       InvalidateApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApprovalRequest response = accessApprovalAdminClient.invalidateApprovalRequest(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApprovalRequest invalidateApprovalRequest(InvalidateApprovalRequestMessage request) {
+    return invalidateApprovalRequestCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Invalidates an existing ApprovalRequest. Returns the updated ApprovalRequest.
+   *
+   * <p>NOTE: This does not deny access to the resource if another request has been made and
+   * approved. It only invalidates a single approval.
+   *
+   * <p>Returns FAILED_PRECONDITION if the request exists but is not in an approved state.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   InvalidateApprovalRequestMessage request =
+   *       InvalidateApprovalRequestMessage.newBuilder()
+   *           .setName(
+   *               ApprovalRequestName.ofProjectApprovalRequestName(
+   *                       "[PROJECT]", "[APPROVAL_REQUEST]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ApprovalRequest> future =
+   *       accessApprovalAdminClient.invalidateApprovalRequestCallable().futureCall(request);
+   *   // Do something.
+   *   ApprovalRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestCallable() {
+    return stub.invalidateApprovalRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the settings associated with a project, folder, or organization.
    *
    * <p>Sample code:
@@ -975,6 +1042,83 @@ public class AccessApprovalAdminClient implements BackgroundResource {
   public final UnaryCallable<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsCallable() {
     return stub.deleteAccessApprovalSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the service account that is used by Access Approval to access KMS keys for signing
+   * approved approval requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   String name = "name3373707";
+   *   AccessApprovalServiceAccount response =
+   *       accessApprovalAdminClient.getAccessApprovalServiceAccount(name);
+   * }
+   * }</pre>
+   *
+   * @param name Name of the AccessApprovalServiceAccount to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessApprovalServiceAccount getAccessApprovalServiceAccount(String name) {
+    GetAccessApprovalServiceAccountMessage request =
+        GetAccessApprovalServiceAccountMessage.newBuilder().setName(name).build();
+    return getAccessApprovalServiceAccount(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the service account that is used by Access Approval to access KMS keys for signing
+   * approved approval requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   GetAccessApprovalServiceAccountMessage request =
+   *       GetAccessApprovalServiceAccountMessage.newBuilder().setName("name3373707").build();
+   *   AccessApprovalServiceAccount response =
+   *       accessApprovalAdminClient.getAccessApprovalServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AccessApprovalServiceAccount getAccessApprovalServiceAccount(
+      GetAccessApprovalServiceAccountMessage request) {
+    return getAccessApprovalServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the service account that is used by Access Approval to access KMS keys for signing
+   * approved approval requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+   *   GetAccessApprovalServiceAccountMessage request =
+   *       GetAccessApprovalServiceAccountMessage.newBuilder().setName("name3373707").build();
+   *   ApiFuture<AccessApprovalServiceAccount> future =
+   *       accessApprovalAdminClient.getAccessApprovalServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   AccessApprovalServiceAccount response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountCallable() {
+    return stub.getAccessApprovalServiceAccountCallable();
   }
 
   @Override

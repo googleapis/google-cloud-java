@@ -98,6 +98,42 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (invalidateTime_ != null) {
+                subBuilder = invalidateTime_.toBuilder();
+              }
+              invalidateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(invalidateTime_);
+                invalidateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.accessapproval.v1.SignatureInfo.Builder subBuilder = null;
+              if (signatureInfo_ != null) {
+                subBuilder = signatureInfo_.toBuilder();
+              }
+              signatureInfo_ =
+                  input.readMessage(
+                      com.google.cloud.accessapproval.v1.SignatureInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signatureInfo_);
+                signatureInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 40:
+            {
+              autoApproved_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -226,6 +262,120 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     return getExpireTime();
   }
 
+  public static final int INVALIDATE_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp invalidateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   *
+   * @return Whether the invalidateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasInvalidateTime() {
+    return invalidateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   *
+   * @return The invalidateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInvalidateTime() {
+    return invalidateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : invalidateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If set, denotes the timestamp at which the approval is invalidated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInvalidateTimeOrBuilder() {
+    return getInvalidateTime();
+  }
+
+  public static final int SIGNATURE_INFO_FIELD_NUMBER = 4;
+  private com.google.cloud.accessapproval.v1.SignatureInfo signatureInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   *
+   * @return Whether the signatureInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSignatureInfo() {
+    return signatureInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   *
+   * @return The signatureInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.accessapproval.v1.SignatureInfo getSignatureInfo() {
+    return signatureInfo_ == null
+        ? com.google.cloud.accessapproval.v1.SignatureInfo.getDefaultInstance()
+        : signatureInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The signature for the ApprovalRequest and details on how it was signed.
+   * </pre>
+   *
+   * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder getSignatureInfoOrBuilder() {
+    return getSignatureInfo();
+  }
+
+  public static final int AUTO_APPROVED_FIELD_NUMBER = 5;
+  private boolean autoApproved_;
+  /**
+   *
+   *
+   * <pre>
+   * True when the request has been auto-approved.
+   * </pre>
+   *
+   * <code>bool auto_approved = 5;</code>
+   *
+   * @return The autoApproved.
+   */
+  @java.lang.Override
+  public boolean getAutoApproved() {
+    return autoApproved_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -246,6 +396,15 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     if (expireTime_ != null) {
       output.writeMessage(2, getExpireTime());
     }
+    if (invalidateTime_ != null) {
+      output.writeMessage(3, getInvalidateTime());
+    }
+    if (signatureInfo_ != null) {
+      output.writeMessage(4, getSignatureInfo());
+    }
+    if (autoApproved_ != false) {
+      output.writeBool(5, autoApproved_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -260,6 +419,15 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     }
     if (expireTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExpireTime());
+    }
+    if (invalidateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getInvalidateTime());
+    }
+    if (signatureInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSignatureInfo());
+    }
+    if (autoApproved_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, autoApproved_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -285,6 +453,15 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
     if (hasExpireTime()) {
       if (!getExpireTime().equals(other.getExpireTime())) return false;
     }
+    if (hasInvalidateTime() != other.hasInvalidateTime()) return false;
+    if (hasInvalidateTime()) {
+      if (!getInvalidateTime().equals(other.getInvalidateTime())) return false;
+    }
+    if (hasSignatureInfo() != other.hasSignatureInfo()) return false;
+    if (hasSignatureInfo()) {
+      if (!getSignatureInfo().equals(other.getSignatureInfo())) return false;
+    }
+    if (getAutoApproved() != other.getAutoApproved()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -304,6 +481,16 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
     }
+    if (hasInvalidateTime()) {
+      hash = (37 * hash) + INVALIDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getInvalidateTime().hashCode();
+    }
+    if (hasSignatureInfo()) {
+      hash = (37 * hash) + SIGNATURE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSignatureInfo().hashCode();
+    }
+    hash = (37 * hash) + AUTO_APPROVED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoApproved());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -461,6 +648,20 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         expireTime_ = null;
         expireTimeBuilder_ = null;
       }
+      if (invalidateTimeBuilder_ == null) {
+        invalidateTime_ = null;
+      } else {
+        invalidateTime_ = null;
+        invalidateTimeBuilder_ = null;
+      }
+      if (signatureInfoBuilder_ == null) {
+        signatureInfo_ = null;
+      } else {
+        signatureInfo_ = null;
+        signatureInfoBuilder_ = null;
+      }
+      autoApproved_ = false;
+
       return this;
     }
 
@@ -498,6 +699,17 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       } else {
         result.expireTime_ = expireTimeBuilder_.build();
       }
+      if (invalidateTimeBuilder_ == null) {
+        result.invalidateTime_ = invalidateTime_;
+      } else {
+        result.invalidateTime_ = invalidateTimeBuilder_.build();
+      }
+      if (signatureInfoBuilder_ == null) {
+        result.signatureInfo_ = signatureInfo_;
+      } else {
+        result.signatureInfo_ = signatureInfoBuilder_.build();
+      }
+      result.autoApproved_ = autoApproved_;
       onBuilt();
       return result;
     }
@@ -553,6 +765,15 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
+      }
+      if (other.hasInvalidateTime()) {
+        mergeInvalidateTime(other.getInvalidateTime());
+      }
+      if (other.hasSignatureInfo()) {
+        mergeSignatureInfo(other.getSignatureInfo());
+      }
+      if (other.getAutoApproved() != false) {
+        setAutoApproved(other.getAutoApproved());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -950,6 +1171,429 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
         expireTime_ = null;
       }
       return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp invalidateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        invalidateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     *
+     * @return Whether the invalidateTime field is set.
+     */
+    public boolean hasInvalidateTime() {
+      return invalidateTimeBuilder_ != null || invalidateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     *
+     * @return The invalidateTime.
+     */
+    public com.google.protobuf.Timestamp getInvalidateTime() {
+      if (invalidateTimeBuilder_ == null) {
+        return invalidateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : invalidateTime_;
+      } else {
+        return invalidateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public Builder setInvalidateTime(com.google.protobuf.Timestamp value) {
+      if (invalidateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        invalidateTime_ = value;
+        onChanged();
+      } else {
+        invalidateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public Builder setInvalidateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (invalidateTimeBuilder_ == null) {
+        invalidateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        invalidateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public Builder mergeInvalidateTime(com.google.protobuf.Timestamp value) {
+      if (invalidateTimeBuilder_ == null) {
+        if (invalidateTime_ != null) {
+          invalidateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(invalidateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          invalidateTime_ = value;
+        }
+        onChanged();
+      } else {
+        invalidateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public Builder clearInvalidateTime() {
+      if (invalidateTimeBuilder_ == null) {
+        invalidateTime_ = null;
+        onChanged();
+      } else {
+        invalidateTime_ = null;
+        invalidateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInvalidateTimeBuilder() {
+
+      onChanged();
+      return getInvalidateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInvalidateTimeOrBuilder() {
+      if (invalidateTimeBuilder_ != null) {
+        return invalidateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return invalidateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : invalidateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, denotes the timestamp at which the approval is invalidated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp invalidate_time = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getInvalidateTimeFieldBuilder() {
+      if (invalidateTimeBuilder_ == null) {
+        invalidateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getInvalidateTime(), getParentForChildren(), isClean());
+        invalidateTime_ = null;
+      }
+      return invalidateTimeBuilder_;
+    }
+
+    private com.google.cloud.accessapproval.v1.SignatureInfo signatureInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.accessapproval.v1.SignatureInfo,
+            com.google.cloud.accessapproval.v1.SignatureInfo.Builder,
+            com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder>
+        signatureInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     *
+     * @return Whether the signatureInfo field is set.
+     */
+    public boolean hasSignatureInfo() {
+      return signatureInfoBuilder_ != null || signatureInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     *
+     * @return The signatureInfo.
+     */
+    public com.google.cloud.accessapproval.v1.SignatureInfo getSignatureInfo() {
+      if (signatureInfoBuilder_ == null) {
+        return signatureInfo_ == null
+            ? com.google.cloud.accessapproval.v1.SignatureInfo.getDefaultInstance()
+            : signatureInfo_;
+      } else {
+        return signatureInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public Builder setSignatureInfo(com.google.cloud.accessapproval.v1.SignatureInfo value) {
+      if (signatureInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        signatureInfo_ = value;
+        onChanged();
+      } else {
+        signatureInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public Builder setSignatureInfo(
+        com.google.cloud.accessapproval.v1.SignatureInfo.Builder builderForValue) {
+      if (signatureInfoBuilder_ == null) {
+        signatureInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        signatureInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public Builder mergeSignatureInfo(com.google.cloud.accessapproval.v1.SignatureInfo value) {
+      if (signatureInfoBuilder_ == null) {
+        if (signatureInfo_ != null) {
+          signatureInfo_ =
+              com.google.cloud.accessapproval.v1.SignatureInfo.newBuilder(signatureInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          signatureInfo_ = value;
+        }
+        onChanged();
+      } else {
+        signatureInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public Builder clearSignatureInfo() {
+      if (signatureInfoBuilder_ == null) {
+        signatureInfo_ = null;
+        onChanged();
+      } else {
+        signatureInfo_ = null;
+        signatureInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public com.google.cloud.accessapproval.v1.SignatureInfo.Builder getSignatureInfoBuilder() {
+
+      onChanged();
+      return getSignatureInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    public com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder getSignatureInfoOrBuilder() {
+      if (signatureInfoBuilder_ != null) {
+        return signatureInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return signatureInfo_ == null
+            ? com.google.cloud.accessapproval.v1.SignatureInfo.getDefaultInstance()
+            : signatureInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The signature for the ApprovalRequest and details on how it was signed.
+     * </pre>
+     *
+     * <code>.google.cloud.accessapproval.v1.SignatureInfo signature_info = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.accessapproval.v1.SignatureInfo,
+            com.google.cloud.accessapproval.v1.SignatureInfo.Builder,
+            com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder>
+        getSignatureInfoFieldBuilder() {
+      if (signatureInfoBuilder_ == null) {
+        signatureInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.accessapproval.v1.SignatureInfo,
+                com.google.cloud.accessapproval.v1.SignatureInfo.Builder,
+                com.google.cloud.accessapproval.v1.SignatureInfoOrBuilder>(
+                getSignatureInfo(), getParentForChildren(), isClean());
+        signatureInfo_ = null;
+      }
+      return signatureInfoBuilder_;
+    }
+
+    private boolean autoApproved_;
+    /**
+     *
+     *
+     * <pre>
+     * True when the request has been auto-approved.
+     * </pre>
+     *
+     * <code>bool auto_approved = 5;</code>
+     *
+     * @return The autoApproved.
+     */
+    @java.lang.Override
+    public boolean getAutoApproved() {
+      return autoApproved_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True when the request has been auto-approved.
+     * </pre>
+     *
+     * <code>bool auto_approved = 5;</code>
+     *
+     * @param value The autoApproved to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoApproved(boolean value) {
+
+      autoApproved_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True when the request has been auto-approved.
+     * </pre>
+     *
+     * <code>bool auto_approved = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoApproved() {
+
+      autoApproved_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

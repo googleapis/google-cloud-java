@@ -19,11 +19,17 @@
             "DismissApprovalRequest": {
               "methods": ["dismissApprovalRequest", "dismissApprovalRequestCallable"]
             },
+            "GetAccessApprovalServiceAccount": {
+              "methods": ["getAccessApprovalServiceAccount", "getAccessApprovalServiceAccount", "getAccessApprovalServiceAccountCallable"]
+            },
             "GetAccessApprovalSettings": {
               "methods": ["getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettingsCallable"]
             },
             "GetApprovalRequest": {
               "methods": ["getApprovalRequest", "getApprovalRequest", "getApprovalRequest", "getApprovalRequestCallable"]
+            },
+            "InvalidateApprovalRequest": {
+              "methods": ["invalidateApprovalRequest", "invalidateApprovalRequestCallable"]
             },
             "ListApprovalRequests": {
               "methods": ["listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequestsPagedCallable", "listApprovalRequestsCallable"]

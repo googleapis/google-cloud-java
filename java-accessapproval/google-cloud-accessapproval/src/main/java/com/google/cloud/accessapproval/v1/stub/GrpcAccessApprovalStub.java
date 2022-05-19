@@ -24,13 +24,16 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
 import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
 import com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage;
 import com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage;
 import com.google.cloud.accessapproval.v1.GetApprovalRequestMessage;
+import com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage;
 import com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse;
 import com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage;
@@ -95,6 +98,17 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestMethodDescriptor =
+          MethodDescriptor.<InvalidateApprovalRequestMessage, ApprovalRequest>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.accessapproval.v1.AccessApproval/InvalidateApprovalRequest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(InvalidateApprovalRequestMessage.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ApprovalRequest.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsMethodDescriptor =
           MethodDescriptor.<GetAccessApprovalSettingsMessage, AccessApprovalSettings>newBuilder()
@@ -130,6 +144,21 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountMethodDescriptor =
+          MethodDescriptor
+              .<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.accessapproval.v1.AccessApproval/GetAccessApprovalServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetAccessApprovalServiceAccountMessage.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AccessApprovalServiceAccount.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse>
       listApprovalRequestsCallable;
   private final UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsPagedResponse>
@@ -140,12 +169,16 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
       approveApprovalRequestCallable;
   private final UnaryCallable<DismissApprovalRequestMessage, ApprovalRequest>
       dismissApprovalRequestCallable;
+  private final UnaryCallable<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestCallable;
   private final UnaryCallable<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsCallable;
   private final UnaryCallable<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
       updateAccessApprovalSettingsCallable;
   private final UnaryCallable<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsCallable;
+  private final UnaryCallable<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -235,6 +268,17 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<InvalidateApprovalRequestMessage, ApprovalRequest>
+        invalidateApprovalRequestTransportSettings =
+            GrpcCallSettings.<InvalidateApprovalRequestMessage, ApprovalRequest>newBuilder()
+                .setMethodDescriptor(invalidateApprovalRequestMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
         getAccessApprovalSettingsTransportSettings =
             GrpcCallSettings.<GetAccessApprovalSettingsMessage, AccessApprovalSettings>newBuilder()
@@ -269,6 +313,18 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+        getAccessApprovalServiceAccountTransportSettings =
+            GrpcCallSettings
+                .<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>newBuilder()
+                .setMethodDescriptor(getAccessApprovalServiceAccountMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
 
     this.listApprovalRequestsCallable =
         callableFactory.createUnaryCallable(
@@ -295,6 +351,11 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
             dismissApprovalRequestTransportSettings,
             settings.dismissApprovalRequestSettings(),
             clientContext);
+    this.invalidateApprovalRequestCallable =
+        callableFactory.createUnaryCallable(
+            invalidateApprovalRequestTransportSettings,
+            settings.invalidateApprovalRequestSettings(),
+            clientContext);
     this.getAccessApprovalSettingsCallable =
         callableFactory.createUnaryCallable(
             getAccessApprovalSettingsTransportSettings,
@@ -309,6 +370,11 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
         callableFactory.createUnaryCallable(
             deleteAccessApprovalSettingsTransportSettings,
             settings.deleteAccessApprovalSettingsSettings(),
+            clientContext);
+    this.getAccessApprovalServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            getAccessApprovalServiceAccountTransportSettings,
+            settings.getAccessApprovalServiceAccountSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -349,6 +415,12 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
   }
 
   @Override
+  public UnaryCallable<InvalidateApprovalRequestMessage, ApprovalRequest>
+      invalidateApprovalRequestCallable() {
+    return invalidateApprovalRequestCallable;
+  }
+
+  @Override
   public UnaryCallable<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsCallable() {
     return getAccessApprovalSettingsCallable;
@@ -364,6 +436,12 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
   public UnaryCallable<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsCallable() {
     return deleteAccessApprovalSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAccessApprovalServiceAccountMessage, AccessApprovalServiceAccount>
+      getAccessApprovalServiceAccountCallable() {
+    return getAccessApprovalServiceAccountCallable;
   }
 
   @Override

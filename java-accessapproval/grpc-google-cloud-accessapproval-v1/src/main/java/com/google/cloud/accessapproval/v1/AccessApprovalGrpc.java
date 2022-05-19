@@ -260,6 +260,57 @@ public final class AccessApprovalGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage,
+          com.google.cloud.accessapproval.v1.ApprovalRequest>
+      getInvalidateApprovalRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InvalidateApprovalRequest",
+      requestType = com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage.class,
+      responseType = com.google.cloud.accessapproval.v1.ApprovalRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage,
+          com.google.cloud.accessapproval.v1.ApprovalRequest>
+      getInvalidateApprovalRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage,
+            com.google.cloud.accessapproval.v1.ApprovalRequest>
+        getInvalidateApprovalRequestMethod;
+    if ((getInvalidateApprovalRequestMethod = AccessApprovalGrpc.getInvalidateApprovalRequestMethod)
+        == null) {
+      synchronized (AccessApprovalGrpc.class) {
+        if ((getInvalidateApprovalRequestMethod =
+                AccessApprovalGrpc.getInvalidateApprovalRequestMethod)
+            == null) {
+          AccessApprovalGrpc.getInvalidateApprovalRequestMethod =
+              getInvalidateApprovalRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage,
+                          com.google.cloud.accessapproval.v1.ApprovalRequest>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "InvalidateApprovalRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.accessapproval.v1.ApprovalRequest
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccessApprovalMethodDescriptorSupplier("InvalidateApprovalRequest"))
+                      .build();
+        }
+      }
+    }
+    return getInvalidateApprovalRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage,
           com.google.cloud.accessapproval.v1.AccessApprovalSettings>
       getGetAccessApprovalSettingsMethod;
@@ -415,6 +466,59 @@ public final class AccessApprovalGrpc {
     return getDeleteAccessApprovalSettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage,
+          com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+      getGetAccessApprovalServiceAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccessApprovalServiceAccount",
+      requestType = com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage.class,
+      responseType = com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage,
+          com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+      getGetAccessApprovalServiceAccountMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage,
+            com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+        getGetAccessApprovalServiceAccountMethod;
+    if ((getGetAccessApprovalServiceAccountMethod =
+            AccessApprovalGrpc.getGetAccessApprovalServiceAccountMethod)
+        == null) {
+      synchronized (AccessApprovalGrpc.class) {
+        if ((getGetAccessApprovalServiceAccountMethod =
+                AccessApprovalGrpc.getGetAccessApprovalServiceAccountMethod)
+            == null) {
+          AccessApprovalGrpc.getGetAccessApprovalServiceAccountMethod =
+              getGetAccessApprovalServiceAccountMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage,
+                          com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAccessApprovalServiceAccount"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.accessapproval.v1
+                                  .GetAccessApprovalServiceAccountMessage.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccessApprovalMethodDescriptorSupplier(
+                              "GetAccessApprovalServiceAccount"))
+                      .build();
+        }
+      }
+    }
+    return getGetAccessApprovalServiceAccountMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AccessApprovalStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AccessApprovalStub> factory =
@@ -565,6 +669,26 @@ public final class AccessApprovalGrpc {
      *
      *
      * <pre>
+     * Invalidates an existing ApprovalRequest. Returns the updated
+     * ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It only invalidates a single approval.
+     * Returns FAILED_PRECONDITION if the request exists but is not in an approved
+     * state.
+     * </pre>
+     */
+    public void invalidateApprovalRequest(
+        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request,
+        io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getInvalidateApprovalRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the settings associated with a project, folder, or organization.
      * </pre>
      */
@@ -611,6 +735,22 @@ public final class AccessApprovalGrpc {
           getDeleteAccessApprovalSettingsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the service account that is used by Access Approval to access KMS
+     * keys for signing approved approval requests.
+     * </pre>
+     */
+    public void getAccessApprovalServiceAccount(
+        com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request,
+        io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAccessApprovalServiceAccountMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -643,6 +783,13 @@ public final class AccessApprovalGrpc {
                       com.google.cloud.accessapproval.v1.ApprovalRequest>(
                       this, METHODID_DISMISS_APPROVAL_REQUEST)))
           .addMethod(
+              getInvalidateApprovalRequestMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage,
+                      com.google.cloud.accessapproval.v1.ApprovalRequest>(
+                      this, METHODID_INVALIDATE_APPROVAL_REQUEST)))
+          .addMethod(
               getGetAccessApprovalSettingsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -662,6 +809,13 @@ public final class AccessApprovalGrpc {
                   new MethodHandlers<
                       com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ACCESS_APPROVAL_SETTINGS)))
+          .addMethod(
+              getGetAccessApprovalServiceAccountMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage,
+                      com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>(
+                      this, METHODID_GET_ACCESS_APPROVAL_SERVICE_ACCOUNT)))
           .build();
     }
   }
@@ -792,6 +946,28 @@ public final class AccessApprovalGrpc {
      *
      *
      * <pre>
+     * Invalidates an existing ApprovalRequest. Returns the updated
+     * ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It only invalidates a single approval.
+     * Returns FAILED_PRECONDITION if the request exists but is not in an approved
+     * state.
+     * </pre>
+     */
+    public void invalidateApprovalRequest(
+        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request,
+        io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInvalidateApprovalRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the settings associated with a project, folder, or organization.
      * </pre>
      */
@@ -840,6 +1016,24 @@ public final class AccessApprovalGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAccessApprovalSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the service account that is used by Access Approval to access KMS
+     * keys for signing approved approval requests.
+     * </pre>
+     */
+    public void getAccessApprovalServiceAccount(
+        com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request,
+        io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccessApprovalServiceAccountMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -956,6 +1150,24 @@ public final class AccessApprovalGrpc {
      *
      *
      * <pre>
+     * Invalidates an existing ApprovalRequest. Returns the updated
+     * ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It only invalidates a single approval.
+     * Returns FAILED_PRECONDITION if the request exists but is not in an approved
+     * state.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.ApprovalRequest invalidateApprovalRequest(
+        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInvalidateApprovalRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the settings associated with a project, folder, or organization.
      * </pre>
      */
@@ -995,6 +1207,21 @@ public final class AccessApprovalGrpc {
         com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAccessApprovalSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the service account that is used by Access Approval to access KMS
+     * keys for signing approved approval requests.
+     * </pre>
+     */
+    public com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount
+        getAccessApprovalServiceAccount(
+            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessApprovalServiceAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -1116,6 +1343,26 @@ public final class AccessApprovalGrpc {
      *
      *
      * <pre>
+     * Invalidates an existing ApprovalRequest. Returns the updated
+     * ApprovalRequest.
+     * NOTE: This does not deny access to the resource if another request has been
+     * made and approved. It only invalidates a single approval.
+     * Returns FAILED_PRECONDITION if the request exists but is not in an approved
+     * state.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.accessapproval.v1.ApprovalRequest>
+        invalidateApprovalRequest(
+            com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInvalidateApprovalRequestMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the settings associated with a project, folder, or organization.
      * </pre>
      */
@@ -1161,15 +1408,34 @@ public final class AccessApprovalGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAccessApprovalSettingsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the service account that is used by Access Approval to access KMS
+     * keys for signing approved approval requests.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>
+        getAccessApprovalServiceAccount(
+            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccessApprovalServiceAccountMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_APPROVAL_REQUESTS = 0;
   private static final int METHODID_GET_APPROVAL_REQUEST = 1;
   private static final int METHODID_APPROVE_APPROVAL_REQUEST = 2;
   private static final int METHODID_DISMISS_APPROVAL_REQUEST = 3;
-  private static final int METHODID_GET_ACCESS_APPROVAL_SETTINGS = 4;
-  private static final int METHODID_UPDATE_ACCESS_APPROVAL_SETTINGS = 5;
-  private static final int METHODID_DELETE_ACCESS_APPROVAL_SETTINGS = 6;
+  private static final int METHODID_INVALIDATE_APPROVAL_REQUEST = 4;
+  private static final int METHODID_GET_ACCESS_APPROVAL_SETTINGS = 5;
+  private static final int METHODID_UPDATE_ACCESS_APPROVAL_SETTINGS = 6;
+  private static final int METHODID_DELETE_ACCESS_APPROVAL_SETTINGS = 7;
+  private static final int METHODID_GET_ACCESS_APPROVAL_SERVICE_ACCOUNT = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1213,6 +1479,12 @@ public final class AccessApprovalGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest>)
                   responseObserver);
           break;
+        case METHODID_INVALIDATE_APPROVAL_REQUEST:
+          serviceImpl.invalidateApprovalRequest(
+              (com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.accessapproval.v1.ApprovalRequest>)
+                  responseObserver);
+          break;
         case METHODID_GET_ACCESS_APPROVAL_SETTINGS:
           serviceImpl.getAccessApprovalSettings(
               (com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage) request,
@@ -1231,6 +1503,13 @@ public final class AccessApprovalGrpc {
           serviceImpl.deleteAccessApprovalSettings(
               (com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_ACCESS_APPROVAL_SERVICE_ACCOUNT:
+          serviceImpl.getAccessApprovalServiceAccount(
+              (com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1300,9 +1579,11 @@ public final class AccessApprovalGrpc {
                       .addMethod(getGetApprovalRequestMethod())
                       .addMethod(getApproveApprovalRequestMethod())
                       .addMethod(getDismissApprovalRequestMethod())
+                      .addMethod(getInvalidateApprovalRequestMethod())
                       .addMethod(getGetAccessApprovalSettingsMethod())
                       .addMethod(getUpdateAccessApprovalSettingsMethod())
                       .addMethod(getDeleteAccessApprovalSettingsMethod())
+                      .addMethod(getGetAccessApprovalServiceAccountMethod())
                       .build();
         }
       }

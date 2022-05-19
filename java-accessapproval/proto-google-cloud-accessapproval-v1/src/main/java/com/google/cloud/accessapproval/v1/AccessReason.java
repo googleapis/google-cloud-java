@@ -155,9 +155,9 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The principal accessed customer data in order to diagnose or resolve a
-     * suspected issue in services or a known outage. Often this access is used
-     * to confirm that customers are not affected by a suspected service issue
-     * or to remediate a reversible system issue.
+     * suspected issue in services. Often this access is used to confirm that
+     * customers are not affected by a suspected service issue or to remediate a
+     * reversible system issue.
      * </pre>
      *
      * <code>GOOGLE_INITIATED_SERVICE = 2;</code>
@@ -174,6 +174,29 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_INITIATED_REVIEW = 3;</code>
      */
     GOOGLE_INITIATED_REVIEW(3),
+    /**
+     *
+     *
+     * <pre>
+     * The principal was compelled to access customer data in order to respond
+     * to a legal third party data request or process, including legal processes
+     * from customers themselves.
+     * </pre>
+     *
+     * <code>THIRD_PARTY_DATA_REQUEST = 4;</code>
+     */
+    THIRD_PARTY_DATA_REQUEST(4),
+    /**
+     *
+     *
+     * <pre>
+     * The principal accessed customer data in order to diagnose or resolve a
+     * suspected issue in services or a known outage.
+     * </pre>
+     *
+     * <code>GOOGLE_RESPONSE_TO_PRODUCTION_ALERT = 5;</code>
+     */
+    GOOGLE_RESPONSE_TO_PRODUCTION_ALERT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -209,9 +232,9 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The principal accessed customer data in order to diagnose or resolve a
-     * suspected issue in services or a known outage. Often this access is used
-     * to confirm that customers are not affected by a suspected service issue
-     * or to remediate a reversible system issue.
+     * suspected issue in services. Often this access is used to confirm that
+     * customers are not affected by a suspected service issue or to remediate a
+     * reversible system issue.
      * </pre>
      *
      * <code>GOOGLE_INITIATED_SERVICE = 2;</code>
@@ -228,6 +251,29 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
      * <code>GOOGLE_INITIATED_REVIEW = 3;</code>
      */
     public static final int GOOGLE_INITIATED_REVIEW_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The principal was compelled to access customer data in order to respond
+     * to a legal third party data request or process, including legal processes
+     * from customers themselves.
+     * </pre>
+     *
+     * <code>THIRD_PARTY_DATA_REQUEST = 4;</code>
+     */
+    public static final int THIRD_PARTY_DATA_REQUEST_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The principal accessed customer data in order to diagnose or resolve a
+     * suspected issue in services or a known outage.
+     * </pre>
+     *
+     * <code>GOOGLE_RESPONSE_TO_PRODUCTION_ALERT = 5;</code>
+     */
+    public static final int GOOGLE_RESPONSE_TO_PRODUCTION_ALERT_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -261,6 +307,10 @@ public final class AccessReason extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_INITIATED_SERVICE;
         case 3:
           return GOOGLE_INITIATED_REVIEW;
+        case 4:
+          return THIRD_PARTY_DATA_REQUEST;
+        case 5:
+          return GOOGLE_RESPONSE_TO_PRODUCTION_ALERT;
         default:
           return null;
       }
