@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.12.0](https://github.com/googleapis/java-analytics-data/compare/v0.11.10...v0.12.0) (2022-05-19)
+
+
+### Features
+
+* add `runFunnelReport` method to the Alpha version of the Data API ([#490](https://github.com/googleapis/java-analytics-data/issues/490)) ([1969fee](https://github.com/googleapis/java-analytics-data/commit/1969feecac73306525a79e39b7098fdb2a5a05d2))
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-oauth2-http to v1.7.0 ([#492](https://github.com/googleapis/java-analytics-data/issues/492)) ([c09d6a3](https://github.com/googleapis/java-analytics-data/commit/c09d6a3e7bba0ec26ac02e4d1ea928bd7ab64bcb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#493](https://github.com/googleapis/java-analytics-data/issues/493)) ([5e5cc70](https://github.com/googleapis/java-analytics-data/commit/5e5cc70bf5ae8d30061a46b50d37347b576650f7))
+
 ### [0.11.10](https://github.com/googleapis/java-analytics-data/compare/v0.11.9...v0.11.10) (2022-04-15)
 
 
