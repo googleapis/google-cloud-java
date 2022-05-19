@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-dataflow/compare/v0.5.1...v0.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dataflow/issues/1440)) ([#173](https://github.com/googleapis/java-dataflow/issues/173)) ([f0d563a](https://github.com/googleapis/java-dataflow/commit/f0d563a4ecf77f0373181d2d7056ceb301314268))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#172](https://github.com/googleapis/java-dataflow/issues/172)) ([4cbe28d](https://github.com/googleapis/java-dataflow/commit/4cbe28d2f4a269e61d0cfe9d4a67562a7b0d2bef))
+
 ### [0.5.1](https://github.com/googleapis/java-dataflow/compare/v0.5.0...v0.5.1) (2022-04-15)
 
 
