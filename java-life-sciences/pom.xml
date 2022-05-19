@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-life-sciences-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+  <version>0.3.10</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   <name>Google Cloud Life Sciences Parent</name>
   <url>https://github.com/googleapis/java-life-sciences</url>
   <description>
@@ -60,17 +60,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-life-sciences</artifactId>
-        <version>0.3.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+        <version>0.3.10</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-life-sciences-v2beta</artifactId>
-        <version>0.3.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-life-sciences-v2beta:current} -->
+        <version>0.3.10</version><!-- {x-version-update:grpc-google-cloud-life-sciences-v2beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-life-sciences-v2beta</artifactId>
-        <version>0.3.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-life-sciences-v2beta:current} -->
+        <version>0.3.10</version><!-- {x-version-update:proto-google-cloud-life-sciences-v2beta:current} -->
       </dependency>
 
       <dependency>
