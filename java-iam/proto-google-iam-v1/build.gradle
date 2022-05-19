@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
   compile 'com.google.protobuf:protobuf-java:3.20.1'
-  compile 'com.google.api:api-common:2.1.5'
+  compile 'com.google.api:api-common:2.2.0'
   compile project(':proto-google-common-protos')
 }
 
