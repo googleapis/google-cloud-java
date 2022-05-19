@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-bigqueryreservation/compare/v2.2.7...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigqueryreservation/issues/1440)) ([#666](https://github.com/googleapis/java-bigqueryreservation/issues/666)) ([5fa106b](https://github.com/googleapis/java-bigqueryreservation/commit/5fa106ba9a8d266ebe033ccf00f8d5f8582cce36))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#665](https://github.com/googleapis/java-bigqueryreservation/issues/665)) ([2d7db75](https://github.com/googleapis/java-bigqueryreservation/commit/2d7db7593bd983fd8e6041a38ab82eefc2e3d18e))
+
 ### [2.2.7](https://github.com/googleapis/java-bigqueryreservation/compare/v2.2.6...v2.2.7) (2022-04-15)
 
 
