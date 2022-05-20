@@ -27,6 +27,7 @@ package com.google.cloud.speech.v1;
  *
  * Protobuf type {@code google.cloud.speech.v1.RecognitionMetadata}
  */
+@java.lang.Deprecated
 public final class RecognitionMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.RecognitionMetadata)

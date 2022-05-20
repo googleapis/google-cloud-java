@@ -18,6 +18,7 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
+@java.lang.Deprecated
 public interface RecognitionMetadataOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.RecognitionMetadata)
@@ -225,7 +226,7 @@ public interface RecognitionMetadataOrBuilder
    * <code>int64 obfuscated_id = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionMetadata.obfuscated_id is deprecated. See
-   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=605
+   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=612
    * @return The obfuscatedId.
    */
   @java.lang.Deprecated

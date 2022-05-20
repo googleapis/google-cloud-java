@@ -66,43 +66,39 @@ public final class SpeechResourceProto {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/speech/v1p1beta1/resource"
           + ".proto\022\035google.cloud.speech.v1p1beta1\032\031g"
-          + "oogle/api/resource.proto\032\037google/protobu"
-          + "f/timestamp.proto\032\034google/api/annotation"
-          + "s.proto\"\203\002\n\013CustomClass\022\014\n\004name\030\001 \001(\t\022\027\n"
-          + "\017custom_class_id\030\002 \001(\t\022C\n\005items\030\003 \003(\01324."
-          + "google.cloud.speech.v1p1beta1.CustomClas"
-          + "s.ClassItem\032\032\n\tClassItem\022\r\n\005value\030\001 \001(\t:"
-          + "l\352Ai\n!speech.googleapis.com/CustomClass\022"
-          + "Dprojects/{project}/locations/{location}"
-          + "/customClasses/{custom_class}\"\371\001\n\tPhrase"
-          + "Set\022\014\n\004name\030\001 \001(\t\022@\n\007phrases\030\002 \003(\0132/.goo"
-          + "gle.cloud.speech.v1p1beta1.PhraseSet.Phr"
-          + "ase\022\r\n\005boost\030\004 \001(\002\032&\n\006Phrase\022\r\n\005value\030\001 "
-          + "\001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab\n\037speech.googleap"
-          + "is.com/PhraseSet\022?projects/{project}/loc"
-          + "ations/{location}/phraseSets/{phrase_set"
-          + "}\"\332\001\n\020SpeechAdaptation\022=\n\013phrase_sets\030\001 "
-          + "\003(\0132(.google.cloud.speech.v1p1beta1.Phra"
-          + "seSet\022C\n\025phrase_set_references\030\002 \003(\tB$\372A"
-          + "!\n\037speech.googleapis.com/PhraseSet\022B\n\016cu"
-          + "stom_classes\030\003 \003(\0132*.google.cloud.speech"
-          + ".v1p1beta1.CustomClass\"\252\001\n\027TranscriptNor"
-          + "malization\022M\n\007entries\030\001 \003(\0132<.google.clo"
-          + "ud.speech.v1p1beta1.TranscriptNormalizat"
-          + "ion.Entry\032@\n\005Entry\022\016\n\006search\030\001 \001(\t\022\017\n\007re"
-          + "place\030\002 \001(\t\022\026\n\016case_sensitive\030\003 \001(\010B\210\001\n!"
-          + "com.google.cloud.speech.v1p1beta1B\023Speec"
-          + "hResourceProtoP\001ZCgoogle.golang.org/genp"
-          + "roto/googleapis/cloud/speech/v1p1beta1;s"
-          + "peech\370\001\001\242\002\003GCSb\006proto3"
+          + "oogle/api/resource.proto\"\203\002\n\013CustomClass"
+          + "\022\014\n\004name\030\001 \001(\t\022\027\n\017custom_class_id\030\002 \001(\t\022"
+          + "C\n\005items\030\003 \003(\01324.google.cloud.speech.v1p"
+          + "1beta1.CustomClass.ClassItem\032\032\n\tClassIte"
+          + "m\022\r\n\005value\030\001 \001(\t:l\352Ai\n!speech.googleapis"
+          + ".com/CustomClass\022Dprojects/{project}/loc"
+          + "ations/{location}/customClasses/{custom_"
+          + "class}\"\371\001\n\tPhraseSet\022\014\n\004name\030\001 \001(\t\022@\n\007ph"
+          + "rases\030\002 \003(\0132/.google.cloud.speech.v1p1be"
+          + "ta1.PhraseSet.Phrase\022\r\n\005boost\030\004 \001(\002\032&\n\006P"
+          + "hrase\022\r\n\005value\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab"
+          + "\n\037speech.googleapis.com/PhraseSet\022?proje"
+          + "cts/{project}/locations/{location}/phras"
+          + "eSets/{phrase_set}\"\332\001\n\020SpeechAdaptation\022"
+          + "=\n\013phrase_sets\030\001 \003(\0132(.google.cloud.spee"
+          + "ch.v1p1beta1.PhraseSet\022C\n\025phrase_set_ref"
+          + "erences\030\002 \003(\tB$\372A!\n\037speech.googleapis.co"
+          + "m/PhraseSet\022B\n\016custom_classes\030\003 \003(\0132*.go"
+          + "ogle.cloud.speech.v1p1beta1.CustomClass\""
+          + "\252\001\n\027TranscriptNormalization\022M\n\007entries\030\001"
+          + " \003(\0132<.google.cloud.speech.v1p1beta1.Tra"
+          + "nscriptNormalization.Entry\032@\n\005Entry\022\016\n\006s"
+          + "earch\030\001 \001(\t\022\017\n\007replace\030\002 \001(\t\022\026\n\016case_sen"
+          + "sitive\030\003 \001(\010B\210\001\n!com.google.cloud.speech"
+          + ".v1p1beta1B\023SpeechResourceProtoP\001ZCgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/s"
+          + "peech/v1p1beta1;speech\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -171,8 +167,6 @@ public final class SpeechResourceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -22,6 +22,45 @@
           }
         }
       }
+    },
+    "Adaptation": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdaptationClient",
+          "rpcs": {
+            "CreateCustomClass": {
+              "methods": ["createCustomClass", "createCustomClass", "createCustomClass", "createCustomClassCallable"]
+            },
+            "CreatePhraseSet": {
+              "methods": ["createPhraseSet", "createPhraseSet", "createPhraseSet", "createPhraseSetCallable"]
+            },
+            "DeleteCustomClass": {
+              "methods": ["deleteCustomClass", "deleteCustomClass", "deleteCustomClass", "deleteCustomClassCallable"]
+            },
+            "DeletePhraseSet": {
+              "methods": ["deletePhraseSet", "deletePhraseSet", "deletePhraseSet", "deletePhraseSetCallable"]
+            },
+            "GetCustomClass": {
+              "methods": ["getCustomClass", "getCustomClass", "getCustomClass", "getCustomClassCallable"]
+            },
+            "GetPhraseSet": {
+              "methods": ["getPhraseSet", "getPhraseSet", "getPhraseSet", "getPhraseSetCallable"]
+            },
+            "ListCustomClasses": {
+              "methods": ["listCustomClasses", "listCustomClasses", "listCustomClasses", "listCustomClassesPagedCallable", "listCustomClassesCallable"]
+            },
+            "ListPhraseSet": {
+              "methods": ["listPhraseSet", "listPhraseSet", "listPhraseSet", "listPhraseSetPagedCallable", "listPhraseSetCallable"]
+            },
+            "UpdateCustomClass": {
+              "methods": ["updateCustomClass", "updateCustomClass", "updateCustomClassCallable"]
+            },
+            "UpdatePhraseSet": {
+              "methods": ["updatePhraseSet", "updatePhraseSet", "updatePhraseSetCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

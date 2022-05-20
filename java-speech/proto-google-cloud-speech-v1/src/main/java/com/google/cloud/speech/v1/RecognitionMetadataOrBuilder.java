@@ -18,6 +18,7 @@
 
 package com.google.cloud.speech.v1;
 
+@java.lang.Deprecated
 public interface RecognitionMetadataOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.RecognitionMetadata)

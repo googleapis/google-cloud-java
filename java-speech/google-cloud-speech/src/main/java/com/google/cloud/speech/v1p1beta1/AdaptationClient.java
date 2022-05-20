@@ -184,7 +184,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param phraseSet Required. The phrase set to create.
    * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
    *     component of the phrase set's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should restrict to letters, numbers, and hyphens, with the first character a
+   *     letter, the last a letter or a number, and be 4-63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhraseSet createPhraseSet(
@@ -227,7 +228,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param phraseSet Required. The phrase set to create.
    * @param phraseSetId Required. The ID to use for the phrase set, which will become the final
    *     component of the phrase set's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should restrict to letters, numbers, and hyphens, with the first character a
+   *     letter, the last a letter or a number, and be 4-63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PhraseSet createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId) {
@@ -776,7 +778,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param customClass Required. The custom class to create.
    * @param customClassId Required. The ID to use for the custom class, which will become the final
    *     component of the custom class' resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should restrict to letters, numbers, and hyphens, with the first character a
+   *     letter, the last a letter or a number, and be 4-63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomClass createCustomClass(
@@ -817,7 +820,8 @@ public class AdaptationClient implements BackgroundResource {
    * @param customClass Required. The custom class to create.
    * @param customClassId Required. The ID to use for the custom class, which will become the final
    *     component of the custom class' resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should restrict to letters, numbers, and hyphens, with the first character a
+   *     letter, the last a letter or a number, and be 4-63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomClass createCustomClass(

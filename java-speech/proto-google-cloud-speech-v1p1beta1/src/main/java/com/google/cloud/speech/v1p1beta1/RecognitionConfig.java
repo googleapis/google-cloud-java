@@ -337,8 +337,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
-   * code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -703,8 +702,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -721,8 +719,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -751,8 +748,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for FLAC and WAV audio files, but is
-   * required for all other audio formats. For details, see
-   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -1435,7 +1431,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=385
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Override
@@ -1458,7 +1454,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=390
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Override
@@ -1631,6 +1627,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *         For example, long-form audio. Ideally the audio is high-fidelity,
    *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
    *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a conversation between a
+   *         medical provider and patient.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+   *         provider.&lt;/td&gt;
+   *   &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
    *
@@ -1693,6 +1699,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *     &lt;td&gt;Best for audio that is not one of the specific audio models.
    *         For example, long-form audio. Ideally the audio is high-fidelity,
    *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from a conversation between a
+   *         medical provider and patient.&lt;/td&gt;
+   *   &lt;/tr&gt;
+   *   &lt;tr&gt;
+   *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+   *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+   *         provider.&lt;/td&gt;
    *   &lt;/tr&gt;
    * &lt;/table&gt;
    * </pre>
@@ -2535,8 +2551,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2553,8 +2568,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2574,8 +2588,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2597,8 +2610,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2622,8 +2634,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -2648,8 +2659,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2670,8 +2680,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2695,8 +2704,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for FLAC and WAV audio files, but is
-     * required for all other audio formats. For details, see
-     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -4916,7 +4924,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=385
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
      * @return The enableSpeakerDiarization.
      */
     @java.lang.Override
@@ -4937,7 +4945,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=385
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
      * @param value The enableSpeakerDiarization to set.
      * @return This builder for chaining.
      */
@@ -4961,7 +4969,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=385
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4985,7 +4993,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=390
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
      * @return The diarizationSpeakerCount.
      */
     @java.lang.Override
@@ -5005,7 +5013,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=390
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
      * @param value The diarizationSpeakerCount to set.
      * @return This builder for chaining.
      */
@@ -5028,7 +5036,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=390
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5524,6 +5532,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *         For example, long-form audio. Ideally the audio is high-fidelity,
      *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
      *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a conversation between a
+     *         medical provider and patient.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+     *         provider.&lt;/td&gt;
+     *   &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
      *
@@ -5585,6 +5603,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *     &lt;td&gt;Best for audio that is not one of the specific audio models.
      *         For example, long-form audio. Ideally the audio is high-fidelity,
      *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a conversation between a
+     *         medical provider and patient.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+     *         provider.&lt;/td&gt;
      *   &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
@@ -5648,6 +5676,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *         For example, long-form audio. Ideally the audio is high-fidelity,
      *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
      *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a conversation between a
+     *         medical provider and patient.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+     *         provider.&lt;/td&gt;
+     *   &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
      *
@@ -5709,6 +5747,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *         For example, long-form audio. Ideally the audio is high-fidelity,
      *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
      *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a conversation between a
+     *         medical provider and patient.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+     *         provider.&lt;/td&gt;
+     *   &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>
      *
@@ -5765,6 +5813,16 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *     &lt;td&gt;Best for audio that is not one of the specific audio models.
      *         For example, long-form audio. Ideally the audio is high-fidelity,
      *         recorded at a 16khz or greater sampling rate.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_conversation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from a conversation between a
+     *         medical provider and patient.&lt;/td&gt;
+     *   &lt;/tr&gt;
+     *   &lt;tr&gt;
+     *     &lt;td&gt;&lt;code&gt;medical_dictation&lt;/code&gt;&lt;/td&gt;
+     *     &lt;td&gt;Best for audio that originated from dictation notes by a medical
+     *         provider.&lt;/td&gt;
      *   &lt;/tr&gt;
      * &lt;/table&gt;
      * </pre>

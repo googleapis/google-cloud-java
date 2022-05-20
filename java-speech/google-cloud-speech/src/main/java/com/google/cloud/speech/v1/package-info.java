@@ -34,6 +34,23 @@
  *   RecognizeResponse response = speechClient.recognize(config, audio);
  * }
  * }</pre>
+ *
+ * <p>======================= AdaptationClient =======================
+ *
+ * <p>Service Description: Service that implements Google Cloud Speech Adaptation API.
+ *
+ * <p>Sample for AdaptationClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+ *   String phraseSetId = "phraseSetId959902180";
+ *   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.speech.v1;
