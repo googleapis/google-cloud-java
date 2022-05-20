@@ -300,6 +300,16 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     PENDING(5),
+    /**
+     *
+     *
+     * <pre>
+     * Event was stopped before running for its full duration.
+     * </pre>
+     *
+     * <code>STOPPED = 6;</code>
+     */
+    STOPPED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -363,6 +373,16 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 5;</code>
      */
     public static final int PENDING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Event was stopped before running for its full duration.
+     * </pre>
+     *
+     * <code>STOPPED = 6;</code>
+     */
+    public static final int STOPPED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -400,6 +420,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 5:
           return PENDING;
+        case 6:
+          return STOPPED;
         default:
           return null;
       }

@@ -494,7 +494,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    * Maximum number of segments that this manifest holds. Once the manifest
    * reaches this maximum number of segments, whenever a new segment is added to
    * the manifest, the oldest segment will be removed from the manifest.
-   * The minimum value is 1 and the default value is 5.
+   * The minimum value is 3 and the default value is 5.
    * </pre>
    *
    * <code>int32 max_segment_count = 4;</code>
@@ -1414,7 +1414,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of segments that this manifest holds. Once the manifest
      * reaches this maximum number of segments, whenever a new segment is added to
      * the manifest, the oldest segment will be removed from the manifest.
-     * The minimum value is 1 and the default value is 5.
+     * The minimum value is 3 and the default value is 5.
      * </pre>
      *
      * <code>int32 max_segment_count = 4;</code>
@@ -1432,7 +1432,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of segments that this manifest holds. Once the manifest
      * reaches this maximum number of segments, whenever a new segment is added to
      * the manifest, the oldest segment will be removed from the manifest.
-     * The minimum value is 1 and the default value is 5.
+     * The minimum value is 3 and the default value is 5.
      * </pre>
      *
      * <code>int32 max_segment_count = 4;</code>
@@ -1453,7 +1453,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      * Maximum number of segments that this manifest holds. Once the manifest
      * reaches this maximum number of segments, whenever a new segment is added to
      * the manifest, the oldest segment will be removed from the manifest.
-     * The minimum value is 1 and the default value is 5.
+     * The minimum value is 3 and the default value is 5.
      * </pre>
      *
      * <code>int32 max_segment_count = 4;</code>

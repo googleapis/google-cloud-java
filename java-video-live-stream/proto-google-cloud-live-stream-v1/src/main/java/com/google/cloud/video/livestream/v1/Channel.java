@@ -355,8 +355,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Channel is waiting for the input stream through the input. Live streams
-     * do not start yet.
+     * Channel is waiting for the input stream through the input.
      * </pre>
      *
      * <code>AWAITING_INPUT = 2;</code>
@@ -380,6 +379,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Channel is generating live streams with no input stream. Live streams are
      * filled out with black screen, while input stream is missing.
+     * Not supported yet.
      * </pre>
      *
      * <code>STREAMING_NO_INPUT = 5;</code>
@@ -443,8 +443,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Channel is waiting for the input stream through the input. Live streams
-     * do not start yet.
+     * Channel is waiting for the input stream through the input.
      * </pre>
      *
      * <code>AWAITING_INPUT = 2;</code>
@@ -468,6 +467,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Channel is generating live streams with no input stream. Live streams are
      * filled out with black screen, while input stream is missing.
+     * Not supported yet.
      * </pre>
      *
      * <code>STREAMING_NO_INPUT = 5;</code>
