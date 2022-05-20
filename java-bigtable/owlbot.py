@@ -97,6 +97,8 @@ s.remove_staging_dirs()
 java.common_templates(excludes=[
     '.gitignore',
     '.kokoro/presubmit/integration.cfg',
+    '.kokoro/presubmit/graalvm-native.cfg',
+    '.kokoro/presubmit/graalvm-native-17.cfg',
     '.kokoro/nightly/integration.cfg',
     '.kokoro/presubmit/samples.cfg',
     '.kokoro/nightly/samples.cfg',
