@@ -625,7 +625,7 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(++logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINE);
       assertThat(lastLogMessage()).isEqualTo(
-          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_CHANNELS + " = 5");
+          poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_CHANNELS + " = 5");
 
       List<PointWithFunction<?>> maxAllowedChannels =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS);
@@ -636,7 +636,7 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(++logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINE);
       assertThat(lastLogMessage()).isEqualTo(
-          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS + " = 10");
+          poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS + " = 10");
 
       List<PointWithFunction<?>> minActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS);
@@ -647,7 +647,7 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(++logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINE);
       assertThat(lastLogMessage()).isEqualTo(
-          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS + " = 0");
+          poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS + " = 0");
 
       List<PointWithFunction<?>> maxActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS);
@@ -658,7 +658,7 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(++logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINE);
       assertThat(lastLogMessage()).isEqualTo(
-          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS + " = 7");
+          poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS + " = 7");
 
       List<PointWithFunction<?>> totalActiveStreams =
           record.getMetrics().get(prefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS);
@@ -670,7 +670,7 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(++logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINE);
       assertThat(lastLogMessage()).isEqualTo(
-          poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS + " = " +
+          poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS + " = " +
               totalStreamsExpected);
     } finally {
       pool.shutdownNow();
@@ -727,7 +727,7 @@ public final class GcpManagedChannelTest {
     assertThat(logRecords.size()).isEqualTo(++logCount);
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     assertThat(lastLogMessage()).isEqualTo(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
 
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS);
     assertThat(metric.size()).isEqualTo(1);
@@ -735,7 +735,7 @@ public final class GcpManagedChannelTest {
     assertThat(logRecords.size()).isEqualTo(++logCount);
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     assertThat(lastLogMessage()).isEqualTo(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS + " = 3");
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS + " = 3");
 
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS);
     assertThat(metric.size()).isEqualTo(1);
@@ -743,7 +743,7 @@ public final class GcpManagedChannelTest {
     assertThat(logRecords.size()).isEqualTo(++logCount);
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     assertThat(lastLogMessage()).isEqualTo(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS + " = 3");
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS + " = 3");
 
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME);
     assertThat(metric.size()).isEqualTo(1);
@@ -751,7 +751,7 @@ public final class GcpManagedChannelTest {
     assertThat(logRecords.size()).isEqualTo(++logCount);
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     assertThat(lastLogMessage()).matches(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME +
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME +
             " = 1\\d\\d");
 
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME);
@@ -760,7 +760,7 @@ public final class GcpManagedChannelTest {
     assertThat(logRecords.size()).isEqualTo(++logCount);
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     assertThat(lastLogMessage()).matches(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME +
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME +
             " = 1\\d\\d");
 
     // Any message from the server must reset the dropped requests count and timestamp.
@@ -814,7 +814,7 @@ public final class GcpManagedChannelTest {
     // But the log metric count the detections since previous report for num_unresponsive_detections
     // in the logs. It is always delta in the logs, not cumulative.
     assertThat(lastLogMessage()).isEqualTo(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
     // If we log it again the cumulative metric value must remain unchanged.
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
@@ -823,7 +823,7 @@ public final class GcpManagedChannelTest {
     assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     // But in the log it must post 0.
     assertThat(lastLogMessage()).isEqualTo(
-        poolIndex + " stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
+        poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
   }
 
   static class FakeIdleCountingManagedChannel extends ManagedChannel {

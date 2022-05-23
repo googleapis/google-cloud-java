@@ -56,6 +56,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -196,6 +197,14 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
+  private Supplier<String> log(Supplier<String> messageSupplier) {
+    return () -> String.format("%s: %s", metricPoolIndex, messageSupplier.get());
+  }
+
+  private String log(String message) {
+    return String.format("%s: %s", metricPoolIndex, message);
+  }
+
   private void initOptions() {
     GcpManagedChannelOptions.GcpChannelPoolOptions poolOptions = options.getChannelPoolOptions();
     if (poolOptions != null) {
@@ -216,16 +225,16 @@ public class GcpManagedChannel extends ManagedChannel {
   private void initMetrics() {
     final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
     if (metricsOptions == null) {
-      logger.info("Metrics options are empty. Metrics disabled.");
+      logger.info(log("Metrics options are empty. Metrics disabled."));
       initLogMetrics();
       return;
     }
     if (metricsOptions.getMetricRegistry() == null) {
-      logger.info("Metric registry is null. Metrics disabled.");
+      logger.info(log("Metric registry is null. Metrics disabled."));
       initLogMetrics();
       return;
     }
-    logger.info("Metrics enabled.");
+    logger.info(log("Metrics enabled."));
 
     metricRegistry = metricsOptions.getMetricRegistry();
     labelKeys.addAll(metricsOptions.getLabelKeys());
@@ -426,15 +435,15 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logGauge(String key, long value) {
-    logger.fine(String.format("%s stat: %s = %d", metricPoolIndex, key, value));
+    logger.fine(log(String.format("stat: %s = %d", key, value)));
   }
 
   private void logCumulative(String key, long value) {
-    logger.fine(() -> {
+    logger.fine(log(() -> {
       Long prevValue = cumulativeMetricValues.put(key, value);
       long logValue = prevValue == null ? value : value - prevValue;
-      return String.format("%s stat: %s = %d", metricPoolIndex, key, logValue);
-    });
+      return String.format("stat: %s = %d", key, logValue);
+    }));
   }
 
   private void logMetrics() {
