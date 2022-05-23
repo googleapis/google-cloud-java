@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-bigtable/compare/v2.6.2...v2.7.0) (2022-05-20)
+
+
+### Features
+
+* (generated) Add ListHotTablets API method and protobufs ([f127f1a](https://github.com/googleapis/java-bigtable/commit/f127f1a05647c8fb2c9becf07753c302957bd571))
+* (generated) AuditConfig for IAM v1 ([f127f1a](https://github.com/googleapis/java-bigtable/commit/f127f1a05647c8fb2c9becf07753c302957bd571))
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigtable/issues/1440)) ([#1255](https://github.com/googleapis/java-bigtable/issues/1255)) ([2e0bf19](https://github.com/googleapis/java-bigtable/commit/2e0bf193e3abaf2cfdc6208c41e7d8b928e92dc7))
+* next release from main branch is v2.7.0 ([22acfc4](https://github.com/googleapis/java-bigtable/commit/22acfc405e23ccfeeeedcce6992f887d48d22bd5))
+
+
+### Documentation
+
+* Remove the limitation of all clusters in a CMEK instance must use the same key ([f127f1a](https://github.com/googleapis/java-bigtable/commit/f127f1a05647c8fb2c9becf07753c302957bd571))
+* **sample:** remove unused native-image-support dependency ([#1237](https://github.com/googleapis/java-bigtable/issues/1237)) ([520670e](https://github.com/googleapis/java-bigtable/commit/520670ee1456f83368cc9843d594ad7af2117e76))
+* Update `cpu_utilization_percent` limit ([f127f1a](https://github.com/googleapis/java-bigtable/commit/f127f1a05647c8fb2c9becf07753c302957bd571))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-gcloud-maven-plugin to v0.1.5 ([#1249](https://github.com/googleapis/java-bigtable/issues/1249)) ([9fb02d6](https://github.com/googleapis/java-bigtable/commit/9fb02d6c3ab7d3d5d8b168418e47a65114b7deb1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#1253](https://github.com/googleapis/java-bigtable/issues/1253)) ([86a1e0e](https://github.com/googleapis/java-bigtable/commit/86a1e0e14b18101717143b0a01e4025a6540dbc2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#1256](https://github.com/googleapis/java-bigtable/issues/1256)) ([d4b05a4](https://github.com/googleapis/java-bigtable/commit/d4b05a4992dd016c389fc10c0ba509497e201d21))
+
 ### [2.6.2](https://github.com/googleapis/java-bigtable/compare/v2.6.1...v2.6.2) (2022-04-15)
 
 
