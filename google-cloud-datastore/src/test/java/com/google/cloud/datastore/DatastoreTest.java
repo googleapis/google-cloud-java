@@ -790,6 +790,26 @@ public class DatastoreTest {
   }
 
   @Test
+  public void testReadTimeQuery() {
+    Timestamp timestamp = Timestamp.now();
+    ReadOptions readOption = ReadOptions.newBuilder().setReadTime(timestamp.toProto()).build();
+    com.google.datastore.v1.GqlQuery query =
+        com.google.datastore.v1.GqlQuery.newBuilder().setQueryString("FROM * SELECT *").build();
+    RunQueryRequest.Builder expectedRequest =
+        RunQueryRequest.newBuilder()
+            .setReadOptions(readOption)
+            .setGqlQuery(query)
+            .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build());
+    EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
+        .andReturn(RunQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore datastore = rpcMockOptions.getService();
+    datastore.run(
+        Query.newGqlQueryBuilder("FROM * SELECT *").build(), ReadOption.readTime(timestamp));
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
   public void testToUrlSafe() {
     byte[][] invalidUtf8 =
         new byte[][] {{(byte) 0xfe}, {(byte) 0xc1, (byte) 0xbf}, {(byte) 0xc0}, {(byte) 0x80}};
@@ -918,6 +938,34 @@ public class DatastoreTest {
     datastore.get(KEY1, ReadOption.eventualConsistency());
     datastore.get(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
     datastore.fetch(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testLookupReadTime() {
+    Timestamp timestamp = Timestamp.now();
+    ReadOptions readOption = ReadOptions.newBuilder().setReadTime(timestamp.toProto()).build();
+    com.google.datastore.v1.Key key =
+        com.google.datastore.v1.Key.newBuilder()
+            .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build())
+            .addPath(
+                com.google.datastore.v1.Key.PathElement.newBuilder()
+                    .setKind("kind1")
+                    .setName("name")
+                    .build())
+            .build();
+    LookupRequest lookupRequest =
+        LookupRequest.newBuilder().setReadOptions(readOption).addKeys(key).build();
+    EasyMock.expect(rpcMock.lookup(lookupRequest))
+        .andReturn(LookupResponse.newBuilder().build())
+        .times(3);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    com.google.cloud.datastore.Datastore datastore = rpcMockOptions.getService();
+    datastore.get(KEY1, com.google.cloud.datastore.ReadOption.readTime(timestamp));
+    datastore.get(
+        ImmutableList.of(KEY1), com.google.cloud.datastore.ReadOption.readTime(timestamp));
+    datastore.fetch(
+        ImmutableList.of(KEY1), com.google.cloud.datastore.ReadOption.readTime(timestamp));
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 

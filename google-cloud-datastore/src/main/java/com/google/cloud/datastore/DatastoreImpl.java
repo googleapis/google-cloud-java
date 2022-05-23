@@ -23,6 +23,7 @@ import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.ReadOption.EventualConsistency;
+import com.google.cloud.datastore.ReadOption.ReadTime;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -338,12 +339,29 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private static com.google.datastore.v1.ReadOptions toReadOptionsPb(ReadOption... options) {
     com.google.datastore.v1.ReadOptions readOptionsPb = null;
-    if (options != null
-        && ReadOption.asImmutableMap(options).containsKey(EventualConsistency.class)) {
-      readOptionsPb =
-          com.google.datastore.v1.ReadOptions.newBuilder()
-              .setReadConsistency(ReadConsistency.EVENTUAL)
-              .build();
+    if (options != null) {
+      Map<Class<? extends ReadOption>, ReadOption> optionsByType =
+          ReadOption.asImmutableMap(options);
+
+      if (optionsByType.containsKey(EventualConsistency.class)
+          && optionsByType.containsKey(ReadTime.class)) {
+        throw DatastoreException.throwInvalidRequest(
+            "Can not use eventual consistency read with read time.");
+      }
+
+      if (optionsByType.containsKey(EventualConsistency.class)) {
+        readOptionsPb =
+            com.google.datastore.v1.ReadOptions.newBuilder()
+                .setReadConsistency(ReadConsistency.EVENTUAL)
+                .build();
+      }
+
+      if (optionsByType.containsKey(ReadTime.class)) {
+        readOptionsPb =
+            com.google.datastore.v1.ReadOptions.newBuilder()
+                .setReadTime(((ReadTime) optionsByType.get(ReadTime.class)).time().toProto())
+                .build();
+      }
     }
     return readOptionsPb;
   }

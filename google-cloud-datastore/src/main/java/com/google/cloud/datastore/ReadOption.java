@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
+import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import java.util.Map;
@@ -47,6 +49,25 @@ public abstract class ReadOption implements Serializable {
     }
   }
 
+  /**
+   * Reads entities as they were at the given time. This may not be older than 270 seconds. This
+   * value is only supported for Cloud Firestore in Datastore mode.
+   */
+  public static final class ReadTime extends ReadOption {
+
+    private static final long serialVersionUID = -6780321449114616067L;
+
+    private final Timestamp time;
+
+    private ReadTime(Timestamp time) {
+      this.time = time;
+    }
+
+    public Timestamp time() {
+      return time;
+    }
+  }
+
   private ReadOption() {}
 
   /**
@@ -55,6 +76,16 @@ public abstract class ReadOption implements Serializable {
    */
   public static EventualConsistency eventualConsistency() {
     return new EventualConsistency(true);
+  }
+
+  /**
+   * Returns a {@code ReadOption} that specifies read time, allowing Datastore to return results
+   * from lookups and queries at a particular timestamp. This feature is currently in private
+   * preview.
+   */
+  @BetaApi
+  public static ReadTime readTime(Timestamp time) {
+    return new ReadTime(time);
   }
 
   static Map<Class<? extends ReadOption>, ReadOption> asImmutableMap(ReadOption... options) {

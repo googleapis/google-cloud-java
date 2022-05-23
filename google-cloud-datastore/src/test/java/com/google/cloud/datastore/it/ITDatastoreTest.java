@@ -50,6 +50,7 @@ import com.google.cloud.datastore.ProjectionEntity;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.StringValue;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
@@ -648,6 +649,31 @@ public class ITDatastoreTest {
   }
 
   @Test
+  public void testGetWithReadTime() throws InterruptedException {
+    Key key = Key.newBuilder(PROJECT_ID, "new_kind", "name").setNamespace(NAMESPACE).build();
+
+    try {
+      DATASTORE.put(Entity.newBuilder(key).set("str", "old_str_value").build());
+
+      Thread.sleep(1000);
+      Timestamp now = Timestamp.now();
+      Thread.sleep(1000);
+
+      DATASTORE.put(Entity.newBuilder(key).set("str", "new_str_value").build());
+
+      Entity entity = DATASTORE.get(key);
+      StringValue value1 = entity.getValue("str");
+      assertEquals(StringValue.of("new_str_value"), value1);
+
+      entity = DATASTORE.get(key, ReadOption.readTime(now));
+      value1 = entity.getValue("str");
+      assertEquals(StringValue.of("old_str_value"), value1);
+    } finally {
+      DATASTORE.delete(key);
+    }
+  }
+
+  @Test
   public void testGetArrayNoDeferredResults() {
     DATASTORE.put(ENTITY3);
     Iterator<Entity> result =
@@ -919,5 +945,49 @@ public class ITDatastoreTest {
     assertNotNull(cursor2);
     assertEquals(cursor2, cursor1);
     DATASTORE.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+  }
+
+  @Test
+  public void testQueryWithReadTime() throws InterruptedException {
+    Entity entity1 =
+        Entity.newBuilder(
+                Key.newBuilder(PROJECT_ID, "new_kind", "name-01").setNamespace(NAMESPACE).build())
+            .build();
+    Entity entity2 =
+        Entity.newBuilder(
+                Key.newBuilder(PROJECT_ID, "new_kind", "name-02").setNamespace(NAMESPACE).build())
+            .build();
+    Entity entity3 =
+        Entity.newBuilder(
+                Key.newBuilder(PROJECT_ID, "new_kind", "name-03").setNamespace(NAMESPACE).build())
+            .build();
+
+    DATASTORE.put(entity1, entity2);
+    Thread.sleep(1000);
+    Timestamp now = Timestamp.now();
+    Thread.sleep(1000);
+    DATASTORE.put(entity3);
+
+    try {
+      Query<Entity> query = Query.newEntityQueryBuilder().setKind("new_kind").build();
+
+      QueryResults<Entity> withoutReadTime = DATASTORE.run(query);
+      assertTrue(withoutReadTime.hasNext());
+      assertEquals(entity1, withoutReadTime.next());
+      assertTrue(withoutReadTime.hasNext());
+      assertEquals(entity2, withoutReadTime.next());
+      assertTrue(withoutReadTime.hasNext());
+      assertEquals(entity3, withoutReadTime.next());
+      assertFalse(withoutReadTime.hasNext());
+
+      QueryResults<Entity> withReadTime = DATASTORE.run(query, ReadOption.readTime(now));
+      assertTrue(withReadTime.hasNext());
+      assertEquals(entity1, withReadTime.next());
+      assertTrue(withReadTime.hasNext());
+      assertEquals(entity2, withReadTime.next());
+      assertFalse(withReadTime.hasNext());
+    } finally {
+      DATASTORE.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+    }
   }
 }
