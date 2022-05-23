@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-datastore/compare/v2.4.0...v2.5.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-datastore/issues/1440)) ([#739](https://github.com/googleapis/java-datastore/issues/739)) ([252a174](https://github.com/googleapis/java-datastore/commit/252a17490337dfef213e6296aadbaf592c0d1e9e))
+* add ReadOption.ReadTime to support timestamp reads. ([#712](https://github.com/googleapis/java-datastore/issues/712)) ([06bb08f](https://github.com/googleapis/java-datastore/commit/06bb08f6929c8e2b539a5c296d9c500d46c857af))
+
+
+### Bug Fixes
+
+* **java:** rename test to be picked up by native profile ([#723](https://github.com/googleapis/java-datastore/issues/723)) ([3a30e75](https://github.com/googleapis/java-datastore/commit/3a30e7520927a50b8457dd5ceea9700407a17e69))
+
+
+### Documentation
+
+* **samples:** remove unused dependency ([#730](https://github.com/googleapis/java-datastore/issues/730)) ([5185691](https://github.com/googleapis/java-datastore/commit/51856917a2ca59b889460f962e9f90d7a1c02f2f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#737](https://github.com/googleapis/java-datastore/issues/737)) ([8eb0c5f](https://github.com/googleapis/java-datastore/commit/8eb0c5f6f2cdb0b681fad012a45bad253be6cb8a))
+* update shared deps to 2.12.0 ([#740](https://github.com/googleapis/java-datastore/issues/740)) ([5c3676e](https://github.com/googleapis/java-datastore/commit/5c3676e871264b552b579ea5d492c02ab54d501e))
+
 ## [2.4.0](https://github.com/googleapis/java-datastore/compare/v2.3.1...v2.4.0) (2022-04-21)
 
 
