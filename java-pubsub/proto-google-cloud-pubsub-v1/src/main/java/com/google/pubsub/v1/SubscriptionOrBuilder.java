@@ -96,8 +96,9 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -110,8 +111,9 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -124,13 +126,58 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
    */
   com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   *
+   * @return Whether the bigqueryConfig field is set.
+   */
+  boolean hasBigqueryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   *
+   * @return The bigqueryConfig.
+   */
+  com.google.pubsub.v1.BigQueryConfig getBigqueryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   */
+  com.google.pubsub.v1.BigQueryConfigOrBuilder getBigqueryConfigOrBuilder();
 
   /**
    *
@@ -588,4 +635,35 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getTopicMessageRetentionDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating whether or not the subscription can receive
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating whether or not the subscription can receive
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.pubsub.v1.Subscription.State getState();
 }

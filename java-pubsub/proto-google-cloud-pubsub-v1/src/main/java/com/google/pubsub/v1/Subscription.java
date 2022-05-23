@@ -41,6 +41,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     topic_ = "";
     filter_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -224,6 +225,29 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 146:
+            {
+              com.google.pubsub.v1.BigQueryConfig.Builder subBuilder = null;
+              if (bigqueryConfig_ != null) {
+                subBuilder = bigqueryConfig_.toBuilder();
+              }
+              bigqueryConfig_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.BigQueryConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bigqueryConfig_);
+                bigqueryConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 152:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -269,6 +293,167 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.pubsub.v1.Subscription.class,
             com.google.pubsub.v1.Subscription.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible states for a subscription.
+   * </pre>
+   *
+   * Protobuf enum {@code google.pubsub.v1.Subscription.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The subscription can actively receive messages
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The subscription cannot receive messages because of an error with the
+     * resource to which it pushes messages. See the more detailed error state
+     * in the corresponding configuration.
+     * </pre>
+     *
+     * <code>RESOURCE_ERROR = 2;</code>
+     */
+    RESOURCE_ERROR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The subscription can actively receive messages
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    public static final int ACTIVE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The subscription cannot receive messages because of an error with the
+     * resource to which it pushes messages. See the more detailed error state
+     * in the corresponding configuration.
+     * </pre>
+     *
+     * <code>RESOURCE_ERROR = 2;</code>
+     */
+    public static final int RESOURCE_ERROR_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return RESOURCE_ERROR;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.pubsub.v1.Subscription.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.pubsub.v1.Subscription.State)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -394,8 +579,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -411,8 +597,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -428,8 +615,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If push delivery is used with this subscription, this field is
-   * used to configure it. An empty `pushConfig` signifies that the subscriber
-   * will pull and ack messages using API methods.
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
    * </pre>
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -437,6 +625,63 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
     return getPushConfig();
+  }
+
+  public static final int BIGQUERY_CONFIG_FIELD_NUMBER = 18;
+  private com.google.pubsub.v1.BigQueryConfig bigqueryConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   *
+   * @return Whether the bigqueryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryConfig() {
+    return bigqueryConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   *
+   * @return The bigqueryConfig.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigQueryConfig getBigqueryConfig() {
+    return bigqueryConfig_ == null
+        ? com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()
+        : bigqueryConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If delivery to BigQuery is used with this subscription, this field is
+   * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+   * but not both. If both are empty, then the subscriber will pull and ack
+   * messages using API methods.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigQueryConfigOrBuilder getBigqueryConfigOrBuilder() {
+    return getBigqueryConfig();
   }
 
   public static final int ACK_DEADLINE_SECONDS_FIELD_NUMBER = 5;
@@ -1048,6 +1293,48 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return getTopicMessageRetentionDuration();
   }
 
+  public static final int STATE_FIELD_NUMBER = 19;
+  private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating whether or not the subscription can receive
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An output-only field indicating whether or not the subscription can receive
+   * messages.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.Subscription.State getState() {
+    @SuppressWarnings("deprecation")
+    com.google.pubsub.v1.Subscription.State result =
+        com.google.pubsub.v1.Subscription.State.valueOf(state_);
+    return result == null ? com.google.pubsub.v1.Subscription.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1105,6 +1392,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (topicMessageRetentionDuration_ != null) {
       output.writeMessage(17, getTopicMessageRetentionDuration());
+    }
+    if (bigqueryConfig_ != null) {
+      output.writeMessage(18, getBigqueryConfig());
+    }
+    if (state_ != com.google.pubsub.v1.Subscription.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -1171,6 +1464,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, getTopicMessageRetentionDuration());
     }
+    if (bigqueryConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getBigqueryConfig());
+    }
+    if (state_ != com.google.pubsub.v1.Subscription.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1191,6 +1490,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasPushConfig() != other.hasPushConfig()) return false;
     if (hasPushConfig()) {
       if (!getPushConfig().equals(other.getPushConfig())) return false;
+    }
+    if (hasBigqueryConfig() != other.hasBigqueryConfig()) return false;
+    if (hasBigqueryConfig()) {
+      if (!getBigqueryConfig().equals(other.getBigqueryConfig())) return false;
     }
     if (getAckDeadlineSeconds() != other.getAckDeadlineSeconds()) return false;
     if (getRetainAckedMessages() != other.getRetainAckedMessages()) return false;
@@ -1221,6 +1524,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (!getTopicMessageRetentionDuration().equals(other.getTopicMessageRetentionDuration()))
         return false;
     }
+    if (state_ != other.state_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1239,6 +1543,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasPushConfig()) {
       hash = (37 * hash) + PUSH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPushConfig().hashCode();
+    }
+    if (hasBigqueryConfig()) {
+      hash = (37 * hash) + BIGQUERY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBigqueryConfig().hashCode();
     }
     hash = (37 * hash) + ACK_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getAckDeadlineSeconds();
@@ -1276,6 +1584,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TOPIC_MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getTopicMessageRetentionDuration().hashCode();
     }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1450,6 +1760,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         pushConfig_ = null;
         pushConfigBuilder_ = null;
       }
+      if (bigqueryConfigBuilder_ == null) {
+        bigqueryConfig_ = null;
+      } else {
+        bigqueryConfig_ = null;
+        bigqueryConfigBuilder_ = null;
+      }
       ackDeadlineSeconds_ = 0;
 
       retainAckedMessages_ = false;
@@ -1493,6 +1809,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         topicMessageRetentionDuration_ = null;
         topicMessageRetentionDurationBuilder_ = null;
       }
+      state_ = 0;
+
       return this;
     }
 
@@ -1527,6 +1845,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.pushConfig_ = pushConfigBuilder_.build();
       }
+      if (bigqueryConfigBuilder_ == null) {
+        result.bigqueryConfig_ = bigqueryConfig_;
+      } else {
+        result.bigqueryConfig_ = bigqueryConfigBuilder_.build();
+      }
       result.ackDeadlineSeconds_ = ackDeadlineSeconds_;
       result.retainAckedMessages_ = retainAckedMessages_;
       if (messageRetentionDurationBuilder_ == null) {
@@ -1560,6 +1883,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.topicMessageRetentionDuration_ = topicMessageRetentionDurationBuilder_.build();
       }
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -1620,6 +1944,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPushConfig()) {
         mergePushConfig(other.getPushConfig());
       }
+      if (other.hasBigqueryConfig()) {
+        mergeBigqueryConfig(other.getBigqueryConfig());
+      }
       if (other.getAckDeadlineSeconds() != 0) {
         setAckDeadlineSeconds(other.getAckDeadlineSeconds());
       }
@@ -1654,6 +1981,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTopicMessageRetentionDuration()) {
         mergeTopicMessageRetentionDuration(other.getTopicMessageRetentionDuration());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1954,8 +2284,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -1970,8 +2301,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -1992,8 +2324,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2016,8 +2349,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2037,8 +2371,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2065,8 +2400,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2087,8 +2423,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2103,8 +2440,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2123,8 +2461,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If push delivery is used with this subscription, this field is
-     * used to configure it. An empty `pushConfig` signifies that the subscriber
-     * will pull and ack messages using API methods.
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
      * </pre>
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
@@ -2144,6 +2483,218 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         pushConfig_ = null;
       }
       return pushConfigBuilder_;
+    }
+
+    private com.google.pubsub.v1.BigQueryConfig bigqueryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.BigQueryConfig,
+            com.google.pubsub.v1.BigQueryConfig.Builder,
+            com.google.pubsub.v1.BigQueryConfigOrBuilder>
+        bigqueryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     *
+     * @return Whether the bigqueryConfig field is set.
+     */
+    public boolean hasBigqueryConfig() {
+      return bigqueryConfigBuilder_ != null || bigqueryConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     *
+     * @return The bigqueryConfig.
+     */
+    public com.google.pubsub.v1.BigQueryConfig getBigqueryConfig() {
+      if (bigqueryConfigBuilder_ == null) {
+        return bigqueryConfig_ == null
+            ? com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()
+            : bigqueryConfig_;
+      } else {
+        return bigqueryConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public Builder setBigqueryConfig(com.google.pubsub.v1.BigQueryConfig value) {
+      if (bigqueryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bigqueryConfig_ = value;
+        onChanged();
+      } else {
+        bigqueryConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public Builder setBigqueryConfig(com.google.pubsub.v1.BigQueryConfig.Builder builderForValue) {
+      if (bigqueryConfigBuilder_ == null) {
+        bigqueryConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public Builder mergeBigqueryConfig(com.google.pubsub.v1.BigQueryConfig value) {
+      if (bigqueryConfigBuilder_ == null) {
+        if (bigqueryConfig_ != null) {
+          bigqueryConfig_ =
+              com.google.pubsub.v1.BigQueryConfig.newBuilder(bigqueryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          bigqueryConfig_ = value;
+        }
+        onChanged();
+      } else {
+        bigqueryConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public Builder clearBigqueryConfig() {
+      if (bigqueryConfigBuilder_ == null) {
+        bigqueryConfig_ = null;
+        onChanged();
+      } else {
+        bigqueryConfig_ = null;
+        bigqueryConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public com.google.pubsub.v1.BigQueryConfig.Builder getBigqueryConfigBuilder() {
+
+      onChanged();
+      return getBigqueryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    public com.google.pubsub.v1.BigQueryConfigOrBuilder getBigqueryConfigOrBuilder() {
+      if (bigqueryConfigBuilder_ != null) {
+        return bigqueryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return bigqueryConfig_ == null
+            ? com.google.pubsub.v1.BigQueryConfig.getDefaultInstance()
+            : bigqueryConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If delivery to BigQuery is used with this subscription, this field is
+     * used to configure it. Either `pushConfig` or `bigQueryConfig` can be set,
+     * but not both. If both are empty, then the subscriber will pull and ack
+     * messages using API methods.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.BigQueryConfig bigquery_config = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.BigQueryConfig,
+            com.google.pubsub.v1.BigQueryConfig.Builder,
+            com.google.pubsub.v1.BigQueryConfigOrBuilder>
+        getBigqueryConfigFieldBuilder() {
+      if (bigqueryConfigBuilder_ == null) {
+        bigqueryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.BigQueryConfig,
+                com.google.pubsub.v1.BigQueryConfig.Builder,
+                com.google.pubsub.v1.BigQueryConfigOrBuilder>(
+                getBigqueryConfig(), getParentForChildren(), isClean());
+        bigqueryConfig_ = null;
+      }
+      return bigqueryConfigBuilder_;
     }
 
     private int ackDeadlineSeconds_;
@@ -3985,6 +4536,112 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         topicMessageRetentionDuration_ = null;
       }
       return topicMessageRetentionDurationBuilder_;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating whether or not the subscription can receive
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating whether or not the subscription can receive
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating whether or not the subscription can receive
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.Subscription.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.pubsub.v1.Subscription.State result =
+          com.google.pubsub.v1.Subscription.State.valueOf(state_);
+      return result == null ? com.google.pubsub.v1.Subscription.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating whether or not the subscription can receive
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.pubsub.v1.Subscription.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An output-only field indicating whether or not the subscription can receive
+     * messages.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Subscription.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+
+      state_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

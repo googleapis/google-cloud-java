@@ -46,6 +46,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.BigQueryConfig;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeadLetterPolicy;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
@@ -140,6 +141,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -202,6 +204,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -264,6 +267,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -326,6 +330,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -388,6 +393,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -440,6 +446,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
@@ -492,6 +499,7 @@ public class SubscriptionAdminClientTest {
             .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString())
             .setTopic(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
             .setPushConfig(PushConfig.newBuilder().build())
+            .setBigqueryConfig(BigQueryConfig.newBuilder().build())
             .setAckDeadlineSeconds(2135351438)
             .setRetainAckedMessages(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
