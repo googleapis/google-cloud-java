@@ -592,12 +592,22 @@ public final class GcpManagedChannelTest {
                         .build())
                 .build();
 
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
+    // Logs metrics options.
+    assertThat(logRecords.get(logRecords.size() - 2).getLevel()).isEqualTo(Level.FINE);
+    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).isEqualTo(
+        poolIndex + ": Metrics name prefix = \"some/prefix/\", tags: key_a = val_a, key_b = val_b"
+    );
+
+    assertThat(lastLogLevel()).isEqualTo(Level.INFO);
+    assertThat(lastLogMessage()).isEqualTo(poolIndex + ": Metrics enabled.");
+
     List<LabelKey> expectedLabelKeys = new ArrayList<>(labelKeys);
     expectedLabelKeys.add(
         LabelKey.create(GcpMetricsConstants.POOL_INDEX_LABEL, GcpMetricsConstants.POOL_INDEX_DESC));
     List<LabelValue> expectedLabelValues = new ArrayList<>(labelValues);
-    int currentIndex = GcpManagedChannel.channelPoolIndex.get();
-    String poolIndex = String.format("pool-%d", currentIndex);
     expectedLabelValues.add(LabelValue.create(poolIndex));
 
     try {

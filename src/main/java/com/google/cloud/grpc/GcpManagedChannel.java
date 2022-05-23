@@ -46,6 +46,7 @@ import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
@@ -108,6 +109,7 @@ public class GcpManagedChannel extends ManagedChannel {
       String.format("pool-%d", channelPoolIndex.incrementAndGet());
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
   private ScheduledExecutorService logMetricService;
+  private String metricsOptionsToLog;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -222,6 +224,35 @@ public class GcpManagedChannel extends ManagedChannel {
     logMetricService.scheduleAtFixedRate(this::logMetrics, 60, 60, SECONDS);
   }
 
+  private void logMetricsOptions() {
+    if (metricsOptionsToLog != null) {
+      logger.fine(log(metricsOptionsToLog));
+      return;
+    }
+    final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
+    if (metricsOptions == null) {
+      return;
+    }
+
+    Iterator<LabelKey> keyIterator = metricsOptions.getLabelKeys().iterator();
+    Iterator<LabelValue> valueIterator = metricsOptions.getLabelValues().iterator();
+
+    final List<String> tags = new ArrayList<>();
+    while (keyIterator.hasNext() && valueIterator.hasNext()) {
+      tags.add(
+          String.format("%s = %s", keyIterator.next().getKey(), valueIterator.next().getValue())
+      );
+    }
+
+    metricsOptionsToLog = String.format(
+        "Metrics name prefix = \"%s\", tags: %s",
+        metricsOptions.getNamePrefix(),
+        String.join(", ", tags)
+    );
+
+    logger.fine(log(metricsOptionsToLog));
+  }
+
   private void initMetrics() {
     final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
     if (metricsOptions == null) {
@@ -229,6 +260,7 @@ public class GcpManagedChannel extends ManagedChannel {
       initLogMetrics();
       return;
     }
+    logMetricsOptions();
     if (metricsOptions.getMetricRegistry() == null) {
       logger.info(log("Metric registry is null. Metrics disabled."));
       initLogMetrics();
@@ -447,6 +479,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logMetrics() {
+    logMetricsOptions();
     reportMinReadyChannels();
     reportMaxReadyChannels();
     reportMaxChannels();
