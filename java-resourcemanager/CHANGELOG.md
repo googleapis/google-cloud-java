@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-resourcemanager/compare/v1.3.2...v1.4.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-resourcemanager/issues/1440)) ([#786](https://github.com/googleapis/java-resourcemanager/issues/786)) ([ea7a76d](https://github.com/googleapis/java-resourcemanager/commit/ea7a76d519e939055de1186ba4b3b6b4e789bc66))
+* next release from main branch is 1.2.11 ([#779](https://github.com/googleapis/java-resourcemanager/issues/779)) ([0ddc56c](https://github.com/googleapis/java-resourcemanager/commit/0ddc56c3fa1b8460c24ea50e5c924bc943763e1d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#785](https://github.com/googleapis/java-resourcemanager/issues/785)) ([6f7b18f](https://github.com/googleapis/java-resourcemanager/commit/6f7b18f3257d3f598521868283abee1b8a4033c6))
+
 ### [1.3.2](https://github.com/googleapis/java-resourcemanager/compare/v1.3.1...v1.3.2) (2022-05-10)
 
 
