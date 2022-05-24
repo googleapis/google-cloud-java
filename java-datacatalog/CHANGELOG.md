@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.0](https://github.com/googleapis/java-datacatalog/compare/v1.7.3...v1.8.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-datacatalog/issues/1440)) ([#798](https://github.com/googleapis/java-datacatalog/issues/798)) ([ef0343d](https://github.com/googleapis/java-datacatalog/commit/ef0343d627cb4ccb1a3d1952c6638e62dde2ca83))
+* added Dataplex specific fields ([501be26](https://github.com/googleapis/java-datacatalog/commit/501be2601a428bb99de1dd3d6982c1b6caba4d72))
+* AuditConfig for IAM v1 ([501be26](https://github.com/googleapis/java-datacatalog/commit/501be2601a428bb99de1dd3d6982c1b6caba4d72))
+
+
+### Documentation
+
+* update taxonomy display_name comment ([501be26](https://github.com/googleapis/java-datacatalog/commit/501be2601a428bb99de1dd3d6982c1b6caba4d72))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#797](https://github.com/googleapis/java-datacatalog/issues/797)) ([f022810](https://github.com/googleapis/java-datacatalog/commit/f0228102359e56c087f9a0dfd3ac068a93179885))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#799](https://github.com/googleapis/java-datacatalog/issues/799)) ([e6d818b](https://github.com/googleapis/java-datacatalog/commit/e6d818b9887ece7376a36527f54e8b270cb60ff9))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.1 ([#791](https://github.com/googleapis/java-datacatalog/issues/791)) ([3f2451b](https://github.com/googleapis/java-datacatalog/commit/3f2451b2d05fe12b81211a6286bf96a2a960443b))
+
 ### [1.7.3](https://github.com/googleapis/java-datacatalog/compare/v1.7.2...v1.7.3) (2022-04-15)
 
 
