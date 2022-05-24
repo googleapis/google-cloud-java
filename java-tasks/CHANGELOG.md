@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-tasks/compare/v2.1.11...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-tasks/issues/1440)) ([#688](https://github.com/googleapis/java-tasks/issues/688)) ([2c95399](https://github.com/googleapis/java-tasks/commit/2c953994af809cb182dbd20038053712f1c7570e))
+* next release from main branch is 2.1.11 ([#683](https://github.com/googleapis/java-tasks/issues/683)) ([9b95ea8](https://github.com/googleapis/java-tasks/commit/9b95ea840e19dc6aca18209feda9e8a3f6c5a7d3))
+
+
+### Documentation
+
+* **sample:** remove protobuf feature from native image sample ([#665](https://github.com/googleapis/java-tasks/issues/665)) ([c29f78e](https://github.com/googleapis/java-tasks/commit/c29f78e68ce8964e8cf10f0bbf4aed85068d1578))
+* **sample:** removing unnecessary native-image-support dependency ([#681](https://github.com/googleapis/java-tasks/issues/681)) ([d920172](https://github.com/googleapis/java-tasks/commit/d920172de95e34bda1575a9a1d4799ea3c2760a4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#687](https://github.com/googleapis/java-tasks/issues/687)) ([d57b320](https://github.com/googleapis/java-tasks/commit/d57b320ce4e89fa07ac00cc6ec990166cef4afc3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#689](https://github.com/googleapis/java-tasks/issues/689)) ([66ba4db](https://github.com/googleapis/java-tasks/commit/66ba4dbc0e924a864ce5b6eb34ff262a52c2fde6))
+
 ### [2.1.11](https://github.com/googleapis/java-tasks/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
