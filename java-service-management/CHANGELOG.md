@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/java-service-management/compare/v3.0.2...v3.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-service-management/issues/1440)) ([#243](https://github.com/googleapis/java-service-management/issues/243)) ([92c123e](https://github.com/googleapis/java-service-management/commit/92c123ee6bc785184d7c51a4542a9e5517318e00))
+
+
+### Documentation
+
+* fix remaining broken links ([#237](https://github.com/googleapis/java-service-management/issues/237)) ([790394e](https://github.com/googleapis/java-service-management/commit/790394e39ee244ef343d989f2e25181b155c1d02))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#242](https://github.com/googleapis/java-service-management/issues/242)) ([ee66a57](https://github.com/googleapis/java-service-management/commit/ee66a57e1491c020a6c48f0d3bf0de2d7b040c96))
+
 ### [3.0.2](https://github.com/googleapis/java-service-management/compare/v3.0.1...v3.0.2) (2022-04-15)
 
 
