@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-private-catalog/compare/v0.2.8...v0.3.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-private-catalog/issues/1440)) ([#181](https://github.com/googleapis/java-private-catalog/issues/181)) ([f993441](https://github.com/googleapis/java-private-catalog/commit/f993441b71595fe691c16540927bc2a8fae874ca))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#180](https://github.com/googleapis/java-private-catalog/issues/180)) ([2259e59](https://github.com/googleapis/java-private-catalog/commit/2259e5956efad5b5f4f7c95138b35662a9e48692))
+
 ### [0.2.8](https://github.com/googleapis/java-private-catalog/compare/v0.2.7...v0.2.8) (2022-04-15)
 
 
