@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-iamcredentials/compare/v2.1.0...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-iamcredentials/issues/1440)) ([#685](https://github.com/googleapis/java-iamcredentials/issues/685)) ([8600cd1](https://github.com/googleapis/java-iamcredentials/commit/8600cd11c414862a36458da2f099bad5c141841f))
+* next release from main branch is 2.2.0 ([#679](https://github.com/googleapis/java-iamcredentials/issues/679)) ([88876b8](https://github.com/googleapis/java-iamcredentials/commit/88876b8463950d919d29c6f17e1fbada64095046))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#684](https://github.com/googleapis/java-iamcredentials/issues/684)) ([3823250](https://github.com/googleapis/java-iamcredentials/commit/382325031d9118667499a092f46ff88afe9d8983))
+
 ## [2.1.0](https://github.com/googleapis/java-iamcredentials/compare/v2.0.14...v2.1.0) (2022-04-27)
 
 
