@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-eventarc-publishing/compare/v0.1.5...v0.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-eventarc-publishing/issues/1440)) ([#79](https://github.com/googleapis/java-eventarc-publishing/issues/79)) ([51c7cc4](https://github.com/googleapis/java-eventarc-publishing/commit/51c7cc4e8643c7be0c43cd49ae6f79f71ea0bbdb))
+* Add publishing methods for channel resources ([#70](https://github.com/googleapis/java-eventarc-publishing/issues/70)) ([7dadfed](https://github.com/googleapis/java-eventarc-publishing/commit/7dadfed574a496e4498dda0fa9a58e8983bdd373))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#78](https://github.com/googleapis/java-eventarc-publishing/issues/78)) ([49bcfd3](https://github.com/googleapis/java-eventarc-publishing/commit/49bcfd332635ee55ea5f2dd76c0e6826c8ae0174))
+
 ### [0.1.5](https://github.com/googleapis/java-eventarc-publishing/compare/v0.1.4...v0.1.5) (2022-04-15)
 
 
