@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.4...v0.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigquerymigration/issues/1440)) ([#121](https://github.com/googleapis/java-bigquerymigration/issues/121)) ([8f3def9](https://github.com/googleapis/java-bigquerymigration/commit/8f3def9f3f94102ccce665c805b531378238f6b3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#120](https://github.com/googleapis/java-bigquerymigration/issues/120)) ([6fb874d](https://github.com/googleapis/java-bigquerymigration/commit/6fb874df8eec83b006f2d85a4759237597241728))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#123](https://github.com/googleapis/java-bigquerymigration/issues/123)) ([6e4b5ff](https://github.com/googleapis/java-bigquerymigration/commit/6e4b5ffeef235d703cf9b5fa33c20e51955ae69c))
+
 ### [0.2.4](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.3...v0.2.4) (2022-04-15)
 
 
