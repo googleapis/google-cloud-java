@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-dns/compare/v2.0.9...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dns/issues/1440)) ([#659](https://github.com/googleapis/java-dns/issues/659)) ([c948680](https://github.com/googleapis/java-dns/commit/c9486808e591cbb47df3f60b36a2c1b6cbd5757a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#658](https://github.com/googleapis/java-dns/issues/658)) ([0ae6e82](https://github.com/googleapis/java-dns/commit/0ae6e826a3dfd721738fff7f8e121a59c9488c78))
+* update dependency com.google.errorprone:error_prone_annotations to v2.13.1 ([#645](https://github.com/googleapis/java-dns/issues/645)) ([d256d46](https://github.com/googleapis/java-dns/commit/d256d460f373fab6f209f907d2d3593c99dad3ee))
+* use errorprone from shared deps ([#655](https://github.com/googleapis/java-dns/issues/655)) ([f2ae3e3](https://github.com/googleapis/java-dns/commit/f2ae3e3b245fe812cb3ea45467599e56ea237433))
+
 ### [2.0.9](https://github.com/googleapis/java-dns/compare/v2.0.8...v2.0.9) (2022-04-15)
 
 
