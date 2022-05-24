@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-containeranalysis/compare/v2.2.16...v2.3.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-containeranalysis/issues/1440)) ([#882](https://github.com/googleapis/java-containeranalysis/issues/882)) ([9961c40](https://github.com/googleapis/java-containeranalysis/commit/9961c405f557d10af1d26f3678b48ad1c6238647))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#881](https://github.com/googleapis/java-containeranalysis/issues/881)) ([cfc1ac6](https://github.com/googleapis/java-containeranalysis/commit/cfc1ac64e7190a0fe204d7eb3cc19b4d9309cae6))
+
 ### [2.2.16](https://github.com/googleapis/java-containeranalysis/compare/v2.2.15...v2.2.16) (2022-04-18)
 
 
