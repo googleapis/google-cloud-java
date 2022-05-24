@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-binary-authorization/compare/v1.0.9...v1.1.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-binary-authorization/issues/1440)) ([#215](https://github.com/googleapis/java-binary-authorization/issues/215)) ([ba4ef80](https://github.com/googleapis/java-binary-authorization/commit/ba4ef80044ffcabba2d711ca2cb0e2c44ebbaded))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#214](https://github.com/googleapis/java-binary-authorization/issues/214)) ([5d78ffc](https://github.com/googleapis/java-binary-authorization/commit/5d78ffc34c861786e73eb212f879065a6d7acf4a))
+
 ### [1.0.9](https://github.com/googleapis/java-binary-authorization/compare/v1.0.8...v1.0.9) (2022-04-18)
 
 
