@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.0.4...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-policy-troubleshooter/issues/1440)) ([#220](https://github.com/googleapis/java-policy-troubleshooter/issues/220)) ([b5e573d](https://github.com/googleapis/java-policy-troubleshooter/commit/b5e573d9a17fbdca32f589cc3b0b8389830e5710))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#219](https://github.com/googleapis/java-policy-troubleshooter/issues/219)) ([c4dbfc2](https://github.com/googleapis/java-policy-troubleshooter/commit/c4dbfc242ffaf82babcba01c19df7e7aa373ac42))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#221](https://github.com/googleapis/java-policy-troubleshooter/issues/221)) ([817454e](https://github.com/googleapis/java-policy-troubleshooter/commit/817454eb5ab26ca47611092ae8d0c1dce9cf3508))
+
 ### [1.0.4](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.0.3...v1.0.4) (2022-04-15)
 
 
