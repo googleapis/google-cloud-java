@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-webrisk/compare/v2.0.14...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-webrisk/issues/1440)) ([#660](https://github.com/googleapis/java-webrisk/issues/660)) ([027b470](https://github.com/googleapis/java-webrisk/commit/027b4706111ad9a8e2a46472ebb37abc54fd0b57))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#659](https://github.com/googleapis/java-webrisk/issues/659)) ([9cbbafa](https://github.com/googleapis/java-webrisk/commit/9cbbafa4347f54133b6604ad47d92bd80b625476))
+
 ### [2.0.14](https://github.com/googleapis/java-webrisk/compare/v2.0.13...v2.0.14) (2022-04-15)
 
 
