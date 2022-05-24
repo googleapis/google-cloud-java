@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-video-transcoder/compare/v1.0.4...v1.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-video-transcoder/issues/1440)) ([#343](https://github.com/googleapis/java-video-transcoder/issues/343)) ([d873742](https://github.com/googleapis/java-video-transcoder/commit/d873742796830bfd8136652f1490627b7e82bc1d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#342](https://github.com/googleapis/java-video-transcoder/issues/342)) ([b33d3ec](https://github.com/googleapis/java-video-transcoder/commit/b33d3ecc5d421abfc12dce509f2f4c0bf95a5c27))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#345](https://github.com/googleapis/java-video-transcoder/issues/345)) ([878359d](https://github.com/googleapis/java-video-transcoder/commit/878359d19fc7a5127808322ca9e7dd430fafdf2a))
+
 ### [1.0.4](https://github.com/googleapis/java-video-transcoder/compare/v1.0.3...v1.0.4) (2022-04-15)
 
 
