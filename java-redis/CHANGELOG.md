@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-redis/compare/v2.4.1...v2.5.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-redis/issues/1440)) ([#647](https://github.com/googleapis/java-redis/issues/647)) ([3e657a2](https://github.com/googleapis/java-redis/commit/3e657a2a7beaeb4d428d675940c41e41df39821f))
+* next release from main branch is 2.4.1 ([#641](https://github.com/googleapis/java-redis/issues/641)) ([b1ddca7](https://github.com/googleapis/java-redis/commit/b1ddca73ba1183d9c97cd2419db64599a66fabd2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#646](https://github.com/googleapis/java-redis/issues/646)) ([0ba1b4d](https://github.com/googleapis/java-redis/commit/0ba1b4d139be2bb3e558ab597faac53f7e56656d))
+
 ### [2.4.1](https://github.com/googleapis/java-redis/compare/v2.4.0...v2.4.1) (2022-04-15)
 
 
