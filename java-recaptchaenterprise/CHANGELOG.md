@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.5.0...v2.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-recaptchaenterprise/issues/1440)) ([#799](https://github.com/googleapis/java-recaptchaenterprise/issues/799)) ([dddabca](https://github.com/googleapis/java-recaptchaenterprise/commit/dddabcaec703a727c24c249d62eae5616f2e5d6b))
+
+
+### Documentation
+
+* **samples:** added account defender samples and tests ([#771](https://github.com/googleapis/java-recaptchaenterprise/issues/771)) ([eca03a1](https://github.com/googleapis/java-recaptchaenterprise/commit/eca03a1d5775c4545e144180fe7bc0501410c31b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#795](https://github.com/googleapis/java-recaptchaenterprise/issues/795)) ([fcdd308](https://github.com/googleapis/java-recaptchaenterprise/commit/fcdd30838e21409528af15b924fdda5964ae4a3c))
+* update dependency org.springframework.boot:spring-boot-starter-test to v2.7.0 ([#796](https://github.com/googleapis/java-recaptchaenterprise/issues/796)) ([2aa3477](https://github.com/googleapis/java-recaptchaenterprise/commit/2aa34772326e3b6ffe9a1132241663945ebbf61b))
+* update dependency org.springframework.boot:spring-boot-starter-thymeleaf to v2.7.0 ([#797](https://github.com/googleapis/java-recaptchaenterprise/issues/797)) ([2aac201](https://github.com/googleapis/java-recaptchaenterprise/commit/2aac201053190d271e1e9abb2a647d41162c218d))
+* update dependency org.springframework.boot:spring-boot-starter-web to v2.7.0 ([#798](https://github.com/googleapis/java-recaptchaenterprise/issues/798)) ([abfb369](https://github.com/googleapis/java-recaptchaenterprise/commit/abfb369364daa5086eedc20cf0e4ff8dccb6f8a8))
+
 ## [2.5.0](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.4.11...v2.5.0) (2022-05-04)
 
 
