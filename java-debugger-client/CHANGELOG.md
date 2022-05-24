@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-debugger-client/compare/v1.1.11...v1.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-debugger-client/issues/1440)) ([#189](https://github.com/googleapis/java-debugger-client/issues/189)) ([cf76cab](https://github.com/googleapis/java-debugger-client/commit/cf76cab04b4bcf4b2706a3f15a3c171abe310015))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#188](https://github.com/googleapis/java-debugger-client/issues/188)) ([6b27f29](https://github.com/googleapis/java-debugger-client/commit/6b27f29cde5594c3a7b4d6ee11aa7f12a1e8e041))
+
 ### [1.1.11](https://github.com/googleapis/java-debugger-client/compare/v1.1.10...v1.1.11) (2022-04-15)
 
 
