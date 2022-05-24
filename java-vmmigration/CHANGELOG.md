@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-vmmigration/compare/v1.0.6...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-vmmigration/issues/1440)) ([#94](https://github.com/googleapis/java-vmmigration/issues/94)) ([356c05f](https://github.com/googleapis/java-vmmigration/commit/356c05fffcabdf7be0d978abe75b0a5c4e588521))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#93](https://github.com/googleapis/java-vmmigration/issues/93)) ([65619ca](https://github.com/googleapis/java-vmmigration/commit/65619ca830590f058c1e75e77b364cbe4235f5bd))
+
 ### [1.0.6](https://github.com/googleapis/java-vmmigration/compare/v1.0.5...v1.0.6) (2022-04-15)
 
 
