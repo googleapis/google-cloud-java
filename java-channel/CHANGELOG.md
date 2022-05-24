@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.6.0](https://github.com/googleapis/java-channel/compare/v3.5.2...v3.6.0) (2022-05-24)
+
+
+### Features
+
+* Add API definitions for Cloud Channel Repricing APIs ([7a2f1ee](https://github.com/googleapis/java-channel/commit/7a2f1ee5fa831b77aff49fc014f71d256638e425))
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-channel/issues/1440)) ([#302](https://github.com/googleapis/java-channel/issues/302)) ([f8ba5a6](https://github.com/googleapis/java-channel/commit/f8ba5a62cbf955ceea9564fc7356ef8cc756d8dd))
+* Add new enum value, new filter in ListCustomersRequest of Cloud Channel API ([#296](https://github.com/googleapis/java-channel/issues/296)) ([ec0a6d7](https://github.com/googleapis/java-channel/commit/ec0a6d73375f756f4c7d7a94dc7974211f8ebb79))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#301](https://github.com/googleapis/java-channel/issues/301)) ([f680e0c](https://github.com/googleapis/java-channel/commit/f680e0c5f36940b3f4bb30ee1eccdb29d54f6335))
+
 ### [3.5.2](https://github.com/googleapis/java-channel/compare/v3.5.1...v3.5.2) (2022-04-15)
 
 
