@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-tpu/compare/v2.2.7...v2.3.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-tpu/issues/1440)) ([#198](https://github.com/googleapis/java-tpu/issues/198)) ([457d5d6](https://github.com/googleapis/java-tpu/commit/457d5d649157ac3f3b2f7c04969ac02542381e08))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#197](https://github.com/googleapis/java-tpu/issues/197)) ([42e546e](https://github.com/googleapis/java-tpu/commit/42e546e2383e2a4bf726ebe366a6c2dfe59235f4))
+
 ### [2.2.7](https://github.com/googleapis/java-tpu/compare/v2.2.6...v2.2.7) (2022-04-15)
 
 
