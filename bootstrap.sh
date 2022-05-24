@@ -10,7 +10,7 @@ set -xe
 rm -rf monorepo
 mkdir monorepo
 
-cp monorepo.sh monorepo
+cp bootstrap.sh monorepo
 cp repos.txt monorepo
 
 cd monorepo

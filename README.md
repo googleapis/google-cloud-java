@@ -2,7 +2,7 @@
 
 ## Auto-generated artifacts
 
-Built by running [monorepo.sh](monorepo.sh).
+Built by running [bootstrap.sh](bootstrap.sh).
 
 ### Monorepo branch
 
