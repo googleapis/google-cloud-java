@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.9.0](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.10...v0.9.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-recommendations-ai/issues/1440)) ([#527](https://github.com/googleapis/java-recommendations-ai/issues/527)) ([6aa8087](https://github.com/googleapis/java-recommendations-ai/commit/6aa8087d772e6b889e7dc1997d266ba40322726f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#526](https://github.com/googleapis/java-recommendations-ai/issues/526)) ([70bb99a](https://github.com/googleapis/java-recommendations-ai/commit/70bb99a1925dbaf538c206df31cd7feb358a5180))
+
 ### [0.8.10](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.9...v0.8.10) (2022-04-15)
 
 
