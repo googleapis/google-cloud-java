@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.13.0](https://github.com/googleapis/java-analytics-data/compare/v0.12.0...v0.13.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-analytics-data/issues/1440)) ([#496](https://github.com/googleapis/java-analytics-data/issues/496)) ([63d3433](https://github.com/googleapis/java-analytics-data/commit/63d3433a0864f1ce9b807c39361f87cada9b48fd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#500](https://github.com/googleapis/java-analytics-data/issues/500)) ([4307f11](https://github.com/googleapis/java-analytics-data/commit/4307f112950508a4912e78aa57c31232e4ce3eae))
+
 ## [0.12.0](https://github.com/googleapis/java-analytics-data/compare/v0.11.10...v0.12.0) (2022-05-19)
 
 
