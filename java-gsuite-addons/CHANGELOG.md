@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.12...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-gsuite-addons/issues/1440)) ([#223](https://github.com/googleapis/java-gsuite-addons/issues/223)) ([993ecea](https://github.com/googleapis/java-gsuite-addons/commit/993ecea3ae297e1dbd79c47d93163960b3a248ca))
+
 ### [2.1.12](https://github.com/googleapis/java-gsuite-addons/compare/v2.1.11...v2.1.12) (2022-05-19)
 
 
