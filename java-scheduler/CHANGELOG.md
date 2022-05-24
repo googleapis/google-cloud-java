@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-scheduler/compare/v2.1.23...v2.2.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-scheduler/issues/1440)) ([#760](https://github.com/googleapis/java-scheduler/issues/760)) ([35cf76b](https://github.com/googleapis/java-scheduler/commit/35cf76b764e44b0a01e5ba0d1116a3e946a8434a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.118.0 ([#759](https://github.com/googleapis/java-scheduler/issues/759)) ([3fefe6f](https://github.com/googleapis/java-scheduler/commit/3fefe6f7a2e54f41e758fd26947c77330439544a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#758](https://github.com/googleapis/java-scheduler/issues/758)) ([88a2b77](https://github.com/googleapis/java-scheduler/commit/88a2b775b59ec5e15467f248f9eb27ea0a41596d))
+
 ### [2.1.23](https://github.com/googleapis/java-scheduler/compare/v2.1.22...v2.1.23) (2022-05-12)
 
 
