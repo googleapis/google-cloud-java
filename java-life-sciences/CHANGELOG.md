@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-life-sciences/compare/v0.3.10...v0.4.0) (2022-05-20)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-life-sciences/issues/1440)) ([#185](https://github.com/googleapis/java-life-sciences/issues/185)) ([a066b86](https://github.com/googleapis/java-life-sciences/commit/a066b86da8647b7365d74504a731dc8ee8fbb221))
+
 ### [0.3.10](https://github.com/googleapis/java-life-sciences/compare/v0.3.9...v0.3.10) (2022-05-19)
 
 
