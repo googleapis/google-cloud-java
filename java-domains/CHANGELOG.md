@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-domains/compare/v0.5.6...v0.6.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-domains/issues/1440)) ([#227](https://github.com/googleapis/java-domains/issues/227)) ([f450420](https://github.com/googleapis/java-domains/commit/f45042082af202a8a50464d2962260c76084aded))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#226](https://github.com/googleapis/java-domains/issues/226)) ([a2cb82e](https://github.com/googleapis/java-domains/commit/a2cb82ecf67ce21fef650336d5c485de415c6d61))
+
 ### [0.5.6](https://github.com/googleapis/java-domains/compare/v0.5.5...v0.5.6) (2022-04-15)
 
 
