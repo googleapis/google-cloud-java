@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-vpcaccess/compare/v2.1.11...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-vpcaccess/issues/1440)) ([#196](https://github.com/googleapis/java-vpcaccess/issues/196)) ([b85acc2](https://github.com/googleapis/java-vpcaccess/commit/b85acc2ed443f9408b21f3a278f36c789bd654a3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#195](https://github.com/googleapis/java-vpcaccess/issues/195)) ([a495461](https://github.com/googleapis/java-vpcaccess/commit/a495461a6ecb4a83c4b7f3f0780652ffa2df4483))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#198](https://github.com/googleapis/java-vpcaccess/issues/198)) ([ba7272a](https://github.com/googleapis/java-vpcaccess/commit/ba7272a0a35617c4532f56b5fd354f87af978b0c))
+
 ### [2.1.11](https://github.com/googleapis/java-vpcaccess/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
