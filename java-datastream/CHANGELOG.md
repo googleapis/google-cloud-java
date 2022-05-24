@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-datastream/compare/v0.4.4...v1.0.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-datastream/issues/1440)) ([#167](https://github.com/googleapis/java-datastream/issues/167)) ([1a6fd29](https://github.com/googleapis/java-datastream/commit/1a6fd29c6118a66bb52bd0746c2f0d22d3109d9a))
+* promote to GA ([#161](https://github.com/googleapis/java-datastream/issues/161)) ([ac32f48](https://github.com/googleapis/java-datastream/commit/ac32f48c6552667055e9e36dc67cc9bbcf158e63))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#166](https://github.com/googleapis/java-datastream/issues/166)) ([117d8ca](https://github.com/googleapis/java-datastream/commit/117d8ca9c55598fa466f4aa91edf183559606493))
+
 ### [0.4.4](https://github.com/googleapis/java-datastream/compare/v0.4.3...v0.4.4) (2022-04-15)
 
 
