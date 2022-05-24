@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-data-fusion/compare/v1.1.2...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-data-fusion/issues/1440)) ([#169](https://github.com/googleapis/java-data-fusion/issues/169)) ([426de95](https://github.com/googleapis/java-data-fusion/commit/426de953be7362e9d6bb234af693737e433eb490))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#168](https://github.com/googleapis/java-data-fusion/issues/168)) ([e01579c](https://github.com/googleapis/java-data-fusion/commit/e01579ca78b8d240b3cc6d846afd5e0e973f6f75))
+
 ### [1.1.2](https://github.com/googleapis/java-data-fusion/compare/v1.1.1...v1.1.2) (2022-04-15)
 
 
