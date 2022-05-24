@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-video-live-stream/compare/v0.3.0...v0.4.0) (2022-05-20)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-video-live-stream/issues/1440)) ([#50](https://github.com/googleapis/java-video-live-stream/issues/50)) ([00dbbf3](https://github.com/googleapis/java-video-live-stream/commit/00dbbf3937898b8a8ae2622ff5539f9b8a935036))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#49](https://github.com/googleapis/java-video-live-stream/issues/49)) ([aecb6c5](https://github.com/googleapis/java-video-live-stream/commit/aecb6c5a993d13fc85e58b9336a1f31b58fa99dd))
+
+
+### Documentation
+
+* updated comments to match API behaviors ([#52](https://github.com/googleapis/java-video-live-stream/issues/52)) ([342dcfb](https://github.com/googleapis/java-video-live-stream/commit/342dcfbd3f1bafda9025771bc12af84a35e5d36e))
+
 ## [0.3.0](https://github.com/googleapis/java-video-live-stream/compare/v0.2.1...v0.3.0) (2022-04-28)
 
 
