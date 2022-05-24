@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-security-private-ca/compare/v2.3.1...v2.4.0) (2022-05-20)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-security-private-ca/issues/1440)) ([#416](https://github.com/googleapis/java-security-private-ca/issues/416)) ([fbe3b63](https://github.com/googleapis/java-security-private-ca/commit/fbe3b6351165ca98e9b75bd27cced922d38d2efe))
+* AuditConfig for IAM v1 ([6585360](https://github.com/googleapis/java-security-private-ca/commit/6585360bf7a9fb0e0249cbe2ddbf7bea70bc9f29))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#415](https://github.com/googleapis/java-security-private-ca/issues/415)) ([9ffc060](https://github.com/googleapis/java-security-private-ca/commit/9ffc0601d52090e44186fece6908df03e47eafe3))
+
 ### [2.3.1](https://github.com/googleapis/java-security-private-ca/compare/v2.3.0...v2.3.1) (2022-04-15)
 
 
