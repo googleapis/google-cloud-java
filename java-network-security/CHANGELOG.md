@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-network-security/compare/v0.4.4...v0.5.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-network-security/issues/1440)) ([#162](https://github.com/googleapis/java-network-security/issues/162)) ([413cc71](https://github.com/googleapis/java-network-security/commit/413cc715e29327523b4f1dfac65998b08ac8142d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#161](https://github.com/googleapis/java-network-security/issues/161)) ([5c97483](https://github.com/googleapis/java-network-security/commit/5c9748366c4b4dde640a90ed5b947750d1f06867))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#163](https://github.com/googleapis/java-network-security/issues/163)) ([4e433f9](https://github.com/googleapis/java-network-security/commit/4e433f976c001d4e71a24519e4cc95c5f799600a))
+
 ### [0.4.4](https://github.com/googleapis/java-network-security/compare/v0.4.3...v0.4.4) (2022-04-15)
 
 
