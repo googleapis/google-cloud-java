@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-area120-tables/compare/v0.5.9...v0.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-area120-tables/issues/1440)) ([#354](https://github.com/googleapis/java-area120-tables/issues/354)) ([13ee8d0](https://github.com/googleapis/java-area120-tables/commit/13ee8d0f0329fa2a302f45ccacaf78c18993058f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#353](https://github.com/googleapis/java-area120-tables/issues/353)) ([0d63897](https://github.com/googleapis/java-area120-tables/commit/0d63897288d280c8dee3711b3f25f0914b902e20))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#356](https://github.com/googleapis/java-area120-tables/issues/356)) ([4224286](https://github.com/googleapis/java-area120-tables/commit/42242866d44c22b795831fcdb0c42ecc1b993e14))
+
 ### [0.5.9](https://github.com/googleapis/java-area120-tables/compare/v0.5.8...v0.5.9) (2022-04-15)
 
 
