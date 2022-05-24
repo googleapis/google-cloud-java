@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-workflow-executions/compare/v2.1.7...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-workflow-executions/issues/1440)) ([#308](https://github.com/googleapis/java-workflow-executions/issues/308)) ([248e3c8](https://github.com/googleapis/java-workflow-executions/commit/248e3c8b2da678dc9cd38b8d2837ef8da727ffbe))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#307](https://github.com/googleapis/java-workflow-executions/issues/307)) ([59775d2](https://github.com/googleapis/java-workflow-executions/commit/59775d25f7a634a021cef821fb5a2425645021ed))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#310](https://github.com/googleapis/java-workflow-executions/issues/310)) ([e111284](https://github.com/googleapis/java-workflow-executions/commit/e1112844190cef7ceb7e3dbd7c5a9673854be0e9))
+
 ### [2.1.7](https://github.com/googleapis/java-workflow-executions/compare/v2.1.6...v2.1.7) (2022-04-15)
 
 
