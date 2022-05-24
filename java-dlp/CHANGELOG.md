@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.4.0](https://github.com/googleapis/java-dlp/compare/v3.3.2...v3.4.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dlp/issues/1440)) ([#885](https://github.com/googleapis/java-dlp/issues/885)) ([fc0fd35](https://github.com/googleapis/java-dlp/commit/fc0fd351e85c8e54099f576a77204c3144fa36e9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.118.0 ([#884](https://github.com/googleapis/java-dlp/issues/884)) ([e5ac330](https://github.com/googleapis/java-dlp/commit/e5ac33020d7775d95743f3ad0f64f2de51455816))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#883](https://github.com/googleapis/java-dlp/issues/883)) ([ef507e8](https://github.com/googleapis/java-dlp/commit/ef507e8efa46d5ca3d0285a51bae350c77b689db))
+
 ### [3.3.2](https://github.com/googleapis/java-dlp/compare/v3.3.1...v3.3.2) (2022-05-12)
 
 
