@@ -139,7 +139,6 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
     return flushRowsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigQueryWriteStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

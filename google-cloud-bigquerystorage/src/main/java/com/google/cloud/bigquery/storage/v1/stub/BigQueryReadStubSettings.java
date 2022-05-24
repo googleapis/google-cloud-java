@@ -112,7 +112,6 @@ public class BigQueryReadStubSettings extends StubSettings<BigQueryReadStubSetti
     return splitReadStreamSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigQueryReadStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

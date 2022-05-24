@@ -126,7 +126,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * Constructs an instance of BaseBigQueryStorageClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(BaseBigQueryStorageSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BaseBigQueryStorageClient create(BigQueryStorageStub stub) {
     return new BaseBigQueryStorageClient(stub);
   }
@@ -141,7 +140,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
     this.stub = ((BigQueryStorageStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BaseBigQueryStorageClient(BigQueryStorageStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +149,6 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigQueryStorageStub getStub() {
     return stub;
   }

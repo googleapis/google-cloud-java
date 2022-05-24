@@ -127,7 +127,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    * Constructs an instance of BaseBigQueryReadClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(BaseBigQueryReadSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BaseBigQueryReadClient create(BigQueryReadStub stub) {
     return new BaseBigQueryReadClient(stub);
   }
@@ -142,7 +141,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     this.stub = ((BigQueryReadStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BaseBigQueryReadClient(BigQueryReadStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +150,6 @@ public class BaseBigQueryReadClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigQueryReadStub getStub() {
     return stub;
   }

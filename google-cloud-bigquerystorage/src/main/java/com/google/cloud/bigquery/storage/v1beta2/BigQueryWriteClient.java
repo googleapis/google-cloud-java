@@ -119,7 +119,6 @@ public class BigQueryWriteClient implements BackgroundResource {
    * Constructs an instance of BigQueryWriteClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(BigQueryWriteSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BigQueryWriteClient create(BigQueryWriteStub stub) {
     return new BigQueryWriteClient(stub);
   }
@@ -134,7 +133,6 @@ public class BigQueryWriteClient implements BackgroundResource {
     this.stub = ((BigQueryWriteStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BigQueryWriteClient(BigQueryWriteStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +142,6 @@ public class BigQueryWriteClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigQueryWriteStub getStub() {
     return stub;
   }
