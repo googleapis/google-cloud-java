@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-vision/compare/v2.0.29...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-vision/issues/1440)) ([#909](https://github.com/googleapis/java-vision/issues/909)) ([0edc753](https://github.com/googleapis/java-vision/commit/0edc753f7bb7ace905faa8bb7409cbb902d33b76))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#906](https://github.com/googleapis/java-vision/issues/906)) ([0f0912a](https://github.com/googleapis/java-vision/commit/0f0912a01fbf91ff8365e5a90af5833f478734e3))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#907](https://github.com/googleapis/java-vision/issues/907)) ([fe00f5e](https://github.com/googleapis/java-vision/commit/fe00f5e0220350c4881ca4451821f13b1b8a8d29))
+* update spring.version to v2.7.0 ([#908](https://github.com/googleapis/java-vision/issues/908)) ([9dfefec](https://github.com/googleapis/java-vision/commit/9dfefecb433760ba508303d56659a676dc1f44a2))
+
 ### [2.0.29](https://github.com/googleapis/java-vision/compare/v2.0.28...v2.0.29) (2022-05-05)
 
 
