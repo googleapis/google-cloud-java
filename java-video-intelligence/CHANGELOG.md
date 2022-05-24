@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-video-intelligence/compare/v2.0.27...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-video-intelligence/issues/1440)) ([#908](https://github.com/googleapis/java-video-intelligence/issues/908)) ([cadb24e](https://github.com/googleapis/java-video-intelligence/commit/cadb24ef6cf58cac4a2ff2d18ba7d44ac58f334b))
+* field ObjectTrackingAnnotation.segment moved into oneof, added track_id ([#897](https://github.com/googleapis/java-video-intelligence/issues/897)) ([95aa623](https://github.com/googleapis/java-video-intelligence/commit/95aa6234261d642aebd876d57a052dc125be3366))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#906](https://github.com/googleapis/java-video-intelligence/issues/906)) ([3d548c0](https://github.com/googleapis/java-video-intelligence/commit/3d548c0d4273ed9e4860df81e36b5463b9d120d1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#907](https://github.com/googleapis/java-video-intelligence/issues/907)) ([0c06c94](https://github.com/googleapis/java-video-intelligence/commit/0c06c9477326331f430ef0720533671875902c64))
+
 ### [2.0.27](https://github.com/googleapis/java-video-intelligence/compare/v2.0.26...v2.0.27) (2022-04-21)
 
 
