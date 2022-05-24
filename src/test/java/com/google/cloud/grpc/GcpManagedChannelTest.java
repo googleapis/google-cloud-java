@@ -618,8 +618,9 @@ public final class GcpManagedChannelTest {
 
     // Logs metrics options.
     assertThat(logRecords.get(logRecords.size() - 2).getLevel()).isEqualTo(Level.FINE);
-    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).isEqualTo(
-        poolIndex + ": Metrics name prefix = \"some/prefix/\", tags: key_a = val_a, key_b = val_b"
+    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).startsWith(
+        poolIndex + ": Metrics options: {namePrefix: \"some/prefix/\", labels: " +
+            "[key_a: \"val_a\", key_b: \"val_b\"],"
     );
 
     assertThat(lastLogLevel()).isEqualTo(Level.INFO);

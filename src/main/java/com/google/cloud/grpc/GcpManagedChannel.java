@@ -28,6 +28,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
+import com.google.protobuf.TextFormat;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
@@ -46,7 +47,6 @@ import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
@@ -109,7 +109,6 @@ public class GcpManagedChannel extends ManagedChannel {
       String.format("pool-%d", channelPoolIndex.incrementAndGet());
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
   private ScheduledExecutorService logMetricService;
-  private String metricsOptionsToLog;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -161,6 +160,11 @@ public class GcpManagedChannel extends ManagedChannel {
     loadApiConfig(apiConfig);
     this.delegateChannelBuilder = delegateChannelBuilder;
     this.options = options;
+    logger.finer(log(
+        "Created with api config: %s, and options: %s",
+        apiConfig == null ? "null" : TextFormat.shortDebugString(apiConfig),
+        options
+    ));
     initOptions();
     if (options.getResiliencyOptions() != null) {
       fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
@@ -195,6 +199,7 @@ public class GcpManagedChannel extends ManagedChannel {
       GcpManagedChannelOptions options) {
     this(delegateChannelBuilder, apiConfig, options);
     if (poolSize != 0) {
+      logger.finer(log("Pool size adjusted to %d", poolSize));
       this.maxSize = poolSize;
     }
   }
@@ -205,6 +210,10 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private String log(String message) {
     return String.format("%s: %s", metricPoolIndex, message);
+  }
+
+  private String log(String format, Object... args) {
+    return String.format("%s: %s", metricPoolIndex, String.format(format, args));
   }
 
   private void initOptions() {
@@ -225,32 +234,9 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logMetricsOptions() {
-    if (metricsOptionsToLog != null) {
-      logger.fine(log(metricsOptionsToLog));
-      return;
+    if (options.getMetricsOptions() != null) {
+      logger.fine(log("Metrics options: %s", options.getMetricsOptions()));
     }
-    final GcpMetricsOptions metricsOptions = options.getMetricsOptions();
-    if (metricsOptions == null) {
-      return;
-    }
-
-    Iterator<LabelKey> keyIterator = metricsOptions.getLabelKeys().iterator();
-    Iterator<LabelValue> valueIterator = metricsOptions.getLabelValues().iterator();
-
-    final List<String> tags = new ArrayList<>();
-    while (keyIterator.hasNext() && valueIterator.hasNext()) {
-      tags.add(
-          String.format("%s = %s", keyIterator.next().getKey(), valueIterator.next().getValue())
-      );
-    }
-
-    metricsOptionsToLog = String.format(
-        "Metrics name prefix = \"%s\", tags: %s",
-        metricsOptions.getNamePrefix(),
-        String.join(", ", tags)
-    );
-
-    logger.fine(log(metricsOptionsToLog));
   }
 
   private void initMetrics() {
@@ -467,7 +453,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logGauge(String key, long value) {
-    logger.fine(log(String.format("stat: %s = %d", key, value)));
+    logger.fine(log("stat: %s = %d", key, value));
   }
 
   private void logCumulative(String key, long value) {
@@ -1099,6 +1085,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @Override
   public ManagedChannel shutdownNow() {
+    logger.finer(log("Shutdown now started."));
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isTerminated()) {
         channelRef.getChannel().shutdownNow();
@@ -1112,6 +1099,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @Override
   public ManagedChannel shutdown() {
+    logger.finer(log("Shutdown started."));
     for (ChannelRef channelRef : channelRefs) {
       channelRef.getChannel().shutdown();
     }

@@ -21,6 +21,7 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -58,6 +59,16 @@ public class GcpManagedChannelOptions {
   @Nullable
   public GcpResiliencyOptions getResiliencyOptions() {
     return resiliencyOptions;
+  }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "{channelPoolOptions: %s, metricsOptions: %s, resiliencyOptions: %s}",
+        getChannelPoolOptions(),
+        getMetricsOptions(),
+        getResiliencyOptions()
+    );
   }
 
   /** Creates a new GcpManagedChannelOptions.Builder. */
@@ -186,6 +197,16 @@ public class GcpManagedChannelOptions {
       return useRoundRobinOnBind;
     }
 
+    @Override
+    public String toString() {
+      return String.format(
+          "{maxSize: %d, concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s}",
+          getMaxSize(),
+          getConcurrentStreamsLowWatermark(),
+          isUseRoundRobinOnBind()
+      );
+    }
+
     public static class Builder {
       private int maxSize = GcpManagedChannel.DEFAULT_MAX_CHANNEL;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
@@ -271,6 +292,27 @@ public class GcpManagedChannelOptions {
 
     public String getNamePrefix() {
       return namePrefix;
+    }
+
+    @Override
+    public String toString() {
+      Iterator<LabelKey> keyIterator = getLabelKeys().iterator();
+      Iterator<LabelValue> valueIterator = getLabelValues().iterator();
+
+      final List<String> labels = new ArrayList<>();
+      while (keyIterator.hasNext() && valueIterator.hasNext()) {
+        labels.add(
+            String.format(
+                "%s: \"%s\"", keyIterator.next().getKey(), valueIterator.next().getValue()
+            )
+        );
+      }
+      return String.format(
+          "{namePrefix: \"%s\", labels: [%s], metricRegistry: %s}",
+          getNamePrefix(),
+          String.join(", ", labels),
+          getMetricRegistry()
+      );
     }
 
     /** Creates a new GcpMetricsOptions.Builder. */
@@ -383,6 +425,18 @@ public class GcpManagedChannelOptions {
 
     public int getUnresponsiveDetectionDroppedCount() {
       return unresponsiveDetectionDroppedCount;
+    }
+
+    @Override
+    public String toString() {
+      return String.format(
+          "{notReadyFallbackEnabled: %s, unresponsiveDetectionEnabled: %s, " +
+              "unresponsiveDetectionMs: %d, unresponsiveDetectionDroppedCount: %d}",
+          isNotReadyFallbackEnabled(),
+          isUnresponsiveDetectionEnabled(),
+          getUnresponsiveDetectionMs(),
+          getUnresponsiveDetectionDroppedCount()
+      );
     }
 
     public static class Builder {
