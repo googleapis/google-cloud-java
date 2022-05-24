@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-retail/compare/v2.0.19...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-retail/issues/1440)) ([#440](https://github.com/googleapis/java-retail/issues/440)) ([4df8b26](https://github.com/googleapis/java-retail/commit/4df8b26f56c46baefc3e1f13fc9635cc54604ade))
+
+
+### Documentation
+
+* **samples:** Retail. Prediction samples ([#412](https://github.com/googleapis/java-retail/issues/412)) ([025f04f](https://github.com/googleapis/java-retail/commit/025f04fb663274c9388e6a73ebdb47d5c7cb5730))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.0 ([#431](https://github.com/googleapis/java-retail/issues/431)) ([3f1060d](https://github.com/googleapis/java-retail/commit/3f1060d92804fc5a2401f200bacbe8bbb6986283))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.1 ([#437](https://github.com/googleapis/java-retail/issues/437)) ([4a526c0](https://github.com/googleapis/java-retail/commit/4a526c0335eb3d5af1f3d47bb753e1a047d4c886))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.2 ([#438](https://github.com/googleapis/java-retail/issues/438)) ([2d12e00](https://github.com/googleapis/java-retail/commit/2d12e005e537ecb20798ee84478b246cf646225e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#439](https://github.com/googleapis/java-retail/issues/439)) ([96103b8](https://github.com/googleapis/java-retail/commit/96103b8d22554bb5ab432b66556d6df884de2053))
+
 ### [2.0.19](https://github.com/googleapis/java-retail/compare/v2.0.18...v2.0.19) (2022-04-19)
 
 
