@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-iot/compare/v2.1.10...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-iot/issues/1440)) ([#724](https://github.com/googleapis/java-iot/issues/724)) ([fd58590](https://github.com/googleapis/java-iot/commit/fd585903e6ea00080ac335843b3ce82837009470))
+* AuditConfig for IAM v1 ([ed54ce1](https://github.com/googleapis/java-iot/commit/ed54ce113925c0ccf55e7758d8b1fd97c712ed45))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#723](https://github.com/googleapis/java-iot/issues/723)) ([40b82e2](https://github.com/googleapis/java-iot/commit/40b82e243a8b684e07a39bda35a7b7b16f072ab4))
+
 ### [2.1.10](https://github.com/googleapis/java-iot/compare/v2.1.9...v2.1.10) (2022-04-15)
 
 
