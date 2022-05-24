@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.23...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigquerydatatransfer/issues/1440)) ([#1366](https://github.com/googleapis/java-bigquerydatatransfer/issues/1366)) ([ab6ee7c](https://github.com/googleapis/java-bigquerydatatransfer/commit/ab6ee7ce0e398c06f5a81bd0a190de18833301d2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.10 ([#1345](https://github.com/googleapis/java-bigquerydatatransfer/issues/1345)) ([aecde3b](https://github.com/googleapis/java-bigquerydatatransfer/commit/aecde3b64d5dff854bfafd5a8c1ad6b2a25106b0))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.9 ([#1344](https://github.com/googleapis/java-bigquerydatatransfer/issues/1344)) ([92c3895](https://github.com/googleapis/java-bigquerydatatransfer/commit/92c389567bd17bd3246a599913925c980ad50fa5))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.0 ([#1359](https://github.com/googleapis/java-bigquerydatatransfer/issues/1359)) ([605b54c](https://github.com/googleapis/java-bigquerydatatransfer/commit/605b54cfc380b7d9372cc4572c3745dd5c1db825))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.1 ([#1362](https://github.com/googleapis/java-bigquerydatatransfer/issues/1362)) ([15358a6](https://github.com/googleapis/java-bigquerydatatransfer/commit/15358a6660aa524cda070395f045f82bc69469d1))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.2 ([#1363](https://github.com/googleapis/java-bigquerydatatransfer/issues/1363)) ([a65e4d3](https://github.com/googleapis/java-bigquerydatatransfer/commit/a65e4d3714cb4dd457996510836ba073135610d2))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.116.4 ([#1347](https://github.com/googleapis/java-bigquerydatatransfer/issues/1347)) ([d958536](https://github.com/googleapis/java-bigquerydatatransfer/commit/d958536c018e179bc4e4258948f990ba5c0fce56))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.117.0 ([#1360](https://github.com/googleapis/java-bigquerydatatransfer/issues/1360)) ([05bef07](https://github.com/googleapis/java-bigquerydatatransfer/commit/05bef07de3937a023787c9ceb261e8bcc7db3241))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.118.0 ([#1364](https://github.com/googleapis/java-bigquerydatatransfer/issues/1364)) ([e248ae3](https://github.com/googleapis/java-bigquerydatatransfer/commit/e248ae3b3370e1fdc9a0c0316f328730be144765))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#1365](https://github.com/googleapis/java-bigquerydatatransfer/issues/1365)) ([84a8b04](https://github.com/googleapis/java-bigquerydatatransfer/commit/84a8b0463674c01207772cc4582196e6eddfbdd9))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.1 ([#1353](https://github.com/googleapis/java-bigquerydatatransfer/issues/1353)) ([70dc9c9](https://github.com/googleapis/java-bigquerydatatransfer/commit/70dc9c9d9c0a91f5d2d45573c8d1e89f300cefb7))
+
 ### [2.1.23](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.1.22...v2.1.23) (2022-04-15)
 
 
