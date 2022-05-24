@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-servicedirectory/compare/v2.2.8...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-servicedirectory/issues/1440)) ([#672](https://github.com/googleapis/java-servicedirectory/issues/672)) ([dc46e6e](https://github.com/googleapis/java-servicedirectory/commit/dc46e6ef7a78af73f210f39442aab1a09c18b2ff))
+* AuditConfig for IAM v1 ([13fe87b](https://github.com/googleapis/java-servicedirectory/commit/13fe87b31e1a13efdee67d9f51171e2d7b392e3f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#671](https://github.com/googleapis/java-servicedirectory/issues/671)) ([c7c7776](https://github.com/googleapis/java-servicedirectory/commit/c7c77766372efd098c842c3626623b5ee6e0c25b))
+
 ### [2.2.8](https://github.com/googleapis/java-servicedirectory/compare/v2.2.7...v2.2.8) (2022-04-15)
 
 
