@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-websecurityscanner/compare/v2.0.15...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-websecurityscanner/issues/1440)) ([#690](https://github.com/googleapis/java-websecurityscanner/issues/690)) ([b56beb0](https://github.com/googleapis/java-websecurityscanner/commit/b56beb09f3fd970436d623df50bedac663243c2b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#689](https://github.com/googleapis/java-websecurityscanner/issues/689)) ([7db2b81](https://github.com/googleapis/java-websecurityscanner/commit/7db2b812adf9ce872b1c4da6eb4b480221e228cc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#691](https://github.com/googleapis/java-websecurityscanner/issues/691)) ([4cc70a0](https://github.com/googleapis/java-websecurityscanner/commit/4cc70a0d3c22e18a8621b40f98b5de062540f303))
+
 ### [2.0.15](https://github.com/googleapis/java-websecurityscanner/compare/v2.0.14...v2.0.15) (2022-04-15)
 
 
