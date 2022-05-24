@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-service-usage/compare/v2.2.7...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-service-usage/issues/1440)) ([#235](https://github.com/googleapis/java-service-usage/issues/235)) ([e87c196](https://github.com/googleapis/java-service-usage/commit/e87c196997906c4be58e1313795bc0cafd5c03da))
+* next release from main branch is 2.3.0 ([#227](https://github.com/googleapis/java-service-usage/issues/227)) ([df87575](https://github.com/googleapis/java-service-usage/commit/df87575d4d12c4ad1dacc1a8c40c9ad596e76313))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#234](https://github.com/googleapis/java-service-usage/issues/234)) ([13743bb](https://github.com/googleapis/java-service-usage/commit/13743bb676aa45560394a409014aef7fbbc9da6d))
+
 ### [2.2.7](https://github.com/googleapis/java-service-usage/compare/v2.2.6...v2.2.7) (2022-04-15)
 
 
