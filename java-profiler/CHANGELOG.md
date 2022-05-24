@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-profiler/compare/v2.1.11...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-profiler/issues/1440)) ([#268](https://github.com/googleapis/java-profiler/issues/268)) ([682fa10](https://github.com/googleapis/java-profiler/commit/682fa101f509ceedf1f46ec43d1ef8827a8a3d75))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#267](https://github.com/googleapis/java-profiler/issues/267)) ([68fc168](https://github.com/googleapis/java-profiler/commit/68fc168bbab3cec910414bc24c7a560b8905d57c))
+
 ### [2.1.11](https://github.com/googleapis/java-profiler/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
