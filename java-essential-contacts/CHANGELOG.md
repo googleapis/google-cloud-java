@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-essential-contacts/compare/v2.1.11...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-essential-contacts/issues/1440)) ([#221](https://github.com/googleapis/java-essential-contacts/issues/221)) ([052652d](https://github.com/googleapis/java-essential-contacts/commit/052652dcf15fcd665d15805151eebaf342cdc303))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#220](https://github.com/googleapis/java-essential-contacts/issues/220)) ([a9c1a5e](https://github.com/googleapis/java-essential-contacts/commit/a9c1a5e1122c9042aa730a7d93309bfc49ab1c16))
+
 ### [2.1.11](https://github.com/googleapis/java-essential-contacts/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
