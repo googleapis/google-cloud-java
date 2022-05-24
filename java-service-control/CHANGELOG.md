@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-service-control/compare/v1.1.11...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-service-control/issues/1440)) ([#177](https://github.com/googleapis/java-service-control/issues/177)) ([b0e2c62](https://github.com/googleapis/java-service-control/commit/b0e2c62b1feac5a86c43ca1f923530139cfec791))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#176](https://github.com/googleapis/java-service-control/issues/176)) ([7a76fd6](https://github.com/googleapis/java-service-control/commit/7a76fd65fa62df686229bb382d1b913714bb8ade))
+
 ### [1.1.11](https://github.com/googleapis/java-service-control/compare/v1.1.10...v1.1.11) (2022-04-15)
 
 
