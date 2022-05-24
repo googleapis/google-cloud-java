@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-document-ai/compare/v2.4.3...v2.5.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-document-ai/issues/1440)) ([#825](https://github.com/googleapis/java-document-ai/issues/825)) ([382dc66](https://github.com/googleapis/java-document-ai/commit/382dc662e0604b8337a0c7cac3a3340184354dda))
+
+
+### Bug Fixes
+
+* mark Document.Entity.type as REQUIRED in all versions ([#817](https://github.com/googleapis/java-document-ai/issues/817)) ([eb329e5](https://github.com/googleapis/java-document-ai/commit/eb329e5414a68d518e34f705d7d680f34cba595f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#824](https://github.com/googleapis/java-document-ai/issues/824)) ([dfd5bd6](https://github.com/googleapis/java-document-ai/commit/dfd5bd688b8ed73e3cefc4684d1c75e3f6cab7fc))
+
 ### [2.4.3](https://github.com/googleapis/java-document-ai/compare/v2.4.2...v2.4.3) (2022-04-18)
 
 
