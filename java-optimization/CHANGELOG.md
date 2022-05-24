@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-optimization/compare/v0.1.2...v1.0.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-optimization/issues/1440)) ([#45](https://github.com/googleapis/java-optimization/issues/45)) ([5c08825](https://github.com/googleapis/java-optimization/commit/5c088252f9c096ac3ef82134a5d323d9abc252cb))
+* promote to GA ([#38](https://github.com/googleapis/java-optimization/issues/38)) ([1b140c5](https://github.com/googleapis/java-optimization/commit/1b140c53cb296a817eba2421112379191b4539f8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#44](https://github.com/googleapis/java-optimization/issues/44)) ([04c9c02](https://github.com/googleapis/java-optimization/commit/04c9c0274eee2533a398e526665479f4f0313b3f))
+
 ### [0.1.2](https://github.com/googleapis/java-optimization/compare/v0.1.1...v0.1.2) (2022-04-18)
 
 
