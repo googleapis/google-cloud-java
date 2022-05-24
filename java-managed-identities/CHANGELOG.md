@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-managed-identities/compare/v1.0.5...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-managed-identities/issues/1440)) ([#231](https://github.com/googleapis/java-managed-identities/issues/231)) ([1fc84f1](https://github.com/googleapis/java-managed-identities/commit/1fc84f12231192df06b94454b86ec7fa393b452f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#230](https://github.com/googleapis/java-managed-identities/issues/230)) ([9792605](https://github.com/googleapis/java-managed-identities/commit/97926058f004692d3b81df5a65a70d189f3bbe2a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#232](https://github.com/googleapis/java-managed-identities/issues/232)) ([3be3711](https://github.com/googleapis/java-managed-identities/commit/3be371196d54e2ae5d4ac239d0ab9fad6bcc3d30))
+
 ### [1.0.5](https://github.com/googleapis/java-managed-identities/compare/v1.0.4...v1.0.5) (2022-04-15)
 
 
