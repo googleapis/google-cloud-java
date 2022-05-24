@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-dataplex/compare/v0.2.2...v1.0.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dataplex/issues/1440)) ([#61](https://github.com/googleapis/java-dataplex/issues/61)) ([cb3d87e](https://github.com/googleapis/java-dataplex/commit/cb3d87e5c8c16747ff5e93d6f5a6d0096c703c17))
+* promote to GA ([#54](https://github.com/googleapis/java-dataplex/issues/54)) ([6943805](https://github.com/googleapis/java-dataplex/commit/69438059c6022c6b22a72735bd9bfb71ded078c0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#60](https://github.com/googleapis/java-dataplex/issues/60)) ([e46f6ff](https://github.com/googleapis/java-dataplex/commit/e46f6ff142b8ab61373adea6a55090161f148eb5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#62](https://github.com/googleapis/java-dataplex/issues/62)) ([8b78212](https://github.com/googleapis/java-dataplex/commit/8b78212f4be30cdda228328c85df52e5202cb7e3))
+
 ### [0.2.2](https://github.com/googleapis/java-dataplex/compare/v0.2.1...v0.2.2) (2022-04-15)
 
 
