@@ -433,11 +433,9 @@ public final class GcpManagedChannelTest {
 
     cf1.activeStreamsCountDecr(System.nanoTime(), Status.OK, true);
     cf1.activeStreamsCountDecr(System.nanoTime(), Status.OK, true);
+    channelRef = gcpChannel.getChannelRef(key);
     // Even after channel 1 now has less active streams (3) the channel 2 is still mapped for the
     // same key.
-
-    channelRef = gcpChannel.getChannelRef(key);
-    // Should bind on the fly to the least busy channel, which is 2.
     assertThat(channelRef.getId()).isEqualTo(2);
   }
 
