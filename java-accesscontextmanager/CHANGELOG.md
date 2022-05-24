@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.10...v1.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-accesscontextmanager/issues/1440)) ([#339](https://github.com/googleapis/java-accesscontextmanager/issues/339)) ([807f2c0](https://github.com/googleapis/java-accesscontextmanager/commit/807f2c0f48eb31fdf2ae7e992e9ec66aa3b05ac4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#338](https://github.com/googleapis/java-accesscontextmanager/issues/338)) ([5de4042](https://github.com/googleapis/java-accesscontextmanager/commit/5de4042e93240f64e9eb26c42b2b869a8f334481))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#341](https://github.com/googleapis/java-accesscontextmanager/issues/341)) ([ecaca57](https://github.com/googleapis/java-accesscontextmanager/commit/ecaca579340770c07e19a600fa6e2eff5a111f85))
+
 ### [1.2.10](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.9...v1.2.10) (2022-04-15)
 
 
