@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.33.0](https://github.com/googleapis/java-phishingprotection/compare/v0.32.11...v0.33.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-phishingprotection/issues/1440)) ([#676](https://github.com/googleapis/java-phishingprotection/issues/676)) ([b7ec396](https://github.com/googleapis/java-phishingprotection/commit/b7ec396b63ab70c44f813ceee263e967f646f593))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#675](https://github.com/googleapis/java-phishingprotection/issues/675)) ([ad86461](https://github.com/googleapis/java-phishingprotection/commit/ad86461f9c9038a77d0358d5eddb73c8480fa44a))
+
 ### [0.32.11](https://github.com/googleapis/java-phishingprotection/compare/v0.32.10...v0.32.11) (2022-04-15)
 
 
