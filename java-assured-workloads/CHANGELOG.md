@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-assured-workloads/compare/v1.0.4...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-assured-workloads/issues/1440)) ([#438](https://github.com/googleapis/java-assured-workloads/issues/438)) ([67a3c7e](https://github.com/googleapis/java-assured-workloads/commit/67a3c7e274eb2b8ca832f7139fbd593b0babab76))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#437](https://github.com/googleapis/java-assured-workloads/issues/437)) ([549a6e0](https://github.com/googleapis/java-assured-workloads/commit/549a6e0607186c9e6abb1658bcdac56f92500df4))
+
 ### [1.0.4](https://github.com/googleapis/java-assured-workloads/compare/v1.0.3...v1.0.4) (2022-04-15)
 
 
