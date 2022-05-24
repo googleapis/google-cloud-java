@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-gkehub/compare/v1.1.2...v1.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-gkehub/issues/1440)) ([#236](https://github.com/googleapis/java-gkehub/issues/236)) ([150b103](https://github.com/googleapis/java-gkehub/commit/150b103d122db7ad5691797ddd25cd01ca43bb7a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#235](https://github.com/googleapis/java-gkehub/issues/235)) ([36d67b3](https://github.com/googleapis/java-gkehub/commit/36d67b34fc94fdffdaece8f94c30f0ca92cc321c))
+
 ### [1.1.2](https://github.com/googleapis/java-gkehub/compare/v1.1.1...v1.1.2) (2022-04-15)
 
 
