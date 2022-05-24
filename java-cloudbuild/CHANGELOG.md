@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.4.0](https://github.com/googleapis/java-cloudbuild/compare/v3.3.13...v3.4.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-cloudbuild/issues/1440)) ([#746](https://github.com/googleapis/java-cloudbuild/issues/746)) ([22e4c1e](https://github.com/googleapis/java-cloudbuild/commit/22e4c1e63c0164af795cf74937902d314dbd01bb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#745](https://github.com/googleapis/java-cloudbuild/issues/745)) ([9f65635](https://github.com/googleapis/java-cloudbuild/commit/9f6563518bea1a8308a07863019d1c696b26a524))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#747](https://github.com/googleapis/java-cloudbuild/issues/747)) ([cfb57fa](https://github.com/googleapis/java-cloudbuild/commit/cfb57fa9de18fc60b15a3938370ee13e1894ebb6))
+
 ### [3.3.13](https://github.com/googleapis/java-cloudbuild/compare/v3.3.12...v3.3.13) (2022-04-15)
 
 
