@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-iam-admin/compare/v1.1.7...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-iam-admin/issues/1440)) ([#131](https://github.com/googleapis/java-iam-admin/issues/131)) ([ec1310f](https://github.com/googleapis/java-iam-admin/commit/ec1310fe1c2b1c6e50aeb8dbd20ba4aa3d3fa297))
+* AuditConfig for IAM v1 ([1a2878c](https://github.com/googleapis/java-iam-admin/commit/1a2878c02833b78cc32b2ca1eb425b9946217139))
+* next release from main branch is 1.2.0 ([#123](https://github.com/googleapis/java-iam-admin/issues/123)) ([38ec738](https://github.com/googleapis/java-iam-admin/commit/38ec7385b30b92a3fa6698aa9f0ae85238b25e69))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#130](https://github.com/googleapis/java-iam-admin/issues/130)) ([761fd6e](https://github.com/googleapis/java-iam-admin/commit/761fd6e20de70a2ea7c8de079f2f26fb7ae3676f))
+
 ### [1.1.7](https://github.com/googleapis/java-iam-admin/compare/v1.1.6...v1.1.7) (2022-04-15)
 
 
