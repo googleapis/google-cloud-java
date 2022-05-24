@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-storage-transfer/compare/v1.0.5...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-storage-transfer/issues/1440)) ([#151](https://github.com/googleapis/java-storage-transfer/issues/151)) ([56339df](https://github.com/googleapis/java-storage-transfer/commit/56339df9985bde8cbd2af4a1d36ddd9168bb5f31))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#150](https://github.com/googleapis/java-storage-transfer/issues/150)) ([d7f9f0d](https://github.com/googleapis/java-storage-transfer/commit/d7f9f0df04db759b21e3eee56a8077a3433be896))
+
 ### [1.0.5](https://github.com/googleapis/java-storage-transfer/compare/v1.0.4...v1.0.5) (2022-04-15)
 
 
