@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-networkconnectivity/compare/v1.1.2...v1.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-networkconnectivity/issues/1440)) ([#252](https://github.com/googleapis/java-networkconnectivity/issues/252)) ([8bdba06](https://github.com/googleapis/java-networkconnectivity/commit/8bdba069bbfdc0c18f4f1d317fc6a30c4a77bf59))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#251](https://github.com/googleapis/java-networkconnectivity/issues/251)) ([72a0d07](https://github.com/googleapis/java-networkconnectivity/commit/72a0d077ed9a001d5bb17151a482c84d4e6b9392))
+
 ### [1.1.2](https://github.com/googleapis/java-networkconnectivity/compare/v1.1.1...v1.1.2) (2022-04-15)
 
 
