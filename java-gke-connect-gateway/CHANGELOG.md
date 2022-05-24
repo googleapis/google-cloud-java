@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.3.9...v0.4.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-gke-connect-gateway/issues/1440)) ([#174](https://github.com/googleapis/java-gke-connect-gateway/issues/174)) ([f82e83e](https://github.com/googleapis/java-gke-connect-gateway/commit/f82e83eac09a8939b5b47657f8c9a427a5d6a12e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#173](https://github.com/googleapis/java-gke-connect-gateway/issues/173)) ([a3d0c45](https://github.com/googleapis/java-gke-connect-gateway/commit/a3d0c45f4cff6cd5a6cddbc3fc93c68075fcf700))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#175](https://github.com/googleapis/java-gke-connect-gateway/issues/175)) ([ade0445](https://github.com/googleapis/java-gke-connect-gateway/commit/ade04453d2d9ed06ebae55db9a85cb3fa8f90cb2))
+
 ### [0.3.9](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.3.8...v0.3.9) (2022-04-15)
 
 
