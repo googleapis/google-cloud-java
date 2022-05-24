@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.7...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-orchestration-airflow/issues/1440)) ([#192](https://github.com/googleapis/java-orchestration-airflow/issues/192)) ([65dd7cc](https://github.com/googleapis/java-orchestration-airflow/commit/65dd7cc75dfddf793ef4f1f25c7388b72cf3cb49))
+* next release from main branch is 1.1.7 ([#187](https://github.com/googleapis/java-orchestration-airflow/issues/187)) ([a9bb411](https://github.com/googleapis/java-orchestration-airflow/commit/a9bb411a573ce140de903e48a1d68baebbfe4516))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#191](https://github.com/googleapis/java-orchestration-airflow/issues/191)) ([a394c98](https://github.com/googleapis/java-orchestration-airflow/commit/a394c98bd07b24742e25e8c8efe797364253c636))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#193](https://github.com/googleapis/java-orchestration-airflow/issues/193)) ([569b945](https://github.com/googleapis/java-orchestration-airflow/commit/569b9454430883d8f958e6d08ccca635d2501de4))
+
 ### [1.1.7](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.6...v1.1.7) (2022-04-15)
 
 
