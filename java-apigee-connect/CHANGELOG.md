@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-apigee-connect/compare/v2.1.5...v2.2.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-apigee-connect/issues/1440)) ([#170](https://github.com/googleapis/java-apigee-connect/issues/170)) ([e43991f](https://github.com/googleapis/java-apigee-connect/commit/e43991f3012da557e052ee92505478d3dc6d4878))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#169](https://github.com/googleapis/java-apigee-connect/issues/169)) ([5105588](https://github.com/googleapis/java-apigee-connect/commit/51055887e7218224475dc27ca6958ceee43138df))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#172](https://github.com/googleapis/java-apigee-connect/issues/172)) ([3c18486](https://github.com/googleapis/java-apigee-connect/commit/3c1848628c497d523bedae220bdebc72db45f47d))
+
 ### [2.1.5](https://github.com/googleapis/java-apigee-connect/compare/v2.1.4...v2.1.5) (2022-04-15)
 
 
