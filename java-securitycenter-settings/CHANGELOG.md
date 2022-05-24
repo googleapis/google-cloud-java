@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.14...v0.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-securitycenter-settings/issues/1440)) ([#512](https://github.com/googleapis/java-securitycenter-settings/issues/512)) ([0b01024](https://github.com/googleapis/java-securitycenter-settings/commit/0b010242cfda5a59e5fa841fd7e6b626b5586a12))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#511](https://github.com/googleapis/java-securitycenter-settings/issues/511)) ([e9e8440](https://github.com/googleapis/java-securitycenter-settings/commit/e9e844098f7b58f7fc760fbe6bbd9dadb125a350))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#513](https://github.com/googleapis/java-securitycenter-settings/issues/513)) ([66ff8f5](https://github.com/googleapis/java-securitycenter-settings/commit/66ff8f5d8a621ded0147a0c17a6d10f14d39773e))
+
 ### [0.5.14](https://github.com/googleapis/java-securitycenter-settings/compare/v0.5.13...v0.5.14) (2022-04-15)
 
 
