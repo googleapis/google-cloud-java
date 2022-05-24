@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-video-stitcher/compare/v0.1.2...v0.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-video-stitcher/issues/1440)) ([#35](https://github.com/googleapis/java-video-stitcher/issues/35)) ([c74d7b5](https://github.com/googleapis/java-video-stitcher/commit/c74d7b5ab783dc9b7d24645b169eac0f8966e8e9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#34](https://github.com/googleapis/java-video-stitcher/issues/34)) ([84a2dc1](https://github.com/googleapis/java-video-stitcher/commit/84a2dc1bb1f724bfbe83faaeca9ade2cd2165bba))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#36](https://github.com/googleapis/java-video-stitcher/issues/36)) ([52326bd](https://github.com/googleapis/java-video-stitcher/commit/52326bdfd84d6f525f7c7c8116cfed301182e2c0))
+
 ### [0.1.2](https://github.com/googleapis/java-video-stitcher/compare/v0.1.1...v0.1.2) (2022-04-15)
 
 
