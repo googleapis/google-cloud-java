@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-network-management/compare/v1.1.12...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-network-management/issues/1440)) ([#175](https://github.com/googleapis/java-network-management/issues/175)) ([b6ed623](https://github.com/googleapis/java-network-management/commit/b6ed623a6b0b607063f0e3f95bddd0ebd8dcbc9e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#174](https://github.com/googleapis/java-network-management/issues/174)) ([2c2531d](https://github.com/googleapis/java-network-management/commit/2c2531d985d389f02da9fe400cbd07ecb2c1dd96))
+
 ### [1.1.12](https://github.com/googleapis/java-network-management/compare/v1.1.11...v1.1.12) (2022-04-22)
 
 
