@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.2.4...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigqueryconnection/issues/1440)) ([#693](https://github.com/googleapis/java-bigqueryconnection/issues/693)) ([1cf57b9](https://github.com/googleapis/java-bigqueryconnection/commit/1cf57b9a9530b56e641c5900339637a0ed17f734))
+* AuditConfig for IAM v1 ([#667](https://github.com/googleapis/java-bigqueryconnection/issues/667)) ([12e67e3](https://github.com/googleapis/java-bigqueryconnection/commit/12e67e3f8982a66c27a43e659b20dcdf9181ab66))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#692](https://github.com/googleapis/java-bigqueryconnection/issues/692)) ([b6fb00f](https://github.com/googleapis/java-bigqueryconnection/commit/b6fb00f1f5aa70f10f9b60811fc5146cb33c5811))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#694](https://github.com/googleapis/java-bigqueryconnection/issues/694)) ([f4066c3](https://github.com/googleapis/java-bigqueryconnection/commit/f4066c3efa9c930fb145f0c1fcdcf3fe79ebe678))
+
 ### [2.2.4](https://github.com/googleapis/java-bigqueryconnection/compare/v2.2.3...v2.2.4) (2022-04-21)
 
 
