@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.6.0](https://github.com/googleapis/java-dialogflow/compare/v4.5.11...v4.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dialogflow/issues/1440)) ([#929](https://github.com/googleapis/java-dialogflow/issues/929)) ([025d32f](https://github.com/googleapis/java-dialogflow/commit/025d32f7ee231be42efa994583f6a78fd6619999))
+* add the API of StreamingAnalyzeContent ([#925](https://github.com/googleapis/java-dialogflow/issues/925)) ([2346322](https://github.com/googleapis/java-dialogflow/commit/23463222367e082e879fe07dc278a102dd4832f2))
+
+
+### Bug Fixes
+
+* correct broken ConversationModelEvaluation resource pattern ([2c812e1](https://github.com/googleapis/java-dialogflow/commit/2c812e13713fcf40bd71f90cbfb38b29f055cd4b))
+
+
+### Documentation
+
+* add the fields for setting CX virtual agent session parameters ([2346322](https://github.com/googleapis/java-dialogflow/commit/23463222367e082e879fe07dc278a102dd4832f2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#927](https://github.com/googleapis/java-dialogflow/issues/927)) ([0991e05](https://github.com/googleapis/java-dialogflow/commit/0991e053a66cb9916c2410cb60081845af85c5bd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#928](https://github.com/googleapis/java-dialogflow/issues/928)) ([ddc055f](https://github.com/googleapis/java-dialogflow/commit/ddc055f9549354f85d3f1acc359b824fe4a1d2d8))
+
 ### [4.5.11](https://github.com/googleapis/java-dialogflow/compare/v4.5.10...v4.5.11) (2022-04-15)
 
 
