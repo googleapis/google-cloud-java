@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-container/compare/v2.3.7...v2.4.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-container/issues/1440)) ([#734](https://github.com/googleapis/java-container/issues/734)) ([4352159](https://github.com/googleapis/java-container/commit/4352159757856a07383958d028d392e536ebb44a))
+* next release from main branch is 2.4.0 ([#721](https://github.com/googleapis/java-container/issues/721)) ([559523d](https://github.com/googleapis/java-container/commit/559523d7ec19d5498dd1aa7d9e08368ddb283671))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#733](https://github.com/googleapis/java-container/issues/733)) ([f65c10f](https://github.com/googleapis/java-container/commit/f65c10f4a6211dc85a3c8a54212f843a65b771cd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#735](https://github.com/googleapis/java-container/issues/735)) ([c48441f](https://github.com/googleapis/java-container/commit/c48441f78bf04de0d8072d8c0a13726436618e5e))
+
 ### [2.3.7](https://github.com/googleapis/java-container/compare/v2.3.6...v2.3.7) (2022-04-15)
 
 
