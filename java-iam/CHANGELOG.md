@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-iam/compare/v1.3.4...v1.4.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-iam/issues/1440)) ([#350](https://github.com/googleapis/java-iam/issues/350)) ([e83f148](https://github.com/googleapis/java-iam/commit/e83f148350c6e208f0290bf100f5b35461024073))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v2.2.0 ([#348](https://github.com/googleapis/java-iam/issues/348)) ([2013a52](https://github.com/googleapis/java-iam/commit/2013a526838de4d21694d59d256f48bf5976b109))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#349](https://github.com/googleapis/java-iam/issues/349)) ([e458fbe](https://github.com/googleapis/java-iam/commit/e458fbe851f27fd2a3c0ea487f71ddccc88173f7))
+
 ### [1.3.4](https://github.com/googleapis/java-iam/compare/v1.3.3...v1.3.4) (2022-05-10)
 
 
