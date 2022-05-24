@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-dataproc-metastore/compare/v2.2.1...v2.3.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dataproc-metastore/issues/1440)) ([#241](https://github.com/googleapis/java-dataproc-metastore/issues/241)) ([7eb8ee1](https://github.com/googleapis/java-dataproc-metastore/commit/7eb8ee16d2e404f4be3626abc16db4a114ec69bd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#240](https://github.com/googleapis/java-dataproc-metastore/issues/240)) ([1efb717](https://github.com/googleapis/java-dataproc-metastore/commit/1efb7178e16c79fdc05713c7f3441f954e124f4c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#242](https://github.com/googleapis/java-dataproc-metastore/issues/242)) ([5749476](https://github.com/googleapis/java-dataproc-metastore/commit/574947649c28bfe44c82c1742937bddccbaa6c5b))
+
 ### [2.2.1](https://github.com/googleapis/java-dataproc-metastore/compare/v2.2.0...v2.2.1) (2022-04-15)
 
 
