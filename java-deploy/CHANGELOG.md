@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-deploy/compare/v1.0.4...v1.1.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-deploy/issues/1440)) ([#117](https://github.com/googleapis/java-deploy/issues/117)) ([08576e3](https://github.com/googleapis/java-deploy/commit/08576e35fded1d6266fead1a02863455b4427f46))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#116](https://github.com/googleapis/java-deploy/issues/116)) ([e2eb644](https://github.com/googleapis/java-deploy/commit/e2eb64458209daaf82a70f9ef4a339ca6f13f4f6))
+
 ### [1.0.4](https://github.com/googleapis/java-deploy/compare/v1.0.3...v1.0.4) (2022-04-15)
 
 
