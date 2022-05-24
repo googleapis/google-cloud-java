@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-accessapproval</artifactId>
-  <version>2.2.5</version>
+  <version>2.3.0</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-accessapproval'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-accessapproval:2.2.5'
+implementation 'com.google.cloud:google-cloud-accessapproval:2.3.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.2.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-accessapproval" % "2.3.0"
 ```
 
 ## Authentication
