@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.14.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.13.0...v2.14.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigquerystorage/issues/1440)) ([#1655](https://github.com/googleapis/java-bigquerystorage/issues/1655)) ([ac2dfaf](https://github.com/googleapis/java-bigquerystorage/commit/ac2dfafa921fe489861e9767c360be413e5a2ec1))
+
+
+### Bug Fixes
+
+* Add a throwException behavior when the StreamWriter inflight queue is full ([#1642](https://github.com/googleapis/java-bigquerystorage/issues/1642)) ([4dcf0d5](https://github.com/googleapis/java-bigquerystorage/commit/4dcf0d5e161cd2530a5468c1e3b327db63c45185))
+* add extra JsonWriterTest to show that the LimitBehavior addition is not breaking ([#1643](https://github.com/googleapis/java-bigquerystorage/issues/1643)) ([320f5fc](https://github.com/googleapis/java-bigquerystorage/commit/320f5fc6a2a180e361f1a5a375095a65ec62003f))
+* ints/longs are numerics ([#1596](https://github.com/googleapis/java-bigquerystorage/issues/1596)) ([d046c8d](https://github.com/googleapis/java-bigquerystorage/commit/d046c8d5ff9943cd4731ac6fccc77956554820e1)), closes [#1516](https://github.com/googleapis/java-bigquerystorage/issues/1516)
+
+
+### Dependencies
+
+* update arrow.version to v8 ([#1645](https://github.com/googleapis/java-bigquerystorage/issues/1645)) ([06e3c34](https://github.com/googleapis/java-bigquerystorage/commit/06e3c3407cd94db1c9ded667d1f25153dc281ba5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#1654](https://github.com/googleapis/java-bigquerystorage/issues/1654)) ([ec4f60b](https://github.com/googleapis/java-bigquerystorage/commit/ec4f60bd5c00846f1061f2cc1a79518d6afebdc5))
+
 ## [2.13.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.12.2...v2.13.0) (2022-05-05)
 
 
