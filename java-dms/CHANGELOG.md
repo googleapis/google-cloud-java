@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-dms/compare/v2.1.10...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-dms/issues/1440)) ([#224](https://github.com/googleapis/java-dms/issues/224)) ([c5a5559](https://github.com/googleapis/java-dms/commit/c5a555903ca7cf774b592669c347ce77a7014449))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#223](https://github.com/googleapis/java-dms/issues/223)) ([b97b7d3](https://github.com/googleapis/java-dms/commit/b97b7d35edacc0f09afe6cb127037f530b682be3))
+
 ### [2.1.10](https://github.com/googleapis/java-dms/compare/v2.1.9...v2.1.10) (2022-04-15)
 
 
