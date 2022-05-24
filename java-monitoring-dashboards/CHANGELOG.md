@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.3.0...v2.4.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-monitoring-dashboards/issues/1440)) ([#601](https://github.com/googleapis/java-monitoring-dashboards/issues/601)) ([3a1288e](https://github.com/googleapis/java-monitoring-dashboards/commit/3a1288e269154fa21f55f2528ee99027efb783c8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#600](https://github.com/googleapis/java-monitoring-dashboards/issues/600)) ([98bf209](https://github.com/googleapis/java-monitoring-dashboards/commit/98bf209cece0097fc7185c5147e7935e008a425a))
+
 ## [2.3.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.2.6...v2.3.0) (2022-04-15)
 
 
