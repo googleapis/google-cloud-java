@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-kms/compare/v2.4.4...v2.5.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-kms/issues/1440)) ([#776](https://github.com/googleapis/java-kms/issues/776)) ([b6ed68a](https://github.com/googleapis/java-kms/commit/b6ed68a3054d93f54a11a673d1db9a01205413ec))
+* AuditConfig for IAM v1 ([d0b5443](https://github.com/googleapis/java-kms/commit/d0b5443197765e9e6c25d8e614b4c3d4173e37f7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#775](https://github.com/googleapis/java-kms/issues/775)) ([cbc71a5](https://github.com/googleapis/java-kms/commit/cbc71a5cffa8ad901c8cd3f221c0e2129531fb43))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#777](https://github.com/googleapis/java-kms/issues/777)) ([536f296](https://github.com/googleapis/java-kms/commit/536f296684063cc0b93f2116ce2cfe2f9081c2f6))
+* update dependency com.google.protobuf:protobuf-java-util to v3.20.1 ([#769](https://github.com/googleapis/java-kms/issues/769)) ([0a40116](https://github.com/googleapis/java-kms/commit/0a4011615c65cc1a0a07ad1eb9b8830d8912b0c0))
+
 ### [2.4.4](https://github.com/googleapis/java-kms/compare/v2.4.3...v2.4.4) (2022-04-15)
 
 
