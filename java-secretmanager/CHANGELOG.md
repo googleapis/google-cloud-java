@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-secretmanager/compare/v2.1.7...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-secretmanager/issues/1440)) ([#773](https://github.com/googleapis/java-secretmanager/issues/773)) ([c8e6479](https://github.com/googleapis/java-secretmanager/commit/c8e6479914ae01e7b6353ba6cff01631cac62bfb))
+* AuditConfig for IAM v1 ([#743](https://github.com/googleapis/java-secretmanager/issues/743)) ([9a63841](https://github.com/googleapis/java-secretmanager/commit/9a6384161b8a0258fccb4758783c338c82d726a4))
+* next release from main branch is 2.2.0 ([#764](https://github.com/googleapis/java-secretmanager/issues/764)) ([39f505e](https://github.com/googleapis/java-secretmanager/commit/39f505e9b34b36b1254b8ed6cfdad114ac556247))
+
+
+### Documentation
+
+* **sample:** removing unnecessary native-image-support dependency ([#767](https://github.com/googleapis/java-secretmanager/issues/767)) ([6180efa](https://github.com/googleapis/java-secretmanager/commit/6180efabd370d0c84c9e66791f47f6643ea190fd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#772](https://github.com/googleapis/java-secretmanager/issues/772)) ([334fab5](https://github.com/googleapis/java-secretmanager/commit/334fab5a8c6cd9c24e4fd6749399ef936ea7ceb6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#774](https://github.com/googleapis/java-secretmanager/issues/774)) ([b4727ea](https://github.com/googleapis/java-secretmanager/commit/b4727eacd338f82b49663f7c1eaab065b32fc066))
+
 ### [2.1.7](https://github.com/googleapis/java-secretmanager/compare/v2.1.6...v2.1.7) (2022-04-22)
 
 
