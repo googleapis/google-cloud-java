@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-billingbudgets/compare/v2.1.9...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-billingbudgets/issues/1440)) ([#710](https://github.com/googleapis/java-billingbudgets/issues/710)) ([5f9a64b](https://github.com/googleapis/java-billingbudgets/commit/5f9a64ba8ca5da30733755931f811ad711083a9f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#709](https://github.com/googleapis/java-billingbudgets/issues/709)) ([8d05085](https://github.com/googleapis/java-billingbudgets/commit/8d050851e1c9d5005ce991f8ee94babed2200221))
+
 ### [2.1.9](https://github.com/googleapis/java-billingbudgets/compare/v2.1.8...v2.1.9) (2022-04-15)
 
 
