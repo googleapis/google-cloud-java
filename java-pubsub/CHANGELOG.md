@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.119.0](https://github.com/googleapis/java-pubsub/compare/v1.118.0...v1.119.0) (2022-05-23)
+
+
+### Features
+
+* add BigQuery configuration for subscriptions ([#1133](https://github.com/googleapis/java-pubsub/issues/1133)) ([6f271db](https://github.com/googleapis/java-pubsub/commit/6f271db0feadcd338e2c5a0735e3828df5327772))
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-pubsub/issues/1440)) ([#1145](https://github.com/googleapis/java-pubsub/issues/1145)) ([2f89017](https://github.com/googleapis/java-pubsub/commit/2f89017c4a9737d0db1456b0b9903ec07a9392e8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#1141](https://github.com/googleapis/java-pubsub/issues/1141)) ([851a119](https://github.com/googleapis/java-pubsub/commit/851a1190725d381232270bd80f6b82929f680f5f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#1142](https://github.com/googleapis/java-pubsub/issues/1142)) ([3cf6d82](https://github.com/googleapis/java-pubsub/commit/3cf6d82f85bdb49f8b5a4f9805506e8a2fafc53c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#1148](https://github.com/googleapis/java-pubsub/issues/1148)) ([b5b004b](https://github.com/googleapis/java-pubsub/commit/b5b004b69a0d1154f51233e1e47facc1cd13c716))
+
 ## [1.118.0](https://github.com/googleapis/java-pubsub/compare/v1.117.0...v1.118.0) (2022-05-18)
 
 
