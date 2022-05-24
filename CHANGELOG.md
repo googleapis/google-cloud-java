@@ -1,6 +1,20 @@
 # Changelog
 
 
+## [0.123.0](https://github.com/googleapis/java-logging-logback/compare/v0.122.22...v0.123.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-logging-logback/issues/1440)) ([#765](https://github.com/googleapis/java-logging-logback/issues/765)) ([c90e5e5](https://github.com/googleapis/java-logging-logback/commit/c90e5e57f0676f8e76c41643a9d817a1a2e3374a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-logging to v3.8.0 ([#767](https://github.com/googleapis/java-logging-logback/issues/767)) ([2727c81](https://github.com/googleapis/java-logging-logback/commit/2727c81a2c925b01aabc40baaba5958a507a3dd7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#764](https://github.com/googleapis/java-logging-logback/issues/764)) ([2418128](https://github.com/googleapis/java-logging-logback/commit/24181282039618fc9024bb0360f3fb46c2d34290))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#768](https://github.com/googleapis/java-logging-logback/issues/768)) ([6b46865](https://github.com/googleapis/java-logging-logback/commit/6b46865ff8b9b28eb98a6c7504143018bbf8b073))
+
 ### [0.122.22](https://github.com/googleapis/java-logging-logback/compare/v0.122.21...v0.122.22) (2022-05-05)
 
 
