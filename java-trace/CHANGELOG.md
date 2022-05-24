@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-trace/compare/v2.1.11...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-trace/issues/1440)) ([#798](https://github.com/googleapis/java-trace/issues/798)) ([2e0b4f3](https://github.com/googleapis/java-trace/commit/2e0b4f3b7cb6d8b1454f18322bc634d331e37227))
+* next release from main branch is 2.2.0 ([#788](https://github.com/googleapis/java-trace/issues/788)) ([67db0ea](https://github.com/googleapis/java-trace/commit/67db0ea71b0e6b820dbc7a4496d4431f0b9bbd18))
+
+
+### Documentation
+
+* **sample:** removing unnecessary native-image-support dependency ([#791](https://github.com/googleapis/java-trace/issues/791)) ([bb3c669](https://github.com/googleapis/java-trace/commit/bb3c669224dbf4587c4a3197afa9eb8fca962ee4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#797](https://github.com/googleapis/java-trace/issues/797)) ([17ae51f](https://github.com/googleapis/java-trace/commit/17ae51fd0d6d1d4d06c6becde8825a4b16ac56c1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#799](https://github.com/googleapis/java-trace/issues/799)) ([eaeba0e](https://github.com/googleapis/java-trace/commit/eaeba0e074e88949ea0e458ce1d49de8b4e8caff))
+
 ### [2.1.11](https://github.com/googleapis/java-trace/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
