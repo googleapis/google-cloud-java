@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.123.0](https://github.com/googleapis/java-datalabeling/compare/v0.122.11...v0.123.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-datalabeling/issues/1440)) ([#741](https://github.com/googleapis/java-datalabeling/issues/741)) ([61d037f](https://github.com/googleapis/java-datalabeling/commit/61d037fb4ed8d62a206c2511529615d47b95ee86))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#740](https://github.com/googleapis/java-datalabeling/issues/740)) ([5d922dd](https://github.com/googleapis/java-datalabeling/commit/5d922ddafe6d1f64ea7b6705c95cbebc8960940e))
+
 ### [0.122.11](https://github.com/googleapis/java-datalabeling/compare/v0.122.10...v0.122.11) (2022-04-15)
 
 
