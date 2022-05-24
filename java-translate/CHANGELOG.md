@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-translate/compare/v2.1.13...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-translate/issues/1440)) ([#999](https://github.com/googleapis/java-translate/issues/999)) ([7465ab4](https://github.com/googleapis/java-translate/commit/7465ab4af152ad6ba7a62783a3a4f381754d1ad3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#998](https://github.com/googleapis/java-translate/issues/998)) ([9b153d0](https://github.com/googleapis/java-translate/commit/9b153d0a29a9fcd20e3a024969f47135a8215d08))
+* update dependency com.google.cloud:google-cloud-storage to v2.6.1 ([#981](https://github.com/googleapis/java-translate/issues/981)) ([97a34b9](https://github.com/googleapis/java-translate/commit/97a34b9c8a18aeac397b5f1f4fc8f10f2f6a3283))
+
 ### [2.1.13](https://github.com/googleapis/java-translate/compare/v2.1.12...v2.1.13) (2022-04-22)
 
 
