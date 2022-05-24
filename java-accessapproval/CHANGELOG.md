@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-accessapproval/compare/v2.2.5...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-accessapproval/issues/1440)) ([#739](https://github.com/googleapis/java-accessapproval/issues/739)) ([77ee883](https://github.com/googleapis/java-accessapproval/commit/77ee8831315b61c2f2dbeaacba832fe71b9716aa))
+* update protos to include InvalidateApprovalRequest and GetAccessApprovalServiceAccount APIs ([#742](https://github.com/googleapis/java-accessapproval/issues/742)) ([5f07964](https://github.com/googleapis/java-accessapproval/commit/5f07964c8bcb8a6814342ca1b98cc4547066d788))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#737](https://github.com/googleapis/java-accessapproval/issues/737)) ([4446bfd](https://github.com/googleapis/java-accessapproval/commit/4446bfde2a16e520843f10d4a50041a60de53904))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#738](https://github.com/googleapis/java-accessapproval/issues/738)) ([cf7ea0d](https://github.com/googleapis/java-accessapproval/commit/cf7ea0dc59b4b455126cc79fcab369ddda2766ed))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#741](https://github.com/googleapis/java-accessapproval/issues/741)) ([e37ec25](https://github.com/googleapis/java-accessapproval/commit/e37ec25d6c164858d02705b4125629f602115d7f))
+
 ### [2.2.5](https://github.com/googleapis/java-accessapproval/compare/v2.2.4...v2.2.5) (2022-04-15)
 
 
