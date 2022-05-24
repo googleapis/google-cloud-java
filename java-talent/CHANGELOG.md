@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-talent/compare/v2.2.10...v2.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-talent/issues/1440)) ([#786](https://github.com/googleapis/java-talent/issues/786)) ([07f9035](https://github.com/googleapis/java-talent/commit/07f90359dd0391bd36f0f6bc795f3511b3070fcb))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#785](https://github.com/googleapis/java-talent/issues/785)) ([e59604c](https://github.com/googleapis/java-talent/commit/e59604ce843b1b0553a3b436e0f875719963dfae))
+
 ### [2.2.10](https://github.com/googleapis/java-talent/compare/v2.2.9...v2.2.10) (2022-04-15)
 
 
