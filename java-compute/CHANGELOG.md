@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.10.0](https://github.com/googleapis/java-compute/compare/v1.9.1...v1.10.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-compute/issues/1440)) ([#691](https://github.com/googleapis/java-compute/issues/691)) ([6e1de08](https://github.com/googleapis/java-compute/commit/6e1de08694caa3ad45c5a41ed5e09ec87a837c95))
+
+
+### Bug Fixes
+
+* Add gax-grpc dependency for native image configurations ([#688](https://github.com/googleapis/java-compute/issues/688)) ([c4fc952](https://github.com/googleapis/java-compute/commit/c4fc952177a197ab7550163a482c244f2266298d))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#690](https://github.com/googleapis/java-compute/issues/690)) ([c1e7193](https://github.com/googleapis/java-compute/commit/c1e7193a8771899ee0db397f7dd72002bcbd23a1))
+
 ### [1.9.1](https://github.com/googleapis/java-compute/compare/v1.9.0...v1.9.1) (2022-04-15)
 
 
