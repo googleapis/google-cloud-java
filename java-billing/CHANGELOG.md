@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-billing/compare/v2.1.12...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-billing/issues/1440)) ([#660](https://github.com/googleapis/java-billing/issues/660)) ([fc16d41](https://github.com/googleapis/java-billing/commit/fc16d416da3b1b1b4d6931340b0e039f689cf304))
+* AuditConfig for IAM v1 ([b505447](https://github.com/googleapis/java-billing/commit/b505447369dcb8a86aafda1a5f0c0c369a541824))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#659](https://github.com/googleapis/java-billing/issues/659)) ([cde985d](https://github.com/googleapis/java-billing/commit/cde985d0a55ba48de5014b98dfe78eac566eb9b4))
+
 ### [2.1.12](https://github.com/googleapis/java-billing/compare/v2.1.11...v2.1.12) (2022-04-15)
 
 
