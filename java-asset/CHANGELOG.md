@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/java-asset/compare/v3.2.17...v3.3.0) (2022-05-23)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-asset/issues/1440)) ([#1215](https://github.com/googleapis/java-asset/issues/1215)) ([8a42b23](https://github.com/googleapis/java-asset/commit/8a42b2314b899871fef310696ca2e74a2effad37))
+* Add SavedQuery CURD support ([#1211](https://github.com/googleapis/java-asset/issues/1211)) ([0ddf192](https://github.com/googleapis/java-asset/commit/0ddf192b3dd64c43a1708c0c1ea5d454752b6540))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.0 ([#1208](https://github.com/googleapis/java-asset/issues/1208)) ([fe2e69b](https://github.com/googleapis/java-asset/commit/fe2e69bd0049162ba48768432ff733af4e1c9b3f))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.1 ([#1210](https://github.com/googleapis/java-asset/issues/1210)) ([efccf59](https://github.com/googleapis/java-asset/commit/efccf59f9644e55932a610d5f2331335c427c302))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.2 ([#1212](https://github.com/googleapis/java-asset/issues/1212)) ([1264a11](https://github.com/googleapis/java-asset/commit/1264a11dac813912dfbe59d32fd542f40f59dc05))
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#1213](https://github.com/googleapis/java-asset/issues/1213)) ([ed2ec52](https://github.com/googleapis/java-asset/commit/ed2ec5215782d066b05ed1373056f0cae1861e24))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.3.1 ([#1202](https://github.com/googleapis/java-asset/issues/1202)) ([16d577e](https://github.com/googleapis/java-asset/commit/16d577ea1591eb7ee832e6907e80997b8767887e))
+* update dependency com.google.cloud:google-cloud-resourcemanager to v1.3.2 ([#1207](https://github.com/googleapis/java-asset/issues/1207)) ([48411c5](https://github.com/googleapis/java-asset/commit/48411c5c69a9337e27cc45c2c6e4dd95705de41b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#1214](https://github.com/googleapis/java-asset/issues/1214)) ([be80983](https://github.com/googleapis/java-asset/commit/be809831e5b08ed917a30bc361f55c283a080c03))
+
 ### [3.2.17](https://github.com/googleapis/java-asset/compare/v3.2.16...v3.2.17) (2022-04-20)
 
 
