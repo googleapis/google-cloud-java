@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/googleapis/java-os-login/compare/v2.0.15...v2.1.0) (2022-05-20)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-os-login/issues/1440)) ([#678](https://github.com/googleapis/java-os-login/issues/678)) ([ba0b0ef](https://github.com/googleapis/java-os-login/commit/ba0b0efd5a36b131cf3dd87cbfcaf2c70cd535c9))
+
 ### [2.0.15](https://github.com/googleapis/java-os-login/compare/v2.0.14...v2.0.15) (2022-05-19)
 
 
