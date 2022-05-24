@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-speech/compare/v2.2.15...v2.3.0) (2022-05-20)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-speech/issues/1440)) ([#885](https://github.com/googleapis/java-speech/issues/885)) ([9578f69](https://github.com/googleapis/java-speech/commit/9578f69c0a0032d68d131d77edc703cb54b40d54))
+
+
+### Bug Fixes
+
+* **java:** restore native image configuration ([#880](https://github.com/googleapis/java-speech/issues/880)) ([5431acb](https://github.com/googleapis/java-speech/commit/5431acb1934828b0fe8f0db861ccbb0912ef5e7b))
+* restore native image resource config ([#863](https://github.com/googleapis/java-speech/issues/863)) ([22cc309](https://github.com/googleapis/java-speech/commit/22cc30914c84175538b38a5a43c3392840b97381))
+
+
+### Dependencies
+
+* error_prone_annotations from shared deps BOM ([#877](https://github.com/googleapis/java-speech/issues/877)) ([98cc79b](https://github.com/googleapis/java-speech/commit/98cc79b22cf9721b65d1598c99b97a591834ccb5))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#884](https://github.com/googleapis/java-speech/issues/884)) ([0f18fdd](https://github.com/googleapis/java-speech/commit/0f18fddfc035acb0b722f5433d79e7533c953603))
+
+
+### Documentation
+
+* Add documentation for latest models to RecognitionConfig ([09e59c1](https://github.com/googleapis/java-speech/commit/09e59c1c004e4b3c27fe95049b8f69795111d14b))
+* Update client libraries for v1p1beta1 api ([#882](https://github.com/googleapis/java-speech/issues/882)) ([e36e650](https://github.com/googleapis/java-speech/commit/e36e65049e2aef1076e658d08c1f1b262b10d082))
+
 ### [2.2.15](https://github.com/googleapis/java-speech/compare/v2.2.14...v2.2.15) (2022-04-18)
 
 
