@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-memcache/compare/v2.1.11...v2.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-memcache/issues/1440)) ([#630](https://github.com/googleapis/java-memcache/issues/630)) ([e05ab3b](https://github.com/googleapis/java-memcache/commit/e05ab3b4c6082ae5fb4b7bb79059b38793729c74))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#629](https://github.com/googleapis/java-memcache/issues/629)) ([0c043e2](https://github.com/googleapis/java-memcache/commit/0c043e217f413d1d12385ce80075c16697257fca))
+
 ### [2.1.11](https://github.com/googleapis/java-memcache/compare/v2.1.10...v2.1.11) (2022-04-15)
 
 
