@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-securitycenter/compare/v2.5.6...v2.6.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-securitycenter/issues/1440)) ([#831](https://github.com/googleapis/java-securitycenter/issues/831)) ([c9e86b6](https://github.com/googleapis/java-securitycenter/commit/c9e86b6c76969b74383168666ce8cc4bc0e5677d))
+* Add connection and description field to finding's list of attributes ([eddf09a](https://github.com/googleapis/java-securitycenter/commit/eddf09a8b3e1593d2752e1ab05d9c08e6ae74a3a))
+* Add iam_binding field to findings attributes. It represents particular IAM bindings, which captures a member's role addition, removal, or state ([eddf09a](https://github.com/googleapis/java-securitycenter/commit/eddf09a8b3e1593d2752e1ab05d9c08e6ae74a3a))
+* Add next_steps field to finding's list of attributes ([eddf09a](https://github.com/googleapis/java-securitycenter/commit/eddf09a8b3e1593d2752e1ab05d9c08e6ae74a3a))
+* AuditConfig for IAM v1 ([eddf09a](https://github.com/googleapis/java-securitycenter/commit/eddf09a8b3e1593d2752e1ab05d9c08e6ae74a3a))
+
+
+### Documentation
+
+* **samples:** added samples and tests for BigQuery export RPCs ([#782](https://github.com/googleapis/java-securitycenter/issues/782)) ([279624f](https://github.com/googleapis/java-securitycenter/commit/279624fe9c08d6c7a131fe5e75fcc668f5e57488))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.10.10 ([#823](https://github.com/googleapis/java-securitycenter/issues/823)) ([033d05a](https://github.com/googleapis/java-securitycenter/commit/033d05a273db896b8e5cdc88e224feedd195b7ee))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.0 ([#824](https://github.com/googleapis/java-securitycenter/issues/824)) ([6cb75b3](https://github.com/googleapis/java-securitycenter/commit/6cb75b381f46b37da776b5a5efd139e6dda4d945))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.1 ([#827](https://github.com/googleapis/java-securitycenter/issues/827)) ([794bd01](https://github.com/googleapis/java-securitycenter/commit/794bd01b2057812404c4c67f3e2fd37e06a30aa7))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.11.2 ([#828](https://github.com/googleapis/java-securitycenter/issues/828)) ([4b4b2df](https://github.com/googleapis/java-securitycenter/commit/4b4b2df10c7c61d382f39970f7a50e8de194330a))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.117.0 ([#825](https://github.com/googleapis/java-securitycenter/issues/825)) ([6685899](https://github.com/googleapis/java-securitycenter/commit/66858994fcd8e7cdf435daad92689578575e96dd))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.118.0 ([#829](https://github.com/googleapis/java-securitycenter/issues/829)) ([1af1799](https://github.com/googleapis/java-securitycenter/commit/1af1799b32dd9625f053cb034fc342405e3db813))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#830](https://github.com/googleapis/java-securitycenter/issues/830)) ([602eb69](https://github.com/googleapis/java-securitycenter/commit/602eb69040305c817b21c51f60cb9fdedd8f46db))
+
 ### [2.5.6](https://github.com/googleapis/java-securitycenter/compare/v2.5.5...v2.5.6) (2022-04-21)
 
 
