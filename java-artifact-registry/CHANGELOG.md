@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-artifact-registry/compare/v1.1.2...v1.2.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-artifact-registry/issues/1440)) ([#263](https://github.com/googleapis/java-artifact-registry/issues/263)) ([62a3bbc](https://github.com/googleapis/java-artifact-registry/commit/62a3bbc0468312128d7012ec1960491d2b7a6d90))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#262](https://github.com/googleapis/java-artifact-registry/issues/262)) ([e27cbaa](https://github.com/googleapis/java-artifact-registry/commit/e27cbaa12fe584b88427a74ba385cf0ee9d85d59))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#265](https://github.com/googleapis/java-artifact-registry/issues/265)) ([5bd481a](https://github.com/googleapis/java-artifact-registry/commit/5bd481ab44151cb03a16832d5a72af7998ecf764))
+
 ### [1.1.2](https://github.com/googleapis/java-artifact-registry/compare/v1.1.1...v1.1.2) (2022-04-15)
 
 
