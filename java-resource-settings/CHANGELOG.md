@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-resource-settings/compare/v1.1.10...v1.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-resource-settings/issues/1440)) ([#173](https://github.com/googleapis/java-resource-settings/issues/173)) ([9ad5afd](https://github.com/googleapis/java-resource-settings/commit/9ad5afd811c505782a97201fac027d3e89545a81))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#172](https://github.com/googleapis/java-resource-settings/issues/172)) ([cd4bb9a](https://github.com/googleapis/java-resource-settings/commit/cd4bb9a006b1033a4e86622ccb5288492e5a05dd))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#174](https://github.com/googleapis/java-resource-settings/issues/174)) ([1ad3564](https://github.com/googleapis/java-resource-settings/commit/1ad3564a4991f3458c2117fa4dd880fa2e65f996))
+
 ### [1.1.10](https://github.com/googleapis/java-resource-settings/compare/v1.1.9...v1.1.10) (2022-04-15)
 
 
