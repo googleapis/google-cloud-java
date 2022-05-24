@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-game-servers/compare/v2.1.10...v2.2.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-game-servers/issues/1440)) ([#666](https://github.com/googleapis/java-game-servers/issues/666)) ([66945b8](https://github.com/googleapis/java-game-servers/commit/66945b8c2125412377ae3ec1e67561e638e1629c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#665](https://github.com/googleapis/java-game-servers/issues/665)) ([9de6361](https://github.com/googleapis/java-game-servers/commit/9de636195fd8aee4a8f9de4a689ae06ceab2a739))
+
 ### [2.1.10](https://github.com/googleapis/java-game-servers/compare/v2.1.9...v2.1.10) (2022-04-15)
 
 
