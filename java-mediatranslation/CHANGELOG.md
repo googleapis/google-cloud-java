@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.8.0](https://github.com/googleapis/java-mediatranslation/compare/v0.7.11...v0.8.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-mediatranslation/issues/1440)) ([#650](https://github.com/googleapis/java-mediatranslation/issues/650)) ([816733b](https://github.com/googleapis/java-mediatranslation/commit/816733b648f5c909b5d1fd53cb2fe79fbcdf6051))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#649](https://github.com/googleapis/java-mediatranslation/issues/649)) ([6c6d1ff](https://github.com/googleapis/java-mediatranslation/commit/6c6d1fff833e5fafec5fc3771022ad20221b07aa))
+
 ### [0.7.11](https://github.com/googleapis/java-mediatranslation/compare/v0.7.10...v0.7.11) (2022-04-15)
 
 
