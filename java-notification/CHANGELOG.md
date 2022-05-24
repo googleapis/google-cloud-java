@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.123.0](https://github.com/googleapis/java-notification/compare/v0.122.29...v0.123.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-notification/issues/1440)) ([#598](https://github.com/googleapis/java-notification/issues/598)) ([b324c82](https://github.com/googleapis/java-notification/commit/b324c82d9d793f9ceca71a00397f6e24c37a598e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.118.0 ([#597](https://github.com/googleapis/java-notification/issues/597)) ([a51b100](https://github.com/googleapis/java-notification/commit/a51b100b60c9bc4d1ac97a42158409935f7624d6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#596](https://github.com/googleapis/java-notification/issues/596)) ([41ee50d](https://github.com/googleapis/java-notification/commit/41ee50d89dd2ea88e88d9ebe911fc55e8fb19311))
+
 ### [0.122.29](https://github.com/googleapis/java-notification/compare/v0.122.28...v0.122.29) (2022-05-16)
 
 
