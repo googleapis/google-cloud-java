@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-notebooks/compare/v1.0.6...v1.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-notebooks/issues/1440)) ([#383](https://github.com/googleapis/java-notebooks/issues/383)) ([1f65de5](https://github.com/googleapis/java-notebooks/commit/1f65de5ccaf19f1fb47df6b9d35bf23dd5d29c3b))
+* Update Notebooks API for clients libraries ([#372](https://github.com/googleapis/java-notebooks/issues/372)) ([4533afe](https://github.com/googleapis/java-notebooks/commit/4533afe1e83efb139b706d6099d8a54f8d8e7f88))
+
+
+### Documentation
+
+* modifies the project ID pattern in comment for Workbench environment ([#381](https://github.com/googleapis/java-notebooks/issues/381)) ([52c2377](https://github.com/googleapis/java-notebooks/commit/52c2377be00b63f3d853f39d69dfb61e27a96cc6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#382](https://github.com/googleapis/java-notebooks/issues/382)) ([03fdc2a](https://github.com/googleapis/java-notebooks/commit/03fdc2a7396aef4cada151bbaa89607183912391))
+
 ### [1.0.6](https://github.com/googleapis/java-notebooks/compare/v1.0.5...v1.0.6) (2022-04-18)
 
 
