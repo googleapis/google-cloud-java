@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/java-monitoring/compare/v3.2.9...v3.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-monitoring/issues/1440)) ([#849](https://github.com/googleapis/java-monitoring/issues/849)) ([065ff8d](https://github.com/googleapis/java-monitoring/commit/065ff8d9e4565933a4f086533634cd8eec504919))
+* next release from main branch is 3.3.0 ([#840](https://github.com/googleapis/java-monitoring/issues/840)) ([3a9c77f](https://github.com/googleapis/java-monitoring/commit/3a9c77f86c0292e32bd25a02d33c5ff427768ab3))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#848](https://github.com/googleapis/java-monitoring/issues/848)) ([5df9138](https://github.com/googleapis/java-monitoring/commit/5df913848285ab8ccbd2e73ec13bde0d00afbbc2))
+
 ### [3.2.9](https://github.com/googleapis/java-monitoring/compare/v3.2.8...v3.2.9) (2022-04-22)
 
 
