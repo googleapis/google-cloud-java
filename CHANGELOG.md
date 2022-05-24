@@ -1,6 +1,46 @@
 # Changelog
 
 
+## [0.124.0](https://github.com/googleapis/java-logging-logback/compare/v0.123.0...v0.124.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-logging-logback/issues/1440)) ([#765](https://github.com/googleapis/java-logging-logback/issues/765)) ([c90e5e5](https://github.com/googleapis/java-logging-logback/commit/c90e5e57f0676f8e76c41643a9d817a1a2e3374a))
+
+
+### Bug Fixes
+
+* Reenable staleness bot ([#738](https://github.com/googleapis/java-logging-logback/issues/738)) ([947a4ae](https://github.com/googleapis/java-logging-logback/commit/947a4aec8ded52e0d7da6cb16c7289c7b060a3d7))
+
+
+### Dependencies
+
+* **java:** update actions/github-script action to v5 ([#1339](https://github.com/googleapis/java-logging-logback/issues/1339)) ([#666](https://github.com/googleapis/java-logging-logback/issues/666)) ([ee4400d](https://github.com/googleapis/java-logging-logback/commit/ee4400dc1c2c70269f24085cc50f58f563106adf))
+* update actions/checkout action to v3 ([#705](https://github.com/googleapis/java-logging-logback/issues/705)) ([a7427a0](https://github.com/googleapis/java-logging-logback/commit/a7427a0648847c123d6bea0d752fb892a412468d))
+* update actions/github-script action to v6 ([#686](https://github.com/googleapis/java-logging-logback/issues/686)) ([82a0f26](https://github.com/googleapis/java-logging-logback/commit/82a0f264d054827c9816ddb4400e952d3e95776e))
+* update dependency ch.qos.logback:logback-classic to v1.2.11 ([#714](https://github.com/googleapis/java-logging-logback/issues/714)) ([181ac4a](https://github.com/googleapis/java-logging-logback/commit/181ac4abadf852752b95e44fe1ae3bfbed924aad))
+* update dependency com.google.cloud:google-cloud-logging to v3.6.1 ([#660](https://github.com/googleapis/java-logging-logback/issues/660)) ([c80212f](https://github.com/googleapis/java-logging-logback/commit/c80212f5131b7df1349d0fbd8212383978952a29))
+* update dependency com.google.cloud:google-cloud-logging to v3.6.2 ([#674](https://github.com/googleapis/java-logging-logback/issues/674)) ([c0db36f](https://github.com/googleapis/java-logging-logback/commit/c0db36f0ae9c4754880229d4ac5e9e52d0e95086))
+* update dependency com.google.cloud:google-cloud-logging to v3.6.3 ([#691](https://github.com/googleapis/java-logging-logback/issues/691)) ([e346f21](https://github.com/googleapis/java-logging-logback/commit/e346f2198385d3f86f3770765f55a4bef742fdbf))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.0 ([#698](https://github.com/googleapis/java-logging-logback/issues/698)) ([2a5ddba](https://github.com/googleapis/java-logging-logback/commit/2a5ddbaaa54ca5d8bc26887de3038e7ee8c2d4f8))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.1 ([#713](https://github.com/googleapis/java-logging-logback/issues/713)) ([4d6f04d](https://github.com/googleapis/java-logging-logback/commit/4d6f04dc9644c205965eecdbdf40ad3d022fa076))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.2 ([#722](https://github.com/googleapis/java-logging-logback/issues/722)) ([d0d55ef](https://github.com/googleapis/java-logging-logback/commit/d0d55ef8ccdf39433d6cca4fad22186ff8ada456))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.3 ([#727](https://github.com/googleapis/java-logging-logback/issues/727)) ([34cb2a7](https://github.com/googleapis/java-logging-logback/commit/34cb2a76799f83ddd66cabec216dcb8746b82613))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.4 ([#731](https://github.com/googleapis/java-logging-logback/issues/731)) ([3e48cb0](https://github.com/googleapis/java-logging-logback/commit/3e48cb03a757d2237dd2da251c1d34468adfa4e4))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.5 ([#744](https://github.com/googleapis/java-logging-logback/issues/744)) ([e7cfbe2](https://github.com/googleapis/java-logging-logback/commit/e7cfbe236a3a0125f4174fc9e74f1a9f6c260b1d))
+* update dependency com.google.cloud:google-cloud-logging to v3.7.6 ([#759](https://github.com/googleapis/java-logging-logback/issues/759)) ([0128793](https://github.com/googleapis/java-logging-logback/commit/01287934b04cf8f487308b34080123c7b4065ef7))
+* update dependency com.google.cloud:google-cloud-logging to v3.8.0 ([#767](https://github.com/googleapis/java-logging-logback/issues/767)) ([2727c81](https://github.com/googleapis/java-logging-logback/commit/2727c81a2c925b01aabc40baaba5958a507a3dd7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.10.0 ([#739](https://github.com/googleapis/java-logging-logback/issues/739)) ([e603a4b](https://github.com/googleapis/java-logging-logback/commit/e603a4b385d80bd8afb6e31824aaa34484d69e2f))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#764](https://github.com/googleapis/java-logging-logback/issues/764)) ([2418128](https://github.com/googleapis/java-logging-logback/commit/24181282039618fc9024bb0360f3fb46c2d34290))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#768](https://github.com/googleapis/java-logging-logback/issues/768)) ([6b46865](https://github.com/googleapis/java-logging-logback/commit/6b46865ff8b9b28eb98a6c7504143018bbf8b073))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.7.0 ([#669](https://github.com/googleapis/java-logging-logback/issues/669)) ([b60562a](https://github.com/googleapis/java-logging-logback/commit/b60562aa1ebf3538efc3b868537002949a93e39b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.8.0 ([#707](https://github.com/googleapis/java-logging-logback/issues/707)) ([198d41f](https://github.com/googleapis/java-logging-logback/commit/198d41fc905fc532a8ba7de511dfe9c928235c47))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.9.0 ([#723](https://github.com/googleapis/java-logging-logback/issues/723)) ([fd500fe](https://github.com/googleapis/java-logging-logback/commit/fd500fe480cfd05c54a899f14b84cad1e26fc1a0))
+* update dependency org.slf4j:slf4j-api to v1.7.34 ([#664](https://github.com/googleapis/java-logging-logback/issues/664)) ([a9273b8](https://github.com/googleapis/java-logging-logback/commit/a9273b8b06c092a484d9b6f9e0495461178cec88))
+* update dependency org.slf4j:slf4j-api to v1.7.35 ([#668](https://github.com/googleapis/java-logging-logback/issues/668)) ([5b2232d](https://github.com/googleapis/java-logging-logback/commit/5b2232d13087ee21596d06377a608ed9c59d9976))
+* update dependency org.slf4j:slf4j-api to v1.7.36 ([#681](https://github.com/googleapis/java-logging-logback/issues/681)) ([bd4c4da](https://github.com/googleapis/java-logging-logback/commit/bd4c4da1a260f5261a6b3daa522aa9fea0e6deb3))
+
 ## [0.123.0](https://github.com/googleapis/java-logging-logback/compare/v0.122.22...v0.123.0) (2022-05-19)
 
 
