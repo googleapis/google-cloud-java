@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-aiplatform/compare/v2.8.9...v2.9.0) (2022-05-24)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-aiplatform/issues/1440)) ([#894](https://github.com/googleapis/java-aiplatform/issues/894)) ([4d7349e](https://github.com/googleapis/java-aiplatform/commit/4d7349eae73cf2ed918ffd7188560bfed6ccf039))
+* add ConvexAutomatedStoppingSpec to StudySpec in aiplatform v1 study.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add ConvexAutomatedStoppingSpec to StudySpec in aiplatform v1beta1 study.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add JOB_STATE_UPDATING to JobState in aiplatform v1 job_state.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add JOB_STATE_UPDATING to JobState in aiplatform v1beta1 job_state.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add LatestMonitoringPipelineMetadata to ModelDeploymentMonitoringJob in aiplatform v1beta1 model_deployment_monitoring_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add ListModelVersion, DeleteModelVersion, and MergeVersionAliases rpcs to aiplatform v1beta1 model_service.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add MfsMount in aiplatform v1 machine_resources.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add MfsMount in aiplatform v1beta1 machine_resources.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add model_id and parent_model to TrainingPipeline in aiplatform v1beta1 training_pipeline.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add model_version_id to DeployedModel in aiplatform v1beta1 endpoint.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add model_version_id to PredictResponse in aiplatform v1beta1 prediction_service.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add model_version_id to UploadModelRequest and UploadModelResponse in aiplatform v1beta1 model_service.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add nfs_mounts to WorkPoolSpec in aiplatform v1 custom_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add nfs_mounts to WorkPoolSpec in aiplatform v1beta1 custom_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add PredictRequestResponseLoggingConfig to aiplatform v1beta1 endpoint.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add reserved_ip_ranges to CustomJobSpec in aiplatform v1 custom_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add reserved_ip_ranges to CustomJobSpec in aiplatform v1beta1 custom_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* add version_id to Model in aiplatform v1beta1 model.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* remove several `REQUIRED` field annotations in featurestore.proto, metadata.proto, and pipeline_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* remove several `REQUIRED` field annotations in featurestore.proto, metadata.proto, and pipeline_job.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+* rename Similarity to Examples, and similarity to examples in ExplanationParameters in aiplatform v1beta1 explanation.proto ([78bcdac](https://github.com/googleapis/java-aiplatform/commit/78bcdacf91ec1a80dfe237190bbf173d4279c5a6))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.14.9 ([#890](https://github.com/googleapis/java-aiplatform/issues/890)) ([bedf5d9](https://github.com/googleapis/java-aiplatform/commit/bedf5d91b42a68983504115b4e7c64eab641c769))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#893](https://github.com/googleapis/java-aiplatform/issues/893)) ([fd5d001](https://github.com/googleapis/java-aiplatform/commit/fd5d001202adb240114bb27b147cdb0c519331b6))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#912](https://github.com/googleapis/java-aiplatform/issues/912)) ([32c47cc](https://github.com/googleapis/java-aiplatform/commit/32c47cca36f365f33158bd16e91ea54a6682a913))
+
 ### [2.8.9](https://github.com/googleapis/java-aiplatform/compare/v2.8.8...v2.8.9) (2022-04-29)
 
 
