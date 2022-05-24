@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-eventarc/compare/v1.2.5...v1.3.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-eventarc/issues/1440)) ([#189](https://github.com/googleapis/java-eventarc/issues/189)) ([52e315e](https://github.com/googleapis/java-eventarc/commit/52e315e59fd99ceef580d687fc5af2f3c19fb13e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#187](https://github.com/googleapis/java-eventarc/issues/187)) ([dcdfad5](https://github.com/googleapis/java-eventarc/commit/dcdfad5db0138be5f64e12c6c49e19f18cbb39e3))
+
 ### [1.2.5](https://github.com/googleapis/java-eventarc/compare/v1.2.4...v1.2.5) (2022-04-15)
 
 
