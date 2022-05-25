@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.12.0](https://github.com/googleapis/java-bigquery/compare/v2.11.2...v2.12.0) (2022-05-25)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-bigquery/issues/1440)) ([#2057](https://github.com/googleapis/java-bigquery/issues/2057)) ([065ae78](https://github.com/googleapis/java-bigquery/commit/065ae78ef20052032c245b3fe991808c24ec8077))
+
+
+### Bug Fixes
+
+* add more native image configurations for Arrow tests and enable native image tests ([#2053](https://github.com/googleapis/java-bigquery/issues/2053)) ([7f0bfd4](https://github.com/googleapis/java-bigquery/commit/7f0bfd4a42c28f3d2a748474e1ec40740311a734))
+* Flaky testPositionalQueryParameters ([#2059](https://github.com/googleapis/java-bigquery/issues/2059)) ([3764b59](https://github.com/googleapis/java-bigquery/commit/3764b5967c694fa34aef75804333e5a6101d912e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigtable to v2.7.0 ([#2061](https://github.com/googleapis/java-bigquery/issues/2061)) ([1c7a0ab](https://github.com/googleapis/java-bigquery/commit/1c7a0ab157f79772d8da58bfe15f54a7394124e8))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.11.0 ([#2055](https://github.com/googleapis/java-bigquery/issues/2055)) ([9667663](https://github.com/googleapis/java-bigquery/commit/9667663fbec20f262c218f07cce1ada0c9a4bce0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#2063](https://github.com/googleapis/java-bigquery/issues/2063)) ([6d3f4be](https://github.com/googleapis/java-bigquery/commit/6d3f4bead2315703015bd75711fcbf19428fad6e))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#2064](https://github.com/googleapis/java-bigquery/issues/2064)) ([fd47710](https://github.com/googleapis/java-bigquery/commit/fd47710afdf32fd535f8e2b430156eb4a659a64d))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.1 ([#2066](https://github.com/googleapis/java-bigquery/issues/2066)) ([89962a5](https://github.com/googleapis/java-bigquery/commit/89962a5e3cec0e5a4334454b1bff83fba3d95d4d))
+
 ### [2.11.2](https://github.com/googleapis/java-bigquery/compare/v2.11.1...v2.11.2) (2022-05-18)
 
 
