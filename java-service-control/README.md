@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-control</artifactId>
-  <version>1.1.11</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-service-control:1.1.11'
+implementation 'com.google.cloud:google-cloud-service-control:1.2.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-service-control" % "1.1.11"
+libraryDependencies += "com.google.cloud" % "google-cloud-service-control" % "1.2.0"
 ```
 
 ## Authentication
