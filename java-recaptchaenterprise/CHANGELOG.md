@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.6.1](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.6.0...v2.6.1) (2022-05-25)
+
+
+### Dependencies
+
+* update dependency io.github.bonigarcia:webdrivermanager to v5.2.0 ([#802](https://github.com/googleapis/java-recaptchaenterprise/issues/802)) ([29f3304](https://github.com/googleapis/java-recaptchaenterprise/commit/29f33041b66aa25287f293f1ee82df46d9419fb2))
+
 ## [2.6.0](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.5.0...v2.6.0) (2022-05-19)
 
 
