@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.5.1](https://github.com/googleapis/java-datastore/compare/v2.5.0...v2.5.1) (2022-05-25)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_core to v2.14.0 ([#744](https://github.com/googleapis/java-datastore/issues/744)) ([51d9244](https://github.com/googleapis/java-datastore/commit/51d9244b10f5bb754785e8267a51fddd9cdb6cb5))
+
 ## [2.5.0](https://github.com/googleapis/java-datastore/compare/v2.4.0...v2.5.0) (2022-05-23)
 
 
