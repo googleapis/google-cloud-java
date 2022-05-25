@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.3.1](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.0...v2.3.1) (2022-05-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.12.0 ([#283](https://github.com/googleapis/java-contact-center-insights/issues/283)) ([de9331b](https://github.com/googleapis/java-contact-center-insights/commit/de9331bb7818383bbff223401865634cffd2fcdb))
+
 ## [2.3.0](https://github.com/googleapis/java-contact-center-insights/compare/v2.2.8...v2.3.0) (2022-05-24)
 
 
