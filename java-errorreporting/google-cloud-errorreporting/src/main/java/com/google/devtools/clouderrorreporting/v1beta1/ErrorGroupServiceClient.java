@@ -118,7 +118,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * Constructs an instance of ErrorGroupServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ErrorGroupServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ErrorGroupServiceClient create(ErrorGroupServiceStub stub) {
     return new ErrorGroupServiceClient(stub);
   }
@@ -133,7 +132,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
     this.stub = ((ErrorGroupServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ErrorGroupServiceClient(ErrorGroupServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +141,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorGroupServiceStub getStub() {
     return stub;
   }

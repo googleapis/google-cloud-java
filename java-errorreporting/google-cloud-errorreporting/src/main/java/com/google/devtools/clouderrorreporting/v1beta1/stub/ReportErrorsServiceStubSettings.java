@@ -94,7 +94,6 @@ public class ReportErrorsServiceStubSettings extends StubSettings<ReportErrorsSe
     return reportErrorEventSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReportErrorsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

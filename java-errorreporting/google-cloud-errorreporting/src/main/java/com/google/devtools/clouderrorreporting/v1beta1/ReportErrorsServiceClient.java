@@ -120,7 +120,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * Constructs an instance of ReportErrorsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ReportErrorsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReportErrorsServiceClient create(ReportErrorsServiceStub stub) {
     return new ReportErrorsServiceClient(stub);
   }
@@ -135,7 +134,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     this.stub = ((ReportErrorsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ReportErrorsServiceClient(ReportErrorsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +143,6 @@ public class ReportErrorsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReportErrorsServiceStub getStub() {
     return stub;
   }

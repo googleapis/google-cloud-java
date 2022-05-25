@@ -237,7 +237,6 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
     return deleteEventsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorStatsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

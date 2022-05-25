@@ -99,7 +99,6 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
     return updateGroupSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ErrorGroupServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
