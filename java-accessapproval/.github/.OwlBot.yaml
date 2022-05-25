@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-accessapproval/src"
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/google-cloud-accessapproval/samples/snippets/generated"
+  dest: "/owl-bot-staging/$1/samples/snippets/generated"
