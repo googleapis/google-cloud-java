@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.1.1](https://github.com/googleapis/java-dataproc/compare/v3.1.0...v3.1.1) (2022-05-25)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#862](https://github.com/googleapis/java-dataproc/issues/862)) ([29cd497](https://github.com/googleapis/java-dataproc/commit/29cd497e82b69249f1058be873c0312d2eb082ac))
+
 ## [3.1.0](https://github.com/googleapis/java-dataproc/compare/v3.0.4...v3.1.0) (2022-05-23)
 
 
