@@ -192,7 +192,6 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     return deleteLogMetricSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricsServiceV2Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

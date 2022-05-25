@@ -424,7 +424,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
     return tailLogEntriesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LoggingServiceV2Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
