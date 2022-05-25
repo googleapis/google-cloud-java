@@ -4,7 +4,66 @@
     "queryAllDeclaredMethods":true
   },
   {
+    "name":"io.netty.buffer.PooledByteBufAllocator",
+    "fields":[{"name":"directArenas"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscChunkedArrayQueue",
+    "queryAllDeclaredMethods":true,
+    "allDeclaredFields":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField",
+    "fields":[{"name":"consumerIndex"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField",
+    "fields":[{"name":"producerIndex"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField",
+    "fields":[{"name":"producerLimit"}]
+  },
+  {
+    "name":"java.nio.DirectByteBuffer",
+    "methods":[{"name":"<init>","parameterTypes":["long","int"] }]
+  },
+  {
     "name":"org.apache.arrow.memory.DefaultAllocationManagerFactory",
     "fields":[{"name":"FACTORY"}]
+  },
+  {
+    "name":"org.apache.arrow.vector.types.pojo.ArrowType",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.vector.types.pojo.ArrowType$Int",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true,
+    "queryAllDeclaredConstructors":true
+  },
+  {
+    "name":"org.apache.arrow.vector.types.pojo.ArrowType$PrimitiveType",
+    "allDeclaredFields":true,
+    "queryAllDeclaredMethods":true
+  },
+  {
+    "name":"io.netty.buffer.AbstractReferenceCountedByteBuf",
+    "fields":[{"name":"refCnt"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
+    "fields":[{"name":"producerLimit"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
+    "fields":[{"name":"consumerIndex"}]
+  },
+  {
+    "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
+    "fields":[{"name":"producerIndex"}]
   }
 ]

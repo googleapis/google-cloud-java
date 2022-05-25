@@ -80,11 +80,16 @@ nightly-it)
           verify
     RETURN_CODE=$?
     ;;
-#graalvm)
-#    # Run Unit and Integration Tests with Native Image
-#    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
-#    RETURN_CODE=$?
-#    ;;
+graalvm)
+    # Run Unit and Integration Tests with Native Image
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
+    RETURN_CODE=$?
+    ;;
+graalvm17)
+    # Run Unit and Integration Tests with Native Image. Skip Arrow tests until https://github.com/googleapis/java-bigquery/issues/2060 is fixed.
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test "-Dtest=!com.google.cloud.bigquery.it.ITBigQueryTest#testBQResultSetPaginationSlowQuery+testReadAPIConnectionMultiClose+testReadAPIIterationAndOrder, !com.google.cloud.bigquery.it.ITNightlyBigQueryTest#testIterateAndOrder+testMultipleRuns+testIterateAndOrderDefaultConnSettings, IT*, *ClientTest"
+    RETURN_CODE=$?
+    ;;
 samples)
     SAMPLES_DIR=samples
     # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
