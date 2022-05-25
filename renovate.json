@@ -39,6 +39,7 @@
     {
       "packagePatterns": [
         "^com.google.cloud:google-cloud-bigquery",
+        "^com.google.cloud:google-cloud-bigtable",
         "^com.google.cloud:libraries-bom",
         "^com.google.cloud.samples:shared-configuration"
       ],
@@ -70,10 +71,11 @@
     {
       "packagePatterns": [
         "^com.google.api.grpc:proto-google-cloud-datacatalog",
-        "^com.google.cloud:google-cloud-datacatalog"
+        "^com.google.cloud:google-cloud-datacatalog",
+        "^com.google.cloud:google-cloud-bigquerystorage-bom",
+        "^com.google.cloud:google-cloud-storage"
       ],
-      "groupName": "datacatalog dependencies",
-      "semanticCommitType": "test",
+      "groupName": "cloud client dependencies",
       "semanticCommitScope": "deps"
     }
   ],
