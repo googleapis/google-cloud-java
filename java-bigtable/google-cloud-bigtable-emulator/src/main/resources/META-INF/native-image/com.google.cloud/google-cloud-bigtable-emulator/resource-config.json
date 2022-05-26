@@ -1,0 +1,21 @@
+{
+  "resources":{
+    "includes":[
+      {
+        "pattern":"\\Qgcloud/bigtable-linux-x86_64/platform/bigtable-emulator/cbtemulator\\E"
+      },
+      {
+        "pattern":"\\Qgcloud/bigtable-darwin-x86_64/platform/bigtable-emulator/cbtemulator\\E"
+      },
+      {
+        "pattern":"\\Qgcloud/bigtable-linux-x86/platform/bigtable-emulator/cbtemulator\\E"
+      },
+      {
+        "pattern": "\\Qgcloud/bigtable-windows-x86_64/platform/bigtable-emulator/cbtemulator.exe\\E"
+      },
+      {
+        "pattern":"\\Qgcloud/bigtable-linux-arm/platform/bigtable-emulator/cbtemulator\\E"
+      }
+    ]},
+  "bundles":[]
+}

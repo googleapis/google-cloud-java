@@ -69,3 +69,10 @@ mvn install -DskipUnitTests
 # To skip all tests
 mvn install -DskipTests
 ```
+
+
+## Native Image Testing
+Native Image testing is enabled for tests that follow a particular naming
+convention (`IT*` or `*ClientTest`). Unit tests that use Mockito or EasyMock
+have been excluded for the time being as they are not compatible with native
+image compilation. 

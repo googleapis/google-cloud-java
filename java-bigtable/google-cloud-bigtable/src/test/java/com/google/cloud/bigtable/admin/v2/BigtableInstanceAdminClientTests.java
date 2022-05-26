@@ -81,7 +81,12 @@ import org.mockito.quality.Strictness;
 import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
-public class BigtableInstanceAdminClientTest {
+/**
+ * Tests for {@link BigtableTableAdminClient}. This test class uses Mockito so it has been
+ * explicitly excluded from Native Image testing by not following the naming convention of (IT* and
+ * *ClientTest).
+ */
+public class BigtableInstanceAdminClientTests {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
   private static final String PROJECT_ID = "my-project";

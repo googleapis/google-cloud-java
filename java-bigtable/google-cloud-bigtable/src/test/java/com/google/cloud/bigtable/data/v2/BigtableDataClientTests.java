@@ -56,7 +56,12 @@ import org.mockito.quality.Strictness;
 import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
-public class BigtableDataClientTest {
+/**
+ * Tests for {@link BigtableDataClient}. This test class uses Mockito so it has been explicitly
+ * excluded from Native Image testing by not following the naming convention of (IT* and
+ * *ClientTest).
+ */
+public class BigtableDataClientTests {
 
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule().strictness(Strictness.WARN);
 
