@@ -23,6 +23,7 @@ for library in s.get_staging_dirs():
 s.remove_staging_dirs()
 java.common_templates(excludes=[
     '.kokoro/presubmit/graalvm-native.cfg',
+    '.kokoro/presubmit/graalvm-native-17.cfg',
     '.kokoro/presubmit/integration.cfg',
     '.kokoro/nightly/integration.cfg',
     '.kokoro/nightly/java11-integration.cfg'
