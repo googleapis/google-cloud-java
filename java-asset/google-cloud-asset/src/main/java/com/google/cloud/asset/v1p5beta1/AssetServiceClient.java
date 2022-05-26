@@ -132,7 +132,6 @@ public class AssetServiceClient implements BackgroundResource {
    * Constructs an instance of AssetServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(AssetServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssetServiceClient create(AssetServiceStub stub) {
     return new AssetServiceClient(stub);
   }
@@ -147,7 +146,6 @@ public class AssetServiceClient implements BackgroundResource {
     this.stub = ((AssetServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AssetServiceClient(AssetServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +155,6 @@ public class AssetServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssetServiceStub getStub() {
     return stub;
   }

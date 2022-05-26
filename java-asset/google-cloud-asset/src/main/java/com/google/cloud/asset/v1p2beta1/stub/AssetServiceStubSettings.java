@@ -120,7 +120,6 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     return deleteFeedSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssetServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
