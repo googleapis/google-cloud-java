@@ -341,6 +341,7 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testConnectionClose() throws SQLException {
     Connection connection = bigquery.createConnection();
+    assertNotNull("bigquery.createConnection() returned null", connection);
     BigQueryResult bigQueryResult = connection.executeSelect(QUERY);
     logger.log(Level.INFO, "Query used: {0}", QUERY);
     ResultSet rs = bigQueryResult.getResultSet();
