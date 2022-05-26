@@ -1,5 +1,18 @@
 # Changelog
 
+### [3.3.1](https://github.com/googleapis/java-asset/compare/v3.3.0...v3.3.1) (2022-05-26)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-orgpolicy-v1 to v2.2.0 ([#1217](https://github.com/googleapis/java-asset/issues/1217)) ([1b758a0](https://github.com/googleapis/java-asset/commit/1b758a0db900cd077fe2fbbbf749726bf55709be))
+* update dependency com.google.api.grpc:proto-google-cloud-os-config-v1 to v2.4.3 ([#1216](https://github.com/googleapis/java-asset/issues/1216)) ([f3703e3](https://github.com/googleapis/java-asset/commit/f3703e35573e6b70ff7041c31e3882fef664d2c0))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.100.0 ([#1192](https://github.com/googleapis/java-asset/issues/1192)) ([b462f5d](https://github.com/googleapis/java-asset/commit/b462f5d3cc8743750e6ad6f24568b14afe716650))
+* update dependency com.google.api.grpc:proto-google-identity-accesscontextmanager-v1 to v1.3.0 ([#1221](https://github.com/googleapis/java-asset/issues/1221)) ([6de2419](https://github.com/googleapis/java-asset/commit/6de2419d0a3f8a0f9363a464307f9a1d06e0347a))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.12.0 ([#1223](https://github.com/googleapis/java-asset/issues/1223)) ([5ffacb1](https://github.com/googleapis/java-asset/commit/5ffacb1499e4c93095f908481172262d28020d4c))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.118.0 ([#1193](https://github.com/googleapis/java-asset/issues/1193)) ([eab7701](https://github.com/googleapis/java-asset/commit/eab7701e5c2f6939301ec07298ac82fcda8921ed))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#1222](https://github.com/googleapis/java-asset/issues/1222)) ([45aeb97](https://github.com/googleapis/java-asset/commit/45aeb97634d703672ea4d553b5b8853a3a13c03c))
+
 ## [3.3.0](https://github.com/googleapis/java-asset/compare/v3.2.17...v3.3.0) (2022-05-23)
 
 
