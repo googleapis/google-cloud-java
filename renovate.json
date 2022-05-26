@@ -75,8 +75,7 @@
         "^com.google.cloud:google-cloud-bigquerystorage-bom",
         "^com.google.cloud:google-cloud-storage"
       ],
-      "groupName": "cloud client dependencies",
-      "semanticCommitScope": "deps"
+      "groupName": "cloud client dependencies"
     }
   ],
   "semanticCommits": true,
