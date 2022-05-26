@@ -69,8 +69,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
-          <!-- grpc-netty-shaded is used at test runtime -->
-          <usedDependencies>io.grpc:grpc-netty-shaded</usedDependencies>
+          <!-- needd gax-grpc for graalvm configs and grpc-netty -->
+          <usedDependencies>com.google.api:gax-grpc</usedDependencies>
         </configuration>
       </plugin>
     </plugins>
@@ -96,16 +96,28 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- Compile deps in alphabetical order -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable-emulator-core</artifactId>
+      <version>0.144.1-SNAPSHOT</version>
+    </dependency>
+
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
-      <!-- gRPC deps are provided by the client -->
-      <scope>provided</scope>
+    </dependency>
+    <!-- declare dependency on gax for graalvm configs -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
     </dependency>
 
     <dependency>
@@ -159,12 +171,6 @@
           <artifactId>checker-qual</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-netty-shaded</artifactId>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

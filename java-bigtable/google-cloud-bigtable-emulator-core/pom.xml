@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>google-cloud-bigtable-parent</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  </parent>
+
+  <artifactId>google-cloud-bigtable-emulator-core</artifactId>
+  <version>0.144.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+
+  <description>
+    A Java wrapper for the Cloud Bigtable emulator.
+  </description>
+
+  <url>https://github.com/googleapis/java-bigtable</url>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/java-bigtable.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigtable</url>
+    <tag>HEAD</tag>
+  </scm>
+  <developers>
+    <developer>
+      <id>igorberstein</id>
+      <name>Igor Bernstein</name>
+      <email>igorbernstein@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- https://github.com/googleapis/java-gcloud-maven-plugin -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
+        <version>0.1.5</version>
+
+        <executions>
+          <execution>
+            <id>gen-sources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>download</goal>
+            </goals>
+            <configuration>
+              <componentNames>
+                <componentName>bigtable-darwin-arm</componentName>
+                <componentName>bigtable-darwin-x86_64</componentName>
+                <componentName>bigtable-linux-arm</componentName>
+                <componentName>bigtable-linux-x86</componentName>
+                <componentName>bigtable-linux-x86_64</componentName>
+                <componentName>bigtable-windows-x86</componentName>
+                <componentName>bigtable-windows-x86_64</componentName>
+              </componentNames>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
