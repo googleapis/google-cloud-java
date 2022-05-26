@@ -99,7 +99,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-emulator-core</artifactId>
-      <version>0.144.1-SNAPSHOT</version>
+      <version>0.144.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
     </dependency>
 
     <dependency>
