@@ -62,19 +62,11 @@ public class QueryPagination {
           .getValues()
           .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
 
-      if (results.hasNextPage()) {
-        // Next Page
-        results
-            .getNextPage()
-            .getValues()
-            .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
-      }
-
-      if (results.hasNextPage()) {
+      while (results.hasNextPage()) {
         // Remaining Pages
+        results = results.getNextPage();
         results
-            .getNextPage()
-            .iterateAll()
+            .getValues()
             .forEach(row -> row.forEach(val -> System.out.printf("%s,\n", val.toString())));
       }
 
