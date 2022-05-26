@@ -83,21 +83,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
 
               break;
             }
-          case 18:
-            {
-              com.google.protobuf.FieldMask.Builder subBuilder = null;
-              if (updateMask_ != null) {
-                subBuilder = updateMask_.toBuilder();
-              }
-              updateMask_ =
-                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateMask_);
-                updateMask_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           case 24:
             {
               validateOnly_ = input.readBool();
@@ -193,52 +178,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     return getService();
   }
 
-  public static final int UPDATE_MASK_FIELD_NUMBER = 2;
-  private com.google.protobuf.FieldMask updateMask_;
-  /**
-   *
-   *
-   * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   *
-   * @return Whether the updateMask field is set.
-   */
-  @java.lang.Override
-  public boolean hasUpdateMask() {
-    return updateMask_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   *
-   * @return The updateMask.
-   */
-  @java.lang.Override
-  public com.google.protobuf.FieldMask getUpdateMask() {
-    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
-  }
-
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_;
   /**
@@ -295,9 +234,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     if (service_ != null) {
       output.writeMessage(1, getService());
     }
-    if (updateMask_ != null) {
-      output.writeMessage(2, getUpdateMask());
-    }
     if (validateOnly_ != false) {
       output.writeBool(3, validateOnly_);
     }
@@ -315,9 +251,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     size = 0;
     if (service_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getService());
-    }
-    if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, validateOnly_);
@@ -345,10 +278,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     if (hasService()) {
       if (!getService().equals(other.getService())) return false;
     }
-    if (hasUpdateMask() != other.hasUpdateMask()) return false;
-    if (hasUpdateMask()) {
-      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
-    }
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (getAllowMissing() != other.getAllowMissing()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -365,10 +294,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     if (hasService()) {
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
-    }
-    if (hasUpdateMask()) {
-      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
@@ -525,12 +450,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
         service_ = null;
         serviceBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
-        updateMaskBuilder_ = null;
-      }
       validateOnly_ = false;
 
       allowMissing_ = false;
@@ -566,11 +485,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
         result.service_ = service_;
       } else {
         result.service_ = serviceBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
       }
       result.validateOnly_ = validateOnly_;
       result.allowMissing_ = allowMissing_;
@@ -625,9 +539,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.run.v2.UpdateServiceRequest.getDefaultInstance()) return this;
       if (other.hasService()) {
         mergeService(other.getService());
-      }
-      if (other.hasUpdateMask()) {
-        mergeUpdateMask(other.getUpdateMask());
       }
       if (other.getValidateOnly() != false) {
         setValidateOnly(other.getValidateOnly());
@@ -850,189 +761,6 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
         service_ = null;
       }
       return serviceBuilder_;
-    }
-
-    private com.google.protobuf.FieldMask updateMask_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask,
-            com.google.protobuf.FieldMask.Builder,
-            com.google.protobuf.FieldMaskOrBuilder>
-        updateMaskBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     *
-     * @return Whether the updateMask field is set.
-     */
-    public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     *
-     * @return The updateMask.
-     */
-    public com.google.protobuf.FieldMask getUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        return updateMask_ == null
-            ? com.google.protobuf.FieldMask.getDefaultInstance()
-            : updateMask_;
-      } else {
-        return updateMaskBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
-      if (updateMaskBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        updateMask_ = value;
-        onChanged();
-      } else {
-        updateMaskBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = builderForValue.build();
-        onChanged();
-      } else {
-        updateMaskBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
-      if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
-        } else {
-          updateMask_ = value;
-        }
-        onChanged();
-      } else {
-        updateMaskBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
-        updateMaskBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
-      onChanged();
-      return getUpdateMaskFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-      if (updateMaskBuilder_ != null) {
-        return updateMaskBuilder_.getMessageOrBuilder();
-      } else {
-        return updateMask_ == null
-            ? com.google.protobuf.FieldMask.getDefaultInstance()
-            : updateMask_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The list of fields to be updated.
-     * </pre>
-     *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask,
-            com.google.protobuf.FieldMask.Builder,
-            com.google.protobuf.FieldMaskOrBuilder>
-        getUpdateMaskFieldBuilder() {
-      if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.FieldMask,
-                com.google.protobuf.FieldMask.Builder,
-                com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(), getParentForChildren(), isClean());
-        updateMask_ = null;
-      }
-      return updateMaskBuilder_;
     }
 
     private boolean validateOnly_;

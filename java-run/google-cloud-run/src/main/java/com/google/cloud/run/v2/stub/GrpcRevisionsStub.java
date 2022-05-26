@@ -24,13 +24,14 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.run.v2.DeleteRevisionRequest;
 import com.google.cloud.run.v2.GetRevisionRequest;
 import com.google.cloud.run.v2.ListRevisionsRequest;
 import com.google.cloud.run.v2.ListRevisionsResponse;
 import com.google.cloud.run.v2.Revision;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -88,6 +89,13 @@ public class GrpcRevisionsStub extends RevisionsStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_REVISION_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate LIST_REVISIONS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate DELETE_REVISION_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+
   public static final GrpcRevisionsStub create(RevisionsStubSettings settings) throws IOException {
     return new GrpcRevisionsStub(settings, ClientContext.create(settings));
   }
@@ -130,9 +138,9 @@ public class GrpcRevisionsStub extends RevisionsStub {
             .setMethodDescriptor(getRevisionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_REVISION_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListRevisionsRequest, ListRevisionsResponse> listRevisionsTransportSettings =
@@ -140,9 +148,9 @@ public class GrpcRevisionsStub extends RevisionsStub {
             .setMethodDescriptor(listRevisionsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", LIST_REVISIONS_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteRevisionRequest, Operation> deleteRevisionTransportSettings =
@@ -150,9 +158,9 @@ public class GrpcRevisionsStub extends RevisionsStub {
             .setMethodDescriptor(deleteRevisionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_REVISION_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
 

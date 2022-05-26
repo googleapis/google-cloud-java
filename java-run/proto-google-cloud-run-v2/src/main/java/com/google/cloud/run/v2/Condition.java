@@ -123,20 +123,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
               reasons_ = rawValue;
               break;
             }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-              reasonsCase_ = 7;
-              reasons_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-              reasonsCase_ = 8;
-              reasons_ = rawValue;
-              break;
-            }
           case 72:
             {
               int rawValue = input.readEnum();
@@ -601,16 +587,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal route is missing.
-     * </pre>
-     *
-     * <code>ROUTE_MISSING = 2;</code>
-     */
-    ROUTE_MISSING(2),
-    /**
-     *
-     *
-     * <pre>
      * Revision creation process failed.
      * </pre>
      *
@@ -627,16 +603,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>PROGRESS_DEADLINE_EXCEEDED = 4;</code>
      */
     PROGRESS_DEADLINE_EXCEEDED(4),
-    /**
-     *
-     *
-     * <pre>
-     * There was a build error.
-     * </pre>
-     *
-     * <code>BUILD_STEP_FAILED = 5;</code>
-     */
-    BUILD_STEP_FAILED(5),
     /**
      *
      *
@@ -737,6 +703,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTPONED_RETRY = 15;</code>
      */
     POSTPONED_RETRY(15),
+    /**
+     *
+     *
+     * <pre>
+     * An internal error occurred. Further information may be in the message.
+     * </pre>
+     *
+     * <code>INTERNAL = 16;</code>
+     */
+    INTERNAL(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -764,16 +740,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal route is missing.
-     * </pre>
-     *
-     * <code>ROUTE_MISSING = 2;</code>
-     */
-    public static final int ROUTE_MISSING_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
      * Revision creation process failed.
      * </pre>
      *
@@ -790,16 +756,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>PROGRESS_DEADLINE_EXCEEDED = 4;</code>
      */
     public static final int PROGRESS_DEADLINE_EXCEEDED_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * There was a build error.
-     * </pre>
-     *
-     * <code>BUILD_STEP_FAILED = 5;</code>
-     */
-    public static final int BUILD_STEP_FAILED_VALUE = 5;
     /**
      *
      *
@@ -900,6 +856,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>POSTPONED_RETRY = 15;</code>
      */
     public static final int POSTPONED_RETRY_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * An internal error occurred. Further information may be in the message.
+     * </pre>
+     *
+     * <code>INTERNAL = 16;</code>
+     */
+    public static final int INTERNAL_VALUE = 16;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -929,14 +895,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return COMMON_REASON_UNDEFINED;
         case 1:
           return UNKNOWN;
-        case 2:
-          return ROUTE_MISSING;
         case 3:
           return REVISION_FAILED;
         case 4:
           return PROGRESS_DEADLINE_EXCEEDED;
-        case 5:
-          return BUILD_STEP_FAILED;
         case 6:
           return CONTAINER_MISSING;
         case 7:
@@ -957,6 +919,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return IMMEDIATE_RETRY;
         case 15:
           return POSTPONED_RETRY;
+        case 16:
+          return INTERNAL;
         default:
           return null;
       }
@@ -1008,522 +972,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Condition.CommonReason)
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Reasons applicable to internal resources not exposed to users. These will
-   * surface in Service.conditions, and could be useful for further diagnosis.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.run.v2.Condition.InternalReason}
-   */
-  public enum InternalReason implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Default value.
-     * </pre>
-     *
-     * <code>INTERNAL_REASON_UNDEFINED = 0;</code>
-     */
-    INTERNAL_REASON_UNDEFINED(0),
-    /**
-     *
-     *
-     * <pre>
-     * The revision name provided conflicts with an existing one.
-     * </pre>
-     *
-     * <code>CONFLICTING_REVISION_NAME = 1;</code>
-     */
-    CONFLICTING_REVISION_NAME(1),
-    /**
-     *
-     *
-     * <pre>
-     * Revision is missing; this is usually a transient reason.
-     * </pre>
-     *
-     * <code>REVISION_MISSING = 2;</code>
-     */
-    REVISION_MISSING(2),
-    /**
-     *
-     *
-     * <pre>
-     * Internal configuration is missing; this is usually a transient reason.
-     * </pre>
-     *
-     * <code>CONFIGURATION_MISSING = 3;</code>
-     */
-    CONFIGURATION_MISSING(3),
-    /**
-     *
-     *
-     * <pre>
-     * Assigning traffic; this is a transient reason.
-     * </pre>
-     *
-     * <code>ASSIGNING_TRAFFIC = 4;</code>
-     */
-    ASSIGNING_TRAFFIC(4),
-    /**
-     *
-     *
-     * <pre>
-     * Updating ingress traffic settings; this is a transient reason.
-     * </pre>
-     *
-     * <code>UPDATING_INGRESS_TRAFFIC_ALLOWED = 5;</code>
-     */
-    UPDATING_INGRESS_TRAFFIC_ALLOWED(5),
-    /**
-     *
-     *
-     * <pre>
-     * The revision can't be created because it violates an org policy setting.
-     * </pre>
-     *
-     * <code>REVISION_ORG_POLICY_VIOLATION = 6;</code>
-     */
-    REVISION_ORG_POLICY_VIOLATION(6),
-    /**
-     *
-     *
-     * <pre>
-     * Enabling GCFv2 URI support; this is a transient reason.
-     * </pre>
-     *
-     * <code>ENABLING_GCFV2_URI_SUPPORT = 7;</code>
-     */
-    ENABLING_GCFV2_URI_SUPPORT(7),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * Default value.
-     * </pre>
-     *
-     * <code>INTERNAL_REASON_UNDEFINED = 0;</code>
-     */
-    public static final int INTERNAL_REASON_UNDEFINED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The revision name provided conflicts with an existing one.
-     * </pre>
-     *
-     * <code>CONFLICTING_REVISION_NAME = 1;</code>
-     */
-    public static final int CONFLICTING_REVISION_NAME_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Revision is missing; this is usually a transient reason.
-     * </pre>
-     *
-     * <code>REVISION_MISSING = 2;</code>
-     */
-    public static final int REVISION_MISSING_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
-     * Internal configuration is missing; this is usually a transient reason.
-     * </pre>
-     *
-     * <code>CONFIGURATION_MISSING = 3;</code>
-     */
-    public static final int CONFIGURATION_MISSING_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * Assigning traffic; this is a transient reason.
-     * </pre>
-     *
-     * <code>ASSIGNING_TRAFFIC = 4;</code>
-     */
-    public static final int ASSIGNING_TRAFFIC_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * Updating ingress traffic settings; this is a transient reason.
-     * </pre>
-     *
-     * <code>UPDATING_INGRESS_TRAFFIC_ALLOWED = 5;</code>
-     */
-    public static final int UPDATING_INGRESS_TRAFFIC_ALLOWED_VALUE = 5;
-    /**
-     *
-     *
-     * <pre>
-     * The revision can't be created because it violates an org policy setting.
-     * </pre>
-     *
-     * <code>REVISION_ORG_POLICY_VIOLATION = 6;</code>
-     */
-    public static final int REVISION_ORG_POLICY_VIOLATION_VALUE = 6;
-    /**
-     *
-     *
-     * <pre>
-     * Enabling GCFv2 URI support; this is a transient reason.
-     * </pre>
-     *
-     * <code>ENABLING_GCFV2_URI_SUPPORT = 7;</code>
-     */
-    public static final int ENABLING_GCFV2_URI_SUPPORT_VALUE = 7;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static InternalReason valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static InternalReason forNumber(int value) {
-      switch (value) {
-        case 0:
-          return INTERNAL_REASON_UNDEFINED;
-        case 1:
-          return CONFLICTING_REVISION_NAME;
-        case 2:
-          return REVISION_MISSING;
-        case 3:
-          return CONFIGURATION_MISSING;
-        case 4:
-          return ASSIGNING_TRAFFIC;
-        case 5:
-          return UPDATING_INGRESS_TRAFFIC_ALLOWED;
-        case 6:
-          return REVISION_ORG_POLICY_VIOLATION;
-        case 7:
-          return ENABLING_GCFV2_URI_SUPPORT;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<InternalReason> internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<InternalReason> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<InternalReason>() {
-          public InternalReason findValueByNumber(int number) {
-            return InternalReason.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(3);
-    }
-
-    private static final InternalReason[] VALUES = values();
-
-    public static InternalReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private InternalReason(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Condition.InternalReason)
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Reasons specific to DomainMapping resource.
-   * </pre>
-   *
-   * Protobuf enum {@code google.cloud.run.v2.Condition.DomainMappingReason}
-   */
-  public enum DomainMappingReason implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Default value.
-     * </pre>
-     *
-     * <code>DOMAIN_MAPPING_REASON_UNDEFINED = 0;</code>
-     */
-    DOMAIN_MAPPING_REASON_UNDEFINED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Internal route is not yet ready.
-     * </pre>
-     *
-     * <code>ROUTE_NOT_READY = 1;</code>
-     */
-    ROUTE_NOT_READY(1),
-    /**
-     *
-     *
-     * <pre>
-     * Insufficient permissions.
-     * </pre>
-     *
-     * <code>PERMISSION_DENIED = 2;</code>
-     */
-    PERMISSION_DENIED(2),
-    /**
-     *
-     *
-     * <pre>
-     * Certificate already exists.
-     * </pre>
-     *
-     * <code>CERTIFICATE_ALREADY_EXISTS = 3;</code>
-     */
-    CERTIFICATE_ALREADY_EXISTS(3),
-    /**
-     *
-     *
-     * <pre>
-     * Mapping already exists.
-     * </pre>
-     *
-     * <code>MAPPING_ALREADY_EXISTS = 4;</code>
-     */
-    MAPPING_ALREADY_EXISTS(4),
-    /**
-     *
-     *
-     * <pre>
-     * Certificate issuance pending.
-     * </pre>
-     *
-     * <code>CERTIFICATE_PENDING = 5;</code>
-     */
-    CERTIFICATE_PENDING(5),
-    /**
-     *
-     *
-     * <pre>
-     * Certificate issuance failed.
-     * </pre>
-     *
-     * <code>CERTIFICATE_FAILED = 6;</code>
-     */
-    CERTIFICATE_FAILED(6),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     *
-     *
-     * <pre>
-     * Default value.
-     * </pre>
-     *
-     * <code>DOMAIN_MAPPING_REASON_UNDEFINED = 0;</code>
-     */
-    public static final int DOMAIN_MAPPING_REASON_UNDEFINED_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Internal route is not yet ready.
-     * </pre>
-     *
-     * <code>ROUTE_NOT_READY = 1;</code>
-     */
-    public static final int ROUTE_NOT_READY_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Insufficient permissions.
-     * </pre>
-     *
-     * <code>PERMISSION_DENIED = 2;</code>
-     */
-    public static final int PERMISSION_DENIED_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
-     * Certificate already exists.
-     * </pre>
-     *
-     * <code>CERTIFICATE_ALREADY_EXISTS = 3;</code>
-     */
-    public static final int CERTIFICATE_ALREADY_EXISTS_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * Mapping already exists.
-     * </pre>
-     *
-     * <code>MAPPING_ALREADY_EXISTS = 4;</code>
-     */
-    public static final int MAPPING_ALREADY_EXISTS_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * Certificate issuance pending.
-     * </pre>
-     *
-     * <code>CERTIFICATE_PENDING = 5;</code>
-     */
-    public static final int CERTIFICATE_PENDING_VALUE = 5;
-    /**
-     *
-     *
-     * <pre>
-     * Certificate issuance failed.
-     * </pre>
-     *
-     * <code>CERTIFICATE_FAILED = 6;</code>
-     */
-    public static final int CERTIFICATE_FAILED_VALUE = 6;
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static DomainMappingReason valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static DomainMappingReason forNumber(int value) {
-      switch (value) {
-        case 0:
-          return DOMAIN_MAPPING_REASON_UNDEFINED;
-        case 1:
-          return ROUTE_NOT_READY;
-        case 2:
-          return PERMISSION_DENIED;
-        case 3:
-          return CERTIFICATE_ALREADY_EXISTS;
-        case 4:
-          return MAPPING_ALREADY_EXISTS;
-        case 5:
-          return CERTIFICATE_PENDING;
-        case 6:
-          return CERTIFICATE_FAILED;
-        default:
-          return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<DomainMappingReason>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-
-    private static final com.google.protobuf.Internal.EnumLiteMap<DomainMappingReason>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DomainMappingReason>() {
-              public DomainMappingReason findValueByNumber(int number) {
-                return DomainMappingReason.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(4);
-    }
-
-    private static final DomainMappingReason[] VALUES = values();
-
-    public static DomainMappingReason valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private DomainMappingReason(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Condition.DomainMappingReason)
   }
 
   /**
@@ -1869,7 +1317,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(5);
+      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final RevisionReason[] VALUES = values();
@@ -2029,7 +1477,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(6);
+      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final ExecutionReason[] VALUES = values();
@@ -2062,8 +1510,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     REASON(6),
-    INTERNAL_REASON(7),
-    DOMAIN_MAPPING_REASON(8),
     REVISION_REASON(9),
     EXECUTION_REASON(11),
     REASONS_NOT_SET(0);
@@ -2086,10 +1532,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 6:
           return REASON;
-        case 7:
-          return INTERNAL_REASON;
-        case 8:
-          return DOMAIN_MAPPING_REASON;
         case 9:
           return REVISION_REASON;
         case 11:
@@ -2389,117 +1831,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.run.v2.Condition.CommonReason.COMMON_REASON_UNDEFINED;
   }
 
-  public static final int INTERNAL_REASON_FIELD_NUMBER = 7;
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the internal condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-   *
-   * @return Whether the internalReason field is set.
-   */
-  public boolean hasInternalReason() {
-    return reasonsCase_ == 7;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the internal condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-   *
-   * @return The enum numeric value on the wire for internalReason.
-   */
-  public int getInternalReasonValue() {
-    if (reasonsCase_ == 7) {
-      return (java.lang.Integer) reasons_;
-    }
-    return 0;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the internal condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-   *
-   * @return The internalReason.
-   */
-  public com.google.cloud.run.v2.Condition.InternalReason getInternalReason() {
-    if (reasonsCase_ == 7) {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.run.v2.Condition.InternalReason result =
-          com.google.cloud.run.v2.Condition.InternalReason.valueOf((java.lang.Integer) reasons_);
-      return result == null
-          ? com.google.cloud.run.v2.Condition.InternalReason.UNRECOGNIZED
-          : result;
-    }
-    return com.google.cloud.run.v2.Condition.InternalReason.INTERNAL_REASON_UNDEFINED;
-  }
-
-  public static final int DOMAIN_MAPPING_REASON_FIELD_NUMBER = 8;
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the domain mapping condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-   *
-   * @return Whether the domainMappingReason field is set.
-   */
-  public boolean hasDomainMappingReason() {
-    return reasonsCase_ == 8;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the domain mapping condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-   *
-   * @return The enum numeric value on the wire for domainMappingReason.
-   */
-  public int getDomainMappingReasonValue() {
-    if (reasonsCase_ == 8) {
-      return (java.lang.Integer) reasons_;
-    }
-    return 0;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * A reason for the domain mapping condition.
-   * </pre>
-   *
-   * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-   *
-   * @return The domainMappingReason.
-   */
-  public com.google.cloud.run.v2.Condition.DomainMappingReason getDomainMappingReason() {
-    if (reasonsCase_ == 8) {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.run.v2.Condition.DomainMappingReason result =
-          com.google.cloud.run.v2.Condition.DomainMappingReason.valueOf(
-              (java.lang.Integer) reasons_);
-      return result == null
-          ? com.google.cloud.run.v2.Condition.DomainMappingReason.UNRECOGNIZED
-          : result;
-    }
-    return com.google.cloud.run.v2.Condition.DomainMappingReason.DOMAIN_MAPPING_REASON_UNDEFINED;
-  }
-
   public static final int REVISION_REASON_FIELD_NUMBER = 9;
   /**
    *
@@ -2642,12 +1973,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     if (reasonsCase_ == 6) {
       output.writeEnum(6, ((java.lang.Integer) reasons_));
     }
-    if (reasonsCase_ == 7) {
-      output.writeEnum(7, ((java.lang.Integer) reasons_));
-    }
-    if (reasonsCase_ == 8) {
-      output.writeEnum(8, ((java.lang.Integer) reasons_));
-    }
     if (reasonsCase_ == 9) {
       output.writeEnum(9, ((java.lang.Integer) reasons_));
     }
@@ -2681,14 +2006,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     if (reasonsCase_ == 6) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(6, ((java.lang.Integer) reasons_));
-    }
-    if (reasonsCase_ == 7) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(7, ((java.lang.Integer) reasons_));
-    }
-    if (reasonsCase_ == 8) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(8, ((java.lang.Integer) reasons_));
     }
     if (reasonsCase_ == 9) {
       size +=
@@ -2726,12 +2043,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       case 6:
         if (getReasonValue() != other.getReasonValue()) return false;
         break;
-      case 7:
-        if (getInternalReasonValue() != other.getInternalReasonValue()) return false;
-        break;
-      case 8:
-        if (getDomainMappingReasonValue() != other.getDomainMappingReasonValue()) return false;
-        break;
       case 9:
         if (getRevisionReasonValue() != other.getRevisionReasonValue()) return false;
         break;
@@ -2768,14 +2079,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + REASON_FIELD_NUMBER;
         hash = (53 * hash) + getReasonValue();
-        break;
-      case 7:
-        hash = (37 * hash) + INTERNAL_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getInternalReasonValue();
-        break;
-      case 8:
-        hash = (37 * hash) + DOMAIN_MAPPING_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getDomainMappingReasonValue();
         break;
       case 9:
         hash = (37 * hash) + REVISION_REASON_FIELD_NUMBER;
@@ -2986,12 +2289,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (reasonsCase_ == 6) {
         result.reasons_ = reasons_;
       }
-      if (reasonsCase_ == 7) {
-        result.reasons_ = reasons_;
-      }
-      if (reasonsCase_ == 8) {
-        result.reasons_ = reasons_;
-      }
       if (reasonsCase_ == 9) {
         result.reasons_ = reasons_;
       }
@@ -3069,16 +2366,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         case REASON:
           {
             setReasonValue(other.getReasonValue());
-            break;
-          }
-        case INTERNAL_REASON:
-          {
-            setInternalReasonValue(other.getInternalReasonValue());
-            break;
-          }
-        case DOMAIN_MAPPING_REASON:
-          {
-            setDomainMappingReasonValue(other.getDomainMappingReasonValue());
             break;
           }
         case REVISION_REASON:
@@ -3846,238 +3133,6 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReason() {
       if (reasonsCase_ == 6) {
-        reasonsCase_ = 0;
-        reasons_ = null;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @return Whether the internalReason field is set.
-     */
-    @java.lang.Override
-    public boolean hasInternalReason() {
-      return reasonsCase_ == 7;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @return The enum numeric value on the wire for internalReason.
-     */
-    @java.lang.Override
-    public int getInternalReasonValue() {
-      if (reasonsCase_ == 7) {
-        return ((java.lang.Integer) reasons_).intValue();
-      }
-      return 0;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @param value The enum numeric value on the wire for internalReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInternalReasonValue(int value) {
-      reasonsCase_ = 7;
-      reasons_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @return The internalReason.
-     */
-    @java.lang.Override
-    public com.google.cloud.run.v2.Condition.InternalReason getInternalReason() {
-      if (reasonsCase_ == 7) {
-        @SuppressWarnings("deprecation")
-        com.google.cloud.run.v2.Condition.InternalReason result =
-            com.google.cloud.run.v2.Condition.InternalReason.valueOf((java.lang.Integer) reasons_);
-        return result == null
-            ? com.google.cloud.run.v2.Condition.InternalReason.UNRECOGNIZED
-            : result;
-      }
-      return com.google.cloud.run.v2.Condition.InternalReason.INTERNAL_REASON_UNDEFINED;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @param value The internalReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInternalReason(com.google.cloud.run.v2.Condition.InternalReason value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      reasonsCase_ = 7;
-      reasons_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the internal condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.InternalReason internal_reason = 7;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearInternalReason() {
-      if (reasonsCase_ == 7) {
-        reasonsCase_ = 0;
-        reasons_ = null;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @return Whether the domainMappingReason field is set.
-     */
-    @java.lang.Override
-    public boolean hasDomainMappingReason() {
-      return reasonsCase_ == 8;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @return The enum numeric value on the wire for domainMappingReason.
-     */
-    @java.lang.Override
-    public int getDomainMappingReasonValue() {
-      if (reasonsCase_ == 8) {
-        return ((java.lang.Integer) reasons_).intValue();
-      }
-      return 0;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @param value The enum numeric value on the wire for domainMappingReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDomainMappingReasonValue(int value) {
-      reasonsCase_ = 8;
-      reasons_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @return The domainMappingReason.
-     */
-    @java.lang.Override
-    public com.google.cloud.run.v2.Condition.DomainMappingReason getDomainMappingReason() {
-      if (reasonsCase_ == 8) {
-        @SuppressWarnings("deprecation")
-        com.google.cloud.run.v2.Condition.DomainMappingReason result =
-            com.google.cloud.run.v2.Condition.DomainMappingReason.valueOf(
-                (java.lang.Integer) reasons_);
-        return result == null
-            ? com.google.cloud.run.v2.Condition.DomainMappingReason.UNRECOGNIZED
-            : result;
-      }
-      return com.google.cloud.run.v2.Condition.DomainMappingReason.DOMAIN_MAPPING_REASON_UNDEFINED;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @param value The domainMappingReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDomainMappingReason(
-        com.google.cloud.run.v2.Condition.DomainMappingReason value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      reasonsCase_ = 8;
-      reasons_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A reason for the domain mapping condition.
-     * </pre>
-     *
-     * <code>.google.cloud.run.v2.Condition.DomainMappingReason domain_mapping_reason = 8;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDomainMappingReason() {
-      if (reasonsCase_ == 8) {
         reasonsCase_ = 0;
         reasons_ = null;
         onChanged();

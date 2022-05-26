@@ -24,7 +24,9 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.run.v2.CreateServiceRequest;
 import com.google.cloud.run.v2.DeleteServiceRequest;
 import com.google.cloud.run.v2.GetServiceRequest;
@@ -151,6 +153,17 @@ public class GrpcServicesStub extends ServicesStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate CREATE_SERVICE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_SERVICE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate LIST_SERVICES_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate UPDATE_SERVICE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate DELETE_SERVICE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+
   public static final GrpcServicesStub create(ServicesStubSettings settings) throws IOException {
     return new GrpcServicesStub(settings, ClientContext.create(settings));
   }
@@ -191,9 +204,9 @@ public class GrpcServicesStub extends ServicesStub {
             .setMethodDescriptor(createServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", CREATE_SERVICE_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
@@ -201,9 +214,9 @@ public class GrpcServicesStub extends ServicesStub {
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_SERVICE_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
@@ -211,9 +224,9 @@ public class GrpcServicesStub extends ServicesStub {
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", LIST_SERVICES_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateServiceRequest, Operation> updateServiceTransportSettings =
@@ -221,9 +234,12 @@ public class GrpcServicesStub extends ServicesStub {
             .setMethodDescriptor(updateServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("service.name", String.valueOf(request.getService().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getService() != null) {
+                    builder.add(
+                        request.getService().getName(), "location", UPDATE_SERVICE_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteServiceRequest, Operation> deleteServiceTransportSettings =
@@ -231,9 +247,9 @@ public class GrpcServicesStub extends ServicesStub {
             .setMethodDescriptor(deleteServiceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_SERVICE_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =

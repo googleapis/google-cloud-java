@@ -18,7 +18,6 @@ package com.google.cloud.run.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -37,7 +36,6 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
-import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -132,7 +130,6 @@ public class ServicesClient implements BackgroundResource {
    * Constructs an instance of ServicesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ServicesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServicesClient create(ServicesStub stub) {
     return new ServicesClient(stub);
   }
@@ -147,7 +144,6 @@ public class ServicesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ServicesClient(ServicesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +154,6 @@ public class ServicesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServicesStub getStub() {
     return stub;
   }
@@ -587,19 +582,15 @@ public class ServicesClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (ServicesClient servicesClient = ServicesClient.create()) {
    *   Service service = Service.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Service response = servicesClient.updateServiceAsync(service, updateMask).get();
+   *   Service response = servicesClient.updateServiceAsync(service).get();
    * }
    * }</pre>
    *
    * @param service Required. The Service to be updated.
-   * @param updateMask The list of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Service, Service> updateServiceAsync(
-      Service service, FieldMask updateMask) {
-    UpdateServiceRequest request =
-        UpdateServiceRequest.newBuilder().setService(service).setUpdateMask(updateMask).build();
+  public final OperationFuture<Service, Service> updateServiceAsync(Service service) {
+    UpdateServiceRequest request = UpdateServiceRequest.newBuilder().setService(service).build();
     return updateServiceAsync(request);
   }
 
@@ -616,7 +607,6 @@ public class ServicesClient implements BackgroundResource {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
    *           .setService(Service.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .build();
@@ -644,7 +634,6 @@ public class ServicesClient implements BackgroundResource {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
    *           .setService(Service.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .build();
@@ -673,7 +662,6 @@ public class ServicesClient implements BackgroundResource {
    *   UpdateServiceRequest request =
    *       UpdateServiceRequest.newBuilder()
    *           .setService(Service.newBuilder().build())
-   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
    *           .build();

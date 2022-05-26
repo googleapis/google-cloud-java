@@ -143,11 +143,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
 
               break;
             }
-          case 56:
-            {
-              containerConcurrency_ = input.readInt32();
-              break;
-            }
           case 66:
             {
               com.google.protobuf.Duration.Builder subBuilder = null;
@@ -190,11 +185,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                   input.readMessage(com.google.cloud.run.v2.Volume.parser(), extensionRegistry));
               break;
             }
-          case 96:
-            {
-              confidential_ = input.readBool();
-              break;
-            }
           case 104:
             {
               int rawValue = input.readEnum();
@@ -207,6 +197,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
               java.lang.String s = input.readStringRequireUtf8();
 
               encryptionKey_ = s;
+              break;
+            }
+          case 120:
+            {
+              maxInstanceRequestConcurrency_ = input.readInt32();
               break;
             }
           default:
@@ -610,24 +605,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     return getVpcAccess();
   }
 
-  public static final int CONTAINER_CONCURRENCY_FIELD_NUMBER = 7;
-  private int containerConcurrency_;
-  /**
-   *
-   *
-   * <pre>
-   * Sets the maximum number of requests that each serving instance can receive.
-   * </pre>
-   *
-   * <code>int32 container_concurrency = 7;</code>
-   *
-   * @return The containerConcurrency.
-   */
-  @java.lang.Override
-  public int getContainerConcurrency() {
-    return containerConcurrency_;
-  }
-
   public static final int TIMEOUT_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration timeout_;
   /**
@@ -872,24 +849,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     return volumes_.get(index);
   }
 
-  public static final int CONFIDENTIAL_FIELD_NUMBER = 12;
-  private boolean confidential_;
-  /**
-   *
-   *
-   * <pre>
-   * Enables Confidential Cloud Run in Revisions created using this template.
-   * </pre>
-   *
-   * <code>bool confidential = 12;</code>
-   *
-   * @return The confidential.
-   */
-  @java.lang.Override
-  public boolean getConfidential() {
-    return confidential_;
-  }
-
   public static final int EXECUTION_ENVIRONMENT_FIELD_NUMBER = 13;
   private int executionEnvironment_;
   /**
@@ -979,6 +938,24 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER = 15;
+  private int maxInstanceRequestConcurrency_;
+  /**
+   *
+   *
+   * <pre>
+   * Sets the maximum number of requests that each serving instance can receive.
+   * </pre>
+   *
+   * <code>int32 max_instance_request_concurrency = 15;</code>
+   *
+   * @return The maxInstanceRequestConcurrency.
+   */
+  @java.lang.Override
+  public int getMaxInstanceRequestConcurrency() {
+    return maxInstanceRequestConcurrency_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1006,9 +983,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (vpcAccess_ != null) {
       output.writeMessage(6, getVpcAccess());
     }
-    if (containerConcurrency_ != 0) {
-      output.writeInt32(7, containerConcurrency_);
-    }
     if (timeout_ != null) {
       output.writeMessage(8, getTimeout());
     }
@@ -1021,9 +995,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < volumes_.size(); i++) {
       output.writeMessage(11, volumes_.get(i));
     }
-    if (confidential_ != false) {
-      output.writeBool(12, confidential_);
-    }
     if (executionEnvironment_
         != com.google.cloud.run.v2.ExecutionEnvironment.EXECUTION_ENVIRONMENT_UNSPECIFIED
             .getNumber()) {
@@ -1031,6 +1002,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, encryptionKey_);
+    }
+    if (maxInstanceRequestConcurrency_ != 0) {
+      output.writeInt32(15, maxInstanceRequestConcurrency_);
     }
     unknownFields.writeTo(output);
   }
@@ -1070,9 +1044,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (vpcAccess_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getVpcAccess());
     }
-    if (containerConcurrency_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, containerConcurrency_);
-    }
     if (timeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTimeout());
     }
@@ -1085,9 +1056,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < volumes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, volumes_.get(i));
     }
-    if (confidential_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, confidential_);
-    }
     if (executionEnvironment_
         != com.google.cloud.run.v2.ExecutionEnvironment.EXECUTION_ENVIRONMENT_UNSPECIFIED
             .getNumber()) {
@@ -1095,6 +1063,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encryptionKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, encryptionKey_);
+    }
+    if (maxInstanceRequestConcurrency_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              15, maxInstanceRequestConcurrency_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1122,7 +1095,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (hasVpcAccess()) {
       if (!getVpcAccess().equals(other.getVpcAccess())) return false;
     }
-    if (getContainerConcurrency() != other.getContainerConcurrency()) return false;
     if (hasTimeout() != other.hasTimeout()) return false;
     if (hasTimeout()) {
       if (!getTimeout().equals(other.getTimeout())) return false;
@@ -1130,9 +1102,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getContainersList().equals(other.getContainersList())) return false;
     if (!getVolumesList().equals(other.getVolumesList())) return false;
-    if (getConfidential() != other.getConfidential()) return false;
     if (executionEnvironment_ != other.executionEnvironment_) return false;
     if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
+    if (getMaxInstanceRequestConcurrency() != other.getMaxInstanceRequestConcurrency())
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1162,8 +1135,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + VPC_ACCESS_FIELD_NUMBER;
       hash = (53 * hash) + getVpcAccess().hashCode();
     }
-    hash = (37 * hash) + CONTAINER_CONCURRENCY_FIELD_NUMBER;
-    hash = (53 * hash) + getContainerConcurrency();
     if (hasTimeout()) {
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getTimeout().hashCode();
@@ -1178,12 +1149,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
     }
-    hash = (37 * hash) + CONFIDENTIAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getConfidential());
     hash = (37 * hash) + EXECUTION_ENVIRONMENT_FIELD_NUMBER;
     hash = (53 * hash) + executionEnvironment_;
     hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getEncryptionKey().hashCode();
+    hash = (37 * hash) + MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxInstanceRequestConcurrency();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1373,8 +1344,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         vpcAccess_ = null;
         vpcAccessBuilder_ = null;
       }
-      containerConcurrency_ = 0;
-
       if (timeoutBuilder_ == null) {
         timeout_ = null;
       } else {
@@ -1395,11 +1364,11 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         volumesBuilder_.clear();
       }
-      confidential_ = false;
-
       executionEnvironment_ = 0;
 
       encryptionKey_ = "";
+
+      maxInstanceRequestConcurrency_ = 0;
 
       return this;
     }
@@ -1444,7 +1413,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         result.vpcAccess_ = vpcAccessBuilder_.build();
       }
-      result.containerConcurrency_ = containerConcurrency_;
       if (timeoutBuilder_ == null) {
         result.timeout_ = timeout_;
       } else {
@@ -1469,9 +1437,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
-      result.confidential_ = confidential_;
       result.executionEnvironment_ = executionEnvironment_;
       result.encryptionKey_ = encryptionKey_;
+      result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
       onBuilt();
       return result;
     }
@@ -1532,9 +1500,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasVpcAccess()) {
         mergeVpcAccess(other.getVpcAccess());
-      }
-      if (other.getContainerConcurrency() != 0) {
-        setContainerConcurrency(other.getContainerConcurrency());
       }
       if (other.hasTimeout()) {
         mergeTimeout(other.getTimeout());
@@ -1597,15 +1562,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      if (other.getConfidential() != false) {
-        setConfidential(other.getConfidential());
-      }
       if (other.executionEnvironment_ != 0) {
         setExecutionEnvironmentValue(other.getExecutionEnvironmentValue());
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
         onChanged();
+      }
+      if (other.getMaxInstanceRequestConcurrency() != 0) {
+        setMaxInstanceRequestConcurrency(other.getMaxInstanceRequestConcurrency());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2445,58 +2410,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
         vpcAccess_ = null;
       }
       return vpcAccessBuilder_;
-    }
-
-    private int containerConcurrency_;
-    /**
-     *
-     *
-     * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
-     * </pre>
-     *
-     * <code>int32 container_concurrency = 7;</code>
-     *
-     * @return The containerConcurrency.
-     */
-    @java.lang.Override
-    public int getContainerConcurrency() {
-      return containerConcurrency_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
-     * </pre>
-     *
-     * <code>int32 container_concurrency = 7;</code>
-     *
-     * @param value The containerConcurrency to set.
-     * @return This builder for chaining.
-     */
-    public Builder setContainerConcurrency(int value) {
-
-      containerConcurrency_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Sets the maximum number of requests that each serving instance can receive.
-     * </pre>
-     *
-     * <code>int32 container_concurrency = 7;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearContainerConcurrency() {
-
-      containerConcurrency_ = 0;
-      onChanged();
-      return this;
     }
 
     private com.google.protobuf.Duration timeout_;
@@ -3511,58 +3424,6 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       return volumesBuilder_;
     }
 
-    private boolean confidential_;
-    /**
-     *
-     *
-     * <pre>
-     * Enables Confidential Cloud Run in Revisions created using this template.
-     * </pre>
-     *
-     * <code>bool confidential = 12;</code>
-     *
-     * @return The confidential.
-     */
-    @java.lang.Override
-    public boolean getConfidential() {
-      return confidential_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Enables Confidential Cloud Run in Revisions created using this template.
-     * </pre>
-     *
-     * <code>bool confidential = 12;</code>
-     *
-     * @param value The confidential to set.
-     * @return This builder for chaining.
-     */
-    public Builder setConfidential(boolean value) {
-
-      confidential_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Enables Confidential Cloud Run in Revisions created using this template.
-     * </pre>
-     *
-     * <code>bool confidential = 12;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearConfidential() {
-
-      confidential_ = false;
-      onChanged();
-      return this;
-    }
-
     private int executionEnvironment_ = 0;
     /**
      *
@@ -3766,6 +3627,58 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
 
       encryptionKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int maxInstanceRequestConcurrency_;
+    /**
+     *
+     *
+     * <pre>
+     * Sets the maximum number of requests that each serving instance can receive.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 15;</code>
+     *
+     * @return The maxInstanceRequestConcurrency.
+     */
+    @java.lang.Override
+    public int getMaxInstanceRequestConcurrency() {
+      return maxInstanceRequestConcurrency_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the maximum number of requests that each serving instance can receive.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 15;</code>
+     *
+     * @param value The maxInstanceRequestConcurrency to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInstanceRequestConcurrency(int value) {
+
+      maxInstanceRequestConcurrency_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the maximum number of requests that each serving instance can receive.
+     * </pre>
+     *
+     * <code>int32 max_instance_request_concurrency = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInstanceRequestConcurrency() {
+
+      maxInstanceRequestConcurrency_ = 0;
       onChanged();
       return this;
     }

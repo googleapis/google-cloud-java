@@ -181,7 +181,6 @@ public class RevisionsStubSettings extends StubSettings<RevisionsStubSettings> {
     return deleteRevisionOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RevisionsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

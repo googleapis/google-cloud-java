@@ -77,109 +77,114 @@ public final class ServiceProto {
           + ".proto\032\027google/api/client.proto\032\037google/"
           + "api/field_behavior.proto\032\035google/api/lau"
           + "nch_stage.proto\032\031google/api/resource.pro"
-          + "to\032#google/cloud/run/v2/condition.proto\032"
-          + "+google/cloud/run/v2/revision_template.p"
-          + "roto\032(google/cloud/run/v2/traffic_target"
-          + ".proto\032)google/cloud/run/v2/vendor_setti"
-          + "ngs.proto\032\036google/iam/v1/iam_policy.prot"
-          + "o\032\032google/iam/v1/policy.proto\032#google/lo"
-          + "ngrunning/operations.proto\032 google/proto"
-          + "buf/field_mask.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"\256\001\n\024CreateServiceRequest\0222"
-          + "\n\006parent\030\001 \001(\tB\"\340A\002\372A\034\022\032run.googleapis.c"
-          + "om/Service\0222\n\007service\030\002 \001(\0132\034.google.clo"
-          + "ud.run.v2.ServiceB\003\340A\002\022\027\n\nservice_id\030\003 \001"
-          + "(\tB\003\340A\002\022\025\n\rvalidate_only\030\004 \001(\010\"\251\001\n\024Updat"
-          + "eServiceRequest\0222\n\007service\030\001 \001(\0132\034.googl"
-          + "e.cloud.run.v2.ServiceB\003\340A\002\022/\n\013update_ma"
-          + "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\r"
-          + "validate_only\030\003 \001(\010\022\025\n\rallow_missing\030\004 \001"
-          + "(\010\"\206\001\n\023ListServicesRequest\0222\n\006parent\030\001 \001"
-          + "(\tB\"\340A\002\372A\034\022\032run.googleapis.com/Service\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n"
-          + "\014show_deleted\030\004 \001(\010\"_\n\024ListServicesRespo"
-          + "nse\022.\n\010services\030\001 \003(\0132\034.google.cloud.run"
-          + ".v2.Service\022\027\n\017next_page_token\030\002 \001(\t\"E\n\021"
-          + "GetServiceRequest\0220\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
-          + "\032run.googleapis.com/Service\"m\n\024DeleteSer"
-          + "viceRequest\0220\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n\032run.g"
-          + "oogleapis.com/Service\022\025\n\rvalidate_only\030\002"
-          + " \001(\010\022\014\n\004etag\030\003 \001(\t\"\230\013\n\007Service\022\014\n\004name\030\001"
-          + " \001(\t\022\023\n\013description\030\002 \001(\t\022\020\n\003uid\030\003 \001(\tB\003"
-          + "\340A\003\022\027\n\ngeneration\030\004 \001(\003B\003\340A\003\0228\n\006labels\030\005"
-          + " \003(\0132(.google.cloud.run.v2.Service.Label"
-          + "sEntry\022B\n\013annotations\030\006 \003(\0132-.google.clo"
-          + "ud.run.v2.Service.AnnotationsEntry\0224\n\013cr"
-          + "eate_time\030\007 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\0224\n\013update_time\030\010 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\t "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
-          + "expire_time\030\n \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\024\n\007creator\030\013 \001(\tB\003\340A\003\022\032\n\rlast"
-          + "_modifier\030\014 \001(\tB\003\340A\003\022\016\n\006client\030\r \001(\t\022\026\n\016"
-          + "client_version\030\016 \001(\t\0224\n\007ingress\030\017 \001(\0162#."
-          + "google.cloud.run.v2.IngressTraffic\022-\n\014la"
-          + "unch_stage\030\020 \001(\0162\027.google.api.LaunchStag"
-          + "e\022F\n\024binary_authorization\030\021 \001(\0132(.google"
-          + ".cloud.run.v2.BinaryAuthorization\022<\n\010tem"
-          + "plate\030\022 \001(\0132%.google.cloud.run.v2.Revisi"
-          + "onTemplateB\003\340A\002\0223\n\007traffic\030\023 \003(\0132\".googl"
-          + "e.cloud.run.v2.TrafficTarget\022 \n\023observed"
-          + "_generation\030\036 \001(\003B\003\340A\003\022?\n\022terminal_condi"
-          + "tion\030\037 \001(\0132\036.google.cloud.run.v2.Conditi"
-          + "onB\003\340A\003\0227\n\nconditions\030  \003(\0132\036.google.clo"
-          + "ud.run.v2.ConditionB\003\340A\003\022B\n\025latest_ready"
-          + "_revision\030! \001(\tB#\340A\003\372A\035\n\033run.googleapis."
-          + "com/Revision\022D\n\027latest_created_revision\030"
-          + "\" \001(\tB#\340A\003\372A\035\n\033run.googleapis.com/Revisi"
-          + "on\022G\n\020traffic_statuses\030# \003(\0132(.google.cl"
-          + "oud.run.v2.TrafficTargetStatusB\003\340A\003\022\020\n\003u"
-          + "ri\030$ \001(\tB\003\340A\003\022\030\n\013reconciling\030b \001(\010B\003\340A\003\022"
-          + "\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotations"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:^\352"
-          + "A[\n\032run.googleapis.com/Service\022:projects"
-          + "/{project}/locations/{location}/services"
-          + "/{service}R\001\0012\266\013\n\010Services\022\311\001\n\rCreateSer"
-          + "vice\022).google.cloud.run.v2.CreateService"
-          + "Request\032\035.google.longrunning.Operation\"n"
-          + "\202\323\344\223\0027\",/v2/{parent=projects/*/locations"
-          + "/*}/services:\007service\332A\031parent,service,s"
-          + "ervice_id\312A\022\n\007Service\022\007Service\022\217\001\n\nGetSe"
-          + "rvice\022&.google.cloud.run.v2.GetServiceRe"
-          + "quest\032\034.google.cloud.run.v2.Service\";\202\323\344"
-          + "\223\002.\022,/v2/{name=projects/*/locations/*/se"
-          + "rvices/*}\332A\004name\022\242\001\n\014ListServices\022(.goog"
-          + "le.cloud.run.v2.ListServicesRequest\032).go"
-          + "ogle.cloud.run.v2.ListServicesResponse\"="
-          + "\202\323\344\223\002.\022,/v2/{parent=projects/*/locations"
-          + "/*}/services\332A\006parent\022\313\001\n\rUpdateService\022"
-          + ").google.cloud.run.v2.UpdateServiceReque"
-          + "st\032\035.google.longrunning.Operation\"p\202\323\344\223\002"
-          + "?24/v2/{service.name=projects/*/location"
-          + "s/*/services/*}:\007service\332A\023service,updat"
-          + "e_mask\312A\022\n\007Service\022\007Service\022\253\001\n\rDeleteSe"
-          + "rvice\022).google.cloud.run.v2.DeleteServic"
-          + "eRequest\032\035.google.longrunning.Operation\""
-          + "P\202\323\344\223\002.*,/v2/{name=projects/*/locations/"
-          + "*/services/*}\332A\004name\312A\022\n\007Service\022\007Servic"
-          + "e\022\220\001\n\014GetIamPolicy\022\".google.iam.v1.GetIa"
-          + "mPolicyRequest\032\025.google.iam.v1.Policy\"E\202"
-          + "\323\344\223\002?\022=/v2/{resource=projects/*/location"
-          + "s/*/services/*}:getIamPolicy\022\223\001\n\014SetIamP"
-          + "olicy\022\".google.iam.v1.SetIamPolicyReques"
-          + "t\032\025.google.iam.v1.Policy\"H\202\323\344\223\002B\"=/v2/{r"
-          + "esource=projects/*/locations/*/services/"
-          + "*}:setIamPolicy:\001*\022\271\001\n\022TestIamPermission"
-          + "s\022(.google.iam.v1.TestIamPermissionsRequ"
-          + "est\032).google.iam.v1.TestIamPermissionsRe"
-          + "sponse\"N\202\323\344\223\002H\"C/v2/{resource=projects/*"
-          + "/locations/*/services/*}:testIamPermissi"
-          + "ons:\001*\032F\312A\022run.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformBa"
-          + "\n\027com.google.cloud.run.v2B\014ServiceProtoP"
-          + "\001Z6google.golang.org/genproto/googleapis"
-          + "/cloud/run/v2;runb\006proto3"
+          + "to\032\030google/api/routing.proto\032#google/clo"
+          + "ud/run/v2/condition.proto\032+google/cloud/"
+          + "run/v2/revision_template.proto\032(google/c"
+          + "loud/run/v2/traffic_target.proto\032)google"
+          + "/cloud/run/v2/vendor_settings.proto\032\036goo"
+          + "gle/iam/v1/iam_policy.proto\032\032google/iam/"
+          + "v1/policy.proto\032#google/longrunning/oper"
+          + "ations.proto\032\037google/protobuf/timestamp."
+          + "proto\"\256\001\n\024CreateServiceRequest\0222\n\006parent"
+          + "\030\001 \001(\tB\"\340A\002\372A\034\022\032run.googleapis.com/Servi"
+          + "ce\0222\n\007service\030\002 \001(\0132\034.google.cloud.run.v"
+          + "2.ServiceB\003\340A\002\022\027\n\nservice_id\030\003 \001(\tB\003\340A\002\022"
+          + "\025\n\rvalidate_only\030\004 \001(\010\"x\n\024UpdateServiceR"
+          + "equest\0222\n\007service\030\001 \001(\0132\034.google.cloud.r"
+          + "un.v2.ServiceB\003\340A\002\022\025\n\rvalidate_only\030\003 \001("
+          + "\010\022\025\n\rallow_missing\030\004 \001(\010\"\206\001\n\023ListService"
+          + "sRequest\0222\n\006parent\030\001 \001(\tB\"\340A\002\372A\034\022\032run.go"
+          + "ogleapis.com/Service\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001("
+          + "\010\"_\n\024ListServicesResponse\022.\n\010services\030\001 "
+          + "\003(\0132\034.google.cloud.run.v2.Service\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"E\n\021GetServiceRequest\022"
+          + "0\n\004name\030\001 \001(\tB\"\340A\002\372A\034\n\032run.googleapis.co"
+          + "m/Service\"m\n\024DeleteServiceRequest\0220\n\004nam"
+          + "e\030\001 \001(\tB\"\340A\002\372A\034\n\032run.googleapis.com/Serv"
+          + "ice\022\025\n\rvalidate_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t"
+          + "\"\230\013\n\007Service\022\014\n\004name\030\001 \001(\t\022\023\n\013descriptio"
+          + "n\030\002 \001(\t\022\020\n\003uid\030\003 \001(\tB\003\340A\003\022\027\n\ngeneration\030"
+          + "\004 \001(\003B\003\340A\003\0228\n\006labels\030\005 \003(\0132(.google.clou"
+          + "d.run.v2.Service.LabelsEntry\022B\n\013annotati"
+          + "ons\030\006 \003(\0132-.google.cloud.run.v2.Service."
+          + "AnnotationsEntry\0224\n\013create_time\030\007 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\0224\n\013update"
+          + "_time\030\010 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0224\n\013delete_time\030\t \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0224\n\013expire_time\030\n \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\024\n\007crea"
+          + "tor\030\013 \001(\tB\003\340A\003\022\032\n\rlast_modifier\030\014 \001(\tB\003\340"
+          + "A\003\022\016\n\006client\030\r \001(\t\022\026\n\016client_version\030\016 \001"
+          + "(\t\0224\n\007ingress\030\017 \001(\0162#.google.cloud.run.v"
+          + "2.IngressTraffic\022-\n\014launch_stage\030\020 \001(\0162\027"
+          + ".google.api.LaunchStage\022F\n\024binary_author"
+          + "ization\030\021 \001(\0132(.google.cloud.run.v2.Bina"
+          + "ryAuthorization\022<\n\010template\030\022 \001(\0132%.goog"
+          + "le.cloud.run.v2.RevisionTemplateB\003\340A\002\0223\n"
+          + "\007traffic\030\023 \003(\0132\".google.cloud.run.v2.Tra"
+          + "fficTarget\022 \n\023observed_generation\030\036 \001(\003B"
+          + "\003\340A\003\022?\n\022terminal_condition\030\037 \001(\0132\036.googl"
+          + "e.cloud.run.v2.ConditionB\003\340A\003\0227\n\nconditi"
+          + "ons\030  \003(\0132\036.google.cloud.run.v2.Conditio"
+          + "nB\003\340A\003\022B\n\025latest_ready_revision\030! \001(\tB#\340"
+          + "A\003\372A\035\n\033run.googleapis.com/Revision\022D\n\027la"
+          + "test_created_revision\030\" \001(\tB#\340A\003\372A\035\n\033run"
+          + ".googleapis.com/Revision\022G\n\020traffic_stat"
+          + "uses\030# \003(\0132(.google.cloud.run.v2.Traffic"
+          + "TargetStatusB\003\340A\003\022\020\n\003uri\030$ \001(\tB\003\340A\003\022\030\n\013r"
+          + "econciling\030b \001(\010B\003\340A\003\022\021\n\004etag\030c \001(\tB\003\340A\003"
+          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001:^\352A[\n\032run.googleapis"
+          + ".com/Service\022:projects/{project}/locatio"
+          + "ns/{location}/services/{service}R\001\0012\267\r\n\010"
+          + "Services\022\375\001\n\rCreateService\022).google.clou"
+          + "d.run.v2.CreateServiceRequest\032\035.google.l"
+          + "ongrunning.Operation\"\241\001\202\323\344\223\0027\",/v2/{pare"
+          + "nt=projects/*/locations/*}/services:\007ser"
+          + "vice\212\323\344\223\002-\022+\n\006parent\022!projects/*/locatio"
+          + "ns/{location=*}\332A\031parent,service,service"
+          + "_id\312A\022\n\007Service\022\007Service\022\303\001\n\nGetService\022"
+          + "&.google.cloud.run.v2.GetServiceRequest\032"
+          + "\034.google.cloud.run.v2.Service\"o\202\323\344\223\002.\022,/"
+          + "v2/{name=projects/*/locations/*/services"
+          + "/*}\212\323\344\223\002.\022,\n\004name\022$projects/*/locations/"
+          + "{location=*}/**\332A\004name\022\325\001\n\014ListServices\022"
+          + "(.google.cloud.run.v2.ListServicesReques"
+          + "t\032).google.cloud.run.v2.ListServicesResp"
+          + "onse\"p\202\323\344\223\002.\022,/v2/{parent=projects/*/loc"
+          + "ations/*}/services\212\323\344\223\002-\022+\n\006parent\022!proj"
+          + "ects/*/locations/{location=*}\332A\006parent\022\374"
+          + "\001\n\rUpdateService\022).google.cloud.run.v2.U"
+          + "pdateServiceRequest\032\035.google.longrunning"
+          + ".Operation\"\240\001\202\323\344\223\002?24/v2/{service.name=p"
+          + "rojects/*/locations/*/services/*}:\007servi"
+          + "ce\212\323\344\223\0026\0224\n\014service.name\022$projects/*/loc"
+          + "ations/{location=*}/**\332A\007service\312A\022\n\007Ser"
+          + "vice\022\007Service\022\340\001\n\rDeleteService\022).google"
+          + ".cloud.run.v2.DeleteServiceRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\204\001\202\323\344\223\002.*,/v2/"
+          + "{name=projects/*/locations/*/services/*}"
+          + "\212\323\344\223\002.\022,\n\004name\022$projects/*/locations/{lo"
+          + "cation=*}/**\332A\004name\312A\022\n\007Service\022\007Service"
+          + "\022\220\001\n\014GetIamPolicy\022\".google.iam.v1.GetIam"
+          + "PolicyRequest\032\025.google.iam.v1.Policy\"E\202\323"
+          + "\344\223\002?\022=/v2/{resource=projects/*/locations"
+          + "/*/services/*}:getIamPolicy\022\223\001\n\014SetIamPo"
+          + "licy\022\".google.iam.v1.SetIamPolicyRequest"
+          + "\032\025.google.iam.v1.Policy\"H\202\323\344\223\002B\"=/v2/{re"
+          + "source=projects/*/locations/*/services/*"
+          + "}:setIamPolicy:\001*\022\271\001\n\022TestIamPermissions"
+          + "\022(.google.iam.v1.TestIamPermissionsReque"
+          + "st\032).google.iam.v1.TestIamPermissionsRes"
+          + "ponse\"N\202\323\344\223\002H\"C/v2/{resource=projects/*/"
+          + "locations/*/services/*}:testIamPermissio"
+          + "ns:\001*\032F\312A\022run.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformBa\n"
+          + "\027com.google.cloud.run.v2B\014ServiceProtoP\001"
+          + "Z6google.golang.org/genproto/googleapis/"
+          + "cloud/run/v2;runb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +195,7 @@ public final class ServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.RevisionTemplateProto.getDescriptor(),
               com.google.cloud.run.v2.TrafficTargetProto.getDescriptor(),
@@ -197,7 +203,6 @@ public final class ServiceProto {
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_CreateServiceRequest_descriptor =
@@ -214,7 +219,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_UpdateServiceRequest_descriptor,
             new java.lang.String[] {
-              "Service", "UpdateMask", "ValidateOnly", "AllowMissing",
+              "Service", "ValidateOnly", "AllowMissing",
             });
     internal_static_google_cloud_run_v2_ListServicesRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -308,6 +313,7 @@ public final class ServiceProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.api.RoutingProto.routing);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
@@ -316,6 +322,7 @@ public final class ServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.RevisionTemplateProto.getDescriptor();
     com.google.cloud.run.v2.TrafficTargetProto.getDescriptor();
@@ -323,7 +330,6 @@ public final class ServiceProto {
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

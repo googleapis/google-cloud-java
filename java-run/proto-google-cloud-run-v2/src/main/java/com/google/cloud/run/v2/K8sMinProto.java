@@ -118,21 +118,21 @@ public final class K8sMinProto {
           + "A\002\0221\n\005items\030\002 \003(\0132\".google.cloud.run.v2."
           + "VersionToPath\022\024\n\014default_mode\030\003 \001(\005\"A\n\rV"
           + "ersionToPath\022\021\n\004path\030\001 \001(\tB\003\340A\002\022\017\n\007versi"
-          + "on\030\002 \001(\t\022\014\n\004mode\030\003 \001(\005\"\'\n\020CloudSqlInstan"
-          + "ce\022\023\n\013connections\030\001 \003(\tB\366\003\n\027com.google.c"
-          + "loud.run.v2B\013K8sMinProtoP\001Z6google.golan"
-          + "g.org/genproto/googleapis/cloud/run/v2;r"
-          + "un\352Ax\n!cloudkms.googleapis.com/CryptoKey"
-          + "\022Sprojects/{project}/locations/{location"
-          + "}/keyRings/{key_ring}/cryptoKeys/{crypto"
-          + "_key}\352AJ\n#secretmanager.googleapis.com/S"
-          + "ecret\022#projects/{project}/secrets/{secre"
-          + "t}\352Ad\n*secretmanager.googleapis.com/Secr"
-          + "etVersion\0226projects/{project}/secrets/{s"
-          + "ecret}/versions/{version}\352Ad\n\"vpcaccess."
-          + "googleapis.com/Connector\022>projects/{proj"
-          + "ect}/locations/{location}/connectors/{co"
-          + "nnector}b\006proto3"
+          + "on\030\002 \001(\t\022\014\n\004mode\030\003 \001(\005\"%\n\020CloudSqlInstan"
+          + "ce\022\021\n\tinstances\030\001 \003(\tB\366\003\n\027com.google.clo"
+          + "ud.run.v2B\013K8sMinProtoP\001Z6google.golang."
+          + "org/genproto/googleapis/cloud/run/v2;run"
+          + "\352Ax\n!cloudkms.googleapis.com/CryptoKey\022S"
+          + "projects/{project}/locations/{location}/"
+          + "keyRings/{key_ring}/cryptoKeys/{crypto_k"
+          + "ey}\352AJ\n#secretmanager.googleapis.com/Sec"
+          + "ret\022#projects/{project}/secrets/{secret}"
+          + "\352Ad\n*secretmanager.googleapis.com/Secret"
+          + "Version\0226projects/{project}/secrets/{sec"
+          + "ret}/versions/{version}\352Ad\n\"vpcaccess.go"
+          + "ogleapis.com/Connector\022>projects/{projec"
+          + "t}/locations/{location}/connectors/{conn"
+          + "ector}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -235,7 +235,7 @@ public final class K8sMinProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_CloudSqlInstance_descriptor,
             new java.lang.String[] {
-              "Connections",
+              "Instances",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

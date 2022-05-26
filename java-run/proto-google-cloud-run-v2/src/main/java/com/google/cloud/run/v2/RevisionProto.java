@@ -69,75 +69,79 @@ public final class RevisionProto {
           + "s.proto\032\027google/api/client.proto\032\037google"
           + "/api/field_behavior.proto\032\035google/api/la"
           + "unch_stage.proto\032\031google/api/resource.pr"
-          + "oto\032#google/cloud/run/v2/condition.proto"
-          + "\032!google/cloud/run/v2/k8s.min.proto\032)goo"
-          + "gle/cloud/run/v2/vendor_settings.proto\032#"
-          + "google/longrunning/operations.proto\032\036goo"
-          + "gle/protobuf/duration.proto\032\037google/prot"
-          + "obuf/timestamp.proto\"G\n\022GetRevisionReque"
-          + "st\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033run.googleapis"
-          + ".com/Revision\"\210\001\n\024ListRevisionsRequest\0223"
-          + "\n\006parent\030\001 \001(\tB#\340A\002\372A\035\022\033run.googleapis.c"
-          + "om/Revision\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-          + "oken\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001(\010\"b\n\025List"
-          + "RevisionsResponse\0220\n\trevisions\030\001 \003(\0132\035.g"
-          + "oogle.cloud.run.v2.Revision\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\"o\n\025DeleteRevisionRequest\0221\n"
-          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n\033run.googleapis.com/"
-          + "Revision\022\025\n\rvalidate_only\030\002 \001(\010\022\014\n\004etag\030"
-          + "\003 \001(\t\"\314\n\n\010Revision\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n"
-          + "\003uid\030\002 \001(\tB\003\340A\003\022\027\n\ngeneration\030\003 \001(\003B\003\340A\003"
-          + "\0229\n\006labels\030\004 \003(\0132).google.cloud.run.v2.R"
-          + "evision.LabelsEntry\022C\n\013annotations\030\005 \003(\013"
-          + "2..google.cloud.run.v2.Revision.Annotati"
-          + "onsEntry\0224\n\013create_time\030\006 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\0224\n\013update_time\030\007 "
+          + "oto\032\030google/api/routing.proto\032#google/cl"
+          + "oud/run/v2/condition.proto\032!google/cloud"
+          + "/run/v2/k8s.min.proto\032)google/cloud/run/"
+          + "v2/vendor_settings.proto\032#google/longrun"
+          + "ning/operations.proto\032\036google/protobuf/d"
+          + "uration.proto\032\037google/protobuf/timestamp"
+          + ".proto\"G\n\022GetRevisionRequest\0221\n\004name\030\001 \001"
+          + "(\tB#\340A\002\372A\035\n\033run.googleapis.com/Revision\""
+          + "\210\001\n\024ListRevisionsRequest\0223\n\006parent\030\001 \001(\t"
+          + "B#\340A\002\372A\035\022\033run.googleapis.com/Revision\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n\014"
+          + "show_deleted\030\004 \001(\010\"b\n\025ListRevisionsRespo"
+          + "nse\0220\n\trevisions\030\001 \003(\0132\035.google.cloud.ru"
+          + "n.v2.Revision\022\027\n\017next_page_token\030\002 \001(\t\"o"
+          + "\n\025DeleteRevisionRequest\0221\n\004name\030\001 \001(\tB#\340"
+          + "A\002\372A\035\n\033run.googleapis.com/Revision\022\025\n\rva"
+          + "lidate_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\301\n\n\010Revi"
+          + "sion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A"
+          + "\003\022\027\n\ngeneration\030\003 \001(\003B\003\340A\003\0229\n\006labels\030\004 \003"
+          + "(\0132).google.cloud.run.v2.Revision.Labels"
+          + "Entry\022C\n\013annotations\030\005 \003(\0132..google.clou"
+          + "d.run.v2.Revision.AnnotationsEntry\0224\n\013cr"
+          + "eate_time\030\006 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\010 "
           + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
-          + "delete_time\030\010 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013expire_time\030\t \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022-\n\014launch_stage"
-          + "\030\n \001(\0162\027.google.api.LaunchStage\0223\n\007servi"
-          + "ce\030\013 \001(\tB\"\340A\003\372A\034\n\032run.googleapis.com/Ser"
-          + "vice\0225\n\007scaling\030\014 \001(\0132$.google.cloud.run"
-          + ".v2.RevisionScaling\0222\n\nvpc_access\030\r \001(\0132"
-          + "\036.google.cloud.run.v2.VpcAccess\022\035\n\025conta"
-          + "iner_concurrency\030\016 \001(\005\022*\n\007timeout\030\017 \001(\0132"
-          + "\031.google.protobuf.Duration\022\027\n\017service_ac"
-          + "count\030\020 \001(\t\0222\n\ncontainers\030\021 \003(\0132\036.google"
-          + ".cloud.run.v2.Container\022,\n\007volumes\030\022 \003(\013"
-          + "2\033.google.cloud.run.v2.Volume\022\024\n\014confide"
-          + "ntial\030\023 \001(\010\022H\n\025execution_environment\030\024 \001"
-          + "(\0162).google.cloud.run.v2.ExecutionEnviro"
-          + "nment\022>\n\016encryption_key\030\025 \001(\tB&\372A#\n!clou"
-          + "dkms.googleapis.com/CryptoKey\022\030\n\013reconci"
-          + "ling\030\036 \001(\010B\003\340A\003\0227\n\nconditions\030\037 \003(\0132\036.go"
-          + "ogle.cloud.run.v2.ConditionB\003\340A\003\022 \n\023obse"
-          + "rved_generation\030  \001(\003B\003\340A\003\022\024\n\007log_uri\030! "
-          + "\001(\tB\003\340A\003\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020An"
-          + "notationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001:t\352Aq\n\033run.googleapis.com/Revision"
-          + "\022Oprojects/{project}/locations/{location"
-          + "}/services/{service}/revisions/{revision"
-          + "}R\001\0012\346\004\n\tRevisions\022\236\001\n\013GetRevision\022\'.goo"
-          + "gle.cloud.run.v2.GetRevisionRequest\032\035.go"
-          + "ogle.cloud.run.v2.Revision\"G\202\323\344\223\002:\0228/v2/"
-          + "{name=projects/*/locations/*/services/*/"
-          + "revisions/*}\332A\004name\022\261\001\n\rListRevisions\022)."
-          + "google.cloud.run.v2.ListRevisionsRequest"
-          + "\032*.google.cloud.run.v2.ListRevisionsResp"
-          + "onse\"I\202\323\344\223\002:\0228/v2/{parent=projects/*/loc"
-          + "ations/*/services/*}/revisions\332A\006parent\022"
-          + "\273\001\n\016DeleteRevision\022*.google.cloud.run.v2"
-          + ".DeleteRevisionRequest\032\035.google.longrunn"
-          + "ing.Operation\"^\202\323\344\223\002:*8/v2/{name=project"
-          + "s/*/locations/*/services/*/revisions/*}\332"
-          + "A\004name\312A\024\n\010Revision\022\010Revision\032F\312A\022run.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformBb\n\027com.google.clou"
-          + "d.run.v2B\rRevisionProtoP\001Z6google.golang"
-          + ".org/genproto/googleapis/cloud/run/v2;ru"
-          + "nb\006proto3"
+          + "expire_time\030\t \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\022-\n\014launch_stage\030\n \001(\0162\027.googl"
+          + "e.api.LaunchStage\0223\n\007service\030\013 \001(\tB\"\340A\003\372"
+          + "A\034\n\032run.googleapis.com/Service\0225\n\007scalin"
+          + "g\030\014 \001(\0132$.google.cloud.run.v2.RevisionSc"
+          + "aling\0222\n\nvpc_access\030\r \001(\0132\036.google.cloud"
+          + ".run.v2.VpcAccess\022(\n max_instance_reques"
+          + "t_concurrency\030\" \001(\005\022*\n\007timeout\030\017 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\022\027\n\017service_accou"
+          + "nt\030\020 \001(\t\0222\n\ncontainers\030\021 \003(\0132\036.google.cl"
+          + "oud.run.v2.Container\022,\n\007volumes\030\022 \003(\0132\033."
+          + "google.cloud.run.v2.Volume\022H\n\025execution_"
+          + "environment\030\024 \001(\0162).google.cloud.run.v2."
+          + "ExecutionEnvironment\022>\n\016encryption_key\030\025"
+          + " \001(\tB&\372A#\n!cloudkms.googleapis.com/Crypt"
+          + "oKey\022\030\n\013reconciling\030\036 \001(\010B\003\340A\003\0227\n\ncondit"
+          + "ions\030\037 \003(\0132\036.google.cloud.run.v2.Conditi"
+          + "onB\003\340A\003\022 \n\023observed_generation\030  \001(\003B\003\340A"
+          + "\003\022\024\n\007log_uri\030! \001(\tB\003\340A\003\022\021\n\004etag\030c \001(\tB\003\340"
+          + "A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001:t\352Aq\n\033run.googleap"
+          + "is.com/Revision\022Oprojects/{project}/loca"
+          + "tions/{location}/services/{service}/revi"
+          + "sions/{revision}R\001\0012\205\006\n\tRevisions\022\322\001\n\013Ge"
+          + "tRevision\022\'.google.cloud.run.v2.GetRevis"
+          + "ionRequest\032\035.google.cloud.run.v2.Revisio"
+          + "n\"{\202\323\344\223\002:\0228/v2/{name=projects/*/location"
+          + "s/*/services/*/revisions/*}\212\323\344\223\002.\022,\n\004nam"
+          + "e\022$projects/*/locations/{location=*}/**\332"
+          + "A\004name\022\347\001\n\rListRevisions\022).google.cloud."
+          + "run.v2.ListRevisionsRequest\032*.google.clo"
+          + "ud.run.v2.ListRevisionsResponse\"\177\202\323\344\223\002:\022"
+          + "8/v2/{parent=projects/*/locations/*/serv"
+          + "ices/*}/revisions\212\323\344\223\0020\022.\n\006parent\022$proje"
+          + "cts/*/locations/{location=*}/**\332A\006parent"
+          + "\022\360\001\n\016DeleteRevision\022*.google.cloud.run.v"
+          + "2.DeleteRevisionRequest\032\035.google.longrun"
+          + "ning.Operation\"\222\001\202\323\344\223\002:*8/v2/{name=proje"
+          + "cts/*/locations/*/services/*/revisions/*"
+          + "}\212\323\344\223\002.\022,\n\004name\022$projects/*/locations/{l"
+          + "ocation=*}/**\332A\004name\312A\024\n\010Revision\022\010Revis"
+          + "ion\032F\312A\022run.googleapis.com\322A.https://www"
+          + ".googleapis.com/auth/cloud-platformBb\n\027c"
+          + "om.google.cloud.run.v2B\rRevisionProtoP\001Z"
+          + "6google.golang.org/genproto/googleapis/c"
+          + "loud/run/v2;runb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -148,6 +152,7 @@ public final class RevisionProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
@@ -206,12 +211,11 @@ public final class RevisionProto {
               "Service",
               "Scaling",
               "VpcAccess",
-              "ContainerConcurrency",
+              "MaxInstanceRequestConcurrency",
               "Timeout",
               "ServiceAccount",
               "Containers",
               "Volumes",
-              "Confidential",
               "ExecutionEnvironment",
               "EncryptionKey",
               "Reconciling",
@@ -245,6 +249,7 @@ public final class RevisionProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.api.RoutingProto.routing);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
@@ -253,6 +258,7 @@ public final class RevisionProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();

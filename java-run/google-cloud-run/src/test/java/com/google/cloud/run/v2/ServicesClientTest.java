@@ -524,9 +524,8 @@ public class ServicesClientTest {
     mockServices.addResponse(resultOperation);
 
     Service service = Service.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Service actualResponse = client.updateServiceAsync(service, updateMask).get();
+    Service actualResponse = client.updateServiceAsync(service).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockServices.getRequests();
@@ -534,7 +533,6 @@ public class ServicesClientTest {
     UpdateServiceRequest actualRequest = ((UpdateServiceRequest) actualRequests.get(0));
 
     Assert.assertEquals(service, actualRequest.getService());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -548,8 +546,7 @@ public class ServicesClientTest {
 
     try {
       Service service = Service.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateServiceAsync(service, updateMask).get();
+      client.updateServiceAsync(service).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

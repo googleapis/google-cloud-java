@@ -548,11 +548,11 @@ public interface RevisionOrBuilder
    * Sets the maximum number of requests that each serving instance can receive.
    * </pre>
    *
-   * <code>int32 container_concurrency = 14;</code>
+   * <code>int32 max_instance_request_concurrency = 34;</code>
    *
-   * @return The containerConcurrency.
+   * @return The maxInstanceRequestConcurrency.
    */
-  int getContainerConcurrency();
+  int getMaxInstanceRequestConcurrency();
 
   /**
    *
@@ -724,19 +724,6 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 18;</code>
    */
   com.google.cloud.run.v2.VolumeOrBuilder getVolumesOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Indicates whether Confidential Cloud Run is enabled in this Revision.
-   * </pre>
-   *
-   * <code>bool confidential = 19;</code>
-   *
-   * @return The confidential.
-   */
-  boolean getConfidential();
 
   /**
    *

@@ -269,8 +269,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Docker
-   * More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. URL of the Container image in Google Container Registry or Google Artifact
+   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -293,8 +293,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. URL of the Container image in Google Container Registry or Docker
-   * More info: https://kubernetes.io/docs/concepts/containers/images
+   * Required. URL of the Container image in Google Container Registry or Google Artifact
+   * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
    * </pre>
    *
    * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1484,8 +1484,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Docker
-     * More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. URL of the Container image in Google Container Registry or Google Artifact
+     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1507,8 +1507,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Docker
-     * More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. URL of the Container image in Google Container Registry or Google Artifact
+     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1530,8 +1530,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Docker
-     * More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. URL of the Container image in Google Container Registry or Google Artifact
+     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1552,8 +1552,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Docker
-     * More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. URL of the Container image in Google Container Registry or Google Artifact
+     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1570,8 +1570,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. URL of the Container image in Google Container Registry or Docker
-     * More info: https://kubernetes.io/docs/concepts/containers/images
+     * Required. URL of the Container image in Google Container Registry or Google Artifact
+     * Registry. More info: https://kubernetes.io/docs/concepts/containers/images
      * </pre>
      *
      * <code>string image = 2 [(.google.api.field_behavior) = REQUIRED];</code>

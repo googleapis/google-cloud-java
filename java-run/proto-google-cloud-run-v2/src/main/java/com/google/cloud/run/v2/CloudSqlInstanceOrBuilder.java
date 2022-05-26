@@ -34,11 +34,11 @@ public interface CloudSqlInstanceOrBuilder
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
-   * @return A list containing the connections.
+   * @return A list containing the instances.
    */
-  java.util.List<java.lang.String> getConnectionsList();
+  java.util.List<java.lang.String> getInstancesList();
   /**
    *
    *
@@ -50,11 +50,11 @@ public interface CloudSqlInstanceOrBuilder
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
-   * @return The count of connections.
+   * @return The count of instances.
    */
-  int getConnectionsCount();
+  int getInstancesCount();
   /**
    *
    *
@@ -66,12 +66,12 @@ public interface CloudSqlInstanceOrBuilder
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
    * @param index The index of the element to return.
-   * @return The connections at the given index.
+   * @return The instances at the given index.
    */
-  java.lang.String getConnections(int index);
+  java.lang.String getInstances(int index);
   /**
    *
    *
@@ -83,10 +83,10 @@ public interface CloudSqlInstanceOrBuilder
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the connections at the given index.
+   * @return The bytes of the instances at the given index.
    */
-  com.google.protobuf.ByteString getConnectionsBytes(int index);
+  com.google.protobuf.ByteString getInstancesBytes(int index);
 }

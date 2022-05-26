@@ -63,14 +63,13 @@ public final class VendorSettingsProto {
           + "*\231\001\n\016IngressTraffic\022\037\n\033INGRESS_TRAFFIC_U"
           + "NSPECIFIED\020\000\022\027\n\023INGRESS_TRAFFIC_ALL\020\001\022!\n"
           + "\035INGRESS_TRAFFIC_INTERNAL_ONLY\020\002\022*\n&INGR"
-          + "ESS_TRAFFIC_INTERNAL_LOAD_BALANCER\020\003*\200\001\n"
-          + "\024ExecutionEnvironment\022%\n!EXECUTION_ENVIR"
-          + "ONMENT_UNSPECIFIED\020\000\022!\n\035EXECUTION_ENVIRO"
-          + "NMENT_DEFAULT\020\001\022\036\n\032EXECUTION_ENVIRONMENT"
-          + "_GEN2\020\002Bh\n\027com.google.cloud.run.v2B\023Vend"
-          + "orSettingsProtoP\001Z6google.golang.org/gen"
-          + "proto/googleapis/cloud/run/v2;runb\006proto"
-          + "3"
+          + "ESS_TRAFFIC_INTERNAL_LOAD_BALANCER\020\003*}\n\024"
+          + "ExecutionEnvironment\022%\n!EXECUTION_ENVIRO"
+          + "NMENT_UNSPECIFIED\020\000\022\036\n\032EXECUTION_ENVIRON"
+          + "MENT_GEN1\020\001\022\036\n\032EXECUTION_ENVIRONMENT_GEN"
+          + "2\020\002Bh\n\027com.google.cloud.run.v2B\023VendorSe"
+          + "ttingsProtoP\001Z6google.golang.org/genprot"
+          + "o/googleapis/cloud/run/v2;runb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

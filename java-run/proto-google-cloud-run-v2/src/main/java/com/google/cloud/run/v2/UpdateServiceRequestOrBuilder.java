@@ -65,41 +65,6 @@ public interface UpdateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   *
-   * @return Whether the updateMask field is set.
-   */
-  boolean hasUpdateMask();
-  /**
-   *
-   *
-   * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   *
-   * @return The updateMask.
-   */
-  com.google.protobuf.FieldMask getUpdateMask();
-  /**
-   *
-   *
-   * <pre>
-   * The list of fields to be updated.
-   * </pre>
-   *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
-   */
-  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Indicates that the request should be validated and default values
    * populated, without persisting the request or updating any resources.
    * </pre>

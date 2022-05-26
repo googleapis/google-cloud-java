@@ -245,19 +245,6 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Sets the maximum number of requests that each serving instance can receive.
-   * </pre>
-   *
-   * <code>int32 container_concurrency = 7;</code>
-   *
-   * @return The containerConcurrency.
-   */
-  int getContainerConcurrency();
-
-  /**
-   *
-   *
-   * <pre>
    * Max allowed time for an instance to respond to a request.
    * </pre>
    *
@@ -431,19 +418,6 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Enables Confidential Cloud Run in Revisions created using this template.
-   * </pre>
-   *
-   * <code>bool confidential = 12;</code>
-   *
-   * @return The confidential.
-   */
-  boolean getConfidential();
-
-  /**
-   *
-   *
-   * <pre>
    * The sandbox environment to host this Revision.
    * </pre>
    *
@@ -493,4 +467,17 @@ public interface RevisionTemplateOrBuilder
    * @return The bytes for encryptionKey.
    */
   com.google.protobuf.ByteString getEncryptionKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the maximum number of requests that each serving instance can receive.
+   * </pre>
+   *
+   * <code>int32 max_instance_request_concurrency = 15;</code>
+   *
+   * @return The maxInstanceRequestConcurrency.
+   */
+  int getMaxInstanceRequestConcurrency();
 }

@@ -38,7 +38,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
   }
 
   private CloudSqlInstance() {
-    connections_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -75,10 +75,10 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                connections_ = new com.google.protobuf.LazyStringArrayList();
+                instances_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              connections_.add(s);
+              instances_.add(s);
               break;
             }
           default:
@@ -98,7 +98,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        connections_ = connections_.getUnmodifiableView();
+        instances_ = instances_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -120,8 +120,8 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.CloudSqlInstance.Builder.class);
   }
 
-  public static final int CONNECTIONS_FIELD_NUMBER = 1;
-  private com.google.protobuf.LazyStringList connections_;
+  public static final int INSTANCES_FIELD_NUMBER = 1;
+  private com.google.protobuf.LazyStringList instances_;
   /**
    *
    *
@@ -133,12 +133,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
-   * @return A list containing the connections.
+   * @return A list containing the instances.
    */
-  public com.google.protobuf.ProtocolStringList getConnectionsList() {
-    return connections_;
+  public com.google.protobuf.ProtocolStringList getInstancesList() {
+    return instances_;
   }
   /**
    *
@@ -151,12 +151,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
-   * @return The count of connections.
+   * @return The count of instances.
    */
-  public int getConnectionsCount() {
-    return connections_.size();
+  public int getInstancesCount() {
+    return instances_.size();
   }
   /**
    *
@@ -169,13 +169,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
    * @param index The index of the element to return.
-   * @return The connections at the given index.
+   * @return The instances at the given index.
    */
-  public java.lang.String getConnections(int index) {
-    return connections_.get(index);
+  public java.lang.String getInstances(int index) {
+    return instances_.get(index);
   }
   /**
    *
@@ -188,13 +188,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
    * {project}:{location}:{instance}
    * </pre>
    *
-   * <code>repeated string connections = 1;</code>
+   * <code>repeated string instances = 1;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the connections at the given index.
+   * @return The bytes of the instances at the given index.
    */
-  public com.google.protobuf.ByteString getConnectionsBytes(int index) {
-    return connections_.getByteString(index);
+  public com.google.protobuf.ByteString getInstancesBytes(int index) {
+    return instances_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -211,8 +211,8 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < connections_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, connections_.getRaw(i));
+    for (int i = 0; i < instances_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instances_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -225,11 +225,11 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     size = 0;
     {
       int dataSize = 0;
-      for (int i = 0; i < connections_.size(); i++) {
-        dataSize += computeStringSizeNoTag(connections_.getRaw(i));
+      for (int i = 0; i < instances_.size(); i++) {
+        dataSize += computeStringSizeNoTag(instances_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getConnectionsList().size();
+      size += 1 * getInstancesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,7 +246,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     }
     com.google.cloud.run.v2.CloudSqlInstance other = (com.google.cloud.run.v2.CloudSqlInstance) obj;
 
-    if (!getConnectionsList().equals(other.getConnectionsList())) return false;
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -258,9 +258,9 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getConnectionsCount() > 0) {
-      hash = (37 * hash) + CONNECTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getConnectionsList().hashCode();
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -407,7 +407,7 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      connections_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -438,10 +438,10 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
           new com.google.cloud.run.v2.CloudSqlInstance(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) != 0)) {
-        connections_ = connections_.getUnmodifiableView();
+        instances_ = instances_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
-      result.connections_ = connections_;
+      result.instances_ = instances_;
       onBuilt();
       return result;
     }
@@ -491,13 +491,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.run.v2.CloudSqlInstance other) {
       if (other == com.google.cloud.run.v2.CloudSqlInstance.getDefaultInstance()) return this;
-      if (!other.connections_.isEmpty()) {
-        if (connections_.isEmpty()) {
-          connections_ = other.connections_;
+      if (!other.instances_.isEmpty()) {
+        if (instances_.isEmpty()) {
+          instances_ = other.instances_;
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          ensureConnectionsIsMutable();
-          connections_.addAll(other.connections_);
+          ensureInstancesIsMutable();
+          instances_.addAll(other.instances_);
         }
         onChanged();
       }
@@ -532,12 +532,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList connections_ =
+    private com.google.protobuf.LazyStringList instances_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private void ensureConnectionsIsMutable() {
+    private void ensureInstancesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        connections_ = new com.google.protobuf.LazyStringArrayList(connections_);
+        instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
         bitField0_ |= 0x00000001;
       }
     }
@@ -552,12 +552,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
-     * @return A list containing the connections.
+     * @return A list containing the instances.
      */
-    public com.google.protobuf.ProtocolStringList getConnectionsList() {
-      return connections_.getUnmodifiableView();
+    public com.google.protobuf.ProtocolStringList getInstancesList() {
+      return instances_.getUnmodifiableView();
     }
     /**
      *
@@ -570,12 +570,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
-     * @return The count of connections.
+     * @return The count of instances.
      */
-    public int getConnectionsCount() {
-      return connections_.size();
+    public int getInstancesCount() {
+      return instances_.size();
     }
     /**
      *
@@ -588,13 +588,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
      * @param index The index of the element to return.
-     * @return The connections at the given index.
+     * @return The instances at the given index.
      */
-    public java.lang.String getConnections(int index) {
-      return connections_.get(index);
+    public java.lang.String getInstances(int index) {
+      return instances_.get(index);
     }
     /**
      *
@@ -607,13 +607,13 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
      * @param index The index of the value to return.
-     * @return The bytes of the connections at the given index.
+     * @return The bytes of the instances at the given index.
      */
-    public com.google.protobuf.ByteString getConnectionsBytes(int index) {
-      return connections_.getByteString(index);
+    public com.google.protobuf.ByteString getInstancesBytes(int index) {
+      return instances_.getByteString(index);
     }
     /**
      *
@@ -626,18 +626,18 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
      * @param index The index to set the value at.
-     * @param value The connections to set.
+     * @param value The instances to set.
      * @return This builder for chaining.
      */
-    public Builder setConnections(int index, java.lang.String value) {
+    public Builder setInstances(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureConnectionsIsMutable();
-      connections_.set(index, value);
+      ensureInstancesIsMutable();
+      instances_.set(index, value);
       onChanged();
       return this;
     }
@@ -652,17 +652,17 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
-     * @param value The connections to add.
+     * @param value The instances to add.
      * @return This builder for chaining.
      */
-    public Builder addConnections(java.lang.String value) {
+    public Builder addInstances(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureConnectionsIsMutable();
-      connections_.add(value);
+      ensureInstancesIsMutable();
+      instances_.add(value);
       onChanged();
       return this;
     }
@@ -677,14 +677,14 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
-     * @param values The connections to add.
+     * @param values The instances to add.
      * @return This builder for chaining.
      */
-    public Builder addAllConnections(java.lang.Iterable<java.lang.String> values) {
-      ensureConnectionsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, connections_);
+    public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
+      ensureInstancesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
       onChanged();
       return this;
     }
@@ -699,12 +699,12 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearConnections() {
-      connections_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearInstances() {
+      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -720,18 +720,18 @@ public final class CloudSqlInstance extends com.google.protobuf.GeneratedMessage
      * {project}:{location}:{instance}
      * </pre>
      *
-     * <code>repeated string connections = 1;</code>
+     * <code>repeated string instances = 1;</code>
      *
-     * @param value The bytes of the connections to add.
+     * @param value The bytes of the instances to add.
      * @return This builder for chaining.
      */
-    public Builder addConnectionsBytes(com.google.protobuf.ByteString value) {
+    public Builder addInstancesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      ensureConnectionsIsMutable();
-      connections_.add(value);
+      ensureInstancesIsMutable();
+      instances_.add(value);
       onChanged();
       return this;
     }

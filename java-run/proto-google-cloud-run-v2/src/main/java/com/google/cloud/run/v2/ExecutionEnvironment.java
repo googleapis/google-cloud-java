@@ -42,12 +42,12 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Uses the Google-default environment.
+   * Uses the First Generation environment.
    * </pre>
    *
-   * <code>EXECUTION_ENVIRONMENT_DEFAULT = 1;</code>
+   * <code>EXECUTION_ENVIRONMENT_GEN1 = 1;</code>
    */
-  EXECUTION_ENVIRONMENT_DEFAULT(1),
+  EXECUTION_ENVIRONMENT_GEN1(1),
   /**
    *
    *
@@ -75,12 +75,12 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Uses the Google-default environment.
+   * Uses the First Generation environment.
    * </pre>
    *
-   * <code>EXECUTION_ENVIRONMENT_DEFAULT = 1;</code>
+   * <code>EXECUTION_ENVIRONMENT_GEN1 = 1;</code>
    */
-  public static final int EXECUTION_ENVIRONMENT_DEFAULT_VALUE = 1;
+  public static final int EXECUTION_ENVIRONMENT_GEN1_VALUE = 1;
   /**
    *
    *
@@ -119,7 +119,7 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
       case 0:
         return EXECUTION_ENVIRONMENT_UNSPECIFIED;
       case 1:
-        return EXECUTION_ENVIRONMENT_DEFAULT;
+        return EXECUTION_ENVIRONMENT_GEN1;
       case 2:
         return EXECUTION_ENVIRONMENT_GEN2;
       default:
