@@ -134,7 +134,6 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Constructs an instance of SecurityCenterSettingsServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(SecurityCenterSettingsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecurityCenterSettingsServiceClient create(
       SecurityCenterSettingsServiceStub stub) {
     return new SecurityCenterSettingsServiceClient(stub);
@@ -152,7 +151,6 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
         ((SecurityCenterSettingsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SecurityCenterSettingsServiceClient(SecurityCenterSettingsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +160,6 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecurityCenterSettingsServiceStub getStub() {
     return stub;
   }

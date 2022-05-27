@@ -325,7 +325,6 @@ public class SecurityCenterSettingsServiceStubSettings
     return listComponentsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecurityCenterSettingsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
