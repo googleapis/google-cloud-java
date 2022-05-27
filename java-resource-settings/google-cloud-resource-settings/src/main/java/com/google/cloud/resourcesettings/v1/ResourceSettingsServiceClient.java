@@ -18,7 +18,6 @@ package com.google.cloud.resourcesettings.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -138,7 +137,6 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    * Constructs an instance of ResourceSettingsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ResourceSettingsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ResourceSettingsServiceClient create(ResourceSettingsServiceStub stub) {
     return new ResourceSettingsServiceClient(stub);
   }
@@ -154,7 +152,6 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
     this.stub = ((ResourceSettingsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ResourceSettingsServiceClient(ResourceSettingsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -164,7 +161,6 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ResourceSettingsServiceStub getStub() {
     return stub;
   }

@@ -172,7 +172,6 @@ public class ResourceSettingsServiceStubSettings
     return updateSettingSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ResourceSettingsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
