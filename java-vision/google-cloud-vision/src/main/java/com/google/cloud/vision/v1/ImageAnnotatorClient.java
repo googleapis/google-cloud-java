@@ -384,6 +384,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * <p>This service will write image annotation outputs to json files in customer GCS bucket, each
    * json file containing BatchAnnotateImagesResponse proto.
    *
+   * This is a dummy change to create a PR
    * <p>Sample code:
    *
    * <pre>{@code
