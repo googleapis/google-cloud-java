@@ -133,7 +133,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * Constructs an instance of WebRiskServiceV1Beta1Client, using the given stub for making calls.
    * This is for advanced usage - prefer using create(WebRiskServiceV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WebRiskServiceV1Beta1Client create(WebRiskServiceV1Beta1Stub stub) {
     return new WebRiskServiceV1Beta1Client(stub);
   }
@@ -148,7 +147,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
     this.stub = ((WebRiskServiceV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WebRiskServiceV1Beta1Client(WebRiskServiceV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +156,6 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebRiskServiceV1Beta1Stub getStub() {
     return stub;
   }

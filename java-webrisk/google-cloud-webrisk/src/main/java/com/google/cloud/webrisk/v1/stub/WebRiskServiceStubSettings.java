@@ -115,7 +115,6 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
     return createSubmissionSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebRiskServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

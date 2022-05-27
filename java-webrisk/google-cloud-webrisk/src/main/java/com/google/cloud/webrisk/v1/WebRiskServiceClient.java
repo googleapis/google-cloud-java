@@ -16,7 +16,6 @@
 
 package com.google.cloud.webrisk.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.webrisk.v1.stub.WebRiskServiceStub;
@@ -131,7 +130,6 @@ public class WebRiskServiceClient implements BackgroundResource {
    * Constructs an instance of WebRiskServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(WebRiskServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WebRiskServiceClient create(WebRiskServiceStub stub) {
     return new WebRiskServiceClient(stub);
   }
@@ -146,7 +144,6 @@ public class WebRiskServiceClient implements BackgroundResource {
     this.stub = ((WebRiskServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WebRiskServiceClient(WebRiskServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +153,6 @@ public class WebRiskServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebRiskServiceStub getStub() {
     return stub;
   }

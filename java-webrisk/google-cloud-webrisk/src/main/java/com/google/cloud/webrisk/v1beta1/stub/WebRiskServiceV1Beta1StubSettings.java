@@ -110,7 +110,6 @@ public class WebRiskServiceV1Beta1StubSettings
     return searchHashesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebRiskServiceV1Beta1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
