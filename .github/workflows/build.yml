@@ -15,13 +15,3 @@ jobs:
         run: ./bootstrap.sh
         env:
           USERNAME: ${{ github.actor }}
-      - name: Archive code coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage
-          path: monorepo/coverage.zip
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
