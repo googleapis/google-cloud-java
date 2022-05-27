@@ -575,7 +575,6 @@ public class VideoStitcherServiceStubSettings
     return getLiveSessionSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VideoStitcherServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
