@@ -307,7 +307,6 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
     return listMigrationSubtasksSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MigrationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
