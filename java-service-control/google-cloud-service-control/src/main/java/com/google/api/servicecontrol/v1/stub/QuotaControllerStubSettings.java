@@ -93,7 +93,6 @@ public class QuotaControllerStubSettings extends StubSettings<QuotaControllerStu
     return allocateQuotaSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public QuotaControllerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

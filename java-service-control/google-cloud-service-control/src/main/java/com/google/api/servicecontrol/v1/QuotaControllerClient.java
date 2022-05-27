@@ -16,7 +16,6 @@
 
 package com.google.api.servicecontrol.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.servicecontrol.v1.stub.QuotaControllerStub;
@@ -125,7 +124,6 @@ public class QuotaControllerClient implements BackgroundResource {
    * Constructs an instance of QuotaControllerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(QuotaControllerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final QuotaControllerClient create(QuotaControllerStub stub) {
     return new QuotaControllerClient(stub);
   }
@@ -140,7 +138,6 @@ public class QuotaControllerClient implements BackgroundResource {
     this.stub = ((QuotaControllerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected QuotaControllerClient(QuotaControllerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +147,6 @@ public class QuotaControllerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public QuotaControllerStub getStub() {
     return stub;
   }
