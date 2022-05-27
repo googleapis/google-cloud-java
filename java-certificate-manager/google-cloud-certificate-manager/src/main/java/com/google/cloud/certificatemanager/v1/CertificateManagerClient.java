@@ -18,7 +18,6 @@ package com.google.cloud.certificatemanager.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -156,7 +155,6 @@ public class CertificateManagerClient implements BackgroundResource {
    * Constructs an instance of CertificateManagerClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(CertificateManagerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CertificateManagerClient create(CertificateManagerStub stub) {
     return new CertificateManagerClient(stub);
   }
@@ -172,7 +170,6 @@ public class CertificateManagerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CertificateManagerClient(CertificateManagerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -183,7 +180,6 @@ public class CertificateManagerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateManagerStub getStub() {
     return stub;
   }

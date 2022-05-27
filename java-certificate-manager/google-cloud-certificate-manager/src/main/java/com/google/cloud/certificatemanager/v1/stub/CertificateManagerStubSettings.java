@@ -658,7 +658,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return deleteDnsAuthorizationOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
