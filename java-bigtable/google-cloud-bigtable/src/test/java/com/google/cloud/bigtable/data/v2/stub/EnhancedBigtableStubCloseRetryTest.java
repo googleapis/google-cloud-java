@@ -23,9 +23,10 @@ import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.util.List;
@@ -54,7 +55,7 @@ public class EnhancedBigtableStubCloseRetryTest {
   private BlockingQueue<ReadRowsRequest> requests;
   private AtomicInteger numRequests;
 
-  private FakeServiceHelper serviceHelper;
+  private Server server;
   private EnhancedBigtableStub stub;
 
   @Before
@@ -63,11 +64,10 @@ public class EnhancedBigtableStubCloseRetryTest {
     requests = new ArrayBlockingQueue<>(10);
     numRequests = new AtomicInteger();
 
-    serviceHelper = new FakeServiceHelper(new FakeBigtable());
-    serviceHelper.start();
+    server = FakeServiceBuilder.create(new FakeBigtable()).start();
 
     BigtableDataSettings.Builder settingBuilder =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
@@ -80,7 +80,7 @@ public class EnhancedBigtableStubCloseRetryTest {
   public void tearDown() throws Exception {
     testExecutor.shutdown();
     stub.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test

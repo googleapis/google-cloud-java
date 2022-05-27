@@ -25,11 +25,12 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowSet;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
+import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
@@ -60,15 +61,15 @@ public class BigtableChannelPrimerTest {
   BigtableChannelPrimer primer;
   ManagedChannel channel;
   private LogHandler logHandler;
-  private FakeServiceHelper serviceHelper;
+  private Server server;
 
   @Before
   public void setup() throws IOException {
     fakeService = new FakeService();
     metadataInterceptor = new MetadataInterceptor();
 
-    serviceHelper = new FakeServiceHelper(metadataInterceptor, fakeService);
-    serviceHelper.start();
+    server = FakeServiceBuilder.create(fakeService).intercept(metadataInterceptor).start();
+
     primer =
         BigtableChannelPrimer.create(
             OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
@@ -78,9 +79,7 @@ public class BigtableChannelPrimerTest {
             ImmutableList.of("table1", "table2"));
 
     channel =
-        ManagedChannelBuilder.forAddress("localhost", serviceHelper.getPort())
-            .usePlaintext()
-            .build();
+        ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
     logHandler = new LogHandler();
     Logger.getLogger(BigtableChannelPrimer.class.toString()).addHandler(logHandler);
   }
@@ -89,7 +88,7 @@ public class BigtableChannelPrimerTest {
   public void teardown() {
     Logger.getLogger(BigtableChannelPrimer.class.toString()).removeHandler(logHandler);
     channel.shutdown();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test

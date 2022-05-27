@@ -35,12 +35,17 @@ import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
-import com.google.cloud.bigtable.data.v2.models.*;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
+import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
@@ -70,18 +75,20 @@ public class HeadersTest {
   private static final Metadata.Key<String> TEST_FIXED_HEADER =
       Metadata.Key.of(TEST_FIXED_HEADER_STRING, Metadata.ASCII_STRING_MARSHALLER);
 
-  FakeServiceHelper serviceHelper;
+  private Server server;
   private BlockingQueue<Metadata> sentMetadata = new ArrayBlockingQueue<>(10);
 
   private BigtableDataClient client;
 
   @Before
   public void setUp() throws Exception {
-    serviceHelper = new FakeServiceHelper(new MetadataInterceptor(), new FakeBigtableService());
-    serviceHelper.start();
+    server =
+        FakeServiceBuilder.create(new FakeBigtableService())
+            .intercept(new MetadataInterceptor())
+            .start();
 
     BigtableDataSettings.Builder settings =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID);
@@ -109,7 +116,7 @@ public class HeadersTest {
   @After
   public void tearDown() throws Exception {
     client.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test

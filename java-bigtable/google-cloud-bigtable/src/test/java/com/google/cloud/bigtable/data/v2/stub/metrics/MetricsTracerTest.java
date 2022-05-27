@@ -34,7 +34,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -51,6 +51,7 @@ import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
+import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
@@ -101,7 +102,7 @@ public class MetricsTracerTest {
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  FakeServiceHelper serviceHelper;
+  private Server server;
 
   @Mock(answer = Answers.CALLS_REAL_METHODS)
   private BigtableGrpc.BigtableImplBase mockService;
@@ -112,13 +113,12 @@ public class MetricsTracerTest {
 
   @Before
   public void setUp() throws Exception {
-    serviceHelper = new FakeServiceHelper(mockService);
-    serviceHelper.start();
+    server = FakeServiceBuilder.create(mockService).start();
 
     RpcViews.registerBigtableClientViews(localStats.getViewManager());
 
     settings =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
@@ -132,7 +132,7 @@ public class MetricsTracerTest {
   @After
   public void tearDown() {
     stub.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test

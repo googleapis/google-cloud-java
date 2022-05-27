@@ -35,11 +35,9 @@ import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import io.grpc.Attributes;
-import io.grpc.BindableService;
-import io.grpc.ServerInterceptor;
+import io.grpc.Server;
 import io.grpc.ServerTransportFilter;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
@@ -68,7 +66,7 @@ public class BigtableDataClientFactoryTest {
   private static final String DEFAULT_INSTANCE_ID = "fake-instance";
   private static final String DEFAULT_APP_PROFILE_ID = "fake-app-profile";
 
-  private FakeServiceHelper serviceHelper;
+  private Server server;
   private FakeBigtableService service;
 
   private TransportChannelProvider transportChannelProvider;
@@ -77,7 +75,6 @@ public class BigtableDataClientFactoryTest {
   private WatchdogProvider watchdogProvider;
   private ApiClock apiClock;
   private BigtableDataSettings defaultSettings;
-  private int port;
 
   private final BlockingQueue<Attributes> setUpAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
@@ -85,29 +82,25 @@ public class BigtableDataClientFactoryTest {
   @Before
   public void setUp() throws IOException {
     service = new FakeBigtableService();
-    ServerTransportFilter transportFilter =
-        new ServerTransportFilter() {
-          @Override
-          public Attributes transportReady(Attributes transportAttrs) {
-            setUpAttributes.add(transportAttrs);
-            return super.transportReady(transportAttrs);
-          }
+    server =
+        FakeServiceBuilder.create(service)
+            .addTransportFilter(
+                new ServerTransportFilter() {
+                  @Override
+                  public Attributes transportReady(Attributes transportAttrs) {
+                    setUpAttributes.add(transportAttrs);
+                    return super.transportReady(transportAttrs);
+                  }
 
-          @Override
-          public void transportTerminated(Attributes transportAttrs) {
-            terminateAttributes.add(transportAttrs);
-          }
-        };
-    serviceHelper =
-        new FakeServiceHelper(
-            ImmutableList.<ServerInterceptor>of(),
-            transportFilter,
-            ImmutableList.<BindableService>of(service));
-    port = serviceHelper.getPort();
-    serviceHelper.start();
+                  @Override
+                  public void transportTerminated(Attributes transportAttrs) {
+                    terminateAttributes.add(transportAttrs);
+                  }
+                })
+            .start();
 
     BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(DEFAULT_PROJECT_ID)
             .setInstanceId(DEFAULT_INSTANCE_ID)
             .setAppProfileId(DEFAULT_APP_PROFILE_ID);
@@ -152,7 +145,7 @@ public class BigtableDataClientFactoryTest {
 
   @After
   public void tearDown() {
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test
@@ -234,7 +227,7 @@ public class BigtableDataClientFactoryTest {
     String[] tableIds = {"fake-table1", "fake-table2"};
     int poolSize = 3;
     BigtableDataSettings.Builder builder =
-        BigtableDataSettings.newBuilderForEmulator(port)
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(DEFAULT_PROJECT_ID)
             .setInstanceId(DEFAULT_INSTANCE_ID)
             .setAppProfileId(DEFAULT_APP_PROFILE_ID)

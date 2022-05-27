@@ -32,7 +32,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -47,6 +47,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
 import io.grpc.Metadata;
+import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
@@ -64,7 +65,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class StatsHeadersCallableTest {
-  private FakeServiceHelper serviceHelper;
+  private Server server;
 
   private FakeService fakeService = new FakeService();
 
@@ -81,11 +82,10 @@ public class StatsHeadersCallableTest {
   @Before
   public void setUp() throws Exception {
     metadataInterceptor = new MetadataInterceptor();
-    serviceHelper = new FakeServiceHelper(metadataInterceptor, fakeService);
-    serviceHelper.start();
+    server = FakeServiceBuilder.create(fakeService).intercept(metadataInterceptor).start();
 
     EnhancedBigtableStubSettings settings =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
@@ -97,7 +97,7 @@ public class StatsHeadersCallableTest {
   @After
   public void tearDown() {
     stub.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test

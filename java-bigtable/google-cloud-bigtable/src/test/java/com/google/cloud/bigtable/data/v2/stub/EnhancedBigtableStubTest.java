@@ -41,25 +41,24 @@ import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Queues;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
-import io.grpc.BindableService;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
 import io.grpc.ServerCallHandler;
@@ -97,7 +96,7 @@ public class EnhancedBigtableStubTest {
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table");
   private static final String APP_PROFILE_ID = "app-profile-id";
 
-  FakeServiceHelper serviceHelper;
+  private Server server;
   private MetadataInterceptor metadataInterceptor;
   private ContextInterceptor contextInterceptor;
   private FakeDataService fakeDataService;
@@ -110,15 +109,14 @@ public class EnhancedBigtableStubTest {
     contextInterceptor = new ContextInterceptor();
     fakeDataService = new FakeDataService();
 
-    serviceHelper =
-        new FakeServiceHelper(
-            ImmutableList.of(contextInterceptor, metadataInterceptor),
-            null,
-            ImmutableList.<BindableService>of(fakeDataService));
-    serviceHelper.start();
+    server =
+        FakeServiceBuilder.create(fakeDataService)
+            .intercept(contextInterceptor)
+            .intercept(metadataInterceptor)
+            .start();
 
     defaultSettings =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
@@ -132,7 +130,7 @@ public class EnhancedBigtableStubTest {
   @After
   public void tearDown() {
     enhancedBigtableStub.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test
@@ -195,9 +193,7 @@ public class EnhancedBigtableStubTest {
 
     // Create a fixed channel that will ignore the default endpoint and connect to the emulator
     ManagedChannel emulatorChannel =
-        ManagedChannelBuilder.forAddress("localhost", serviceHelper.getPort())
-            .usePlaintext()
-            .build();
+        ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
 
     Metadata metadata;
     try {

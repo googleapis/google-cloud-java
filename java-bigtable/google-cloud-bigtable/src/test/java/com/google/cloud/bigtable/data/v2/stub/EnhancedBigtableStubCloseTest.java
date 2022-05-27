@@ -24,10 +24,11 @@ import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.FakeServiceHelper;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.common.util.concurrent.SettableFuture;
+import io.grpc.Server;
 import io.grpc.stub.StreamObserver;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -48,7 +49,7 @@ public class EnhancedBigtableStubCloseTest {
   private SettableFuture<Void> requestReceivedBarrier = SettableFuture.create();
   private SettableFuture<Void> clientClosedBarrier = SettableFuture.create();
 
-  private FakeServiceHelper serviceHelper;
+  private Server server;
   private EnhancedBigtableStub stub;
 
   @Before
@@ -57,11 +58,10 @@ public class EnhancedBigtableStubCloseTest {
     requestReceivedBarrier = SettableFuture.create();
     clientClosedBarrier = SettableFuture.create();
 
-    serviceHelper = new FakeServiceHelper(new FakeBigtable());
-    serviceHelper.start();
+    server = FakeServiceBuilder.create(new FakeBigtable()).start();
 
     EnhancedBigtableStubSettings stubSettings =
-        BigtableDataSettings.newBuilderForEmulator(serviceHelper.getPort())
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
@@ -76,7 +76,7 @@ public class EnhancedBigtableStubCloseTest {
   public void tearDown() throws Exception {
     testExecutor.shutdown();
     stub.close();
-    serviceHelper.shutdown();
+    server.shutdown();
   }
 
   @Test
