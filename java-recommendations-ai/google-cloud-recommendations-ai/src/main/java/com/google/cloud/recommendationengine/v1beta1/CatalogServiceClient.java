@@ -131,7 +131,6 @@ public class CatalogServiceClient implements BackgroundResource {
    * Constructs an instance of CatalogServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CatalogServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CatalogServiceClient create(CatalogServiceStub stub) {
     return new CatalogServiceClient(stub);
   }
@@ -147,7 +146,6 @@ public class CatalogServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CatalogServiceClient(CatalogServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +156,6 @@ public class CatalogServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CatalogServiceStub getStub() {
     return stub;
   }

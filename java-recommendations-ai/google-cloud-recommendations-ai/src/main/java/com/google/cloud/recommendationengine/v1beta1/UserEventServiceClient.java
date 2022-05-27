@@ -134,7 +134,6 @@ public class UserEventServiceClient implements BackgroundResource {
    * Constructs an instance of UserEventServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(UserEventServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final UserEventServiceClient create(UserEventServiceStub stub) {
     return new UserEventServiceClient(stub);
   }
@@ -150,7 +149,6 @@ public class UserEventServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected UserEventServiceClient(UserEventServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -161,7 +159,6 @@ public class UserEventServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UserEventServiceStub getStub() {
     return stub;
   }

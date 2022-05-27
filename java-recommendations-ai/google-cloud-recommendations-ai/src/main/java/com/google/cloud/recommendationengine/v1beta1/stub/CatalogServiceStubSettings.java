@@ -217,7 +217,6 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return importCatalogItemsOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CatalogServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

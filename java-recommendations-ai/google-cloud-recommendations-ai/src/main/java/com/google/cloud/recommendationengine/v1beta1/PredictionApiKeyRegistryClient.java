@@ -137,7 +137,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    * Constructs an instance of PredictionApiKeyRegistryClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(PredictionApiKeyRegistrySettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionApiKeyRegistryClient create(PredictionApiKeyRegistryStub stub) {
     return new PredictionApiKeyRegistryClient(stub);
   }
@@ -153,7 +152,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
     this.stub = ((PredictionApiKeyRegistryStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PredictionApiKeyRegistryClient(PredictionApiKeyRegistryStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +161,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PredictionApiKeyRegistryStub getStub() {
     return stub;
   }
