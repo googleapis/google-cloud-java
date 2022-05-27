@@ -265,7 +265,6 @@ public class MetricsV1Beta3StubSettings extends StubSettings<MetricsV1Beta3StubS
     return getStageExecutionDetailsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricsV1Beta3Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

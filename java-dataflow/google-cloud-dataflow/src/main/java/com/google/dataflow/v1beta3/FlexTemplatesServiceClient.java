@@ -125,7 +125,6 @@ public class FlexTemplatesServiceClient implements BackgroundResource {
    * Constructs an instance of FlexTemplatesServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(FlexTemplatesServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FlexTemplatesServiceClient create(FlexTemplatesServiceStub stub) {
     return new FlexTemplatesServiceClient(stub);
   }
@@ -140,7 +139,6 @@ public class FlexTemplatesServiceClient implements BackgroundResource {
     this.stub = ((FlexTemplatesServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FlexTemplatesServiceClient(FlexTemplatesServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +148,6 @@ public class FlexTemplatesServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlexTemplatesServiceStub getStub() {
     return stub;
   }

@@ -125,7 +125,6 @@ public class TemplatesServiceClient implements BackgroundResource {
    * Constructs an instance of TemplatesServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(TemplatesServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TemplatesServiceClient create(TemplatesServiceStub stub) {
     return new TemplatesServiceClient(stub);
   }
@@ -140,7 +139,6 @@ public class TemplatesServiceClient implements BackgroundResource {
     this.stub = ((TemplatesServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TemplatesServiceClient(TemplatesServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +148,6 @@ public class TemplatesServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TemplatesServiceStub getStub() {
     return stub;
   }

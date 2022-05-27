@@ -139,7 +139,6 @@ public class MessagesV1Beta3Client implements BackgroundResource {
    * Constructs an instance of MessagesV1Beta3Client, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MessagesV1Beta3Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MessagesV1Beta3Client create(MessagesV1Beta3Stub stub) {
     return new MessagesV1Beta3Client(stub);
   }
@@ -154,7 +153,6 @@ public class MessagesV1Beta3Client implements BackgroundResource {
     this.stub = ((MessagesV1Beta3StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MessagesV1Beta3Client(MessagesV1Beta3Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -164,7 +162,6 @@ public class MessagesV1Beta3Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MessagesV1Beta3Stub getStub() {
     return stub;
   }

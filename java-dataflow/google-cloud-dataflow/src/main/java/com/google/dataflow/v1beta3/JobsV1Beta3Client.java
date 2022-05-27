@@ -130,7 +130,6 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * Constructs an instance of JobsV1Beta3Client, using the given stub for making calls. This is for
    * advanced usage - prefer using create(JobsV1Beta3Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final JobsV1Beta3Client create(JobsV1Beta3Stub stub) {
     return new JobsV1Beta3Client(stub);
   }
@@ -145,7 +144,6 @@ public class JobsV1Beta3Client implements BackgroundResource {
     this.stub = ((JobsV1Beta3StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected JobsV1Beta3Client(JobsV1Beta3Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -155,7 +153,6 @@ public class JobsV1Beta3Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobsV1Beta3Stub getStub() {
     return stub;
   }

@@ -123,7 +123,6 @@ public class SnapshotsV1Beta3Client implements BackgroundResource {
    * Constructs an instance of SnapshotsV1Beta3Client, using the given stub for making calls. This
    * is for advanced usage - prefer using create(SnapshotsV1Beta3Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SnapshotsV1Beta3Client create(SnapshotsV1Beta3Stub stub) {
     return new SnapshotsV1Beta3Client(stub);
   }
@@ -138,7 +137,6 @@ public class SnapshotsV1Beta3Client implements BackgroundResource {
     this.stub = ((SnapshotsV1Beta3StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SnapshotsV1Beta3Client(SnapshotsV1Beta3Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +146,6 @@ public class SnapshotsV1Beta3Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SnapshotsV1Beta3Stub getStub() {
     return stub;
   }

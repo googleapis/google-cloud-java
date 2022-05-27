@@ -113,7 +113,6 @@ public class SnapshotsV1Beta3StubSettings extends StubSettings<SnapshotsV1Beta3S
     return listSnapshotsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SnapshotsV1Beta3Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

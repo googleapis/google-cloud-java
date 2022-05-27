@@ -98,7 +98,6 @@ public class FlexTemplatesServiceStubSettings
     return launchFlexTemplateSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlexTemplatesServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

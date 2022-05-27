@@ -129,7 +129,6 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    * Constructs an instance of MetricsV1Beta3Client, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MetricsV1Beta3Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MetricsV1Beta3Client create(MetricsV1Beta3Stub stub) {
     return new MetricsV1Beta3Client(stub);
   }
@@ -144,7 +143,6 @@ public class MetricsV1Beta3Client implements BackgroundResource {
     this.stub = ((MetricsV1Beta3StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MetricsV1Beta3Client(MetricsV1Beta3Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class MetricsV1Beta3Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricsV1Beta3Stub getStub() {
     return stub;
   }

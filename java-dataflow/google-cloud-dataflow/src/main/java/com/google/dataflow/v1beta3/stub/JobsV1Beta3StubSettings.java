@@ -262,7 +262,6 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
     return snapshotJobSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobsV1Beta3Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -112,7 +112,6 @@ public class TemplatesServiceStubSettings extends StubSettings<TemplatesServiceS
     return getTemplateSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TemplatesServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
