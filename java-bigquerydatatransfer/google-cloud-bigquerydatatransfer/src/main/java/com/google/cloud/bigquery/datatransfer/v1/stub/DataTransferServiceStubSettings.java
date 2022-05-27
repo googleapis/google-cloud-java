@@ -479,7 +479,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return enrollDataSourcesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataTransferServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

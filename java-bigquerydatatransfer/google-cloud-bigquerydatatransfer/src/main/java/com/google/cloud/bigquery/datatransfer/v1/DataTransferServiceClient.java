@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -128,7 +127,6 @@ public class DataTransferServiceClient implements BackgroundResource {
    * Constructs an instance of DataTransferServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(DataTransferServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataTransferServiceClient create(DataTransferServiceStub stub) {
     return new DataTransferServiceClient(stub);
   }
@@ -143,7 +141,6 @@ public class DataTransferServiceClient implements BackgroundResource {
     this.stub = ((DataTransferServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataTransferServiceClient(DataTransferServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +150,6 @@ public class DataTransferServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataTransferServiceStub getStub() {
     return stub;
   }
