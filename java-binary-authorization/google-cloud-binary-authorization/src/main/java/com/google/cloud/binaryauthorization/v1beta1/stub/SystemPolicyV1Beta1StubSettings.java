@@ -91,7 +91,6 @@ public class SystemPolicyV1Beta1StubSettings extends StubSettings<SystemPolicyV1
     return getSystemPolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SystemPolicyV1Beta1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

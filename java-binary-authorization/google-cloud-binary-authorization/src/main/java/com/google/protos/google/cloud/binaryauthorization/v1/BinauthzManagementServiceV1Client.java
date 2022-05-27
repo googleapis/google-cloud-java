@@ -18,7 +18,6 @@ package com.google.protos.google.cloud.binaryauthorization.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -136,7 +135,6 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    * Constructs an instance of BinauthzManagementServiceV1Client, using the given stub for making
    * calls. This is for advanced usage - prefer using create(BinauthzManagementServiceV1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BinauthzManagementServiceV1Client create(
       BinauthzManagementServiceV1Stub stub) {
     return new BinauthzManagementServiceV1Client(stub);
@@ -153,7 +151,6 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
     this.stub = ((BinauthzManagementServiceV1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BinauthzManagementServiceV1Client(BinauthzManagementServiceV1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +160,6 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BinauthzManagementServiceV1Stub getStub() {
     return stub;
   }

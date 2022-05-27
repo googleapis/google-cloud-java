@@ -138,7 +138,6 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
    * making calls. This is for advanced usage - prefer using
    * create(BinauthzManagementServiceV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BinauthzManagementServiceV1Beta1Client create(
       BinauthzManagementServiceV1Beta1Stub stub) {
     return new BinauthzManagementServiceV1Beta1Client(stub);
@@ -156,7 +155,6 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
         ((BinauthzManagementServiceV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BinauthzManagementServiceV1Beta1Client(BinauthzManagementServiceV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -166,7 +164,6 @@ public class BinauthzManagementServiceV1Beta1Client implements BackgroundResourc
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BinauthzManagementServiceV1Beta1Stub getStub() {
     return stub;
   }

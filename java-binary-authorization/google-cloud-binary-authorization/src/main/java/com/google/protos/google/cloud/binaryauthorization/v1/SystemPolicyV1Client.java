@@ -16,7 +16,6 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protos.google.cloud.binaryauthorization.v1.stub.SystemPolicyV1Stub;
@@ -114,7 +113,6 @@ public class SystemPolicyV1Client implements BackgroundResource {
    * Constructs an instance of SystemPolicyV1Client, using the given stub for making calls. This is
    * for advanced usage - prefer using create(SystemPolicyV1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SystemPolicyV1Client create(SystemPolicyV1Stub stub) {
     return new SystemPolicyV1Client(stub);
   }
@@ -129,7 +127,6 @@ public class SystemPolicyV1Client implements BackgroundResource {
     this.stub = ((SystemPolicyV1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SystemPolicyV1Client(SystemPolicyV1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -139,7 +136,6 @@ public class SystemPolicyV1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SystemPolicyV1Stub getStub() {
     return stub;
   }

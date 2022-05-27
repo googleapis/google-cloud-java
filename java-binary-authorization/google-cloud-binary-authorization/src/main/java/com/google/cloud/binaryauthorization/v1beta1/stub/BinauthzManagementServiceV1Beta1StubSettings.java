@@ -204,7 +204,6 @@ public class BinauthzManagementServiceV1Beta1StubSettings
     return deleteAttestorSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BinauthzManagementServiceV1Beta1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

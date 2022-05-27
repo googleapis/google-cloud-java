@@ -118,7 +118,6 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * Constructs an instance of SystemPolicyV1Beta1Client, using the given stub for making calls.
    * This is for advanced usage - prefer using create(SystemPolicyV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SystemPolicyV1Beta1Client create(SystemPolicyV1Beta1Stub stub) {
     return new SystemPolicyV1Beta1Client(stub);
   }
@@ -133,7 +132,6 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
     this.stub = ((SystemPolicyV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SystemPolicyV1Beta1Client(SystemPolicyV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +141,6 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SystemPolicyV1Beta1Stub getStub() {
     return stub;
   }

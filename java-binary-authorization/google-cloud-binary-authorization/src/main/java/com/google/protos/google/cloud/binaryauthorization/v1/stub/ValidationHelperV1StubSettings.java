@@ -95,7 +95,6 @@ public class ValidationHelperV1StubSettings extends StubSettings<ValidationHelpe
     return validateAttestationOccurrenceSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ValidationHelperV1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
