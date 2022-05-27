@@ -671,7 +671,6 @@ public class ContactCenterInsightsStubSettings
     return deleteViewSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContactCenterInsightsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

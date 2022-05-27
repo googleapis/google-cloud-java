@@ -18,7 +18,6 @@ package com.google.cloud.contactcenterinsights.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -136,7 +135,6 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * Constructs an instance of ContactCenterInsightsClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ContactCenterInsightsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ContactCenterInsightsClient create(ContactCenterInsightsStub stub) {
     return new ContactCenterInsightsClient(stub);
   }
@@ -152,7 +150,6 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ContactCenterInsightsClient(ContactCenterInsightsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +160,6 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContactCenterInsightsStub getStub() {
     return stub;
   }
