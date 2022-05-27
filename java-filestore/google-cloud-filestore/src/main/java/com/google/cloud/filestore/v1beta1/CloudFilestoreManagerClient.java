@@ -159,7 +159,6 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * Constructs an instance of CloudFilestoreManagerClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(CloudFilestoreManagerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudFilestoreManagerClient create(CloudFilestoreManagerStub stub) {
     return new CloudFilestoreManagerClient(stub);
   }
@@ -175,7 +174,6 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudFilestoreManagerClient(CloudFilestoreManagerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -186,7 +184,6 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudFilestoreManagerStub getStub() {
     return stub;
   }
