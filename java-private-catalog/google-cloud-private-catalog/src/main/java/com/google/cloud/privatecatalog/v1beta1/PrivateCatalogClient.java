@@ -146,7 +146,6 @@ public class PrivateCatalogClient implements BackgroundResource {
    * Constructs an instance of PrivateCatalogClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(PrivateCatalogSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PrivateCatalogClient create(PrivateCatalogStub stub) {
     return new PrivateCatalogClient(stub);
   }
@@ -161,7 +160,6 @@ public class PrivateCatalogClient implements BackgroundResource {
     this.stub = ((PrivateCatalogStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PrivateCatalogClient(PrivateCatalogStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -171,7 +169,6 @@ public class PrivateCatalogClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PrivateCatalogStub getStub() {
     return stub;
   }

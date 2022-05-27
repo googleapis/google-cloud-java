@@ -294,7 +294,6 @@ public class PrivateCatalogStubSettings extends StubSettings<PrivateCatalogStubS
     return searchVersionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PrivateCatalogStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
