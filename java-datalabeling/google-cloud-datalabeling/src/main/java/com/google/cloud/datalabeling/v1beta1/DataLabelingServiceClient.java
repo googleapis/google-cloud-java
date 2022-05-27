@@ -134,7 +134,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * Constructs an instance of DataLabelingServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(DataLabelingServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataLabelingServiceClient create(DataLabelingServiceStub stub) {
     return new DataLabelingServiceClient(stub);
   }
@@ -150,7 +149,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataLabelingServiceClient(DataLabelingServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -161,7 +159,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataLabelingServiceStub getStub() {
     return stub;
   }

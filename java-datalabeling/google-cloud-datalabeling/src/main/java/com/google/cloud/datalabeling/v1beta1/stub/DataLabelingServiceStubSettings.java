@@ -1029,7 +1029,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     return listEvaluationJobsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataLabelingServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
