@@ -282,7 +282,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     return batchDeleteEntitiesOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EntityTypesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

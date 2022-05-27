@@ -127,7 +127,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
    * Constructs an instance of KnowledgeBasesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(KnowledgeBasesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final KnowledgeBasesClient create(KnowledgeBasesStub stub) {
     return new KnowledgeBasesClient(stub);
   }
@@ -142,7 +141,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
     this.stub = ((KnowledgeBasesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected KnowledgeBasesClient(KnowledgeBasesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +150,6 @@ public class KnowledgeBasesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public KnowledgeBasesStub getStub() {
     return stub;
   }

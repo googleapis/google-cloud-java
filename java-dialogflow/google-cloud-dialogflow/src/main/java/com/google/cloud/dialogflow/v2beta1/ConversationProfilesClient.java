@@ -137,7 +137,6 @@ public class ConversationProfilesClient implements BackgroundResource {
    * Constructs an instance of ConversationProfilesClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ConversationProfilesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ConversationProfilesClient create(ConversationProfilesStub stub) {
     return new ConversationProfilesClient(stub);
   }
@@ -153,7 +152,6 @@ public class ConversationProfilesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConversationProfilesClient(ConversationProfilesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -164,7 +162,6 @@ public class ConversationProfilesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationProfilesStub getStub() {
     return stub;
   }

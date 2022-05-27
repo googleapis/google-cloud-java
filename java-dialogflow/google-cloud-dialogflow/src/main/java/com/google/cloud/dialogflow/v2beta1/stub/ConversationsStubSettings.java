@@ -268,7 +268,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return listMessagesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

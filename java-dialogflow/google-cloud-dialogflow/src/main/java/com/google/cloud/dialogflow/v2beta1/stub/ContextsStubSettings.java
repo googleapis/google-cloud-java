@@ -194,7 +194,6 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     return deleteAllContextsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContextsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

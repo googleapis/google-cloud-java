@@ -276,7 +276,6 @@ public class ConversationProfilesStubSettings
     return clearSuggestionFeatureConfigOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationProfilesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

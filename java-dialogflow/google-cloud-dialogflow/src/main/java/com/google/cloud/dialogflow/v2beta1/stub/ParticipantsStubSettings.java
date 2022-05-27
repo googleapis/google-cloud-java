@@ -328,7 +328,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return compileSuggestionSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ParticipantsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

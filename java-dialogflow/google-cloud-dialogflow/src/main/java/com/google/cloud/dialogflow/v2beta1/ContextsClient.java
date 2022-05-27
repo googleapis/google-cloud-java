@@ -125,7 +125,6 @@ public class ContextsClient implements BackgroundResource {
    * Constructs an instance of ContextsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ContextsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ContextsClient create(ContextsStub stub) {
     return new ContextsClient(stub);
   }
@@ -139,7 +138,6 @@ public class ContextsClient implements BackgroundResource {
     this.stub = ((ContextsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ContextsClient(ContextsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +147,6 @@ public class ContextsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContextsStub getStub() {
     return stub;
   }

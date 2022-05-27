@@ -18,7 +18,6 @@ package com.google.cloud.dialogflow.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -136,7 +135,6 @@ public class ConversationDatasetsClient implements BackgroundResource {
    * Constructs an instance of ConversationDatasetsClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ConversationDatasetsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ConversationDatasetsClient create(ConversationDatasetsStub stub) {
     return new ConversationDatasetsClient(stub);
   }
@@ -152,7 +150,6 @@ public class ConversationDatasetsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConversationDatasetsClient(ConversationDatasetsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +160,6 @@ public class ConversationDatasetsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationDatasetsStub getStub() {
     return stub;
   }

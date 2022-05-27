@@ -200,7 +200,6 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
     return updateKnowledgeBaseSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public KnowledgeBasesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

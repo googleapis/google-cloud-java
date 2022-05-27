@@ -18,7 +18,6 @@ package com.google.cloud.dialogflow.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -131,7 +130,6 @@ public class ConversationModelsClient implements BackgroundResource {
    * Constructs an instance of ConversationModelsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ConversationModelsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ConversationModelsClient create(ConversationModelsStub stub) {
     return new ConversationModelsClient(stub);
   }
@@ -147,7 +145,6 @@ public class ConversationModelsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConversationModelsClient(ConversationModelsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +155,6 @@ public class ConversationModelsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationModelsStub getStub() {
     return stub;
   }

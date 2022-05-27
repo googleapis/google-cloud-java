@@ -132,7 +132,6 @@ public class DocumentsClient implements BackgroundResource {
    * Constructs an instance of DocumentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DocumentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DocumentsClient create(DocumentsStub stub) {
     return new DocumentsClient(stub);
   }
@@ -147,7 +146,6 @@ public class DocumentsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DocumentsClient(DocumentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +156,6 @@ public class DocumentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentsStub getStub() {
     return stub;
   }

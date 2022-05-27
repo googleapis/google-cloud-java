@@ -126,7 +126,6 @@ public class AnswerRecordsClient implements BackgroundResource {
    * Constructs an instance of AnswerRecordsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(AnswerRecordsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AnswerRecordsClient create(AnswerRecordsStub stub) {
     return new AnswerRecordsClient(stub);
   }
@@ -141,7 +140,6 @@ public class AnswerRecordsClient implements BackgroundResource {
     this.stub = ((AnswerRecordsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AnswerRecordsClient(AnswerRecordsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +149,6 @@ public class AnswerRecordsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AnswerRecordsStub getStub() {
     return stub;
   }

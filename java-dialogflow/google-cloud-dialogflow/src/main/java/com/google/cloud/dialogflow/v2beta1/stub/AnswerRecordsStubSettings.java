@@ -188,7 +188,6 @@ public class AnswerRecordsStubSettings extends StubSettings<AnswerRecordsStubSet
     return updateAnswerRecordSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AnswerRecordsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

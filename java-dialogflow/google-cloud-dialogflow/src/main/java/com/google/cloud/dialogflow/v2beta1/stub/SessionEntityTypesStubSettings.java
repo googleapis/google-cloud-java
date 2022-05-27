@@ -219,7 +219,6 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
     return deleteSessionEntityTypeSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionEntityTypesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

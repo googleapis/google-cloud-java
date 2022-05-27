@@ -102,7 +102,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     return streamingDetectIntentSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -99,7 +99,6 @@ public class FulfillmentsStubSettings extends StubSettings<FulfillmentsStubSetti
     return updateFulfillmentSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FulfillmentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

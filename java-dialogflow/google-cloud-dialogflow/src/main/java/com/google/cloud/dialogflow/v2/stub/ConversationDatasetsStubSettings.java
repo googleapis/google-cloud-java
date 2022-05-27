@@ -270,7 +270,6 @@ public class ConversationDatasetsStubSettings
     return importConversationDataOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConversationDatasetsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

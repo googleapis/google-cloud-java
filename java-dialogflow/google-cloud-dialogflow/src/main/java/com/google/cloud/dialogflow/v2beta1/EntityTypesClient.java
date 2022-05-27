@@ -131,7 +131,6 @@ public class EntityTypesClient implements BackgroundResource {
    * Constructs an instance of EntityTypesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(EntityTypesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EntityTypesClient create(EntityTypesStub stub) {
     return new EntityTypesClient(stub);
   }
@@ -147,7 +146,6 @@ public class EntityTypesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected EntityTypesClient(EntityTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +156,6 @@ public class EntityTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EntityTypesStub getStub() {
     return stub;
   }

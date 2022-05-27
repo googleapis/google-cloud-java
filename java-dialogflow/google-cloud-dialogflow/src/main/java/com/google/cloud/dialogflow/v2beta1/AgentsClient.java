@@ -128,7 +128,6 @@ public class AgentsClient implements BackgroundResource {
    * Constructs an instance of AgentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AgentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AgentsClient create(AgentsStub stub) {
     return new AgentsClient(stub);
   }
@@ -143,7 +142,6 @@ public class AgentsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AgentsClient(AgentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class AgentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AgentsStub getStub() {
     return stub;
   }

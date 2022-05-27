@@ -18,7 +18,6 @@ package com.google.cloud.dialogflow.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -123,7 +122,6 @@ public class VersionsClient implements BackgroundResource {
    * Constructs an instance of VersionsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(VersionsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VersionsClient create(VersionsStub stub) {
     return new VersionsClient(stub);
   }
@@ -137,7 +135,6 @@ public class VersionsClient implements BackgroundResource {
     this.stub = ((VersionsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VersionsClient(VersionsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +144,6 @@ public class VersionsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VersionsStub getStub() {
     return stub;
   }

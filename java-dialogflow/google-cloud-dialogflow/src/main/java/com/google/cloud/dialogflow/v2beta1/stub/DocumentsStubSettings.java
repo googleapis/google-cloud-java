@@ -250,7 +250,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     return reloadDocumentOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

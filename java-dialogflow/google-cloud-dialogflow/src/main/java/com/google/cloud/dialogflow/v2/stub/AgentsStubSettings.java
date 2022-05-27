@@ -252,7 +252,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     return getValidationResultSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AgentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
