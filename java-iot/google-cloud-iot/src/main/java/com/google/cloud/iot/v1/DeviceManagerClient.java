@@ -18,7 +18,6 @@ package com.google.cloud.iot.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -132,7 +131,6 @@ public class DeviceManagerClient implements BackgroundResource {
    * Constructs an instance of DeviceManagerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(DeviceManagerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DeviceManagerClient create(DeviceManagerStub stub) {
     return new DeviceManagerClient(stub);
   }
@@ -147,7 +145,6 @@ public class DeviceManagerClient implements BackgroundResource {
     this.stub = ((DeviceManagerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DeviceManagerClient(DeviceManagerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +154,6 @@ public class DeviceManagerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DeviceManagerStub getStub() {
     return stub;
   }
