@@ -135,7 +135,6 @@ public class NetworkSecurityClient implements BackgroundResource {
    * Constructs an instance of NetworkSecurityClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(NetworkSecuritySettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworkSecurityClient create(NetworkSecurityStub stub) {
     return new NetworkSecurityClient(stub);
   }
@@ -151,7 +150,6 @@ public class NetworkSecurityClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NetworkSecurityClient(NetworkSecurityStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +160,6 @@ public class NetworkSecurityClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworkSecurityStub getStub() {
     return stub;
   }

@@ -545,7 +545,6 @@ public class NetworkSecurityStubSettings extends StubSettings<NetworkSecurityStu
     return deleteClientTlsPolicyOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworkSecurityStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
