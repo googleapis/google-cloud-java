@@ -119,7 +119,6 @@ public class LanguageServiceClient implements BackgroundResource {
    * Constructs an instance of LanguageServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(LanguageServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LanguageServiceClient create(LanguageServiceStub stub) {
     return new LanguageServiceClient(stub);
   }
@@ -134,7 +133,6 @@ public class LanguageServiceClient implements BackgroundResource {
     this.stub = ((LanguageServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LanguageServiceClient(LanguageServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +142,6 @@ public class LanguageServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LanguageServiceStub getStub() {
     return stub;
   }

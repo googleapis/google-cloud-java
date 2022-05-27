@@ -140,7 +140,6 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
     return annotateTextSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LanguageServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
