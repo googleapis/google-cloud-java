@@ -244,7 +244,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     return applyParametersOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudMemcacheStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

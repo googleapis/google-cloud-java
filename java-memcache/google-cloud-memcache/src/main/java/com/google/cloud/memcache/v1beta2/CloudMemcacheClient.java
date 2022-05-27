@@ -148,7 +148,6 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Constructs an instance of CloudMemcacheClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CloudMemcacheSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudMemcacheClient create(CloudMemcacheStub stub) {
     return new CloudMemcacheClient(stub);
   }
@@ -164,7 +163,6 @@ public class CloudMemcacheClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudMemcacheClient(CloudMemcacheStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -175,7 +173,6 @@ public class CloudMemcacheClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudMemcacheStub getStub() {
     return stub;
   }

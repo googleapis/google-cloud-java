@@ -18,7 +18,6 @@ package com.google.cloud.memcache.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -147,7 +146,6 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Constructs an instance of CloudMemcacheClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CloudMemcacheSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudMemcacheClient create(CloudMemcacheStub stub) {
     return new CloudMemcacheClient(stub);
   }
@@ -163,7 +161,6 @@ public class CloudMemcacheClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudMemcacheClient(CloudMemcacheStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -174,7 +171,6 @@ public class CloudMemcacheClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudMemcacheStub getStub() {
     return stub;
   }
