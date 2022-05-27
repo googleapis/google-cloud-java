@@ -150,7 +150,6 @@ public class CloudRedisClient implements BackgroundResource {
    * Constructs an instance of CloudRedisClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(CloudRedisSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudRedisClient create(CloudRedisStub stub) {
     return new CloudRedisClient(stub);
   }
@@ -165,7 +164,6 @@ public class CloudRedisClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudRedisClient(CloudRedisStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -176,7 +174,6 @@ public class CloudRedisClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudRedisStub getStub() {
     return stub;
   }
