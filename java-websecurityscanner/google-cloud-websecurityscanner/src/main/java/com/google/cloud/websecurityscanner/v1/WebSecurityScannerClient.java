@@ -18,7 +18,6 @@ package com.google.cloud.websecurityscanner.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -132,7 +131,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * Constructs an instance of WebSecurityScannerClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(WebSecurityScannerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WebSecurityScannerClient create(WebSecurityScannerStub stub) {
     return new WebSecurityScannerClient(stub);
   }
@@ -147,7 +145,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
     this.stub = ((WebSecurityScannerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WebSecurityScannerClient(WebSecurityScannerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +154,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebSecurityScannerStub getStub() {
     return stub;
   }

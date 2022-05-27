@@ -430,7 +430,6 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     return listFindingTypeStatsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebSecurityScannerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
