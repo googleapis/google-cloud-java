@@ -16,7 +16,6 @@
 
 package com.google.cloud.optimization.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
@@ -146,7 +145,6 @@ public class FleetRoutingClient implements BackgroundResource {
    * Constructs an instance of FleetRoutingClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(FleetRoutingSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FleetRoutingClient create(FleetRoutingStub stub) {
     return new FleetRoutingClient(stub);
   }
@@ -162,7 +160,6 @@ public class FleetRoutingClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FleetRoutingClient(FleetRoutingStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -173,7 +170,6 @@ public class FleetRoutingClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FleetRoutingStub getStub() {
     return stub;
   }

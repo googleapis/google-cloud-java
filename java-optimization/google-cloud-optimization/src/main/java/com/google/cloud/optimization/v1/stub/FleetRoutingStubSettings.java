@@ -115,7 +115,6 @@ public class FleetRoutingStubSettings extends StubSettings<FleetRoutingStubSetti
     return batchOptimizeToursOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FleetRoutingStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
