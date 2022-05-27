@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.9.3](https://github.com/googleapis/java-aiplatform/compare/v2.9.2...v2.9.3) (2022-05-27)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.15.2 ([#924](https://github.com/googleapis/java-aiplatform/issues/924)) ([9d7157a](https://github.com/googleapis/java-aiplatform/commit/9d7157aab5bf37f0d31517bb7a27fed9a939acf7))
+
 ### [2.9.2](https://github.com/googleapis/java-aiplatform/compare/v2.9.1...v2.9.2) (2022-05-26)
 
 
