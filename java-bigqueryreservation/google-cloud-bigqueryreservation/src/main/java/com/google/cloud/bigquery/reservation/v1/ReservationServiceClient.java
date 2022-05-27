@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.reservation.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -142,7 +141,6 @@ public class ReservationServiceClient implements BackgroundResource {
    * Constructs an instance of ReservationServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ReservationServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReservationServiceClient create(ReservationServiceStub stub) {
     return new ReservationServiceClient(stub);
   }
@@ -157,7 +155,6 @@ public class ReservationServiceClient implements BackgroundResource {
     this.stub = ((ReservationServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ReservationServiceClient(ReservationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -167,7 +164,6 @@ public class ReservationServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReservationServiceStub getStub() {
     return stub;
   }

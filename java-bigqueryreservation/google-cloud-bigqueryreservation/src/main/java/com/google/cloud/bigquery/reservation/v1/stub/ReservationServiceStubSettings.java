@@ -615,7 +615,6 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return updateBiReservationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReservationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
