@@ -91,7 +91,6 @@ public class IamCheckerStubSettings extends StubSettings<IamCheckerStubSettings>
     return troubleshootIamPolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IamCheckerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -16,7 +16,6 @@
 
 package com.google.cloud.policytroubleshooter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.policytroubleshooter.v1.stub.IamCheckerStub;
@@ -118,7 +117,6 @@ public class IamCheckerClient implements BackgroundResource {
    * Constructs an instance of IamCheckerClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(IamCheckerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final IamCheckerClient create(IamCheckerStub stub) {
     return new IamCheckerClient(stub);
   }
@@ -132,7 +130,6 @@ public class IamCheckerClient implements BackgroundResource {
     this.stub = ((IamCheckerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected IamCheckerClient(IamCheckerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +139,6 @@ public class IamCheckerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IamCheckerStub getStub() {
     return stub;
   }
