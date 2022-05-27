@@ -16,4 +16,14 @@
     <className>com/google/recaptchaenterprise/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/recaptchaenterprise/v1/SearchRelatedAccountGroupMembershipsRequest*</className>
+    <field>PARENT_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/recaptchaenterprise/v1/SearchRelatedAccountGroupMembershipsRequest*</className>
+    <method>* *Parent*(*)</method>
+  </difference>
 </differences>

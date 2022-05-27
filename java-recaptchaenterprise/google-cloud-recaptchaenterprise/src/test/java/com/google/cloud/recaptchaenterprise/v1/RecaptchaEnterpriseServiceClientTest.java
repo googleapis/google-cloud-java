@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
@@ -68,6 +69,7 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRes
 import com.google.recaptchaenterprise.v1.TestingOptions;
 import com.google.recaptchaenterprise.v1.TokenProperties;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.WafSettings;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -131,6 +133,8 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
+            .setPrivatePasswordLeakVerification(
+                PrivatePasswordLeakVerification.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -176,6 +180,8 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
+            .setPrivatePasswordLeakVerification(
+                PrivatePasswordLeakVerification.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -301,6 +307,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -408,6 +415,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -452,6 +460,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -541,6 +550,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -863,12 +873,12 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    RelatedAccountGroupName parent =
+    RelatedAccountGroupName project =
         RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
     ByteString hashedAccountId = ByteString.EMPTY;
 
     SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
-        client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+        client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
 
     List<RelatedAccountGroupMembership> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -882,7 +892,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     SearchRelatedAccountGroupMembershipsRequest actualRequest =
         ((SearchRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(project.toString(), actualRequest.getProject());
     Assert.assertEquals(hashedAccountId, actualRequest.getHashedAccountId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -896,10 +906,10 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      RelatedAccountGroupName parent =
+      RelatedAccountGroupName project =
           RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
       ByteString hashedAccountId = ByteString.EMPTY;
-      client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+      client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -917,11 +927,11 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String project = "project-309310695";
     ByteString hashedAccountId = ByteString.EMPTY;
 
     SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
-        client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+        client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
 
     List<RelatedAccountGroupMembership> resources =
         Lists.newArrayList(pagedListResponse.iterateAll());
@@ -935,7 +945,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     SearchRelatedAccountGroupMembershipsRequest actualRequest =
         ((SearchRelatedAccountGroupMembershipsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(project, actualRequest.getProject());
     Assert.assertEquals(hashedAccountId, actualRequest.getHashedAccountId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -949,9 +959,9 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String project = "project-309310695";
       ByteString hashedAccountId = ByteString.EMPTY;
-      client.searchRelatedAccountGroupMemberships(parent, hashedAccountId);
+      client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

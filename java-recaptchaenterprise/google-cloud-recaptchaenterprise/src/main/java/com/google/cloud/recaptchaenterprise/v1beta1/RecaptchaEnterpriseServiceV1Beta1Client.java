@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
  *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -78,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings =
  *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings =
  *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
@@ -123,7 +129,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * making calls. This is for advanced usage - prefer using
    * create(RecaptchaEnterpriseServiceV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RecaptchaEnterpriseServiceV1Beta1Client create(
       RecaptchaEnterpriseServiceV1Beta1Stub stub) {
     return new RecaptchaEnterpriseServiceV1Beta1Client(stub);
@@ -141,7 +146,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
         ((RecaptchaEnterpriseServiceV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RecaptchaEnterpriseServiceV1Beta1Client(RecaptchaEnterpriseServiceV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +155,6 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecaptchaEnterpriseServiceV1Beta1Stub getStub() {
     return stub;
   }
@@ -163,6 +166,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -193,6 +198,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -220,6 +227,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   CreateAssessmentRequest request =
@@ -245,6 +254,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   CreateAssessmentRequest request =
@@ -271,6 +282,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
@@ -306,6 +319,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   String name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString();
@@ -338,6 +353,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   AnnotateAssessmentRequest request =
@@ -366,6 +383,8 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
    *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
    *   AnnotateAssessmentRequest request =

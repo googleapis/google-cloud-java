@@ -143,6 +143,24 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 58:
+            {
+              com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder subBuilder =
+                  null;
+              if (privatePasswordLeakVerification_ != null) {
+                subBuilder = privatePasswordLeakVerification_.toBuilder();
+              }
+              privatePasswordLeakVerification_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(privatePasswordLeakVerification_);
+                privatePasswordLeakVerification_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -443,6 +461,63 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return getAccountDefenderAssessment();
   }
 
+  public static final int PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 7;
+  private com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+      privatePasswordLeakVerification_;
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   *
+   * @return Whether the privatePasswordLeakVerification field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivatePasswordLeakVerification() {
+    return privatePasswordLeakVerification_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   *
+   * @return The privatePasswordLeakVerification.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+      getPrivatePasswordLeakVerification() {
+    return privatePasswordLeakVerification_ == null
+        ? com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.getDefaultInstance()
+        : privatePasswordLeakVerification_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
+      getPrivatePasswordLeakVerificationOrBuilder() {
+    return getPrivatePasswordLeakVerification();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -472,6 +547,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (accountDefenderAssessment_ != null) {
       output.writeMessage(6, getAccountDefenderAssessment());
     }
+    if (privatePasswordLeakVerification_ != null) {
+      output.writeMessage(7, getPrivatePasswordLeakVerification());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -497,6 +575,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getAccountDefenderAssessment());
+    }
+    if (privatePasswordLeakVerification_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getPrivatePasswordLeakVerification());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -532,6 +615,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!getAccountDefenderAssessment().equals(other.getAccountDefenderAssessment()))
         return false;
     }
+    if (hasPrivatePasswordLeakVerification() != other.hasPrivatePasswordLeakVerification())
+      return false;
+    if (hasPrivatePasswordLeakVerification()) {
+      if (!getPrivatePasswordLeakVerification().equals(other.getPrivatePasswordLeakVerification()))
+        return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -560,6 +649,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasAccountDefenderAssessment()) {
       hash = (37 * hash) + ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER;
       hash = (53 * hash) + getAccountDefenderAssessment().hashCode();
+    }
+    if (hasPrivatePasswordLeakVerification()) {
+      hash = (37 * hash) + PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivatePasswordLeakVerification().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -732,6 +825,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         accountDefenderAssessment_ = null;
         accountDefenderAssessmentBuilder_ = null;
       }
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        privatePasswordLeakVerification_ = null;
+      } else {
+        privatePasswordLeakVerification_ = null;
+        privatePasswordLeakVerificationBuilder_ = null;
+      }
       return this;
     }
 
@@ -779,6 +878,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         result.accountDefenderAssessment_ = accountDefenderAssessment_;
       } else {
         result.accountDefenderAssessment_ = accountDefenderAssessmentBuilder_.build();
+      }
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        result.privatePasswordLeakVerification_ = privatePasswordLeakVerification_;
+      } else {
+        result.privatePasswordLeakVerification_ = privatePasswordLeakVerificationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -844,6 +948,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAccountDefenderAssessment()) {
         mergeAccountDefenderAssessment(other.getAccountDefenderAssessment());
+      }
+      if (other.hasPrivatePasswordLeakVerification()) {
+        mergePrivatePasswordLeakVerification(other.getPrivatePasswordLeakVerification());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1796,6 +1903,218 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         accountDefenderAssessment_ = null;
       }
       return accountDefenderAssessmentBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+        privatePasswordLeakVerification_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification,
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder,
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder>
+        privatePasswordLeakVerificationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     *
+     * @return Whether the privatePasswordLeakVerification field is set.
+     */
+    public boolean hasPrivatePasswordLeakVerification() {
+      return privatePasswordLeakVerificationBuilder_ != null
+          || privatePasswordLeakVerification_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     *
+     * @return The privatePasswordLeakVerification.
+     */
+    public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+        getPrivatePasswordLeakVerification() {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        return privatePasswordLeakVerification_ == null
+            ? com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.getDefaultInstance()
+            : privatePasswordLeakVerification_;
+      } else {
+        return privatePasswordLeakVerificationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public Builder setPrivatePasswordLeakVerification(
+        com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification value) {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privatePasswordLeakVerification_ = value;
+        onChanged();
+      } else {
+        privatePasswordLeakVerificationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public Builder setPrivatePasswordLeakVerification(
+        com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder builderForValue) {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        privatePasswordLeakVerification_ = builderForValue.build();
+        onChanged();
+      } else {
+        privatePasswordLeakVerificationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public Builder mergePrivatePasswordLeakVerification(
+        com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification value) {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        if (privatePasswordLeakVerification_ != null) {
+          privatePasswordLeakVerification_ =
+              com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.newBuilder(
+                      privatePasswordLeakVerification_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          privatePasswordLeakVerification_ = value;
+        }
+        onChanged();
+      } else {
+        privatePasswordLeakVerificationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public Builder clearPrivatePasswordLeakVerification() {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        privatePasswordLeakVerification_ = null;
+        onChanged();
+      } else {
+        privatePasswordLeakVerification_ = null;
+        privatePasswordLeakVerificationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder
+        getPrivatePasswordLeakVerificationBuilder() {
+
+      onChanged();
+      return getPrivatePasswordLeakVerificationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
+        getPrivatePasswordLeakVerificationOrBuilder() {
+      if (privatePasswordLeakVerificationBuilder_ != null) {
+        return privatePasswordLeakVerificationBuilder_.getMessageOrBuilder();
+      } else {
+        return privatePasswordLeakVerification_ == null
+            ? com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.getDefaultInstance()
+            : privatePasswordLeakVerification_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Password leak verification info.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification,
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder,
+            com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder>
+        getPrivatePasswordLeakVerificationFieldBuilder() {
+      if (privatePasswordLeakVerificationBuilder_ == null) {
+        privatePasswordLeakVerificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification,
+                com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder,
+                com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder>(
+                getPrivatePasswordLeakVerification(), getParentForChildren(), isClean());
+        privatePasswordLeakVerification_ = null;
+      }
+      return privatePasswordLeakVerificationBuilder_;
     }
 
     @java.lang.Override

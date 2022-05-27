@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.recaptchaenterprise.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -69,6 +68,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
  *     RecaptchaEnterpriseServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -107,6 +108,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings =
  *     RecaptchaEnterpriseServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -118,6 +121,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RecaptchaEnterpriseServiceSettings recaptchaEnterpriseServiceSettings =
  *     RecaptchaEnterpriseServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
@@ -150,7 +155,6 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * Constructs an instance of RecaptchaEnterpriseServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(RecaptchaEnterpriseServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RecaptchaEnterpriseServiceClient create(RecaptchaEnterpriseServiceStub stub) {
     return new RecaptchaEnterpriseServiceClient(stub);
   }
@@ -166,7 +170,6 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     this.stub = ((RecaptchaEnterpriseServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RecaptchaEnterpriseServiceClient(RecaptchaEnterpriseServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -176,7 +179,6 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecaptchaEnterpriseServiceStub getStub() {
     return stub;
   }
@@ -188,6 +190,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -217,6 +221,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -243,6 +249,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateAssessmentRequest request =
@@ -268,6 +276,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateAssessmentRequest request =
@@ -294,6 +304,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AssessmentName name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]");
@@ -329,6 +341,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String name = AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString();
@@ -361,6 +375,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AnnotateAssessmentRequest request =
@@ -389,6 +405,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   AnnotateAssessmentRequest request =
@@ -416,6 +434,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateKeyRequest request =
@@ -441,6 +461,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   CreateKeyRequest request =
@@ -466,6 +488,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -494,6 +518,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -522,6 +548,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListKeysRequest request =
@@ -557,6 +585,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetKeyRequest request =
@@ -579,6 +609,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetKeyRequest request =
@@ -600,6 +632,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   UpdateKeyRequest request =
@@ -625,6 +659,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   UpdateKeyRequest request =
@@ -650,6 +686,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   DeleteKeyRequest request =
@@ -674,6 +712,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   DeleteKeyRequest request =
@@ -701,6 +741,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MigrateKeyRequest request =
@@ -728,6 +770,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MigrateKeyRequest request =
@@ -752,6 +796,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   MetricsName name = MetricsName.of("[PROJECT]", "[KEY]");
@@ -776,6 +822,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String name = MetricsName.of("[PROJECT]", "[KEY]").toString();
@@ -799,6 +847,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetMetricsRequest request =
@@ -823,6 +873,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetMetricsRequest request =
@@ -847,6 +899,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
@@ -876,6 +930,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = ProjectName.of("[PROJECT]").toString();
@@ -903,6 +959,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -933,6 +991,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -964,6 +1024,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupsRequest request =
@@ -1000,6 +1062,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   RelatedAccountGroupName parent =
@@ -1033,6 +1097,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
@@ -1063,6 +1129,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1096,6 +1164,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1130,6 +1200,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   ListRelatedAccountGroupMembershipsRequest request =
@@ -1170,21 +1242,23 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   RelatedAccountGroupName parent =
+   *   RelatedAccountGroupName project =
    *       RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
-   *           .searchRelatedAccountGroupMemberships(parent, hashedAccountId)
+   *           .searchRelatedAccountGroupMemberships(project, hashedAccountId)
    *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to search related account group memberships
+   * @param project Required. The name of the project to search related account group memberships
    *     from, in the format "projects/{project}".
    * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
    *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
@@ -1193,10 +1267,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
       searchRelatedAccountGroupMemberships(
-          RelatedAccountGroupName parent, ByteString hashedAccountId) {
+          RelatedAccountGroupName project, ByteString hashedAccountId) {
     SearchRelatedAccountGroupMembershipsRequest request =
         SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setProject(project == null ? null : project.toString())
             .setHashedAccountId(hashedAccountId)
             .build();
     return searchRelatedAccountGroupMemberships(request);
@@ -1209,20 +1283,22 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String parent = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+   *   String project = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
-   *           .searchRelatedAccountGroupMemberships(parent, hashedAccountId)
+   *           .searchRelatedAccountGroupMemberships(project, hashedAccountId)
    *           .iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to search related account group memberships
+   * @param project Required. The name of the project to search related account group memberships
    *     from, in the format "projects/{project}".
    * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
    *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
@@ -1230,10 +1306,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
-      searchRelatedAccountGroupMemberships(String parent, ByteString hashedAccountId) {
+      searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId) {
     SearchRelatedAccountGroupMembershipsRequest request =
         SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-            .setParent(parent)
+            .setProject(project)
             .setHashedAccountId(hashedAccountId)
             .build();
     return searchRelatedAccountGroupMemberships(request);
@@ -1246,11 +1322,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setParent(
+   *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
@@ -1280,11 +1358,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setParent(
+   *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
@@ -1315,11 +1395,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setParent(
+   *           .setProject(
    *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)

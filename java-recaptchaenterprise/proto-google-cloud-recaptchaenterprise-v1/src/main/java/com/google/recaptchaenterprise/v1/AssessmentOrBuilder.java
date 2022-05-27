@@ -211,4 +211,47 @@ public interface AssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder
       getAccountDefenderAssessmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   *
+   * @return Whether the privatePasswordLeakVerification field is set.
+   */
+  boolean hasPrivatePasswordLeakVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   *
+   * @return The privatePasswordLeakVerification.
+   */
+  com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
+      getPrivatePasswordLeakVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Password leak verification info.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
+      getPrivatePasswordLeakVerificationOrBuilder();
 }

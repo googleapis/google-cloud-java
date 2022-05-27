@@ -27,40 +27,40 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project to search related account group memberships from,
-   * in the format "projects/{project}".
+   * Required. The name of the project to search related account group
+   * memberships from, in the format "projects/{project}".
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The parent.
+   * @return The project.
    */
-  java.lang.String getParent();
+  java.lang.String getProject();
   /**
    *
    *
    * <pre>
-   * Required. The name of the project to search related account group memberships from,
-   * in the format "projects/{project}".
+   * Required. The name of the project to search related account group
+   * memberships from, in the format "projects/{project}".
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for parent.
+   * @return The bytes for project.
    */
-  com.google.protobuf.ByteString getParentBytes();
+  com.google.protobuf.ByteString getProjectBytes();
 
   /**
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier we should search connections to.
-   * The identifier should correspond to a `hashed_account_id` provided in a
-   * previous CreateAssessment or AnnotateAssessment call.
+   * Optional. The unique stable hashed user identifier we should search
+   * connections to. The identifier should correspond to a `hashed_account_id`
+   * provided in a previous CreateAssessment or AnnotateAssessment call.
    * </pre>
    *
    * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,9 +73,8 @@ public interface SearchRelatedAccountGroupMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of groups to return. The service may return fewer than
-   * this value.
-   * If unspecified, at most 50 groups will be returned.
+   * Optional. The maximum number of groups to return. The service may return
+   * fewer than this value. If unspecified, at most 50 groups will be returned.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *

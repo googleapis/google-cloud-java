@@ -314,5 +314,40 @@ public interface KeyOrBuilder
    */
   com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   *
+   * @return Whether the wafSettings field is set.
+   */
+  boolean hasWafSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   *
+   * @return The wafSettings.
+   */
+  com.google.recaptchaenterprise.v1.WafSettings getWafSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   */
+  com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder();
+
   public com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
 }

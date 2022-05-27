@@ -189,6 +189,22 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              com.google.recaptchaenterprise.v1.WafSettings.Builder subBuilder = null;
+              if (wafSettings_ != null) {
+                subBuilder = wafSettings_.toBuilder();
+              }
+              wafSettings_ =
+                  input.readMessage(
+                      com.google.recaptchaenterprise.v1.WafSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wafSettings_);
+                wafSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -736,6 +752,54 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return getTestingOptions();
   }
 
+  public static final int WAF_SETTINGS_FIELD_NUMBER = 10;
+  private com.google.recaptchaenterprise.v1.WafSettings wafSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   *
+   * @return Whether the wafSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasWafSettings() {
+    return wafSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   *
+   * @return The wafSettings.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.WafSettings getWafSettings() {
+    return wafSettings_ == null
+        ? com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()
+        : wafSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for WAF
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder() {
+    return getWafSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -773,6 +837,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     if (testingOptions_ != null) {
       output.writeMessage(9, getTestingOptions());
+    }
+    if (wafSettings_ != null) {
+      output.writeMessage(10, getWafSettings());
     }
     unknownFields.writeTo(output);
   }
@@ -820,6 +887,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (testingOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTestingOptions());
     }
+    if (wafSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getWafSettings());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -845,6 +915,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (hasTestingOptions() != other.hasTestingOptions()) return false;
     if (hasTestingOptions()) {
       if (!getTestingOptions().equals(other.getTestingOptions())) return false;
+    }
+    if (hasWafSettings() != other.hasWafSettings()) return false;
+    if (hasWafSettings()) {
+      if (!getWafSettings().equals(other.getWafSettings())) return false;
     }
     if (!getPlatformSettingsCase().equals(other.getPlatformSettingsCase())) return false;
     switch (platformSettingsCase_) {
@@ -886,6 +960,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     if (hasTestingOptions()) {
       hash = (37 * hash) + TESTING_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getTestingOptions().hashCode();
+    }
+    if (hasWafSettings()) {
+      hash = (37 * hash) + WAF_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWafSettings().hashCode();
     }
     switch (platformSettingsCase_) {
       case 3:
@@ -1085,6 +1163,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         testingOptions_ = null;
         testingOptionsBuilder_ = null;
       }
+      if (wafSettingsBuilder_ == null) {
+        wafSettings_ = null;
+      } else {
+        wafSettings_ = null;
+        wafSettingsBuilder_ = null;
+      }
       platformSettingsCase_ = 0;
       platformSettings_ = null;
       return this;
@@ -1150,6 +1234,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.testingOptions_ = testingOptionsBuilder_.build();
       }
+      if (wafSettingsBuilder_ == null) {
+        result.wafSettings_ = wafSettings_;
+      } else {
+        result.wafSettings_ = wafSettingsBuilder_.build();
+      }
       result.platformSettingsCase_ = platformSettingsCase_;
       onBuilt();
       return result;
@@ -1214,6 +1303,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTestingOptions()) {
         mergeTestingOptions(other.getTestingOptions());
+      }
+      if (other.hasWafSettings()) {
+        mergeWafSettings(other.getWafSettings());
       }
       switch (other.getPlatformSettingsCase()) {
         case WEB_SETTINGS:
@@ -2667,6 +2759,192 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         testingOptions_ = null;
       }
       return testingOptionsBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.WafSettings wafSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.WafSettings,
+            com.google.recaptchaenterprise.v1.WafSettings.Builder,
+            com.google.recaptchaenterprise.v1.WafSettingsOrBuilder>
+        wafSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     *
+     * @return Whether the wafSettings field is set.
+     */
+    public boolean hasWafSettings() {
+      return wafSettingsBuilder_ != null || wafSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     *
+     * @return The wafSettings.
+     */
+    public com.google.recaptchaenterprise.v1.WafSettings getWafSettings() {
+      if (wafSettingsBuilder_ == null) {
+        return wafSettings_ == null
+            ? com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()
+            : wafSettings_;
+      } else {
+        return wafSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public Builder setWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
+      if (wafSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wafSettings_ = value;
+        onChanged();
+      } else {
+        wafSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public Builder setWafSettings(
+        com.google.recaptchaenterprise.v1.WafSettings.Builder builderForValue) {
+      if (wafSettingsBuilder_ == null) {
+        wafSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        wafSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public Builder mergeWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
+      if (wafSettingsBuilder_ == null) {
+        if (wafSettings_ != null) {
+          wafSettings_ =
+              com.google.recaptchaenterprise.v1.WafSettings.newBuilder(wafSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wafSettings_ = value;
+        }
+        onChanged();
+      } else {
+        wafSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public Builder clearWafSettings() {
+      if (wafSettingsBuilder_ == null) {
+        wafSettings_ = null;
+        onChanged();
+      } else {
+        wafSettings_ = null;
+        wafSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public com.google.recaptchaenterprise.v1.WafSettings.Builder getWafSettingsBuilder() {
+
+      onChanged();
+      return getWafSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    public com.google.recaptchaenterprise.v1.WafSettingsOrBuilder getWafSettingsOrBuilder() {
+      if (wafSettingsBuilder_ != null) {
+        return wafSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return wafSettings_ == null
+            ? com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()
+            : wafSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for WAF
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.WafSettings waf_settings = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.WafSettings,
+            com.google.recaptchaenterprise.v1.WafSettings.Builder,
+            com.google.recaptchaenterprise.v1.WafSettingsOrBuilder>
+        getWafSettingsFieldBuilder() {
+      if (wafSettingsBuilder_ == null) {
+        wafSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.WafSettings,
+                com.google.recaptchaenterprise.v1.WafSettings.Builder,
+                com.google.recaptchaenterprise.v1.WafSettingsOrBuilder>(
+                getWafSettings(), getParentForChildren(), isClean());
+        wafSettings_ = null;
+      }
+      return wafSettingsBuilder_;
     }
 
     @java.lang.Override
