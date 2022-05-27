@@ -18,7 +18,6 @@ package com.google.cloud.tpu.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -127,7 +126,6 @@ public class TpuClient implements BackgroundResource {
    * Constructs an instance of TpuClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(TpuSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TpuClient create(TpuStub stub) {
     return new TpuClient(stub);
   }
@@ -142,7 +140,6 @@ public class TpuClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TpuClient(TpuStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +150,6 @@ public class TpuClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TpuStub getStub() {
     return stub;
   }

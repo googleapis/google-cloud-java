@@ -430,7 +430,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     return getAcceleratorTypeSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TpuStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
