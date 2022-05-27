@@ -451,7 +451,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     return deleteEventSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LivestreamServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
