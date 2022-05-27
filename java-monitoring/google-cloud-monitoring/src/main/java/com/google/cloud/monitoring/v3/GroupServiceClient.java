@@ -19,7 +19,6 @@ package com.google.cloud.monitoring.v3;
 import com.google.api.MonitoredResource;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -144,7 +143,6 @@ public class GroupServiceClient implements BackgroundResource {
    * Constructs an instance of GroupServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(GroupServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GroupServiceClient create(GroupServiceStub stub) {
     return new GroupServiceClient(stub);
   }
@@ -159,7 +157,6 @@ public class GroupServiceClient implements BackgroundResource {
     this.stub = ((GroupServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GroupServiceClient(GroupServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -169,7 +166,6 @@ public class GroupServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GroupServiceStub getStub() {
     return stub;
   }

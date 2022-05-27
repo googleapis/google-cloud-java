@@ -20,7 +20,6 @@ import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -147,7 +146,6 @@ public class MetricServiceClient implements BackgroundResource {
    * Constructs an instance of MetricServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MetricServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MetricServiceClient create(MetricServiceStub stub) {
     return new MetricServiceClient(stub);
   }
@@ -162,7 +160,6 @@ public class MetricServiceClient implements BackgroundResource {
     this.stub = ((MetricServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MetricServiceClient(MetricServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -172,7 +169,6 @@ public class MetricServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricServiceStub getStub() {
     return stub;
   }

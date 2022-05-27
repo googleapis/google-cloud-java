@@ -18,7 +18,6 @@ package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -153,7 +152,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * Constructs an instance of NotificationChannelServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(NotificationChannelServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NotificationChannelServiceClient create(NotificationChannelServiceStub stub) {
     return new NotificationChannelServiceClient(stub);
   }
@@ -169,7 +167,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     this.stub = ((NotificationChannelServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NotificationChannelServiceClient(NotificationChannelServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -179,7 +176,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NotificationChannelServiceStub getStub() {
     return stub;
   }

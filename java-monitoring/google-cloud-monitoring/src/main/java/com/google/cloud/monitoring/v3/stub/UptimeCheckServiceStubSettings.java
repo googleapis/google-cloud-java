@@ -294,7 +294,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     return listUptimeCheckIpsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UptimeCheckServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -18,7 +18,6 @@ package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -150,7 +149,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * Constructs an instance of ServiceMonitoringServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(ServiceMonitoringServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServiceMonitoringServiceClient create(ServiceMonitoringServiceStub stub) {
     return new ServiceMonitoringServiceClient(stub);
   }
@@ -166,7 +164,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     this.stub = ((ServiceMonitoringServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ServiceMonitoringServiceClient(ServiceMonitoringServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -176,7 +173,6 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceMonitoringServiceStub getStub() {
     return stub;
   }

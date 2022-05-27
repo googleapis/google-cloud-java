@@ -18,7 +18,6 @@ package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -134,7 +133,6 @@ public class QueryServiceClient implements BackgroundResource {
    * Constructs an instance of QueryServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(QueryServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final QueryServiceClient create(QueryServiceStub stub) {
     return new QueryServiceClient(stub);
   }
@@ -149,7 +147,6 @@ public class QueryServiceClient implements BackgroundResource {
     this.stub = ((QueryServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected QueryServiceClient(QueryServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +156,6 @@ public class QueryServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public QueryServiceStub getStub() {
     return stub;
   }

@@ -165,7 +165,6 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
     return queryTimeSeriesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public QueryServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

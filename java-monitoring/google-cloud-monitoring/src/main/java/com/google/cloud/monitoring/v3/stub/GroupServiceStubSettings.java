@@ -260,7 +260,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     return listGroupMembersSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GroupServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

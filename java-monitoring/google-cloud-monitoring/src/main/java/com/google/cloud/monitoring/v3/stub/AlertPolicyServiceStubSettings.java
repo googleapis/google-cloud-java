@@ -198,7 +198,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     return updateAlertPolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AlertPolicyServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -396,7 +396,6 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
     return createServiceTimeSeriesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
