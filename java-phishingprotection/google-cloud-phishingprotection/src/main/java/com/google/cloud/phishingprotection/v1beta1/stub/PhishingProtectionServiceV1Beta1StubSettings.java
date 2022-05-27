@@ -95,7 +95,6 @@ public class PhishingProtectionServiceV1Beta1StubSettings
     return reportPhishingSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PhishingProtectionServiceV1Beta1Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

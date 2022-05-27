@@ -126,7 +126,6 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * making calls. This is for advanced usage - prefer using
    * create(PhishingProtectionServiceV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PhishingProtectionServiceV1Beta1Client create(
       PhishingProtectionServiceV1Beta1Stub stub) {
     return new PhishingProtectionServiceV1Beta1Client(stub);
@@ -144,7 +143,6 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
         ((PhishingProtectionServiceV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PhishingProtectionServiceV1Beta1Client(PhishingProtectionServiceV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PhishingProtectionServiceV1Beta1Stub getStub() {
     return stub;
   }
