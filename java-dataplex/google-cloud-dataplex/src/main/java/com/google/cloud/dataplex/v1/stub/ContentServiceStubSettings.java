@@ -182,7 +182,6 @@ public class ContentServiceStubSettings extends StubSettings<ContentServiceStubS
     return listContentSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContentServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -1036,7 +1036,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     return listSessionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataplexServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

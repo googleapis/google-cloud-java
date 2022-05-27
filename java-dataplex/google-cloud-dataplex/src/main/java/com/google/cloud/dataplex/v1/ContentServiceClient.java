@@ -18,7 +18,6 @@ package com.google.cloud.dataplex.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -125,7 +124,6 @@ public class ContentServiceClient implements BackgroundResource {
    * Constructs an instance of ContentServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ContentServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ContentServiceClient create(ContentServiceStub stub) {
     return new ContentServiceClient(stub);
   }
@@ -140,7 +138,6 @@ public class ContentServiceClient implements BackgroundResource {
     this.stub = ((ContentServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ContentServiceClient(ContentServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +147,6 @@ public class ContentServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContentServiceStub getStub() {
     return stub;
   }
