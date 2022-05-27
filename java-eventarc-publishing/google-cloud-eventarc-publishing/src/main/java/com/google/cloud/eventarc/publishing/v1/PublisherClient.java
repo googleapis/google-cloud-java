@@ -16,7 +16,6 @@
 
 package com.google.cloud.eventarc.publishing.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.publishing.v1.stub.PublisherStub;
@@ -138,7 +137,6 @@ public class PublisherClient implements BackgroundResource {
    * Constructs an instance of PublisherClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(PublisherSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PublisherClient create(PublisherStub stub) {
     return new PublisherClient(stub);
   }
@@ -152,7 +150,6 @@ public class PublisherClient implements BackgroundResource {
     this.stub = ((PublisherStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PublisherClient(PublisherStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +159,6 @@ public class PublisherClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublisherStub getStub() {
     return stub;
   }
