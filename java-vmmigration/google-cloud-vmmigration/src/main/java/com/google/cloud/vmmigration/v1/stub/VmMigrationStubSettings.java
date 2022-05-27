@@ -1183,7 +1183,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return deleteTargetProjectOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VmMigrationStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

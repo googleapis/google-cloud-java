@@ -18,7 +18,6 @@ package com.google.cloud.vmmigration.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -128,7 +127,6 @@ public class VmMigrationClient implements BackgroundResource {
    * Constructs an instance of VmMigrationClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(VmMigrationSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VmMigrationClient create(VmMigrationStub stub) {
     return new VmMigrationClient(stub);
   }
@@ -144,7 +142,6 @@ public class VmMigrationClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VmMigrationClient(VmMigrationStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -155,7 +152,6 @@ public class VmMigrationClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VmMigrationStub getStub() {
     return stub;
   }
