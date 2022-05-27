@@ -18,7 +18,6 @@ package com.google.cloud.dialogflow.cx.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -128,7 +127,6 @@ public class AgentsClient implements BackgroundResource {
    * Constructs an instance of AgentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AgentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AgentsClient create(AgentsStub stub) {
     return new AgentsClient(stub);
   }
@@ -143,7 +141,6 @@ public class AgentsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AgentsClient(AgentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,6 @@ public class AgentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AgentsStub getStub() {
     return stub;
   }

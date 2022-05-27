@@ -186,7 +186,6 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
     return deletePageSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PagesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

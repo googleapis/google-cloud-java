@@ -124,7 +124,6 @@ public class WebhooksClient implements BackgroundResource {
    * Constructs an instance of WebhooksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(WebhooksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WebhooksClient create(WebhooksStub stub) {
     return new WebhooksClient(stub);
   }
@@ -138,7 +137,6 @@ public class WebhooksClient implements BackgroundResource {
     this.stub = ((WebhooksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WebhooksClient(WebhooksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +146,6 @@ public class WebhooksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebhooksStub getStub() {
     return stub;
   }

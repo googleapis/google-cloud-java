@@ -123,7 +123,6 @@ public class IntentsClient implements BackgroundResource {
    * Constructs an instance of IntentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(IntentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final IntentsClient create(IntentsStub stub) {
     return new IntentsClient(stub);
   }
@@ -137,7 +136,6 @@ public class IntentsClient implements BackgroundResource {
     this.stub = ((IntentsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected IntentsClient(IntentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +145,6 @@ public class IntentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IntentsStub getStub() {
     return stub;
   }

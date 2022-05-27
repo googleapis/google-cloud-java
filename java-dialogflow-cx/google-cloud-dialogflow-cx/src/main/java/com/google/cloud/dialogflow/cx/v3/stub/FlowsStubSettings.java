@@ -253,7 +253,6 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     return exportFlowOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlowsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

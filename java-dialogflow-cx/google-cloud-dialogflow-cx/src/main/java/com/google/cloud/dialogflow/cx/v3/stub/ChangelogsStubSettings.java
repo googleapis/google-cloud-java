@@ -166,7 +166,6 @@ public class ChangelogsStubSettings extends StubSettings<ChangelogsStubSettings>
     return getChangelogSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ChangelogsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -123,7 +123,6 @@ public class ChangelogsClient implements BackgroundResource {
    * Constructs an instance of ChangelogsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ChangelogsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ChangelogsClient create(ChangelogsStub stub) {
     return new ChangelogsClient(stub);
   }
@@ -137,7 +136,6 @@ public class ChangelogsClient implements BackgroundResource {
     this.stub = ((ChangelogsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ChangelogsClient(ChangelogsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +145,6 @@ public class ChangelogsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ChangelogsStub getStub() {
     return stub;
   }

@@ -130,7 +130,6 @@ public class FlowsClient implements BackgroundResource {
    * Constructs an instance of FlowsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(FlowsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FlowsClient create(FlowsStub stub) {
     return new FlowsClient(stub);
   }
@@ -145,7 +144,6 @@ public class FlowsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FlowsClient(FlowsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class FlowsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlowsStub getStub() {
     return stub;
   }

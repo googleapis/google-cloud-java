@@ -131,7 +131,6 @@ public class TestCasesClient implements BackgroundResource {
    * Constructs an instance of TestCasesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(TestCasesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TestCasesClient create(TestCasesStub stub) {
     return new TestCasesClient(stub);
   }
@@ -146,7 +145,6 @@ public class TestCasesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TestCasesClient(TestCasesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +155,6 @@ public class TestCasesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TestCasesStub getStub() {
     return stub;
   }

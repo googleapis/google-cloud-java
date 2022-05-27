@@ -18,7 +18,6 @@ package com.google.cloud.dialogflow.cx.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -130,7 +129,6 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Constructs an instance of SecuritySettingsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(SecuritySettingsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecuritySettingsServiceClient create(SecuritySettingsServiceStub stub) {
     return new SecuritySettingsServiceClient(stub);
   }
@@ -146,7 +144,6 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
     this.stub = ((SecuritySettingsServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SecuritySettingsServiceClient(SecuritySettingsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +153,6 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecuritySettingsServiceStub getStub() {
     return stub;
   }

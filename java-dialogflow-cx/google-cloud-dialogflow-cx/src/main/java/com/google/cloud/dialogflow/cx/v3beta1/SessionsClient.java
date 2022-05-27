@@ -126,7 +126,6 @@ public class SessionsClient implements BackgroundResource {
    * Constructs an instance of SessionsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(SessionsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionsClient create(SessionsStub stub) {
     return new SessionsClient(stub);
   }
@@ -140,7 +139,6 @@ public class SessionsClient implements BackgroundResource {
     this.stub = ((SessionsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SessionsClient(SessionsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +148,6 @@ public class SessionsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SessionsStub getStub() {
     return stub;
   }

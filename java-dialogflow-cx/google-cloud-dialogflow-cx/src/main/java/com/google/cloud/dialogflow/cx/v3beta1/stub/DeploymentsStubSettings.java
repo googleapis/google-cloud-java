@@ -170,7 +170,6 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
     return getDeploymentSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DeploymentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

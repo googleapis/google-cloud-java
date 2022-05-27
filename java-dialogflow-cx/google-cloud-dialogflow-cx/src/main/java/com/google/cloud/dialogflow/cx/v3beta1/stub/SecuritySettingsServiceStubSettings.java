@@ -214,7 +214,6 @@ public class SecuritySettingsServiceStubSettings
     return deleteSecuritySettingsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecuritySettingsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

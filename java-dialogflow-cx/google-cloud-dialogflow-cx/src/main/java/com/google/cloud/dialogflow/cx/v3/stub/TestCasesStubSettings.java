@@ -358,7 +358,6 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     return getTestCaseResultSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TestCasesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

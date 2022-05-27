@@ -187,7 +187,6 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     return deleteWebhookSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WebhooksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

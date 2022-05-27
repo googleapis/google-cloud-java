@@ -126,7 +126,6 @@ public class ExperimentsClient implements BackgroundResource {
    * Constructs an instance of ExperimentsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ExperimentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ExperimentsClient create(ExperimentsStub stub) {
     return new ExperimentsClient(stub);
   }
@@ -141,7 +140,6 @@ public class ExperimentsClient implements BackgroundResource {
     this.stub = ((ExperimentsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ExperimentsClient(ExperimentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +149,6 @@ public class ExperimentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ExperimentsStub getStub() {
     return stub;
   }

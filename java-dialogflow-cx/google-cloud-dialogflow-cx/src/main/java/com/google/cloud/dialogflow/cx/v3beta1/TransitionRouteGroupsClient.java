@@ -132,7 +132,6 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Constructs an instance of TransitionRouteGroupsClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(TransitionRouteGroupsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TransitionRouteGroupsClient create(TransitionRouteGroupsStub stub) {
     return new TransitionRouteGroupsClient(stub);
   }
@@ -147,7 +146,6 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
     this.stub = ((TransitionRouteGroupsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TransitionRouteGroupsClient(TransitionRouteGroupsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +155,6 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TransitionRouteGroupsStub getStub() {
     return stub;
   }
