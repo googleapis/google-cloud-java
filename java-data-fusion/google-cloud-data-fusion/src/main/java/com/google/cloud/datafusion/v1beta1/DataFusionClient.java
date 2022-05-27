@@ -133,7 +133,6 @@ public class DataFusionClient implements BackgroundResource {
    * Constructs an instance of DataFusionClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DataFusionSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataFusionClient create(DataFusionStub stub) {
     return new DataFusionClient(stub);
   }
@@ -148,7 +147,6 @@ public class DataFusionClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataFusionClient(DataFusionStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +157,6 @@ public class DataFusionClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataFusionStub getStub() {
     return stub;
   }

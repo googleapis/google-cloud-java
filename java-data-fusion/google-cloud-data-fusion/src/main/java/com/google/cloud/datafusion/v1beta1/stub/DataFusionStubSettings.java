@@ -492,7 +492,6 @@ public class DataFusionStubSettings extends StubSettings<DataFusionStubSettings>
     return listDnsPeeringsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataFusionStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
