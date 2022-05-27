@@ -164,7 +164,6 @@ public class ImageVersionsStubSettings extends StubSettings<ImageVersionsStubSet
     return listImageVersionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageVersionsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

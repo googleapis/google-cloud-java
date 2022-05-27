@@ -18,7 +18,6 @@ package com.google.cloud.orchestration.airflow.service.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -124,7 +123,6 @@ public class ImageVersionsClient implements BackgroundResource {
    * Constructs an instance of ImageVersionsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ImageVersionsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageVersionsClient create(ImageVersionsStub stub) {
     return new ImageVersionsClient(stub);
   }
@@ -139,7 +137,6 @@ public class ImageVersionsClient implements BackgroundResource {
     this.stub = ((ImageVersionsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageVersionsClient(ImageVersionsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +146,6 @@ public class ImageVersionsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageVersionsStub getStub() {
     return stub;
   }

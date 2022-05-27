@@ -221,7 +221,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return deleteEnvironmentOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EnvironmentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

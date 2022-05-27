@@ -129,7 +129,6 @@ public class EnvironmentsClient implements BackgroundResource {
    * Constructs an instance of EnvironmentsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(EnvironmentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EnvironmentsClient create(EnvironmentsStub stub) {
     return new EnvironmentsClient(stub);
   }
@@ -145,7 +144,6 @@ public class EnvironmentsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected EnvironmentsClient(EnvironmentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class EnvironmentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EnvironmentsStub getStub() {
     return stub;
   }
