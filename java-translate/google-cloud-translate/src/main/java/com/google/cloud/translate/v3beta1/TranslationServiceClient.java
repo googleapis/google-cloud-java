@@ -141,7 +141,6 @@ public class TranslationServiceClient implements BackgroundResource {
    * Constructs an instance of TranslationServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(TranslationServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TranslationServiceClient create(TranslationServiceStub stub) {
     return new TranslationServiceClient(stub);
   }
@@ -157,7 +156,6 @@ public class TranslationServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TranslationServiceClient(TranslationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -168,7 +166,6 @@ public class TranslationServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TranslationServiceStub getStub() {
     return stub;
   }

@@ -291,7 +291,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return deleteGlossaryOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TranslationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
