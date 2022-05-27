@@ -260,7 +260,6 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     return deletePolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OrgPolicyStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
