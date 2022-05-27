@@ -18,7 +18,6 @@ package com.google.cloud.video.transcoder.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -131,7 +130,6 @@ public class TranscoderServiceClient implements BackgroundResource {
    * Constructs an instance of TranscoderServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(TranscoderServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TranscoderServiceClient create(TranscoderServiceStub stub) {
     return new TranscoderServiceClient(stub);
   }
@@ -146,7 +144,6 @@ public class TranscoderServiceClient implements BackgroundResource {
     this.stub = ((TranscoderServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TranscoderServiceClient(TranscoderServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +153,6 @@ public class TranscoderServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TranscoderServiceStub getStub() {
     return stub;
   }

@@ -270,7 +270,6 @@ public class TranscoderServiceStubSettings extends StubSettings<TranscoderServic
     return deleteJobTemplateSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TranscoderServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
