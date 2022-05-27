@@ -329,7 +329,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return deleteSpokeOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public HubServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

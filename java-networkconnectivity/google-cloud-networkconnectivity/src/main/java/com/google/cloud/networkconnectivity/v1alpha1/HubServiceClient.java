@@ -131,7 +131,6 @@ public class HubServiceClient implements BackgroundResource {
    * Constructs an instance of HubServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(HubServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final HubServiceClient create(HubServiceStub stub) {
     return new HubServiceClient(stub);
   }
@@ -146,7 +145,6 @@ public class HubServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected HubServiceClient(HubServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +155,6 @@ public class HubServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public HubServiceStub getStub() {
     return stub;
   }
