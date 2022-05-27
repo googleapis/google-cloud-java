@@ -116,7 +116,6 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     return importCompletionDataOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompletionServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

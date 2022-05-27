@@ -157,7 +157,6 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     return rejoinUserEventsOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UserEventServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

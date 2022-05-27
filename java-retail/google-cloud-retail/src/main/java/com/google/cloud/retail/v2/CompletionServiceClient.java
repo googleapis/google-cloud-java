@@ -16,7 +16,6 @@
 
 package com.google.cloud.retail.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
@@ -134,7 +133,6 @@ public class CompletionServiceClient implements BackgroundResource {
    * Constructs an instance of CompletionServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(CompletionServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CompletionServiceClient create(CompletionServiceStub stub) {
     return new CompletionServiceClient(stub);
   }
@@ -150,7 +148,6 @@ public class CompletionServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CompletionServiceClient(CompletionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -161,7 +158,6 @@ public class CompletionServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompletionServiceStub getStub() {
     return stub;
   }

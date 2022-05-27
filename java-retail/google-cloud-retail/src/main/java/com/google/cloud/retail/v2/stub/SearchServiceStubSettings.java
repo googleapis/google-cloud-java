@@ -151,7 +151,6 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     return searchSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SearchServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

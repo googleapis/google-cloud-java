@@ -314,7 +314,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     return removeLocalInventoriesOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

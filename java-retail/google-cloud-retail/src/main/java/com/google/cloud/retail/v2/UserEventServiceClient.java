@@ -17,7 +17,6 @@
 package com.google.cloud.retail.v2;
 
 import com.google.api.HttpBody;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
@@ -127,7 +126,6 @@ public class UserEventServiceClient implements BackgroundResource {
    * Constructs an instance of UserEventServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(UserEventServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final UserEventServiceClient create(UserEventServiceStub stub) {
     return new UserEventServiceClient(stub);
   }
@@ -143,7 +141,6 @@ public class UserEventServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected UserEventServiceClient(UserEventServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,6 @@ public class UserEventServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UserEventServiceStub getStub() {
     return stub;
   }
