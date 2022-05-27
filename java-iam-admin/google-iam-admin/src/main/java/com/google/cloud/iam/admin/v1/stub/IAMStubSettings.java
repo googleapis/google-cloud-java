@@ -604,7 +604,6 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     return lintPolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IAMStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

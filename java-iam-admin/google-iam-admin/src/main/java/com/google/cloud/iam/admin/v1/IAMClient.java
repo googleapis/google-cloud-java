@@ -18,7 +18,6 @@ package com.google.cloud.iam.admin.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -194,7 +193,6 @@ public class IAMClient implements BackgroundResource {
    * Constructs an instance of IAMClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(IAMSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final IAMClient create(IAMStub stub) {
     return new IAMClient(stub);
   }
@@ -208,7 +206,6 @@ public class IAMClient implements BackgroundResource {
     this.stub = ((IAMStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected IAMClient(IAMStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -218,7 +215,6 @@ public class IAMClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IAMStub getStub() {
     return stub;
   }
