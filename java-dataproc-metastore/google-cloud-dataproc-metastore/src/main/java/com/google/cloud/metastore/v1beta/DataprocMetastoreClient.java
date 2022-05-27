@@ -149,7 +149,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Constructs an instance of DataprocMetastoreClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(DataprocMetastoreSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataprocMetastoreClient create(DataprocMetastoreStub stub) {
     return new DataprocMetastoreClient(stub);
   }
@@ -165,7 +164,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataprocMetastoreClient(DataprocMetastoreStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -176,7 +174,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataprocMetastoreStub getStub() {
     return stub;
   }

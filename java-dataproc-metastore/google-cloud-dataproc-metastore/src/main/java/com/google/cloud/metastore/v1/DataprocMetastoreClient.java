@@ -18,7 +18,6 @@ package com.google.cloud.metastore.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -148,7 +147,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * Constructs an instance of DataprocMetastoreClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(DataprocMetastoreSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataprocMetastoreClient create(DataprocMetastoreStub stub) {
     return new DataprocMetastoreClient(stub);
   }
@@ -164,7 +162,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataprocMetastoreClient(DataprocMetastoreStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -175,7 +172,6 @@ public class DataprocMetastoreClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataprocMetastoreStub getStub() {
     return stub;
   }

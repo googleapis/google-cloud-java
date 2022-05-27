@@ -467,7 +467,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     return deleteBackupOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataprocMetastoreStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
