@@ -126,7 +126,6 @@ public class SpeechTranslationServiceClient implements BackgroundResource {
    * Constructs an instance of SpeechTranslationServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(SpeechTranslationServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SpeechTranslationServiceClient create(SpeechTranslationServiceStub stub) {
     return new SpeechTranslationServiceClient(stub);
   }
@@ -142,7 +141,6 @@ public class SpeechTranslationServiceClient implements BackgroundResource {
     this.stub = ((SpeechTranslationServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SpeechTranslationServiceClient(SpeechTranslationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +150,6 @@ public class SpeechTranslationServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechTranslationServiceStub getStub() {
     return stub;
   }

@@ -97,7 +97,6 @@ public class SpeechTranslationServiceStubSettings
     return streamingTranslateSpeechSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechTranslationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
