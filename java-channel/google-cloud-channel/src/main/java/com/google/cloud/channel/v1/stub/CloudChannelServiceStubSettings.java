@@ -1479,7 +1479,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return listSubscribersSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudChannelServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
