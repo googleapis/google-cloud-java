@@ -18,7 +18,6 @@ package com.google.storagetransfer.v1.proto;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -138,7 +137,6 @@ public class StorageTransferServiceClient implements BackgroundResource {
    * Constructs an instance of StorageTransferServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(StorageTransferServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final StorageTransferServiceClient create(StorageTransferServiceStub stub) {
     return new StorageTransferServiceClient(stub);
   }
@@ -155,7 +153,6 @@ public class StorageTransferServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected StorageTransferServiceClient(StorageTransferServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -166,7 +163,6 @@ public class StorageTransferServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StorageTransferServiceStub getStub() {
     return stub;
   }

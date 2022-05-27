@@ -384,7 +384,6 @@ public class StorageTransferServiceStubSettings
     return deleteAgentPoolSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StorageTransferServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
