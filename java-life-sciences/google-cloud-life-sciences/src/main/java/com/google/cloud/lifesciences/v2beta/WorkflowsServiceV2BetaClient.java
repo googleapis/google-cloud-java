@@ -131,7 +131,6 @@ public class WorkflowsServiceV2BetaClient implements BackgroundResource {
    * Constructs an instance of WorkflowsServiceV2BetaClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(WorkflowsServiceV2BetaSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WorkflowsServiceV2BetaClient create(WorkflowsServiceV2BetaStub stub) {
     return new WorkflowsServiceV2BetaClient(stub);
   }
@@ -148,7 +147,6 @@ public class WorkflowsServiceV2BetaClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WorkflowsServiceV2BetaClient(WorkflowsServiceV2BetaStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +157,6 @@ public class WorkflowsServiceV2BetaClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WorkflowsServiceV2BetaStub getStub() {
     return stub;
   }
