@@ -24,7 +24,7 @@ jobs:
           upstream_repo: google-cloud-java
           description: 'Setup a monorepo to test integration tests'
           title: 'chore: regenerate monorepo'
-          message: 'chore: regenerate monorepo
+          message: 'chore: regenerate monorepo'
           branch: update-monorepo
           primary: monorepo_main
           force: true
