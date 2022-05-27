@@ -16,7 +16,6 @@
 
 package com.google.devtools.cloudprofiler.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devtools.cloudprofiler.v2.stub.ProfilerServiceStub;
@@ -130,7 +129,6 @@ public class ProfilerServiceClient implements BackgroundResource {
    * Constructs an instance of ProfilerServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ProfilerServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProfilerServiceClient create(ProfilerServiceStub stub) {
     return new ProfilerServiceClient(stub);
   }
@@ -145,7 +143,6 @@ public class ProfilerServiceClient implements BackgroundResource {
     this.stub = ((ProfilerServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ProfilerServiceClient(ProfilerServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -155,7 +152,6 @@ public class ProfilerServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfilerServiceStub getStub() {
     return stub;
   }

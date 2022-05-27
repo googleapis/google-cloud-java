@@ -108,7 +108,6 @@ public class ProfilerServiceStubSettings extends StubSettings<ProfilerServiceStu
     return updateProfileSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfilerServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
