@@ -136,7 +136,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     return updateSshPublicKeySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsLoginServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
