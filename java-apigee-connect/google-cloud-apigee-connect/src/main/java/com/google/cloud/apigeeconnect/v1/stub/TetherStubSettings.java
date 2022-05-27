@@ -88,7 +88,6 @@ public class TetherStubSettings extends StubSettings<TetherStubSettings> {
     return egressSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TetherStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

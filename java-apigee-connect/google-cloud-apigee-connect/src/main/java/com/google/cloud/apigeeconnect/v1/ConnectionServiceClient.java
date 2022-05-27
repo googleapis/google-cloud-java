@@ -18,7 +18,6 @@ package com.google.cloud.apigeeconnect.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -127,7 +126,6 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Constructs an instance of ConnectionServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ConnectionServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ConnectionServiceClient create(ConnectionServiceStub stub) {
     return new ConnectionServiceClient(stub);
   }
@@ -142,7 +140,6 @@ public class ConnectionServiceClient implements BackgroundResource {
     this.stub = ((ConnectionServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ConnectionServiceClient(ConnectionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +149,6 @@ public class ConnectionServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConnectionServiceStub getStub() {
     return stub;
   }

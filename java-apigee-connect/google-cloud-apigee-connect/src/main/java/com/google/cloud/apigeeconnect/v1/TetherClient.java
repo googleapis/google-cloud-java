@@ -16,7 +16,6 @@
 
 package com.google.cloud.apigeeconnect.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.cloud.apigeeconnect.v1.stub.TetherStub;
@@ -127,7 +126,6 @@ public class TetherClient implements BackgroundResource {
    * Constructs an instance of TetherClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(TetherSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TetherClient create(TetherStub stub) {
     return new TetherClient(stub);
   }
@@ -141,7 +139,6 @@ public class TetherClient implements BackgroundResource {
     this.stub = ((TetherStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TetherClient(TetherStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +148,6 @@ public class TetherClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TetherStub getStub() {
     return stub;
   }
