@@ -129,7 +129,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * Constructs an instance of PredictionServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(PredictionServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PredictionServiceClient create(PredictionServiceStub stub) {
     return new PredictionServiceClient(stub);
   }
@@ -145,7 +144,6 @@ public class PredictionServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PredictionServiceClient(PredictionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class PredictionServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PredictionServiceStub getStub() {
     return stub;
   }

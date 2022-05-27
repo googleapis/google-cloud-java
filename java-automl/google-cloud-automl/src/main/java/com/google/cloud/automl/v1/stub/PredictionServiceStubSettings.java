@@ -112,7 +112,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return batchPredictOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PredictionServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

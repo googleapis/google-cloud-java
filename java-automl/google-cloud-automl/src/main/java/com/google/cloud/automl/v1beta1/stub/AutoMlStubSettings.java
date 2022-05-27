@@ -659,7 +659,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     return listModelEvaluationsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AutoMlStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

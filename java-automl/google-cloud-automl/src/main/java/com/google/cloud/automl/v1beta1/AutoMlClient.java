@@ -140,7 +140,6 @@ public class AutoMlClient implements BackgroundResource {
    * Constructs an instance of AutoMlClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AutoMlSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AutoMlClient create(AutoMlStub stub) {
     return new AutoMlClient(stub);
   }
@@ -155,7 +154,6 @@ public class AutoMlClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AutoMlClient(AutoMlStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -166,7 +164,6 @@ public class AutoMlClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AutoMlStub getStub() {
     return stub;
   }
