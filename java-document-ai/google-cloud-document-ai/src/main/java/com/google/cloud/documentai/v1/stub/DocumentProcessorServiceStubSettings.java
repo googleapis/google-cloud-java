@@ -133,7 +133,6 @@ public class DocumentProcessorServiceStubSettings
     return reviewDocumentOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentProcessorServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

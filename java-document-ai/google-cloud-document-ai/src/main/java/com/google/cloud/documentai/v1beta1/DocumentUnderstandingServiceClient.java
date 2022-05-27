@@ -129,7 +129,6 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * Constructs an instance of DocumentUnderstandingServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(DocumentUnderstandingServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DocumentUnderstandingServiceClient create(
       DocumentUnderstandingServiceStub stub) {
     return new DocumentUnderstandingServiceClient(stub);
@@ -148,7 +147,6 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DocumentUnderstandingServiceClient(DocumentUnderstandingServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +157,6 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentUnderstandingServiceStub getStub() {
     return stub;
   }

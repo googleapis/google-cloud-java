@@ -137,7 +137,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * Constructs an instance of DocumentProcessorServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(DocumentProcessorServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DocumentProcessorServiceClient create(DocumentProcessorServiceStub stub) {
     return new DocumentProcessorServiceClient(stub);
   }
@@ -154,7 +153,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DocumentProcessorServiceClient(DocumentProcessorServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -165,7 +163,6 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DocumentProcessorServiceStub getStub() {
     return stub;
   }
