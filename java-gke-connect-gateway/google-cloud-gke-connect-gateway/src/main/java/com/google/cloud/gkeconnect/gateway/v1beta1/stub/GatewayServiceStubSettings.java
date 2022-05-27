@@ -113,7 +113,6 @@ public class GatewayServiceStubSettings extends StubSettings<GatewayServiceStubS
     return patchResourceSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GatewayServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

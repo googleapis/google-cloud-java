@@ -124,7 +124,6 @@ public class GatewayServiceClient implements BackgroundResource {
    * Constructs an instance of GatewayServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(GatewayServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GatewayServiceClient create(GatewayServiceStub stub) {
     return new GatewayServiceClient(stub);
   }
@@ -139,7 +138,6 @@ public class GatewayServiceClient implements BackgroundResource {
     this.stub = ((GatewayServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GatewayServiceClient(GatewayServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +147,6 @@ public class GatewayServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GatewayServiceStub getStub() {
     return stub;
   }
