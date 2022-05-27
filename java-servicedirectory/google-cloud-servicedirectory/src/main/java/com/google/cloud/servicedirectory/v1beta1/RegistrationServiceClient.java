@@ -147,7 +147,6 @@ public class RegistrationServiceClient implements BackgroundResource {
    * Constructs an instance of RegistrationServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(RegistrationServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegistrationServiceClient create(RegistrationServiceStub stub) {
     return new RegistrationServiceClient(stub);
   }
@@ -162,7 +161,6 @@ public class RegistrationServiceClient implements BackgroundResource {
     this.stub = ((RegistrationServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegistrationServiceClient(RegistrationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -172,7 +170,6 @@ public class RegistrationServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegistrationServiceStub getStub() {
     return stub;
   }

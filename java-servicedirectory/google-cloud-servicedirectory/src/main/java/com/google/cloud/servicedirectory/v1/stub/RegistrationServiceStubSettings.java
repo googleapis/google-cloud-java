@@ -401,7 +401,6 @@ public class RegistrationServiceStubSettings extends StubSettings<RegistrationSe
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegistrationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

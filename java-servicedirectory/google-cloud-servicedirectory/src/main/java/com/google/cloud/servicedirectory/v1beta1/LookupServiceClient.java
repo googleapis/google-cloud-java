@@ -121,7 +121,6 @@ public class LookupServiceClient implements BackgroundResource {
    * Constructs an instance of LookupServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(LookupServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LookupServiceClient create(LookupServiceStub stub) {
     return new LookupServiceClient(stub);
   }
@@ -136,7 +135,6 @@ public class LookupServiceClient implements BackgroundResource {
     this.stub = ((LookupServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LookupServiceClient(LookupServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +144,6 @@ public class LookupServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LookupServiceStub getStub() {
     return stub;
   }

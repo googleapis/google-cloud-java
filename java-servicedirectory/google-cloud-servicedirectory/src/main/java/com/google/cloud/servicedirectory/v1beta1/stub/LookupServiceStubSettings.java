@@ -92,7 +92,6 @@ public class LookupServiceStubSettings extends StubSettings<LookupServiceStubSet
     return resolveServiceSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LookupServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
