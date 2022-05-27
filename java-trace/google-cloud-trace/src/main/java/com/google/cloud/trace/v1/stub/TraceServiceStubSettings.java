@@ -173,7 +173,6 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     return patchTracesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TraceServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

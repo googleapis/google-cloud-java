@@ -99,7 +99,6 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     return createSpanSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TraceServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
