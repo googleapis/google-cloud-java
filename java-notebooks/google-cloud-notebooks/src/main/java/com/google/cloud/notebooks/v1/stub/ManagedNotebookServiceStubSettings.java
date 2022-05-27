@@ -287,7 +287,6 @@ public class ManagedNotebookServiceStubSettings
     return refreshRuntimeTokenInternalSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ManagedNotebookServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

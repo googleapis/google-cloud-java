@@ -18,7 +18,6 @@ package com.google.cloud.notebooks.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -132,7 +131,6 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    * Constructs an instance of ManagedNotebookServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(ManagedNotebookServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ManagedNotebookServiceClient create(ManagedNotebookServiceStub stub) {
     return new ManagedNotebookServiceClient(stub);
   }
@@ -149,7 +147,6 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ManagedNotebookServiceClient(ManagedNotebookServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -160,7 +157,6 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ManagedNotebookServiceStub getStub() {
     return stub;
   }

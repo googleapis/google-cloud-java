@@ -768,7 +768,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return createExecutionOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NotebookServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
