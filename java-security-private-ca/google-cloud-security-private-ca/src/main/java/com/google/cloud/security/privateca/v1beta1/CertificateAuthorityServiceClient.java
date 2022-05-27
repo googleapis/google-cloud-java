@@ -140,7 +140,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * Constructs an instance of CertificateAuthorityServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(CertificateAuthorityServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CertificateAuthorityServiceClient create(
       CertificateAuthorityServiceStub stub) {
     return new CertificateAuthorityServiceClient(stub);
@@ -158,7 +157,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CertificateAuthorityServiceClient(CertificateAuthorityServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -169,7 +167,6 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateAuthorityServiceStub getStub() {
     return stub;
   }

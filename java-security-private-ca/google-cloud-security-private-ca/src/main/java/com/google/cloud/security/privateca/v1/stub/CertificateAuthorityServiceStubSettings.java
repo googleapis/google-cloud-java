@@ -955,7 +955,6 @@ public class CertificateAuthorityServiceStubSettings
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateAuthorityServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

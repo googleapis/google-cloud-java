@@ -659,7 +659,6 @@ public class CertificateAuthorityServiceStubSettings
     return listReusableConfigsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CertificateAuthorityServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
