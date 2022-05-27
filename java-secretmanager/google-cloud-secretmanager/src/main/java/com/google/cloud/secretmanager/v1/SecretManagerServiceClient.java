@@ -18,7 +18,6 @@ package com.google.cloud.secretmanager.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -143,7 +142,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Constructs an instance of SecretManagerServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(SecretManagerServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecretManagerServiceClient create(SecretManagerServiceStub stub) {
     return new SecretManagerServiceClient(stub);
   }
@@ -158,7 +156,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
     this.stub = ((SecretManagerServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SecretManagerServiceClient(SecretManagerServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -168,7 +165,6 @@ public class SecretManagerServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecretManagerServiceStub getStub() {
     return stub;
   }

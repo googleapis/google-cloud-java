@@ -336,7 +336,6 @@ public class SecretManagerServiceStubSettings
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecretManagerServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
