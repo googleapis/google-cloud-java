@@ -451,7 +451,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     return deleteApiConfigOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ApiGatewayServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
