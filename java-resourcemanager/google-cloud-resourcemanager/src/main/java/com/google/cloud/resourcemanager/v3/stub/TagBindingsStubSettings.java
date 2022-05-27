@@ -201,7 +201,6 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     return deleteTagBindingOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TagBindingsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

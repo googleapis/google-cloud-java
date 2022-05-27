@@ -18,7 +18,6 @@ package com.google.cloud.resourcemanager.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -133,7 +132,6 @@ public class TagValuesClient implements BackgroundResource {
    * Constructs an instance of TagValuesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(TagValuesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TagValuesClient create(TagValuesStub stub) {
     return new TagValuesClient(stub);
   }
@@ -148,7 +146,6 @@ public class TagValuesClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TagValuesClient(TagValuesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +156,6 @@ public class TagValuesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TagValuesStub getStub() {
     return stub;
   }

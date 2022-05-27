@@ -18,7 +18,6 @@ package com.google.cloud.resourcemanager.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -133,7 +132,6 @@ public class FoldersClient implements BackgroundResource {
    * Constructs an instance of FoldersClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(FoldersSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FoldersClient create(FoldersStub stub) {
     return new FoldersClient(stub);
   }
@@ -148,7 +146,6 @@ public class FoldersClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FoldersClient(FoldersStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +156,6 @@ public class FoldersClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FoldersStub getStub() {
     return stub;
   }

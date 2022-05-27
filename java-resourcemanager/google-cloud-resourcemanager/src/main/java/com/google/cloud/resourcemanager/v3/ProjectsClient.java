@@ -18,7 +18,6 @@ package com.google.cloud.resourcemanager.v3;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -133,7 +132,6 @@ public class ProjectsClient implements BackgroundResource {
    * Constructs an instance of ProjectsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ProjectsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProjectsClient create(ProjectsStub stub) {
     return new ProjectsClient(stub);
   }
@@ -148,7 +146,6 @@ public class ProjectsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ProjectsClient(ProjectsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +156,6 @@ public class ProjectsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProjectsStub getStub() {
     return stub;
   }

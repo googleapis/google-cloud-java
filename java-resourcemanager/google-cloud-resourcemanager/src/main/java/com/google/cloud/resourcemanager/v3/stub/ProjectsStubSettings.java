@@ -342,7 +342,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProjectsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

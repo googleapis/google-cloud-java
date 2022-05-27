@@ -243,7 +243,6 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TagValuesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

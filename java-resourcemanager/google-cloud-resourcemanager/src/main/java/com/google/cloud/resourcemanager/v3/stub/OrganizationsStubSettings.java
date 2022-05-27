@@ -200,7 +200,6 @@ public class OrganizationsStubSettings extends StubSettings<OrganizationsStubSet
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OrganizationsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
