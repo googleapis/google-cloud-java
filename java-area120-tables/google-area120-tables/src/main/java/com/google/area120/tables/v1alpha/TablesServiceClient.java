@@ -158,7 +158,6 @@ public class TablesServiceClient implements BackgroundResource {
    * Constructs an instance of TablesServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(TablesServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TablesServiceClient create(TablesServiceStub stub) {
     return new TablesServiceClient(stub);
   }
@@ -173,7 +172,6 @@ public class TablesServiceClient implements BackgroundResource {
     this.stub = ((TablesServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TablesServiceClient(TablesServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -183,7 +181,6 @@ public class TablesServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TablesServiceStub getStub() {
     return stub;
   }

@@ -364,7 +364,6 @@ public class TablesServiceStubSettings extends StubSettings<TablesServiceStubSet
     return batchDeleteRowsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TablesServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
