@@ -262,7 +262,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     return deleteConnectivityTestOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReachabilityServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
