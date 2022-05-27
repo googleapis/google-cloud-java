@@ -318,7 +318,6 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     return updateInsightTypeConfigSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecommenderStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

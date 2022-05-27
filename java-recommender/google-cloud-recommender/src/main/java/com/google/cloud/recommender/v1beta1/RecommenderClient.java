@@ -129,7 +129,6 @@ public class RecommenderClient implements BackgroundResource {
    * Constructs an instance of RecommenderClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(RecommenderSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RecommenderClient create(RecommenderStub stub) {
     return new RecommenderClient(stub);
   }
@@ -144,7 +143,6 @@ public class RecommenderClient implements BackgroundResource {
     this.stub = ((RecommenderStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RecommenderClient(RecommenderStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class RecommenderClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RecommenderStub getStub() {
     return stub;
   }
