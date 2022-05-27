@@ -18,7 +18,6 @@ package com.google.cloud.osconfig.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -140,7 +139,6 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Constructs an instance of OsConfigServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(OsConfigServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final OsConfigServiceClient create(OsConfigServiceStub stub) {
     return new OsConfigServiceClient(stub);
   }
@@ -155,7 +153,6 @@ public class OsConfigServiceClient implements BackgroundResource {
     this.stub = ((OsConfigServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected OsConfigServiceClient(OsConfigServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -165,7 +162,6 @@ public class OsConfigServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigServiceStub getStub() {
     return stub;
   }

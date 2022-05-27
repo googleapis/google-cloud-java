@@ -138,7 +138,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * Constructs an instance of OsConfigZonalServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(OsConfigZonalServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final OsConfigZonalServiceClient create(OsConfigZonalServiceStub stub) {
     return new OsConfigZonalServiceClient(stub);
   }
@@ -154,7 +153,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected OsConfigZonalServiceClient(OsConfigZonalServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -165,7 +163,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigZonalServiceStub getStub() {
     return stub;
   }

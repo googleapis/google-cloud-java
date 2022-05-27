@@ -586,7 +586,6 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     return lookupEffectiveGuestPolicySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

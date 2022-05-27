@@ -141,7 +141,6 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Constructs an instance of OsConfigServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(OsConfigServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final OsConfigServiceClient create(OsConfigServiceStub stub) {
     return new OsConfigServiceClient(stub);
   }
@@ -156,7 +155,6 @@ public class OsConfigServiceClient implements BackgroundResource {
     this.stub = ((OsConfigServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected OsConfigServiceClient(OsConfigServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -166,7 +164,6 @@ public class OsConfigServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigServiceStub getStub() {
     return stub;
   }

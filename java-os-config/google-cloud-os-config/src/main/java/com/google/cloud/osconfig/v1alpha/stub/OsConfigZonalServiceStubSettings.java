@@ -760,7 +760,6 @@ public class OsConfigZonalServiceStubSettings
     return listVulnerabilityReportsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigZonalServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

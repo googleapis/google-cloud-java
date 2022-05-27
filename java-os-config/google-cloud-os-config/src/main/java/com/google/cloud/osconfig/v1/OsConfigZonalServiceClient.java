@@ -18,7 +18,6 @@ package com.google.cloud.osconfig.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -137,7 +136,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * Constructs an instance of OsConfigZonalServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(OsConfigZonalServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final OsConfigZonalServiceClient create(OsConfigZonalServiceStub stub) {
     return new OsConfigZonalServiceClient(stub);
   }
@@ -153,7 +151,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected OsConfigZonalServiceClient(OsConfigZonalServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -164,7 +161,6 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public OsConfigZonalServiceStub getStub() {
     return stub;
   }
