@@ -201,7 +201,6 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     return deleteConnectorOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VpcAccessServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
