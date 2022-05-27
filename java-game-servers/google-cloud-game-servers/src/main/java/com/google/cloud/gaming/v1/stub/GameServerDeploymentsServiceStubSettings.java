@@ -307,7 +307,6 @@ public class GameServerDeploymentsServiceStubSettings
     return fetchDeploymentStateSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GameServerDeploymentsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

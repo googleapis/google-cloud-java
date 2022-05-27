@@ -284,7 +284,6 @@ public class GameServerClustersServiceStubSettings
     return previewUpdateGameServerClusterSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GameServerClustersServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

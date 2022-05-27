@@ -18,7 +18,6 @@ package com.google.cloud.gaming.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -130,7 +129,6 @@ public class RealmsServiceClient implements BackgroundResource {
    * Constructs an instance of RealmsServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(RealmsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RealmsServiceClient create(RealmsServiceStub stub) {
     return new RealmsServiceClient(stub);
   }
@@ -146,7 +144,6 @@ public class RealmsServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RealmsServiceClient(RealmsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +154,6 @@ public class RealmsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RealmsServiceStub getStub() {
     return stub;
   }

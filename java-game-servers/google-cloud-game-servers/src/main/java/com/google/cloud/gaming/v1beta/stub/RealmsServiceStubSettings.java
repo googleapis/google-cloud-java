@@ -224,7 +224,6 @@ public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSet
     return previewRealmUpdateSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RealmsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

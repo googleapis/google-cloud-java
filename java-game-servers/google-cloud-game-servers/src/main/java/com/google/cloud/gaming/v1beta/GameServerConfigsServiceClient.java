@@ -135,7 +135,6 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    * Constructs an instance of GameServerConfigsServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(GameServerConfigsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GameServerConfigsServiceClient create(GameServerConfigsServiceStub stub) {
     return new GameServerConfigsServiceClient(stub);
   }
@@ -152,7 +151,6 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GameServerConfigsServiceClient(GameServerConfigsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -163,7 +161,6 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GameServerConfigsServiceStub getStub() {
     return stub;
   }

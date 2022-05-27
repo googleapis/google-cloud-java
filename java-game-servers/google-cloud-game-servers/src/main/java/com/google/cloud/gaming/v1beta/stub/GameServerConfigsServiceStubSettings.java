@@ -226,7 +226,6 @@ public class GameServerConfigsServiceStubSettings
     return deleteGameServerConfigOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GameServerConfigsServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
