@@ -321,7 +321,6 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudBillingStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

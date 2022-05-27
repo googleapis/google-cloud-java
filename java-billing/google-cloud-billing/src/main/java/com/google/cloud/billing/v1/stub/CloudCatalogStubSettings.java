@@ -219,7 +219,6 @@ public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSetti
     return listSkusSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudCatalogStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

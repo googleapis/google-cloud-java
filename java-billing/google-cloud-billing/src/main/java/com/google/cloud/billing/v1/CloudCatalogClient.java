@@ -18,7 +18,6 @@ package com.google.cloud.billing.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -123,7 +122,6 @@ public class CloudCatalogClient implements BackgroundResource {
    * Constructs an instance of CloudCatalogClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CloudCatalogSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudCatalogClient create(CloudCatalogStub stub) {
     return new CloudCatalogClient(stub);
   }
@@ -138,7 +136,6 @@ public class CloudCatalogClient implements BackgroundResource {
     this.stub = ((CloudCatalogStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudCatalogClient(CloudCatalogStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +145,6 @@ public class CloudCatalogClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudCatalogStub getStub() {
     return stub;
   }
