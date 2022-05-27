@@ -216,7 +216,6 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EkmServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

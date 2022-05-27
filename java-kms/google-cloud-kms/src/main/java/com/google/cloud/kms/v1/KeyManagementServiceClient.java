@@ -18,7 +18,6 @@ package com.google.cloud.kms.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -147,7 +146,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * Constructs an instance of KeyManagementServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(KeyManagementServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final KeyManagementServiceClient create(KeyManagementServiceStub stub) {
     return new KeyManagementServiceClient(stub);
   }
@@ -162,7 +160,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
     this.stub = ((KeyManagementServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected KeyManagementServiceClient(KeyManagementServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -172,7 +169,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public KeyManagementServiceStub getStub() {
     return stub;
   }
