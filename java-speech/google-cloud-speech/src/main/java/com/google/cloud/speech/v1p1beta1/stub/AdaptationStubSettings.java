@@ -286,7 +286,6 @@ public class AdaptationStubSettings extends StubSettings<AdaptationStubSettings>
     return deleteCustomClassSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AdaptationStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

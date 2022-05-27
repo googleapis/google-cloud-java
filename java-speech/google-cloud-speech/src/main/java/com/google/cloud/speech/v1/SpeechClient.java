@@ -16,7 +16,6 @@
 
 package com.google.cloud.speech.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.BidiStreamingCallable;
@@ -119,7 +118,6 @@ public class SpeechClient implements BackgroundResource {
    * Constructs an instance of SpeechClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(SpeechSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SpeechClient create(SpeechStub stub) {
     return new SpeechClient(stub);
   }
@@ -134,7 +132,6 @@ public class SpeechClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SpeechClient(SpeechStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +142,6 @@ public class SpeechClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechStub getStub() {
     return stub;
   }

@@ -124,7 +124,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     return streamingRecognizeSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SpeechStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

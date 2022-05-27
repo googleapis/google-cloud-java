@@ -126,7 +126,6 @@ public class AdaptationClient implements BackgroundResource {
    * Constructs an instance of AdaptationClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AdaptationSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AdaptationClient create(AdaptationStub stub) {
     return new AdaptationClient(stub);
   }
@@ -140,7 +139,6 @@ public class AdaptationClient implements BackgroundResource {
     this.stub = ((AdaptationStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AdaptationClient(AdaptationStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +148,6 @@ public class AdaptationClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AdaptationStub getStub() {
     return stub;
   }
