@@ -18,7 +18,6 @@ package com.google.cloud.domains.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -129,7 +128,6 @@ public class DomainsClient implements BackgroundResource {
    * Constructs an instance of DomainsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DomainsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DomainsClient create(DomainsStub stub) {
     return new DomainsClient(stub);
   }
@@ -144,7 +142,6 @@ public class DomainsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DomainsClient(DomainsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -155,7 +152,6 @@ public class DomainsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DomainsStub getStub() {
     return stub;
   }
