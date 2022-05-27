@@ -288,7 +288,6 @@ public class ManagedIdentitiesServiceStubSettings
     return validateTrustOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ManagedIdentitiesServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

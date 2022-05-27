@@ -18,7 +18,6 @@ package com.google.cloud.managedidentities.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -162,7 +161,6 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    * Constructs an instance of ManagedIdentitiesServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(ManagedIdentitiesServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ManagedIdentitiesServiceClient create(ManagedIdentitiesServiceStub stub) {
     return new ManagedIdentitiesServiceClient(stub);
   }
@@ -179,7 +177,6 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ManagedIdentitiesServiceClient(ManagedIdentitiesServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -190,7 +187,6 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ManagedIdentitiesServiceStub getStub() {
     return stub;
   }
