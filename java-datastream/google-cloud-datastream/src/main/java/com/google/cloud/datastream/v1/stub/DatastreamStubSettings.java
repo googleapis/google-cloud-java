@@ -857,7 +857,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     return getLocationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DatastreamStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

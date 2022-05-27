@@ -130,7 +130,6 @@ public class DatastreamClient implements BackgroundResource {
    * Constructs an instance of DatastreamClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DatastreamSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DatastreamClient create(DatastreamStub stub) {
     return new DatastreamClient(stub);
   }
@@ -145,7 +144,6 @@ public class DatastreamClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DatastreamClient(DatastreamStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class DatastreamClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DatastreamStub getStub() {
     return stub;
   }
