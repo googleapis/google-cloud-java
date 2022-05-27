@@ -100,7 +100,6 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     return synthesizeSpeechSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TextToSpeechStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
