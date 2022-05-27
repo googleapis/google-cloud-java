@@ -18,7 +18,6 @@ package com.google.api.serviceusage.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -130,7 +129,6 @@ public class ServiceUsageClient implements BackgroundResource {
    * Constructs an instance of ServiceUsageClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ServiceUsageSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServiceUsageClient create(ServiceUsageStub stub) {
     return new ServiceUsageClient(stub);
   }
@@ -146,7 +144,6 @@ public class ServiceUsageClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ServiceUsageClient(ServiceUsageStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +154,6 @@ public class ServiceUsageClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceUsageStub getStub() {
     return stub;
   }

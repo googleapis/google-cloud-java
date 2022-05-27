@@ -235,7 +235,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     return batchGetServicesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceUsageStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
