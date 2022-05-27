@@ -749,7 +749,6 @@ public class AccessContextManagerStubSettings
     return deleteGcpUserAccessBindingOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AccessContextManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
