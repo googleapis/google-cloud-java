@@ -151,7 +151,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     return checkCompatibilitySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BetaAnalyticsDataStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

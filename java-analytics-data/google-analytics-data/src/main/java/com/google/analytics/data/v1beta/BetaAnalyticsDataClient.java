@@ -134,7 +134,6 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * Constructs an instance of BetaAnalyticsDataClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(BetaAnalyticsDataSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BetaAnalyticsDataClient create(BetaAnalyticsDataStub stub) {
     return new BetaAnalyticsDataClient(stub);
   }
@@ -149,7 +148,6 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
     this.stub = ((BetaAnalyticsDataStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BetaAnalyticsDataClient(BetaAnalyticsDataStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +157,6 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BetaAnalyticsDataStub getStub() {
     return stub;
   }

@@ -129,7 +129,6 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * Constructs an instance of AlphaAnalyticsDataClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(AlphaAnalyticsDataSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AlphaAnalyticsDataClient create(AlphaAnalyticsDataStub stub) {
     return new AlphaAnalyticsDataClient(stub);
   }
@@ -144,7 +143,6 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     this.stub = ((AlphaAnalyticsDataStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AlphaAnalyticsDataClient(AlphaAnalyticsDataStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AlphaAnalyticsDataStub getStub() {
     return stub;
   }

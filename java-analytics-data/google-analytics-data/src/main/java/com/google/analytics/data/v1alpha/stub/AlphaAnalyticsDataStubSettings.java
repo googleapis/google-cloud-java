@@ -96,7 +96,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return runFunnelReportSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AlphaAnalyticsDataStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
