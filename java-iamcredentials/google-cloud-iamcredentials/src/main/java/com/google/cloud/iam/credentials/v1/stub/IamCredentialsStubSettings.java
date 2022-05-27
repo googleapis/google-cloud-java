@@ -118,7 +118,6 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     return signJwtSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IamCredentialsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

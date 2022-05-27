@@ -16,7 +16,6 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.iam.credentials.v1.stub.IamCredentialsStub;
@@ -128,7 +127,6 @@ public class IamCredentialsClient implements BackgroundResource {
    * Constructs an instance of IamCredentialsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(IamCredentialsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final IamCredentialsClient create(IamCredentialsStub stub) {
     return new IamCredentialsClient(stub);
   }
@@ -143,7 +141,6 @@ public class IamCredentialsClient implements BackgroundResource {
     this.stub = ((IamCredentialsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected IamCredentialsClient(IamCredentialsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +150,6 @@ public class IamCredentialsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IamCredentialsStub getStub() {
     return stub;
   }
