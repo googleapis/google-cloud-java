@@ -18,6 +18,7 @@
     <module>java-dialogflow</module>
     <module>java-vision</module>
 
+    <module>CoverageAggregator</module>
     </modules>
 
     <build>
