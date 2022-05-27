@@ -671,7 +671,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return listLunsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BareMetalSolutionStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
