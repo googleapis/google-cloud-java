@@ -134,7 +134,6 @@ public class PolicyTagManagerClient implements BackgroundResource {
    * Constructs an instance of PolicyTagManagerClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(PolicyTagManagerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PolicyTagManagerClient create(PolicyTagManagerStub stub) {
     return new PolicyTagManagerClient(stub);
   }
@@ -149,7 +148,6 @@ public class PolicyTagManagerClient implements BackgroundResource {
     this.stub = ((PolicyTagManagerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PolicyTagManagerClient(PolicyTagManagerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +157,6 @@ public class PolicyTagManagerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PolicyTagManagerStub getStub() {
     return stub;
   }

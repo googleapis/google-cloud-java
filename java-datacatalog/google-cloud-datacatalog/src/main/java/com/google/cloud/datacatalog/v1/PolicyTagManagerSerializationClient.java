@@ -16,7 +16,6 @@
 
 package com.google.cloud.datacatalog.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1.stub.PolicyTagManagerSerializationStub;
@@ -126,7 +125,6 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
    * Constructs an instance of PolicyTagManagerSerializationClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(PolicyTagManagerSerializationSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PolicyTagManagerSerializationClient create(
       PolicyTagManagerSerializationStub stub) {
     return new PolicyTagManagerSerializationClient(stub);
@@ -144,7 +142,6 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
         ((PolicyTagManagerSerializationStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PolicyTagManagerSerializationClient(PolicyTagManagerSerializationStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +151,6 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PolicyTagManagerSerializationStub getStub() {
     return stub;
   }

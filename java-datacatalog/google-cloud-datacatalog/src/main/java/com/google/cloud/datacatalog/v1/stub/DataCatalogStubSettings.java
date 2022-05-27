@@ -575,7 +575,6 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataCatalogStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

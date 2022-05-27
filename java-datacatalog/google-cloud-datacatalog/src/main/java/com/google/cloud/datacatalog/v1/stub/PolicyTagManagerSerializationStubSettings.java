@@ -111,7 +111,6 @@ public class PolicyTagManagerSerializationStubSettings
     return exportTaxonomiesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PolicyTagManagerSerializationStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

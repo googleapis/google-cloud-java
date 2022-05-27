@@ -133,7 +133,6 @@ public class DataCatalogClient implements BackgroundResource {
    * Constructs an instance of DataCatalogClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DataCatalogSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DataCatalogClient create(DataCatalogStub stub) {
     return new DataCatalogClient(stub);
   }
@@ -148,7 +147,6 @@ public class DataCatalogClient implements BackgroundResource {
     this.stub = ((DataCatalogStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DataCatalogClient(DataCatalogStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +156,6 @@ public class DataCatalogClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DataCatalogStub getStub() {
     return stub;
   }
