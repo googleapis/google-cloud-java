@@ -15,3 +15,17 @@ jobs:
         run: ./bootstrap.sh
         env:
           USERNAME: ${{ github.actor }}
+      - uses: googleapis/code-suggester@v3
+        env:
+          ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+        with:
+          command: pr
+          upstream_owner: googleapis
+          upstream_repo: google-cloud-java
+          description: 'Setup a monorepo to test integration tests'
+          title: 'chore: regenerate monorepo'
+          message: 'chore: regenerate monorepo
+          branch: update-monorepo
+          primary: monorepo_main
+          force: true
+          git_dir: '.'
