@@ -711,7 +711,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return finishDlpJobSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DlpServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

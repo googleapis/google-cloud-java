@@ -18,7 +18,6 @@ package com.google.cloud.dlp.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -198,7 +197,6 @@ public class DlpServiceClient implements BackgroundResource {
    * Constructs an instance of DlpServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DlpServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DlpServiceClient create(DlpServiceStub stub) {
     return new DlpServiceClient(stub);
   }
@@ -212,7 +210,6 @@ public class DlpServiceClient implements BackgroundResource {
     this.stub = ((DlpServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DlpServiceClient(DlpServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -222,7 +219,6 @@ public class DlpServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DlpServiceStub getStub() {
     return stub;
   }
