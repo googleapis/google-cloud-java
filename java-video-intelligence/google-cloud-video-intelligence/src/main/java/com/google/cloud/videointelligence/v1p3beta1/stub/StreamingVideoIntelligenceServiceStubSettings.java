@@ -97,7 +97,6 @@ public class StreamingVideoIntelligenceServiceStubSettings
     return streamingAnnotateVideoSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StreamingVideoIntelligenceServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

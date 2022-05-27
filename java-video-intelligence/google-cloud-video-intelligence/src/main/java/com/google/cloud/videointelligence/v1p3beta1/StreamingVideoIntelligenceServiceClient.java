@@ -126,7 +126,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
    * making calls. This is for advanced usage - prefer using
    * create(StreamingVideoIntelligenceServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final StreamingVideoIntelligenceServiceClient create(
       StreamingVideoIntelligenceServiceStub stub) {
     return new StreamingVideoIntelligenceServiceClient(stub);
@@ -144,7 +143,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
         ((StreamingVideoIntelligenceServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected StreamingVideoIntelligenceServiceClient(StreamingVideoIntelligenceServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StreamingVideoIntelligenceServiceStub getStub() {
     return stub;
   }
