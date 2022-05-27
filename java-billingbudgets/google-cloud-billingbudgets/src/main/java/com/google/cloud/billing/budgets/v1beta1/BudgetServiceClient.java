@@ -129,7 +129,6 @@ public class BudgetServiceClient implements BackgroundResource {
    * Constructs an instance of BudgetServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(BudgetServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BudgetServiceClient create(BudgetServiceStub stub) {
     return new BudgetServiceClient(stub);
   }
@@ -144,7 +143,6 @@ public class BudgetServiceClient implements BackgroundResource {
     this.stub = ((BudgetServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BudgetServiceClient(BudgetServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class BudgetServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BudgetServiceStub getStub() {
     return stub;
   }
