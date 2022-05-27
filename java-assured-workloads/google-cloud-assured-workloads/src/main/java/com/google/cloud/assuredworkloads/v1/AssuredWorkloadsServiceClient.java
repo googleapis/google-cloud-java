@@ -18,7 +18,6 @@ package com.google.cloud.assuredworkloads.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -134,7 +133,6 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * Constructs an instance of AssuredWorkloadsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(AssuredWorkloadsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AssuredWorkloadsServiceClient create(AssuredWorkloadsServiceStub stub) {
     return new AssuredWorkloadsServiceClient(stub);
   }
@@ -151,7 +149,6 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AssuredWorkloadsServiceClient(AssuredWorkloadsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +159,6 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AssuredWorkloadsServiceStub getStub() {
     return stub;
   }
