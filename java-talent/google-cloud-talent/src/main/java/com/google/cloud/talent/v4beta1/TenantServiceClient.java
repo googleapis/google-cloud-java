@@ -125,7 +125,6 @@ public class TenantServiceClient implements BackgroundResource {
    * Constructs an instance of TenantServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(TenantServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TenantServiceClient create(TenantServiceStub stub) {
     return new TenantServiceClient(stub);
   }
@@ -140,7 +139,6 @@ public class TenantServiceClient implements BackgroundResource {
     this.stub = ((TenantServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TenantServiceClient(TenantServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +148,6 @@ public class TenantServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TenantServiceStub getStub() {
     return stub;
   }

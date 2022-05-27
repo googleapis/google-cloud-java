@@ -129,7 +129,6 @@ public class ApplicationServiceClient implements BackgroundResource {
    * Constructs an instance of ApplicationServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ApplicationServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ApplicationServiceClient create(ApplicationServiceStub stub) {
     return new ApplicationServiceClient(stub);
   }
@@ -144,7 +143,6 @@ public class ApplicationServiceClient implements BackgroundResource {
     this.stub = ((ApplicationServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ApplicationServiceClient(ApplicationServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +152,6 @@ public class ApplicationServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ApplicationServiceStub getStub() {
     return stub;
   }

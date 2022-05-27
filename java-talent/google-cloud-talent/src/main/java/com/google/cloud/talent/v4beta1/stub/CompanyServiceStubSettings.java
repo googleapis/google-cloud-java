@@ -188,7 +188,6 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     return listCompaniesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompanyServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -123,7 +123,6 @@ public class CompletionClient implements BackgroundResource {
    * Constructs an instance of CompletionClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(CompletionSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CompletionClient create(CompletionStub stub) {
     return new CompletionClient(stub);
   }
@@ -137,7 +136,6 @@ public class CompletionClient implements BackgroundResource {
     this.stub = ((CompletionStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CompletionClient(CompletionStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +145,6 @@ public class CompletionClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompletionStub getStub() {
     return stub;
   }

@@ -126,7 +126,6 @@ public class ProfileServiceClient implements BackgroundResource {
    * Constructs an instance of ProfileServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ProfileServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProfileServiceClient create(ProfileServiceStub stub) {
     return new ProfileServiceClient(stub);
   }
@@ -141,7 +140,6 @@ public class ProfileServiceClient implements BackgroundResource {
     this.stub = ((ProfileServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ProfileServiceClient(ProfileServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +149,6 @@ public class ProfileServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfileServiceStub getStub() {
     return stub;
   }

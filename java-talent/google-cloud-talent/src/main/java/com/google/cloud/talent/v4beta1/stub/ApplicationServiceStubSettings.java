@@ -196,7 +196,6 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     return listApplicationsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ApplicationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

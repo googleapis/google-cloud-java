@@ -92,7 +92,6 @@ public class EventServiceStubSettings extends StubSettings<EventServiceStubSetti
     return createClientEventSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EventServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

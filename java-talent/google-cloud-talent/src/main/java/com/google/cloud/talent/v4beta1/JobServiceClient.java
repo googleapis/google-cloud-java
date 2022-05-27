@@ -130,7 +130,6 @@ public class JobServiceClient implements BackgroundResource {
    * Constructs an instance of JobServiceClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(JobServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final JobServiceClient create(JobServiceStub stub) {
     return new JobServiceClient(stub);
   }
@@ -145,7 +144,6 @@ public class JobServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected JobServiceClient(JobServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class JobServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobServiceStub getStub() {
     return stub;
   }

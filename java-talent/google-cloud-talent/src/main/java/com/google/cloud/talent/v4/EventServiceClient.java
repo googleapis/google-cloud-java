@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.stub.EventServiceStub;
@@ -114,7 +113,6 @@ public class EventServiceClient implements BackgroundResource {
    * Constructs an instance of EventServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(EventServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EventServiceClient create(EventServiceStub stub) {
     return new EventServiceClient(stub);
   }
@@ -129,7 +127,6 @@ public class EventServiceClient implements BackgroundResource {
     this.stub = ((EventServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected EventServiceClient(EventServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -139,7 +136,6 @@ public class EventServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EventServiceStub getStub() {
     return stub;
   }

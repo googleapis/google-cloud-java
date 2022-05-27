@@ -187,7 +187,6 @@ public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSet
     return listTenantsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TenantServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -154,7 +154,7 @@ public interface LocationFilterOrBuilder
    * <pre>
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
-   * by the service as a special location.
+   * by the service as a special location).
    * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
    * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
    * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are
@@ -184,7 +184,7 @@ public interface LocationFilterOrBuilder
    * <pre>
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
-   * by the service as a special location.
+   * by the service as a special location).
    * [Job.posting_region][google.cloud.talent.v4.Job.posting_region] indicates if a job permits telecommuting.
    * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
    * telecommuting jobs are searched, and [address][google.cloud.talent.v4.LocationFilter.address] and [lat_lng][google.cloud.talent.v4.LocationFilter.lat_lng] are

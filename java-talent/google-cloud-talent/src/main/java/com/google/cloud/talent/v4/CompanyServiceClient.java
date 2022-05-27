@@ -18,7 +18,6 @@ package com.google.cloud.talent.v4;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -125,7 +124,6 @@ public class CompanyServiceClient implements BackgroundResource {
    * Constructs an instance of CompanyServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CompanyServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CompanyServiceClient create(CompanyServiceStub stub) {
     return new CompanyServiceClient(stub);
   }
@@ -140,7 +138,6 @@ public class CompanyServiceClient implements BackgroundResource {
     this.stub = ((CompanyServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CompanyServiceClient(CompanyServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +147,6 @@ public class CompanyServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompanyServiceStub getStub() {
     return stub;
   }

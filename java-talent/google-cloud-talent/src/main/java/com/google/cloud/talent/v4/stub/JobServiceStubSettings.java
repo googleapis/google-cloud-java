@@ -258,7 +258,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     return searchJobsForAlertSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

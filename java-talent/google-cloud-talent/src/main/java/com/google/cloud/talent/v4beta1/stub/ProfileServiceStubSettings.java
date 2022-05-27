@@ -259,7 +259,6 @@ public class ProfileServiceStubSettings extends StubSettings<ProfileServiceStubS
     return searchProfilesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProfileServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

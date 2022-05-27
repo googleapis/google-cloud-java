@@ -93,7 +93,6 @@ public class CompletionStubSettings extends StubSettings<CompletionStubSettings>
     return completeQuerySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CompletionStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
