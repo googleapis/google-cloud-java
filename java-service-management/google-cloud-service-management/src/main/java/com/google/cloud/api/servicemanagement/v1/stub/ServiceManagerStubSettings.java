@@ -438,7 +438,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return generateConfigReportSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

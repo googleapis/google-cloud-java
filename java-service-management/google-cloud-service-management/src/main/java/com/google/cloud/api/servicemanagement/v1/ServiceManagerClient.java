@@ -19,7 +19,6 @@ package com.google.cloud.api.servicemanagement.v1;
 import com.google.api.Service;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -154,7 +153,6 @@ public class ServiceManagerClient implements BackgroundResource {
    * Constructs an instance of ServiceManagerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ServiceManagerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServiceManagerClient create(ServiceManagerStub stub) {
     return new ServiceManagerClient(stub);
   }
@@ -170,7 +168,6 @@ public class ServiceManagerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ServiceManagerClient(ServiceManagerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -181,7 +178,6 @@ public class ServiceManagerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceManagerStub getStub() {
     return stub;
   }
