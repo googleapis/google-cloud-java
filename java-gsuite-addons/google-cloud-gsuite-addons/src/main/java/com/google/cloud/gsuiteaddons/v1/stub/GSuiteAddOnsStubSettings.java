@@ -218,7 +218,6 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
     return getInstallStatusSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GSuiteAddOnsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

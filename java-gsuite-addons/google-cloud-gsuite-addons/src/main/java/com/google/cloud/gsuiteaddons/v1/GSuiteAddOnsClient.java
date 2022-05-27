@@ -18,7 +18,6 @@ package com.google.cloud.gsuiteaddons.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -143,7 +142,6 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    * Constructs an instance of GSuiteAddOnsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(GSuiteAddOnsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GSuiteAddOnsClient create(GSuiteAddOnsStub stub) {
     return new GSuiteAddOnsClient(stub);
   }
@@ -158,7 +156,6 @@ public class GSuiteAddOnsClient implements BackgroundResource {
     this.stub = ((GSuiteAddOnsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GSuiteAddOnsClient(GSuiteAddOnsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -168,7 +165,6 @@ public class GSuiteAddOnsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GSuiteAddOnsStub getStub() {
     return stub;
   }
