@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Monorepo
+<<<<<<< Updated upstream
         run: ./bootstrap.sh
         env:
           USERNAME: ${{ github.actor }}
@@ -29,3 +30,6 @@ jobs:
           primary: monorepo_main
           force: true
           git_dir: '.'
+=======
+        run: mvn clean install
+>>>>>>> Stashed changes

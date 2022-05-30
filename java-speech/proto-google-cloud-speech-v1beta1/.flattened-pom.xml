@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc</groupId>
+  <artifactId>proto-google-cloud-speech-v1beta1</artifactId>
+  <version>0.87.0</version>
+  <name>proto-google-cloud-speech-v1beta1</name>
+  <description>PROTO library for proto-google-cloud-speech-v1beta1</description>
+  <url>https://github.com/googleapis/java-speech/proto-google-cloud-speech-v1beta1</url>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>garrettjonesgoogle</id>
+      <name>Garrett Jones</name>
+      <email>garrettjones@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>pongad</id>
+      <name>Michael Darakananda</name>
+      <email>pongad@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>shinfan</id>
+      <name>Shin Fan</name>
+      <email>shinfan@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>michaelbausor</id>
+      <name>Micheal Bausor</name>
+      <email>michaelbausor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>vam-google</id>
+      <name>Vadym Matsishevskyi</name>
+      <email>vam@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>tswast</id>
+      <name>Tim Swast</name>
+      <email>tswast@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>neozwu</id>
+      <name>Neo Wu</name>
+      <email>neowu@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>lesv</id>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>schmidt_sebastian</id>
+      <name>Sebastian Schmidt</name>
+      <email>mrschmidt@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>andreamlin</id>
+      <name>Andrea Lin</name>
+      <email>andrealin@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>hzyi-google</id>
+      <name>Hanzhen Yi</name>
+      <email>hzyi@google.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/java-speech.git/proto-google-cloud-speech-v1beta1</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-speech.git/proto-google-cloud-speech-v1beta1</developerConnection>
+    <url>https://github.com/googleapis/java-speech/proto-google-cloud-speech-v1beta1</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/googleapis/java-speech/issues</url>
+  </issueManagement>
+  <distributionManagement>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.20.1</version>
+      <scope>compile</scope>
+      <optional>false</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+      <version>2.8.3</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>protobuf-java</artifactId>
+          <groupId>com.google.protobuf</groupId>
+        </exclusion>
+      </exclusions>
+      <optional>false</optional>
+    </dependency>
+  </dependencies>
+</project>

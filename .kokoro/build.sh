@@ -75,7 +75,18 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
+<<<<<<< Updated upstream
     mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
+=======
+     mvn -B ${INTEGRATION_TEST_ARGS} \
+          -ntp \
+          -Penable-integration-tests \
+          -DtrimStackTrace=false \
+          -Dclirr.skip=true \
+          -Denforcer.skip=true \
+          -fae \
+          verify
+>>>>>>> Stashed changes
     ;;
 *)
     ;;
