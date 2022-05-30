@@ -122,7 +122,7 @@ public class AdaptationClient implements BackgroundResource {
 
   /**
    * Constructs an instance of AdaptationClient, using the given stub for making calls. This is for
-   * advanced usage - prefer using create(AdaptationSettings).
+   * advanced usage - prefer using create(AdaptationSettings). This is a test.
    */
   public static final AdaptationClient create(AdaptationStub stub) {
     return new AdaptationClient(stub);
