@@ -10,7 +10,7 @@
   "repo": "googleapis/java-gke-multi-cloud",
   "repo_short": "java-gke-multi-cloud",
   "distribution_name": "com.google.cloud:google-cloud-gke-multi-cloud",
-  "api_id": "gke-multi-cloud.googleapis.com",
+  "api_id": "gkemulticloud.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
