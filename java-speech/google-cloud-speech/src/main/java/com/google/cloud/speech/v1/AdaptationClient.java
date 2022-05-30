@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
+ * methods: this is a test
  *
  * <ol>
  *   <li>A "flattened" method. With this type of method, the fields of the request type have been
