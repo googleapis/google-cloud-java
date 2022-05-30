@@ -117,7 +117,7 @@ public class SpeechSettings extends ClientSettings<SpeechSettings> {
     return SpeechStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default ChannelProvider for this service. This is a test */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return SpeechStubSettings.defaultGrpcTransportProviderBuilder();
   }
