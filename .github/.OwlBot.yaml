@@ -23,3 +23,10 @@ deep-preserve-regex:
 deep-copy-regex:
 - source: "/google/datastore/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-datastore-$1/src"
+- source: "/google/datastore/admin/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/$1/proto-google-cloud-datastore-admin-$1/src"
+- source: "/google/datastore/admin/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/$1/grpc-google-cloud-datastore-admin-$1/src"
+# Admin & Data APIs share the same wrapper library.
+- source: "/google/datastore/admin/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/$1/google-cloud-datastore/src"

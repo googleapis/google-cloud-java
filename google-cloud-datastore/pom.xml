@@ -19,6 +19,10 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-datastore-admin-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-http</artifactId>
     </dependency>
@@ -27,12 +31,24 @@
       <artifactId>proto-google-cloud-datastore-v1</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -49,6 +65,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -88,6 +108,13 @@
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
       <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <!-- Need testing utility classes for generated gRPC clients tests -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>

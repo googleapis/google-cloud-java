@@ -151,6 +151,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string kind = 1;</code>
@@ -166,6 +169,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string kind = 1;</code>
@@ -211,6 +217,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -226,6 +235,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -241,6 +253,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -418,6 +433,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string kind = 1;</code>
@@ -444,6 +462,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A kind matching regex `__.*__` is reserved/read-only.
      * A kind must not contain more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string kind = 1;</code>
@@ -511,6 +532,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -528,6 +552,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -558,6 +585,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * A name matching regex `__.*__` is reserved/read-only.
      * A name must not be more than 1500 bytes when UTF-8 encoded.
      * Cannot be `""`.
+     * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+     * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+     * bytes.
      * </pre>
      *
      * <code>string name = 3;</code>
@@ -989,6 +1019,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string kind = 1;</code>
@@ -1014,6 +1047,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string kind = 1;</code>
@@ -1039,6 +1075,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string kind = 1;</code>
@@ -1063,6 +1102,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string kind = 1;</code>
@@ -1083,6 +1125,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A kind matching regex `__.*__` is reserved/read-only.
        * A kind must not contain more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string kind = 1;</code>
@@ -1186,6 +1231,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -1204,6 +1252,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -1235,6 +1286,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -1266,6 +1320,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -1290,6 +1347,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
@@ -1312,6 +1372,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * A name matching regex `__.*__` is reserved/read-only.
        * A name must not be more than 1500 bytes when UTF-8 encoded.
        * Cannot be `""`.
+       * Must be valid UTF-8 bytes. Legacy values that are not valid UTF-8 are
+       * encoded as `__bytes&lt;X&gt;__` where `&lt;X&gt;` is the base-64 encoding of the
+       * bytes.
        * </pre>
        *
        * <code>string name = 3;</code>
