@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/configmanagement/v1beta/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/configmanagement/v1beta/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/configmanagement/v1beta/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/metering/v1beta/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/metering/v1beta/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/metering/v1beta/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/multiclusteringress/v1beta/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/multiclusteringress/v1beta/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/multiclusteringress/v1beta/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/v1beta/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/v1beta/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/gkehub/v1beta/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+</differences>

@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-debugger-client.git",
+        "sha": "4db55127e54a1778943924cc711e81ddf6bc4c94"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "dba65e3c28aa8e26c4d5b8ec9c80fbd0d0f29864",
+        "internalRef": "380835888"
+      }
+    }
+  ],
+  "generatedFiles": [
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/AliasContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/AliasContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudRepoSourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudRepoSourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudWorkspaceId.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudWorkspaceIdOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudWorkspaceSourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/CloudWorkspaceSourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/ExtendedSourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/ExtendedSourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/GerritSourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/GerritSourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/GitSourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/GitSourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/ProjectRepoId.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/ProjectRepoIdOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/RepoId.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/RepoIdOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/SourceContext.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/SourceContextOrBuilder.java",
+    "proto-google-devtools-source-protos/src/main/java/com/google/devtools/source/v1/SourceContextProto.java"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.accessapproval.v1",
+  "libraryPackage": "com.google.cloud.accessapproval.v1",
+  "services": {
+    "AccessApproval": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccessApprovalAdminClient",
+          "rpcs": {
+            "ApproveApprovalRequest": {
+              "methods": ["approveApprovalRequest", "approveApprovalRequestCallable"]
+            },
+            "DeleteAccessApprovalSettings": {
+              "methods": ["deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettings", "deleteAccessApprovalSettingsCallable"]
+            },
+            "DismissApprovalRequest": {
+              "methods": ["dismissApprovalRequest", "dismissApprovalRequestCallable"]
+            },
+            "GetAccessApprovalServiceAccount": {
+              "methods": ["getAccessApprovalServiceAccount", "getAccessApprovalServiceAccount", "getAccessApprovalServiceAccountCallable"]
+            },
+            "GetAccessApprovalSettings": {
+              "methods": ["getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettings", "getAccessApprovalSettingsCallable"]
+            },
+            "GetApprovalRequest": {
+              "methods": ["getApprovalRequest", "getApprovalRequest", "getApprovalRequest", "getApprovalRequestCallable"]
+            },
+            "InvalidateApprovalRequest": {
+              "methods": ["invalidateApprovalRequest", "invalidateApprovalRequestCallable"]
+            },
+            "ListApprovalRequests": {
+              "methods": ["listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequests", "listApprovalRequestsPagedCallable", "listApprovalRequestsCallable"]
+            },
+            "UpdateAccessApprovalSettings": {
+              "methods": ["updateAccessApprovalSettings", "updateAccessApprovalSettings", "updateAccessApprovalSettingsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

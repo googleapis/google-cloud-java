@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gkehub.v1beta1",
+  "libraryPackage": "com.google.cloud.gkehub.v1beta1",
+  "services": {
+    "GkeHubMembershipService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GkeHubMembershipServiceClient",
+          "rpcs": {
+            "CreateMembership": {
+              "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
+            },
+            "DeleteMembership": {
+              "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
+            },
+            "GenerateConnectManifest": {
+              "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
+            },
+            "GenerateExclusivityManifest": {
+              "methods": ["generateExclusivityManifest", "generateExclusivityManifestCallable"]
+            },
+            "GetMembership": {
+              "methods": ["getMembership", "getMembership", "getMembershipCallable"]
+            },
+            "ListMemberships": {
+              "methods": ["listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+            },
+            "UpdateMembership": {
+              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+            },
+            "ValidateExclusivity": {
+              "methods": ["validateExclusivity", "validateExclusivityCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

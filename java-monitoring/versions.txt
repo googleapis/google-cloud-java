@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-monitoring:3.3.0:3.3.0
+grpc-google-cloud-monitoring-v3:3.3.0:3.3.0
+proto-google-cloud-monitoring-v3:3.3.0:3.3.0

@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.webrisk.v1beta1",
+  "libraryPackage": "com.google.cloud.webrisk.v1beta1",
+  "services": {
+    "WebRiskServiceV1Beta1": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WebRiskServiceV1Beta1Client",
+          "rpcs": {
+            "ComputeThreatListDiff": {
+              "methods": ["computeThreatListDiff", "computeThreatListDiff", "computeThreatListDiffCallable"]
+            },
+            "SearchHashes": {
+              "methods": ["searchHashes", "searchHashes", "searchHashesCallable"]
+            },
+            "SearchUris": {
+              "methods": ["searchUris", "searchUris", "searchUrisCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

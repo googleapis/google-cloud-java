@@ -1,0 +1,99 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.artifactregistry.v1",
+  "libraryPackage": "com.google.devtools.artifactregistry.v1",
+  "services": {
+    "ArtifactRegistry": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ArtifactRegistryClient",
+          "rpcs": {
+            "CreateRepository": {
+              "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
+            },
+            "CreateTag": {
+              "methods": ["createTag", "createTag", "createTagCallable"]
+            },
+            "DeletePackage": {
+              "methods": ["deletePackageAsync", "deletePackageAsync", "deletePackageOperationCallable", "deletePackageCallable"]
+            },
+            "DeleteRepository": {
+              "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
+            },
+            "DeleteTag": {
+              "methods": ["deleteTag", "deleteTag", "deleteTagCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersionAsync", "deleteVersionAsync", "deleteVersionOperationCallable", "deleteVersionCallable"]
+            },
+            "GetDockerImage": {
+              "methods": ["getDockerImage", "getDockerImage", "getDockerImage", "getDockerImageCallable"]
+            },
+            "GetFile": {
+              "methods": ["getFile", "getFile", "getFileCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetPackage": {
+              "methods": ["getPackage", "getPackage", "getPackageCallable"]
+            },
+            "GetProjectSettings": {
+              "methods": ["getProjectSettings", "getProjectSettings", "getProjectSettings", "getProjectSettingsCallable"]
+            },
+            "GetRepository": {
+              "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
+            },
+            "GetTag": {
+              "methods": ["getTag", "getTag", "getTagCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ImportAptArtifacts": {
+              "methods": ["importAptArtifactsAsync", "importAptArtifactsOperationCallable", "importAptArtifactsCallable"]
+            },
+            "ImportYumArtifacts": {
+              "methods": ["importYumArtifactsAsync", "importYumArtifactsOperationCallable", "importYumArtifactsCallable"]
+            },
+            "ListDockerImages": {
+              "methods": ["listDockerImages", "listDockerImages", "listDockerImagesPagedCallable", "listDockerImagesCallable"]
+            },
+            "ListFiles": {
+              "methods": ["listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
+            },
+            "ListPackages": {
+              "methods": ["listPackages", "listPackages", "listPackagesPagedCallable", "listPackagesCallable"]
+            },
+            "ListRepositories": {
+              "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
+            },
+            "ListTags": {
+              "methods": ["listTags", "listTags", "listTagsPagedCallable", "listTagsCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateProjectSettings": {
+              "methods": ["updateProjectSettings", "updateProjectSettings", "updateProjectSettingsCallable"]
+            },
+            "UpdateRepository": {
+              "methods": ["updateRepository", "updateRepository", "updateRepositoryCallable"]
+            },
+            "UpdateTag": {
+              "methods": ["updateTag", "updateTag", "updateTagCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

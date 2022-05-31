@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.area120.tables.v1alpha1",
+  "libraryPackage": "com.google.area120.tables.v1alpha",
+  "services": {
+    "TablesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TablesServiceClient",
+          "rpcs": {
+            "BatchCreateRows": {
+              "methods": ["batchCreateRows", "batchCreateRowsCallable"]
+            },
+            "BatchDeleteRows": {
+              "methods": ["batchDeleteRows", "batchDeleteRowsCallable"]
+            },
+            "BatchUpdateRows": {
+              "methods": ["batchUpdateRows", "batchUpdateRowsCallable"]
+            },
+            "CreateRow": {
+              "methods": ["createRow", "createRow", "createRowCallable"]
+            },
+            "DeleteRow": {
+              "methods": ["deleteRow", "deleteRow", "deleteRow", "deleteRowCallable"]
+            },
+            "GetRow": {
+              "methods": ["getRow", "getRow", "getRow", "getRowCallable"]
+            },
+            "GetTable": {
+              "methods": ["getTable", "getTable", "getTable", "getTableCallable"]
+            },
+            "GetWorkspace": {
+              "methods": ["getWorkspace", "getWorkspace", "getWorkspace", "getWorkspaceCallable"]
+            },
+            "ListRows": {
+              "methods": ["listRows", "listRows", "listRowsPagedCallable", "listRowsCallable"]
+            },
+            "ListTables": {
+              "methods": ["listTables", "listTablesPagedCallable", "listTablesCallable"]
+            },
+            "ListWorkspaces": {
+              "methods": ["listWorkspaces", "listWorkspacesPagedCallable", "listWorkspacesCallable"]
+            },
+            "UpdateRow": {
+              "methods": ["updateRow", "updateRow", "updateRowCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
