@@ -68,7 +68,7 @@ import javax.annotation.Generated;
  * <p>If a request is not approved or dismissed, we call it pending.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
- * calls that map to API methods. Sample code to get started:
+ * calls that map to API methods. Sample code to get started: This is to test all gapics
  *
  * <pre>{@code
  * // This snippet has been automatically generated for illustrative purposes only.
