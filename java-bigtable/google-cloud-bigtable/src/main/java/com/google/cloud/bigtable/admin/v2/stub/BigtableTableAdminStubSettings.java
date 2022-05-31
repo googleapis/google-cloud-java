@@ -482,7 +482,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigtableTableAdminStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

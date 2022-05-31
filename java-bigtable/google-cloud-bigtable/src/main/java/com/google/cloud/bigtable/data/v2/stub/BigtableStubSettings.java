@@ -122,7 +122,6 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     return readModifyWriteRowSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigtableStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

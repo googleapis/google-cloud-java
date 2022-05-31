@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -109,7 +108,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * Constructs an instance of BaseBigtableTableAdminClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(BaseBigtableTableAdminSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BaseBigtableTableAdminClient create(BigtableTableAdminStub stub) {
     return new BaseBigtableTableAdminClient(stub);
   }
@@ -126,7 +124,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BaseBigtableTableAdminClient(BigtableTableAdminStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -137,7 +134,6 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BigtableTableAdminStub getStub() {
     return stub;
   }
