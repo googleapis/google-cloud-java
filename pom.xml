@@ -181,7 +181,6 @@
     <module>java-private-catalog</module>
     <module>java-apigee-connect</module>
     <module>java-essential-contacts</module>
-    <module>java-gsuite-addons</module>
     <module>java-optimization</module>
     <module>java-deploy</module>
     <module>java-ids</module>
