@@ -12,15 +12,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-set -eo pipefail
-# Always run the cleanup script, regardless of the success of bouncing into
-# the container.
-function cleanup() {
-    chmod +x ${KOKORO_GFILE_DIR}/trampoline_cleanup.sh
-    ${KOKORO_GFILE_DIR}/trampoline_cleanup.sh
-    echo "cleanup";
-}
-trap cleanup EXIT
 
-$(dirname $0)/populate-secrets.sh # Secret Manager secrets.
-python3 "${KOKORO_GFILE_DIR}/trampoline_v1.py"
+set -eo pipefail
+
+# STAGING_REPOSITORY_ID must be set
+if [ -z "${STAGING_REPOSITORY_ID}" ]; then
+  echo "Missing STAGING_REPOSITORY_ID environment variable"
+  exit 1
+fi
+
+source $(dirname "$0")/common.sh
+
+pushd $(dirname "$0")/../../
+
+setup_environment_secrets
+create_settings_xml_file "settings.xml"
+
+mvn nexus-staging:release -B \
+  -DperformRelease=true \
+  --settings=settings.xml \
+  -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
