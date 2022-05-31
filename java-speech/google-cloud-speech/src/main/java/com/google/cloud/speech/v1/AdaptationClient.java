@@ -98,7 +98,7 @@ import javax.annotation.Generated;
  * AdaptationSettings adaptationSettings =
  *     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
- * }</pre>
+ * }</pre>Test
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
