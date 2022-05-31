@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-bigtable/compare/v2.7.0...v2.8.0) (2022-05-27)
+
+
+### Features
+
+* split emulator into core without deps and a higher level wrapper with grpc helpers ([#1264](https://github.com/googleapis/java-bigtable/issues/1264)) ([6fdc2c1](https://github.com/googleapis/java-bigtable/commit/6fdc2c1a33e140466734debed22d50a7be726d87))
+
+
+### Bug Fixes
+
+* **java:** enable skipped tests for Native Image testing  ([#1234](https://github.com/googleapis/java-bigtable/issues/1234)) ([560a501](https://github.com/googleapis/java-bigtable/commit/560a5018087c6cdc46e2c6150e6ed41075007177))
+
 ## [2.7.0](https://github.com/googleapis/java-bigtable/compare/v2.6.2...v2.7.0) (2022-05-20)
 
 
