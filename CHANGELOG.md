@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.13.0](https://github.com/googleapis/java-bigquery/compare/v2.12.0...v2.13.0) (2022-05-31)
+
+
+### Features
+
+* add destinationExpirationTime to CopyJobConfiguration ([#2031](https://github.com/googleapis/java-bigquery/issues/2031)) ([9e0b351](https://github.com/googleapis/java-bigquery/commit/9e0b35136aed6ed489bff4d4ac86c4d5d83274be))
+
+
+### Documentation
+
+* **samples:** update querypagination sample ([#2074](https://github.com/googleapis/java-bigquery/issues/2074)) ([4e153f5](https://github.com/googleapis/java-bigquery/commit/4e153f525cc600cecdfabec600b166560ba62607))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.8.1 ([#2076](https://github.com/googleapis/java-bigquery/issues/2076)) ([38d6bae](https://github.com/googleapis/java-bigquery/commit/38d6baefeebe0dc2858d38f6c44ad727b6beba92))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.2 ([#2077](https://github.com/googleapis/java-bigquery/issues/2077)) ([eb443df](https://github.com/googleapis/java-bigquery/commit/eb443dfd5fd26e9c424dcbb1b00af5260a525679))
+
 ## [2.12.0](https://github.com/googleapis/java-bigquery/compare/v2.11.2...v2.12.0) (2022-05-25)
 
 
