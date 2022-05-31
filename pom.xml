@@ -151,7 +151,6 @@
     <module>java-assured-workloads</module>
     <module>java-gkehub</module>
     <module>java-tpu</module>
-    <module>java-tpu</module>
     <module>java-area120-tables</module>
     <module>java-dataflow</module>
     <module>java-api-gateway</module>
