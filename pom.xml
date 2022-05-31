@@ -77,8 +77,8 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
-  <modules>
 
+  <modules>
     <module>java-speech</module>
     <module>java-texttospeech</module>
     <module>java-dialogflow</module>
@@ -194,7 +194,6 @@
     <module>java-bare-metal-solution</module>
     <module>java-video-stitcher</module>
     <module>java-bigquery-data-exchange</module>
-
   </modules>
   <build>
     <pluginManagement>
