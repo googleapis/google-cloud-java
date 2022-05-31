@@ -529,7 +529,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * Approves a request and returns the updated ApprovalRequest.
    *
    * <p>Returns NOT_FOUND if the request does not exist. Returns FAILED_PRECONDITION if the request
-   * exists but is not in a pending state.
+   * exists but is not in a pending state.test
    *
    * <p>Sample code:
    *
