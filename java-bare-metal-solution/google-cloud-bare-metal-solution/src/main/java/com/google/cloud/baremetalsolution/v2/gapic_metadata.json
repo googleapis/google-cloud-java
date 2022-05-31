@@ -1,0 +1,78 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.baremetalsolution.v2",
+  "libraryPackage": "com.google.cloud.baremetalsolution.v2",
+  "services": {
+    "BareMetalSolution": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BareMetalSolutionClient",
+          "rpcs": {
+            "CreateSnapshotSchedulePolicy": {
+              "methods": ["createSnapshotSchedulePolicy", "createSnapshotSchedulePolicy", "createSnapshotSchedulePolicy", "createSnapshotSchedulePolicyCallable"]
+            },
+            "CreateVolumeSnapshot": {
+              "methods": ["createVolumeSnapshot", "createVolumeSnapshot", "createVolumeSnapshot", "createVolumeSnapshotCallable"]
+            },
+            "DeleteSnapshotSchedulePolicy": {
+              "methods": ["deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicyCallable"]
+            },
+            "DeleteVolumeSnapshot": {
+              "methods": ["deleteVolumeSnapshot", "deleteVolumeSnapshot", "deleteVolumeSnapshot", "deleteVolumeSnapshotCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLun": {
+              "methods": ["getLun", "getLun", "getLun", "getLunCallable"]
+            },
+            "GetNetwork": {
+              "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
+            },
+            "GetSnapshotSchedulePolicy": {
+              "methods": ["getSnapshotSchedulePolicy", "getSnapshotSchedulePolicy", "getSnapshotSchedulePolicy", "getSnapshotSchedulePolicyCallable"]
+            },
+            "GetVolume": {
+              "methods": ["getVolume", "getVolume", "getVolume", "getVolumeCallable"]
+            },
+            "GetVolumeSnapshot": {
+              "methods": ["getVolumeSnapshot", "getVolumeSnapshot", "getVolumeSnapshot", "getVolumeSnapshotCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLuns": {
+              "methods": ["listLuns", "listLuns", "listLuns", "listLunsPagedCallable", "listLunsCallable"]
+            },
+            "ListNetworks": {
+              "methods": ["listNetworks", "listNetworks", "listNetworks", "listNetworksPagedCallable", "listNetworksCallable"]
+            },
+            "ListSnapshotSchedulePolicies": {
+              "methods": ["listSnapshotSchedulePolicies", "listSnapshotSchedulePolicies", "listSnapshotSchedulePolicies", "listSnapshotSchedulePoliciesPagedCallable", "listSnapshotSchedulePoliciesCallable"]
+            },
+            "ListVolumeSnapshots": {
+              "methods": ["listVolumeSnapshots", "listVolumeSnapshots", "listVolumeSnapshots", "listVolumeSnapshotsPagedCallable", "listVolumeSnapshotsCallable"]
+            },
+            "ListVolumes": {
+              "methods": ["listVolumes", "listVolumes", "listVolumes", "listVolumesPagedCallable", "listVolumesCallable"]
+            },
+            "ResetInstance": {
+              "methods": ["resetInstanceAsync", "resetInstanceAsync", "resetInstanceAsync", "resetInstanceOperationCallable", "resetInstanceCallable"]
+            },
+            "RestoreVolumeSnapshot": {
+              "methods": ["restoreVolumeSnapshotAsync", "restoreVolumeSnapshotAsync", "restoreVolumeSnapshotAsync", "restoreVolumeSnapshotOperationCallable", "restoreVolumeSnapshotCallable"]
+            },
+            "UpdateSnapshotSchedulePolicy": {
+              "methods": ["updateSnapshotSchedulePolicy", "updateSnapshotSchedulePolicy", "updateSnapshotSchedulePolicyCallable"]
+            },
+            "UpdateVolume": {
+              "methods": ["updateVolumeAsync", "updateVolumeAsync", "updateVolumeOperationCallable", "updateVolumeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

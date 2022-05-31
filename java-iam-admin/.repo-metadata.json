@@ -1,0 +1,16 @@
+{
+  "api_shortname": "iam-admin",
+  "name_pretty": "IAM Admin API",
+  "product_documentation": "https://cloud.google.com/iam/docs/apis",
+  "api_description": "you to manage your Service Accounts and IAM bindings.",
+  "client_documentation": "https://googleapis.dev/java/google-iam-admin/latest/index.html",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-iam-admin",
+  "repo_short": "java-iam-admin",
+  "distribution_name": "com.google.cloud:google-iam-admin",
+  "api_id": "iam.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
