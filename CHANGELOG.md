@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-datastore/compare/v2.5.1...v2.6.0) (2022-05-31)
+
+
+### Features
+
+* Expose Datastore Admin generated client ([#748](https://github.com/googleapis/java-datastore/issues/748)) ([3dd882a](https://github.com/googleapis/java-datastore/commit/3dd882a9ffe2a8828cdedcdc2e562c9354aebfbc))
+
 ### [2.5.1](https://github.com/googleapis/java-datastore/compare/v2.5.0...v2.5.1) (2022-05-25)
 
 
