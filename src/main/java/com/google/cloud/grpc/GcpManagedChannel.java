@@ -1249,6 +1249,12 @@ public class GcpManagedChannel extends ManagedChannel {
     if (channelRef == null || affinityKeys == null) {
       return;
     }
+    logger.finest(log(
+        "Binding %d key(s) to channel %d: [%s]",
+        affinityKeys.size(),
+        channelRef.getId(),
+        String.join(", ", affinityKeys)
+    ));
     for (String affinityKey : affinityKeys) {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
@@ -1266,6 +1272,9 @@ public class GcpManagedChannel extends ManagedChannel {
       ChannelRef channelRef = affinityKeyToChannelRef.remove(affinityKey);
       if (channelRef != null) {
         channelRef.affinityCountDecr();
+        logger.finest(log("Unbinding key %s from channel %d.", affinityKey, channelRef.getId()));
+      } else {
+        logger.finest(log("Unbinding key %s but it wasn't bound.", affinityKey));
       }
     }
   }

@@ -432,13 +432,30 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testBindUnbindKey() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINEST);
+
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
     // Initialize the channel and bind the key, check the affinity count.
     ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
     ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 2, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
+
     gcpChannel.bind(cf1, Collections.singletonList("key1"));
+
+    // Initial log messages count.
+    int logCount = logRecords.size();
+
     gcpChannel.bind(cf2, Collections.singletonList("key2"));
+
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Binding 1 key(s) to channel 2: [key2]");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+
     gcpChannel.bind(cf2, Collections.singletonList("key3"));
     // Binding the same key to the same channel should not increase affinity count.
     gcpChannel.bind(cf1, Collections.singletonList("key1"));
@@ -451,15 +468,25 @@ public final class GcpManagedChannelTest {
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
 
+    logCount = logRecords.size();
+
     // Unbind the affinity key.
     gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Unbinding key key1 from channel 1.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Unbinding key key1 but it wasn't bound.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     gcpChannel.unbind(Collections.singletonList("key2"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
