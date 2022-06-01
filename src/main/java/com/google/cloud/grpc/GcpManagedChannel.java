@@ -886,6 +886,9 @@ public class GcpManagedChannel extends ManagedChannel {
         return;
       }
       ConnectivityState newState = channel.getState(false);
+      logger.finer(
+          log("Channel %d state change detected: %s -> %s", channelId, currentState, newState)
+      );
       if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
         incReadyChannels();
         saveReadinessTime(System.nanoTime() - connectingStartNanos);
@@ -1030,6 +1033,7 @@ public class GcpManagedChannel extends ManagedChannel {
     final int size = channelRefs.size();
     ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build(), size);
     channelRefs.add(channelRef);
+    logger.finer(log("Channel %d created.", channelRef.getId()));
     return channelRef;
   }
 
@@ -1481,7 +1485,7 @@ public class GcpManagedChannel extends ManagedChannel {
           return;
         }
         if (deadlineExceededCount.incrementAndGet() >= unresponsiveDropCount
-            && unresponsiveTimingConditionMet()) {
+            && msSinceLastResponse() >= unresponsiveMs) {
           maybeReconnectUnresponsive();
         }
         return;
@@ -1493,15 +1497,23 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
 
-    private boolean unresponsiveTimingConditionMet() {
-      return (System.nanoTime() - lastResponseNanos) / 1000000 >= unresponsiveMs;
+    private long msSinceLastResponse() {
+      return (System.nanoTime() - lastResponseNanos) / 1000000;
     }
 
     private synchronized void maybeReconnectUnresponsive() {
+      final long msSinceLastResponse = msSinceLastResponse();
       if (deadlineExceededCount.get() >= unresponsiveDropCount
-          && unresponsiveTimingConditionMet()) {
+          && msSinceLastResponse >= unresponsiveMs) {
         recordUnresponsiveDetection(
             System.nanoTime() - lastResponseNanos, deadlineExceededCount.get());
+        logger.finer(log(
+            "Channel %d connection is unresponsive for %d ms and %d deadline exceeded calls. " +
+            "Forcing channel to idle state.",
+            channelId,
+            msSinceLastResponse,
+            deadlineExceededCount.get()
+        ));
         delegate.enterIdle();
         lastResponseNanos = System.nanoTime();
         deadlineExceededCount.set(0);

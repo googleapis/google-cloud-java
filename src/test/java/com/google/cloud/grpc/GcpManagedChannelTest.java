@@ -213,10 +213,27 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefInitialization() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINER);
+
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
+    // Initial log messages count.
+    int logCount = logRecords.size();
+
     // Should not have a managedchannel by default.
     assertEquals(0, gcpChannel.channelRefs.size());
     // But once requested it's there.
     assertEquals(0, gcpChannel.getChannelRef(null).getAffinityCount());
+
+    assertThat(logRecords.size()).isEqualTo(logCount + 2);
+    assertThat(lastLogMessage()).isEqualTo(poolIndex + ": Channel 0 created.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINER);
+    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).isEqualTo(
+        poolIndex + ": Channel 0 state change detected: null -> IDLE");
+    assertThat(logRecords.get(logRecords.size() - 2).getLevel()).isEqualTo(Level.FINER);
+
     // The state of this channel is idle.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
     assertEquals(1, gcpChannel.channelRefs.size());
@@ -929,7 +946,7 @@ public final class GcpManagedChannelTest {
   @Test
   public void testUnresponsiveDetection() throws InterruptedException {
     // Watch debug messages.
-    testLogger.setLevel(Level.FINE);
+    testLogger.setLevel(Level.FINER);
     final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
     // Creating a pool with unresponsive connection detection for 100 ms, 3 dropped requests.
     final GcpManagedChannel pool =
@@ -1053,17 +1070,22 @@ public final class GcpManagedChannelTest {
     // Any subsequent deadline exceeded after 100ms must trigger the reconnection.
     chRef.activeStreamsCountDecr(startNanos, deStatus, false);
     assertEquals(2, idleCounter.get());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).matches(
+        poolIndex + ": Channel 0 connection is unresponsive for 1\\d\\d ms and 4 deadline " +
+            "exceeded calls. Forcing channel to idle state.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINER);
 
     // The cumulative num_unresponsive_detections metric must become 2.
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(2L);
     assertThat(logRecords.size()).isEqualTo(++logCount);
-    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     // But the log metric count the detections since previous report for num_unresponsive_detections
     // in the logs. It is always delta in the logs, not cumulative.
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     // If we log it again the cumulative metric value must remain unchanged.
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
