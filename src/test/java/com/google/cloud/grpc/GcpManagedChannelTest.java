@@ -52,6 +52,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Handler;
@@ -710,6 +712,221 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
+  public void testLogMetrics() throws InterruptedException {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINE);
+
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setMaxSize(5)
+                                .setConcurrentStreamsLowWatermark(3)
+                                .build())
+                        .withMetricsOptions(
+                            GcpMetricsOptions.newBuilder()
+                                .withNamePrefix("prefix")
+                                .build())
+                        .withResiliencyOptions(
+                            GcpResiliencyOptions.newBuilder()
+                                .setNotReadyFallback(true)
+                                .withUnresponsiveConnectionDetection(100, 2)
+                                .build())
+                        .build())
+                .build();
+
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+      final String poolIndex = String.format("pool-%d", currentIndex);
+
+      int[] streams = new int[]{3, 2, 5, 7, 1};
+      int[] keyCount = new int[]{2, 3, 1, 1, 4};
+      int[] okCalls = new int[]{2, 2, 8, 2, 3};
+      int[] errCalls = new int[]{1, 1, 2, 2, 1};
+      List<FakeManagedChannel> channels = new ArrayList<>();
+      for (int i = 0; i < streams.length; i++) {
+        FakeManagedChannel channel = new FakeManagedChannel(executorService);
+        channels.add(channel);
+        ChannelRef ref = pool.new ChannelRef(channel, i);
+        pool.channelRefs.add(ref);
+
+        // Simulate channel connecting.
+        channel.setState(ConnectivityState.CONNECTING);
+        TimeUnit.MILLISECONDS.sleep(10);
+
+        // For the last one...
+        if (i == streams.length - 1) {
+          // This will be a couple of successful fallbacks.
+          pool.getChannelRef(null);
+          pool.getChannelRef(null);
+          // Bring down all other channels.
+          for (int j = 0; j < i; j++) {
+            channels.get(j).setState(ConnectivityState.CONNECTING);
+          }
+          TimeUnit.MILLISECONDS.sleep(100);
+          // And this will be a failed fallback (no ready channels).
+          pool.getChannelRef(null);
+
+          // Simulate unresponsive connection.
+          long startNanos = System.nanoTime();
+          final Status deStatus = Status.fromCode(Code.DEADLINE_EXCEEDED);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+
+          // Simulate unresponsive connection with more dropped calls.
+          startNanos = System.nanoTime();
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          TimeUnit.MILLISECONDS.sleep(110);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+        }
+
+        channel.setState(ConnectivityState.READY);
+
+        for (int j = 0; j < streams[i]; j++) {
+          ref.activeStreamsCountIncr();
+        }
+        // Bind affinity keys.
+        final List<String> keys = new ArrayList<>();
+        for (int j = 0; j < keyCount[i]; j++) {
+          keys.add("key-" + i + "-" + j);
+        }
+        pool.bind(ref, keys);
+        // Simulate successful calls.
+        for (int j = 0; j < okCalls[i]; j++) {
+          ref.activeStreamsCountDecr(0, Status.OK, false);
+          ref.activeStreamsCountIncr();
+        }
+        // Simulate failed calls.
+        for (int j = 0; j < errCalls[i]; j++) {
+          ref.activeStreamsCountDecr(0, Status.UNAVAILABLE, false);
+          ref.activeStreamsCountIncr();
+        }
+
+      }
+
+      logRecords.clear();
+
+      pool.logMetrics();
+
+      List<Object> messages = Arrays.asList(logRecords.stream().map(LogRecord::getMessage).toArray());
+
+      assertThat(messages).contains(poolIndex + ": Active streams counts: [3, 2, 5, 7, 1]");
+      assertThat(messages).contains(poolIndex + ": Affinity counts: [2, 3, 1, 1, 4]");
+
+      assertThat(messages).contains(poolIndex + ": stat: min_ready_channels = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_ready_channels = 4");
+      assertThat(messages).contains(poolIndex + ": stat: max_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: max_allowed_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_disconnect = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_connect = 5");
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: min_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: avg_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: max_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages).contains(poolIndex + ": stat: min_active_streams_per_channel = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_active_streams_per_channel = 7");
+      assertThat(messages).contains(poolIndex + ": stat: min_total_active_streams = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: min_affinity_per_channel = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_affinity_per_channel = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_affinity = 11");
+      assertThat(messages).contains(poolIndex + ": Ok calls: [2, 2, 8, 2, 3]");
+      assertThat(messages).contains(poolIndex + ": Failed calls: [1, 1, 2, 2, 6]");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_ok = 2");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_err = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_ok = 8");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_err = 6");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_ok = 17");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_err = 12");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_ok = 2");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_fail = 1");
+      assertThat(messages).contains(poolIndex + ": stat: num_unresponsive_detections = 2");
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+              poolIndex + ": stat: min_unresponsive_detection_time = 1\\d\\d"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+              poolIndex + ": stat: max_unresponsive_detection_time = 1\\d\\d"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_dropped_calls = 2");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 3");
+
+      assertThat(logRecords.size()).isEqualTo(34);
+      logRecords.forEach(logRecord ->
+          assertThat(logRecord.getLevel()).named(logRecord.getMessage()).isEqualTo(Level.FINE)
+      );
+
+      logRecords.clear();
+
+      // Next call should update minimums that was 0 previously (e.g., min_ready_channels,
+      // min_active_streams_per_channel, min_total_active_streams...).
+      pool.logMetrics();
+
+      messages = Arrays.asList(logRecords.stream().map(LogRecord::getMessage).toArray());
+
+      assertThat(messages).contains(poolIndex + ": Active streams counts: [3, 2, 5, 7, 1]");
+      assertThat(messages).contains(poolIndex + ": Affinity counts: [2, 3, 1, 1, 4]");
+
+      assertThat(messages).contains(poolIndex + ": stat: min_ready_channels = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_ready_channels = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: max_allowed_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_disconnect = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_connect = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: avg_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_active_streams_per_channel = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_active_streams_per_channel = 7");
+      assertThat(messages).contains(poolIndex + ": stat: min_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: max_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: min_affinity_per_channel = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_affinity_per_channel = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_affinity = 11");
+      assertThat(messages).contains(poolIndex + ": Ok calls: [0, 0, 0, 0, 0]");
+      assertThat(messages).contains(poolIndex + ": Failed calls: [0, 0, 0, 0, 0]");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_fail = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_unresponsive_detections = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_detection_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_detection_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_dropped_calls = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 0");
+
+      assertThat(logRecords.size()).isEqualTo(34);
+
+    } finally {
+      pool.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
   public void testUnresponsiveDetection() throws InterruptedException {
     // Watch debug messages.
     testLogger.setLevel(Level.FINE);
@@ -856,6 +1073,80 @@ public final class GcpManagedChannelTest {
     // But in the log it must post 0.
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
+  }
+
+  static class FakeManagedChannel extends ManagedChannel {
+    private ConnectivityState state = ConnectivityState.IDLE;
+    private Runnable stateCallback;
+    private final ExecutorService exec;
+
+    FakeManagedChannel(ExecutorService exec) {
+      this.exec = exec;
+    }
+
+    @Override
+    public void enterIdle() {}
+
+    @Override
+    public ConnectivityState getState(boolean requestConnection) {
+      return state;
+    }
+
+    public void setState(ConnectivityState state) {
+      if (state.equals(this.state)) {
+        return;
+      }
+      this.state = state;
+      if (stateCallback != null) {
+        exec.execute(stateCallback);
+        stateCallback = null;
+      }
+    }
+
+    @Override
+    public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {
+      if (!source.equals(state)) {
+        exec.execute(callback);
+        return;
+      }
+      stateCallback = callback;
+    }
+
+    @Override
+    public ManagedChannel shutdown() {
+      return null;
+    }
+
+    @Override
+    public boolean isShutdown() {
+      return false;
+    }
+
+    @Override
+    public boolean isTerminated() {
+      return false;
+    }
+
+    @Override
+    public ManagedChannel shutdownNow() {
+      return null;
+    }
+
+    @Override
+    public boolean awaitTermination(long timeout, TimeUnit unit) {
+      return false;
+    }
+
+    @Override
+    public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
+        MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
+      return null;
+    }
+
+    @Override
+    public String authority() {
+      return null;
+    }
   }
 
   static class FakeIdleCountingManagedChannel extends ManagedChannel {

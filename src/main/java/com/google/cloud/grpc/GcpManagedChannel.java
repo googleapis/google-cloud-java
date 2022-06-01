@@ -25,6 +25,7 @@ import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Joiner;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
@@ -135,8 +136,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private final AtomicLong totalErrCalls = new AtomicLong();
   private boolean minErrReported = false;
   private boolean maxErrReported = false;
-  private int minAffinity = 0;
-  private int maxAffinity = 0;
+  private final AtomicInteger minAffinity = new AtomicInteger();
+  private final AtomicInteger maxAffinity = new AtomicInteger();
   private final AtomicInteger totalAffinityCount = new AtomicInteger();
   private final AtomicLong fallbacksSucceeded = new AtomicLong();
   private final AtomicLong fallbacksFailed = new AtomicLong();
@@ -237,6 +238,19 @@ public class GcpManagedChannel extends ManagedChannel {
     if (options.getMetricsOptions() != null) {
       logger.fine(log("Metrics options: %s", options.getMetricsOptions()));
     }
+  }
+
+  private void logChannelsStats() {
+    logger.fine(log(
+        "Active streams counts: [%s]", Joiner.on(", ").join(
+            channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).iterator()
+        )
+    ));
+    logger.fine(log(
+        "Affinity counts: [%s]", Joiner.on(", ").join(
+            channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).iterator()
+        )
+    ));
   }
 
   private void initMetrics() {
@@ -464,8 +478,10 @@ public class GcpManagedChannel extends ManagedChannel {
     }));
   }
 
-  private void logMetrics() {
+  @VisibleForTesting
+  void logMetrics() {
     logMetricsOptions();
+    logChannelsStats();
     reportMinReadyChannels();
     reportMaxReadyChannels();
     reportMaxChannels();
@@ -654,15 +670,17 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private int reportMinAffinity() {
-    int value = minAffinity;
-    minAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0);
+    int value = minAffinity.getAndSet(
+        channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0)
+    );
     logGauge(GcpMetricsConstants.METRIC_MIN_AFFINITY, value);
     return value;
   }
 
   private int reportMaxAffinity() {
-    int value = maxAffinity;
-    maxAffinity = channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0);
+    int value = maxAffinity.getAndSet(
+        channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0)
+    );
     logGauge(GcpMetricsConstants.METRIC_MAX_AFFINITY, value);
     return value;
   }
@@ -693,6 +711,23 @@ public class GcpManagedChannel extends ManagedChannel {
     return value;
   }
 
+  private LongSummaryStatistics calcStatsAndLog(String logLabel, ToLongFunction<ChannelRef> func) {
+    StringBuilder str = new StringBuilder(logLabel + ": [");
+    final LongSummaryStatistics stats =
+        channelRefs.stream().mapToLong(ch -> {
+          long count = func.applyAsLong(ch);
+          if (str.charAt(str.length() - 1) != '[') {
+            str.append(", ");
+          }
+          str.append(count);
+          return count;
+        }).summaryStatistics();
+
+    str.append("]");
+    logger.fine(log(str.toString()));
+    return stats;
+  }
+
   private void calcMinMaxOkCalls() {
     if (minOkReported && maxOkReported) {
       minOkReported = false;
@@ -700,7 +735,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     final LongSummaryStatistics stats =
-        channelRefs.stream().mapToLong(ChannelRef::getAndResetOkCalls).summaryStatistics();
+        calcStatsAndLog("Ok calls", ChannelRef::getAndResetOkCalls);
     minOkCalls = stats.getMin();
     maxOkCalls = stats.getMax();
   }
@@ -732,7 +767,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     final LongSummaryStatistics stats =
-        channelRefs.stream().mapToLong(ChannelRef::getAndResetErrCalls).summaryStatistics();
+        calcStatsAndLog("Failed calls", ChannelRef::getAndResetErrCalls);
     minErrCalls = stats.getMin();
     maxErrCalls = stats.getMax();
   }
@@ -1374,12 +1409,14 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void affinityCountIncr() {
-      affinityCount.incrementAndGet();
+      int count = affinityCount.incrementAndGet();
+      maxAffinity.getAndUpdate(currentMax -> Math.max(currentMax, count));
       totalAffinityCount.incrementAndGet();
     }
 
     protected void affinityCountDecr() {
-      affinityCount.decrementAndGet();
+      int count = affinityCount.decrementAndGet();
+      minAffinity.getAndUpdate(currentMin -> Math.min(currentMin, count));
       totalAffinityCount.decrementAndGet();
     }
 
