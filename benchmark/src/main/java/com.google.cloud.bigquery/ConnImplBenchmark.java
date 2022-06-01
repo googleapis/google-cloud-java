@@ -44,7 +44,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @State(Scope.Benchmark)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class ConnImplBenchmark {
-  @Param({"500000", "1000000", "10000000", "100000000"}) // 500K, 1M, 10M, and 100M
+  @Param({"500000", "1000000", "10000000", "50000000", "100000000"}) // 500K, 1M, 10M, 50M and 100M
   public int rowLimit;
 
   private ConnectionSettings connectionSettingsReadAPIEnabled, connectionSettingsReadAPIDisabled;
@@ -69,6 +69,97 @@ public class ConnImplBenchmark {
         ConnectionSettings.newBuilder()
             .setUseReadAPI(false) // disable read api
             .build();
+  }
+
+  @Benchmark
+  // uses bigquery.query
+  public void iterateRecordsWithBigQuery_Query(Blackhole blackhole) throws InterruptedException {
+    String selectQuery = String.format(QUERY, rowLimit);
+    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(selectQuery).setUseLegacySql(false).build();
+    TableResult result = bigQuery.query(config);
+    long hash = 0L;
+    int cnt = 0;
+    System.out.print("\n Running");
+    // iterate al the records and compute the hash
+    for (FieldValueList row : result.iterateAll()) {
+      hash +=
+          row.get("vendor_id").getStringValue() == null
+              ? 0
+              : row.get("vendor_id").getStringValue().hashCode();
+      hash +=
+          row.get("pickup_datetime").getStringValue() == null
+              ? 0
+              : row.get("pickup_datetime").getStringValue().hashCode();
+      hash +=
+          row.get("dropoff_datetime").getStringValue() == null
+              ? 0
+              : row.get("dropoff_datetime").getStringValue().hashCode();
+      hash +=
+          row.get("passenger_count").getValue() == null
+              ? 0
+              : row.get("passenger_count").getLongValue();
+      hash +=
+          row.get("trip_distance").getValue() == null
+              ? 0
+              : row.get("trip_distance").getDoubleValue();
+      hash +=
+          row.get("pickup_longitude").getValue() == null
+              ? 0
+              : row.get("pickup_longitude").getDoubleValue();
+      hash +=
+          row.get("pickup_latitude").getValue() == null
+              ? 0
+              : row.get("pickup_latitude").getDoubleValue();
+      hash +=
+          row.get("rate_code").getStringValue() == null
+              ? 0
+              : row.get("rate_code").getStringValue().hashCode();
+      hash +=
+          row.get("store_and_fwd_flag").getStringValue() == null
+              ? 0
+              : row.get("store_and_fwd_flag").getStringValue().hashCode();
+      hash +=
+          row.get("payment_type").getStringValue() == null
+              ? 0
+              : row.get("payment_type").getStringValue().hashCode();
+      hash +=
+          row.get("pickup_location_id").getStringValue() == null
+              ? 0
+              : row.get("pickup_location_id").getStringValue().hashCode();
+      hash +=
+          row.get("dropoff_location_id").getStringValue() == null
+              ? 0
+              : row.get("dropoff_location_id").getStringValue().hashCode();
+      hash +=
+          row.get("dropoff_longitude").getValue() == null
+              ? 0
+              : row.get("dropoff_longitude").getDoubleValue();
+      hash +=
+          row.get("dropoff_latitude").getValue() == null
+              ? 0
+              : row.get("dropoff_latitude").getDoubleValue();
+      hash +=
+          row.get("fare_amount").getValue() == null ? 0 : row.get("fare_amount").getDoubleValue();
+      hash += row.get("extra").getValue() == null ? 0 : row.get("extra").getDoubleValue();
+      hash += row.get("mta_tax").getValue() == null ? 0 : row.get("mta_tax").getDoubleValue();
+      hash += row.get("tip_amount").getValue() == null ? 0 : row.get("tip_amount").getDoubleValue();
+      hash +=
+          row.get("tolls_amount").getValue() == null ? 0 : row.get("tolls_amount").getDoubleValue();
+      hash +=
+          row.get("imp_surcharge").getValue() == null
+              ? 0
+              : row.get("imp_surcharge").getDoubleValue();
+      hash +=
+          row.get("total_amount").getValue() == null ? 0 : row.get("total_amount").getDoubleValue();
+
+      if (++cnt % 100000 == 0) { // just to indicate the progress while long running benchmarks
+        System.out.print(".");
+      }
+    }
+    System.out.println(cnt + " records processed using bigquery.query");
+    blackhole.consume(hash);
   }
 
   @Benchmark
