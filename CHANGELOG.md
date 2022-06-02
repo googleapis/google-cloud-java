@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-datastore/compare/v2.6.0...v2.7.0) (2022-06-02)
+
+
+### Features
+
+* new enum value `OPTIMISTIC_WITH_ENTITY_GROUPS` for `ConcurrencyMode` ([df6b793](https://github.com/googleapis/java-datastore/commit/df6b793cb66424ad470fe871f9a3868ae482e1a4))
+
+
+### Documentation
+
+* clarifications for `DatastoreFirestoreMigraitonMetadata` ([df6b793](https://github.com/googleapis/java-datastore/commit/df6b793cb66424ad470fe871f9a3868ae482e1a4))
+
 ## [2.6.0](https://github.com/googleapis/java-datastore/compare/v2.5.1...v2.6.0) (2022-05-31)
 
 
