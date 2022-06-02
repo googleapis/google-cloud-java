@@ -53,47 +53,44 @@ public final class MigrationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/datastore/admin/v1/migration.pr"
-          + "oto\022\031google.datastore.admin.v1\032\034google/a"
-          + "pi/annotations.proto\"O\n\023MigrationStateEv"
-          + "ent\0228\n\005state\030\001 \001(\0162).google.datastore.ad"
-          + "min.v1.MigrationState\"\376\004\n\026MigrationProgr"
-          + "essEvent\0226\n\004step\030\001 \001(\0162(.google.datastor"
-          + "e.admin.v1.MigrationStep\022d\n\024prepare_step"
-          + "_details\030\002 \001(\0132D.google.datastore.admin."
-          + "v1.MigrationProgressEvent.PrepareStepDet"
-          + "ailsH\000\022s\n\034redirect_writes_step_details\030\003"
-          + " \001(\0132K.google.datastore.admin.v1.Migrati"
-          + "onProgressEvent.RedirectWritesStepDetail"
-          + "sH\000\032q\n\022PrepareStepDetails\022[\n\020concurrency"
-          + "_mode\030\001 \001(\0162A.google.datastore.admin.v1."
-          + "MigrationProgressEvent.ConcurrencyMode\032x"
-          + "\n\031RedirectWritesStepDetails\022[\n\020concurren"
-          + "cy_mode\030\001 \001(\0162A.google.datastore.admin.v"
-          + "1.MigrationProgressEvent.ConcurrencyMode"
-          + "\"T\n\017ConcurrencyMode\022 \n\034CONCURRENCY_MODE_"
-          + "UNSPECIFIED\020\000\022\017\n\013PESSIMISTIC\020\001\022\016\n\nOPTIMI"
-          + "STIC\020\002B\016\n\014step_details*X\n\016MigrationState"
-          + "\022\037\n\033MIGRATION_STATE_UNSPECIFIED\020\000\022\013\n\007RUN"
-          + "NING\020\001\022\n\n\006PAUSED\020\002\022\014\n\010COMPLETE\020\003*\343\001\n\rMig"
-          + "rationStep\022\036\n\032MIGRATION_STEP_UNSPECIFIED"
-          + "\020\000\022\013\n\007PREPARE\020\006\022\t\n\005START\020\001\022\036\n\032APPLY_WRIT"
-          + "ES_SYNCHRONOUSLY\020\007\022\023\n\017COPY_AND_VERIFY\020\002\022"
-          + "(\n$REDIRECT_EVENTUALLY_CONSISTENT_READS\020"
-          + "\003\022&\n\"REDIRECT_STRONGLY_CONSISTENT_READS\020"
-          + "\004\022\023\n\017REDIRECT_WRITES\020\005B\333\001\n\035com.google.da"
-          + "tastore.admin.v1B\016MigrationProtoP\001Z>goog"
-          + "le.golang.org/genproto/googleapis/datast"
-          + "ore/admin/v1;admin\252\002\037Google.Cloud.Datast"
-          + "ore.Admin.V1\312\002\037Google\\Cloud\\Datastore\\Ad"
-          + "min\\V1\352\002#Google::Cloud::Datastore::Admin"
-          + "::V1b\006proto3"
+          + "oto\022\031google.datastore.admin.v1\"O\n\023Migrat"
+          + "ionStateEvent\0228\n\005state\030\001 \001(\0162).google.da"
+          + "tastore.admin.v1.MigrationState\"\241\005\n\026Migr"
+          + "ationProgressEvent\0226\n\004step\030\001 \001(\0162(.googl"
+          + "e.datastore.admin.v1.MigrationStep\022d\n\024pr"
+          + "epare_step_details\030\002 \001(\0132D.google.datast"
+          + "ore.admin.v1.MigrationProgressEvent.Prep"
+          + "areStepDetailsH\000\022s\n\034redirect_writes_step"
+          + "_details\030\003 \001(\0132K.google.datastore.admin."
+          + "v1.MigrationProgressEvent.RedirectWrites"
+          + "StepDetailsH\000\032q\n\022PrepareStepDetails\022[\n\020c"
+          + "oncurrency_mode\030\001 \001(\0162A.google.datastore"
+          + ".admin.v1.MigrationProgressEvent.Concurr"
+          + "encyMode\032x\n\031RedirectWritesStepDetails\022[\n"
+          + "\020concurrency_mode\030\001 \001(\0162A.google.datasto"
+          + "re.admin.v1.MigrationProgressEvent.Concu"
+          + "rrencyMode\"w\n\017ConcurrencyMode\022 \n\034CONCURR"
+          + "ENCY_MODE_UNSPECIFIED\020\000\022\017\n\013PESSIMISTIC\020\001"
+          + "\022\016\n\nOPTIMISTIC\020\002\022!\n\035OPTIMISTIC_WITH_ENTI"
+          + "TY_GROUPS\020\003B\016\n\014step_details*X\n\016Migration"
+          + "State\022\037\n\033MIGRATION_STATE_UNSPECIFIED\020\000\022\013"
+          + "\n\007RUNNING\020\001\022\n\n\006PAUSED\020\002\022\014\n\010COMPLETE\020\003*\343\001"
+          + "\n\rMigrationStep\022\036\n\032MIGRATION_STEP_UNSPEC"
+          + "IFIED\020\000\022\013\n\007PREPARE\020\006\022\t\n\005START\020\001\022\036\n\032APPLY"
+          + "_WRITES_SYNCHRONOUSLY\020\007\022\023\n\017COPY_AND_VERI"
+          + "FY\020\002\022(\n$REDIRECT_EVENTUALLY_CONSISTENT_R"
+          + "EADS\020\003\022&\n\"REDIRECT_STRONGLY_CONSISTENT_R"
+          + "EADS\020\004\022\023\n\017REDIRECT_WRITES\020\005B\333\001\n\035com.goog"
+          + "le.datastore.admin.v1B\016MigrationProtoP\001Z"
+          + ">google.golang.org/genproto/googleapis/d"
+          + "atastore/admin/v1;admin\252\002\037Google.Cloud.D"
+          + "atastore.Admin.V1\312\002\037Google\\Cloud\\Datasto"
+          + "re\\Admin\\V1\352\002#Google::Cloud::Datastore::"
+          + "Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_datastore_admin_v1_MigrationStateEvent_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_datastore_admin_v1_MigrationStateEvent_fieldAccessorTable =
@@ -130,7 +127,6 @@ public final class MigrationProto {
             new java.lang.String[] {
               "ConcurrencyMode",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

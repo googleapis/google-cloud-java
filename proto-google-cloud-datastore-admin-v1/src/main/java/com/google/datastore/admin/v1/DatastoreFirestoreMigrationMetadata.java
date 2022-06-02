@@ -27,7 +27,7 @@ package com.google.datastore.admin.v1;
  * an explicit "creation" method. This is an intentional deviation from the LRO
  * design pattern.
  * This singleton resource can be accessed at:
- * `projects/{project_id}/datastore-firestore-migration`
+ * "projects/{project_id}/operations/datastore-firestore-migration"
  * </pre>
  *
  * Protobuf type {@code google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata}
@@ -103,6 +103,8 @@ public final class DatastoreFirestoreMigrationMetadata
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -385,7 +387,7 @@ public final class DatastoreFirestoreMigrationMetadata
    * an explicit "creation" method. This is an intentional deviation from the LRO
    * design pattern.
    * This singleton resource can be accessed at:
-   * `projects/{project_id}/datastore-firestore-migration`
+   * "projects/{project_id}/operations/datastore-firestore-migration"
    * </pre>
    *
    * Protobuf type {@code google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata}

@@ -46,36 +46,34 @@ public final class IndexProto {
     java.lang.String[] descriptorData = {
       "\n%google/datastore/admin/v1/index.proto\022"
           + "\031google.datastore.admin.v1\032\037google/api/f"
-          + "ield_behavior.proto\032\034google/api/annotati"
-          + "ons.proto\"\346\004\n\005Index\022\027\n\nproject_id\030\001 \001(\tB"
-          + "\003\340A\003\022\025\n\010index_id\030\003 \001(\tB\003\340A\003\022\021\n\004kind\030\004 \001("
-          + "\tB\003\340A\002\022D\n\010ancestor\030\005 \001(\0162-.google.datast"
-          + "ore.admin.v1.Index.AncestorModeB\003\340A\002\022I\n\n"
-          + "properties\030\006 \003(\01320.google.datastore.admi"
-          + "n.v1.Index.IndexedPropertyB\003\340A\002\022:\n\005state"
-          + "\030\007 \001(\0162&.google.datastore.admin.v1.Index"
-          + ".StateB\003\340A\003\032h\n\017IndexedProperty\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\002\022B\n\tdirection\030\002 \001(\0162*.google.da"
-          + "tastore.admin.v1.Index.DirectionB\003\340A\002\"J\n"
-          + "\014AncestorMode\022\035\n\031ANCESTOR_MODE_UNSPECIFI"
-          + "ED\020\000\022\010\n\004NONE\020\001\022\021\n\rALL_ANCESTORS\020\002\"E\n\tDir"
-          + "ection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\r\n\tASC"
-          + "ENDING\020\001\022\016\n\nDESCENDING\020\002\"P\n\005State\022\025\n\021STA"
-          + "TE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020"
-          + "\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\327\001\n\035com.googl"
-          + "e.datastore.admin.v1B\nIndexProtoP\001Z>goog"
-          + "le.golang.org/genproto/googleapis/datast"
-          + "ore/admin/v1;admin\252\002\037Google.Cloud.Datast"
-          + "ore.Admin.V1\312\002\037Google\\Cloud\\Datastore\\Ad"
-          + "min\\V1\352\002#Google::Cloud::Datastore::Admin"
-          + "::V1b\006proto3"
+          + "ield_behavior.proto\"\346\004\n\005Index\022\027\n\nproject"
+          + "_id\030\001 \001(\tB\003\340A\003\022\025\n\010index_id\030\003 \001(\tB\003\340A\003\022\021\n"
+          + "\004kind\030\004 \001(\tB\003\340A\002\022D\n\010ancestor\030\005 \001(\0162-.goo"
+          + "gle.datastore.admin.v1.Index.AncestorMod"
+          + "eB\003\340A\002\022I\n\nproperties\030\006 \003(\01320.google.data"
+          + "store.admin.v1.Index.IndexedPropertyB\003\340A"
+          + "\002\022:\n\005state\030\007 \001(\0162&.google.datastore.admi"
+          + "n.v1.Index.StateB\003\340A\003\032h\n\017IndexedProperty"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\002\022B\n\tdirection\030\002 \001(\0162*"
+          + ".google.datastore.admin.v1.Index.Directi"
+          + "onB\003\340A\002\"J\n\014AncestorMode\022\035\n\031ANCESTOR_MODE"
+          + "_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\021\n\rALL_ANCESTOR"
+          + "S\020\002\"E\n\tDirection\022\031\n\025DIRECTION_UNSPECIFIE"
+          + "D\020\000\022\r\n\tASCENDING\020\001\022\016\n\nDESCENDING\020\002\"P\n\005St"
+          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001"
+          + "\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\327\001\n"
+          + "\035com.google.datastore.admin.v1B\nIndexPro"
+          + "toP\001Z>google.golang.org/genproto/googlea"
+          + "pis/datastore/admin/v1;admin\252\002\037Google.Cl"
+          + "oud.Datastore.Admin.V1\312\002\037Google\\Cloud\\Da"
+          + "tastore\\Admin\\V1\352\002#Google::Cloud::Datast"
+          + "ore::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_datastore_admin_v1_Index_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -99,7 +97,6 @@ public final class IndexProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

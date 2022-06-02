@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.datastore.admin.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -113,6 +112,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
  *   GetIndexRequest request =
  *       GetIndexRequest.newBuilder()
@@ -152,6 +153,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DatastoreAdminSettings datastoreAdminSettings =
  *     DatastoreAdminSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -162,6 +165,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DatastoreAdminSettings datastoreAdminSettings =
  *     DatastoreAdminSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create(datastoreAdminSettings);
@@ -193,7 +198,6 @@ public class DatastoreAdminClient implements BackgroundResource {
    * Constructs an instance of DatastoreAdminClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(DatastoreAdminSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DatastoreAdminClient create(DatastoreAdminStub stub) {
     return new DatastoreAdminClient(stub);
   }
@@ -209,7 +213,6 @@ public class DatastoreAdminClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DatastoreAdminClient(DatastoreAdminStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -220,7 +223,6 @@ public class DatastoreAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DatastoreAdminStub getStub() {
     return stub;
   }
@@ -245,6 +247,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   String projectId = "projectId-894832108";
    *   Map<String, String> labels = new HashMap<>();
@@ -303,6 +307,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ExportEntitiesRequest request =
    *       ExportEntitiesRequest.newBuilder()
@@ -335,6 +341,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ExportEntitiesRequest request =
    *       ExportEntitiesRequest.newBuilder()
@@ -368,6 +376,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ExportEntitiesRequest request =
    *       ExportEntitiesRequest.newBuilder()
@@ -397,6 +407,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   String projectId = "projectId-894832108";
    *   Map<String, String> labels = new HashMap<>();
@@ -446,6 +458,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ImportEntitiesRequest request =
    *       ImportEntitiesRequest.newBuilder()
@@ -476,6 +490,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ImportEntitiesRequest request =
    *       ImportEntitiesRequest.newBuilder()
@@ -506,6 +522,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ImportEntitiesRequest request =
    *       ImportEntitiesRequest.newBuilder()
@@ -542,6 +560,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   CreateIndexRequest request =
    *       CreateIndexRequest.newBuilder()
@@ -577,6 +597,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   CreateIndexRequest request =
    *       CreateIndexRequest.newBuilder()
@@ -612,6 +634,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   CreateIndexRequest request =
    *       CreateIndexRequest.newBuilder()
@@ -643,6 +667,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   DeleteIndexRequest request =
    *       DeleteIndexRequest.newBuilder()
@@ -676,6 +702,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   DeleteIndexRequest request =
    *       DeleteIndexRequest.newBuilder()
@@ -709,6 +737,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   DeleteIndexRequest request =
    *       DeleteIndexRequest.newBuilder()
@@ -732,6 +762,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   GetIndexRequest request =
    *       GetIndexRequest.newBuilder()
@@ -756,6 +788,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   GetIndexRequest request =
    *       GetIndexRequest.newBuilder()
@@ -780,6 +814,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ListIndexesRequest request =
    *       ListIndexesRequest.newBuilder()
@@ -809,6 +845,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ListIndexesRequest request =
    *       ListIndexesRequest.newBuilder()
@@ -838,6 +876,8 @@ public class DatastoreAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.create()) {
    *   ListIndexesRequest request =
    *       ListIndexesRequest.newBuilder()

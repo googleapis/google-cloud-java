@@ -139,6 +139,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -202,6 +204,16 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      * <code>OPTIMISTIC = 2;</code>
      */
     OPTIMISTIC(2),
+    /**
+     *
+     *
+     * <pre>
+     * Optimistic concurrency with entity groups.
+     * </pre>
+     *
+     * <code>OPTIMISTIC_WITH_ENTITY_GROUPS = 3;</code>
+     */
+    OPTIMISTIC_WITH_ENTITY_GROUPS(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -235,6 +247,16 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      * <code>OPTIMISTIC = 2;</code>
      */
     public static final int OPTIMISTIC_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Optimistic concurrency with entity groups.
+     * </pre>
+     *
+     * <code>OPTIMISTIC_WITH_ENTITY_GROUPS = 3;</code>
+     */
+    public static final int OPTIMISTIC_WITH_ENTITY_GROUPS_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -266,6 +288,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           return PESSIMISTIC;
         case 2:
           return OPTIMISTIC;
+        case 3:
+          return OPTIMISTIC_WITH_ENTITY_GROUPS;
         default:
           return null;
       }
@@ -427,6 +451,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -1107,6 +1133,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -2551,8 +2579,9 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       } else {
         if (stepDetailsCase_ == 2) {
           prepareStepDetailsBuilder_.mergeFrom(value);
+        } else {
+          prepareStepDetailsBuilder_.setMessage(value);
         }
-        prepareStepDetailsBuilder_.setMessage(value);
       }
       stepDetailsCase_ = 2;
       return this;
@@ -2797,8 +2826,9 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       } else {
         if (stepDetailsCase_ == 3) {
           redirectWritesStepDetailsBuilder_.mergeFrom(value);
+        } else {
+          redirectWritesStepDetailsBuilder_.setMessage(value);
         }
-        redirectWritesStepDetailsBuilder_.setMessage(value);
       }
       stepDetailsCase_ = 3;
       return this;
