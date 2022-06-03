@@ -284,20 +284,15 @@ To get help, follow the instructions in the [Troubleshooting document](https://g
 
 ## Configuring a Proxy
 
-### HTTP Clients
+Google Cloud client libraries use HTTPS and gRPC in underlying communication
+with the services.
+In both protocols, you can configure a proxy using `https.proxyHost`
+and (optional) `https.proxyPort` properties.
 
-For HTTP clients, a proxy can be configured by using `http.proxyHost`, `https.proxyHost`, and
-related system properties as documented by
-[Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html).
+### gRPC Custom Proxy Configuration
 
-### gRPC Clients
-
-For gRPC clients, a proxy can be configured by using the
-`GRPC_PROXY_EXP` environment variable as documented by
-the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
-Please note that gRPC proxy support is currently experimental.
-
-For a more custom proxy, you will need supply a `ProxyDetector` to the `ManagedChannelBuilder`:
+For a more custom proxy with gRPC, you will need supply a `ProxyDetector` to
+the `ManagedChannelBuilder`:
 
 ```java
 import com.google.api.core.ApiFunction;
