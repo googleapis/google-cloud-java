@@ -27,7 +27,7 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
-mvn -T 1.5C clean install
+mvn -T 4C clean install
 ## if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 #if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
 #    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
