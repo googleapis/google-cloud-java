@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/googleapis/java-automl/compare/v2.2.1...v2.2.2) (2022-06-06)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.0 ([#1153](https://github.com/googleapis/java-automl/issues/1153)) ([c42b62f](https://github.com/googleapis/java-automl/commit/c42b62f1edd94513b72d56bf6718ab85cddd1c20))
+
 ### [2.2.1](https://github.com/googleapis/java-automl/compare/v2.2.0...v2.2.1) (2022-05-25)
 
 
