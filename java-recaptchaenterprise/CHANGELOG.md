@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.2](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.6.1...v2.6.2) (2022-06-06)
+
+
+### Dependencies
+
+* update dependency org.seleniumhq.selenium:selenium-chrome-driver to v4.2.1 ([#806](https://github.com/googleapis/java-recaptchaenterprise/issues/806)) ([f8c633d](https://github.com/googleapis/java-recaptchaenterprise/commit/f8c633d6d15c45668888c3265cd9a7c2df53dafc))
+* update dependency org.seleniumhq.selenium:selenium-java to v4.2.1 ([#807](https://github.com/googleapis/java-recaptchaenterprise/issues/807)) ([9d8eeb2](https://github.com/googleapis/java-recaptchaenterprise/commit/9d8eeb2d327c41da51b38563c302f9e915552a88))
+
 ### [2.6.1](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.6.0...v2.6.1) (2022-05-25)
 
 
